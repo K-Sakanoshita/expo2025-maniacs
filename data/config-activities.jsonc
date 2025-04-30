@@ -1,0 +1,40 @@
+{
+    "activities": {
+        "openhc-map": {
+            "header": "",
+            "footer": "",
+            "form": {
+                "actdate": {
+                    "glot": "act_date",
+                    "type": "date",
+                    "gsheet": "actdate"
+                },
+                "title": {
+                    "glot": "act_title",
+                    "type": "text",
+                    "gsheet": "title"
+                },
+                "memo": {
+                    "glot": "act_memo",
+                    "type": "textarea",
+                    "gsheet": "memo"
+                },
+                "detail_url": {
+                    "glot": "act_detail_url",
+                    "type": "url",
+                    "gsheet": "detail_url"
+                },
+                "picture_url1": {
+                    "glot": "act_picture_url1",
+                    "type": "image_url",
+                    "gsheet": "picture_url1"
+                },
+                "picture_url2": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
+                }
+            }
+        }
+    }
+}

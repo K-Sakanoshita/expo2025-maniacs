@@ -1,0 +1,64 @@
+<div class="row m-1 p-1 basemenu shadow rounded">
+	<div class="col-12 p-2 me-2 d-flex align-items-center">
+		<div class="dropdown">
+			<button class="btn btn-light border-secondary float-right menu me-2" data-bs-toggle="dropdown" aria-expanded="true" id="global_menu">
+				<i class="fas fa-bars text-black"></i>
+			</button>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="global_menu" style="z-index: 1090" id="main_menu">
+				<a class="dropdown-item"><span></span></a>
+				<span class="dropdown-item"></span>
+				<div class="dropdown-divider"></div>
+			</div>
+		</div>
+		<a href="javascript:cMapMaker.about()">
+			<span class="title" glot-model="site_title"></span><br />
+			<span class="subtitle" glot-model="site_subtitle"></span>
+		</a>
+	</div>
+	<div class="col-12 p-2 me-2 d-flex align-items-center">
+		<div class="h-100 d-flex align-items-center text-nowrap"><span glot-model="cat_select"></span></div>
+		<select class="form-control me-1" id="list_category"></select>
+		<button class="btn btn-light border-secondary float-left me-2 float-left me-2" id="mode_button" onclick="cMapMaker.mode_change();"><i class="fas fa-list" id="list_collapse_icon"></i></button>
+	</div>
+
+	<div class="col-12 p-0 pt-1 m-0 mb-2 collapse show rounded-bottom rounded-end" id="list_collapse">
+		<div id="filterid" class="d-flex flex-column justify-content-center me-1">
+			<div class="row"></div>
+		</div>
+
+		<!-- 検索 -->
+		<div class="row">
+			<div class="col-12 d-flex align-items-center">
+				<i class="block flex-row fas fa-search m-1 ps-1 pt-1 pe-1"></i>
+				<input type="text" class="flex-row form-control m-1" style="width: calc(100% - 24px)" id="list_keyword" />
+			</div>
+		</div>
+
+		<!-- リスト表示 -->
+		<div class="row">
+			<div class="col-12">
+				<div class="ps-1">
+					<div class="spinner-border text-primary d-none" id="list_spinner"></div>
+					<div id="tableid"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- プレイバック操作 -->
+		<div class="row" id="list_playback_control">
+			<div class="col-12 pe-0">
+				<button class="btn btn-light float-left menu me-2" onclick="cMapMaker.playback(listTable.flist);"><i id="list_playback" class="fas fa-play"></i></button>
+				<input type="range" class="form-control-range menu" id="list_speed" />
+			</div>
+		</div>
+
+		<!-- ダウンロード -->
+		<div class="row" id="list_download">
+			<div class="col-12 pe-0">
+				<button class="btn btn-light" onclick="cMapMaker.download()">
+					<i class="fas fa-download"> <span glot-model="download"></span></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

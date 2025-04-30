@@ -1,0 +1,102 @@
+span.title {
+    display: inline-block;
+    font-size: 16px !important;
+    font-weight: bold;
+    color: black !important;
+    padding: 0px 4px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+span.subtitle {
+    display: inline-block;
+    font-size: 10px !important;
+    color: black !important;
+    padding: 0px 0px 0px 0px;
+}
+
+span.icon {
+    border-radius: 8px;
+    margin-left: 2px;
+    padding: 0px 2px;
+    white-space: nowrap;
+}
+
+span.normal {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+span.attention {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+
+img.thumbnail {
+    margin: 4px auto !important;
+    border: 4px solid #ffffff;
+    display: block;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
+    cursor: zoom-in;
+    width: 50%;
+    height: auto;
+}
+
+img.slide {
+    height: 12vh;
+    max-width: 100% !important;
+    margin: 2px;
+    border: 2px solid #ffffff;
+    display: block;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
+    cursor: grab;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+img.normal {
+    background: url("./image/icon_circle.svg");
+    background-size: cover;
+    float: left;
+    padding: 4px !important;
+    height: 32px !important;
+    width: 32px !important;
+    object-fit: contain;
+    animation: rotation 0.5s ease-in-out 1;
+    filter: drop-shadow(2px 2px 2px #000);
+}
+
+img.middle {
+    background: url("./image/icon_circle_attention1.svg");
+    background-size: cover;
+    float: left;
+    padding: 6px !important;
+    height: 38px;
+    width: 38px;
+    object-fit: contain;
+    animation: rotation 0.5s ease-in-out 1;
+    filter: drop-shadow(2px 2px 2px #000);
+}
+
+img.attention {
+    background: url("./image/icon_circle_attention2.svg");
+    background-size: cover;
+    float: left;
+    padding: 6px !important;
+    height: 38px;
+    width: 38px;
+    object-fit: contain;
+    animation: rotation 0.5s ease-in-out 1;
+    filter: drop-shadow(2px 2px 2px #000);
+}
+
+img.attention:active,
+img.middle:active,
+img.normal:active {
+    margin-top: 10px;
+}
+
+#baselist {
+    background-image: "./image/mizutama.png";
+
+}

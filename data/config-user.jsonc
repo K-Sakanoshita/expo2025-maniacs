@@ -1,0 +1,143 @@
+// Community Mapmaker User Config
+{
+    "map": {
+        "tileName": "OSMFJ", // タイル一覧は config-system.jsonc へ
+        "viewCenter": [
+            135.38360336,
+            34.64993865
+        ],
+        "viewPitch": 30,
+        "maxPitch": 60,
+        "maxBounds": [ // 地図の表示範囲(左下、右上)
+            [
+                135.35,
+                34.625
+            ],
+            [
+                135.41,
+                34.665
+            ]
+        ],
+        "initZoom": 14.6,
+        "maxZoom": 20,
+        "modalZoom": 20 // モーダルダイアログ表示時のズームサイズ   
+    },
+    "view": {
+        "poiActLoad": true, // 起動時にActivityを読み込むか
+        "poiZoom": {
+            // アイコンの前後位置は後ろの方が手前になる
+            "green_area": 13,
+            "expo2025_area": 12,
+            "expo2025_wall": 13,
+            "expo2025_poi": 13,
+            "expo2025_door": 16,
+            "activity": 12
+        },
+        "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
+        "editZoom": {
+            // 編集時に追加するpoiZoom
+            "green_area": 15,
+            "expo2025_area": 15,
+            "expo2025_wall": 15,
+            "expo2025_poi": 15,
+            "expo2025_door": 15,
+            "activity": 12
+        }
+    },
+    "etc": {
+        "editMode": false, // 編集メニューの表示/非表示
+        "slideThumbWidth": "240",
+        "modalThumbWidth": "800",
+        "splashUrl": "./image/ogimage.png",
+        "loadingUrl": "./image/loading.gif"
+    },
+    "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
+        "menu": "",
+        /*{
+        "2010年時点の地図(日本)": "Japan2010",
+        "2012年時点の地図(日本)": "Japan2012",
+        "2014年時点の地図(日本)": "Japan2014",
+        "2016年時点の地図(日本)": "Japan2016",
+        "2018年時点の地図(日本)": "Japan2018",
+        "2020年時点の地図(日本)": "Japan2020",
+        "2022年時点の地図(日本)": "Japan2022",
+        "最新地図(全世界)": "OSMFJ"
+    },*/
+        "action": "" // ChangeMap:背景地図切り替え
+    },
+    "listTable": {
+        "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
+        "target": "tags", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+        "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
+        "playback": {
+            "view": false,
+            "zoomLevel": 15,
+            "timer": 4000
+        },
+        "download": false
+    },
+    "google": {
+        "Analytics": "",
+        "AppScript": "",
+        "targetName": "activity"
+    },
+    "static": {
+        "mode": false,
+        "osmjson": ""
+    },
+    "wikipedia": {
+        "marker": "wikipedia.svg",
+        "api_": "wikipedia.org/w/api.php?format=json&action=query&prop=extracts%7Cimages&exintro=&explaintext=&titles=",
+        "api": "wikipedia.org/api/rest_v1/page/summary/",
+        "domain": "wikipedia.org",
+        "tag": "wikipedia",
+        "image": true
+    },
+    "menu": {
+        "main": [
+            // トップメニュー一覧
+            {
+                "glot-model": "about",
+                "linkto": "javascript:cMapMaker.about()",
+                "divider": false
+            },
+            {
+                "glot-model": "licence_title",
+                "linkto": "javascript:cMapMaker.licence()",
+                "divider": false
+            },
+            {
+                "glot-model": "develop_site",
+                "linkto": "https://github.com/armd-02/openhc-map/",
+                "divider": false
+            },
+            {
+                "glot-model": "openstreetmap",
+                "linkto": "https://www.openstreetmap.org/about",
+                "divider": false
+            }
+        ],
+        // 詳細表示のハンバーガーメニュー
+        "modal": [
+            {
+                "glot-model": "osm_open",
+                "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
+                "divider": false
+            },
+            {
+                "glot-model": "button_close",
+                "linkto": "javascript:winCont.modal_close()",
+                "divider": false
+            }
+        ],
+        // 詳細モーダルの追加ボタン 
+        "buttons": [
+            {
+                "btn_class": "btn btn-light border-secondary",
+                "code": "javascript:cMapMaker.shareURL()",
+                "icon_class": "fas fa-clone",
+                "btn_glot_name": "share_link"
+            }
+        ]
+    }
+}

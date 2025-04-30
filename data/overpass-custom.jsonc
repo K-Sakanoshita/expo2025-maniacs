@@ -1,0 +1,110 @@
+{
+    "osm": {
+        "green_area": {
+            "overpass": [
+                "nwr[\"natural\"=\"tree_row\"]",
+                "nwr[\"barrier\"=\"hedge\"]"
+            ],
+            "tags": [
+                "natural",
+                "barrier"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#50A050",
+                "stroke-width": 3
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "expo2025_area": {
+            "overpass": [
+                "way[\"tourism\"=\"theme_park\"]"
+            ],
+            "tags": [
+                "tourism=theme_park"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#FF0000",
+                "stroke-width": 2
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "expo2025_wall": {
+            "overpass": [
+                "way[\"barrier\"=\"wall\"]",
+                "way[\"barrier\"=\"fence\"]",
+                "way[\"tourism\"=\"theme_park\"]",
+                "way[\"entrance\"]"
+            ],
+            "tags": [
+                "barrier=wall",
+                "barrier=fence",
+                "tourism=theme_park",
+                "entrance"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 3
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "expo2025_poi": {
+            "overpass": [
+                "nwr[\"amenity\"]",
+                "nwr[\"emergency\"]",
+                "nwr[\"historic\"]",
+                "nwr[\"tourism\"]",
+                "nwr[\"office\"]",
+                "nwr[\"shop\"]",
+                "node[\"highway\"=\"elevator\"]"
+            ],
+            "tags": [
+                "amenity",
+                "emergency",
+                "historic",
+                "tourism",
+                "office",
+                "shop",
+                "natural!=tree",
+                "highway=elevator"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "expo2025_door": {
+            "overpass": [
+                "node[\"entrance\"]"
+            ],
+            "tags": [
+                "entrance"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#c0a0a0",
+                "stroke-width": 2
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        }
+    }
+}

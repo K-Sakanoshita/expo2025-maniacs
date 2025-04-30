@@ -1,0 +1,561 @@
+{
+    "category": {
+        // カテゴリ名取得は最初に見つかったものから
+        // marker.jsoncと行数合わせの行
+        "*": {
+            "*": "-"
+        },
+        "amenity": {
+            "atm": "ATM",
+            "arts_centre": "arts centre",
+            "bar": "bar",
+            "bank": "bank",
+            "bbq": "bbq",
+            "bench": "bench",
+            "bicycle_parking": "bicycle parking",
+            "bicycle_rental": "bicycle rental",
+            "biergarten": "biergarten",
+            "bureau_de_change": "money exchange ",
+            "bus_station": "bus station",
+            "cafe": "cafe",
+            "car_sharing": "car sharing",
+            "childcare": "childcare",
+            "clinic": "clinic",
+            "clock": "clock",
+            "college": "college",
+            "community_centre": "community center",
+            "courthouse": "courthouse",
+            "coworking_space": "coworking space",
+            "crematorium": "crematorium",
+            "cinema": "cinema",
+            "dentist": "dentist",
+            "doctors": "doctor",
+            "dojo": "dojo",
+            "drinking_water": "drinking water",
+            "exhibition_centre": "exhibition centre",
+            "fast_food": "fast food",
+            "ferry_terminal": "ferry terminal",
+            "fire_station": "fire station",
+            "food_court": "food court",
+            "fountain": "fountain",
+            "fuel": "fuel",
+            "gambling": "gambling",
+            "grave_yard": "grave yard",
+            "hospital": "Hospital",
+            "ice_cream": "ice cream",
+            "internet_cafe": "internet cafe",
+            "karaoke_box": "karaoke box",
+            "kindergarten": "kindergarten",
+            "language_school": "language school",
+            "lavoir": "lavoir",
+            "library": "library",
+            "luggage_locker": "luggage locker",
+            "nightclub": "nightclub",
+            "marketplace": "marketplace",
+            "motorcycle_parking": "motorcycle parking",
+            "parking": "parking",
+            "payment_terminal": "payment terminal",
+            "pharmacy": "pharmacy",
+            "photo_booth": "photo booth",
+            "place_of_worship": "place of worship",
+            "prep_school": "prep school",
+            "police": "police",
+            "post_box": "POST box",
+            "post_office": "POST Office",
+            "prison": "prison",
+            "pub": "pub",
+            "public_bath": "public bath",
+            "public_bookcase": "public bookcase",
+            "recycling": "recycling",
+            "restaurant": "restaurant",
+            "sanitary_dump_station": "sanitary dump station",
+            "school": "school",
+            "shelter": "shelter",
+            "shower": "shower",
+            "social_facility": "social facility",
+            "smoking_area": "smoking area",
+            "stage": "stage",
+            "studio": "studio",
+            "taxi": "taxi",
+            "telephone": "telephone",
+            "theatre": "theatre",
+            "toilets": "toilets",
+            "townhall": "town hall",
+            "university": "university",
+            "vending_machine": "vending machine",
+            "veterinary": "veterinary care",
+            "waste_basket": "waste basket",
+            "waste_disposal": "waste disposal",
+            "water_point": "drinking water"
+        },
+        "assembly_point:tsunami": {
+            "yes": "tsunami evacuation"
+        },
+        "attraction": {
+            "animal": "animal"
+        },
+        "barrier": {
+            "gate": "barrier",
+            "hedge": "hedge"
+        },
+        "bridge": {
+            "yes": "bridge"
+        },
+        "building": {
+            "apartments": "apartments",
+            "detached": "detached",
+            "museum": "museum",
+            "office": "office",
+            "public": "public",
+            "temple": "temple",
+            "residential": "residential",
+            "retail": "retail",
+            "yes": "building"
+        },
+        "craft": {
+            "brewery": "brewery",
+            "carpenter": "carpenter",
+            "confectionery": "confectionery",
+            "lighting": "craft lighting",
+            "photographer": "photographer",
+            "yes": "craft"
+        },
+        "diplomatic": {
+            "embassy": "embassy"
+        },
+        "disused:amenity": {
+            "school": "school(disused)"
+        },
+        "emergency": {
+            "assembly_point": "assembly point",
+            "fire_extinguisher": "extinguisher",
+            "fire_hydrant": "hydrant",
+            "fire_hose": "hose",
+            "fire_lookout": "fire lookout",
+            "defibrillator": "AED",
+            "siren": "siren",
+            "water_tank": "Water Tank"
+        },
+        "healthcare": {
+            "alternative": "alternative"
+        },
+        "entrance": {
+            "main": "entrance(main)",
+            "yes": "entrance"
+        },
+        "office": {
+            "company": "company",
+            "coworking": "coworking",
+            "estate_agent": "estate agent",
+            "foundation": "foundation",
+            "government": "government"
+        },
+        "shop": {
+            "agrarian": "agrarian",
+            "alcohol": "alcohol",
+            "appliance": "appliance",
+            "art": "art",
+            "anime": "Anime Shop",
+            "baby_goods": "baby goods",
+            "bakery": "bakery",
+            "beauty": "beauty salon",
+            "beverages": "beverages",
+            "bicycle": "bicycle",
+            "books": "book",
+            "boutique": "boutique",
+            "brewing_supplies": "brewing supplies",
+            "butcher": "butcher",
+            "car": "car",
+            "car_parts": "car parts",
+            "cheese": "cheese",
+            "chemist": "chemist",
+            "chocolate": "chocolate",
+            "clothes": "clothes",
+            "coffee": "coffee",
+            "computer": "computer",
+            "confectionery": "confectionery",
+            "convenience": "convenience",
+            "cosmetics": "cosmetics",
+            "dairy": "dairy",
+            "deli": "deli",
+            "department_store": "department store",
+            "doityourself": "doityourself",
+            "dry_cleaning": "dry cleaning",
+            "electronics": "electronic",
+            "farm": "farm",
+            "florist": "florist",
+            "frozen_food": "frozen food",
+            "funeral_directors": "cemetery",
+            "furniture": "furniture",
+            "garden_centre": "garden center",
+            "general": "general",
+            "gift": "gift",
+            "greengrocer": "greengrocer",
+            "hairdresser": "hairdresser",
+            "hardware": "hardware",
+            "health_food": "health food",
+            "houseware": "houseware",
+            "ice_cream": "ice cream",
+            "interior_decoration": "interior decoration",
+            "jewelry": "jewelry store",
+            "kiosk": "kiosk",
+            "laundry": "laundry",
+            "mall": "shopping mall",
+            "massage": "massage",
+            "medical_supply": "medical supply",
+            "motorcycle": "motorcycle",
+            "newsagent": "newsagent",
+            "optician": "optician",
+            "pasta": "pasta",
+            "pastry": "pastry",
+            "pawnbroker": "pawnbroker",
+            "photo": "photo",
+            "rice": "rice",
+            "seafood": "seafood",
+            "second_hand": "second hand",
+            "shoes": "shoes",
+            "spices": "spices",
+            "supermarket": "supermarket",
+            "stationery": "stationery",
+            "tailor": "tailor",
+            "tea": "tea",
+            "ticket": "ticket",
+            "tobacco": "pipe",
+            "travel_agency": "travel agency",
+            "variety_store": "variety",
+            "video_games": "video games",
+            "water": "water",
+            "watches": "watches",
+            "wine": "wine"
+        },
+        "natural": {
+            "peak": "peak",
+            "stone": "stone",
+            "tree": "tree",
+            "tree_row": "tree row",
+            "water": "water",
+            "wetland": "wetland",
+            "wood": "wood"
+        },
+        "highway": {
+            "bus_stop": "bus stop",
+            "traffic_signals": "traffic signals",
+            "steps": "steps",
+            "street_lamp": "street lamp",
+            "elevator": "elevator"
+        },
+        "social_facility": {
+            "shelter": "temporary shelter"
+        },
+        "playground": {
+            "activitypanel": "activitypanel",
+            "aerialrotator": "aerialrotator",
+            "agility_trail": "agility trail",
+            "balancebeam": "balancebeam",
+            "basketrotator": "asketrotator",
+            "basketswing": "basketswing",
+            "bridge": "bridge",
+            "climbing": "climbing",
+            "climbingframe": "jungle gym",
+            "climbingwall": "climbingwall",
+            "cushion": "cushion",
+            "dome": "dome",
+            "exercise": "exercise",
+            "hamster_wheel": "hamster wheel",
+            "hopscotch": "hopscotch",
+            "horizontal_bar": "horizontal_bar",
+            "ladder": "ladder",
+            "map": "map",
+            "monkey_bars": "monkey_bars",
+            "mound": "mound",
+            "playhouse": "playhouse",
+            "play_sculpture": "play sculpture",
+            "roundabout": "roundabout",
+            "rope_swing": "rope swing",
+            "ride_on": "ride on",
+            "sandpit": "sandpit",
+            "seesaw": "seesaw",
+            "sledding": "sledding",
+            "sieve": "sieve",
+            "slide": "slide",
+            "splash_pad": "splash pad",
+            "springy": "springy",
+            "stepping_post": "stepping post",
+            "stepping_stones": "stepping stones",
+            "stepping_tires": "stepping tires",
+            "structure": "structure",
+            "swing": "swing",
+            "swing_carousel": "swing_carousel",
+            "teenshelter": "teenshelter",
+            "tire": "tire",
+            "trampoline": "trampoline",
+            "tunnel_tube": "tunnel tube",
+            "water": "water",
+            "water_channel": "water channel",
+            "youth_bench": "youth bench",
+            "zipwire": "zipwire"
+        },
+        "tourism": {
+            "apartment": "apartment",
+            "attraction": "attraction",
+            "artwork": "artwork",
+            "gallery": "gallery",
+            "guest_house": "guest house",
+            "hostel": "hostel",
+            "hotel": "hotel",
+            "information": "information",
+            "museum": "museum",
+            "picnic_site": "picnic site",
+            "theme_park": "theme park",
+            "viewpoint": "viewpoint",
+            "zoo": "zoo"
+        },
+        "historic": {
+            "aircraft": "aircraft",
+            "archaeological_site": "archaeological site",
+            "battlefield": "battlefield",
+            "boundary_stone": "boundary stone",
+            "building": "historic buidling",
+            "castle": "castle",
+            "cannon": "cannon",
+            "memorial": "memorial",
+            "monument": "monument",
+            "milestone": "milestone",
+            "heritage": "heritage",
+            "tomb": "tomb",
+            "locomotive": "locomotive",
+            "street_lamp": "street lamp",
+            "wayside_shrine": "wayside shrine",
+            "wayside_cross": "cross",
+            "vehicle": "vehicle"
+        },
+        "information": {
+            "board": "board",
+            "terminal": "terminal",
+            "audioguide": "audioguide",
+            "map": "map",
+            "tactile_map": "tactile map",
+            "guidepost": "guidepost"
+        },
+        "man_made": {
+            "bridge": "bridge",
+            "torii": "torii",
+            "lamp": "lantern",
+            "tower": "tower",
+            "surveillance": "surveillance",
+            "works": "works"
+        },
+        "landuse": {
+            "farmland": "farmland",
+            "religious": "religious",
+            "industrial": "industrial",
+            "forest": "forest",
+            "orchard": "orchard",
+            "aquaculture": "aquaculture",
+            "reservoir": "reservoir",
+            "grass": "grass",
+            "retail": "retail",
+            "recreation_ground": "recreation ground"
+        },
+        "leisure": {
+            "adult_gaming_centre": "adult gaming centre",
+            "amusement_arcade": "amusement arcade",
+            "bandstand": "bandstand",
+            "dance": "dance",
+            "fitness_centre": "fitness center",
+            "garden": "garden",
+            "pitch": "pitch",
+            "park": "park",
+            "playground": "playground",
+            "swimming_pool": "swimming pool"
+        },
+        "railway": {
+            "station": "station"
+        },
+        "public_transport": {
+            "station": "station"
+        },
+        "place": {
+            "city": "city",
+            "square": "square",
+            "suburb": "suburb",
+            "quarter": "quarter",
+            "neighbourhood": "neighbourhood"
+        },
+        "waterway": {
+            "canal": "canal",
+            "lock_gate": "lock gate",
+            "river": "river",
+            "stream": "stream",
+            "waterfall": "waterfall"
+        },
+        "suffix_covid19": "(provisional)",
+        "bookmarked": "Starred"
+    },
+    "category_sub": {
+        "amenity": {
+            "gambling": {
+                "mahjong": "mahjong"
+            },
+            "social_facility": {
+                "shelter": "temporary shelter"
+            }
+        },
+        "artwork": {
+            "artwork_type": {
+                "bust": "bust",
+                "sculpture": "sculpture",
+                "mural": "mural",
+                "graffiti": "graffiti",
+                "installation": "installation",
+                "statue": "statue",
+                "stone": "stone",
+                "painting": "painting",
+                "architecture": "architecture",
+                "mosaic": "mosaic",
+                "tilework": "tilework",
+                "relief": "relief",
+                "fountain": "fountain",
+                "streetart": "streetart",
+                "street_art": "street_art",
+                "azulejo": "azulejo"
+            }
+        },
+        "healthcare": {
+            "healthcare:speciality": {
+                "acupuncture": "acupuncture"
+            }
+        },
+        "restaurant": {
+            "cuisine": {
+                "american": "american",
+                "asian": "asian",
+                "barbecue": "barbecue",
+                "bbq": "barbecue",
+                "beef_bowl": "beef bowl",
+                "bento": "bento",
+                "bowl": "bowl",
+                "burger": "burger",
+                "cake": "cake",
+                "chicken": "chicken",
+                "chinese": "chinese",
+                "coffee": "coffee",
+                "coffee_shop": "coffee shop",
+                "crepe": "crepe",
+                "curry": "curry",
+                "donut": "donut",
+                "fish": "fish",
+                "fish_and_chips": "fish and chips",
+                "french": "french",
+                "fried_food": "fried food",
+                "german": "german",
+                "greek": "greek",
+                "gyoza": "gyoza",
+                "gyudon": "gyudon",
+                "ice_cream": "ice cream",
+                "indian": "indian",
+                "international": "international",
+                "italian": "italian",
+                "italian_pizza": "italian pizza",
+                "japanese": "japanese",
+                "kebab": "kebab",
+                "korean": "korean",
+                "local": "local",
+                "mexican": "mexican",
+                "noodle": "noodle",
+                "noodles": "noodle",
+                "okonomiyaki": "okonomiyaki",
+                "pancake": "pancake",
+                "pasta": "pasta",
+                "pizza": "pizza",
+                "ramen": "ramen",
+                "regional": "regional",
+                "sandwich": "sandwich",
+                "savory_pancakes": "savory pancakes",
+                "seafood": "seafood",
+                "soba": "soba",
+                "spanish": "spanish",
+                "steak": "steak",
+                "steak_house": "steak house",
+                "steamed_eel_rice": "steamed eel rice",
+                "sushi": "sushi",
+                "taiwanese": "taiwanese",
+                "takoyaki": "takoyaki",
+                "thai": "thai",
+                "tonkatsu": "tonkatsu",
+                "turkish": "turkish",
+                "udon": "udon",
+                "unagi": "unagi",
+                "vegetarian": "vegetarian",
+                "vietnamese": "vietnamese",
+                "western": "western",
+                "yakiniku": "yakiniku",
+                "yakitori": "yakitori"
+            },
+            "takeaway": {
+                "yes": "take out",
+                "no": "no take out",
+                "only": "take out only"
+            },
+            "delivery": {
+                "yes": "delivery",
+                "no": "no delivery",
+                "only": "delivery only"
+            },
+            "diet": {
+                "diet:pescetarian": "pescetarian",
+                "diet:vegetarian": "vegetarian",
+                "diet:lacto_vegetarian": "lacto vegetarian",
+                "diet:ovo_vegetarian": "ovo vegetarian",
+                "diet:vegan": "vegan",
+                "diet:fruitarian": "fruitarian",
+                "diet:raw": "raw",
+                "diet:gluten_free": "gluten free",
+                "diet:dairy_free": "dairy free",
+                "diet:lactose_free": "lactose free",
+                "diet:halal": "halal",
+                "diet:kosher": "kosher"
+            }
+        },
+        "place_of_worship": {
+            "religion": {
+                "shinto": "torii",
+                "buddhist": "buddhist"
+            }
+        },
+        "parking": {
+            "access": {
+                "private": "private"
+            }
+        },
+        "social_facility": {
+            "social_facility": {
+                "shelter": "temporary sleeping"
+            }
+        },
+        "tree": {
+            "species": {
+                "Cherry blossom": "sakura",
+                "Cerasus itosakura": "sakura",
+                "Cerasus × yedoensis": "sakura"
+            },
+            "species:en": {
+                "Cherry blossom": "sakura",
+                "Cerasus itosakura": "sakura",
+                "Cerasus × yedoensis": "sakura"
+            }
+        }
+    },
+    "opening_hours": {
+        "Mo": "Mo",
+        "Tu": "Tu",
+        "We": "We",
+        "Th": "Th",
+        "Fr": "Fr",
+        "Sa": "Sa",
+        "Su": "Su",
+        "PH": "PH",
+        "off": "Off",
+        "24/7": "24/7"
+    }
+}

@@ -1,0 +1,561 @@
+{
+    "category": {
+        // カテゴリ名取得は最初に見つかったものから
+        // marker.jsoncと行数合わせの行
+        "*": {
+            "*": "-"
+        },
+        "amenity": {
+            "atm": "ATM",
+            "arts_centre": "アートセンター",
+            "bar": "バー/酒場",
+            "bank": "銀行",
+            "bbq": "バーベキュー",
+            "bench": "ベンチ",
+            "bicycle_parking": "駐輪場(バイク)",
+            "bicycle_rental": "レンタサイクル",
+            "biergarten": "ビアガーデン",
+            "bureau_de_change": "両替所",
+            "bus_station": "バスターミナル",
+            "cafe": "カフェ/喫茶店",
+            "car_sharing": "カーシェア",
+            "childcare": "保育所",
+            "clinic": "クリニック",
+            "clock": "時計",
+            "college": "専門学校/短大/大学",
+            "community_centre": "コミュニティセンター・スペース",
+            "courthouse": "裁判所",
+            "coworking_space": "コワーキングスペース",
+            "crematorium": "火葬場",
+            "cinema": "映画館",
+            "dentist": "歯医者",
+            "doctors": "医者",
+            "dojo": "道場",
+            "drinking_water": "水飲み場",
+            "exhibition_centre": "展示場",
+            "fast_food": "ファーストフード",
+            "ferry_terminal": "フェリーターミナル",
+            "fire_station": "消防署",
+            "food_court": "フードコート",
+            "fountain": "噴水",
+            "fuel": "給油所",
+            "gambling": "娯楽",
+            "grave_yard": "墓地",
+            "hospital": "病院",
+            "ice_cream": "アイスクリーム店",
+            "internet_cafe": "インターネットカフェ",
+            "karaoke_box": "カラオケボックス",
+            "kindergarten": "幼稚園",
+            "language_school": "語学学校",
+            "lavoir": "共同洗い場",
+            "library": "図書館",
+            "luggage_locker": "コインロッカー",
+            "nightclub": "クラブ/ライブハウス",
+            "marketplace": "市場",
+            "motorcycle_parking": "バイク駐車場",
+            "parking": "駐車場",
+            "payment_terminal": "支払端末",
+            "pharmacy": "薬局",
+            "photo_booth": "フォトブース",
+            "prep_school": "塾/予備校",
+            "place_of_worship": "宗教施設",
+            "police": "警察署",
+            "post_box": "郵便ポスト",
+            "post_office": "郵便局",
+            "prison": "刑務所",
+            "pub": "パブ/居酒屋",
+            "public_bath": "公衆浴場",
+            "public_bookcase": "街角文庫",
+            "recycling": "リサイクル",
+            "restaurant": "レストラン",
+            "sanitary_dump_station": "廃棄物処理",
+            "school": "学校",
+            "shelter": "東屋/避難所",
+            "shower": "シャワー",
+            "social_facility": "社会福祉施設",
+            "smoking_area": "喫煙所",
+            "stage": "ステージ",
+            "studio": "スタジオ",
+            "taxi": "タクシー乗り場",
+            "telephone": "公衆電話",
+            "theatre": "劇場",
+            "toilets": "トイレ",
+            "townhall": "役所",
+            "university": "総合大学",
+            "vending_machine": "自動販売機",
+            "veterinary": "動物病院",
+            "waste_basket": "ゴミ箱",
+            "waste_disposal": "ゴミ集積場",
+            "water_point": "給水所"
+        },
+        "assembly_point:tsunami": {
+            "yes": "津波避難"
+        },
+        "attraction": {
+            "animal": "動物"
+        },
+        "barrier": {
+            "gate": "門",
+            "hedge": "生垣"
+        },
+        "bridge": {
+            "yes": "橋"
+        },
+        "building": {
+            "apartments": "アパート",
+            "detached": "一戸建て",
+            "museum": "博物館",
+            "office": "事務所",
+            "public": "公共建築",
+            "temple": "寺院",
+            "residential": "住居",
+            "retail": "店舗",
+            "yes": "建物"
+        },
+        "craft": {
+            "brewery": "醸造所",
+            "carpenter": "工務店",
+            "confectionery": "菓子工房",
+            "lighting": "照明工房",
+            "photographer": "写真館",
+            "yes": "工房"
+        },
+        "diplomatic": {
+            "embassy": "大使館"
+        },
+        "disused:amenity": {
+            "school": "廃校"
+        },
+        "emergency": {
+            "assembly_point": "避難場所",
+            "fire_extinguisher": "消火器",
+            "fire_hydrant": "消火栓",
+            "fire_hose": "消火ホース",
+            "fire_lookout": "火の見櫓",
+            "defibrillator": "AED",
+            "siren": "サイレン",
+            "water_tank": "防火水槽"
+        },
+        "entrance": {
+            "main": "出入口(正面)",
+            "yes": "出入口"
+        },
+        "healthcare": {
+            "alternative": "治療院"
+        },
+        "office": {
+            "company": "会社",
+            "coworking": "コワーキング(事務所)",
+            "estate_agent": "不動産屋",
+            "foundation": "財団・協会",
+            "government": "政府機関"
+        },
+        "shop": {
+            "agrarian": "農協/農業用品店",
+            "alcohol": "酒屋",
+            "appliance": "家電量販店",
+            "art": "アート",
+            "anime": "アニメショップ",
+            "baby_goods": "ベビー用品",
+            "bakery": "パン屋",
+            "beauty": "美容院",
+            "beverages": "飲料",
+            "bicycle": "バイク店",
+            "books": "本屋",
+            "boutique": "ブティック",
+            "brewing_supplies": "醸造所",
+            "butcher": "精肉店",
+            "car": "自動車屋",
+            "car_parts": "自動車パーツ店",
+            "cheese": "チーズ店",
+            "chemist": "薬局",
+            "chocolate": "チョコレート店",
+            "clothes": "洋服店",
+            "coffee": "コーヒー店",
+            "computer": "パソコン屋",
+            "confectionery": "お菓子店",
+            "convenience": "コンビニエンスストア",
+            "cosmetics": "化粧品店",
+            "dairy": "乳製品店",
+            "deli": "お弁当/惣菜屋",
+            "department_store": "百貨店",
+            "doityourself": "ホームセンター",
+            "dry_cleaning": "クリーニング店",
+            "electronics": "家電販売屋",
+            "farm": "農場直売店",
+            "florist": "花屋",
+            "frozen_food": "冷凍食品専門店",
+            "funeral_directors": "葬儀社",
+            "furniture": "家具屋",
+            "garden_centre": "園芸用品店",
+            "general": "雑貨店",
+            "gift": "土産屋",
+            "greengrocer": "八百屋",
+            "hairdresser": "美容院",
+            "hardware": "金物店",
+            "health_food": "健康食品店",
+            "houseware": "家庭用品店",
+            "ice_cream": "アイスクリーム店",
+            "interior_decoration": "内装用品",
+            "jewelry": "宝飾店",
+            "kiosk": "キオスク",
+            "laundry": "ランドリー",
+            "mall": "ショッピングモール",
+            "massage": "マッサージ店",
+            "medical_supply": "医療用品店",
+            "motorcycle": "自転車屋",
+            "newsagent": "新聞販売店",
+            "optician": "メガネ店",
+            "pasta": "パスタ専門店",
+            "pastry": "お菓子店(焼き菓子)",
+            "pawnbroker": "質屋",
+            "photo": "写真店",
+            "rice": "米穀店",
+            "seafood": "鮮魚店",
+            "second_hand": "中古屋",
+            "shoes": "靴屋",
+            "spices": "スパイス専門店",
+            "stationery": "文具店",
+            "supermarket": "スーパーマーケット",
+            "tailor": "仕立て屋",
+            "tea": "お茶専門店",
+            "ticket": "チケット店",
+            "tobacco": "タバコ屋",
+            "travel_agency": "旅行代理店",
+            "variety_store": "雑貨店",
+            "video_games": "ビデオゲーム店",
+            "water": "飲料水専門店",
+            "watches": "時計店",
+            "wine": "ワイン専門店"
+        },
+        "natural": {
+            "peak": "頂上",
+            "stone": "石",
+            "tree": "樹木",
+            "tree_row": "並木",
+            "water": "池",
+            "wetland": "湿地帯",
+            "wood": "森"
+        },
+        "highway": {
+            "bus_stop": "バス停",
+            "traffic_signals": "信号機",
+            "steps": "階段",
+            "street_lamp": "街灯",
+            "elevator": "エレベーター"
+        },
+        "social_facility": {
+            "shelter": "一時避難所"
+        },
+        "playground": {
+            "activitypanel": "パネル遊具",
+            "aerialrotator": "回旋塔",
+            "agility_trail": "アスレチックコース",
+            "balancebeam": "平均台",
+            "basketrotator": "旋回カゴ",
+            "basketswing": "カゴブランコ",
+            "bridge": "橋",
+            "climbing": "クライミング",
+            "climbingframe": "ジャングルジム",
+            "climbingwall": "クライミングウォール",
+            "cushion": "ふわふわドーム",
+            "dome": "ドーム",
+            "exercise": "健康遊具",
+            "hamster_wheel": "回し車",
+            "hopscotch": "遊べるフィールド",
+            "horizontal_bar": "鉄棒",
+            "ladder": "はしご",
+            "map": "マップ",
+            "monkey_bars": "雲梯",
+            "mound": "円丘",
+            "playhouse": "プレイハウス",
+            "play_sculpture": "遊具彫刻",
+            "roundabout": "メリーゴーランド",
+            "rope_swing": "ロープスイング",
+            "ride_on": "乗り物",
+            "sandpit": "砂場",
+            "seesaw": "シーソー",
+            "sledding": "小さな丘",
+            "sieve": "砂ふるい",
+            "slide": "すべり台",
+            "splash_pad": "水遊びをする場所",
+            "springy": "スプリング",
+            "stepping_post": "ステッピングポスト",
+            "stepping_stones": "飛び石",
+            "stepping_tires": "並んだタイヤ",
+            "structure": "複合遊具",
+            "swing": "ブランコ",
+            "swing_carousel": "回転遊具",
+            "teenshelter": "子ども用東屋",
+            "tire": "タイヤ",
+            "trampoline": "トランポリン",
+            "tunnel_tube": "トンネル",
+            "water": "水や泥で遊ぶ場所",
+            "water_channel": "水路",
+            "youth_bench": "運動用ベンチ",
+            "zipwire": "ジップライン"
+        },
+        "tourism": {
+            "apartment": "リゾートマンション",
+            "attraction": "観光名所",
+            "artwork": "アート作品",
+            "gallery": "ギャラリー",
+            "guest_house": "ゲストハウス",
+            "hotel": "ホテル",
+            "hostel": "簡易宿泊所",
+            "information": "案内",
+            "museum": "美術館",
+            "picnic_site": "ピクニックサイト",
+            "theme_park": "テーマパーク",
+            "viewpoint": "ビューポイント",
+            "zoo": "動物園"
+        },
+        "historic": {
+            "aircraft": "航空機(展示)",
+            "archaeological_site": "遺跡・古墳",
+            "battlefield": "古戦場",
+            "boundary_stone": "境界石",
+            "building": "歴史的建築物",
+            "castle": "お城",
+            "cannon": "大砲(展示)",
+            "memorial": "石碑",
+            "monument": "記念建造物",
+            "milestone": "一里塚",
+            "heritage": "遺産",
+            "tomb": "墓",
+            "locomotive": "機関車(引退済み)",
+            "street_lamp": "照明（保存）",
+            "wayside_shrine": "地蔵・道祖神",
+            "wayside_cross": "十字架",
+            "vehicle": "車両(展示)"
+        },
+        "information": {
+            "board": "掲示板",
+            "terminal": "情報端末",
+            "audioguide": "音声ガイド",
+            "map": "地図",
+            "tactile_map": "触地図",
+            "guidepost": "道しるべ"
+        },
+        "man_made": {
+            "bridge": "橋",
+            "torii": "鳥居",
+            "lamp": "灯籠",
+            "tower": "塔/鐘楼",
+            "surveillance": "監視機器",
+            "works": "工場"
+        },
+        "landuse": {
+            "farmland": "農地",
+            "religious": "信仰",
+            "industrial": "工業",
+            "forest": "森",
+            "orchard": "果樹園",
+            "aquaculture": "養殖場(水域)",
+            "reservoir": "貯水池",
+            "retail": "商業エリア",
+            "grass": "芝生",
+            "recreation_ground": "レクリエーション広場"
+        },
+        "leisure": {
+            "adult_gaming_centre": "パチンコ/パチスロ",
+            "amusement_arcade": "ゲームセンター",
+            "bandstand": "舞台",
+            "dance": "ダンスホール",
+            "fitness_centre": "フィットネスセンター",
+            "garden": "庭",
+            "pitch": "グラウンド",
+            "park": "公園",
+            "playground": "児童公園",
+            "swimming_pool": "水泳プール"
+        },
+        "railway": {
+            "station": "鉄道駅"
+        },
+        "public_transport": {
+            "station": "鉄道駅"
+        },
+        "place": {
+            "city": "都市",
+            "square": "広場",
+            "suburb": "区",
+            "quarter": "大字",
+            "neighbourhood": "小字"
+        },
+        "waterway": {
+            "canal": "運河",
+            "lock_gate": "関門",
+            "river": "川",
+            "stream": "小川",
+            "waterfall": "滝"
+        },
+        "suffix_covid19": "(暫定)",
+        "bookmarked": "スターつき"
+    },
+    "category_sub": {
+        "amenity": {
+            "gambling": {
+                "mahjong": "麻雀"
+            },
+            "social_facility": {
+                "shelter": "一時避難所"
+            }
+        },
+        "artwork": {
+            "artwork_type": {
+                "bust": "胸像",
+                "sculpture": "彫刻",
+                "mural": "壁画",
+                "graffiti": "落書き",
+                "installation": "インスタレーション",
+                "stone": "石像",
+                "statue": "彫像",
+                "painting": "描画",
+                "architecture": "建築",
+                "mosaic": "モザイク",
+                "tilework": "タイル細工",
+                "relief": "レリーフ",
+                "fountain": "噴水",
+                "streetart": "ストリートアート",
+                "street_art": "ストリートアート",
+                "azulejo": "アズレージョ"
+            }
+        },
+        "healthcare": {
+            "healthcare:speciality": {
+                "acupuncture": "鍼灸院"
+            }
+        },
+        "restaurant": {
+            "cuisine": {
+                "american": "アメリカ料理",
+                "asian": "アジア料理",
+                "barbecue": "焼肉・バーベキュー",
+                "bbq": "焼肉・バーベキュー",
+                "beef_bowl": "牛丼",
+                "bento": "弁当",
+                "bowl": "丼",
+                "burger": "ハンバーガー",
+                "cake": "ケーキ",
+                "chicken": "鶏料理",
+                "chinese": "中国料理",
+                "coffee": "コーヒー",
+                "coffee_shop": "喫茶店",
+                "crepe": "クレープ",
+                "curry": "カレー",
+                "donut": "ドーナツ",
+                "fish": "魚料理",
+                "fish_and_chips": "フィッシュアンドチップス",
+                "french": "フランス料理",
+                "fried_food": "揚げ物",
+                "german": "ドイツ料理",
+                "greek": "ギリシア料理",
+                "gyoza": "餃子",
+                "gyudon": "牛丼",
+                "ice_cream": "アイスクリーム",
+                "indian": "インド料理",
+                "international": "多国籍料理",
+                "italian": "イタリア料理",
+                "italian_pizza": "イタリアンピザ",
+                "japanese": "日本料理",
+                "kebab": "ケバブ",
+                "korean": "韓国料理",
+                "local": "郷土料理",
+                "mexican": "メキシコ料理",
+                "noodle": "麺",
+                "noodles": "麺",
+                "okonomiyaki": "お好み焼き",
+                "pancake": "パンケーキ",
+                "pasta": "パスタ",
+                "pizza": "ピザ",
+                "ramen": "ラーメン",
+                "regional": "郷土料理",
+                "sandwich": "サンドイッチ",
+                "savory_pancakes": "お好み焼き",
+                "seafood": "魚介料理",
+                "soba": "そば",
+                "spanish": "スペイン料理",
+                "steak": "ステーキ",
+                "steak_house": "ステーキ",
+                "steamed_eel_rice": "鰻丼",
+                "sushi": "寿司",
+                "taiwanese": "台湾料理",
+                "takoyaki": "たこ焼き",
+                "thai": "タイ料理",
+                "tonkatsu": "とんかつ",
+                "turkish": "トルコ料理",
+                "udon": "うどん",
+                "unagi": "うなぎ",
+                "vegetarian": "精進料理",
+                "vietnamese": "ベトナム料理",
+                "western": "洋食",
+                "yakiniku": "焼肉",
+                "yakitori": "焼鳥"
+            },
+            "takeaway": {
+                "yes": "持ち帰りあり",
+                "no": "持ち帰りなし",
+                "only": "持ち帰り専門"
+            },
+            "delivery": {
+                "yes": "宅配あり",
+                "no": "宅配なし",
+                "only": "宅配専門"
+            },
+            "diet": {
+                "diet:pescetarian": "ペクスタリアン",
+                "diet:vegetarian": "ベジタリアン",
+                "diet:lacto_vegetarian": "ラクト・ベジタリアン",
+                "diet:ovo_vegetarian": "オボ・ベジタリアン",
+                "diet:vegan": "ヴィーガン",
+                "diet:fruitarian": "フルータリアン",
+                "diet:raw": "未料理/未加工",
+                "diet:gluten_free": "グルテンフリー",
+                "diet:dairy_free": "デイリーフリー",
+                "diet:lactose_free": "ラクトースフリー",
+                "diet:halal": "ハラル",
+                "diet:kosher": "コーシェル"
+            }
+        },
+        "place_of_worship": {
+            "religion": {
+                "shinto": "鳥居",
+                "buddhist": "仏教"
+            }
+        },
+        "parking": {
+            "access": {
+                "private": "私用"
+            }
+        },
+        "social_facility": {
+            "social_facility": {
+                "shelter": "一時避難所"
+            }
+        },
+        "tree": {
+            "species": {
+                "Cherry blossom": "桜",
+                "Cerasus itosakura": "桜",
+                "Cerasus × yedoensis": "桜"
+            },
+            "species:en": {
+                "Cherry blossom": "桜",
+                "Cerasus itosakura": "桜",
+                "Cerasus × yedoensis": "桜"
+            }
+        }
+    },
+    "opening_hours": {
+        "Mo": "月",
+        "Tu": "火",
+        "We": "水",
+        "Th": "木",
+        "Fr": "金",
+        "Sa": "土",
+        "Su": "日",
+        "PH": "祝日",
+        "off": "休業",
+        "24/7": "24時間営業"
+    }
+}

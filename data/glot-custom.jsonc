@@ -1,0 +1,94 @@
+{
+    "site_title": {
+        "ja": "EXPO2025非公式マニアックマップ",
+        "en": "EXPO2025 Maniacs Map(UnOfficial)"
+    },
+    "site_subtitle": {
+        "ja": "by OpenStreetMap",
+        "en": "by OpenStreetMap"
+    },
+    "about": {
+        "ja": "EXPO2025非公式マニアックマップについて",
+        "en": "about EXPO2025 Maniacs Map(UnOfficial)"
+    },
+    "about_message": {
+        "ja": "EXPO2025に関する情報を地図に表示するWebアプリです。データはOpenStreetMapを利用しています。",
+        "en": "It is a web application that displays information about EXPO2025 Maniacs Map(UnOfficial), utilizing data from OpenStreetMap."
+    },
+    "owner": {
+        "ja": "",
+        "en": ""
+    },
+    "licence_title": {
+        "ja": "利用しているデータについて",
+        "en": "About the data being used"
+    },
+    "licence_message": {
+        "ja": "このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
+        "en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
+    },
+    "develop_site": {
+        "ja": "EXPO2025非公式マニアックマップの開発サイトへ",
+        "en": "EXPO2025 Maniacs Map(UnOfficial) development site"
+    },
+    "more_message": {
+        "ja": "",
+        "en": ""
+    },
+    "activities": {
+        "ja": "活動履歴",
+        "en": "Activities"
+    },
+    "libc": {
+        "ja": "年表",
+        "en": "chronology"
+    },
+    "act_date": {
+        "ja": "確認日",
+        "en": "Disaster Date"
+    },
+    "act_title": {
+        "ja": "題名",
+        "en": "Subject"
+    },
+    "act_attention": {
+        "ja": "写真URLにWikimedia Commonsを指定する時は、タイトルを入力してください(例 File:遊具名.jpg)",
+        "en": "When specifying Wikimedia Commons for the photo URL, enter the title (e.g. File: Play equipment name.jpg)"
+    },
+    "act_memo": {
+        "ja": "説明",
+        "en": "Detail"
+    },
+    "act_official_url": {
+        "ja": "公式サイトURL",
+        "en": "Public Site URL"
+    },
+    "act_recommend_url": {
+        "ja": "オススメURL",
+        "en": "Recommend URL"
+    },
+    "act_detail_url": {
+        "ja": "詳細URL",
+        "en": "Detail URL"
+    },
+    "act_picture_url1": {
+        "ja": "写真URL1",
+        "en": "Picture URL1"
+    },
+    "act_picture_url2": {
+        "ja": "写真URL2",
+        "en": "Picture URL2"
+    },
+    "act_picture_url3": {
+        "ja": "写真URL3",
+        "en": "Picture URL3"
+    },
+    "act_picture_url4": {
+        "ja": "写真URL4",
+        "en": "Picture URL3"
+    },
+    "act_picture_url5": {
+        "ja": "写真URL5",
+        "en": "Picture URL3"
+    }
+}

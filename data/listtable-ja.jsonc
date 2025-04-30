@@ -1,0 +1,35 @@
+{
+    "list": {
+        "height": 0.2,
+        "columns": {
+            "common": [
+                {
+                    "id": "osmid",
+                    "hidden": true
+                },
+                {
+                    "id": "category",
+                    "name": "種類",
+                    "width": "50%"
+                },
+                {
+                    "id": "name",
+                    "name": "名称",
+                    "width": "30%"
+                }
+            ],
+            "poi_fields": [
+                "id",
+                "#category",
+                "name",
+                ""
+            ],
+            "act_fields": [     //#付きはOSMタグ、ただし#categoryのみ内部判定結果
+                "id",
+                "#category",
+                "memo",
+                "picture_url1"
+            ]
+        }
+    }
+}

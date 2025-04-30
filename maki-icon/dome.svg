@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128mm"
+   height="128mm"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="dome.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.1956037"
+     inkscape:cx="243.39169"
+     inkscape:cy="247.57368"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="11.064842 : 4.471148 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="139.06484 : 4.471148 : 1"
+       inkscape:persp3d-origin="75.064842 : -16.862185 : 1"
+       id="perspective292" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;stroke-width:0.0528871;paint-order:markers stroke fill"
+       id="path416"
+       sodipodi:type="arc"
+       sodipodi:cx="64.397392"
+       sodipodi:cy="-87.608551"
+       sodipodi:rx="57.75848"
+       sodipodi:ry="47.852238"
+       sodipodi:start="0"
+       sodipodi:end="3.1513644"
+       sodipodi:arc-type="arc"
+       d="M 122.15587,-87.608551 A 57.75848,47.852238 0 0 1 93.113551,-46.089584 57.75848,47.852238 0 0 1 35.19291,-46.324042 57.75848,47.852238 0 0 1 6.6416698,-88.076144"
+       transform="scale(1,-1)"
+       sodipodi:open="true" />
+  </g>
+</svg>

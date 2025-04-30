@@ -1,0 +1,311 @@
+/* tag defaults */
+html {
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    margin: 0px !important;
+    padding: 0px !important;
+    color: #ffffff !important;
+    background-size: inherit;
+}
+
+body {
+    font-family: "Tahoma";
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+h4 {
+    font-size: 1.3em !important;
+    margin-right: auto;
+}
+
+h5 {
+    font-size: 1.2em !important;
+    font-weight: bold;
+}
+
+/* body dom */
+
+a {
+    overflow-wrap: break-word;
+    color: rgb(0 117 58);
+}
+
+#container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#article {
+    float: none;
+    clear: both;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+}
+
+#mapid {
+    height: 100%;
+}
+
+.basemenu {
+    background-image: linear-gradient(335deg, rgb(235, 235, 240), rgb(255, 255, 255));
+}
+
+/* list */
+ul {
+    /*column-count: 3;*/
+    list-style-type: none;
+}
+
+li::before {
+    position: relative;
+    top: -2px;
+    left: -12px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 100%;
+    background: green;
+}
+
+div.showcase {
+    overflow-x: scroll;
+    width: 100vw;
+    display: flex;
+    user-select: none;
+}
+
+div.showcase::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+}
+
+div.showcase::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+div.showcase::-webkit-scrollbar-thumb {
+    height: 5px;
+    background-color: #404080;
+}
+
+/* fade out */
+
+#fadeLayer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    display: none;
+    z-index: 3000;
+}
+
+img.w100 {
+    width: 100%;
+}
+
+/* Activity Modal Icon Size */
+h4 img {
+    height: 1.5em;
+    margin-right: 0.3em;
+}
+
+h2.zoom {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 6px;
+    margin: 0px;
+}
+
+.menu {
+    margin: 2px 0px;
+    border: 1px solid;
+    width: initial !important;
+    height: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5em;
+}
+
+span {
+    font-size: 1rem;
+}
+
+/* マーカーのフォントサイズ選択 */
+span.fs-10 {
+    font-size: 10px;
+}
+
+span.fs-12 {
+    font-size: 12px;
+}
+
+span.fs-14 {
+    font-size: 14px;
+}
+
+/* button for select way color */
+.modal-backdrop.show {
+    opacity: 0;
+}
+
+.modal-dialog-fluid {
+    max-width: 800px !important;
+    max-height: 98% !important;
+    width: 98%;
+    margin: auto !important;
+}
+
+.modal-body {
+    font-size: 14px !important;
+    overflow-x: hidden;
+}
+
+input[type="search"] {
+    font-size: 14px;
+    display: inline-block;
+    width: calc(180px - 4em);
+}
+
+/* for Grid.js */
+th.gridjs-th {
+    padding: 2px 4px !important;
+    margin: 0px 8px !important;
+}
+
+td.gridjs-td {
+    padding: 2px 4px !important;
+    cursor: pointer !important;
+}
+
+tr:hover td {
+    background-color: #d9efff !important;
+}
+
+tr.selected td {
+    background-color: #d9efff !important;
+}
+
+/* spinner */
+#list_spinner {
+    position: absolute;
+    margin: auto;
+    left: 0px;
+    z-index: 9999;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.modal-title {
+    height: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#PinchImage {
+    display: none;
+    height: auto;
+    position: fixed;
+    z-index: 10000;
+    cursor: zoom-out;
+}
+
+#PinchImageBK {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    position: absolute;
+    background-color: #000000A0;
+    top: 0px;
+    left: 0px;
+}
+
+#scrollHand {
+    display: none;
+    z-index: 3000;
+    position: absolute;
+    width: 100vw;
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes swing {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: scale(1, 1) translate(0%, 0%);
+    }
+
+    15% {
+        transform: scale(0.9, 0.9) translate(0%, 5%);
+    }
+
+    30% {
+        transform: scale(1.1, 0.8) translate(0%, 8%);
+    }
+
+    50% {
+        transform: scale(0.8, 1.1) translate(0%, -8%);
+    }
+
+    70% {
+        transform: scale(1.0, 0.9) translate(0%, 5%);
+    }
+
+    100% {
+        transform: scale(1, 1) translate(0%, 0%);
+    }
+}

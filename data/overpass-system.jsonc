@@ -1,0 +1,34 @@
+{
+    "osm": {
+        "*": {
+            "tags": [],
+            "titles": [
+                "name",
+                "operator"
+            ]
+        },
+        "wikipedia": {
+            "marker": "wikipedia.svg",
+            "api_": "wikipedia.org/w/api.php?format=json&action=query&prop=extracts%7Cimages&exintro=&explaintext=&titles=",
+            "api": "wikipedia.org/api/rest_v1/page/summary/",
+            "domain": "wikipedia.org",
+            "tag": "wikipedia",
+            "overpass": [
+                "node[\"wikipedia\"][!\"highway\"][\"public_transport\"!=\"stop_position\"]",
+                "way[\"wikipedia\"][!\"highway\"][!\"railway\"]",
+                "relation[\"wikipedia\"][!\"route\"][!\"highway\"][!\"railway\"][\"name:ja\"!=\"本州\"][\"area\"!=\"yes\"][!\"boundary\"][!\"admin_level\"]"
+            ],
+            "tags": [
+                "wikipedia"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#7070C0",
+                "stroke-width": 1
+            },
+            "titles": [
+                "name"
+            ]
+        }
+    }
+}
