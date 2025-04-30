@@ -146,6 +146,7 @@
         "office": {
             "company": "company",
             "coworking": "coworking",
+            "courier": "courier",
             "estate_agent": "estate agent",
             "foundation": "foundation",
             "government": "government"
@@ -203,6 +204,7 @@
             "mall": "shopping mall",
             "massage": "massage",
             "medical_supply": "medical supply",
+            "mobile_phone": "mobile phone",
             "motorcycle": "motorcycle",
             "newsagent": "newsagent",
             "optician": "optician",
@@ -343,6 +345,7 @@
             "lamp": "lantern",
             "tower": "tower",
             "surveillance": "surveillance",
+            "water_tap": "water tap",
             "works": "works"
         },
         "landuse": {

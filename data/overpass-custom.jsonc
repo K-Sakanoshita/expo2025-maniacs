@@ -62,20 +62,20 @@
         "expo2025_poi": {
             "overpass": [
                 "nwr[\"amenity\"]",
-                "nwr[\"emergency\"]",
                 "nwr[\"historic\"]",
                 "nwr[\"tourism\"]",
                 "nwr[\"office\"]",
                 "nwr[\"shop\"]",
+                "nwr[\"man_made\"]",
                 "node[\"highway\"=\"elevator\"]"
             ],
             "tags": [
                 "amenity",
-                "emergency",
                 "historic",
                 "tourism",
                 "office",
                 "shop",
+                "man_made",
                 "natural!=tree",
                 "highway=elevator"
             ],

@@ -145,6 +145,7 @@
             },
             "office": {
                 "company": "briefcase.svg",
+                "courier": "truck.svg",
                 "coworking": "suitcase.svg",
                 "estate_agent": "real_estate_agency.svg",
                 "foundation": "briefcase.svg",
@@ -204,6 +205,7 @@
                 "massage": "massage.svg",
                 "medical_supply": "medical_supply.svg",
                 "motorcycle": "motorcycle.svg",
+                "mobile_phone": "mobile-phone.svg",
                 "newsagent": "newspaper-solid.svg",
                 "optician": "optician.svg",
                 "pasta": "restaurant.svg",
@@ -343,6 +345,7 @@
                 "lamp": "lantern.svg",
                 "tower": "Emoji_Black_bell2.svg",
                 "surveillance": "marker-stroked.svg",
+                "water_tap": "water.svg",
                 "works": "factory.svg"
             },
             "landuse": {

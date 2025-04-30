@@ -146,6 +146,7 @@
         "office": {
             "company": "会社",
             "coworking": "コワーキング(事務所)",
+            "courier": "宅配便/宅急便",
             "estate_agent": "不動産屋",
             "foundation": "財団・協会",
             "government": "政府機関"
@@ -203,6 +204,7 @@
             "mall": "ショッピングモール",
             "massage": "マッサージ店",
             "medical_supply": "医療用品店",
+            "mobile_phone": "携帯電話/関連店",
             "motorcycle": "自転車屋",
             "newsagent": "新聞販売店",
             "optician": "メガネ店",
@@ -343,6 +345,7 @@
             "lamp": "灯籠",
             "tower": "塔/鐘楼",
             "surveillance": "監視機器",
+            "water_tap": "水道蛇口",
             "works": "工場"
         },
         "landuse": {
