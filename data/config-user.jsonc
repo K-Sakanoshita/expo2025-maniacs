@@ -10,8 +10,8 @@
         "maxPitch": 60,
         "maxBounds": [ // 地図の表示範囲(左下、右上)
             [
-                135.35,
-                34.625
+                135.36,
+                34.627
             ],
             [
                 135.41,
@@ -52,6 +52,7 @@
         "loadingUrl": "./image/loading.gif"
     },
     "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
+        "default": "tags,amenity.exhibition_centre",
         "menu": "",
         /*{
         "2010年時点の地図(日本)": "Japan2010",

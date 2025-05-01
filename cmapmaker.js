@@ -71,13 +71,15 @@ class CMapMaker {
         }
     }
 
-    viewArea(targets) {			// Area(敷地など)を表示させる
+    viewArea() {			// Area(敷地など)を表示させる
         console.log(`viewArea: Start.`)
-        targets = targets[0] == "-" ? poiCont.getTargets() : targets;	// '-'はすべて表示
+        let targets = poiCont.getTargets()  // 
         targets.forEach((target) => {
-            console.log("viewArea: " + target)
-            let pois = poiCont.getPois(target)
-            mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target)
+            if (!Conf.osm["green_area"].expression.poiView) {   // poiView == falseが対象
+                console.log("viewArea: " + target)
+                let pois = poiCont.getPois(target)
+                mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target)
+            }
         })
         console.log("viewArea: End.")
     }
@@ -100,6 +102,7 @@ class CMapMaker {
             let nowzoom = mapLibre.getZoom(false)
             targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
             targets.forEach((target) => {
+                if (Conf.osm[target].expression == undefined) console.log("???: target")
                 let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
                 let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
                 if ((target == nowselect || nowselect == "-") && flag && poiView) {	// 選択している種別の場合
@@ -339,7 +342,7 @@ class CMapMaker {
                                 }
                                 listTable.filterCategory(listTable.getSelCategory())
                                 if (window.getSelection) window.getSelection().removeAllRanges();
-                                this.viewArea(targets)	// in targets
+                                this.viewArea()	        // 入手したgeoJsonを追加
                                 this.viewPoi(targets)	// in targets
                                 this.makeImages(true)
                             }
@@ -355,7 +358,7 @@ class CMapMaker {
 					console.log("eventMoveMap: Reject");
 					reject();
 				});*/
-            }, 700);
+            }, 500);
         };
         return new Promise((resolve, reject) => {
             if (this.moveMapBusy < 2) {
@@ -398,6 +401,7 @@ class CMapMaker {
 
     // EVENT: カテゴリ変更時のイベント
     eventChangeCategory() {
+        console.log("eventChange.")
         if (Conf.selectItem.menu == "") {	// listTableリンク時
             let selcategory = listTable.getSelCategory()
             let targets = Conf.listTable.target == "targets" ? [selcategory] : ["-"]
@@ -413,5 +417,6 @@ class CMapMaker {
             let catname = `?category=${list_category.value}`
             history.replaceState('', '', location.pathname + catname + location.hash)
         }
+        this.eventMoveMap();    // ViewPoi
     };
 };

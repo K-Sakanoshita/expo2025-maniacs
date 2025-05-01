@@ -32,7 +32,7 @@
             "doctors": "医者",
             "dojo": "道場",
             "drinking_water": "水飲み場",
-            "exhibition_centre": "展示場",
+            "exhibition_centre": "展示場・パビリオン",
             "fast_food": "ファーストフード",
             "ferry_terminal": "フェリーターミナル",
             "fire_station": "消防署",
@@ -70,7 +70,7 @@
             "restaurant": "レストラン",
             "sanitary_dump_station": "廃棄物処理",
             "school": "学校",
-            "shelter": "東屋/避難所",
+            "shelter": "休憩所/避難所",
             "shower": "シャワー",
             "social_facility": "社会福祉施設",
             "smoking_area": "喫煙所",
@@ -345,7 +345,7 @@
             "lamp": "灯籠",
             "tower": "塔/鐘楼",
             "surveillance": "監視機器",
-            "water_tap": "水道蛇口",
+            "water_tap": "手洗い場",
             "works": "工場"
         },
         "landuse": {
