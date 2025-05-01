@@ -84,7 +84,9 @@
                 "nwr[\"amenity\"=\"vending_machine\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"vending_machine\"]",
+                "nwr[\"building\"][\"name\"]",
                 "nwr[\"tourism\"=\"information\"]",
+                "nwr[\"tourism\"=\"artwork\"]",
                 "nwr[\"office\"]",
                 "nwr[\"shop\"=\"convenience\"]",
                 "nwr[\"shop\"=\"bakery\"]",
@@ -98,6 +100,8 @@
             ],
             "tags": [
                 "amenity",
+                "building",
+                "name",
                 "tourism",
                 "office",
                 "shop",
