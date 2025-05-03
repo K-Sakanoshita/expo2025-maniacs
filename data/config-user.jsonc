@@ -14,20 +14,28 @@
                 34.627
             ],
             [
-                135.41,
+                135.405,
                 34.665
             ]
         ],
-        "initZoom": 14.6,
+        "initZoom": 14,
         "maxZoom": 20,
-        "modalZoom": 20 // モーダルダイアログ表示時のズームサイズ   
+        "modalZoom": 18 // モーダルダイアログ表示時のズームサイズ   
     },
     "view": {
-        "poiActLoad": true, // 起動時にActivityを読み込むか
+        "poiActLoad": false, // 起動時にActivityを読み込むか
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
             "green_area": 13,
             "expo2025_area": 12,
+            "expo2025_placeL": 12,
+            "expo2025_placeW": 12,
+            "expo2025_placeC": 12,
+            "expo2025_placeE": 12,
+            "expo2025_placeS": 12,
+            "expo2025_placeX": 12,
+            "expo2025_placeP": 12,
+            "expo2025_private": 12,
             "expo2025_wall": 13,
             "expo2025_poi": 13,
             "expo2025_door": 16,
@@ -38,6 +46,14 @@
             // 編集時に追加するpoiZoom
             "green_area": 15,
             "expo2025_area": 15,
+            "expo2025_placeL": 12,
+            "expo2025_placeW": 12,
+            "expo2025_placeC": 12,
+            "expo2025_placeE": 12,
+            "expo2025_placeS": 12,
+            "expo2025_placeX": 12,
+            "expo2025_placeP": 12,
+            "expo2025_private": 15,
             "expo2025_wall": 15,
             "expo2025_poi": 15,
             "expo2025_door": 15,
@@ -68,7 +84,7 @@
     },
     "listTable": {
         "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
-        "target": "tags", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+        "target": "expo2025_poi", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
@@ -109,7 +125,7 @@
             },
             {
                 "glot-model": "develop_site",
-                "linkto": "https://github.com/armd-02/openhc-map/",
+                "linkto": "https://github.com/K-Sakanoshita/expo2025-maniacs",
                 "divider": false
             },
             {

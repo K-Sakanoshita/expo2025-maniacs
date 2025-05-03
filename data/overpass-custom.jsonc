@@ -7,16 +7,16 @@
             ],
             "tags": [
                 "natural",
-                "barrier"
+                "barrier=hedge"
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#50A050",
-                "stroke-width": 3
+                "stroke-width": 2,
+                "fill-opacity": 0.5
             },
             "titles": [
-                "name",
-                "operator"
+                "name"
             ]
         },
         "expo2025_area": {
@@ -28,35 +28,168 @@
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
-                "stroke": "#FF0000",
-                "stroke-width": 2
+                "stroke": "#404040",
+                "stroke-width": 3,
+                "fill-opacity": 0.05
             },
             "titles": [
-                "name",
-                "operator"
+                "name"
+            ]
+        },
+        "expo2025_placeL": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"L\"]"
+            ],
+            "tags": [
+                "ref=L"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#00FF00",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeW": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"W\"]"
+            ],
+            "tags": [
+                "ref=W"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#0099FF",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeC": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"C\"]"
+            ],
+            "tags": [
+                "ref=C"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#25B1D1",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeE": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"E\"]"
+            ],
+            "tags": [
+                "ref=E"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#FF0000",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeS": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"S\"]"
+            ],
+            "tags": [
+                "ref=S"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#C06060",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeX": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"X\"]"
+            ],
+            "tags": [
+                "ref=X"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#C070C0",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_placeP": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"P\"]"
+            ],
+            "tags": [
+                "ref=P"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#50C090",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_private": {
+            "overpass": [
+                "way[\"area:highway\"][\"access\"=\"no\"]",
+                "way[\"area:highway\"][\"access\"=\"private\"]"
+            ],
+            "tags": [
+                "area:highway"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#F6EADF",
+                "stroke-width": 1,
+                "fill-opacity": 0.8
+            },
+            "titles": [
+                "name"
             ]
         },
         "expo2025_wall": {
             "overpass": [
                 "way[\"barrier\"=\"wall\"]",
-                "way[\"barrier\"=\"fence\"]",
-                "way[\"tourism\"=\"theme_park\"]",
-                "way[\"entrance\"]"
+                "way[\"barrier\"=\"fence\"]"
             ],
             "tags": [
                 "barrier=wall",
-                "barrier=fence",
-                "tourism=theme_park",
-                "entrance"
+                "barrier=fence"
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#606060",
-                "stroke-width": 3
+                "stroke-width": 2,
+                "fill-opacity": 0.5
             },
             "titles": [
-                "name",
-                "operator"
+                "name"
             ]
         },
         "expo2025_poi": {
@@ -84,8 +217,10 @@
                 "nwr[\"amenity\"=\"vending_machine\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"vending_machine\"]",
-                "nwr[\"building\"][\"name\"]",
-                "nwr[\"tourism\"=\"information\"]",
+                "nwr[\"building\"=\"yes\"][\"name\"]",
+                "nwr[\"building\"=\"roof\"][\"name\"]",
+                "nwr[\"tourism\"=\"information\"][\"information\"=\"map\"]",
+                "nwr[\"tourism\"=\"information\"][\"information\"=\"office\"]",
                 "nwr[\"tourism\"=\"artwork\"]",
                 "nwr[\"office\"]",
                 "nwr[\"shop\"=\"convenience\"]",
@@ -112,11 +247,11 @@
             "expression": {
                 "poiView": true, // true時はアイコン表示
                 "stroke": "#606060",
-                "stroke-width": 0
+                "stroke-width": 0,
+                "fill-opacity": 0
             },
             "titles": [
-                "name",
-                "operator"
+                "name"
             ]
         },
         "expo2025_door": {
@@ -129,11 +264,11 @@
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#c0a0a0",
-                "stroke-width": 2
+                "stroke-width": 2,
+                "fill-opacity": 1
             },
             "titles": [
-                "name",
-                "operator"
+                "name"
             ]
         }
     }

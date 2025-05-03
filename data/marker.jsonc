@@ -110,6 +110,7 @@
                 "temple": "place-of-worship.svg",
                 "residential": "residential-community.svg",
                 "retail": "shop.svg",
+                "roof": "home.svg",
                 "yes": "home.svg"
             },
             "craft": {
@@ -380,6 +381,7 @@
             },
             "place": {
                 "city": "city.svg",
+                "locality": "pin.svg",
                 "square": "square-stroked.svg",
                 "suburb": "triangle.svg",
                 "quarter": "triangle.svg",

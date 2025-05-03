@@ -1,6 +1,6 @@
 {
     "list": {
-        "height": 0.2,
+        "height": 0.3,
         "columns": {
             "common": [
                 {
@@ -9,8 +9,7 @@
                 },
                 {
                     "id": "category",
-                    "name": "Category",
-                    "width": "50%"
+                    "hidden": true
                 },
                 {
                     "id": "name",

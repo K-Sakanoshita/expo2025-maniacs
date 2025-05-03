@@ -110,6 +110,7 @@
             "temple": "temple",
             "residential": "residential",
             "retail": "retail",
+            "roof": "roof",
             "yes": "building"
         },
         "craft": {
@@ -380,6 +381,7 @@
         },
         "place": {
             "city": "city",
+            "locality": "locality",
             "square": "square",
             "suburb": "suburb",
             "quarter": "quarter",

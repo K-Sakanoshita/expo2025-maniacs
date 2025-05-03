@@ -90,7 +90,7 @@ class CMapMaker {
         nowselect = nowselect[0] == "" ? "-" : nowselect[nowselect.length - 1]
         console.log(`viewPoi: Start(now select ${nowselect}).`)
         poiMarker.delete_all()
-        targets = targets[0] == "-" ? poiCont.getTargets() : targets;					// '-'はすべて表示
+        targets = targets[0] == "-" || targets[0] == "" ? poiCont.getTargets() : targets;		// '-' or ''はすべて表示
         targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
         targets = [...new Set(targets)];
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
@@ -102,12 +102,14 @@ class CMapMaker {
             let nowzoom = mapLibre.getZoom(false)
             targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
             targets.forEach((target) => {
-                if (Conf.osm[target].expression == undefined) console.log("???: target")
-                let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
-                let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
-                if ((target == nowselect || nowselect == "-") && flag && poiView) {	// 選択している種別の場合
-                    poiMarker.setPoi(target, target == Conf.google.targetName)
-                    setcount++
+                if (target !== "") {        // targetが無い場合を考慮
+                    if (Conf.osm[target].expression == undefined) console.log("???: target")
+                    let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
+                    let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
+                    if ((target == nowselect || nowselect == "-") && flag && poiView) {	// 選択している種別の場合
+                        poiMarker.setPoi(target, target == Conf.google.targetName)
+                        setcount++
+                    }
                 }
             })
         }
@@ -116,7 +118,7 @@ class CMapMaker {
 
     // 画面内のActivity画像を表示させる(view: true=表示)
     makeImages(view) {
-        let LL = mapLibre.get_LL(true), nowZoom = mapLibre.getZoom();
+        let LL = mapLibre.get_LL(true);
         if (view) {
             let acts = poiCont.adata.filter(act => { return geoCont.checkInner(act.lnglat, LL) && act.picture_url1 !== "" });
             acts = acts.map(act => {
@@ -126,9 +128,13 @@ class CMapMaker {
                 Object.keys(forms).forEach(key => { if (forms[key].type == "image_url") urls.push(act[key]) })
                 return { "src": urls, "osmid": act.osmid, "title": act.title }
             })
-            images.classList.remove("d-none");
-            winCont.setImages(images, acts, Conf.etc.loadingUrl)
-            winCont.scrollHint()
+            if (acts.length > 0) {
+                images.classList.remove("d-none");
+                winCont.setImages(images, acts, Conf.etc.loadingUrl)
+                winCont.scrollHint()
+            } else {
+                images.classList.add("d-none");
+            }
         } else {
             images.classList.add("d-none");
         }
@@ -335,17 +341,20 @@ class CMapMaker {
                             this.moveMapBusy = 0;
                             let targets = [listTable.getSelCategory()];
                             console.log("eventMoveMap:" + targets)
-                            if (Conf.view.poiFilter !== "") {		// 非連動以外は更新
-                                listTable.makeList();					// view all list
-                                if (Conf.selectItem.menu == "") {
-                                    listTable.makeSelectList(Conf.listTable.category)
-                                }
-                                listTable.filterCategory(listTable.getSelCategory())
-                                if (window.getSelection) window.getSelection().removeAllRanges();
-                                this.viewArea()	        // 入手したgeoJsonを追加
-                                this.viewPoi(targets)	// in targets
-                                this.makeImages(true)
+                            switch (Conf.view.poiFilter) {
+                                case "all":                                     // 全て表示
+                                case "fillter":                                 // 画面内で絞り込み
+                                    listTable.makeList(Conf.view.poiFilter);	// view all list
+                                    if (Conf.selectItem.menu == "") listTable.makeSelectList(Conf.listTable.category)   // カスタム時
+                                    listTable.filterCategory(listTable.getSelCategory())
+                                    if (window.getSelection) window.getSelection().removeAllRanges();
+                                    break;
+                                case "":
+                                    break;
                             }
+                            this.viewArea()	        // 入手したgeoJsonを追加
+                            this.viewPoi(targets)	// in targets
+                            this.makeImages(true)
                             resolve()
                             break
                         default:

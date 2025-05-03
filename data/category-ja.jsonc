@@ -110,6 +110,7 @@
             "temple": "寺院",
             "residential": "住居",
             "retail": "店舗",
+            "roof": "屋根",
             "yes": "建物"
         },
         "craft": {
@@ -149,7 +150,7 @@
             "courier": "宅配便/宅急便",
             "estate_agent": "不動産屋",
             "foundation": "財団・協会",
-            "government": "政府機関"
+            "government": "公共サービス"
         },
         "shop": {
             "agrarian": "農協/農業用品店",
@@ -190,7 +191,7 @@
             "furniture": "家具屋",
             "garden_centre": "園芸用品店",
             "general": "雑貨店",
-            "gift": "土産屋",
+            "gift": "おみやげ屋",
             "greengrocer": "八百屋",
             "hairdresser": "美容院",
             "hardware": "金物店",
@@ -380,6 +381,7 @@
         },
         "place": {
             "city": "都市",
+            "locality": "区画",
             "square": "広場",
             "suburb": "区",
             "quarter": "大字",
