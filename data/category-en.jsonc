@@ -399,6 +399,9 @@
     },
     "category_sub": {
         "amenity": {
+            "bottle": {
+                "yes": "bottle water supply"
+            },
             "gambling": {
                 "mahjong": "mahjong"
             },

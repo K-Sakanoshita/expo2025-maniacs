@@ -17,25 +17,28 @@
             <span class="subtitle" glot-model="site_subtitle"></span>
         </a>
     </div>
+    <!--セレクト&ボタン-->
     <div class="col-12 p-2 me-2 d-flex align-items-center">
         <div class="h-100 d-flex align-items-center text-nowrap"><span glot-model="cat_select"></span></div>
         <select class="form-select me-1" id="list_category"></select>
-        <button class="btn btn-light border-secondary float-left me-2 float-left me-2" id="mode_button"
-            onclick="cMapMaker.mode_change();"><i class="fas fa-list" id="list_collapse_icon"></i></button>
+        <button class="btn btn-light border-secondary float-left" onclick="cMapMaker.mode_change();"><i
+                class="fas fa-list" id="list_collapse_icon"></i></button>
+        <button class="btn btn-light border-secondary float-left ms-2"
+            onclick="cMapMaker.searchKeyword(window.prompt('検索キーワード'));"><i class="fas fa-search"
+                id="list_keyword_search"></i></button>
     </div>
+    <!-- 検索 -->
+    <!-- div class="col-12 d-flex align-items-center">
+        <input type="text" class="flex-row form-control m-1" style="width: calc(100% - 24px)" id="list_keyword" />
+        <button class="btn btn-light border-secondary float-left me-2"
+            onclick="cMapMaker.searchKeyword(list_keyword.value);"><i class="fas fa-search"
+                id="list_keyword_search"></i></button>
+    </div -->
 
+    <!--折り畳み-->
     <div class="col-12 p-0 pt-1 m-0 mb-2 collapse show rounded-bottom rounded-end" id="list_collapse">
         <div id="filterid" class="d-flex flex-column justify-content-center me-1">
             <div class="row"></div>
-        </div>
-
-        <!-- 検索 -->
-        <div class="row">
-            <div class="col-12 d-flex align-items-center">
-                <i class="block flex-row fas fa-search m-1 ps-1 pt-1 pe-1"></i>
-                <input type="text" class="flex-row form-control m-1" style="width: calc(100% - 24px)"
-                    id="list_keyword" />
-            </div>
         </div>
 
         <!-- リスト表示 -->
@@ -51,8 +54,9 @@
         <!-- プレイバック操作 -->
         <div class="row" id="list_playback_control">
             <div class="col-12 pe-0">
-                <button class="btn btn-light float-left menu me-2" onclick="cMapMaker.playback(listTable.flist);"><i
-                        id="list_playback" class="fas fa-play"></i></button>
+                <button class="btn btn-light float-left menu me-2"
+                    onclick="cMapMaker.playback(listTable.getFilterList());"><i id="list_playback"
+                        class="fas fa-play"></i></button>
                 <input type="range" class="form-select menu" id="list_speed" />
             </div>
         </div>

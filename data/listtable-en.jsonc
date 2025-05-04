@@ -17,12 +17,12 @@
                     "width": "50%"
                 }
             ],
-            "poi_fields": [
+            "poiFields": [
                 "id",
                 "#category",
                 "name"
             ],
-            "act_fields": [
+            "actFields": [
                 "id",
                 "#category",
                 "memo"

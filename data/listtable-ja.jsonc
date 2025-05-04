@@ -17,12 +17,12 @@
                     "width": "100%"
                 }
             ],
-            "poi_fields": [
+            "poiFields": [
                 "id",
                 "#category",
                 "name"
             ],
-            "act_fields": [ //#付きはOSMタグ、ただし#categoryのみ内部判定結果
+            "actFields": [ //#付きはOSMタグ、ただし#categoryのみ内部判定結果
                 "id",
                 "#category",
                 "memo"

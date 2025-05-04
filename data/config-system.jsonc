@@ -47,29 +47,6 @@
                     }
                 ]
             }
-        },
-        "GSI_pale": {
-            "style": {
-                "version": 8,
-                "sources": {
-                    "rtile": {
-                        "type": "raster",
-                        "tiles": [
-                            "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
-                        ],
-                        "tileSize": 256,
-                        "maxzoom": 18,
-                        "attribution": "<a href='https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html'>国土地理院(淡色) | &copy OpenStreetMap contributors</a>"
-                    }
-                },
-                "layers": [
-                    {
-                        "id": "raster-tiles",
-                        "type": "raster",
-                        "source": "rtile"
-                    }
-                ]
-            }
         }
     },
     "menu_list": {

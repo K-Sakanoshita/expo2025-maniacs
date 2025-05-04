@@ -15,7 +15,7 @@ class CMapMaker {
         console.log("CMapMaker: init.")
         mapLibre.on('moveend', this.eventMoveMap.bind(cMapMaker))   		// マップ移動時の処理
         mapLibre.on('zoomend', this.eventZoomMap.bind(cMapMaker))			// ズーム終了時に表示更新
-        list_keyword.addEventListener('change', this.eventChangeKeyword.bind(cMapMaker))	// 
+        list_keyword.addEventListener('keydown', this.eventSearchKeyword.bind(cMapMaker))	// 
         list_category.addEventListener('change', this.eventChangeCategory.bind(cMapMaker))	// category change
         this.eventMoveMap();
         this.eventZoomMap();
@@ -95,8 +95,8 @@ class CMapMaker {
         targets = [...new Set(targets)];
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
         if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
-            poiMarker.setPoi("", false, listTable.flist)
-            setcount = setcount + listTable.flist.length
+            poiMarker.setPoi("", false, listTable.getFilterList())
+            setcount = setcount + listTable.getFilterList().length
         } else {			// targets 内に選択肢が含まれている場合
             console.log("viewPoi: " + targets.concat())
             let nowzoom = mapLibre.getZoom(false)
@@ -183,6 +183,15 @@ class CMapMaker {
         };
     };
 
+    // キーワード検索
+    searchKeyword(keyword) {
+        if (keyword !== null) {
+            const div = document.createElement("div");             // サニタイズ処理
+            div.appendChild(document.createTextNode(keyword));
+            listTable.filterKeyword(div.innerHTML);
+            this.mode_change('list');
+        }
+    }
 
     viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)
         const detail_close = () => {
@@ -210,7 +219,7 @@ class CMapMaker {
                 break;
             };
         };
-        if (title == "") title = category[0];
+        if (title == "") title = category[0] + category[1] !== "" ? "(" + category[1] + ")" : "";   // サブカテゴリ時は追加
         if (title == "") title = glot.get("undefined");
         winCont.menu_make(Conf.menu.modal, "modal_menu");
         winCont.modal_progress(0);
@@ -237,7 +246,7 @@ class CMapMaker {
             winCont.modal_open({ "title": title, "message": message, "append": Conf.menu.buttons, "mode": "close", "callback_close": detail_close, "menu": true, "openid": openid });
         }
         this.detail = true;
-
+        this.mode_change('map');
     };
 
     shareURL(actid) {	// URL共有機能
@@ -397,15 +406,8 @@ class CMapMaker {
     }
 
     // EVENT: キーワード検索
-    eventChangeKeyword() {
-        if (this.changeKeywordWaitTime > 0) {
-            window.clearTimeout(this.changeKeywordWaitTime);
-            this.changeKeywordWaitTime = 0;
-        };
-        this.changeKeywordWaitTime = window.setTimeout(() => {
-            listTable.filterKeyword(list_keyword.value);
-            this.mode_change('list');
-        }, 500);
+    eventSearchKeyword(event) {
+        if (event.key === 'Enter') this.searchKeyword(list_keyword.value);
     };
 
     // EVENT: カテゴリ変更時のイベント

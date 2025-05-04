@@ -399,6 +399,9 @@
     },
     "category_sub": {
         "amenity": {
+            "bottle": {
+                "yes": "ボトル給水"
+            },
             "gambling": {
                 "mahjong": "麻雀"
             },
