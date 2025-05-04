@@ -61,6 +61,7 @@
         }
     },
     "etc": {
+        "localSave": true, // 既に行ったかどうかチェック
         "editMode": false, // 編集メニューの表示/非表示
         "slideThumbWidth": "240",
         "modalThumbWidth": "800",

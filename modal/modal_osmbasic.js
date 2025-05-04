@@ -90,6 +90,14 @@ class modal_OSMbasic {
             html += `<div class="flex-row"> <i class="fas fa-sticky-note"></i> ${tags.description}</div>`;
             elements++;
         }
+
+        // 既に行ったかチェック
+        if (Conf.etc.localSave) {
+            let already = localStorage.getItem(tags.id) == 'true' ? "checked" : "";
+            html += `<div class="flex-row"> <i class="fa-solid fa-person-walking"></i> ${glot.get("visited")} <input type="checkbox" id="visited" name="${tags.id}" ${already} /></div>`;
+            elements++;
+        }
+
         return elements > 0 ? html + "</div>" : "";
     }
 

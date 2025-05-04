@@ -231,7 +231,8 @@
                 "nwr[\"shop\"=\"chemist\"]",
                 "nwr[\"shop\"=\"bakery\"]",
                 "nwr[\"man_made\"=\"water_tap\"]",
-                "node[\"highway\"=\"elevator\"]"
+                "node[\"highway\"=\"elevator\"]",
+                "node[\"highway\"=\"bus_stop\"]"
             ],
             "tags": [
                 "amenity",
@@ -242,7 +243,8 @@
                 "shop",
                 "man_made",
                 "natural!=tree",
-                "highway=elevator"
+                "highway=elevator",
+                "highway=bus_stop"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

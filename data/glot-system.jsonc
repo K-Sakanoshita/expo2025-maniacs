@@ -1,162 +1,166 @@
 {
-	"act_add": {
-		"ja": "追加",
-		"en": "Add information"
-	},
-	"act_edit": {
-		"ja": "編集",
-		"en": "Edit information"
-	},
-	"act_name": {
-		"ja": "ニックネーム",
-		"en": "Name"
-	},
-	"act_userid": {
-		"ja": "ユーザー名",
-		"en": "User ID"
-	},
-	"act_passwd": {
-		"ja": "パスワード",
-		"en": "Password"
-	},
-	"act_attention": {
-		"ja": "写真URLにWikimedia Commonsを指定する時は、タイトルを入力してください(例 File:遊具名.jpg)",
-		"en": "When specifying Wikimedia Commons for the photo URL, enter the title (e.g. File: Play equipment name.jpg)"
-	},
-	"act_confirm": {
-		"ja": "上記の内容でデータを登録・更新しますか？",
-		"en": "register / update data with this contents?"
-	},
-	"act_error": {
-		"ja": "登録失敗。ユーザー名とパスワードを確認してください",
-		"en": "failed. Please check your username and password"
-	},
-	"category": {
-		"ja": "カテゴリ",
-		"en": "Category"
-	},
-	"title": {
-		"ja": "タイトル",
-		"en": "Title"
-	},
-	"download": {
-		"ja": "一覧表をダウンロード",
-		"en": "list download"
-	},
-	"zoomlevel": {
-		"ja": "ズームレベル：",
-		"en": "Zoom Level: "
-	},
-	"update": {
-		"ja": "更新日: ",
-		"en": "Update: "
-	},
-	"getdate": {
-		"ja": "取得日時: ",
-		"en": "Getdate: "
-	},
-	"share_link": {
-		"ja": "Link",
-		"en": "Link"
-	},
-	"add_activity": {
-		"ja": "情報追加",
-		"en": "add Activity"
-	},
-	"morezoom": {
-		"ja": "ズームすると表示が増えます",
-		"en": "Please zoom more."
-	},
-	"button_ok": {
-		"ja": "決定",
-		"en": "OK"
-	},
-	"button_cancel": {
-		"ja": "キャンセル",
-		"en": "Cancel"
-	},
-	"button_close": {
-		"ja": "閉じる",
-		"en": "close"
-	},
-	"button_yes": {
-		"ja": "はい",
-		"en": "YES"
-	},
-	"button_no": {
-		"ja": "いいえ",
-		"en": "NO"
-	},
-	"available": {
-		"ja": "有り",
-		"en": "available"
-	},
-	"unavailable": {
-		"ja": "無し",
-		"en": "unavailable"
-	},
-	"limited": {
-		"ja": "限定的",
-		"en": "limited"
-	},
-	"loading_title": {
-		"ja": "マップデータのロード中",
-		"en": "Loading map data"
-	},
-	"loading_message": {
-		"ja": "ロード中です。しばらくお待ちください。",
-		"en": "Loading... Please wait a moment."
-	},
-	"location": {
-		"ja": "現在地を表示",
-		"en": "Show current location."
-	},
-	"sverror_title": {
-		"ja": "データ取得に失敗",
-		"en": "Failed to retrieve data."
-	},
-	"sverror_message": {
-		"ja": "データ取得に失敗。30秒後やり直して下さい。",
-		"en": "Data acquisition failed. Please try again after 30 seconds."
-	},
-	"wikipedia": {
-		"ja": "Wikipedia",
-		"en": "Wikipedia"
-	},
-	"qrcode_make": {
-		"ja": "QRコード生成",
-		"en": "QR-code generatie"
-	},
-	"modal_close": {
-		"ja": "閉じる",
-		"en": "close"
-	},
-	"source_wikipedia": {
-		"ja": "(出典/記事: Wikipedia)",
-		"en": "(Source/Article: Wikipedia)"
-	},
-	"undefined": {
-		"ja": "(名称不明)",
-		"en": "(name unknown)"
-	},
-	"tags_website": {
-		"ja": "ホームページ",
-		"en": "Web Site"
-	},
-	"tags_phone": {
-		"ja": "電話番号",
-		"en": "telephone"
-	},
-	"tags_type": {
-		"ja": "施設種別",
-		"en": "Facility type"
-	},
-	"openstreetmap": {
-		"ja": "OpenStreetMapについて",
-		"en": "about OpenStreetMap"
-	},
-	"osm_open": {
-		"ja": "OpenStreetMapで見る",
-		"en": "See in OpenStreetMap"
-	}
+    "act_add": {
+        "ja": "追加",
+        "en": "Add information"
+    },
+    "act_edit": {
+        "ja": "編集",
+        "en": "Edit information"
+    },
+    "act_name": {
+        "ja": "ニックネーム",
+        "en": "Name"
+    },
+    "act_userid": {
+        "ja": "ユーザー名",
+        "en": "User ID"
+    },
+    "act_passwd": {
+        "ja": "パスワード",
+        "en": "Password"
+    },
+    "act_attention": {
+        "ja": "写真URLにWikimedia Commonsを指定する時は、タイトルを入力してください(例 File:遊具名.jpg)",
+        "en": "When specifying Wikimedia Commons for the photo URL, enter the title (e.g. File: Play equipment name.jpg)"
+    },
+    "act_confirm": {
+        "ja": "上記の内容でデータを登録・更新しますか？",
+        "en": "register / update data with this contents?"
+    },
+    "act_error": {
+        "ja": "登録失敗。ユーザー名とパスワードを確認してください",
+        "en": "failed. Please check your username and password"
+    },
+    "category": {
+        "ja": "カテゴリ",
+        "en": "Category"
+    },
+    "title": {
+        "ja": "タイトル",
+        "en": "Title"
+    },
+    "download": {
+        "ja": "一覧表をダウンロード",
+        "en": "list download"
+    },
+    "zoomlevel": {
+        "ja": "ズームレベル：",
+        "en": "Zoom Level: "
+    },
+    "update": {
+        "ja": "更新日: ",
+        "en": "Update: "
+    },
+    "getdate": {
+        "ja": "取得日時: ",
+        "en": "Getdate: "
+    },
+    "share_link": {
+        "ja": "Link",
+        "en": "Link"
+    },
+    "add_activity": {
+        "ja": "情報追加",
+        "en": "add Activity"
+    },
+    "morezoom": {
+        "ja": "ズームすると表示が増えます",
+        "en": "Please zoom more."
+    },
+    "button_ok": {
+        "ja": "決定",
+        "en": "OK"
+    },
+    "button_cancel": {
+        "ja": "キャンセル",
+        "en": "Cancel"
+    },
+    "button_close": {
+        "ja": "閉じる",
+        "en": "close"
+    },
+    "button_yes": {
+        "ja": "はい",
+        "en": "YES"
+    },
+    "button_no": {
+        "ja": "いいえ",
+        "en": "NO"
+    },
+    "available": {
+        "ja": "有り",
+        "en": "available"
+    },
+    "unavailable": {
+        "ja": "無し",
+        "en": "unavailable"
+    },
+    "limited": {
+        "ja": "限定的",
+        "en": "limited"
+    },
+    "loading_title": {
+        "ja": "マップデータのロード中",
+        "en": "Loading map data"
+    },
+    "loading_message": {
+        "ja": "ロード中です。しばらくお待ちください。",
+        "en": "Loading... Please wait a moment."
+    },
+    "location": {
+        "ja": "現在地を表示",
+        "en": "Show current location."
+    },
+    "sverror_title": {
+        "ja": "データ取得に失敗",
+        "en": "Failed to retrieve data."
+    },
+    "sverror_message": {
+        "ja": "データ取得に失敗。30秒後やり直して下さい。",
+        "en": "Data acquisition failed. Please try again after 30 seconds."
+    },
+    "wikipedia": {
+        "ja": "Wikipedia",
+        "en": "Wikipedia"
+    },
+    "qrcode_make": {
+        "ja": "QRコード生成",
+        "en": "QR-code generatie"
+    },
+    "modal_close": {
+        "ja": "閉じる",
+        "en": "close"
+    },
+    "source_wikipedia": {
+        "ja": "(出典/記事: Wikipedia)",
+        "en": "(Source/Article: Wikipedia)"
+    },
+    "undefined": {
+        "ja": "(名称不明)",
+        "en": "(name unknown)"
+    },
+    "tags_website": {
+        "ja": "ホームページ",
+        "en": "Web Site"
+    },
+    "tags_phone": {
+        "ja": "電話番号",
+        "en": "telephone"
+    },
+    "tags_type": {
+        "ja": "施設種別",
+        "en": "Facility type"
+    },
+    "openstreetmap": {
+        "ja": "OpenStreetMapについて",
+        "en": "about OpenStreetMap"
+    },
+    "osm_open": {
+        "ja": "OpenStreetMapで見る",
+        "en": "See in OpenStreetMap"
+    },
+    "visited": {
+        "ja": "訪問済み",
+        "en": "Visited"
+    }
 }

@@ -21,16 +21,20 @@ span.icon {
     white-space: nowrap;
 }
 
-span.normal {
-    color: #000000;
-    background: rgba(255, 255, 255, 0.3);
-}
-
 span.attention {
     color: #000000;
     background: rgba(255, 255, 255, 0.6);
 }
 
+span.visited {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+span.normal {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.3);
+}
 
 img.thumbnail {
     margin: 4px auto !important;
@@ -54,13 +58,13 @@ img.slide {
     object-fit: cover;
 }
 
-img.normal {
-    background: url("./image/icon_circle.svg");
+img.attention {
+    background: url("./image/icon_circle_attention2.svg");
     background-size: cover;
     float: left;
-    padding: 4px !important;
-    height: 32px !important;
-    width: 32px !important;
+    padding: 6px !important;
+    height: 40px;
+    width: 40px;
     object-fit: contain;
     animation: rotation 0.5s ease-in-out 1;
     filter: drop-shadow(2px 2px 2px #000);
@@ -71,20 +75,31 @@ img.middle {
     background-size: cover;
     float: left;
     padding: 6px !important;
-    height: 38px;
-    width: 38px;
+    height: 40px;
+    width: 40px;
     object-fit: contain;
     animation: rotation 0.5s ease-in-out 1;
     filter: drop-shadow(2px 2px 2px #000);
 }
 
-img.attention {
-    background: url("./image/icon_circle_attention2.svg");
+img.visited {
+    background: url("./image/icon_circle_visited.svg");
     background-size: cover;
     float: left;
-    padding: 6px !important;
-    height: 38px;
-    width: 38px;
+    padding: 8px !important;
+    height: 35px !important;
+    width: 35px !important;
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 1px #444);
+}
+
+img.normal {
+    background: url("./image/icon_circle.svg");
+    background-size: cover;
+    float: left;
+    padding: 4px !important;
+    height: 35px !important;
+    width: 35x !important;
     object-fit: contain;
     animation: rotation 0.5s ease-in-out 1;
     filter: drop-shadow(2px 2px 2px #000);
@@ -92,6 +107,7 @@ img.attention {
 
 img.attention:active,
 img.middle:active,
+img.visited:active,
 img.normal:active {
     margin-top: 10px;
 }
