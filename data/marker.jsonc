@@ -1,6 +1,11 @@
 {
     "marker": {
-        "path": "maki-icon",
+        "background": [
+            "circle_normal.png",
+            "circle_attention.png",
+            "circle_middle.png",
+            "circle_visited.png"
+        ],
         "tag": {
             "*": {
                 "*": "marker-stroked.svg"
@@ -14,7 +19,7 @@
                 "bench": "bench.svg",
                 "bicycle_parking": "parking-bicycle.svg",
                 "bicycle_rental": "bicycle_rental.svg",
-                "biergarten": "beer-solid.svg",
+                "biergarten": "beer.svg",
                 "bureau_de_change": "money_hand.svg",
                 "bus_station": "board_bus.svg",
                 "cafe": "cafe.svg",

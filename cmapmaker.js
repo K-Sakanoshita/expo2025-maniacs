@@ -89,7 +89,6 @@ class CMapMaker {
         let nowselect = listTable.getSelCategory()
         nowselect = nowselect[0] == "" ? "-" : nowselect[nowselect.length - 1]
         console.log(`viewPoi: Start(now select ${nowselect}).`)
-        poiMarker.delete_all()
         targets = targets[0] == "-" || targets[0] == "" ? poiCont.getTargets() : targets;		// '-' or ''はすべて表示
         targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
         targets = [...new Set(targets)];
@@ -188,8 +187,8 @@ class CMapMaker {
         if (keyword !== null) {
             const div = document.createElement("div");             // サニタイズ処理
             div.appendChild(document.createTextNode(keyword));
-            listTable.filterKeyword(div.innerHTML);
             this.mode_change('list');
+            listTable.filterKeyword(div.innerHTML);
         }
     }
 
@@ -211,7 +210,7 @@ class CMapMaker {
         tags["*"] = "*";
         target = target == undefined ? "*" : target;					// targetが取得出来ない実在POI対応
         let category = poiCont.getCatnames(tags);
-        let title = `<img src="./${Conf.icon.path}/${poiMarker.get_icon(tags)}">`, message = "";
+        let title = `<img src="./${Conf.icon.fgPath}/${poiMarker.getIcon(tags)}">`, message = "";
 
         for (let i = 0; i < Conf.osm[target].titles.length; i++) {
             if (tags[Conf.osm[target].titles[i]] !== void 0) {
@@ -406,9 +405,11 @@ class CMapMaker {
     }
 
     // EVENT: キーワード検索
+    /*
     eventSearchKeyword(event) {
         if (event.key === 'Enter') this.searchKeyword(list_keyword.value);
     };
+    */
 
     // EVENT: カテゴリ変更時のイベント
     eventChangeCategory() {

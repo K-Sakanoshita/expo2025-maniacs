@@ -8,11 +8,6 @@
         "tag": "wikipedia",
         "image": true
     },
-    "icon": {
-        "path": "maki-icon",
-        "normal": 32,
-        "attention": 48
-    },
     "system": {
         "OverPassServer": [
             "https://overpass-api.de/api/interpreter",

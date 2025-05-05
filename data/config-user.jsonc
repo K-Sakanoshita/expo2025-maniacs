@@ -18,9 +18,21 @@
                 34.665
             ]
         ],
-        "initZoom": 14,
+        "initZoom": 15.5,
         "maxZoom": 20,
-        "modalZoom": 18 // モーダルダイアログ表示時のズームサイズ   
+        "modalZoom": 19, // モーダルダイアログ表示時のズームサイズ
+        "textFont": [
+            "Noto Sans Regular"
+        ], // 使用可能なフォント（spriteに依存）
+        "textSize": 10
+    },
+    "icon": {
+        "fgPath": "icon",
+        "bgPath": "image",
+        "attention": 0.5,
+        "middle": 0.5,
+        "visited": 0.4,
+        "normal": 0.5
     },
     "view": {
         "poiActLoad": false, // 起動時にActivityを読み込むか
@@ -61,7 +73,7 @@
         }
     },
     "etc": {
-        "localSave": true, // 既に行ったかどうかチェック
+        "localSave": "expo2025", // 訪問済み機能フラグ(有効時はアプリ名、無効時は"")
         "editMode": false, // 編集メニューの表示/非表示
         "slideThumbWidth": "240",
         "modalThumbWidth": "800",
@@ -84,6 +96,7 @@
         "action": "" // ChangeMap:背景地図切り替え
     },
     "listTable": {
+        "height": 0.6, // リスト時の高さ(1を最大とした割合)
         "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
         "target": "expo2025_poi", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
@@ -100,8 +113,8 @@
         "targetName": "activity"
     },
     "static": {
-        "mode": false,
-        "osmjson": ""
+        "mode": true,
+        "osmjson": "./data/expo2025.json"
     },
     "wikipedia": {
         "marker": "wikipedia.svg",

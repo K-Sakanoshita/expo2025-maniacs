@@ -40,10 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const setUrlParams = function () {
         // URLから引数を取得して返す関数
         let keyValue = {};
-        let search = location.search
-            .replace(/[?&]fbclid.*/, "")
-            .replace(/%2F/g, "/")
-            .slice(1); // facebook対策
+        let search = location.search.replace(/[?&]fbclid.*/, "").replace(/%2F/g, "/").slice(1); // facebook対策
         search = search.slice(-1) == "/" ? search.slice(0, -1) : search; // facebook対策(/が挿入される)
         let params = search.split("&"); // -= -> / and split param
         history.replaceState("", "", location.pathname + "?" + search + location.hash); // fixURL
@@ -69,8 +66,10 @@ window.addEventListener("DOMContentLoaded", function () {
         // document.title = glot.get("site_title"); // Google検索のインデックス反映が読めないので一旦なし
         let UrlParams = setUrlParams();
         if (UrlParams.edit) Conf.etc["editMode"] = true;
+        if (UrlParams.static) Conf.static["mode"] = basic.parseBoolean(UrlParams.static);
         winCont.splash(true);
         listTable.init();
+        poiMarker.init();
         winCont.window_resize(); // Set Window Size(mapidのサイズ指定が目的)
 
         Promise.all([

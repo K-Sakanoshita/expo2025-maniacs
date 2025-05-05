@@ -92,8 +92,8 @@ class modal_OSMbasic {
         }
 
         // 既に行ったかチェック
-        if (Conf.etc.localSave) {
-            let already = localStorage.getItem(tags.id) == 'true' ? "checked" : "";
+        if (Conf.etc.localSave !== "") {
+            let already = localStorage.getItem(Conf.etc.localSave + "." + tags.id) == 'true' ? "checked" : "";
             html += `<div class="flex-row"> <i class="fa-solid fa-person-walking"></i> ${glot.get("visited")} <input type="checkbox" id="visited" name="${tags.id}" ${already} /></div>`;
             elements++;
         }
