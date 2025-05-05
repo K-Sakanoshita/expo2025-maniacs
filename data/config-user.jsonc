@@ -29,10 +29,10 @@
     "icon": {
         "fgPath": "icon",
         "bgPath": "image",
-        "attention": 0.5,
-        "middle": 0.5,
-        "visited": 0.4,
-        "normal": 0.5
+        "attention": 0.8,
+        "middle": 0.7,
+        "visited": 0.44,
+        "normal": 0.6
     },
     "view": {
         "poiActLoad": false, // 起動時にActivityを読み込むか

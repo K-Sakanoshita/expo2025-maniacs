@@ -34,6 +34,7 @@
                         "attribution": "<a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
                     }
                 },
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf",
                 "layers": [
                     {
                         "id": "raster-tiles",

@@ -46,7 +46,8 @@ class CMapMaker {
     }
 
     changeMap() {	// Change Map Style(rotation)
-        mapLibre.changeMap();
+        mapLibre.changeMap()
+        this.eventMoveMap()
     }
 
     async load_static() {
@@ -188,7 +189,9 @@ class CMapMaker {
             const div = document.createElement("div");             // サニタイズ処理
             div.appendChild(document.createTextNode(keyword));
             this.mode_change('list');
-            listTable.filterKeyword(div.innerHTML);
+            setTimeout(() => {
+                listTable.filterKeyword(div.innerHTML);
+            }, 300)
         }
     }
 
