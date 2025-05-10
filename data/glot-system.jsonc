@@ -162,5 +162,17 @@
     "visited": {
         "ja": "訪問済み",
         "en": "Visited"
+    },
+    "reservation_yes": {
+        "ja": "要予約",
+        "en": "reservation yes"
+    },
+    "reservation_no": {
+        "ja": "予約不要",
+        "en": "reservation no"
+    },
+    "reservation_recommended": {
+        "ja": "予約推奨",
+        "en": "reservation recommended"
     }
 }

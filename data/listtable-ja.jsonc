@@ -8,23 +8,31 @@
                 },
                 {
                     "id": "category",
-                    "name": "種別"
+                    "name": "種別",
+                    "width": "30%"
                 },
                 {
                     "id": "name",
                     "name": "名称",
-                    "width": "100%"
+                    "width": "50%"
+                },
+                {
+                    "id": "reservation",
+                    "name": "予約",
+                    "width": "20%"
                 }
             ],
             "poiFields": [
                 "id",
                 "#category",
-                "name"
+                "name",
+                "reservation"
             ],
             "actFields": [ //#付きはOSMタグ、ただし#categoryのみ内部判定結果
                 "id",
                 "#category",
-                "memo"
+                "memo",
+                "#reservation"
             ]
         }
     }

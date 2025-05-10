@@ -55,6 +55,18 @@ class modal_OSMbasic {
             elements++;
         }
 
+        // write reservation
+        if (tags.reservation !== undefined) {
+            let reserve;
+            switch (tags["reservation"]) {
+                case "yes": reserve = glot.get("reservation_yes"); break;
+                case "no": reserve = glot.get("reservation_no"); break;
+                case "recommended": reserve = glot.get("reservation_recommended"); break;
+            }
+            html += `<div class="flex-row"> <i class="fa-solid fa-ticket"></i> ${reserve}</div>`;
+            elements++;
+        }
+
         // write instagram
         let instagram = [tags.instagram, tags["contact:instagram"]].filter((a) => a !== undefined)[0];
         if (instagram !== undefined) {
