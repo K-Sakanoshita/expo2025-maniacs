@@ -2,8 +2,8 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.5 1bd436f1",
     "osm3s": {
-        "timestamp_osm_base": "2025-05-10T15:42:30Z",
-        "timestamp_areas_base": "2024-12-31T00:49:33Z",
+        "timestamp_osm_base": "2025-05-10T16:55:01Z",
+        "timestamp_areas_base": "2025-02-06T02:17:44Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -18347,22 +18347,6 @@
         },
         {
             "type": "node",
-            "id": 12813332744,
-            "lat": 34.6476391,
-            "lon": 135.3848029,
-            "timestamp": "2025-05-06T04:54:07Z",
-            "version": 1,
-            "changeset": 165873131,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "tags": {
-                "amenity": "exhibition_centre",
-                "check_date": "2025-05-06",
-                "name": "文明の森"
-            }
-        },
-        {
-            "type": "node",
             "id": 12813337900,
             "lat": 34.6479871,
             "lon": 135.3817420,
@@ -22228,11 +22212,11 @@
         {
             "type": "way",
             "id": 1381316121,
-            "timestamp": "2025-05-05T13:43:05Z",
-            "version": 3,
-            "changeset": 165847115,
-            "user": "PoCoSoFo",
-            "uid": 20246541,
+            "timestamp": "2025-05-10T16:46:28Z",
+            "version": 4,
+            "changeset": 166077850,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12787555091,
                 12787555092,
@@ -22244,11 +22228,13 @@
             "tags": {
                 "alt_name": "イタリアパビリオン",
                 "amenity": "exhibition_centre",
+                "description": "予約は以下のサイトから\nhttps://www.italyexpo2025osaka.it/",
                 "name": "イタリア&教皇庁パビリオン",
                 "name:en": "Italy & Holy See Pavilion",
                 "name:ja": "イタリア&教皇庁パビリオン",
                 "reservation": "yes",
-                "short_name": "イタリア館"
+                "short_name": "イタリア館",
+                "website": "https://www.expo2025.or.jp/official-participant/holysee/"
             }
         },
         {
@@ -26365,6 +26351,30 @@
                 "name": "静けさの森ゾーン",
                 "place": "locality",
                 "ref": "F"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1385379785,
+            "timestamp": "2025-05-10T16:54:59Z",
+            "version": 1,
+            "changeset": 166078167,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12813332744,
+                12826163418,
+                12826163419,
+                12826163421,
+                12826163420,
+                12813332744
+            ],
+            "tags": {
+                "area": "yes",
+                "artwork_type": "installation",
+                "name": "文明の森",
+                "tourism": "artwork",
+                "website": "https://expo2025forest.com/"
             }
         },
         {
@@ -39833,6 +39843,12 @@
         },
         {
             "type": "node",
+            "id": 12813332744,
+            "lat": 34.6476398,
+            "lon": 135.3847016
+        },
+        {
+            "type": "node",
             "id": 12817283191,
             "lat": 34.6532230,
             "lon": 135.3758194
@@ -40418,6 +40434,30 @@
             "id": 12824939667,
             "lat": 34.6492679,
             "lon": 135.3830634
+        },
+        {
+            "type": "node",
+            "id": 12826163418,
+            "lat": 34.6475445,
+            "lon": 135.3848385
+        },
+        {
+            "type": "node",
+            "id": 12826163419,
+            "lat": 34.6475797,
+            "lon": 135.3848747
+        },
+        {
+            "type": "node",
+            "id": 12826163420,
+            "lat": 34.6477381,
+            "lon": 135.3848025
+        },
+        {
+            "type": "node",
+            "id": 12826163421,
+            "lat": 34.6476824,
+            "lon": 135.3848826
         }
     ]
 }
