@@ -1,19 +1,19 @@
 {
     "site_title": {
-        "ja": "EXPO2025非公式マニアックマップ",
-        "en": "EXPO2025 Maniacs Map(UnOfficial)"
+        "ja": "EXPO2025マニアックマップ",
+        "en": "EXPO2025 Maniacs Map"
     },
     "site_subtitle": {
         "ja": "by OpenStreetMap",
         "en": "by OpenStreetMap"
     },
     "about": {
-        "ja": "EXPO2025非公式マニアックマップについて",
-        "en": "about EXPO2025 Maniacs Map(UnOfficial)"
+        "ja": "EXPO2025マニアックマップについて",
+        "en": "about EXPO2025 Maniacs Map"
     },
     "about_message": {
         "ja": "EXPO2025に関する情報を地図に表示するWebアプリです。データはOpenStreetMapを利用しています。",
-        "en": "It is a web application that displays information about EXPO2025 Maniacs Map(UnOfficial), utilizing data from OpenStreetMap."
+        "en": "It is a web application that displays information about EXPO2025 Maniacs Map, utilizing data from OpenStreetMap."
     },
     "owner": {
         "ja": "",
@@ -28,8 +28,8 @@
         "en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
     },
     "develop_site": {
-        "ja": "EXPO2025非公式マニアックマップの開発サイトへ",
-        "en": "EXPO2025 Maniacs Map(UnOfficial) development site"
+        "ja": "EXPO2025マニアックマップの開発サイトへ",
+        "en": "EXPO2025 Maniacs Map development site"
     },
     "more_message": {
         "ja": "",

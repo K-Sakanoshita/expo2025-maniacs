@@ -1,6 +1,4 @@
-# Expo 2025 Maniacs Map
-
-**非公式ファンによる、万博2025のマニアックWebマップです。**
+# 大阪・関西万博2025マニアックマップ
 
 このプロジェクトでは、OSMFJ（OpenStreetMap Foundation Japan）提供のタイルサーバーを背景地図に使用し、  
 POI（Point of Interest）情報をOverpass APIから取得・表示します。
