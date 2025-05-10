@@ -112,7 +112,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 if (UrlParams.category) {
                     listTable.selectCategory(UrlParams.category)
                     delete UrlParams.category;
-                    cMapMaker.eventChangeCategory()
                 }
                 if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                     let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
@@ -120,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     let subparam = param.split("."); // split child elements(.)
                     cMapMaker.viewDetail(subparam[0], subparam[1]);
                 }
+                setTimeout(cMapMaker.eventChangeCategory, 500)
             };
 
             poiCont.setActdata(results[0]); // gSheetをPoiContにセット(座標は無いのでOSM読み込み時にマッチング)

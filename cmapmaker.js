@@ -15,10 +15,7 @@ class CMapMaker {
         console.log("CMapMaker: init.")
         mapLibre.on('moveend', this.eventMoveMap.bind(cMapMaker))   		// マップ移動時の処理
         mapLibre.on('zoomend', this.eventZoomMap.bind(cMapMaker))			// ズーム終了時に表示更新
-        //list_keyword.addEventListener('keydown', this.eventSearchKeyword.bind(cMapMaker))	// 
         list_category.addEventListener('change', this.eventChangeCategory.bind(cMapMaker))	// category change
-        //this.eventMoveMap();
-        //this.eventZoomMap();
     }
 
     about() {
@@ -430,7 +427,7 @@ class CMapMaker {
                     break;
             }
         }
-        this.updateView();
+        cMapMaker.updateView();
         catname = selcategory !== "-" ? `?category=${selcategory}` : ""
         history.replaceState('', '', location.pathname + catname + location.hash)
     }
