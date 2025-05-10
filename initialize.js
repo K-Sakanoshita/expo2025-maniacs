@@ -108,10 +108,11 @@ window.addEventListener("DOMContentLoaded", function () {
                 }
                 cMapMaker.addEvents();
                 winCont.splash(false)
+
                 if (UrlParams.category) {
                     listTable.selectCategory(UrlParams.category)
-                    cMapMaker.eventChangeCategory()
                     delete UrlParams.category;
+                    cMapMaker.eventChangeCategory()
                 }
                 if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                     let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
@@ -121,27 +122,22 @@ window.addEventListener("DOMContentLoaded", function () {
                 }
             };
 
-            // Load gSheet's OSM Data(件数が増えるとサーバから拒否されるので停止)
             poiCont.setActdata(results[0]); // gSheetをPoiContにセット(座標は無いのでOSM読み込み時にマッチング)
             if (Conf.view.poiActLoad) {
-                let osmids = poiCont.pois().acts.map((act) => {
-                    return act.osmid;
-                });
+                let osmids = poiCont.pois().acts.map((act) => { return act.osmid; });
                 osmids = osmids.filter(Boolean);
                 if (osmids.length > 0 && !Conf.static.mode) {
-                    basic
-                        .retry(() => overPassCont.getOsmIds(osmids), 5)
-                        .then((geojson) => {
-                            poiCont.addGeojson(geojson)
-                            poiCont.setActlnglat()
-                            cMapMaker.updateView().then(() => { init_close() })
-                        });
+                    basic.retry(() => overPassCont.getOsmIds(osmids), 5).then((geojson) => {
+                        poiCont.addGeojson(geojson)
+                        poiCont.setActlnglat()
+                        init_close();
+                    });
                 } else {
                     poiCont.setActlnglat();
-                    cMapMaker.updateView().then(() => { init_close() })
+                    init_close()
                 }
             } else {
-                cMapMaker.updateView().then(() => { init_close() })
+                init_close()
             }
         })
     })

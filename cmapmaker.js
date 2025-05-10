@@ -406,7 +406,7 @@ class CMapMaker {
     // EVENT: カテゴリ変更時のイベント
     eventChangeCategory() {
         let catname, selcategory = listTable.getSelCategory()
-        console.log("eventChange.")
+        console.log("eventChange: " + selcategory)
         if (Conf.selectItem.menu == "") {	                // 通常時
             switch (Conf.view.poiFilter) {                      // フィルタ種別で動作を変える
                 case "filter":                                 // 画面表示内で絞り込み
