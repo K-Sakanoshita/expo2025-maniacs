@@ -104,6 +104,7 @@
         "building": {
             "apartments": "apartments",
             "detached": "detached",
+            "gatehouse": "gatehouse",
             "museum": "museum",
             "office": "office",
             "public": "public",

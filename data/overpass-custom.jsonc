@@ -19,23 +19,6 @@
                 "name"
             ]
         },
-        "expo2025_area": {
-            "overpass": [
-                "way[\"tourism\"=\"theme_park\"]"
-            ],
-            "tags": [
-                "tourism=theme_park"
-            ],
-            "expression": {
-                "poiView": false, // true時はアイコン表示
-                "stroke": "#404040",
-                "stroke-width": 3,
-                "fill-opacity": 0.05
-            },
-            "titles": [
-                "name"
-            ]
-        },
         "expo2025_placeL": {
             "overpass": [
                 "way[\"place\"=\"locality\"][\"ref\"=\"L\"]"
@@ -155,6 +138,40 @@
                 "name"
             ]
         },
+        "expo2025_placeF": {
+            "overpass": [
+                "way[\"place\"=\"locality\"][\"ref\"=\"F\"]"
+            ],
+            "tags": [
+                "ref=F"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#40D040",
+                "stroke-width": 2,
+                "fill-opacity": 0.1
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_gatehouse": {
+            "overpass": [
+                "way[\"building\"=\"gatehouse\"]"
+            ],
+            "tags": [
+                "building=gatehouse"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#AAAAAA",
+                "stroke-width": 2,
+                "fill-opacity": 0.4
+            },
+            "titles": [
+                "name"
+            ]
+        },
         "expo2025_private": {
             "overpass": [
                 "way[\"area:highway\"][\"access\"=\"no\"]",
@@ -192,59 +209,176 @@
                 "name"
             ]
         },
-        "expo2025_poi": {
+        "expo2025_exp": {
             "overpass": [
-                "nwr[\"amenity\"=\"cafe\"]",
-                "nwr[\"amenity\"=\"pub\"]",
-                "nwr[\"amenity\"=\"luggage_locker\"]",
-                "nwr[\"amenity\"=\"waste_basket\"]",
-                "nwr[\"amenity\"=\"stage\"]",
-                "nwr[\"amenity\"=\"taxi\"]",
-                "nwr[\"amenity\"=\"toilets\"]",
-                "nwr[\"amenity\"=\"bus_station\"]",
-                "nwr[\"amenity\"=\"shelter\"]",
-                "nwr[\"amenity\"=\"picnic_site\"]",
-                "nwr[\"amenity\"=\"fast_food\"]",
-                "nwr[\"amenity\"=\"ferry_terminal\"]",
-                "nwr[\"amenity\"=\"food_court\"]",
-                "nwr[\"amenity\"=\"restaurant\"]",
-                "nwr[\"amenity\"=\"theatre\"]",
-                "nwr[\"amenity\"=\"smoking_area\"]",
-                "nwr[\"amenity\"=\"place_of_worship\"]",
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
-                "nwr[\"amenity\"=\"drinking_water\"]",
-                "nwr[\"amenity\"=\"place_of_worship\"]",
-                "nwr[\"amenity\"=\"vending_machine\"]",
-                "nwr[\"amenity\"=\"post_office\"]",
-                "nwr[\"amenity\"=\"vending_machine\"]",
-                "nwr[\"building\"=\"yes\"][\"name\"]",
-                "nwr[\"building\"=\"roof\"][\"name\"]",
+                "nwr[\"amenity\"=\"stage\"]",
+                "nwr[\"amenity\"=\"theatre\"]"
+            ],
+            "tags": [
+                "amenity=exhibition_centre",
+                "amenity=stage",
+                "amenity=theatre"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#000000",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_art": {
+            "overpass": [
+                "nwr[\"tourism\"=\"artwork\"]"
+            ],
+            "tags": [
+                "tourism=artwork"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_move": {
+            "overpass": [
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"map\"]",
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"office\"]",
-                "nwr[\"tourism\"=\"artwork\"]",
-                "nwr[\"office\"]",
-                "nwr[\"shop\"=\"convenience\"]",
-                "nwr[\"shop\"=\"bakery\"]",
-                "nwr[\"shop\"=\"gift\"]",
-                "nwr[\"shop\"=\"mobile_phone\"]",
-                "nwr[\"shop\"=\"bakery\"]",
-                "nwr[\"shop\"=\"chemist\"]",
-                "nwr[\"shop\"=\"bakery\"]",
-                "nwr[\"man_made\"=\"water_tap\"]",
                 "node[\"highway\"=\"elevator\"]",
                 "node[\"highway\"=\"bus_stop\"]"
             ],
             "tags": [
-                "amenity",
-                "building",
-                "name",
-                "tourism",
-                "office",
-                "shop",
-                "man_made",
-                "natural!=tree",
+                "tourism=information",
                 "highway=elevator",
                 "highway=bus_stop"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_toilets": {
+            "overpass": [
+                "nwr[\"amenity\"=\"toilets\"]",
+                "nwr[\"man_made\"=\"water_tap\"]"
+            ],
+            "tags": [
+                "amenity=toilets",
+                "man_made=water_tap"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_vending": {
+            "overpass": [
+                "nwr[\"amenity\"=\"vending_machine\"]",
+                "nwr[\"amenity\"=\"waste_basket\"]"
+            ],
+            "tags": [
+                "amenity=vending_machine",
+                "amenity=waste_basket"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_drinks": {
+            "overpass": [
+                "nwr[\"amenity\"=\"drinking_water\"]"
+            ],
+            "tags": [
+                "amenity=drinking_water"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_foods": {
+            "overpass": [
+                "nwr[\"amenity\"=\"cafe\"]",
+                "nwr[\"amenity\"=\"pub\"]",
+                "nwr[\"amenity\"=\"picnic_site\"]",
+                "nwr[\"amenity\"=\"fast_food\"]",
+                "nwr[\"amenity\"=\"food_court\"]",
+                "nwr[\"amenity\"=\"restaurant\"]"
+            ],
+            "tags": [
+                "amenity=cafe",
+                "amenity=pub",
+                "amenity=picnic_site",
+                "amenity=fast_food",
+                "amenity=food_court",
+                "amenity=restaurant"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_store": {
+            "overpass": [
+                "nwr[\"amenity\"=\"place_of_worship\"]",
+                "nwr[\"amenity\"=\"luggage_locker\"]",
+                "nwr[\"amenity\"=\"post_office\"]",
+                "nwr[\"amenity\"=\"smoking_area\"]",
+                "nwr[\"office\"=\"courier\"]",
+                "nwr[\"office\"=\"government\"]",
+                "nwr[\"shop\"=\"convenience\"]",
+                "nwr[\"shop\"=\"bakery\"]",
+                "nwr[\"shop\"=\"gift\"]",
+                "nwr[\"shop\"=\"mobile_phone\"]",
+                "nwr[\"shop\"=\"chemist\"]",
+                "nwr[\"building\"=\"yes\"][\"name\"]"
+            ],
+            "tags": [
+                "amenity=place_of_worship",
+                "amenity=luggage_locker",
+                "amenity=post_office",
+                "amenity=smoking_area",
+                "office=courier",
+                "office=government",
+                "shop=convenience",
+                "shop=bakery",
+                "shop=gift",
+                "shop=mobile_phone",
+                "shop=chemist",
+                "building=yes"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -266,7 +400,7 @@
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#c0a0a0",
-                "stroke-width": 2,
+                "stroke-width": 3,
                 "fill-opacity": 1
             },
             "titles": [

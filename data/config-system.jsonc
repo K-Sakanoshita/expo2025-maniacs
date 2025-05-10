@@ -43,6 +43,33 @@
                     }
                 ]
             }
+        },
+        "Japan2010": {
+            "style": "./tiles/japan-20100106.json"
+        },
+        "Japan2012": {
+            "style": "./tiles/japan-20120104.json"
+        },
+        "Japan2014": {
+            "style": "./tiles/japan-20140101.json"
+        },
+        "Japan2016": {
+            "style": "./tiles/japan-20160101.json"
+        },
+        "Japan2018": {
+            "style": "./tiles/japan-20180101.json"
+        },
+        "Japan2020": {
+            "style": "./tiles/japan-20200101.json"
+        },
+        "Japan2022": {
+            "style": "./tiles/japan-20220101.json"
+        },
+        "Japan2023": {
+            "style": "./tiles/japan-20230101.json"
+        },
+        "Japan2024": {
+            "style": "./tiles/japan-20240101.json"
         }
     },
     "menu_list": {

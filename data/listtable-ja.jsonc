@@ -8,7 +8,7 @@
                 },
                 {
                     "id": "category",
-                    "hidden": true
+                    "name": "種別"
                 },
                 {
                     "id": "name",

@@ -37,8 +37,7 @@ console.log("Welcome to Community Map Maker.");
 console.log("initialize: Start.");
 window.addEventListener("DOMContentLoaded", function () {
     const fetchUrls = FILES.map((url) => fetch(url).then((res) => res.text()));
-    const setUrlParams = function () {
-        // URLから引数を取得して返す関数
+    const setUrlParams = function () {  // URLから引数を取得して返す関数
         let keyValue = {};
         let search = location.search.replace(/[?&]fbclid.*/, "").replace(/%2F/g, "/").slice(1); // facebook対策
         search = search.slice(-1) == "/" ? search.slice(0, -1) : search; // facebook対策(/が挿入される)
@@ -50,7 +49,7 @@ window.addEventListener("DOMContentLoaded", function () {
             keyValue[keyv[0]] = keyv[1];
         }
         return keyValue;
-    };
+    }
 
     Promise.all(fetchUrls).then((texts) => {
         let basehtml = texts[0]; // Get Menu HTML
@@ -94,36 +93,32 @@ window.addEventListener("DOMContentLoaded", function () {
             glot.render();
 
             const init_close = function () {
-                if (Conf.selectItem.menu == "") {
+                if (Conf.selectItem.menu == "") {                // view all list
+                    listTable.makeList(Conf.view.poiFilter);
                     listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                } else {
+                } else if (Conf.selectItem.action == "ChangeMAP") {
                     // Make SelectItem(Manual)
-                    Object.keys(Conf.selectItem.menu).forEach((key) => {
-                        winCont.select_add("list_category", key, Conf.selectItem.menu[key]);
-                    });
+                    //Object.keys(Conf.selectItem.menu).forEach((key) => {
+                    //    winCont.select_add("list_category", key, Conf.selectItem.menu[key]);
+                    //})
+                    listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
+                } else if (Conf.selectItem.action == "ChangePOI") {
+                    listTable.makeList(Conf.view.poiFilter);
+                    listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
                 }
-                let eventMoveMap = cMapMaker.eventMoveMap.bind(cMapMaker);
-                eventMoveMap().then(() => {
-                    winCont.splash(false);
-                    if (UrlParams.category) {
-                        if (Conf.selectItem.menu == "") {
-                            // listTableリンク時
-                            listTable.selectCategory(UrlParams.category);
-                        } else {
-                            // 手動時は直接指定
-                            list_category.value = UrlParams.category;
-                        }
-                        cMapMaker.eventChangeCategory();
-                        delete UrlParams.category;
-                    }
-                    if (UrlParams.node || UrlParams.way || UrlParams.relation) {
-                        let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
-                        let param = keyv[0] + "/" + keyv[1];
-                        let subparam = param.split("."); // split child elements(.)
-                        cMapMaker.viewDetail(subparam[0], subparam[1]);
-                    }
-                    cMapMaker.addEvents();
-                });
+                cMapMaker.addEvents();
+                winCont.splash(false)
+                if (UrlParams.category) {
+                    listTable.selectCategory(UrlParams.category)
+                    cMapMaker.eventChangeCategory()
+                    delete UrlParams.category;
+                }
+                if (UrlParams.node || UrlParams.way || UrlParams.relation) {
+                    let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
+                    let param = keyv[0] + "/" + keyv[1];
+                    let subparam = param.split("."); // split child elements(.)
+                    cMapMaker.viewDetail(subparam[0], subparam[1]);
+                }
             };
 
             // Load gSheet's OSM Data(件数が増えるとサーバから拒否されるので停止)
@@ -137,17 +132,17 @@ window.addEventListener("DOMContentLoaded", function () {
                     basic
                         .retry(() => overPassCont.getOsmIds(osmids), 5)
                         .then((geojson) => {
-                            poiCont.addGeojson(geojson);
-                            poiCont.setActlnglat();
-                            init_close();
+                            poiCont.addGeojson(geojson)
+                            poiCont.setActlnglat()
+                            cMapMaker.updateView().then(() => { init_close() })
                         });
                 } else {
                     poiCont.setActlnglat();
-                    init_close();
+                    cMapMaker.updateView().then(() => { init_close() })
                 }
             } else {
-                init_close();
+                cMapMaker.updateView().then(() => { init_close() })
             }
-        });
-    });
-});
+        })
+    })
+})

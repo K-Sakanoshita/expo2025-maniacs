@@ -73,45 +73,52 @@ class CMapMaker {
     }
 
     viewArea() {			// Area(敷地など)を表示させる
-        console.log(`viewArea: Start.`)
+        //console.log(`viewArea: Start.`)
         let targets = poiCont.getTargets()  // 
         targets.forEach((target) => {
-            if (!Conf.osm["green_area"].expression.poiView) {   // poiView == falseが対象
+            let osmConf = Conf.osm[target] == undefined ? { expression: { poiView: true } } : Conf.osm[target]
+            if (!osmConf.expression.poiView) {   // poiView == falseが対象
                 console.log("viewArea: " + target)
                 let pois = poiCont.getPois(target)
                 mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target)
             }
         })
-        console.log("viewArea: End.")
+        //console.log("viewArea: End.")
     }
 
     viewPoi(targets) {		// Poiを表示させる
-        let setcount = 0
-        let nowselect = listTable.getSelCategory()
+        let nowselect = listTable.getSelCategory()          // tags,key=valueの複数値
         nowselect = nowselect[0] == "" ? "-" : nowselect[nowselect.length - 1]
         console.log(`viewPoi: Start(now select ${nowselect}).`)
         targets = targets[0] == "-" || targets[0] == "" ? poiCont.getTargets() : targets;		// '-' or ''はすべて表示
+        targets = targets.filter(target => {                                                    // poiView=trueのみ返す
+            return Conf.osm[target] !== undefined ? Conf.osm[target].expression.poiView : false;
+        })
         targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
-        targets = [...new Set(targets)];
+        targets = [...new Set(targets)];    // 重複削除
+        poiMarker.setPoi(listTable.getFilterList(), false)
+
+        //
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
         if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
-            poiMarker.setPoi("", false, listTable.getFilterList())
-            setcount = setcount + listTable.getFilterList().length
+            poiMarker.setPoi(listTable.getFilterList(), false)
         } else {			// targets 内に選択肢が含まれている場合
             console.log("viewPoi: " + targets.concat())
             let nowzoom = mapLibre.getZoom(false)
             targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
-            targets.forEach((target) => {
-                if (target !== "") {        // targetが無い場合を考慮
-                    if (Conf.osm[target].expression == undefined) console.log("???: target")
+            targets = targets.filter(s => s !== "");
+            if (nowselect = "-") {
+                poiMarker.setPoi(listTable.getFilterList(), nowselect == Conf.google.targetName)
+            } else {
+                for (let target of targets) {
                     let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
                     let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
-                    if ((target == nowselect || nowselect == "-") && flag && poiView) {	// 選択している種別の場合
-                        poiMarker.setPoi(target, target == Conf.google.targetName)
-                        setcount++
+                    if ((target == nowselect) && flag && poiView) {	// 選択している種別の場合
+                        poiMarker.setPoi(listTable.getFilterList(), target == Conf.google.targetName)
+                        break
                     }
                 }
-            })
+            }
         }
         console.log("viewPoi: End.")
     }
@@ -183,6 +190,30 @@ class CMapMaker {
         };
     };
 
+    // OSMデータを取得して画面表示
+    updateView() {
+        return new Promise((resolve) => {
+            this.updateOsmPoi().then((status) => {
+                switch (status.update) {
+                    case true:
+                        let targets = listTable.getSelCategory();
+                        this.viewArea()	        // 入手したgeoJsonを追加
+                        this.viewPoi(targets)	// in targets
+                        this.makeImages(true)
+                        console.log("updateView End.")
+                        resolve({ "update": true });
+                        break
+                    default:
+                        let bindMoveMapPromise = MoveMapPromise.bind(this)
+                        bindMoveMapPromise(resolve, reject)	// 失敗時はリトライ(接続先はoverpass.jsで変更)
+                        console.log("updateView Error.")
+                        resolve({ "update": false });
+                        break
+                }
+            })
+        })
+    }
+
     // キーワード検索
     searchKeyword(keyword) {
         if (keyword !== null) {
@@ -234,8 +265,8 @@ class CMapMaker {
             modal_wikipedia.make(tags, Conf.wikipedia.image).then(html => {
                 modal_wikipedia.set_dom(html);
                 winCont.modal_progress(0);
-            });
-        };
+            })
+        }
 
         // append activity
         let catname = listTable.getSelCategory() !== "-" ? `&category=${listTable.getSelCategory()}` : "";
@@ -270,8 +301,8 @@ class CMapMaker {
                 listTable.heightSet(listTable.height + "px");	// mode end
                 this.status = "normal";							// mode stop
                 icon_change("play");
-            };
-        };
+            }
+        }
         const icon_change = (mode) => { list_playback.className = 'fas fa-' + mode };
         const speed_calc = () => { return ((parseInt(list_speed.value) / 100) * Conf.listTable.playback.timer) + 100 };
         if (this.status !== "playback") {
@@ -287,12 +318,12 @@ class CMapMaker {
             listTable.heightSet(listTable.height + "px");		// mode end
             this.status = "normal";								// mode stop
             icon_change("play");
-        };
-    };
+        }
+    }
 
     download() {
         const linkid = "temp_download"
-        let csv = basic.makeArray2CSV(poiCont.makeList([list_category.value]))
+        let csv = basic.makeArray2CSV(listTable.makeList([list_category.value]))
         let bom = new Uint8Array([0xEF, 0xBB, 0xBF])
         let blob = new Blob([bom, csv], { 'type': 'text/csv' })
         let link = document.getElementById(linkid) ? document.getElementById(linkid) : document.createElement("a")
@@ -302,7 +333,7 @@ class CMapMaker {
         link.dataset.downloadurl = ['text/plain', link.download, link.href].join(':')
         document.body.appendChild(link)
         link.click()
-    };
+    }
 
     // イメージを選択した時のイベント処理
     viewImageList(imgdom) {
@@ -311,84 +342,49 @@ class CMapMaker {
         let poi = poiCont.get_osmid(osmid);
         let zoomlv = Math.max(mapLibre.getZoom(true), Conf.map.modalZoom);
         if (poi !== undefined) {
-            mapLibre.flyTo(poi.lnglat, zoomlv);
             cMapMaker.viewDetail(osmid);
+            mapLibre.flyTo(poi.lnglat, zoomlv);
             console.log("viewImageList: View OK.");
         }
     }
 
     // EVENT: map moveend発生時のイベント
     eventMoveMap() {
-        const MoveMapPromise = function (resolve, reject) {
-            let poizoom = false;	// 一つでもズーム表示かチェック
-            for (let [key, value] of Object.entries(Conf.view.poiZoom)) {
+        if (cMapMaker.moveMapBusy) return;
+        console.log("eventMoveMap: Start. ");
+        cMapMaker.moveMapBusy = true;
+        let poizoom = false;	// 一つでもズーム表示かチェック
+        for (let [key, value] of Object.entries(Conf.view.poiZoom)) {
+            if (mapLibre.getZoom(false) >= value) poizoom = true
+        }
+        if (Conf.etc.editMode) {
+            for (let [key, value] of Object.entries(Conf.view.editZoom)) {
                 if (mapLibre.getZoom(false) >= value) poizoom = true
             }
-            if (Conf.etc.editMode) {
-                for (let [key, value] of Object.entries(Conf.view.editZoom)) {
-                    if (mapLibre.getZoom(false) >= value) poizoom = true
-                }
+        }
+        if (!poizoom) {            	// 処理中 or 表示ズーム未満の時は戻る
+            console.log("eventMoveMap: Cancel(Busy or MoreZoom). ");
+            this.makeImages(false)
+            return
+        }
+        if (Conf.selectItem.menu == "") {	                // 通常時
+            switch (Conf.view.poiFilter) {                      // フィルタ種別で動作を変える
+                case "filter":                                 // 画面表示内で絞り込み
+                    listTable.makeSelectList(Conf.listTable.category)
+                    listTable.makeList(Conf.view.poiFilter)
+                    if (window.getSelection) window.getSelection().removeAllRanges();
+                    break;
+                case "all":                                     // 全て表示(その他と同じ)
+                case "":
+                    listTable.filterCategory(listTable.getSelCategory())
+                    break;
             }
-            if (this.moveMapBusy > 1 || !poizoom) {            	// 処理中 or 表示ズーム未満の時は戻る
-                console.log("eventMoveMap: Cancel(Busy or MoreZoom). ");
-                this.makeImages(false)
-                resolve()
-                return
-            }
-            if (this.moveMapBusy == 1) {                        			// no break and cancel old timer.
-                clearTimeout(this.id);
-                console.log("eventMoveMap: Reset(Busy).");
-            } else {
-                console.log("eventMoveMap: Start. ");
-            }
-            this.moveMapBusy = 1;
-            this.id = setTimeout(() => {
-                console.log("eventMoveMap: End.");
-                this.moveMapBusy = 2;
-                this.updateOsmPoi().then((status) => {
-                    this.moveMapBusy = 0
-                    switch (status.update) {
-                        case true:
-                            this.moveMapBusy = 0;
-                            let targets = [listTable.getSelCategory()];
-                            console.log("eventMoveMap:" + targets)
-                            switch (Conf.view.poiFilter) {
-                                case "all":                                     // 全て表示
-                                case "fillter":                                 // 画面内で絞り込み
-                                    listTable.makeList(Conf.view.poiFilter);	// view all list
-                                    if (Conf.selectItem.menu == "") listTable.makeSelectList(Conf.listTable.category)   // カスタム時
-                                    listTable.filterCategory(listTable.getSelCategory())
-                                    if (window.getSelection) window.getSelection().removeAllRanges();
-                                    break;
-                                case "":
-                                    break;
-                            }
-                            this.viewArea()	        // 入手したgeoJsonを追加
-                            this.viewPoi(targets)	// in targets
-                            this.makeImages(true)
-                            resolve()
-                            break
-                        default:
-                            let bindMoveMapPromise = MoveMapPromise.bind(this)
-                            bindMoveMapPromise(resolve, reject)	// 失敗時はリトライ(接続先はoverpass.jsで変更)
-                            break
-                    }
-                })/*.catch(() => {
-					this.moveMapBusy = 0;
-					console.log("eventMoveMap: Reject");
-					reject();
-				});*/
-            }, 500);
-        };
-        return new Promise((resolve, reject) => {
-            if (this.moveMapBusy < 2) {
-                let bindMoveMapPromise = MoveMapPromise.bind(cMapMaker);
-                bindMoveMapPromise(resolve, reject);
-            } else {
-                resolve();
-            }
+        }
+        cMapMaker.updateView().then((status) => {
+            cMapMaker.moveMapBusy = false
+            console.log("eventMoveMap: End.");
         });
-    };
+    }
 
     // EVENT: View Zoom Level & Status Comment
     eventZoomMap() {
@@ -407,31 +403,35 @@ class CMapMaker {
         zoomlevel.innerHTML = "<h2 class='zoom'>" + message + "</h2>"
     }
 
-    // EVENT: キーワード検索
-    /*
-    eventSearchKeyword(event) {
-        if (event.key === 'Enter') this.searchKeyword(list_keyword.value);
-    };
-    */
-
     // EVENT: カテゴリ変更時のイベント
     eventChangeCategory() {
+        let catname, selcategory = listTable.getSelCategory()
         console.log("eventChange.")
-        if (Conf.selectItem.menu == "") {	// listTableリンク時
-            let selcategory = listTable.getSelCategory()
-            let targets = Conf.listTable.target == "targets" ? [selcategory] : ["-"]
-            listTable.filterCategory(selcategory)
-            if (Conf.view.poiFilter == "filter") { this.viewPoi(targets) }	// in targets
-            let catname = selcategory !== "-" ? `?category=${selcategory}` : ""
-            history.replaceState('', '', location.pathname + catname + location.hash)
-        } else {	// 手動時
-            switch (Conf.selectItem.action) {
-                case "ChangeMap":
-                    mapLibre.changeMap(list_category.value)
+        if (Conf.selectItem.menu == "") {	                // 通常時
+            switch (Conf.view.poiFilter) {                      // フィルタ種別で動作を変える
+                case "filter":                                 // 画面表示内で絞り込み
+                    listTable.makeSelectList(Conf.listTable.category)
+                    listTable.makeList(Conf.view.poiFilter)
+                    if (window.getSelection) window.getSelection().removeAllRanges();
+                    break;
+                case "all":                                     // 全て表示(その他と同じ)
+                case "":
+                    listTable.filterCategory(listTable.getSelCategory())
+                    break;
             }
-            let catname = `?category=${list_category.value}`
-            history.replaceState('', '', location.pathname + catname + location.hash)
+        } else {	                                        // カスタムリンク
+            switch (Conf.selectItem.action) {
+                case "ChangeMap":                               // 背景地図切り替え
+                    mapLibre.changeMap(list_category.value)
+                    break;
+                case "ChangePOI":
+                    listTable.filterCategory(listTable.getSelCategory())
+                    console.log("stub");
+                    break;
+            }
         }
-        this.eventMoveMap();    // ViewPoi
-    };
-};
+        this.updateView();
+        catname = selcategory !== "-" ? `?category=${selcategory}` : ""
+        history.replaceState('', '', location.pathname + catname + location.hash)
+    }
+}

@@ -8,7 +8,7 @@
                 },
                 {
                     "id": "category",
-                    "hidden": true
+                    "name": "category"
                 },
                 {
                     "id": "name",

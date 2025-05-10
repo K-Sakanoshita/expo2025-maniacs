@@ -1,6 +1,6 @@
 {
     "activities": {
-        "openhc-map": {
+        "expo2025": {
             "header": "",
             "footer": "",
             "form": {
@@ -28,11 +28,6 @@
                     "glot": "act_picture_url1",
                     "type": "image_url",
                     "gsheet": "picture_url1"
-                },
-                "picture_url2": {
-                    "glot": "act_picture_url2",
-                    "type": "image_url",
-                    "gsheet": "picture_url2"
                 }
             }
         }

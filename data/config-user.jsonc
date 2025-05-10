@@ -20,11 +20,11 @@
         ],
         "initZoom": 15.5,
         "maxZoom": 20,
-        "modalZoom": 19, // モーダルダイアログ表示時のズームサイズ
+        "modalZoom": 18, // モーダルダイアログ表示時のズームサイズ
         "textFont": [
-            "Noto Sans Regular"
+            "NNoto Sans Bold"
         ], // 使用可能なフォント（spriteに依存）
-        "textSize": 10
+        "textSize": 12
     },
     "icon": {
         "fgPath": "icon",
@@ -32,14 +32,19 @@
         "attention": 0.8,
         "middle": 0.7,
         "visited": 0.44,
-        "normal": 0.6
+        "normal": 0.6,
+        "textFont": [
+            "Noto Sans Regular"
+        ], // 使用可能なフォント（spriteに依存）
+        "textSize": 10,
+        "textViewZoom": 15.5 // アイコンに文字を表示するズームレベル
     },
     "view": {
         "poiActLoad": false, // 起動時にActivityを読み込むか
+        "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
-            "green_area": 13,
-            "expo2025_area": 12,
+            "expo2025_private": 12,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -47,17 +52,25 @@
             "expo2025_placeS": 12,
             "expo2025_placeX": 12,
             "expo2025_placeP": 12,
-            "expo2025_private": 12,
+            "expo2025_placeF": 12,
+            "expo2025_gatehouse": 12,
             "expo2025_wall": 13,
-            "expo2025_poi": 13,
             "expo2025_door": 16,
+            "green_area": 13,
+            "expo2025_exp": 15,
+            "expo2025_poi": 15,
+            "expo2025_art": 15,
+            "expo2025_move": 15,
+            "expo2025_toilets": 15,
+            "expo2025_drinks": 15,
+            "expo2025_foods": 15,
+            "expo2025_vending": 15,
+            "expo2025_store": 15,
             "activity": 12
         },
-        "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
         "editZoom": {
             // 編集時に追加するpoiZoom
-            "green_area": 15,
-            "expo2025_area": 15,
+            "expo2025_private": 15,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -65,10 +78,20 @@
             "expo2025_placeS": 12,
             "expo2025_placeX": 12,
             "expo2025_placeP": 12,
-            "expo2025_private": 15,
+            "expo2025_placeF": 12,
+            "expo2025_gatehouse": 12,
             "expo2025_wall": 15,
-            "expo2025_poi": 15,
             "expo2025_door": 15,
+            "green_area": 15,
+            "expo2025_exp": 15,
+            "expo2025_poi": 15,
+            "expo2025_art": 15,
+            "expo2025_move": 15,
+            "expo2025_toilets": 15,
+            "expo2025_drinks": 15,
+            "expo2025_foods": 15,
+            "expo2025_vending": 15,
+            "expo2025_store": 15,
             "activity": 12
         }
     },
@@ -81,24 +104,36 @@
         "loadingUrl": "./image/loading.gif"
     },
     "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
-        "default": "tags,amenity.exhibition_centre",
-        "menu": "",
+        "default": "expo2025_exp",
+        "menu": //"",
+        {
+            "-": "-",
+            "展示・パビリオン": "expo2025_exp",
+            "案内板・移動支援": "expo2025_move",
+            "アート作品・壁画": "expo2025_art",
+            "トイレ・手洗い所": "expo2025_toilets",
+            "水飲み場・給水所": "expo2025_drinks",
+            "自販機・ゴミ箱": "expo2025_vending",
+            "カフェ・レストラン": "expo2025_foods",
+            "店舗・サービス施設": "expo2025_store"
+        },
         /*{
-        "2010年時点の地図(日本)": "Japan2010",
-        "2012年時点の地図(日本)": "Japan2012",
-        "2014年時点の地図(日本)": "Japan2014",
-        "2016年時点の地図(日本)": "Japan2016",
-        "2018年時点の地図(日本)": "Japan2018",
-        "2020年時点の地図(日本)": "Japan2020",
-        "2022年時点の地図(日本)": "Japan2022",
-        "最新地図(全世界)": "OSMFJ"
-    },*/
-        "action": "" // ChangeMap:背景地図切り替え
+            "2010年時点の地図(日本)": "Japan2010",
+            "2012年時点の地図(日本)": "Japan2012",
+            "2014年時点の地図(日本)": "Japan2014",
+            "2016年時点の地図(日本)": "Japan2016",
+            "2018年時点の地図(日本)": "Japan2018",
+            "2020年時点の地図(日本)": "Japan2020",
+            "2022年時点の地図(日本)": "Japan2022",
+            "2024年時点の地図(日本)": "Japan2024",
+            "最新地図(全世界)": "OSMFJ"
+        }*/
+        "action": "ChangePOI" // ChangeMap:背景地図切り替え / ChangePOI:メニューに会ったOverpass名のPOIを表示
     },
     "listTable": {
         "height": 0.6, // リスト時の高さ(1を最大とした割合)
-        "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
-        "target": "expo2025_poi", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+        "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
+        "target": "targets", // targets: / activity:google sheetsを表示 
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
@@ -109,7 +144,7 @@
     },
     "google": {
         "Analytics": "",
-        "AppScript": "",
+        "AppScript": "https://script.google.com/macros/s/AKfycbyA1Z5e7xo3Oh39hJTSfaM-Wu_H7_Pz9iZmGDpU4bwZW4KrIKwXHFkVj-g26ZW70g5Tkw/exec",
         "targetName": "activity"
     },
     "static": {
@@ -150,6 +185,11 @@
         ],
         // 詳細表示のハンバーガーメニュー
         "modal": [
+            {
+                "glot-model": "act_add",
+                "linkto": "javascript:modalActs.edit({form:'expo2025'})",
+                "divider": false
+            },
             {
                 "glot-model": "osm_open",
                 "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",

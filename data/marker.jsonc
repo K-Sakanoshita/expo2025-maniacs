@@ -109,6 +109,7 @@
             "building": {
                 "apartments": "home.svg",
                 "detached": "home.svg",
+                "gatehouse": "home.svg",
                 "museum": "museum.svg",
                 "office": "town_hall.svg",
                 "public": "home.svg",
@@ -404,6 +405,11 @@
             }
         },
         "subtag": {
+            "amenity": {
+                "bottle": {
+                    "yes": "bottles.svg"
+                }
+            },
             "artwork": {
                 "artwork_type": {
                     "bust": "statue.svg",
