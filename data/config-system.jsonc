@@ -49,16 +49,6 @@
         "template": "<a class='dropdown-item'><span></span></a><span class='dropdown-item'></span>",
         "divider": "<div class='dropdown-divider'></div>"
     },
-    "effect": {
-        "icon": {
-            "x": 0,
-            "y": 0
-        },
-        "text": {
-            "size": 12,
-            "view": true
-        }
-    },
     "style": {
         "circle": {
             "radius": 0,

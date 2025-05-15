@@ -145,7 +145,7 @@
     },
     "google": {
         "Analytics": "",
-        "AppScript": "https://script.google.com/macros/s/AKfycbyA1Z5e7xo3Oh39hJTSfaM-Wu_H7_Pz9iZmGDpU4bwZW4KrIKwXHFkVj-g26ZW70g5Tkw/exec",
+        "AppScript": "", //"https://script.google.com/macros/s/AKfycbyA1Z5e7xo3Oh39hJTSfaM-Wu_H7_Pz9iZmGDpU4bwZW4KrIKwXHFkVj-g26ZW70g5Tkw/exec",
         "targetName": "activity"
     },
     "static": {

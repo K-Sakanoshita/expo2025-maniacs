@@ -15,9 +15,9 @@
                 "stroke-width": 2,
                 "fill-opacity": 0.5
             },
-            "titles": [
+            "titles": [ // viewDetailのみで利用。listTableの名称を利用するよう改修予定（廃止したい）
                 "name"
-            ]
+            ],
         },
         "expo2025_placeL": {
             "overpass": [
@@ -33,6 +33,7 @@
                 "fill-opacity": 0.1
             },
             "titles": [
+                "ref",
                 "name"
             ]
         },
@@ -79,9 +80,9 @@
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
-                "stroke": "#FF0000",
+                "stroke": "#C02020",
                 "stroke-width": 2,
-                "fill-opacity": 0.1
+                "fill-opacity": 0.07
             },
             "titles": [
                 "name"
@@ -96,7 +97,7 @@
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
-                "stroke": "#C06060",
+                "stroke": "#D09060",
                 "stroke-width": 2,
                 "fill-opacity": 0.1
             },

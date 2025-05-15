@@ -69,7 +69,7 @@ class CMapMaker {
         }
     }
 
-    viewArea() {			// Area(敷地など)を表示させる
+    viewArea() {			// Area(敷地など)を表示させる refタグがあれば()表記
         //console.log(`viewArea: Start.`)
         let targets = poiCont.getTargets()  // 
         targets.forEach((target) => {
@@ -77,7 +77,12 @@ class CMapMaker {
             if (!osmConf.expression.poiView) {   // poiView == falseが対象
                 console.log("viewArea: " + target)
                 let pois = poiCont.getPois(target)
-                mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target)
+                let titleTag = ["format", ["case",
+                    ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
+                    ["concat", "(", ["get", "ref"], ") ", ["coalesce", ["get", "name"], ""]],
+                    ["coalesce", ["get", "name"], ""]], {}
+                ]
+                mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target, titleTag)
             }
         })
         //console.log("viewArea: End.")
