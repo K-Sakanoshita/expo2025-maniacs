@@ -31,7 +31,7 @@
             "dentist": "歯医者",
             "doctors": "医者",
             "dojo": "道場",
-            "drinking_water": "水飲み場",
+            "drinking_water": "給水所",
             "exhibition_centre": "パビリオン",
             "fast_food": "ファーストフード",
             "ferry_terminal": "フェリーターミナル",
@@ -401,7 +401,7 @@
     "category_sub": {
         "amenity": {
             "bottle": {
-                "yes": "ボトル給水"
+                "yes": "ボトル"
             },
             "gambling": {
                 "mahjong": "麻雀"

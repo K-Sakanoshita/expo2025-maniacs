@@ -8,21 +8,21 @@ class modal_OSMbasic {
 
         // write type
         if (catname[0] !== undefined) {
-            html += `<div class="flex-row"> <i class="fas fa-square"></i> ${catname[0]}${catname[1] !== "" ? "(" + catname[1] + ")" : ""}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-square"></i> ${catname[0]}${catname[1] !== "" ? "(" + catname[1] + ")" : ""}</div>`;
             elements++;
         }
 
         // write brand
         let brand = [tags["brand:ja"], tags.brand].filter((a) => a !== undefined)[0];
         if (brand !== undefined) {
-            html += `<div class="flex-row"> <i class="fa-solid fa-building"></i>${brand}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fa-solid fa-building"></i>${brand}</div>`;
             elements++;
         }
 
         // write changing_table
         if (tags.changing_table !== undefined) {
             let available = tags.changing_table == "yes" ? glot.get("available") : glot.get("unavailable");
-            html += `<div class="flex-row"> <i class="fas fa-baby"></i> ${glot.get("changing_table")}:${available}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-baby"></i> ${glot.get("changing_table")}:${available}</div>`;
             elements++;
         }
 
@@ -31,7 +31,7 @@ class modal_OSMbasic {
             let test = { yes: "available", no: "unavailable", limited: "limited" };
             if (test[tags.wheelchair] !== undefined) {
                 let available = glot.get(test[tags.wheelchair]);
-                html += `<div class="flex-row"> <i class="fas fa-wheelchair"></i> ${available}</div>`;
+                html += `<div class="flex-row mt-2"> <i class="fas fa-wheelchair"></i> ${available}</div>`;
                 elements++;
             }
         }
@@ -41,7 +41,7 @@ class modal_OSMbasic {
             let test = { yes: "available", no: "unavailable", limited: "limited" };
             if (test[tags.bottle] !== undefined) {
                 let available = glot.get(test[tags.bottle]);
-                html += `<div class="flex-row"> <i class="fas fa-wine-bottle"></i> ${available}</div>`;
+                html += `<div class="flex-row mt-2"> <i class="fas fa-wine-bottle"></i> ${available}</div>`;
                 elements++;
             }
         }
@@ -51,7 +51,7 @@ class modal_OSMbasic {
         if (website !== undefined) {
             let httpn = website.replace(/^https?:\/\//, "");
             let trunc = httpn.length > 22 ? httpn.substring(0, 19) + "..." : httpn;
-            html += `<div class="flex-row"> <i class="fas fa-globe"></i> <a href="${website}" target="_blank">${trunc}</a></div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-globe"></i> <a href="${website}" target="_blank">${trunc}</a></div>`;
             elements++;
         }
 
@@ -63,7 +63,7 @@ class modal_OSMbasic {
                 case "no": reserve = glot.get("reservation_no"); break;
                 case "recommended": reserve = glot.get("reservation_recommended"); break;
             }
-            html += `<div class="flex-row"> <i class="fa-solid fa-ticket"></i> ${reserve}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fa-solid fa-ticket"></i> ${reserve}</div>`;
             elements++;
         }
 
@@ -72,7 +72,7 @@ class modal_OSMbasic {
         if (instagram !== undefined) {
             instagram = this.getInstagramProfileUrl(instagram);
             if (instagram !== null) {
-                html += `<div class="flex-row"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`;
+                html += `<div class="flex-row mt-2"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`;
                 elements++;
             }
         }
@@ -81,32 +81,37 @@ class modal_OSMbasic {
         if (tags.phone !== undefined) {
             let phone = tags.phone
             phone = phone.startsWith("+81") ? "0" + phone.slice(3) : phone;
-            html += `<div class="flex-row"> <i class="fas fa-phone-alt"></i> <a href="tel:${phone}">${phone}</a></div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-phone-alt"></i> <a href="tel:${phone}">${phone}</a></div>`;
             elements++;
         }
 
         // write artist_name
         if (tags.artist_name !== undefined) {
-            html += `<div class="flex-row"> <i class="fas fa-file-signature"></i> ${tags.artist_name}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-file-signature"></i> ${tags.artist_name}</div>`;
             elements++;
         }
 
         // write note
         if (tags.note !== undefined) {
-            html += `<div class="flex-row"> <i class="fas fa-sticky-note"></i> ${tags.note}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-sticky-note"></i> ${tags.note}</div>`;
             elements++;
         }
 
         // write description
         if (tags.description !== undefined) {
-            html += `<div class="flex-row"> <i class="fas fa-sticky-note"></i> ${tags.description}</div>`;
+            html += `<div class="flex-row mt-2"> <i class="fas fa-sticky-note"></i> ${tags.description}</div>`;
             elements++;
         }
 
         // 既に行ったかチェック
         if (Conf.etc.localSave !== "") {
-            let already = localStorage.getItem(Conf.etc.localSave + "." + tags.id) == 'true' ? "checked" : "";
-            html += `<div class="flex-row"> <i class="fa-solid fa-person-walking"></i> ${glot.get("visited")} <input type="checkbox" id="visited" name="${tags.id}" ${already} /></div>`;
+            let data = localStorage.getItem(Conf.etc.localSave + "." + tags.id); // == 'true' ? "checked" : "";
+            let already = data == undefined ? ["", undefined] : data.split(",");
+            already[0] = already[0] == 'true' ? "checked" : "";
+            already[1] = already[1] == undefined ? "" : already[1]
+            html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
+            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="ms-2" name="${tags.id}" ${already[0]}/>`;
+            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${already[1]}" /></div>`
             elements++;
         }
 

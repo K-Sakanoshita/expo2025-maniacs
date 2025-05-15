@@ -7,7 +7,7 @@
             34.64993865
         ],
         "viewPitch": 30,
-        "maxPitch": 60,
+        "maxPitch": 75,
         "maxBounds": [ // 地図の表示範囲(左下、右上)
             [
                 135.36,
@@ -19,7 +19,7 @@
             ]
         ],
         "initZoom": 15.5,
-        "maxZoom": 20,
+        "maxZoom": 21,
         "modalZoom": 18, // モーダルダイアログ表示時のズームサイズ
         "textFont": [
             "NNoto Sans Bold"
@@ -29,14 +29,14 @@
     "icon": {
         "fgPath": "icon",
         "bgPath": "image",
-        "attention": 0.8,
-        "middle": 0.7,
+        "attention": 0.6,
+        "middle": 0.6,
         "visited": 0.44,
         "normal": 0.6,
         "textFont": [
             "Noto Sans Regular"
         ], // 使用可能なフォント（spriteに依存）
-        "textSize": 10,
+        "textSize": 11,
         "textViewZoom": 15.5 // アイコンに文字を表示するズームレベル
     },
     "view": {
@@ -58,7 +58,7 @@
             "expo2025_door": 16,
             "green_area": 13,
             "expo2025_exp": 15,
-            "expo2025_poi": 15,
+            "expo2025_service": 15,
             "expo2025_art": 15,
             "expo2025_move": 15,
             "expo2025_toilets": 15,
@@ -84,7 +84,7 @@
             "expo2025_door": 15,
             "green_area": 15,
             "expo2025_exp": 15,
-            "expo2025_poi": 15,
+            "expo2025_service": 15,
             "expo2025_art": 15,
             "expo2025_move": 15,
             "expo2025_toilets": 15,
@@ -107,15 +107,15 @@
         "default": "expo2025_exp",
         "menu": //"",
         {
-            "-": "-",
             "展示・パビリオン": "expo2025_exp",
+            "各種サービス施設": "expo2025_service",
             "案内板・移動支援": "expo2025_move",
             "アート作品・壁画": "expo2025_art",
             "トイレ・手洗い所": "expo2025_toilets",
             "水飲み場・給水所": "expo2025_drinks",
             "自販機・ゴミ箱": "expo2025_vending",
             "カフェ・レストラン": "expo2025_foods",
-            "店舗・サービス施設": "expo2025_store"
+            "店舗・コンビニ": "expo2025_store"
         },
         /*{
             "2010年時点の地図(日本)": "Japan2010",

@@ -17,9 +17,9 @@
                     "width": "70%"
                 },
                 {
-                    "id": "reservation",
+                    "id": "memo",
                     "name": "reservation",
-                    "width": "20%"
+                    "hidden": true
                 }
             ],
             "poiFields": [

@@ -405,12 +405,12 @@
             }
         },
         "subtag": {
-            "amenity": {
+            "amenity=drinking_water": {
                 "bottle": {
-                    "yes": "bottles.svg"
+                    "yes": "water_bottle.svg"
                 }
             },
-            "artwork": {
+            "tourism=artwork": {
                 "artwork_type": {
                     "bust": "statue.svg",
                     "sculpture": "sculpture.svg",
@@ -422,26 +422,26 @@
                     "painting": "art-gallery.svg"
                 }
             },
-            "landuse": {
+            "landuse=cemetery": {
                 "religion": {
                     "christian": "cross_christ.svg",
                     "shinto": "torii.svg",
                     "buddhist": "buddhist.svg"
                 }
             },
-            "place_of_worship": {
+            "amenity=place_of_worship": {
                 "religion": {
                     "christian": "cross_christ.svg",
                     "shinto": "torii.svg",
                     "buddhist": "buddhist.svg"
                 }
             },
-            "parking": {
+            "amenity=parking": {
                 "access": {
                     "private": "parking.svg"
                 }
             },
-            "tree": {
+            "natural=tree": {
                 "species": {
                     "Cherry blossom": "sakura.svg",
                     "Cerasus itosakura": "sakura.svg",

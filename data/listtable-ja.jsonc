@@ -14,12 +14,12 @@
                 {
                     "id": "name",
                     "name": "名称",
-                    "width": "50%"
+                    "width": "60%"
                 },
                 {
                     "id": "reservation",
                     "name": "予約",
-                    "width": "20%"
+                    "hidden": true
                 }
             ],
             "poiFields": [

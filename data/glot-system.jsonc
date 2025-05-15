@@ -174,5 +174,9 @@
     "reservation_recommended": {
         "ja": "予約推奨",
         "en": "reservation recommended"
+    },
+    "reservation_memo": {
+        "ja": "メモ",
+        "en": "memo"
     }
 }

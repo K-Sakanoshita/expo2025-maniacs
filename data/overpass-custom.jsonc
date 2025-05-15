@@ -212,17 +212,46 @@
         "expo2025_exp": {
             "overpass": [
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
-                "nwr[\"amenity\"=\"stage\"]",
                 "nwr[\"amenity\"=\"theatre\"]"
             ],
             "tags": [
                 "amenity=exhibition_centre",
-                "amenity=stage",
                 "amenity=theatre"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
                 "stroke": "#000000",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_service": {
+            "overpass": [
+                "nwr[\"amenity\"=\"luggage_locker\"]",
+                "nwr[\"amenity\"=\"post_office\"]",
+                "nwr[\"amenity\"=\"smoking_area\"]",
+                "nwr[\"amenity\"=\"stage\"]",
+                "nwr[\"office\"=\"courier\"]",
+                "nwr[\"office\"=\"government\"]",
+                "nwr[\"building\"=\"yes\"][\"name\"]",
+                "nwr[\"building\"=\"gatehouse\"][\"name\"]"
+            ],
+            "tags": [
+                "amenity=luggage_locker",
+                "amenity=post_office",
+                "amenity=smoking_area",
+                "amenity=stage",
+                "office=courier",
+                "office=government",
+                "building=yes",
+                "building=gatehouse"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
                 "stroke-width": 0,
                 "fill-opacity": 0
             },
@@ -353,32 +382,18 @@
         },
         "expo2025_store": {
             "overpass": [
-                "nwr[\"amenity\"=\"place_of_worship\"]",
-                "nwr[\"amenity\"=\"luggage_locker\"]",
-                "nwr[\"amenity\"=\"post_office\"]",
-                "nwr[\"amenity\"=\"smoking_area\"]",
-                "nwr[\"office\"=\"courier\"]",
-                "nwr[\"office\"=\"government\"]",
                 "nwr[\"shop\"=\"convenience\"]",
                 "nwr[\"shop\"=\"bakery\"]",
                 "nwr[\"shop\"=\"gift\"]",
                 "nwr[\"shop\"=\"mobile_phone\"]",
-                "nwr[\"shop\"=\"chemist\"]",
-                "nwr[\"building\"=\"yes\"][\"name\"]"
+                "nwr[\"shop\"=\"chemist\"]"
             ],
             "tags": [
-                "amenity=place_of_worship",
-                "amenity=luggage_locker",
-                "amenity=post_office",
-                "amenity=smoking_area",
-                "office=courier",
-                "office=government",
                 "shop=convenience",
                 "shop=bakery",
                 "shop=gift",
                 "shop=mobile_phone",
-                "shop=chemist",
-                "building=yes"
+                "shop=chemist"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

@@ -66,6 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
         let UrlParams = setUrlParams();
         if (UrlParams.edit) Conf.etc["editMode"] = true;
         if (UrlParams.static) Conf.static["mode"] = basic.parseBoolean(UrlParams.static);
+
         winCont.splash(true);
         listTable.init();
         poiMarker.init();
@@ -93,31 +94,21 @@ window.addEventListener("DOMContentLoaded", function () {
             glot.render();
 
             const init_close = function () {
-                if (Conf.selectItem.menu == "") {                // view all list
-                    listTable.makeList(Conf.view.poiFilter);
-                    listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                } else if (Conf.selectItem.action == "ChangeMAP") {
-                    // Make SelectItem(Manual)
-                    //Object.keys(Conf.selectItem.menu).forEach((key) => {
-                    //    winCont.select_add("list_category", key, Conf.selectItem.menu[key]);
-                    //})
-                    listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                } else if (Conf.selectItem.action == "ChangePOI") {
-                    listTable.makeList(Conf.view.poiFilter);
-                    listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                }
-                cMapMaker.addEvents();
-                winCont.splash(false)
-
-                if (UrlParams.category) {
+                listTable.makeList(Conf.view.poiFilter);
+                listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
+                if (UrlParams.category !== "") {
                     listTable.selectCategory(UrlParams.category)
-                    delete UrlParams.category;
+                    delete UrlParams.category
+                } else {
+                    listTable.selectCategory(Conf.selectItem.default)
                 }
+                cMapMaker.addEvents()
+                winCont.splash(false)
                 if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                     let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
-                    let param = keyv[0] + "/" + keyv[1];
-                    let subparam = param.split("."); // split child elements(.)
-                    cMapMaker.viewDetail(subparam[0], subparam[1]);
+                    let param = keyv[0] + "/" + keyv[1]
+                    let subparam = param.split(".") // split child elements(.)
+                    cMapMaker.viewDetail(subparam[0], subparam[1])
                 }
                 setTimeout(cMapMaker.eventChangeCategory, 500)
             };
