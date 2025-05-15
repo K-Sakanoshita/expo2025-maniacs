@@ -91,6 +91,17 @@ class modal_OSMbasic {
             elements++;
         }
 
+        // write level
+        if (tags.level !== undefined) {
+            let level = Number(tags.level)
+            if (level > 0) {
+                html += `<div class="flex-row mt-2"> <i class="fa-solid fa-stairs"></i> ${level + 1}F</div>`;
+            } else if (level < 0) {
+                html += `<div class="flex-row mt-2"> <i class="fa-solid fa-stairs"></i> ${level}F</div>`;
+            }
+            elements++;
+        }
+
         // write note
         if (tags.note !== undefined) {
             html += `<div class="flex-row mt-2"> <i class="fas fa-sticky-note"></i> ${tags.note}</div>`;

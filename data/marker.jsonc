@@ -4,7 +4,8 @@
             "circle_normal.png",
             "circle_attention.png",
             "circle_middle.png",
-            "circle_visited.png"
+            "circle_visited.png",
+            "circle_shadow.png"
         ],
         "tag": {
             "*": {

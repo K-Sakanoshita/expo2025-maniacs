@@ -2,7 +2,7 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.5 1bd436f1",
     "osm3s": {
-        "timestamp_osm_base": "2025-05-15T14:35:48Z",
+        "timestamp_osm_base": "2025-05-15T15:12:21Z",
         "timestamp_areas_base": "2024-12-31T00:49:33Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
@@ -26067,9 +26067,9 @@
         {
             "type": "way",
             "id": 1383214556,
-            "timestamp": "2025-05-03T07:39:25Z",
-            "version": 1,
-            "changeset": 165746742,
+            "timestamp": "2025-05-15T15:05:15Z",
+            "version": 2,
+            "changeset": 166309757,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "nodes": [
@@ -26080,7 +26080,7 @@
                 12805782881
             ],
             "tags": {
-                "amenity": "stage",
+                "amenity": "exhibition_centre",
                 "check_date": "2025-04-26",
                 "description": "『タマー』の優先予約あり",
                 "name": "よしもと waraii myraii館",

@@ -29,6 +29,7 @@
     "icon": {
         "fgPath": "icon",
         "bgPath": "image",
+        "shadow": 0.6,
         "attention": 0.6,
         "middle": 0.6,
         "visited": 0.44,
