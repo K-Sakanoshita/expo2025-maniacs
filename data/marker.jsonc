@@ -1,9 +1,10 @@
 {
     "marker": {
         "background": [
-            "circle_normal.png",
             "circle_attention.png",
+            "circle_normal.png",
             "circle_middle.png",
+            "circle_green.png",
             "circle_visited.png",
             "circle_shadow.png"
         ],
@@ -406,9 +407,27 @@
             }
         },
         "subtag": {
+            "amenity=place_of_worship": {
+                "religion": {
+                    "christian": "cross_christ.svg",
+                    "shinto": "torii.svg",
+                    "buddhist": "buddhist.svg"
+                }
+            },
+            "amenity=parking": {
+                "access": {
+                    "private": "parking.svg"
+                }
+            },
             "amenity=drinking_water": {
                 "bottle": {
                     "yes": "water_bottle.svg"
+                }
+            },
+            "tourism=information": {
+                "information": {
+                    "map": "Map-14.svg",
+                    "board": "info_board.svg"
                 }
             },
             "tourism=artwork": {
@@ -428,18 +447,6 @@
                     "christian": "cross_christ.svg",
                     "shinto": "torii.svg",
                     "buddhist": "buddhist.svg"
-                }
-            },
-            "amenity=place_of_worship": {
-                "religion": {
-                    "christian": "cross_christ.svg",
-                    "shinto": "torii.svg",
-                    "buddhist": "buddhist.svg"
-                }
-            },
-            "amenity=parking": {
-                "access": {
-                    "private": "parking.svg"
                 }
             },
             "natural=tree": {

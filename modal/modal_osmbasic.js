@@ -91,6 +91,41 @@ class modal_OSMbasic {
             elements++;
         }
 
+        // write toilets
+        if (tags.amenity == "toilets") {
+            let test = { yes: "available", no: "unavailable", limited: "limited" };
+            html += `<div class="flex-row mt-2"> `
+            if (tags.female == "yes") {
+                html += `<i class="fa-solid fa-venus"></i> `;
+                let capacity = Number(tags["capacity:women"])
+                if (capacity > 0 && capacity !== NaN) {
+                    html += `:${capacity} `;
+                } else {
+                    html += `:${glot.get("available")} `;
+                }
+            }
+            if (tags.male == "yes") {
+                html += `<i class="fa-solid fa-mars"></i> `;
+                let capacity = Number(tags["capacity:men"])
+                if (capacity > 0 && capacity !== NaN) {
+                    html += `:${capacity} `;
+                } else {
+                    html += `:${glot.get("available")} `;
+                }
+            }
+            if (tags.unisex == "yes") {
+                html += `<i class="fa-solid fa-mars-and-venus"></i> `;
+                let capacity = Number(tags["capacity:unisex"])
+                if (capacity > 0 && capacity !== NaN) {
+                    html += `:${capacity} `;
+                } else {
+                    html += `:${glot.get("available")} `;
+                }
+            }
+            html += `</div>`
+            elements++;
+        }
+
         // write level
         if (tags.level !== undefined) {
             let level = Number(tags.level)

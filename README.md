@@ -25,6 +25,7 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 
 - OpenStreetMapデータ: [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/)
 - OSMFJタイルサーバー利用規約に準拠
+- スプラッシュ画像はいらすとやを利用しているので、MITライセンスには含めません
 
 ## 注意事項
 
@@ -40,4 +41,5 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
              予約の必要性を表示するように改修(reservationタグ)
 - 2025/05/16 給水所のボトル有無をアイコン表示、ページリロード時のカテゴリ保持（バグ修正）
              訪問済みにメモを残す、2F以上の地物は浮かばせる、エリアにrefタグも表示させる
-             広場の名前を表示、リスト選択時に強調表示、OpenStreetMapデータの更新
+             広場の名前を表示、リスト選択時に強調表示、掲示板のアイコン表示を詳細化、
+             背景地図の地名表示をなくす、OpenStreetMapデータの更新

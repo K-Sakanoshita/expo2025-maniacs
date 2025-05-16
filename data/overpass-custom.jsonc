@@ -230,10 +230,12 @@
         "expo2025_exp": {
             "overpass": [
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
+                "nwr[\"amenity\"=\"stage\"]",
                 "nwr[\"amenity\"=\"theatre\"]"
             ],
             "tags": [
                 "amenity=exhibition_centre",
+                "amenity=stage",
                 "amenity=theatre"
             ],
             "expression": {
@@ -251,7 +253,6 @@
                 "nwr[\"amenity\"=\"luggage_locker\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"smoking_area\"]",
-                "nwr[\"amenity\"=\"stage\"]",
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
                 "nwr[\"building\"=\"yes\"][\"name\"]",
@@ -261,7 +262,6 @@
                 "amenity=luggage_locker",
                 "amenity=post_office",
                 "amenity=smoking_area",
-                "amenity=stage",
                 "office=courier",
                 "office=government",
                 "building=yes",

@@ -31,8 +31,9 @@
         "bgPath": "image",
         "shadow": 0.6,
         "attention": 0.6,
+        "green": 0.6,
         "middle": 0.6,
-        "visited": 0.44,
+        "visited": 0.4,
         "normal": 0.6,
         "textFont": [
             "Noto Sans Regular"
@@ -112,13 +113,13 @@
         {
             "展示・パビリオン": "expo2025_exp",
             "各種サービス施設": "expo2025_service",
-            "案内板・移動支援": "expo2025_move",
-            "アート作品・壁画": "expo2025_art",
             "トイレ・手洗い所": "expo2025_toilets",
             "水飲み場・給水所": "expo2025_drinks",
-            "自販機・ゴミ箱": "expo2025_vending",
             "カフェ・レストラン": "expo2025_foods",
-            "店舗・コンビニ": "expo2025_store"
+            "店舗・コンビニ": "expo2025_store",
+            "案内板・移動支援": "expo2025_move",
+            "アート作品・壁画": "expo2025_art",
+            "自販機・ゴミ箱": "expo2025_vending"
         },
         /*{
             "2010年時点の地図(日本)": "Japan2010",

@@ -5855,7 +5855,7 @@
                 "text-size": 16,
                 "icon-image": "railway_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "left",
                 "text-offset": [
                     1,
@@ -5909,7 +5909,7 @@
                 "text-size": 16,
                 "icon-image": "{class}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "left",
                 "text-offset": [
                     0.9,
@@ -6326,7 +6326,7 @@
                 "text-size": 12,
                 "icon-image": "airport_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -6368,7 +6368,7 @@
                 "text-size": 12,
                 "icon-image": "airport_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -6421,7 +6421,7 @@
                     ]
                 },
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 9,
                 "text-transform": "uppercase",
                 "text-letter-spacing": 0.1
@@ -6462,7 +6462,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 9,
                 "text-transform": "uppercase",
                 "text-letter-spacing": 0.1

@@ -8,8 +8,11 @@
    height="32"
    viewBox="0 0 32 32"
    xml:space="preserve"
-   sodipodi:docname="icon_circle_visited.svg"
+   sodipodi:docname="circle_visited.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="circle_visited.png"
+   inkscape:export-xdpi="193.87688"
+   inkscape:export-ydpi="193.87688"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +54,9 @@
    inkscape:deskcolor="#d1d1d1" />
 	
 <ellipse
-   style="fill:#ffffff;fill-opacity:1;stroke:#d4d4d4;stroke-width:3.3575;stroke-linecap:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+   style="fill:#ffffff;fill-opacity:1;stroke:#d4d4d4;stroke-width:2.05705;stroke-linecap:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
    id="path223"
-   cx="16.087854"
-   cy="16.087854"
-   rx="14.375616"
-   ry="14.344316" /></svg>
+   cx="15.993956"
+   cy="16.056555"
+   rx="14.816583"
+   ry="14.722683" /></svg>

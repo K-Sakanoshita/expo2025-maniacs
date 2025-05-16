@@ -553,6 +553,13 @@
                 "Cerasus itosakura": "桜",
                 "Cerasus × yedoensis": "桜"
             }
+        },
+        "tourism": {
+            "information": {
+                "map": "地図版",
+                "board": "案内板",
+                "office": "事務所"
+            }
         }
     },
     "opening_hours": {
