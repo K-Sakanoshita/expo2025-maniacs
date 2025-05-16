@@ -98,25 +98,25 @@ class CMapMaker {
         })
         targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
         targets = [...new Set(targets)];    // 重複削除
-        poiMarker.setPoi(listTable.getFilterList(), false)
+        poiCont.setPoi(listTable.getFilterList(), false)
 
         //
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
         if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
-            poiMarker.setPoi(listTable.getFilterList(), false)
+            poiCont.setPoi(listTable.getFilterList(), false)
         } else {			// targets 内に選択肢が含まれている場合
             console.log("viewPoi: " + targets.concat())
             let nowzoom = mapLibre.getZoom(false)
             targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
             targets = targets.filter(s => s !== "");
             if (nowselect = "-") {
-                poiMarker.setPoi(listTable.getFilterList(), nowselect == Conf.google.targetName)
+                poiCont.setPoi(listTable.getFilterList(), nowselect == Conf.google.targetName)
             } else {
                 for (let target of targets) {
                     let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
                     let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
                     if ((target == nowselect) && flag && poiView) {	// 選択している種別の場合
-                        poiMarker.setPoi(listTable.getFilterList(), target == Conf.google.targetName)
+                        poiCont.setPoi(listTable.getFilterList(), target == Conf.google.targetName)
                         break
                     }
                 }
@@ -222,9 +222,7 @@ class CMapMaker {
             const div = document.createElement("div");             // サニタイズ処理
             div.appendChild(document.createTextNode(keyword));
             this.mode_change('list');
-            setTimeout(() => {
-                listTable.filterKeyword(div.innerHTML);
-            }, 300)
+            setTimeout(() => { listTable.filterKeyword(div.innerHTML) }, 300)
         }
     }
 
@@ -246,7 +244,7 @@ class CMapMaker {
         tags["*"] = "*";
         target = target == undefined ? "*" : target;					// targetが取得出来ない実在POI対応
         let category = poiCont.getCatnames(tags);
-        let title = `<img src="./${Conf.icon.fgPath}/${poiMarker.getIcon(tags)}">`, message = "";
+        let title = `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}">`, message = "";
 
         for (let i = 0; i < Conf.osm[target].titles.length; i++) {
             if (tags[Conf.osm[target].titles[i]] !== void 0) {
@@ -294,7 +292,7 @@ class CMapMaker {
         const view_control = (list, idx) => {
             if (list.length >= (idx + 1)) {
                 listTable.select(list[idx][0]);
-                poiMarker.select(list[idx][0], false);
+                poiCont.select(list[idx][0], false);
                 if (this.status == "playback") {
                     setTimeout(view_control, speed_calc(), list, idx + 1);
                 };
@@ -384,8 +382,8 @@ class CMapMaker {
         }
         cMapMaker.updateView().then((status) => {
             cMapMaker.moveMapBusy = false
-            console.log("eventMoveMap: End.");
-        });
+            console.log("eventMoveMap: End.")
+        })
     }
 
     // EVENT: View Zoom Level & Status Comment

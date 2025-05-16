@@ -27,7 +27,6 @@ var overPassCont = new OverPassControl();
 var mapLibre = new Maplibre();
 var geoCont = new GeoCont();
 var listTable = new ListTable();
-var poiMarker = new PoiMarker();
 var cMapMaker = new CMapMaker();
 var poiCont = new PoiCont();
 var gSheet = new GoogleSpreadSheet();
@@ -69,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         winCont.splash(true);
         listTable.init();
-        poiMarker.init();
+        poiCont.init();
         winCont.window_resize(); // Set Window Size(mapidのサイズ指定が目的)
 
         Promise.all([
@@ -96,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function () {
             const init_close = function () {
                 listTable.makeList(Conf.view.poiFilter);
                 listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                if (UrlParams.category !== "") {
+                if (UrlParams.category !== "" && UrlParams.category !== undefined) {
                     listTable.selectCategory(UrlParams.category)
                     delete UrlParams.category
                 } else {

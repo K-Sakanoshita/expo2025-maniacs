@@ -17,7 +17,7 @@
             },
             "titles": [ // viewDetailのみで利用。listTableの名称を利用するよう改修予定（廃止したい）
                 "name"
-            ],
+            ]
         },
         "expo2025_placeL": {
             "overpass": [
