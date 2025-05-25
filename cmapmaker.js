@@ -337,7 +337,9 @@ class CMapMaker {
             if (pois !== undefined) {
                 const category = poiCont.getCatnames(pois.geojson.properties)[0];
                 const name = pois.geojson.properties.name == undefined ? "" : pois.geojson.properties.name;
-                const value = localStorage.getItem(key);
+                let value = localStorage.getItem(key);
+                value = value.replace("TRUE,", "true,");
+                value = value.replace("FALSE,", "false,");
                 const escapedKey = `"${key.replace(/"/g, '""')}"`;            // CSV形式にエスケープ
                 //const escapedValue = `"${value.replace(/"/g, '""')}"`;
                 csvContent += `${escapedKey},${category},${name},${value}\n`;
@@ -381,7 +383,7 @@ class CMapMaker {
                         s.replace(/^"|"$/g, "").replace(/""/g, '"')  // CSVエスケープ解除
                     );
                     const key = values[0];
-                    const visited = values[3] + "," + values[4]; // visited列の値だけを使う
+                    const visited = values[3].toLowerCase() + "," + values[4]; // visited列の値だけを使う
                     if (key && visited !== undefined) localStorage.setItem(key, visited);
                 })
                 winCont.closeModal();
