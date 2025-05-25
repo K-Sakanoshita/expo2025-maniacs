@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", function () {
             glot.render();
 
             const init_close = function () {
-                let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : undefined
+                let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : Conf.selectItem.default;
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
                     cMapMaker.addEvents()
                     winCont.splash(false)
