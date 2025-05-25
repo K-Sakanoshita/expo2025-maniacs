@@ -338,8 +338,8 @@ class CMapMaker {
                 const category = poiCont.getCatnames(pois.geojson.properties)[0];
                 const name = pois.geojson.properties.name == undefined ? "" : pois.geojson.properties.name;
                 let value = localStorage.getItem(key);
-                value = value.replace("TRUE,", "true,");
-                value = value.replace("FALSE,", "false,");
+                value = value.replace(/TRUE,/g, 'true,');
+                value = value.replace(/FALSE,/g, 'false,');
                 const escapedKey = `"${key.replace(/"/g, '""')}"`;            // CSV形式にエスケープ
                 //const escapedValue = `"${value.replace(/"/g, '""')}"`;
                 csvContent += `${escapedKey},${category},${name},${value}\n`;
