@@ -358,7 +358,7 @@ class CMapMaker {
         let msg = { msg: glot.get("file_select"), ttl: glot.get("file_select") }
         winCont.modal_open({
             "title": msg.ttl, "mode": ["yes", "no"], callback_yes: cMapMaker.import_visited_load, callback_no: winCont.closeModal, "menu": false,
-            "message": '<input type="file" id="csvInput" class="form-control" accept=".csv">',
+            "message": '<input type="file" id="csvInput" class="form-control" accept=".csv,text/csv">',
         });
     }
 
