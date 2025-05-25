@@ -38,7 +38,7 @@
         "textFont": [
             "Noto Sans Regular"
         ], // 使用可能なフォント（spriteに依存）
-        "textSize": 11,
+        "textSize": 10.5,
         "textViewZoom": 15.5 // アイコンに文字を表示するズームレベル
     },
     "view": {
@@ -47,6 +47,7 @@
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
             "expo2025_private": 12,
+            "traffic_board": 12,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -74,6 +75,7 @@
         "editZoom": {
             // 編集時に追加するpoiZoom
             "expo2025_private": 15,
+            "traffic_board": 12,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -184,16 +186,28 @@
             {
                 "glot-model": "openstreetmap",
                 "linkto": "https://www.openstreetmap.org/about",
+                "divider": true
+            },
+            {
+                "glot-model": "export_visited",
+                "linkto": "javascript:cMapMaker.export_visited()",
+                "divider": false
+            },
+            {
+                "glot-model": "import_visited",
+                "linkto": "javascript:cMapMaker.import_visited_menu()",
                 "divider": false
             }
         ],
         // 詳細表示のハンバーガーメニュー
         "modal": [
+            /*
             {
                 "glot-model": "act_add",
                 "linkto": "javascript:modalActs.edit({form:'expo2025'})",
                 "divider": false
             },
+            */
             {
                 "glot-model": "osm_open",
                 "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",

@@ -163,6 +163,14 @@
         "ja": "訪問済み",
         "en": "Visited"
     },
+    "export_visited": {
+        "ja": "訪問済みデータを書き出す",
+        "en": "Export visited data"
+    },
+    "import_visited": {
+        "ja": "訪問済みデータを取り込む",
+        "en": "Import visited data"
+    },
     "reservation_yes": {
         "ja": "要予約",
         "en": "reservation yes"
@@ -178,5 +186,73 @@
     "reservation_memo": {
         "ja": "メモ",
         "en": "memo"
+    },
+    "results": {
+        "ja": "処理結果",
+        "en": "Processing results"
+    },
+    "file_select": {
+        "ja": "ファイルを選択してください",
+        "en": "Plase Select File"
+    },
+    "file_error": {
+        "ja": "ファイル内容が不正です",
+        "en": "File contents are invalid"
+    },
+    "file_loaded": {
+        "ja": "ファイルを読み込みました",
+        "en": "The file was loaded"
+    },
+    "Mo": {
+        "ja": "Mo",
+        "en": "月"
+    },
+    "Tu": {
+        "ja": "Tu",
+        "en": "火"
+    },
+    "We": {
+        "ja": "水",
+        "en": "We"
+    },
+    "Th": {
+        "ja": "木",
+        "en": "Th"
+    },
+    "Fr": {
+        "ja": "金",
+        "en": "Fr"
+    },
+    "Sa": {
+        "ja": "土",
+        "en": "Sa"
+    },
+    "Su": {
+        "ja": "日",
+        "en": "Su"
+    },
+    "PH": {
+        "ja": "祝日",
+        "PH": "PH"
+    },
+    "off": {
+        "ja": "休業",
+        "en": "Off"
+    },
+    "24/7": {
+        "ja": "24時間営業",
+        "en": "24 Hours"
+    },
+    "closed": {
+        "ja": "休み",
+        "en": "Holyday"
+    },
+    "parse_error": {
+        "ja": "解析に失敗",
+        "en": "Parse error"
+    },
+    "opening": {
+        "ja": "営業中",
+        "en": "Open"
     }
 }

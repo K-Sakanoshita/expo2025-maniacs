@@ -7,16 +7,12 @@ const GTAG = '<script async src="https://www.googletagmanager.com/gtag/js?id=';
 const LANG = (window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage).substr(0, 2) == "ja" ? "ja" : "en";
 const FILES = [
     "./baselist.html",
-    "./data/config-user.jsonc",
-    "./data/config-system.jsonc",
+    "./data/config-user.jsonc", "./data/config-system.jsonc",
     "./data/config-activities.jsonc",
     `./data/marker.jsonc`,
-    `./data/category-${LANG}.jsonc`,
-    `data/listtable-${LANG}.jsonc`,
-    "./data/overpass-system.jsonc",
-    `./data/overpass-custom.jsonc`,
-    `./data/glot-custom.jsonc`,
-    `data/glot-system.jsonc`,
+    `./data/category-${LANG}.jsonc`, `./data/listtable-${LANG}.jsonc`,
+    "./data/overpass-system.jsonc", `./data/overpass-custom.jsonc`,
+    `./data/glot-custom.jsonc`, `./data/glot-system.jsonc`,
 ];
 const glot = new Glottologist();
 var modalActs = new modal_Activities();
@@ -93,23 +89,17 @@ window.addEventListener("DOMContentLoaded", function () {
             glot.render();
 
             const init_close = function () {
-                listTable.makeList(Conf.view.poiFilter);
-                listTable.makeSelectList(Conf.listTable.category); // Must be executed before eventMoveMap
-                if (UrlParams.category !== "" && UrlParams.category !== undefined) {
-                    listTable.selectCategory(UrlParams.category)
-                    delete UrlParams.category
-                } else {
-                    listTable.selectCategory(Conf.selectItem.default)
-                }
-                cMapMaker.addEvents()
-                winCont.splash(false)
-                if (UrlParams.node || UrlParams.way || UrlParams.relation) {
-                    let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
-                    let param = keyv[0] + "/" + keyv[1]
-                    let subparam = param.split(".") // split child elements(.)
-                    cMapMaker.viewDetail(subparam[0], subparam[1])
-                }
-                setTimeout(cMapMaker.eventChangeCategory, 500)
+                let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : undefined
+                cMapMaker.updateView(cat).then(() => {     // 初期データロード
+                    cMapMaker.addEvents()
+                    winCont.splash(false)
+                    if (UrlParams.node || UrlParams.way || UrlParams.relation) {
+                        let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
+                        let param = keyv[0] + "/" + keyv[1]
+                        let subparam = param.split(".") // split child elements(.)
+                        cMapMaker.viewDetail(subparam[0], subparam[1])
+                    }
+                })
             };
 
             poiCont.setActdata(results[0]); // gSheetをPoiContにセット(座標は無いのでOSM読み込み時にマッチング)

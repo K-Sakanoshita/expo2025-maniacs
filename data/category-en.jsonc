@@ -561,17 +561,5 @@
                 "office": "office"
             }
         }
-    },
-    "opening_hours": {
-        "Mo": "Mo",
-        "Tu": "Tu",
-        "We": "We",
-        "Th": "Th",
-        "Fr": "Fr",
-        "Sa": "Sa",
-        "Su": "Su",
-        "PH": "PH",
-        "off": "Off",
-        "24/7": "24/7"
     }
 }

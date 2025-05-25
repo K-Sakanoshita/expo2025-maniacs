@@ -4,7 +4,7 @@ class modal_OSMbasic {
     make(tags) {
         let catname = poiCont.getCatnames(tags);
         let elements = 0;
-        let html = `<div class="d-flex justify-content-between flex-wrap mb-3">`;
+        let html = `<div class="d-flex justify-content-between align-items-center flex-wrap mb-3">`;
 
         // write type
         if (catname[0] !== undefined) {
@@ -53,6 +53,12 @@ class modal_OSMbasic {
             let trunc = httpn.length > 22 ? httpn.substring(0, 19) + "..." : httpn;
             html += `<div class="flex-row mt-2"> <i class="fas fa-globe"></i> <a href="${website}" target="_blank">${trunc}</a></div>`;
             elements++;
+        }
+
+        // opening_hours
+        if (tags.opening_hours !== undefined) {
+            let opening = basic.parseOpeningHours(tags.opening_hours)
+            if(opening !== "") html += `<i class="fa-solid fa-clock"></i> ${opening}`;
         }
 
         // write reservation
@@ -156,9 +162,23 @@ class modal_OSMbasic {
             already[0] = already[0] == 'true' ? "checked" : "";
             already[1] = already[1] == undefined ? "" : already[1]
             html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
-            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="ms-2" name="${tags.id}" ${already[0]}/>`;
+            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${already[0]}/>`;
             html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${already[1]}" /></div>`
             elements++;
+        }
+
+        // wikimedia画像の追加
+        if (tags.wikimedia_commons !== undefined) {
+            let wikimq = [], wikim = tags.wikimedia_commons;
+            if (wikim.slice(0, 5) == "File:") {     // File:のみ対応
+                let id = tags.id;
+                wikimq.push([wikim, id]);
+                html += `<div class="col-12 mt-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
+                wikimq.forEach((q) => {
+                    basic.getWikiMediaImage(q[0], Conf.etc.modalThumbWidth, q[1]);
+                }); // WikiMedia Image 遅延読み込み
+                elements++;
+            }
         }
 
         return elements > 0 ? html + "</div>" : "";

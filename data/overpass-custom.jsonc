@@ -19,6 +19,23 @@
                 "name"
             ]
         },
+        "traffic_board": {
+            "overpass": [
+                "nwr[\"tourism\"=\"information\"][\"board_type\"=\"traffic\"]",
+            ],
+            "tags": [
+                "board_type=traffic"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#50A050",
+                "stroke-width": 2,
+                "fill-opacity": 0.5
+            },
+            "titles": [ // viewDetailのみで利用。listTableの名称を利用するよう改修予定（廃止したい）
+                "name"
+            ]
+        },
         "expo2025_placeL": {
             "overpass": [
                 "way[\"place\"=\"locality\"][\"ref\"=\"L\"]"
@@ -230,12 +247,10 @@
         "expo2025_exp": {
             "overpass": [
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
-                "nwr[\"amenity\"=\"stage\"]",
                 "nwr[\"amenity\"=\"theatre\"]"
             ],
             "tags": [
                 "amenity=exhibition_centre",
-                "amenity=stage",
                 "amenity=theatre"
             ],
             "expression": {
@@ -250,6 +265,7 @@
         },
         "expo2025_service": {
             "overpass": [
+                "nwr[\"amenity\"=\"stage\"]",
                 "nwr[\"amenity\"=\"luggage_locker\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"smoking_area\"]",
@@ -259,6 +275,7 @@
                 "nwr[\"building\"=\"gatehouse\"][\"name\"]"
             ],
             "tags": [
+                "amenity=stage",
                 "amenity=luggage_locker",
                 "amenity=post_office",
                 "amenity=smoking_area",
@@ -302,7 +319,8 @@
                 "node[\"highway\"=\"bus_stop\"]"
             ],
             "tags": [
-                "tourism=information",
+                "information=map",
+                "information=office",
                 "highway=elevator",
                 "highway=bus_stop"
             ],
