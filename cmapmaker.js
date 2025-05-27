@@ -380,7 +380,7 @@ class CMapMaker {
                 }
                 lines.forEach(line => {
                     const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s =>
-                        s.replace(/^"|"$/g, "").replace(/""/g, '"')  // CSVエスケープ解除
+                        s.replace(/^"|"$/g, "").replace(/""/g, '"').replace(/\r/g, '')  // CSVエスケープ解除
                     );
                     const key = values[0];
                     const visited = values[3].toLowerCase() + "," + values[4]; // visited列の値だけを使う
