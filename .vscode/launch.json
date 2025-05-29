@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch http-server",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": [
+          "http-server",
+          "."
+        ],
+        "port": 8080,  // 必要に応じて変更
+        "console": "integratedTerminal"
+      }
+    ]
+  }
