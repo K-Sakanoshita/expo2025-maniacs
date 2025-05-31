@@ -1,6 +1,8 @@
 // Community Mapmaker User Config
 {
     "map": {
+        "miniMap": true, // miniMap表示時はtrue
+        "changeMap": false, // 地図切り替え時はtrue
         "tileName": "OSMFJ", // タイル一覧は config-system.jsonc へ
         "viewCenter": [
             135.38360336,
@@ -47,7 +49,7 @@
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
             "expo2025_private": 12,
-            "traffic_board": 12,
+            "traffic_board": 16,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -75,7 +77,7 @@
         "editZoom": {
             // 編集時に追加するpoiZoom
             "expo2025_private": 15,
-            "traffic_board": 12,
+            "traffic_board": 16,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
             "expo2025_placeC": 12,
@@ -113,15 +115,14 @@
         "default": "expo2025_exp",
         "menu": //"",
         {
-            "展示・パビリオン": "expo2025_exp",
-            "各種サービス施設": "expo2025_service",
-            "トイレ・手洗い所": "expo2025_toilets",
-            "水飲み場・給水所": "expo2025_drinks",
-            "カフェ・レストラン": "expo2025_foods",
-            "店舗・コンビニ": "expo2025_store",
-            "案内板・移動支援": "expo2025_move",
+            "パビリオン・展示": "expo2025_exp",
+            "レストラン・喫茶": "expo2025_foods",
+            "コンビニ・お土産": "expo2025_store",
+            "トイレ・給水場": "expo2025_toilets",
+            "自販機・ゴミ箱": "expo2025_vending",
+            "サービス・施設": "expo2025_service",
             "アート作品・壁画": "expo2025_art",
-            "自販機・ゴミ箱": "expo2025_vending"
+            "案内板・移動支援": "expo2025_move"
         },
         /*{
             "2010年時点の地図(日本)": "Japan2010",

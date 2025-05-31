@@ -6,6 +6,7 @@ class CMapMaker {
         this.open_osmid = "";				// viewDetail表示中はosmid
         this.last_modetime = 0;
         this.mode = "map";
+        this.minimap = false;
         this.id = 0;
         this.moveMapBusy = 0;
         this.changeKeywordWaitTime;
@@ -26,7 +27,7 @@ class CMapMaker {
     licence() {			// About license
         let msg = { msg: glot.get("licence_message") + glot.get("more_message"), ttl: glot.get("licence_title") };
         winCont.modal_open({ "title": msg.ttl, "message": msg.msg, "mode": "close", callback_close: winCont.closeModal, "menu": false });
-    };
+    }
 
     mode_change(newmode) {	// mode change(list or map)
         if (this.status !== "mode_change" && (this.last_modetime + 300) < Date.now()) {
@@ -184,13 +185,13 @@ class CMapMaker {
                     global_status.innerHTML = "";
                     resolve({ "update": false });
                 });*/
-            };
-        });
+            }
+        })
 
         function status_write(progress) {
             global_status.innerHTML = progress;
-        };
-    };
+        }
+    }
 
     // OSMデータを取得して画面表示
     updateView(cat) {
@@ -226,7 +227,7 @@ class CMapMaker {
         if (keyword !== null) {
             const div = document.createElement("div");             // サニタイズ処理
             div.appendChild(document.createTextNode(keyword));
-            this.mode_change('list');
+            this.mode_change('list')
             setTimeout(() => { listTable.filterKeyword(div.innerHTML) }, 300)
         }
     }
@@ -235,13 +236,12 @@ class CMapMaker {
     viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)
         const detail_close = () => {
             let catname = listTable.getSelCategory() !== "-" ? `?category=${listTable.getSelCategory()}` : "";
-            winCont.closeModal();
-            history.replaceState('', '', location.pathname + catname + location.hash);
-            this.open_osmid = "";
-            this.detail = false;
-            mapid.focus();
+            winCont.closeModal()
+            history.replaceState('', '', location.pathname + catname + location.hash)
+            this.open_osmid = ""
+            this.detail = false
+            mapid.focus()
         };
-        if (this.detail) detail_close();
         let osmobj = poiCont.get_osmid(osmid);
         if (osmobj == undefined) { console.log("Error: No osmobj"); return }	// Error
 
@@ -284,15 +284,42 @@ class CMapMaker {
         } else {					// アクティビティ無し
             winCont.modal_open({ "title": title, "message": message, "append": Conf.menu.buttons, "mode": "close", "callback_close": detail_close, "menu": true, "openid": openid });
         }
+
+        if (tags.country) {     // Detail内にminiMapを表示
+            let mmap = document.getElementById("mini-map")
+            modal_window_minimap.appendChild(mmap)
+            mmap.classList.add("minimapDatail")
+            mmap.classList.remove("minimapGlobal")
+            mapLibre.showCountryByCode(tags.country)
+            this.minimap = false    // ミニマップは非表示
+        }
+
         this.detail = true;
         this.mode_change('map');
-    };
+
+    }
+
+    viewMiniMap() {
+        let mmap = document.getElementById("mini-map")
+        if (!this.minimap) {    // ミニマップ表示
+            article.appendChild(mmap)
+            mmap.classList.remove("minimapDatail")
+            mmap.classList.remove("d-none")
+            mmap.classList.add("minimapGlobal")
+            if (mapLibre.getMiniLL() == undefined) mapLibre.addMiniMap({ center: Conf.map.viewCenter, zoom: Conf.map.initZoom / 4 }, true)
+            this.minimap = true
+        } else {                        // ミニマップ非表示
+            mmap.classList.add("d-none")
+            mmap.classList.remove("minimapGlobal")
+            this.minimap = false
+        }
+    }
 
     shareURL(actid) {	// URL共有機能
         actid = actid == undefined ? "" : "." + actid;
         let url = location.origin + location.pathname + location.search + actid + location.hash;
         navigator.clipboard.writeText(url);
-    };
+    }
 
     playback() {		// 指定したリストを連続再生()
         const view_control = (list, idx) => {

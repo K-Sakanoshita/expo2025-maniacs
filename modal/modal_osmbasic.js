@@ -4,7 +4,7 @@ class modal_OSMbasic {
     make(tags) {
         let catname = poiCont.getCatnames(tags);
         let elements = 0;
-        let html = `<div class="d-flex justify-content-between align-items-center flex-wrap mb-3">`;
+        let html = `<div class="d-flex justify-content-between align-items-center flex-wrap mb-1">`;
 
         // write type
         if (catname[0] !== undefined) {
@@ -58,7 +58,7 @@ class modal_OSMbasic {
         // opening_hours
         if (tags.opening_hours !== undefined) {
             let opening = basic.parseOpeningHours(tags.opening_hours)
-            if(opening !== "") html += `<i class="fa-solid fa-clock"></i> ${opening}`;
+            if (opening !== "") html += `<i class="fa-solid fa-clock"></i> ${opening}`;
         }
 
         // write reservation
@@ -174,9 +174,7 @@ class modal_OSMbasic {
                 let id = tags.id;
                 wikimq.push([wikim, id]);
                 html += `<div class="col-12 mt-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
-                wikimq.forEach((q) => {
-                    basic.getWikiMediaImage(q[0], Conf.etc.modalThumbWidth, q[1]);
-                }); // WikiMedia Image 遅延読み込み
+                wikimq.forEach((q) => basic.getWikiMediaImage(q[0], Conf.etc.modalThumbWidth, q[1])); // WikiMedia Image 遅延読み込み
                 elements++;
             }
         }

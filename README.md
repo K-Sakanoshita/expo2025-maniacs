@@ -47,3 +47,5 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
              営業時間の表示、トイレのキャパシティを表示、大屋根リングの番号を表示
              Wikimedia Commonsからパビリオンの表示、OpenStreetMapデータの更新
 - 2025/05/28 訪問履歴のインポート時に改行をなくす処理を追加、OpenStreetMapデータの更新
+- 2025/06/01 地球儀モードを追加、訪問済みアイコンを地味にする、メニューの見直し
+             細かいバグ取り、OpenStreetMapデータの更新

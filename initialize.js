@@ -76,7 +76,8 @@ window.addEventListener("DOMContentLoaded", function () {
             console.log("initialize: gSheet, static, MapLibre OK.");
             mapLibre.addControl("top-left", "baselist", basehtml, "mapLibre-control m-0 p-0"); // Make: base list
             mapLibre.addNavigation("bottom-right");
-            mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
+            if (Conf.map.changeMap) mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
+            if (Conf.map.miniMap) mapLibre.addControl('bottom-right', "minimap", "<button onclick='cMapMaker.viewMiniMap()'><i class='fa-solid fa-globe'></i></button>", "maplibregl-ctrl-group");
             mapLibre.addControl("bottom-right", "global_status", "", "text-information"); // Make: progress
             mapLibre.addControl("bottom-right", "global_spinner", "", "spinner-border text-primary d-none");
             mapLibre.addControl("bottom-left", "images", "", "showcase"); // add images

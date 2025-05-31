@@ -254,5 +254,9 @@
     "opening": {
         "ja": "営業中",
         "en": "Open"
+    },
+    "changing_table": {
+        "ja": "おむつ替え台",
+        "en": "Diaper changing station"
     }
 }
