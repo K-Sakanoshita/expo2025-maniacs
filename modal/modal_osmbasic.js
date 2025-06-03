@@ -157,13 +157,10 @@ class modal_OSMbasic {
 
         // 既に行ったかチェック
         if (Conf.etc.localSave !== "") {
-            let data = localStorage.getItem(Conf.etc.localSave + "." + tags.id); // == 'true' ? "checked" : "";
-            let already = data == undefined ? ["", undefined] : data.split(",");
-            already[0] = already[0] == 'true' ? "checked" : "";
-            already[1] = already[1] == undefined ? "" : already[1]
+            let visited = visitedCont.getValueByOSMID(tags.id)
             html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
-            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${already[0]}/>`;
-            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${already[1]}" /></div>`
+            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${visited[0] ? "checked" : ""}/>`;
+            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${visited[1]}" /></div>`
             elements++;
         }
 

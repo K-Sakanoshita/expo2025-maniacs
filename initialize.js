@@ -19,6 +19,7 @@ var modalActs = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var modal_osmbasic = new modal_OSMbasic();
 var basic = new Basic();
+var visitedCont = new VisitedCont();
 var overPassCont = new OverPassControl();
 var mapLibre = new Maplibre();
 var geoCont = new GeoCont();
@@ -92,6 +93,7 @@ window.addEventListener("DOMContentLoaded", function () {
             const init_close = function () {
                 let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : Conf.selectItem.default;
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
+                    mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
                     winCont.splash(false)
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {

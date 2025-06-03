@@ -2,8 +2,8 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.5 1bd436f1",
     "osm3s": {
-        "timestamp_osm_base": "2025-05-31T16:54:41Z",
-        "timestamp_areas_base": "2025-05-20T05:45:31Z",
+        "timestamp_osm_base": "2025-06-03T14:49:14Z",
+        "timestamp_areas_base": "2025-05-25T01:55:35Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -329,16 +329,16 @@
             "id": 12751864408,
             "lat": 34.6492324,
             "lon": 135.3813276,
-            "timestamp": "2025-05-30T09:48:03Z",
-            "version": 4,
-            "changeset": 166962159,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-06-01T11:11:31Z",
+            "version": 5,
+            "changeset": 167045577,
+            "user": "mueschel",
+            "uid": 616774,
             "tags": {
                 "amenity": "toilets",
-                "capacity:man": "10",
+                "capacity:female": "8",
+                "capacity:male": "10",
                 "capacity:unisex": "6",
-                "capacity:women": "8",
                 "check_date": "2025-05-30",
                 "female": "yes",
                 "male": "yes",
@@ -16148,15 +16148,15 @@
             "id": 12803589012,
             "lat": 34.6469720,
             "lon": 135.3862932,
-            "timestamp": "2025-05-02T06:29:41Z",
-            "version": 1,
-            "changeset": 165703489,
+            "timestamp": "2025-06-01T14:28:11Z",
+            "version": 2,
+            "changeset": 167053428,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
-                "board_type": "traffic",
                 "information": "board",
-                "name": "E12 EXPOナショナルデーホール「レイガーデン」",
+                "name": "EXPOナショナルデーホール「レイガーデン」",
+                "ref": "E12",
                 "tourism": "information"
             }
         },
@@ -25650,6 +25650,194 @@
             }
         },
         {
+            "type": "node",
+            "id": 12879959025,
+            "lat": 34.6479424,
+            "lon": 135.3838384,
+            "timestamp": "2025-06-02T01:11:30Z",
+            "version": 2,
+            "changeset": 167071517,
+            "user": "Kobe Notimoto",
+            "uid": 22960480,
+            "tags": {
+                "alt_name": "太陽に関する国際的な同盟パビリオン",
+                "amenity": "exhibition_centre",
+                "name": "太陽に関する国際的な同盟",
+                "name:en": "The International Solar Alliance",
+                "reservation": "no",
+                "short_name": "ISAパビリオン"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12879959026,
+            "lat": 34.6479359,
+            "lon": 135.3838814,
+            "timestamp": "2025-06-02T01:11:30Z",
+            "version": 2,
+            "changeset": 167071517,
+            "user": "Kobe Notimoto",
+            "uid": 22960480,
+            "tags": {
+                "alt_name": "アセアン",
+                "amenity": "exhibition_centre",
+                "loc_name": "ASEAN",
+                "name": "ASEAN",
+                "name:en": "Association of Southeast Asian Nations",
+                "name:ja": "東南アジア諸国連合",
+                "reservation": "no",
+                "short_name": "ASEAN"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12879959027,
+            "lat": 34.6480120,
+            "lon": 135.3839259,
+            "timestamp": "2025-06-02T01:11:30Z",
+            "version": 2,
+            "changeset": 167071517,
+            "user": "Kobe Notimoto",
+            "uid": 22960480,
+            "tags": {
+                "amenity": "exhibition_centre",
+                "loc_name": "国際科学技術センター",
+                "name": "国際科学技術センター",
+                "name:en": "International Science and Technology Center",
+                "name:ja": "国際科学技術センター",
+                "reservation": "no",
+                "short_name": "ISTC"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12879959028,
+            "lat": 34.6478645,
+            "lon": 135.3837903,
+            "timestamp": "2025-06-02T01:11:30Z",
+            "version": 2,
+            "changeset": 167071517,
+            "user": "Kobe Notimoto",
+            "uid": 22960480,
+            "tags": {
+                "amenity": "exhibition_centre",
+                "loc_name": "万博博物館",
+                "name": "万博博物館",
+                "name:en": "World Expo Museum",
+                "name:ja": "万博博物館",
+                "reservation": "no"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12879959029,
+            "lat": 34.6479201,
+            "lon": 135.3839586,
+            "timestamp": "2025-06-02T01:11:30Z",
+            "version": 2,
+            "changeset": 167071517,
+            "user": "Kobe Notimoto",
+            "uid": 22960480,
+            "tags": {
+                "alt_name": "ITER機構",
+                "amenity": "exhibition_centre",
+                "loc_name": "ITER",
+                "name": "国際核融合エネルギー機構",
+                "name:en": "International Thermonuclear Experimental Reacto",
+                "name:ja": "国際核融合エネルギー機構",
+                "reservation": "no",
+                "short_name": "ITER"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12879959030,
+            "lat": 34.6502165,
+            "lon": 135.3851559,
+            "timestamp": "2025-06-03T13:33:30Z",
+            "version": 2,
+            "changeset": 167135995,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "exhibition_centre",
+                "check_date": "2025-05-02",
+                "country": "UG",
+                "name": "ウガンダ",
+                "name:en": "Uganda",
+                "name:ja": "ウガンダ",
+                "reservation": "no"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12883518796,
+            "lat": 34.6527470,
+            "lon": 135.3746361,
+            "timestamp": "2025-06-03T13:45:51Z",
+            "version": 1,
+            "changeset": 167136516,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "vending_machine",
+                "check_date": "2025-06-03",
+                "operator": "Glico",
+                "vending": "ice_cream"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12883518797,
+            "lat": 34.6527517,
+            "lon": 135.3746263,
+            "timestamp": "2025-06-03T13:45:51Z",
+            "version": 1,
+            "changeset": 167136516,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "vending_machine",
+                "check_date": "2025-06-03",
+                "operator": "Glico",
+                "vending": "ice_cream"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12883518798,
+            "lat": 34.6527576,
+            "lon": 135.3746158,
+            "timestamp": "2025-06-03T13:45:51Z",
+            "version": 1,
+            "changeset": 167136516,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "vending_machine",
+                "check_date": "2025-06-03",
+                "operator": "Glico",
+                "vending": "ice_cream"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12883518799,
+            "lat": 34.6527625,
+            "lon": 135.3746066,
+            "timestamp": "2025-06-03T13:45:51Z",
+            "version": 1,
+            "changeset": 167136516,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "vending_machine",
+                "check_date": "2025-06-03",
+                "operator": "Glico",
+                "vending": "ice_cream"
+            }
+        },
+        {
             "type": "way",
             "id": 567598329,
             "timestamp": "2025-05-29T13:21:17Z",
@@ -27357,6 +27545,36 @@
                 "building": "yes",
                 "level": "1",
                 "name": "舞洲北側待合所"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1377415353,
+            "timestamp": "2025-04-17T09:54:50Z",
+            "version": 3,
+            "changeset": 165063272,
+            "user": "batchy",
+            "uid": 7671962,
+            "nodes": [
+                12754063337,
+                12761991126,
+                12754063338,
+                12754063331,
+                12761991127,
+                12754063332,
+                12761132050,
+                12754063337
+            ],
+            "tags": {
+                "amenity": "ferry_terminal",
+                "covered": "yes",
+                "ferry": "yes",
+                "floating": "yes",
+                "man_made": "pier",
+                "name": "夢洲浮桟橋（東）",
+                "name:en": "Yumeshima Floating Pier (East)",
+                "name:ja": "夢洲浮桟橋（東）",
+                "public_transport": "station"
             }
         },
         {
@@ -29086,11 +29304,11 @@
         {
             "type": "way",
             "id": 1381316138,
-            "timestamp": "2025-05-31T14:11:37Z",
-            "version": 5,
-            "changeset": 167013884,
-            "user": "あじさか",
-            "uid": 12327793,
+            "timestamp": "2025-06-01T23:04:17Z",
+            "version": 6,
+            "changeset": 167070136,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12787556563,
                 12787556564,
@@ -29102,11 +29320,12 @@
             "tags": {
                 "alt_name": "オーストリア館",
                 "amenity": "exhibition_centre",
+                "check_date": "2025-06-02",
                 "country": "AT",
                 "name": "オーストリアパビリオン",
                 "name:en": "Austria Pavilion",
                 "name:ja": "オーストリアパビリオン",
-                "reservation": "recommended",
+                "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/austria/",
                 "wikimedia_commons": "File:Expo2025Austria Pavilion.jpg"
             }
@@ -29997,11 +30216,11 @@
         {
             "type": "way",
             "id": 1382805101,
-            "timestamp": "2025-05-31T13:52:11Z",
-            "version": 6,
-            "changeset": 167013032,
-            "user": "あじさか",
-            "uid": 12327793,
+            "timestamp": "2025-06-03T12:19:36Z",
+            "version": 7,
+            "changeset": 167132998,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12802562376,
                 12802562375,
@@ -30013,6 +30232,7 @@
                 "alt_name": "アンゴラ館",
                 "amenity": "exhibition_centre",
                 "country": "AO",
+                "description": "未開館",
                 "mapillary": "23978662748397732",
                 "name": "アンゴラパビリオン",
                 "name:en": "Republic of Angola Pavilion",
@@ -31007,11 +31227,11 @@
         {
             "type": "way",
             "id": 1383214438,
-            "timestamp": "2025-05-31T13:52:11Z",
-            "version": 7,
-            "changeset": 167013032,
-            "user": "あじさか",
-            "uid": 12327793,
+            "timestamp": "2025-06-03T12:19:36Z",
+            "version": 8,
+            "changeset": 167132998,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12805782227,
                 12805782226,
@@ -31024,6 +31244,7 @@
                 "amenity": "exhibition_centre",
                 "check_date": "2025-05-28",
                 "country": "NP",
+                "description": "未開館",
                 "mapillary": "1240256234111008",
                 "name": "ネパール館",
                 "name:en": "Nepal Pavilion",
@@ -33085,6 +33306,69 @@
             ],
             "tags": {
                 "amenity": "stage"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1391817842,
+            "timestamp": "2025-06-03T12:30:54Z",
+            "version": 1,
+            "changeset": 167133463,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12883456201,
+                12883456202,
+                12883456214,
+                12883456203,
+                12883456204,
+                12883456205,
+                12883456206,
+                12883456207,
+                12883456208,
+                12883456209,
+                12883456210,
+                12883456211,
+                12883456212,
+                12883456213,
+                12883456201
+            ],
+            "tags": {
+                "amenity": "exhibition_centre",
+                "name": "森になる建築",
+                "website": "https://foresting-architecture.jp/"
+            }
+        },
+        {
+            "type": "relation",
+            "id": 18989247,
+            "timestamp": "2025-04-17T01:31:17Z",
+            "version": 2,
+            "changeset": 165050797,
+            "user": "batchy",
+            "uid": 7671962,
+            "members": [
+                {
+                    "type": "way",
+                    "ref": 1377415355,
+                    "role": "outer"
+                },
+                {
+                    "type": "way",
+                    "ref": 1377415356,
+                    "role": "outer"
+                }
+            ],
+            "tags": {
+                "amenity": "ferry_terminal",
+                "ferry": "yes",
+                "floating": "yes",
+                "man_made": "pier",
+                "name": "夢洲浮桟橋（西）",
+                "name:en": "Yumeshima Floating Pier (West)",
+                "name:ja": "夢洲浮桟橋（西）",
+                "public_transport": "station",
+                "type": "multipolygon"
             }
         },
         {
@@ -35477,9 +35761,81 @@
         },
         {
             "type": "node",
+            "id": 12754063331,
+            "lat": 34.6578855,
+            "lon": 135.3964677
+        },
+        {
+            "type": "node",
+            "id": 12754063332,
+            "lat": 34.6575299,
+            "lon": 135.3963859
+        },
+        {
+            "type": "node",
+            "id": 12754063337,
+            "lat": 34.6575130,
+            "lon": 135.3964946
+        },
+        {
+            "type": "node",
+            "id": 12754063338,
+            "lat": 34.6578686,
+            "lon": 135.3965765
+        },
+        {
+            "type": "node",
             "id": 12754063347,
             "lat": 34.6592720,
             "lon": 135.3839810
+        },
+        {
+            "type": "node",
+            "id": 12754063349,
+            "lat": 34.6596271,
+            "lon": 135.3837435
+        },
+        {
+            "type": "node",
+            "id": 12754063350,
+            "lat": 34.6595438,
+            "lon": 135.3842809
+        },
+        {
+            "type": "node",
+            "id": 12754063351,
+            "lat": 34.6593836,
+            "lon": 135.3842442
+        },
+        {
+            "type": "node",
+            "id": 12754063352,
+            "lat": 34.6594667,
+            "lon": 135.3837068
+        },
+        {
+            "type": "node",
+            "id": 12754063353,
+            "lat": 34.6594703,
+            "lon": 135.3845622
+        },
+        {
+            "type": "node",
+            "id": 12754063354,
+            "lat": 34.6593380,
+            "lon": 135.3845322
+        },
+        {
+            "type": "node",
+            "id": 12754063355,
+            "lat": 34.6592684,
+            "lon": 135.3849851
+        },
+        {
+            "type": "node",
+            "id": 12754063356,
+            "lat": 34.6594006,
+            "lon": 135.3850152
         },
         {
             "type": "node",
@@ -36041,6 +36397,12 @@
         },
         {
             "type": "node",
+            "id": 12761132050,
+            "lat": 34.6575215,
+            "lon": 135.3964398
+        },
+        {
+            "type": "node",
             "id": 12761132063,
             "lat": 34.6573620,
             "lon": 135.3968469
@@ -36050,6 +36412,18 @@
             "id": 12761132064,
             "lat": 34.6573868,
             "lon": 135.3965814
+        },
+        {
+            "type": "node",
+            "id": 12761991126,
+            "lat": 34.6576904,
+            "lon": 135.3965354
+        },
+        {
+            "type": "node",
+            "id": 12761991127,
+            "lat": 34.6577074,
+            "lon": 135.3964267
         },
         {
             "type": "node",
@@ -47219,6 +47593,30 @@
         },
         {
             "type": "node",
+            "id": 12822106813,
+            "lat": 34.6596526,
+            "lon": 135.3840706
+        },
+        {
+            "type": "node",
+            "id": 12822106814,
+            "lat": 34.6596859,
+            "lon": 135.3838554
+        },
+        {
+            "type": "node",
+            "id": 12822106815,
+            "lat": 34.6595790,
+            "lon": 135.3840537
+        },
+        {
+            "type": "node",
+            "id": 12822106816,
+            "lat": 34.6596124,
+            "lon": 135.3838386
+        },
+        {
+            "type": "node",
             "id": 12824939627,
             "lat": 34.6496124,
             "lon": 135.3844933
@@ -48278,6 +48676,116 @@
             "id": 12873185178,
             "lat": 34.6554527,
             "lon": 135.3779233
+        },
+        {
+            "type": "node",
+            "id": 12883456201,
+            "lat": 34.6501986,
+            "lon": 135.3813546
+        },
+        {
+            "type": "node",
+            "id": 12883456202,
+            "lat": 34.6501878,
+            "lon": 135.3813438
+        },
+        {
+            "type": "node",
+            "id": 12883456203,
+            "lat": 34.6501620,
+            "lon": 135.3813416
+        },
+        {
+            "type": "node",
+            "id": 12883456204,
+            "lat": 34.6501415,
+            "lon": 135.3813524
+        },
+        {
+            "type": "node",
+            "id": 12883456205,
+            "lat": 34.6501283,
+            "lon": 135.3814007
+        },
+        {
+            "type": "node",
+            "id": 12883456206,
+            "lat": 34.6501237,
+            "lon": 135.3814522
+        },
+        {
+            "type": "node",
+            "id": 12883456207,
+            "lat": 34.6501323,
+            "lon": 135.3814703
+        },
+        {
+            "type": "node",
+            "id": 12883456208,
+            "lat": 34.6501471,
+            "lon": 135.3814771
+        },
+        {
+            "type": "node",
+            "id": 12883456209,
+            "lat": 34.6501602,
+            "lon": 135.3814776
+        },
+        {
+            "type": "node",
+            "id": 12883456210,
+            "lat": 34.6501759,
+            "lon": 135.3814705
+        },
+        {
+            "type": "node",
+            "id": 12883456211,
+            "lat": 34.6501823,
+            "lon": 135.3814518
+        },
+        {
+            "type": "node",
+            "id": 12883456212,
+            "lat": 34.6501975,
+            "lon": 135.3813890
+        },
+        {
+            "type": "node",
+            "id": 12883456213,
+            "lat": 34.6502009,
+            "lon": 135.3813747
+        },
+        {
+            "type": "node",
+            "id": 12883456214,
+            "lat": 34.6501742,
+            "lon": 135.3813409
+        },
+        {
+            "type": "way",
+            "id": 1377415355,
+            "nodes": [
+                12754063349,
+                12822106816,
+                12822106814,
+                12822106813,
+                12822106815,
+                12754063350,
+                12754063351,
+                12754063352,
+                12754063349
+            ]
+        },
+        {
+            "type": "way",
+            "id": 1377415356,
+            "nodes": [
+                12754063353,
+                12754063354,
+                12754063355,
+                12754063356,
+                12754063353
+            ]
         }
     ]
 }

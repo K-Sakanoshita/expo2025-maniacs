@@ -43,6 +43,9 @@
                     }
                 ]
             }
+        },
+        "planet": { // for planet globe
+            "style": "./tiles/osmfj_nopoi.json"
         }
     },
     "menu_list": {

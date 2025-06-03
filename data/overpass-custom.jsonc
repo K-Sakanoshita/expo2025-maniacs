@@ -190,6 +190,25 @@
                 "name"
             ]
         },
+        "expo2025_terminal": {
+            "overpass": [
+                "relation[\"amenity\"=\"ferry_terminal\"]",
+                "relation[\"amenity\"=\"bus_station\"]"
+            ],
+            "tags": [
+                "amenity=ferry_terminal",
+                "amenity=bus_station"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#666666",
+                "stroke-width": 2,
+                "fill-opacity": 0.2
+            },
+            "titles": [
+                "name"
+            ]
+        },
         "expo2025_gatehouse": {
             "overpass": [
                 "way[\"building\"=\"gatehouse\"]"
@@ -316,13 +335,15 @@
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"map\"]",
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"office\"]",
                 "node[\"highway\"=\"elevator\"]",
-                "node[\"highway\"=\"bus_stop\"]"
+                "node[\"highway\"=\"bus_stop\"]",
+                "nwr[\"amenity\"=\"taxi\"]"
             ],
             "tags": [
                 "information=map",
                 "information=office",
                 "highway=elevator",
-                "highway=bus_stop"
+                "highway=bus_stop",
+                "amenity=taxi"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

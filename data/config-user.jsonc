@@ -28,6 +28,13 @@
         ], // 使用可能なフォント（spriteに依存）
         "textSize": 12
     },
+    "minimap": { // 地球儀表示時の初期設定
+        "initZoom": 2,
+        "viewCenter": [
+            135,
+            34
+        ]
+    },
     "icon": {
         "fgPath": "icon",
         "bgPath": "image",
@@ -37,6 +44,7 @@
         "middle": 0.6,
         "visited": 0.4,
         "normal": 0.6,
+        "flag": 0.5,
         "textFont": [
             "Noto Sans Regular"
         ], // 使用可能なフォント（spriteに依存）
@@ -59,6 +67,7 @@
             "expo2025_placeP": 12,
             "expo2025_placeF": 12,
             "expo2025_pedestrian": 12,
+            "expo2025_terminal": 12,
             "expo2025_gatehouse": 12,
             "expo2025_wall": 13,
             "expo2025_door": 16,
@@ -87,6 +96,7 @@
             "expo2025_placeP": 12,
             "expo2025_placeF": 12,
             "expo2025_pedestrian": 12,
+            "expo2025_terminal": 12,
             "expo2025_gatehouse": 12,
             "expo2025_wall": 15,
             "expo2025_door": 15,
@@ -191,12 +201,12 @@
             },
             {
                 "glot-model": "export_visited",
-                "linkto": "javascript:cMapMaker.export_visited()",
+                "linkto": "javascript:visitedCont.export()",
                 "divider": false
             },
             {
                 "glot-model": "import_visited",
-                "linkto": "javascript:cMapMaker.import_visited_menu()",
+                "linkto": "javascript:visitedCont.import()",
                 "divider": false
             }
         ],

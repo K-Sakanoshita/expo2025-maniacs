@@ -64,7 +64,7 @@ a {
 
 .minimapDatail {
     width: calc(100%-6px);
-    height: 180px;
+    height: 200px;
     margin-right: 4px;
     background: linear-gradient(to right, #4286f4, #373B44);
 }
@@ -72,7 +72,7 @@ a {
 .minimapGlobal {
     position: absolute;
     width: 100%;
-    height: 180px;
+    height: min(260px, 30%);
     bottom: 0px;
     background: linear-gradient(to right, #4286f4, #373B44);
 }
