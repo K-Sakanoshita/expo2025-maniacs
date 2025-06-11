@@ -62,6 +62,21 @@ a {
     height: 100%;
 }
 
+.minimapDatail {
+    width: calc(100%-6px);
+    height: 200px;
+    margin-right: 4px;
+    background: linear-gradient(to right, #4286f4, #373B44);
+}
+
+.minimapGlobal {
+    position: absolute;
+    width: 100%;
+    height: min(260px, 30%);
+    bottom: 0px;
+    background: linear-gradient(to right, #4286f4, #373B44);
+}
+
 .basemenu {
     background-image: linear-gradient(335deg, rgb(235, 235, 240), rgb(255, 255, 255));
 }

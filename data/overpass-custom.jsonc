@@ -21,7 +21,7 @@
         },
         "traffic_board": {
             "overpass": [
-                "nwr[\"tourism\"=\"information\"][\"board_type\"=\"traffic\"]",
+                "nwr[\"tourism\"=\"information\"][\"board_type\"=\"traffic\"]"
             ],
             "tags": [
                 "board_type=traffic"
@@ -190,6 +190,25 @@
                 "name"
             ]
         },
+        "expo2025_terminal": {
+            "overpass": [
+                "relation[\"amenity\"=\"ferry_terminal\"]",
+                "relation[\"amenity\"=\"bus_station\"]"
+            ],
+            "tags": [
+                "amenity=ferry_terminal",
+                "amenity=bus_station"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#666666",
+                "stroke-width": 2,
+                "fill-opacity": 0.2
+            },
+            "titles": [
+                "name"
+            ]
+        },
         "expo2025_gatehouse": {
             "overpass": [
                 "way[\"building\"=\"gatehouse\"]"
@@ -316,13 +335,15 @@
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"map\"]",
                 "nwr[\"tourism\"=\"information\"][\"information\"=\"office\"]",
                 "node[\"highway\"=\"elevator\"]",
-                "node[\"highway\"=\"bus_stop\"]"
+                "node[\"highway\"=\"bus_stop\"]",
+                "nwr[\"amenity\"=\"taxi\"]"
             ],
             "tags": [
                 "information=map",
                 "information=office",
                 "highway=elevator",
-                "highway=bus_stop"
+                "highway=bus_stop",
+                "amenity=taxi"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -337,11 +358,11 @@
         "expo2025_toilets": {
             "overpass": [
                 "nwr[\"amenity\"=\"toilets\"]",
-                "nwr[\"man_made\"=\"water_tap\"]"
+                "nwr[\"amenity\"=\"drinking_water\"]"
             ],
             "tags": [
                 "amenity=toilets",
-                "man_made=water_tap"
+                "amenity=drinking_water"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -361,23 +382,6 @@
             "tags": [
                 "amenity=vending_machine",
                 "amenity=waste_basket"
-            ],
-            "expression": {
-                "poiView": true, // true時はアイコン表示
-                "stroke": "#606060",
-                "stroke-width": 0,
-                "fill-opacity": 0
-            },
-            "titles": [
-                "name"
-            ]
-        },
-        "expo2025_drinks": {
-            "overpass": [
-                "nwr[\"amenity\"=\"drinking_water\"]"
-            ],
-            "tags": [
-                "amenity=drinking_water"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

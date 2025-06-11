@@ -19,6 +19,7 @@ var modalActs = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var modal_osmbasic = new modal_OSMbasic();
 var basic = new Basic();
+var visitedCont = new VisitedCont();
 var overPassCont = new OverPassControl();
 var mapLibre = new Maplibre();
 var geoCont = new GeoCont();
@@ -76,7 +77,8 @@ window.addEventListener("DOMContentLoaded", function () {
             console.log("initialize: gSheet, static, MapLibre OK.");
             mapLibre.addControl("top-left", "baselist", basehtml, "mapLibre-control m-0 p-0"); // Make: base list
             mapLibre.addNavigation("bottom-right");
-            mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
+            if (Conf.map.changeMap) mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
+            if (Conf.map.miniMap) mapLibre.addControl('bottom-right', "minimap", "<button onclick='cMapMaker.viewMiniMap()'><i class='fa-solid fa-globe'></i></button>", "maplibregl-ctrl-group");
             mapLibre.addControl("bottom-right", "global_status", "", "text-information"); // Make: progress
             mapLibre.addControl("bottom-right", "global_spinner", "", "spinner-border text-primary d-none");
             mapLibre.addControl("bottom-left", "images", "", "showcase"); // add images
@@ -91,6 +93,7 @@ window.addEventListener("DOMContentLoaded", function () {
             const init_close = function () {
                 let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : Conf.selectItem.default;
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
+                    mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
                     winCont.splash(false)
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {

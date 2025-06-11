@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/05/25</title>
+    <title>EXPO2025 万博マニアックマップ ver 2025/06/04 by OpenStreetMap</title>
     <meta charset="utf-8" />
     <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
-    <meta property="og:description" content="EXPO2025" />
+    <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
     <meta property="og:url" content="https://k-sakanoshita.github.io/expo2025-maniacs" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
@@ -37,9 +37,9 @@
         crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/glottologist@2.0.3/dist/glottologist.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-opening-hours@0.1.1/dist/simple-opening-hours.min.js"></script>
     <script defer src="./lib/osmtogeojson.js"></script>
     <script defer src="./lib/basiclib.js"></script>
+    <script defer src="./lib/visitedlib.js"></script>
     <script defer src="./lib/winlib.js"></script>
     <script defer src="./lib/geolib.js"></script>
     <script defer src="./lib/gsheetlib.js"></script>
@@ -57,6 +57,7 @@
     <div id="container">
         <article id="article">
             <div id="mapid"></div>
+            <div id="mini-map" class="d-none"></div>
         </article>
     </div>
 
@@ -78,7 +79,7 @@
     <div id="modal_window" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-fluid modal-dialog-scrollable m-1" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header p-2">
                     <div class="dropdown">
                         <button type="button" class="btn btn-sm float-right menu me-2" data-bs-toggle="dropdown"
                             aria-expanded="true" id="modal_window_menu">
@@ -90,7 +91,8 @@
                     <h4 class="modal-title" id="modal_window_title"></h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body p-2">
+                    <div id="modal_window_minimap"></div>
                     <div id="modal_window_message"></div>
                 </div>
                 <div class="modal-footer">

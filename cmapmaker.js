@@ -6,6 +6,7 @@ class CMapMaker {
         this.open_osmid = "";				// viewDetail表示中はosmid
         this.last_modetime = 0;
         this.mode = "map";
+        this.minimap = false;
         this.id = 0;
         this.moveMapBusy = 0;
         this.changeKeywordWaitTime;
@@ -26,7 +27,7 @@ class CMapMaker {
     licence() {			// About license
         let msg = { msg: glot.get("licence_message") + glot.get("more_message"), ttl: glot.get("licence_title") };
         winCont.modal_open({ "title": msg.ttl, "message": msg.msg, "mode": "close", callback_close: winCont.closeModal, "menu": false });
-    };
+    }
 
     mode_change(newmode) {	// mode change(list or map)
         if (this.status !== "mode_change" && (this.last_modetime + 300) < Date.now()) {
@@ -77,11 +78,25 @@ class CMapMaker {
             if (!osmConf.expression.poiView) {   // poiView == falseが対象
                 console.log("viewArea: " + target)
                 let pois = poiCont.getPois(target)
-                let titleTag = ["format", ["case",
-                    ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
-                    ["concat", "(", ["get", "ref"], ") ", ["coalesce", ["get", "name"], ""]],
-                    ["coalesce", ["get", "name"], ""]], {}
-                ]
+                let titleTag = [
+                    "format",
+                    ["case",
+                        ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
+                        ["case",
+                            ["has", "local_ref"],
+                            ["concat",
+                                "(", ["get", "ref"], "/", ["get", "local_ref"], ") ",
+                                ["coalesce", ["get", "name"], ""]
+                            ],
+                            ["concat",
+                                "(", ["get", "ref"], ") ",
+                                ["coalesce", ["get", "name"], ""]
+                            ]
+                        ],
+                        ["coalesce", ["get", "name"], ""]
+                    ],
+                    {}
+                ];
                 mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target, titleTag)
             }
         })
@@ -184,13 +199,13 @@ class CMapMaker {
                     global_status.innerHTML = "";
                     resolve({ "update": false });
                 });*/
-            };
-        });
+            }
+        })
 
         function status_write(progress) {
             global_status.innerHTML = progress;
-        };
-    };
+        }
+    }
 
     // OSMデータを取得して画面表示
     updateView(cat) {
@@ -226,22 +241,21 @@ class CMapMaker {
         if (keyword !== null) {
             const div = document.createElement("div");             // サニタイズ処理
             div.appendChild(document.createTextNode(keyword));
-            this.mode_change('list');
+            this.mode_change('list')
             setTimeout(() => { listTable.filterKeyword(div.innerHTML) }, 300)
         }
     }
 
-    // 詳細表示
+    // 詳細モーダル表示
     viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)
         const detail_close = () => {
             let catname = listTable.getSelCategory() !== "-" ? `?category=${listTable.getSelCategory()}` : "";
-            winCont.closeModal();
-            history.replaceState('', '', location.pathname + catname + location.hash);
-            this.open_osmid = "";
-            this.detail = false;
-            mapid.focus();
+            winCont.closeModal()
+            history.replaceState('', '', location.pathname + catname + location.hash)
+            this.open_osmid = ""
+            this.detail = false
+            mapid.focus()
         };
-        if (this.detail) detail_close();
         let osmobj = poiCont.get_osmid(osmid);
         if (osmobj == undefined) { console.log("Error: No osmobj"); return }	// Error
 
@@ -250,7 +264,15 @@ class CMapMaker {
         tags["*"] = "*";
         target = target == undefined ? "*" : target;					// targetが取得出来ない実在POI対応
         let category = poiCont.getCatnames(tags);
-        let title = `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}">`, message = "";
+        let title = "";
+        if (tags.country !== undefined) {                               // countoryタグがある場合は国旗を追加
+            let countries = tags.country.split(";")
+            countries.forEach(CCode => {
+                title += `<img src="https://flagcdn.com/h40/${CCode.toLowerCase()}.png" alt="${CCode} Flag">`
+            })
+        }
+        title += `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}">`
+        let message = "";
 
         for (let i = 0; i < Conf.osm[target].titles.length; i++) {
             if (tags[Conf.osm[target].titles[i]] !== void 0) {
@@ -284,15 +306,48 @@ class CMapMaker {
         } else {					// アクティビティ無し
             winCont.modal_open({ "title": title, "message": message, "append": Conf.menu.buttons, "mode": "close", "callback_close": detail_close, "menu": true, "openid": openid });
         }
+
+        if (tags.country) {     // Detail内にminiMapを表示
+            let mmap = document.getElementById("mini-map")
+            modal_window_minimap.appendChild(mmap)
+            mmap.classList.add("minimapDatail")
+            mmap.classList.remove("minimapGlobal")
+            mmap.classList.remove("d-none")
+            mapLibre.showCountryByCode(tags.country)
+            this.minimap = false    // ミニマップは非表示
+        }
+
         this.detail = true;
         this.mode_change('map');
-    };
+    }
+
+    viewMiniMap() {
+        let mmap = document.getElementById("mini-map")
+        if (!this.minimap) {    // ミニマップ表示
+            article.appendChild(mmap)
+            mmap.classList.remove("minimapDatail")
+            mmap.classList.remove("d-none")
+            mmap.classList.add("minimapGlobal")
+            if (mapLibre.getMiniLL() == undefined) {
+                mapLibre.addMiniMap({ center: Conf.minimap.viewCenter, zoom: Conf.minimap.initZoom }).then(() => {
+                    mapLibre.updateVisitedCountry()
+                })
+            } else {
+                mapLibre.updateVisitedCountry()
+            }
+            this.minimap = true
+        } else {               // ミニマップ非表示
+            mmap.classList.add("d-none")
+            mmap.classList.remove("minimapGlobal")
+            this.minimap = false
+        }
+    }
 
     shareURL(actid) {	// URL共有機能
         actid = actid == undefined ? "" : "." + actid;
         let url = location.origin + location.pathname + location.search + actid + location.hash;
         navigator.clipboard.writeText(url);
-    };
+    }
 
     playback() {		// 指定したリストを連続再生()
         const view_control = (list, idx) => {
@@ -325,75 +380,6 @@ class CMapMaker {
             this.status = "normal";								// mode stop
             icon_change("play");
         }
-    }
-
-    export_visited() {
-        console.log("export visited:")
-        let csvContent = "key,category,name,visited,memo\n";
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            const osmid = key.replace(Conf.etc.localSave + ".", "");
-            const pois = poiCont.get_osmid(osmid);
-            if (pois !== undefined) {
-                const category = poiCont.getCatnames(pois.geojson.properties)[0];
-                const name = pois.geojson.properties.name == undefined ? "" : pois.geojson.properties.name;
-                let value = localStorage.getItem(key);
-                value = value.replace(/TRUE,/g, 'true,');
-                value = value.replace(/FALSE,/g, 'false,');
-                const escapedKey = `"${key.replace(/"/g, '""')}"`;            // CSV形式にエスケープ
-                //const escapedValue = `"${value.replace(/"/g, '""')}"`;
-                csvContent += `${escapedKey},${category},${name},${value}\n`;
-            }
-        }
-
-        // CSVをダウンロードさせる
-        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "localStorage_export.csv";
-        a.click();
-        URL.revokeObjectURL(url);
-    }
-
-    import_visited_menu() {
-        let msg = { msg: glot.get("file_select"), ttl: glot.get("file_select") }
-        winCont.modal_open({
-            "title": msg.ttl, "mode": ["yes", "no"], callback_yes: cMapMaker.import_visited_load, callback_no: winCont.closeModal, "menu": false,
-            "message": '<input type="file" id="csvInput" class="form-control" accept=".csv,text/csv">',
-        });
-    }
-
-    import_visited_load() {
-        console.log("import visited:")
-        if (csvInput.files.length > 0) {    // ファイルが選択された時
-            let file = csvInput.files[0];
-            const reader = new FileReader();
-            reader.readAsText(file, "utf-8");
-            reader.onload = function (e) {
-                const text = e.target.result;
-                const lines = text.trim().split("\n");
-                const header = lines.shift(); // ヘッダーを削除
-                if (!header.startsWith("key,category,name,visited,memo")) {
-                    winCont.addModalMessage(glot.get("file_error"), true)
-                    return;
-                }
-                lines.forEach(line => {
-                    const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s =>
-                        s.replace(/^"|"$/g, "").replace(/""/g, '"').replace(/\r/g, '')  // CSVエスケープ解除
-                    );
-                    const key = values[0];
-                    const visited = values[3].toLowerCase() + "," + values[4]; // visited列の値だけを使う
-                    if (key && visited !== undefined) localStorage.setItem(key, visited);
-                })
-                winCont.closeModal();
-                setTimeout(() => {
-                    let msg = { ttl: glot.get("results"), txt: glot.get("file_loaded") };
-                    winCont.modal_open({ "title": msg.ttl, "message": msg.txt, "menu": false, "mode": "close", "callback_close": winCont.closeModal });
-                }, 500);
-            }
-        }
-        console.log("import visited: End")
     }
 
     download() {

@@ -771,7 +771,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "rgba(229, 228, 224, 1)",
@@ -791,7 +791,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#f0ede9",
@@ -831,7 +831,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#f0ede9",
@@ -871,7 +871,7 @@
             "source-layer": "transportation",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "rgba(108, 159, 182, 1)",
@@ -4750,7 +4750,7 @@
             "source-layer": "boundary",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#9e9cab",
@@ -4797,7 +4797,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4857,7 +4857,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4920,7 +4920,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4975,7 +4975,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -5038,7 +5038,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5,
                 "symbol-placement": "line"
             },
@@ -5111,7 +5111,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5
             },
             "paint": {
@@ -5192,7 +5192,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5
             },
             "paint": {
@@ -6586,6 +6586,7 @@
             "source": "openmaptiles",
             "source-layer": "place",
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
@@ -6649,6 +6650,7 @@
             "source": "openmaptiles",
             "source-layer": "place",
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
@@ -6713,6 +6715,7 @@
             "source-layer": "place",
             "minzoom": 5,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
@@ -6779,6 +6782,7 @@
             "source-layer": "place",
             "minzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
@@ -6845,6 +6849,7 @@
             "source-layer": "place",
             "maxzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
@@ -6892,6 +6897,7 @@
             "source-layer": "place",
             "maxzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
