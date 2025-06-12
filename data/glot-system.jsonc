@@ -171,6 +171,22 @@
         "ja": "訪問済みデータを取り込む",
         "en": "Import visited data"
     },
+    "visited_filter": {
+        "ja": "訪問済みフィルター",
+        "en": "Filter by visited"
+    },
+    "visited_filter_off": {
+        "ja": "無効",
+        "en": "Off"
+    },
+    "visited_filter_visited": {
+        "ja": "訪問済み",
+        "en": "Visited"
+    },
+    "visited_filter_unvisited": {
+        "ja": "未訪問",
+        "en": "Unvisited"
+    },
     "reservation_yes": {
         "ja": "要予約",
         "en": "reservation yes"

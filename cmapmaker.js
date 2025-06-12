@@ -70,9 +70,15 @@ class CMapMaker {
         }
     }
 
+    setVisitedFilter(visitedFilterStatus) {
+        console.log(`cMapMaker: setVisitedFilter: ${visitedFilterStatus}`);
+        this.visitedFilterStatus = visitedFilterStatus;
+        this.updateView();
+    }
+
     viewArea() {			// Area(敷地など)を表示させる refタグがあれば()表記
         //console.log(`viewArea: Start.`)
-        let targets = poiCont.getTargets()  // 
+        let targets = poiCont.getTargets()  //
         targets.forEach((target) => {
             let osmConf = Conf.osm[target] == undefined ? { expression: { poiView: true } } : Conf.osm[target]
             if (!osmConf.expression.poiView) {   // poiView == falseが対象
@@ -113,25 +119,62 @@ class CMapMaker {
         })
         targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
         targets = [...new Set(targets)];    // 重複削除
-        poiCont.setPoi(listTable.getFilterList(), false)
+
+        let filterList = listTable.getFilterList();
+
+        //// 訪問済み状態に応じたフィルタリング
+        if (this.visitedFilterStatus == "visited") {
+            filterList = filterList.filter(osmid => {
+                // localStorageの全keyを操作し、osmid を含むものを探す
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
+                    if (concatLocalSave_osmid.startsWith(key)) {
+                        const value = localStorage.getItem(key);
+                        if (value && value.toLowerCase().startsWith("true")) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            });
+        }
+        else if (this.visitedFilterStatus == "unvisited") {
+            filterList = filterList.filter(osmid => {
+                // localStorageの全keyを操作し、osmid を含むものを探す
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
+                    if (concatLocalSave_osmid.startsWith(key)) {
+                        const value = localStorage.getItem(key);
+                        if (value && value.toLowerCase().startsWith("true")) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            });
+        }
+
+        poiCont.setPoi(filterList, false)
 
         //
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
         if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
-            poiCont.setPoi(listTable.getFilterList(), false)
+            poiCont.setPoi(filterList, false)
         } else {			// targets 内に選択肢が含まれている場合
             console.log("viewPoi: " + targets.concat())
             let nowzoom = mapLibre.getZoom(false)
             targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
             targets = targets.filter(s => s !== "");
             if (nowselect = "-") {
-                poiCont.setPoi(listTable.getFilterList(), nowselect == Conf.google.targetName)
+                poiCont.setPoi(filterList, nowselect == Conf.google.targetName)
             } else {
                 for (let target of targets) {
                     let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
                     let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
                     if ((target == nowselect) && flag && poiView) {	// 選択している種別の場合
-                        poiCont.setPoi(listTable.getFilterList(), target == Conf.google.targetName)
+                        poiCont.setPoi(filterList, target == Conf.google.targetName)
                         break
                     }
                 }
