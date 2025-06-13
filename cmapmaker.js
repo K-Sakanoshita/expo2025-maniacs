@@ -76,6 +76,11 @@ class CMapMaker {
         this.updateView();
     }
 
+    toggleFavoriteFilter(checked) {
+        this.FavoriteOnly = checked;
+        this.updateView();
+    }
+
     viewArea() {			// Area(敷地など)を表示させる refタグがあれば()表記
         //console.log(`viewArea: Start.`)
         let targets = poiCont.getTargets()  //
@@ -131,8 +136,11 @@ class CMapMaker {
                     const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
                     if (concatLocalSave_osmid.startsWith(key)) {
                         const value = localStorage.getItem(key);
-                        if (value && value.toLowerCase().startsWith("true")) {
-                            return true;
+                        if (value) {
+                            const values = value.split(",");
+                            if (values[0].startsWith("true")) {	// 1つ目の要素は訪問済みフラグ
+                                return true;
+                            }
                         }
                     }
                 }
@@ -147,14 +155,39 @@ class CMapMaker {
                     const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
                     if (concatLocalSave_osmid.startsWith(key)) {
                         const value = localStorage.getItem(key);
-                        if (value && value.toLowerCase().startsWith("true")) {
-                            return false;
+                        if (value) {
+                            const values = value.split(",");
+                            if (values[0].startsWith("true")) {	// 1つ目の要素は訪問済みフラグ
+                                return false;
+                            }
                         }
                     }
                 }
                 return true;
             });
         }
+
+        //// お気に入りフィルター
+        if (this.FavoriteOnly) {
+            filterList = filterList.filter(osmid => {
+                // localStorageの全keyを操作し、osmid を含むものを探す
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
+                    if (concatLocalSave_osmid.startsWith(key)) {
+                        const value = localStorage.getItem(key);
+                        if (value) {
+                            const values = value.split(",");
+                            if (values[1].startsWith("true")) {	// 2つ目の要素はお気に入りフラグ
+                                return true;
+                            }
+                        }
+                    }
+                }
+                return false;
+            });
+        }
+
 
         poiCont.setPoi(filterList, false)
 

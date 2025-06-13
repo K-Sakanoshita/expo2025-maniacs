@@ -187,6 +187,14 @@
         "ja": "未訪問",
         "en": "Unvisited"
     },
+    "favorite": {
+        "ja": "お気に入り",
+        "en": "Favorite"
+    },
+    "favorite_filter": {
+        "ja": "お気に入りのみ表示",
+        "en": "Filter by favorite"
+    },
     "reservation_yes": {
         "ja": "要予約",
         "en": "reservation yes"

@@ -157,10 +157,14 @@ class modal_OSMbasic {
 
         // 既に行ったかチェック
         if (Conf.etc.localSave !== "") {
-            let visited = visitedCont.getValueByOSMID(tags.id)
+            let values = visitedCont.getValueByOSMID(tags.id)
             html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
-            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${visited[0] ? "checked" : ""}/>`;
-            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${visited[1]}" /></div>`
+            // 1つ目の要素は訪問済みフラグ
+            html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${values[0] ? "checked" : ""}/>`;
+            // 2つ目の要素はお気に入りフラグ
+            html += `${glot.get("favorite")} <input type="checkbox" id="favorite" class="m-2" name="${tags.id}" ${values[1] ? "checked" : ""}/>`;
+            // 3つ目の要素はメモ
+            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${values[2]}" /></div>`
             elements++;
         }
 

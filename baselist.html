@@ -29,6 +29,10 @@
         <input type="radio" name="visited_filter_radio" id="visited_filter_unvisited" value="unvisited"
            onchange="cMapMaker.setVisitedFilter('unvisited')" />
         <label for="visited_filter_unvisited"><span glot-model="visited_filter_unvisited"></span></label>
+        <br />
+        <!-- お気に入りフィルター -->
+        <label for="favorite_filter"><span glot-model="favorite_filter"></span></label>
+        <input type="checkbox" name="favorite_filter" id="favorite_filter" onchange="cMapMaker.toggleFavoriteFilter(this.checked)" />
     </div>
     <!--セレクト&ボタン-->
     <div class="col-12 p-2 me-2 d-flex align-items-center">
