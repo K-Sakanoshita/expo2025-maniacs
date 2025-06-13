@@ -164,7 +164,8 @@ class modal_OSMbasic {
             // 2つ目の要素はお気に入りフラグ
             html += `${glot.get("favorite")} <input type="checkbox" id="favorite" class="m-2" name="${tags.id}" ${values[1] ? "checked" : ""}/>`;
             // 3つ目の要素はメモ
-            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${values[2]}" /></div>`
+            let memo = values[2] !== undefined ? values[2] : "";
+            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${memo}" /></div>`
             elements++;
         }
 
