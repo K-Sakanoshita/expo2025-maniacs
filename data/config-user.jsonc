@@ -150,7 +150,7 @@
     "listTable": {
         "height": 0.6, // リスト時の高さ(1を最大とした割合)
         "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
-        "target": "targets", // targets: / activity:google sheetsを表示 
+        "target": "targets", // targets: / activity:google sheetsを表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
@@ -191,7 +191,7 @@
             },
             {
                 "glot-model": "develop_site",
-                "linkto": "https://github.com/K-Sakanoshita/expo2025-maniacs",
+                "linkto": "https://github.com/kjmatsuda/expo2025-maniacs",
                 "divider": false
             },
             {
@@ -230,7 +230,7 @@
                 "divider": false
             }
         ],
-        // 詳細モーダルの追加ボタン 
+        // 詳細モーダルの追加ボタン
         "buttons": [
             {
                 "btn_class": "btn btn-light border-secondary",

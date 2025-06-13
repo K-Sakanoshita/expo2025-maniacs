@@ -1,6 +1,6 @@
 {
     "site_title": {
-        "ja": "EXPO2025マニアックマップ",
+        "ja": "EXPO2025マニアックマップ(改)",
         "en": "EXPO2025 Maniacs Map"
     },
     "site_subtitle": {
@@ -28,7 +28,7 @@
         "en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
     },
     "develop_site": {
-        "ja": "EXPO2025マニアックマップの開発サイトへ",
+        "ja": "EXPO2025マニアックマップ(改)の開発サイトへ",
         "en": "EXPO2025 Maniacs Map development site"
     },
     "more_message": {
