@@ -13,7 +13,7 @@
         "maxBounds": [ // 地図の表示範囲(左下、右上)
             [
                 135.36,
-                34.627
+                34.635
             ],
             [
                 135.405,
@@ -126,25 +126,13 @@
         "menu": //"",
         {
             "パビリオン・展示": "expo2025_exp",
+            "店舗・施設・建物": "expo2025_service",
             "レストラン・喫茶": "expo2025_foods",
-            "コンビニ・お土産": "expo2025_store",
+            "アート作品・壁画": "expo2025_art",
             "トイレ・給水場": "expo2025_toilets",
             "自販機・ゴミ箱": "expo2025_vending",
-            "サービス・施設": "expo2025_service",
-            "アート作品・壁画": "expo2025_art",
             "案内板・移動支援": "expo2025_move"
         },
-        /*{
-            "2010年時点の地図(日本)": "Japan2010",
-            "2012年時点の地図(日本)": "Japan2012",
-            "2014年時点の地図(日本)": "Japan2014",
-            "2016年時点の地図(日本)": "Japan2016",
-            "2018年時点の地図(日本)": "Japan2018",
-            "2020年時点の地図(日本)": "Japan2020",
-            "2022年時点の地図(日本)": "Japan2022",
-            "2024年時点の地図(日本)": "Japan2024",
-            "最新地図(全世界)": "OSMFJ"
-        }*/
         "action": "ChangePOI" // ChangeMap:背景地図切り替え / ChangePOI:メニューに会ったOverpass名のPOIを表示
     },
     "listTable": {
@@ -220,23 +208,47 @@
             },
             */
             {
-                "glot-model": "osm_open",
-                "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
+                "glot-model": "copyShareLink",
+                "linkto": "javascript:cMapMaker.shareURL()",
                 "divider": false
             },
             {
-                "glot-model": "button_close",
-                "linkto": "javascript:winCont.modal_close()",
+                "glot-model": "osm_open",
+                "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
                 "divider": false
             }
         ],
         // 詳細モーダルの追加ボタン 
-        "buttons": [
+        "activities": [
+            /*
+            {
+                "btn_class": "btn btn-light border-secondary",
+                "code": "javascript:modalActs.edit({form:'expo2025'})",
+                "icon_class": "fas fa-clone",
+                "btn_glot_name": "act_add"
+            }
             {
                 "btn_class": "btn btn-light border-secondary",
                 "code": "javascript:cMapMaker.shareURL()",
                 "icon_class": "fas fa-clone",
                 "btn_glot_name": "share_link"
+            }
+            */
+        ],
+        "editActivity": [
+            {
+                "btn_class": "btn btn-light border-secondary p-1 btn-max pe-auto",
+                "code": "javascript:modalActs.save()",
+                "icon_class": "fa-solid fa-cloud-arrow-up",
+                "btn_glot_name": "act_save"
+            }
+        ],
+        "visited": [
+            {
+                "btn_class": "btn btn-light border-secondary pe-auto",
+                "code": "javascript:visitedCont.import_load()",
+                "icon_class": "fa-solid fa-cloud-arrow-up",
+                "btn_glot_name": "act_upload"
             }
         ]
     }

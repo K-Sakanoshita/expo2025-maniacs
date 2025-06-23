@@ -408,6 +408,10 @@
             },
             "social_facility": {
                 "shelter": "temporary shelter"
+            },
+            "vending": {
+                "drinks": "drinks",
+                "ice_cream": "ice cream"
             }
         },
         "artwork": {

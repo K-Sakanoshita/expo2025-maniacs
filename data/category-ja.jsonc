@@ -408,6 +408,10 @@
             },
             "social_facility": {
                 "shelter": "一時避難所"
+            },
+            "vending": {
+                "drinks": "ドリンク",
+                "ice_cream": "アイスクリーム"
             }
         },
         "artwork": {

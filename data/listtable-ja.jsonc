@@ -7,14 +7,14 @@
                     "hidden": true
                 },
                 {
-                    "id": "category",
-                    "name": "種別",
-                    "width": "30%"
+                    "id": "ref",
+                    "name": "位置",
+                    "width": "20%"
                 },
                 {
                     "id": "name",
-                    "name": "名称",
-                    "width": "60%"
+                    "name": "名前",
+                    "width": "80%"
                 },
                 {
                     "id": "reservation",
@@ -24,13 +24,13 @@
             ],
             "poiFields": [
                 "id",
-                "#category",
+                "ref",
                 "name",
                 "reservation"
             ],
             "actFields": [ //#付きはOSMタグ、ただし#categoryのみ内部判定結果
                 "id",
-                "#category",
+                "#ref",
                 "memo",
                 "#reservation"
             ]

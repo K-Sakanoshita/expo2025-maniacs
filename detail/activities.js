@@ -1,21 +1,20 @@
-class modal_Activities {
+class Activities {
     // make modal html for Activities
 
     constructor() {
         this.busy = false;
         this.html = "";
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "./modal/modal_activities.html", true);
+        xhr.open("GET", "./detail/activities.html", true);
         xhr.onerror = function () {
-            console.log("[error]modal_Activities:");
+            console.log("[error]Detail Activities:");
             console.log(xhr);
         };
         xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 400) {
-                console.log("[success]modal_Activities:");
                 this.html = xhr.response;
             } else {
-                console.log("[error]modal_Activities:");
+                console.log("[error]Detail Activities:");
                 console.log(xhr);
             }
         }.bind(this);
@@ -133,8 +132,7 @@ class modal_Activities {
     // params {id: undefined時はnew, form: フォーム名、空白時は一番上を自動取得}
     edit(params = {}) {
         let title = glot.get(params.id === void 0 ? "act_add" : "act_edit");
-        let html = "",
-            act = Conf.activities;
+        let html = "", act = Conf.activities;
         let data = params.id === void 0 ? { osmid: cMapMaker.open_osmid } : poiCont.get_actid(params.id);
         let fname = params.form == undefined ? Object.keys(Conf.activities)[0] : params.form;
 
@@ -188,74 +186,70 @@ class modal_Activities {
         });
         html += "<hr>";
         html += `<div class="row mb-1 align-items-center">`;
-        html += `<div class="col-12 p-1"><h4>${glot.get("act_confirm")}</h4></div>`;
-        html += `<div class="col-2 p-1">${glot.get("act_userid")}</div>`;
-        html += `<div class="col-4 p-1"><input type="text" id="act_userid" class="form-control form-control-sm"></input></div>`;
-        html += `<div class="col-2 p-1">${glot.get("act_passwd")}</div>`;
-        html += `<div class="col-4 p-1"><input type="password" id="act_passwd" class="form-control form-control-sm"></input></div>`;
+        html += `<div class="col-12 p-1"><h5>${glot.get("act_confirm")}</h5></div>`;
+        html += `<div class="col-4 p-1">${glot.get("act_userid")}</div>`;
+        html += `<div class="col-8 p-1"><input type="text" id="act_userid" class="form-control form-control-sm"></input></div>`;
+        html += `<div class="col-4 p-1">${glot.get("act_passwd")}</div>`;
+        html += `<div class="col-8 p-1"><input type="password" id="act_passwd" class="form-control form-control-sm"></input></div>`;
         html += `</div></div>`;
         html += `<input type="hidden" id="act_id" value="${params.id === void 0 ? "" : params.id}"></input>`;
         html += `<input type="hidden" id="act_osmid" value="${data.osmid}"></input>`;
 
-        winCont.modal_progress(0);
-        winCont.modal_open({
-            title: title,
-            message: html,
-            mode: "yes,no",
-            menu: true,
-            callback_no: () => {
-                winCont.closeModal();
-            },
-            callback_yes: () => {
-                winCont.modal_progress(0);
-                let userid = document.getElementById("act_userid").value;
-                let passwd = document.getElementById("act_passwd").value;
-                if (!modalActs.busy && userid !== "" && passwd !== "") {
-                    winCont.modal_progress(10);
-                    modalActs.busy = true;
-                    let senddata = { id: act_id.value, osmid: act_osmid.value };
-                    Object.keys(act[fname].form).forEach((key) => {
-                        let field = act[fname].form[key];
-                        if (field.gsheet !== "" && field.gsheet !== undefined) senddata[field.gsheet] = document.getElementById("act_" + key).value;
-                    });
-                    gSheet
-                        .get_salt(Conf.google.AppScript, userid)
-                        .then((e) => {
-                            winCont.modal_progress(40);
-                            console.log("salt: " + e.salt);
-                            return basic.makeSHA256(passwd + e.salt);
-                        })
-                        .then((hashpw) => {
-                            winCont.modal_progress(70);
-                            console.log("hashpw: " + hashpw);
-                            return gSheet.set(Conf.google.AppScript, senddata, fname, userid, hashpw);
-                        })
-                        .then((e) => {
-                            winCont.modal_progress(100);
-                            if (e.status.indexOf("ok") > -1) {
-                                console.log("save: ok");
-                                winCont.closeModal();
-                                gSheet.get(Conf.google.AppScript).then((jsonp) => {
-                                    poiCont.setActdata(jsonp);
-                                    let targets = Conf.listTable.target == "targets" ? [listTable.getSelCategory()] : ["-"];
-                                    cMapMaker.viewArea();
-                                    cMapMaker.viewPoi(targets); // in targets
-                                    modalActs.busy = false;
-                                });
-                            } else {
-                                console.log("save: ng");
-                                alert(glot.get("act_error"));
-                                modalActs.busy = false;
-                            }
-                            //}).catch(() => {
-                            //    winCont.modal_progress(0);
-                            //    modalActs.busy = false;
+        winCont.setProgress(0);
+        mapLibre.viewMiniMap(false)
+        winCont.makeDetail({ title: title, message: html, menu: true, append: Conf.menu.editActivity });
+    }
+
+    save() {
+        let act = Conf.activities;
+        let fname = Object.keys(Conf.activities)[0];
+        winCont.setProgress(0);
+        let userid = document.getElementById("act_userid").value;
+        let passwd = document.getElementById("act_passwd").value;
+        if (!modalActs.busy && userid !== "" && passwd !== "") {
+            winCont.setProgress(10);
+            modalActs.busy = true;
+            let senddata = { id: act_id.value, osmid: act_osmid.value };
+            Object.keys(act[fname].form).forEach((key) => {
+                let field = act[fname].form[key];
+                if (field.gsheet !== "" && field.gsheet !== undefined) senddata[field.gsheet] = document.getElementById("act_" + key).value;
+            });
+            gSheet
+                .get_salt(Conf.google.AppScript, userid)
+                .then((e) => {
+                    winCont.setProgress(40);
+                    console.log("salt: " + e.salt);
+                    return basic.makeSHA256(passwd + e.salt);
+                })
+                .then((hashpw) => {
+                    winCont.setProgress(70);
+                    console.log("hashpw: " + hashpw);
+                    return gSheet.set(Conf.google.AppScript, senddata, fname, userid, hashpw);
+                })
+                .then((e) => {
+                    winCont.setProgress(100);
+                    if (e.status.indexOf("ok") > -1) {
+                        console.log("save: ok");
+                        winCont.clearDatail();
+                        gSheet.get(Conf.google.AppScript).then((jsonp) => {
+                            poiCont.setActdata(jsonp);
+                            let targets = Conf.listTable.target == "targets" ? [listTable.getSelCategory()] : ["-"];
+                            cMapMaker.viewArea();
+                            cMapMaker.viewPoi(targets); // in targets
+                            modalActs.busy = false;
                         });
-                } else if (userid == "" || passwd == "") {
-                    alert(glot.get("act_error"));
-                }
-            },
-        });
+                    } else {
+                        console.log("save: ng");
+                        alert(glot.get("act_error"));
+                        modalActs.busy = false;
+                    }
+                    //}).catch(() => {
+                    //    winCont.setProgress(0);
+                    //    modalActs.busy = false;
+                });
+        } else if (userid == "" || passwd == "") {
+            alert(glot.get("act_error"));
+        }
     }
 
     viewImage(e) {

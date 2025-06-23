@@ -1,11 +1,19 @@
 {
     "act_add": {
         "ja": "追加",
-        "en": "Add information"
+        "en": "Add"
     },
     "act_edit": {
         "ja": "編集",
-        "en": "Edit information"
+        "en": "Edit"
+    },
+    "act_save": {
+        "ja": "保存",
+        "en": "Save"
+    },
+    "act_upload": {
+        "ja": "アップロード",
+        "en": "Upload"
     },
     "act_name": {
         "ja": "ニックネーム",
@@ -59,12 +67,16 @@
         "ja": "Link",
         "en": "Link"
     },
+    "copyShareLink": {
+        "ja": "シェア用のリンクを取得",
+        "en": "Get a link to share"
+    },
     "add_activity": {
         "ja": "情報追加",
         "en": "add Activity"
     },
     "morezoom": {
-        "ja": "ズームすると表示が増えます",
+        "ja": "ズームしてください",
         "en": "Please zoom more."
     },
     "button_ok": {
@@ -126,10 +138,6 @@
     "qrcode_make": {
         "ja": "QRコード生成",
         "en": "QR-code generatie"
-    },
-    "modal_close": {
-        "ja": "閉じる",
-        "en": "close"
     },
     "source_wikipedia": {
         "ja": "(出典/記事: Wikipedia)",
@@ -194,6 +202,10 @@
     "file_select": {
         "ja": "ファイルを選択してください",
         "en": "Plase Select File"
+    },
+    "file_notfound": {
+        "ja": "ファイルが見つかりません",
+        "en": "File not Found"
     },
     "file_error": {
         "ja": "ファイル内容が不正です",

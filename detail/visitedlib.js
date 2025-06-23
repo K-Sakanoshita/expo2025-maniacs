@@ -62,9 +62,12 @@ class VisitedCont {
 
     import() {
         let msg = { msg: glot.get("file_select"), ttl: glot.get("file_select") }
-        winCont.modal_open({
-            "title": msg.ttl, "mode": ["yes", "no"], callback_yes: this.import_load, callback_no: winCont.closeModal, "menu": false,
+        cMapMaker.setSidebar("view")
+        mapLibre.viewMiniMap(false)
+        winCont.makeDetail({
+            "title": msg.ttl, "mode": ["yes", "no"], callback_yes: this.import_load, "menu": false,
             "message": '<input type="file" id="csvInput" class="form-control" accept=".csv,text/csv">',
+            "append": Conf.menu.visited
         });
     }
 
@@ -79,7 +82,7 @@ class VisitedCont {
                 const lines = text.trim().split("\n");
                 const header = lines.shift(); // ヘッダーを削除
                 if (!header.startsWith("key,category,name,visited,memo")) {
-                    winCont.addModalMessage(glot.get("file_error"), true)
+                    winCont.addDetailMessage(glot.get("file_error"), true)
                     return;
                 }
                 lines.forEach(line => {
@@ -90,12 +93,13 @@ class VisitedCont {
                     const visited = values[3].toLowerCase() + "," + values[4]; // visited列の値だけを使う
                     if (key && visited !== undefined) localStorage.setItem(key, visited);
                 })
-                winCont.closeModal();
                 setTimeout(() => {
                     let msg = { ttl: glot.get("results"), txt: glot.get("file_loaded") };
-                    winCont.modal_open({ "title": msg.ttl, "message": msg.txt, "menu": false, "mode": "close", "callback_close": winCont.closeModal });
+                    winCont.makeDetail({ "title": msg.ttl, "message": msg.txt, "menu": false, "mode": "close", "callback_close": winCont.closeModal });
                 }, 500);
             }
+        } else {
+            winCont.addDetailMessage(glot.get("file_notfound"), true)
         }
         console.log("import visited: End")
     }

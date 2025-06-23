@@ -1,28 +1,28 @@
-class modal_OSMbasic {
+class OSMbasic {
     // make modal html for OSM basic tags
 
     make(tags) {
         let catname = poiCont.getCatnames(tags);
         let elements = 0;
-        let html = `<div class="d-flex justify-content-between align-items-center flex-wrap mb-1">`;
+        let html = `<div class="d-flex justify-content-between align-items-center flex-wrap m-1">`;
 
         // write type
         if (catname[0] !== undefined) {
-            html += `<div class="flex-row mt-2"> <i class="fas fa-square"></i> ${catname[0]}${catname[1] !== "" ? "(" + catname[1] + ")" : ""}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-square"></i> ${catname[0]}${catname[1] !== "" ? "(" + catname[1] + ")" : ""}</div>`;
             elements++;
         }
 
         // write brand
         let brand = [tags["brand:ja"], tags.brand].filter((a) => a !== undefined)[0];
         if (brand !== undefined) {
-            html += `<div class="flex-row mt-2"> <i class="fa-solid fa-building"></i>${brand}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fa-solid fa-building"></i>${brand}</div>`;
             elements++;
         }
 
         // write changing_table
         if (tags.changing_table !== undefined) {
             let available = tags.changing_table == "yes" ? glot.get("available") : glot.get("unavailable");
-            html += `<div class="flex-row mt-2"> <i class="fas fa-baby"></i> ${glot.get("changing_table")}:${available}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-baby"></i> ${glot.get("changing_table")}:${available}</div>`;
             elements++;
         }
 
@@ -31,7 +31,7 @@ class modal_OSMbasic {
             let test = { yes: "available", no: "unavailable", limited: "limited" };
             if (test[tags.wheelchair] !== undefined) {
                 let available = glot.get(test[tags.wheelchair]);
-                html += `<div class="flex-row mt-2"> <i class="fas fa-wheelchair"></i> ${available}</div>`;
+                html += `<div class="flex-row mt-1"> <i class="fas fa-wheelchair"></i> ${available}</div>`;
                 elements++;
             }
         }
@@ -41,7 +41,7 @@ class modal_OSMbasic {
             let test = { yes: "available", no: "unavailable", limited: "limited" };
             if (test[tags.bottle] !== undefined) {
                 let available = glot.get(test[tags.bottle]);
-                html += `<div class="flex-row mt-2"> <i class="fas fa-wine-bottle"></i> ${available}</div>`;
+                html += `<div class="flex-row mt-1"> <i class="fas fa-wine-bottle"></i> ${available}</div>`;
                 elements++;
             }
         }
@@ -50,8 +50,8 @@ class modal_OSMbasic {
         let website = [tags.website, tags["contact:website"], tags["brand:website"]].filter((a) => a !== undefined)[0];
         if (website !== undefined) {
             let httpn = website.replace(/^https?:\/\//, "");
-            let trunc = httpn.length > 22 ? httpn.substring(0, 19) + "..." : httpn;
-            html += `<div class="flex-row mt-2"> <i class="fas fa-globe"></i> <a href="${website}" target="_blank">${trunc}</a></div>`;
+            let trunc = httpn.length > 19 ? httpn.substring(0, 19) + "..." : httpn;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-globe"></i> <a href="${website}" target="_blank">${trunc}</a></div>`;
             elements++;
         }
 
@@ -69,7 +69,7 @@ class modal_OSMbasic {
                 case "no": reserve = glot.get("reservation_no"); break;
                 case "recommended": reserve = glot.get("reservation_recommended"); break;
             }
-            html += `<div class="flex-row mt-2"> <i class="fa-solid fa-ticket"></i> ${reserve}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fa-solid fa-ticket"></i> ${reserve}</div>`;
             elements++;
         }
 
@@ -78,7 +78,7 @@ class modal_OSMbasic {
         if (instagram !== undefined) {
             instagram = this.getInstagramProfileUrl(instagram);
             if (instagram !== null) {
-                html += `<div class="flex-row mt-2"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`;
+                html += `<div class="flex-row mt-1"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`;
                 elements++;
             }
         }
@@ -87,20 +87,20 @@ class modal_OSMbasic {
         if (tags.phone !== undefined) {
             let phone = tags.phone
             phone = phone.startsWith("+81") ? "0" + phone.slice(3) : phone;
-            html += `<div class="flex-row mt-2"> <i class="fas fa-phone-alt"></i> <a href="tel:${phone}">${phone}</a></div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-phone-alt"></i> <a href="tel:${phone}">${phone}</a></div>`;
             elements++;
         }
 
         // write artist_name
         if (tags.artist_name !== undefined) {
-            html += `<div class="flex-row mt-2"> <i class="fas fa-file-signature"></i> ${tags.artist_name}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-file-signature"></i> ${tags.artist_name}</div>`;
             elements++;
         }
 
         // write toilets
         if (tags.amenity == "toilets") {
             let test = { yes: "available", no: "unavailable", limited: "limited" };
-            html += `<div class="flex-row mt-2"> `
+            html += `<div class="flex-row mt-1"> `
             if (tags.female == "yes") {
                 html += `<i class="fa-solid fa-venus"></i> `;
                 let capacity = Number(tags["capacity:women"])
@@ -136,29 +136,29 @@ class modal_OSMbasic {
         if (tags.level !== undefined) {
             let level = Number(tags.level)
             if (level > 0) {
-                html += `<div class="flex-row mt-2"> <i class="fa-solid fa-stairs"></i> ${level + 1}F</div>`;
+                html += `<div class="flex-row mt-1"> <i class="fa-solid fa-stairs"></i> ${level + 1}F</div>`;
             } else if (level < 0) {
-                html += `<div class="flex-row mt-2"> <i class="fa-solid fa-stairs"></i> ${level}F</div>`;
+                html += `<div class="flex-row mt-1"> <i class="fa-solid fa-stairs"></i> ${level}F</div>`;
             }
             elements++;
         }
 
         // write note
         if (tags.note !== undefined) {
-            html += `<div class="flex-row mt-2"> <i class="fas fa-sticky-note"></i> ${tags.note}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-sticky-note"></i> ${tags.note}</div>`;
             elements++;
         }
 
         // write description
         if (tags.description !== undefined) {
-            html += `<div class="flex-row mt-2"> <i class="fas fa-sticky-note"></i> ${tags.description}</div>`;
+            html += `<div class="flex-row mt-1"> <i class="fas fa-sticky-note"></i> ${tags.description}</div>`;
             elements++;
         }
 
         // 既に行ったかチェック
         if (Conf.etc.localSave !== "") {
             let visited = visitedCont.getValueByOSMID(tags.id)
-            html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
+            html += `<div class="flex-row mt-1 d-flex text-nowrap align-items-center w-100"><i class="fa-solid fa-person-walking me-1"></i>`;
             html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${visited[0] ? "checked" : ""}/>`;
             html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control ms-2" placeholder="${glot.get("reservation_memo")}" value="${visited[1]}" /></div>`
             elements++;
@@ -170,12 +170,11 @@ class modal_OSMbasic {
             if (wikim.slice(0, 5) == "File:") {     // File:のみ対応
                 let id = tags.id;
                 wikimq.push([wikim, id]);
-                html += `<div class="col-12 mt-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
+                html += `<div class="col-12 mt-3 mb-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
                 wikimq.forEach((q) => basic.getWikiMediaImage(q[0], Conf.etc.modalThumbWidth, q[1])); // WikiMedia Image 遅延読み込み
                 elements++;
             }
         }
-
         return elements > 0 ? html + "</div>" : "";
     }
 

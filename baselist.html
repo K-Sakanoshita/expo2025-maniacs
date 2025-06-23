@@ -1,5 +1,5 @@
 <div class="row m-1 p-1 basemenu shadow rounded">
-    <div class="col-12 p-2 me-2 d-flex align-items-center">
+    <div class="col-12 p-1 me-2 d-flex align-items-center">
         <div class="dropdown">
             <button class="btn btn-light border-secondary float-right menu me-2" data-bs-toggle="dropdown"
                 aria-expanded="true" id="global_menu">
@@ -18,10 +18,10 @@
         </a>
     </div>
     <!--セレクト&ボタン-->
-    <div class="col-12 p-2 me-2 d-flex align-items-center">
+    <div class="col-12 p-1 me-2 d-flex align-items-center">
         <div class="h-100 d-flex align-items-center text-nowrap"><span glot-model="cat_select"></span></div>
         <select class="form-select me-1" id="list_category"></select>
-        <button class="btn btn-light border-secondary float-left" onclick="cMapMaker.mode_change();"><i
+        <button class="btn btn-light border-secondary float-left" onclick="cMapMaker.changeMode();"><i
                 class="fas fa-list" id="list_collapse_icon"></i></button>
         <button class="btn btn-light border-secondary float-left ms-2"
             onclick="cMapMaker.searchKeyword(window.prompt('検索キーワード'));"><i class="fas fa-search"

@@ -7,14 +7,14 @@
                     "hidden": true
                 },
                 {
-                    "id": "category",
-                    "name": "category",
-                    "width": "30%"
+                    "id": "ref",
+                    "name": "ref",
+                    "width": "20%"
                 },
                 {
                     "id": "name",
                     "name": "name",
-                    "width": "70%"
+                    "width": "80%"
                 },
                 {
                     "id": "memo",
@@ -24,13 +24,13 @@
             ],
             "poiFields": [
                 "id",
-                "#category",
+                "ref",
                 "name",
                 "reservation"
             ],
             "actFields": [
                 "id",
-                "#category",
+                "#ref",
                 "memo",
                 "#reservation"
             ]

@@ -15,9 +15,9 @@ const FILES = [
     `./data/glot-custom.jsonc`, `./data/glot-system.jsonc`,
 ];
 const glot = new Glottologist();
-var modalActs = new modal_Activities();
-var modal_wikipedia = new modal_Wikipedia();
-var modal_osmbasic = new modal_OSMbasic();
+var modalActs = new Activities();
+var wikipedia = new Wikipedia();
+var osmBasic = new OSMbasic();
 var basic = new Basic();
 var visitedCont = new VisitedCont();
 var overPassCont = new OverPassControl();
@@ -57,16 +57,16 @@ window.addEventListener("DOMContentLoaded", function () {
         Conf.category_subkeys = Object.keys(Conf.category_sub); // Make Conf.category_subkeys
         glot.data = Object.assign(glot.data, JSON5.parse(texts[9])); // import glot data
         glot.data = Object.assign(glot.data, JSON5.parse(texts[10])); // import glot data
-        window.onresize = winCont.window_resize; // 画面サイズに合わせたコンテンツ表示切り替え
+        window.onresize = winCont.resizeWindow; // 画面サイズに合わせたコンテンツ表示切り替え
+        cMapMaker.setSidebar()
         // document.title = glot.get("site_title"); // Google検索のインデックス反映が読めないので一旦なし
         let UrlParams = setUrlParams();
         if (UrlParams.edit) Conf.etc["editMode"] = true;
         if (UrlParams.static) Conf.static["mode"] = basic.parseBoolean(UrlParams.static);
 
-        winCont.splash(true);
+        winCont.viewSplash(true);
         listTable.init();
         poiCont.init();
-        winCont.window_resize(); // Set Window Size(mapidのサイズ指定が目的)
 
         Promise.all([
             gSheet.get(Conf.google.AppScript),
@@ -78,14 +78,13 @@ window.addEventListener("DOMContentLoaded", function () {
             mapLibre.addControl("top-left", "baselist", basehtml, "mapLibre-control m-0 p-0"); // Make: base list
             mapLibre.addNavigation("bottom-right");
             if (Conf.map.changeMap) mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
-            if (Conf.map.miniMap) mapLibre.addControl('bottom-right', "minimap", "<button onclick='cMapMaker.viewMiniMap()'><i class='fa-solid fa-globe'></i></button>", "maplibregl-ctrl-group");
             mapLibre.addControl("bottom-right", "global_status", "", "text-information"); // Make: progress
             mapLibre.addControl("bottom-right", "global_spinner", "", "spinner-border text-primary d-none");
             mapLibre.addControl("bottom-left", "images", "", "showcase"); // add images
             mapLibre.addControl("bottom-left", "zoomlevel", "");
             winCont.playback(Conf.listTable.playback.view); // playback control view:true/false
             winCont.download(Conf.listTable.download); // download view:true/false
-            cMapMaker.mode_change("map"); // initialize last_modetime
+            cMapMaker.changeMode("map"); // initialize last_modetime
             winCont.menu_make(Conf.menu.main, "main_menu");
             winCont.mouseDragScroll(images, cMapMaker.viewImageList); // set Drag Scroll on images
             glot.render();
@@ -95,7 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
                     mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
-                    winCont.splash(false)
+                    winCont.viewSplash(false)
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                         let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
                         let param = keyv[0] + "/" + keyv[1]

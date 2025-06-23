@@ -40,6 +40,7 @@ a {
     color: rgb(0 117 58);
 }
 
+/*
 #container {
     flex-direction: column;
     width: 100%;
@@ -57,23 +58,44 @@ a {
     position: relative;
     margin: 0px 0px 0px 0px;
 }
+*/
+
+#article {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 #mapid {
     height: 100%;
 }
 
-.minimapDatail {
-    width: calc(100%-6px);
-    height: 200px;
-    margin-right: 4px;
-    background: linear-gradient(to right, #4286f4, #373B44);
+#top-pane {
+    background: #f0f0f0;
 }
 
-.minimapGlobal {
-    position: absolute;
-    width: 100%;
-    height: min(260px, 30%);
-    bottom: 0px;
+#bottom-pane {
+    flex-grow: 1;
+    background: #f0f0f0;
+    overflow: auto;
+}
+
+.footerSpace {
+    height: 100px !important;
+}
+
+#btmHeader {
+    background-color: #f0f0f0;
+}
+
+#btmWindow {
+    overflow-y: auto;
+}
+
+.minimapDatail {
+    height: 100px;
+    width: 98%;
+    margin-right: 4px;
     background: linear-gradient(to right, #4286f4, #373B44);
 }
 
@@ -130,8 +152,8 @@ h4 img {
     margin-right: 0.3em;
 }
 
-h2.zoom {
-    font-size: 16px;
+span.zoom {
+    font-size: 12px;
     color: rgba(0, 0, 0, 1);
     background-color: rgba(255, 255, 255, 0.5);
     padding: 6px;
@@ -189,6 +211,10 @@ span.fs-14 {
     overflow-x: hidden;
 }
 
+.btn-max {
+    width: 40px;
+}
+
 input[type="search"] {
     font-size: 14px;
     display: inline-block;
@@ -225,10 +251,13 @@ tr.selected td {
     bottom: 0px;
 }
 
-.modal-title {
-    height: 2rem;
+.detailTitle {
+    font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    text-wrap-mode: nowrap;
 }
 
 .cursor-pointer {

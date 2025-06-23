@@ -266,7 +266,7 @@
         "expo2025_exp": {
             "overpass": [
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
-                "nwr[\"amenity\"=\"theatre\"]"
+                "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
             ],
             "tags": [
                 "amenity=exhibition_centre",
@@ -285,23 +285,39 @@
         "expo2025_service": {
             "overpass": [
                 "nwr[\"amenity\"=\"stage\"]",
+                "nwr[\"amenity\"=\"community_centre\"]",
                 "nwr[\"amenity\"=\"luggage_locker\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"smoking_area\"]",
+                "nwr[\"amenity\"=\"food_court\"]",
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
-                "nwr[\"building\"=\"yes\"][\"name\"]",
-                "nwr[\"building\"=\"gatehouse\"][\"name\"]"
+                "nwr[\"building\"][\"name\"]",
+                "nwr[\"building\"=\"gatehouse\"][\"name\"]",
+                "nwr[\"shop\"=\"anime\"]",
+                "nwr[\"shop\"=\"bakery\"]",
+                "nwr[\"shop\"=\"convenience\"]",
+                "nwr[\"shop\"=\"gift\"]",
+                "nwr[\"shop\"=\"mobile_phone\"]",
+                "nwr[\"shop\"=\"chemist\"]"
             ],
             "tags": [
                 "amenity=stage",
+                "amenity=community_centre",
                 "amenity=luggage_locker",
                 "amenity=post_office",
                 "amenity=smoking_area",
+                "amenity=food_court",
                 "office=courier",
                 "office=government",
                 "building=yes",
-                "building=gatehouse"
+                "building=gatehouse",
+                "shop=anime",
+                "shop=bakery",
+                "shop=convenience",
+                "shop=gift",
+                "shop=mobile_phone",
+                "shop=chemist"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -409,31 +425,6 @@
                 "amenity=fast_food",
                 "amenity=food_court",
                 "amenity=restaurant"
-            ],
-            "expression": {
-                "poiView": true, // true時はアイコン表示
-                "stroke": "#606060",
-                "stroke-width": 0,
-                "fill-opacity": 0
-            },
-            "titles": [
-                "name"
-            ]
-        },
-        "expo2025_store": {
-            "overpass": [
-                "nwr[\"shop\"=\"convenience\"]",
-                "nwr[\"shop\"=\"bakery\"]",
-                "nwr[\"shop\"=\"gift\"]",
-                "nwr[\"shop\"=\"mobile_phone\"]",
-                "nwr[\"shop\"=\"chemist\"]"
-            ],
-            "tags": [
-                "shop=convenience",
-                "shop=bakery",
-                "shop=gift",
-                "shop=mobile_phone",
-                "shop=chemist"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

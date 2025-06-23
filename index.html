@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/06/04 by OpenStreetMap</title>
+    <title>EXPO2025 万博マニアックマップ ver 2025/06/24 by OpenStreetMap</title>
     <meta charset="utf-8" />
     <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
     <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
@@ -39,72 +39,84 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script defer src="./lib/osmtogeojson.js"></script>
     <script defer src="./lib/basiclib.js"></script>
-    <script defer src="./lib/visitedlib.js"></script>
     <script defer src="./lib/winlib.js"></script>
     <script defer src="./lib/geolib.js"></script>
     <script defer src="./lib/gsheetlib.js"></script>
     <script defer src="./lib/poilib.js"></script>
     <script defer src="./lib/listtable.js"></script>
     <script defer src="./lib/overpasslib.js"></script>
-    <script defer src="./modal/modal_activities.js"></script>
-    <script defer src="./modal/modal_wikipedia.js"></script>
-    <script defer src="./modal/modal_osmbasic.js"></script>
+    <script defer src="./detail/visitedlib.js"></script>
+    <script defer src="./detail/activities.js"></script>
+    <script defer src="./detail/wikipedia.js"></script>
+    <script defer src="./detail/osmbasic.js"></script>
     <script defer src="./cmapmaker.js"></script>
     <script defer src="./initialize.js"></script>
 </head>
 
 <body>
-    <div id="container">
-        <article id="article">
+    <article id="article">
+        <div id="top-pane">
             <div id="mapid"></div>
-            <div id="mini-map" class="d-none"></div>
-        </article>
-    </div>
+        </div>
+        <div id="bottom-pane" class="ps-1 pe-1">
+            <div id="btmHeader" class="row p-1 m-0 sticky-top">
+                <div class="col-12 p-0 m-0 progress" style="height: 3px;">
+                    <div id="btmWindow_progress" class="progress-bar progress-bar-striped progress-bar-animated mb-2"
+                        style="height: 3px" role="progressbar"></div>
+                </div>
+                <div class="col-12 p-0 d-flex">
+                    <div class="dropdown-menu" aria-labelledby="btnMenu" id="btnMenu"></div>
+                    <button class="btn btn-light border-secondary p-0 me-1 d-none" data-bs-toggle="dropdown"
+                        aria-expanded="true" style="width: 30px; height: 30px">
+                        <i class="fas fa-bars text-black"></i>
+                    </button>
+                    <span class="detailTitle" id="btmWindow_title"></span>
+                </div>
+            </div>
+            <div id="btmWindow" class="" tabindex="-1">
+                <div class="m-1">
+                    <div id="mini-map" class="d-none mx-auto"></div>
+                    <div id="btmWindow_message"></div>
+                    <div class="footerSpace"></div>
+                </div>
+            </div>
+            <div id="sidebarCont" class="row fixed-bottom m-2 pe-none">
+                <div class="col-8 p-0">
+                    <div id="sideBarPanel"></div>
+                    <div class="btn-group btn-group-lg pe-auto">
+                        <!--- button id="sideBarSave" class="btn btn-light border-secondary p-1 btn-max d-none"
+                            onclick="javascript:modalActs.save()">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span id="sideBarSaveLabel"></span>
+                        </button --->
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
+                        <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarChange"
+                            onclick="javascript:cMapMaker.setSidebar('change')">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <button class="btn btn-light border-secondary p-1 btn-max"
+                            onclick="javascript:cMapMaker.viewDetail()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
 
-    <div id="modal_splash" class="modal" tabindex="-1" role="dialog">
+    <div id="splashImage" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document" data-keyboard="false">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="" style="width: 100%;float: none !important" id="splash_image"><br>
+                    <img src="" style="width: 100%;float: none !important" id="splashSrc"><br>
                     <div class="d-flex justify-content-center mt-2">
                         <div class="spinner-border text-primary mx-auto" role="status"> <span
                                 class="sr-only">Loading...</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal_window" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-fluid modal-dialog-scrollable m-1" role="document">
-            <div class="modal-content">
-                <div class="modal-header p-2">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-sm float-right menu me-2" data-bs-toggle="dropdown"
-                            aria-expanded="true" id="modal_window_menu">
-                            <i class="fas fa-bars text-black"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="modal_menu" style="z-index: 1090" id="modal_menu">
-                        </div>
-                    </div>
-                    <h4 class="modal-title" id="modal_window_title"></h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
-                </div>
-                <div class="modal-body p-2">
-                    <div id="modal_window_minimap"></div>
-                    <div id="modal_window_message"></div>
-                </div>
-                <div class="modal-footer">
-                    <div class="col-12 p-0 m-0">
-                        <div id="modal_window_progress"
-                            class="progress-bar progress-bar-striped progress-bar-animated mb-2" style="height: 2px"
-                            role="progressbar"></div>
-                    </div>
-                    <div id="modal_footer"></div>
-                    <button id="modal_window_yes" class="btn btn-primary"></button>
-                    <button id="modal_window_no" class="btn btn-secondary"></button>
-                    <button id="modal_window_close" class="btn btn-secondary"></button>
                 </div>
             </div>
         </div>
