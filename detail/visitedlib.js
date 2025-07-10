@@ -62,7 +62,7 @@ class VisitedCont {
 
     import() {
         let msg = { msg: glot.get("file_select"), ttl: glot.get("file_select") }
-        cMapMaker.setSidebar("view")
+        winCont.setSidebar("view")
         mapLibre.viewMiniMap(false)
         winCont.makeDetail({
             "title": msg.ttl, "mode": ["yes", "no"], callback_yes: this.import_load, "menu": false,

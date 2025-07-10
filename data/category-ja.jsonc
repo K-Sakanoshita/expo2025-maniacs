@@ -18,7 +18,9 @@
             "bureau_de_change": "両替所",
             "bus_station": "バスターミナル",
             "cafe": "カフェ/喫茶店",
+            "car_rental": "カーレンタル",
             "car_sharing": "カーシェア",
+            "casino": "カジノ",
             "childcare": "保育所",
             "clinic": "クリニック",
             "clock": "時計",
@@ -118,8 +120,10 @@
             "brewery": "醸造所",
             "carpenter": "工務店",
             "confectionery": "菓子工房",
+            "handicraft": "手工芸",
             "lighting": "照明工房",
             "photographer": "写真館",
+            "plumber": "配管工",
             "yes": "工房"
         },
         "diplomatic": {
@@ -366,6 +370,7 @@
             "adult_gaming_centre": "パチンコ/パチスロ",
             "amusement_arcade": "ゲームセンター",
             "bandstand": "舞台",
+            "beach_resort": "海水浴場",
             "dance": "ダンスホール",
             "fitness_centre": "フィットネスセンター",
             "garden": "庭",

@@ -2,6 +2,7 @@
     "osm": {
         "green_area": {
             "overpass": [
+                "node[\"natural\"=\"tree\"]",
                 "nwr[\"natural\"=\"tree_row\"]",
                 "nwr[\"barrier\"=\"hedge\"]"
             ],
@@ -12,8 +13,8 @@
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#50A050",
-                "stroke-width": 2,
-                "fill-opacity": 0.5
+                "stroke-width": 6,
+                "fill-opacity": 0.3
             },
             "titles": [ // viewDetailのみで利用。listTableの名称を利用するよう改修予定（廃止したい）
                 "name"
@@ -175,10 +176,12 @@
         },
         "expo2025_pedestrian": {
             "overpass": [
-                "relation[\"highway\"=\"pedestrian\"]"
+                "wr[\"highway\"=\"pedestrian\"]",
+                "wr[\"building\"][\"name\"]"
             ],
             "tags": [
-                "highway=pedestrian"
+                "highway=pedestrian",
+                "building"
             ],
             "expression": {
                 "poiView": false, // true時はアイコン表示
@@ -289,17 +292,9 @@
                 "nwr[\"amenity\"=\"luggage_locker\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
                 "nwr[\"amenity\"=\"smoking_area\"]",
-                "nwr[\"amenity\"=\"food_court\"]",
+                "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
                 "nwr[\"office\"=\"courier\"]",
-                "nwr[\"office\"=\"government\"]",
-                "nwr[\"building\"][\"name\"]",
-                "nwr[\"building\"=\"gatehouse\"][\"name\"]",
-                "nwr[\"shop\"=\"anime\"]",
-                "nwr[\"shop\"=\"bakery\"]",
-                "nwr[\"shop\"=\"convenience\"]",
-                "nwr[\"shop\"=\"gift\"]",
-                "nwr[\"shop\"=\"mobile_phone\"]",
-                "nwr[\"shop\"=\"chemist\"]"
+                "nwr[\"office\"=\"government\"]"
             ],
             "tags": [
                 "amenity=stage",
@@ -307,17 +302,9 @@
                 "amenity=luggage_locker",
                 "amenity=post_office",
                 "amenity=smoking_area",
-                "amenity=food_court",
+                "amenity=theatre",
                 "office=courier",
-                "office=government",
-                "building=yes",
-                "building=gatehouse",
-                "shop=anime",
-                "shop=bakery",
-                "shop=convenience",
-                "shop=gift",
-                "shop=mobile_phone",
-                "shop=chemist"
+                "office=government"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -409,14 +396,16 @@
                 "name"
             ]
         },
-        "expo2025_foods": {
+        "expo2025_stores": {
             "overpass": [
                 "nwr[\"amenity\"=\"cafe\"]",
                 "nwr[\"amenity\"=\"pub\"]",
                 "nwr[\"amenity\"=\"picnic_site\"]",
                 "nwr[\"amenity\"=\"fast_food\"]",
                 "nwr[\"amenity\"=\"food_court\"]",
-                "nwr[\"amenity\"=\"restaurant\"]"
+                "nwr[\"amenity\"=\"restaurant\"]",
+                "nwr[\"shop\"]",
+                "nwr[\"craft\"]"
             ],
             "tags": [
                 "amenity=cafe",
@@ -424,7 +413,9 @@
                 "amenity=picnic_site",
                 "amenity=fast_food",
                 "amenity=food_court",
-                "amenity=restaurant"
+                "amenity=restaurant",
+                "shop",
+                "craft"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

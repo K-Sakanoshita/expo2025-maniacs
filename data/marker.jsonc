@@ -5,6 +5,7 @@
             "circle_normal.png",
             "circle_middle.png",
             "circle_green.png",
+            "circle_marker.png",
             "circle_visited.png",
             "circle_shadow.png"
         ],
@@ -25,7 +26,9 @@
                 "bureau_de_change": "money_hand.svg",
                 "bus_station": "board_bus.svg",
                 "cafe": "cafe.svg",
+                "car_rental": "car-rental.svg",
                 "car_sharing": "sign_and_car.svg",
+                "casino": "casino.svg",
                 "childcare": "child-reaching-solid.svg",
                 "cinema": "cinema.svg",
                 "clinic": "doctor.svg",
@@ -126,7 +129,9 @@
                 "carpenter": "anvil_and_hammer.svg",
                 "confectionery": "confectionery.svg",
                 "lighting": "bulb-light.svg",
+                "handicraft": "hand.svg",
                 "photographer": "attraction.svg",
+                "plumber": "plumber.svg",
                 "yes": "tools.svg"
             },
             "diplomatic": {
@@ -373,6 +378,7 @@
                 "adult_gaming_centre": "coins-solid.svg",
                 "amusement_arcade": "gaming.svg",
                 "bandstand": "music.svg",
+                "beach_resort":"beach.svg",
                 "dance": "music.svg",
                 "fitness_centre": "gym.svg",
                 "garden": "garden-centre.svg",

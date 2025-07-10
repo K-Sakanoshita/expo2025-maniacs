@@ -22,13 +22,18 @@
         ],
         "initZoom": 15.5,
         "maxZoom": 21,
-        "modalZoom": 18, // モーダルダイアログ表示時のズームサイズ
+        "detailZoom": 18, // モーダルダイアログ表示時のズームサイズ
         "textFont": [
             "NNoto Sans Bold"
         ], // 使用可能なフォント（spriteに依存）
-        "textSize": 12
+        "textSize": 12,
+        "polygonMarker": { // ポリゴン設定
+            "fill-color": "#CC6666",
+            "fill-opacity": 0.3
+        }
     },
     "minimap": { // 地球儀表示時の初期設定
+        "height": 200,
         "initZoom": 2,
         "viewCenter": [
             135,
@@ -49,7 +54,7 @@
             "Noto Sans Regular"
         ], // 使用可能なフォント（spriteに依存）
         "textSize": 10.5,
-        "textViewZoom": 15.5 // アイコンに文字を表示するズームレベル
+        "textViewZoom": 16 // アイコンに文字を表示するズームレベル
     },
     "view": {
         "poiActLoad": false, // 起動時にActivityを読み込むか
@@ -78,7 +83,7 @@
             "expo2025_move": 16,
             "expo2025_toilets": 16,
             "expo2025_drinks": 16,
-            "expo2025_foods": 16,
+            "expo2025_stores": 16,
             "expo2025_vending": 16,
             "expo2025_store": 16,
             "activity": 12
@@ -107,7 +112,7 @@
             "expo2025_move": 15,
             "expo2025_toilets": 15,
             "expo2025_drinks": 15,
-            "expo2025_foods": 15,
+            "expo2025_stores": 15,
             "expo2025_vending": 15,
             "expo2025_store": 15,
             "activity": 12
@@ -126,8 +131,8 @@
         "menu": //"",
         {
             "パビリオン・展示": "expo2025_exp",
-            "店舗・施設・建物": "expo2025_service",
-            "レストラン・喫茶": "expo2025_foods",
+            "施設・建物": "expo2025_service",
+            "食事・喫茶・店舗": "expo2025_stores",
             "アート作品・壁画": "expo2025_art",
             "トイレ・給水場": "expo2025_toilets",
             "自販機・ゴミ箱": "expo2025_vending",
@@ -186,7 +191,9 @@
                 "glot-model": "openstreetmap",
                 "linkto": "https://www.openstreetmap.org/about",
                 "divider": true
-            },
+            }
+        ],
+        "mainSystem": [
             {
                 "glot-model": "export_visited",
                 "linkto": "javascript:visitedCont.export()",

@@ -18,7 +18,9 @@
             "bureau_de_change": "money exchange ",
             "bus_station": "bus station",
             "cafe": "cafe",
+            "car_rental": "car rental",
             "car_sharing": "car sharing",
+            "casino": "casino",
             "childcare": "childcare",
             "clinic": "clinic",
             "clock": "clock",
@@ -118,8 +120,10 @@
             "brewery": "brewery",
             "carpenter": "carpenter",
             "confectionery": "confectionery",
+            "handicraft": "handicraft",
             "lighting": "craft lighting",
             "photographer": "photographer",
+            "plumber": "plumber",
             "yes": "craft"
         },
         "diplomatic": {
@@ -366,6 +370,7 @@
             "adult_gaming_centre": "adult gaming centre",
             "amusement_arcade": "amusement arcade",
             "bandstand": "bandstand",
+            "beach_resort": "beach resort",
             "dance": "dance",
             "fitness_centre": "fitness center",
             "garden": "garden",

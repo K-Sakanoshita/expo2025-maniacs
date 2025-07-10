@@ -31,7 +31,7 @@ class Activities {
             let chtml = "";
             Object.keys(form).forEach((key) => {
                 if (form[key].viewHidden !== true) {
-                    chtml += `<div class='row'>`;
+                    //chtml += `<div class='row'>`;
                     let gdata = act[form[key].gsheet] == undefined ? "" : String(act[form[key].gsheet]);
                     gdata = basic.htmlspecialchars(gdata).replace(/\r?\n/g, "<br>");
                     switch (form[key].type) {
@@ -64,16 +64,16 @@ class Activities {
                                     // Wikimedia Commons
                                     let id = act.id.replace("/", "") + "_" + key;
                                     wikimq.push([gdata, id]);
-                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
+                                    chtml += `<div class="col-12"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
                                 } else {
-                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" src="${gdata}"></div>`;
+                                    chtml += `<div class="col-12"><img class="thumbnail" onclick="modalActs.viewImage(this)" src="${gdata}"></div>`;
                                 }
                             }
                             break;
                         default: // 何もしない
                             break;
                     }
-                    chtml += "</div>";
+                    //chtml += "</div>";
                 }
             });
             return chtml;

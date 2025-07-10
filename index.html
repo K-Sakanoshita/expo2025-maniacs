@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/06/24 by OpenStreetMap</title>
+    <title>EXPO2025 万博マニアックマップ ver 2025/07/11 by OpenStreetMap</title>
     <meta charset="utf-8" />
     <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
     <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
@@ -54,58 +54,56 @@
 </head>
 
 <body>
-    <article id="article">
-        <div id="top-pane">
-            <div id="mapid"></div>
-        </div>
-        <div id="bottom-pane" class="ps-1 pe-1">
-            <div id="btmHeader" class="row p-1 m-0 sticky-top">
-                <div class="col-12 p-0 m-0 progress" style="height: 3px;">
-                    <div id="btmWindow_progress" class="progress-bar progress-bar-striped progress-bar-animated mb-2"
-                        style="height: 3px" role="progressbar"></div>
+    <div class="container-fluid m-0 p-0">
+        <article id="article" class="two-pane">
+            <main id="top-pane">
+                <div id="mapid">
                 </div>
-                <div class="col-12 p-0 d-flex">
-                    <div class="dropdown-menu" aria-labelledby="btnMenu" id="btnMenu"></div>
-                    <button class="btn btn-light border-secondary p-0 me-1 d-none" data-bs-toggle="dropdown"
-                        aria-expanded="true" style="width: 30px; height: 30px">
-                        <i class="fas fa-bars text-black"></i>
-                    </button>
-                    <span class="detailTitle" id="btmWindow_title"></span>
-                </div>
-            </div>
-            <div id="btmWindow" class="" tabindex="-1">
-                <div class="m-1">
-                    <div id="mini-map" class="d-none mx-auto"></div>
-                    <div id="btmWindow_message"></div>
-                    <div class="footerSpace"></div>
-                </div>
-            </div>
-            <div id="sidebarCont" class="row fixed-bottom m-2 pe-none">
-                <div class="col-8 p-0">
-                    <div id="sideBarPanel"></div>
-                    <div class="btn-group btn-group-lg pe-auto">
-                        <!--- button id="sideBarSave" class="btn btn-light border-secondary p-1 btn-max d-none"
-                            onclick="javascript:modalActs.save()">
-                            <i class="fa-solid fa-cloud-arrow-up"></i>
-                            <span id="sideBarSaveLabel"></span>
-                        </button --->
+            </main>
+            <aside id="bottom-pane">
+                <div id="btmHeader" class="row p-1 m-0 sticky-top">
+                    <div class="col-12 p-0 m-0 progress" style="height: 3px;">
+                        <div id="btmWindow_progress"
+                            class="progress-bar progress-bar-striped progress-bar-animated mb-2" style="height: 3px"
+                            role="progressbar"></div>
+                    </div>
+                    <div class="col-12 p-0 d-flex">
+                        <div class="dropdown-menu" aria-labelledby="btnMenu" id="btnMenu"></div>
+                        <button class="btn btn-light border-secondary p-0 me-1 d-none" data-bs-toggle="dropdown"
+                            aria-expanded="true" style="width: 30px; height: 30px">
+                            <i class="fas fa-bars text-black"></i>
+                        </button>
+                        <span class="detailTitle" id="btmWindow_title"></span>
                     </div>
                 </div>
-                <div class="col-4 p-0">
-                    <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
-                        <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarChange"
-                            onclick="javascript:cMapMaker.setSidebar('change')">
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <button class="btn btn-light border-secondary p-1 btn-max"
-                            onclick="javascript:cMapMaker.viewDetail()">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
+                <div id="btmWindow" class="" tabindex="-1">
+                    <div class="m-1">
+                        <div id="mini-map" class="d-none mx-auto"></div>
+                        <div id="btmWindow_message"></div>
+                        <div class="footerSpace"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </article>
+                <div id="sidebarCont" class="row fixed-bottom m-2">
+                    <div class="col-8 p-0">
+                        <div id="sideBarPanel"></div>
+                        <div class="btn-group btn-group-lg pe-auto"></div>
+                    </div>
+                    <div class="col-4 p-0">
+                        <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
+                            <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarChange"
+                                onclick="javascript: winCont.setSidebar('change')">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <button class="btn btn-light border-secondary p-1 btn-max"
+                                onclick="javascript:cMapMaker.viewDetail()">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </article>
+    </div>
 
     <div id="splashImage" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document" data-keyboard="false">
@@ -132,7 +130,6 @@
     <div id="scrollHand" class="d-flex justify-content-center d-none">
         <img src="./image/hand-pointer-solid.svg" width="42px">
     </div>
-
 </body>
 
 </html>

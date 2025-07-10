@@ -41,33 +41,39 @@ a {
 }
 
 /*
-#container {
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-#article {
-    float: none;
-    clear: both;
-    width: 100%;
-    height: calc(100% - 60px);
-    overflow: auto;
-    position: relative;
-    margin: 0px 0px 0px 0px;
-}
-*/
-
 #article {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+*/
 
 #mapid {
-    height: 100%;
+    height: 100vh;
+}
+
+.two-pane {
+    display: flex;
+    flex-direction: column;
+    /* デフォルト = 縦並び */
+}
+
+@media (min-width: 1080px) {
+    .two-pane {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .two-pane aside {
+        width: 480px;
+        flex: 0 0 0px;
+        height: 100vh;
+    }
+
+    .two-pane main {
+        flex: 1 1 auto;
+        height: 100vh;
+    }
 }
 
 #top-pane {
@@ -75,9 +81,10 @@ a {
 }
 
 #bottom-pane {
-    flex-grow: 1;
     background: #f0f0f0;
     overflow: auto;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 .footerSpace {
@@ -126,6 +133,7 @@ div.showcase {
     width: 100vw;
     display: flex;
     user-select: none;
+    padding-right: 72px !important;
 }
 
 div.showcase::-webkit-scrollbar {
@@ -292,4 +300,16 @@ tr.selected td {
 
 #tableid {
     font-size: 14px;
+}
+
+@keyframes swing {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
 }

@@ -58,7 +58,7 @@ class OSMbasic {
         // opening_hours
         if (tags.opening_hours !== undefined) {
             let opening = basic.parseOpeningHours(tags.opening_hours)
-            if (opening !== "") html += `<i class="fa-solid fa-clock"></i> ${opening}`;
+            if (opening !== "") html += `<div class="flex-row mt-1"><i class="fa-solid fa-clock"></i>${opening}</div>`;
         }
 
         // write reservation

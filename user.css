@@ -47,7 +47,7 @@ img.thumbnail {
 }
 
 img.slide {
-    height: 12vh;
+    height: 9vh;
     max-width: 100% !important;
     margin: 2px;
     border: 2px solid #ffffff;

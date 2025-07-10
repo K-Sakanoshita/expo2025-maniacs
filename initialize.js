@@ -58,7 +58,6 @@ window.addEventListener("DOMContentLoaded", function () {
         glot.data = Object.assign(glot.data, JSON5.parse(texts[9])); // import glot data
         glot.data = Object.assign(glot.data, JSON5.parse(texts[10])); // import glot data
         window.onresize = winCont.resizeWindow; // 画面サイズに合わせたコンテンツ表示切り替え
-        cMapMaker.setSidebar()
         // document.title = glot.get("site_title"); // Google検索のインデックス反映が読めないので一旦なし
         let UrlParams = setUrlParams();
         if (UrlParams.edit) Conf.etc["editMode"] = true;
@@ -85,9 +84,11 @@ window.addEventListener("DOMContentLoaded", function () {
             winCont.playback(Conf.listTable.playback.view); // playback control view:true/false
             winCont.download(Conf.listTable.download); // download view:true/false
             cMapMaker.changeMode("map"); // initialize last_modetime
-            winCont.menu_make(Conf.menu.main, "main_menu");
-            winCont.mouseDragScroll(images, cMapMaker.viewImageList); // set Drag Scroll on images
-            glot.render();
+            const mergedMenu = [...Conf.menu.main, ...Conf.menu.mainSystem];
+            winCont.menu_make(mergedMenu, "main_menu");
+            winCont.mouseDragScroll(images, cMapMaker.eventViewThumb); // set Drag Scroll on images
+            glot.render()
+            winCont.setSidebar()
 
             const init_close = function () {
                 let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : Conf.selectItem.default;
@@ -99,7 +100,13 @@ window.addEventListener("DOMContentLoaded", function () {
                         let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
                         let param = keyv[0] + "/" + keyv[1]
                         let subparam = param.split(".") // split child elements(.)
-                        cMapMaker.viewDetail(subparam[0], subparam[1])
+                        let geojson = poiCont.get_osmid(subparam[0]).geojson
+                        cMapMaker.viewDetail(subparam[0], subparam[1]).then(() => {
+                            if (geojson !== undefined) {
+                                geoCont.flashPolygon(geojson)
+                                geoCont.writePoiCircle(geojson)
+                            }
+                        })
                     }
                 })
             };

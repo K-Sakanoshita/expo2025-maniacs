@@ -5,11 +5,10 @@ class CMapMaker {
         this.open_osmid = "";				// viewDetail表示中はosmid
         this.last_modetime = 0;
         this.mode = "map";
-        this.minimap = false;
         this.id = 0;
         this.moveMapBusy = 0;
         this.changeKeywordWaitTime;
-        this.sidebarSize = 1;
+        this.scrollHints = 0;
     }
 
     addEvents() {
@@ -21,16 +20,16 @@ class CMapMaker {
 
     about() {
         let msg = { msg: glot.get("about_message"), ttl: glot.get("about") }
-        cMapMaker.setSidebar("view")
         mapLibre.viewMiniMap(false)
         winCont.makeDetail({ "title": msg.ttl, "message": msg.msg, "mode": "close", "menu": false })
+        winCont.setSidebar("view")
     }
 
     licence() {			// About license
         let msg = { msg: glot.get("licence_message") + glot.get("more_message"), ttl: glot.get("licence_title") };
-        cMapMaker.setSidebar("view")
         mapLibre.viewMiniMap(false)
         winCont.makeDetail({ "title": msg.ttl, "message": msg.msg, "mode": "close", "menu": false });
+        winCont.setSidebar("view")
     }
 
     changeMode(newmode) {	// mode change(list or map)
@@ -153,13 +152,15 @@ class CMapMaker {
                 let urls = []
                 let actname = act.id.split("/")[0]
                 let forms = Conf.activities[actname].form
-                Object.keys(forms).forEach(key => { if (forms[key].type == "image_url") urls.push(act[key]) })
+                for (const key of Object.keys(forms)) { // 複数あっても一つだけとする
+                    if (forms[key].type === "image_url") { urls.push(act[key]); break; }
+                }
                 return { "src": urls, "osmid": act.osmid, "title": act.title }
             })
             if (acts.length > 0) {
                 images.classList.remove("d-none");
                 winCont.setImages(images, acts, Conf.etc.loadingUrl)
-                winCont.scrollHint()
+                if (this.scrollHints == 0) winCont.scrollHint(); this.scrollHints++;
             } else {
                 images.classList.add("d-none");
             }
@@ -251,70 +252,82 @@ class CMapMaker {
     }
 
     // 詳細モーダル表示
-    viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)
-        const makeFlag = (country) => {     // 旗アイコンを追加
-            if (country == undefined) return ""
-            let title = "", countries = country.split(";")
-            countries.forEach(CCode => { title += `<img src="https://flagcdn.com/h20/${CCode.toLowerCase()}.png" class="ms-1 me-1" height="16" alt="${CCode} Flag">` })
-            return title
-        }
+    viewDetail(osmid, openid) {	// PopUpを表示(marker,openid=actlst.id)]
+        console.log("viewDatail")
+        return new Promise((resolve, reject) => {
+            const makeFlag = (country) => {     // 旗アイコンを追加
+                if (country == undefined) return ""
+                let title = "", countries = country.split(";")
+                countries.forEach(CCode => { title += `<img src="https://flagcdn.com/h20/${CCode.toLowerCase()}.png" class="ms-1 me-1" height="16" alt="${CCode} Flag">` })
+                return title
+            }
 
-        if (osmid == "" || osmid == undefined) { winCont.clearDatail(); return } // OSMIDが空の時はクリアして終了
-        let osmobj = poiCont.get_osmid(osmid);
-        if (osmobj == undefined) { console.log("Error: No osmobj"); return }	// Error
+            winCont.clearDatail()
+            if (osmid == "" || osmid == undefined) {    // OSMIDが空の時はクリアして終了
+                winCont.setSidebar()
+                geoCont.writePoiCircle()
+                resolve()
+                return
+            }
+            let osmobj = poiCont.get_osmid(osmid);
+            if (osmobj == undefined) { console.log("Error: No osmobj"); reject(); return }	// Error
 
-        let tags = osmobj.geojson.properties;
-        let target = osmobj.targets[0];
-        tags["*"] = "*";
-        target = target == undefined ? "*" : target;			// targetが取得出来ない実在POI対応
-        let category = poiCont.getCatnames(tags);
-        let title = makeFlag(tags.country);                     // title初期化&countoryタグから国旗を追加
-        title += `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}" height="16">`
-        let message = "";
-        for (let i = 0; i < Conf.osm[target].titles.length; i++) {
-            if (tags[Conf.osm[target].titles[i]] !== void 0) {
-                title += `${tags[Conf.osm[target].titles[i]]}`;
-                break;
+            let tags = osmobj.geojson.properties;
+            let target = osmobj.targets[0];
+            tags["*"] = "*";
+            target = target == undefined ? "*" : target;			// targetが取得出来ない実在POI対応
+            let category = poiCont.getCatnames(tags);
+            let flagsHTML = makeFlag(tags.country);
+            if (flagsHTML !== "") { // 国旗がある場合はminiMapを設定してHTML追加
+                mapLibre.addMiniMap().then(() => {
+                    flags.innerHTML = flagsHTML
+                    mapLibre.showCountryByCode(tags.country)  // Detail内にminiMapを表示
+                })
+            }
+
+            let title = `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}" height="16">`
+            let message = "";
+            for (let i = 0; i < Conf.osm[target].titles.length; i++) {
+                if (tags[Conf.osm[target].titles[i]] !== void 0) {
+                    title += `${tags[Conf.osm[target].titles[i]]}`;
+                    break;
+                };
             };
-        };
-        if (title == "") title = category[0] + category[1] !== "" ? "(" + category[1] + ")" : "";   // サブカテゴリ時は追加
-        if (title == "") title = glot.get("undefined");
-        winCont.menu_make(Conf.menu.modal, "btnMenu");
-        btnMenu.nextElementSibling.classList.remove("d-none")
-        winCont.setProgress(0);
-        this.open_osmid = osmid;
+            if (title == "") title = category[0] + category[1] !== "" ? "(" + category[1] + ")" : "";   // サブカテゴリ時は追加
+            if (title == "") title = glot.get("undefined");
+            winCont.menu_make(Conf.menu.modal, "btnMenu");
+            btnMenu.nextElementSibling.classList.remove("d-none")
+            winCont.setProgress(0);
+            this.open_osmid = osmid;
 
-        message += osmBasic.make(tags);		// append OSM Tags(仮…テイクアウトなど判別した上で最終的には分ける)
-        if (tags.wikipedia !== undefined) {			// append wikipedia
-            message += wikipedia.element();
-            winCont.setProgress(100);
-            wikipedia.make(tags, Conf.wikipedia.image).then(html => {
-                wikipedia.set_dom(html);
-                winCont.setProgress(0);
+            message += osmBasic.make(tags);		// append OSM Tags(仮…テイクアウトなど判別した上で最終的には分ける)
+            if (tags.wikipedia !== undefined) {			// append wikipedia
+                message += wikipedia.element();
+                winCont.setProgress(100);
+                wikipedia.make(tags, Conf.wikipedia.image).then(html => {
+                    wikipedia.set_dom(html);
+                    winCont.setProgress(0);
+                })
+            }
+
+            // append activity
+            let catname = listTable.getSelCategory() !== "-" ? `&category=${listTable.getSelCategory()}` : "";
+            let actlists = poiCont.getActlistByOsmid(osmid);
+            history.replaceState('', '', location.pathname + "?" + osmid + (!openid ? "" : "." + openid) + catname + location.hash);
+            if (actlists.length > 0) {	// アクティビティ有り
+                message += modalActs.make(actlists);
+                winCont.makeDetail({ "title": title, "message": message, "append": Conf.menu.activities, "menu": true, "openid": openid });
+            } else {					// アクティビティ無し
+                winCont.makeDetail({ "title": title, "message": message, "append": Conf.menu.activities, "menu": true, "openid": openid });
+            }
+
+            mapLibre.viewMiniMap(tags.country)
+            winCont.setSidebar("view").then(() => {
+                this.detail = true
+                this.changeMode('map')
+                resolve()
             })
-        }
-
-        // append activity
-        let catname = listTable.getSelCategory() !== "-" ? `&category=${listTable.getSelCategory()}` : "";
-        let actlists = poiCont.getActlistByOsmid(osmid);
-        history.replaceState('', '', location.pathname + "?" + osmid + (!openid ? "" : "." + openid) + catname + location.hash);
-        if (actlists.length > 0) {	// アクティビティ有り
-            message += modalActs.make(actlists);
-            winCont.makeDetail({ "title": title, "message": message, "append": Conf.menu.activities, "menu": true, "openid": openid });
-        } else {					// アクティビティ無し
-            winCont.makeDetail({ "title": title, "message": message, "append": Conf.menu.activities, "menu": true, "openid": openid });
-        }
-
-        cMapMaker.setSidebar("view")
-        if (tags.country) {     // Detail内にminiMapを表示
-            mapLibre.viewMiniMap(true)
-            mapLibre.showCountryByCode(tags.country)
-            this.minimap = false    // ミニマップは非表示
-        } else {
-            mapLibre.viewMiniMap(false)
-        }
-        this.detail = true
-        this.changeMode('map')
+        })
     }
 
     shareURL(actid) {	// URL共有機能
@@ -370,70 +383,21 @@ class CMapMaker {
         link.click()
     }
 
-    // イメージを選択した時のイベント処理
-    viewImageList(imgdom) {
-        console.log("viewImageList: Start.");
+    // EVENT: イメージを選択した時のイベント処理
+    eventViewThumb(imgdom) {
+        console.log("eventViewThumb: Start.");
         let osmid = imgdom.getAttribute("osmid");
         let poi = poiCont.get_osmid(osmid);
-        let zoomlv = Math.max(mapLibre.getZoom(true), Conf.map.modalZoom);
+        let zoomlv = Math.max(mapLibre.getZoom(true), Conf.map.detailZoom);
+        if (zoomlv == undefined) console.log("No " + Conf.map.detailZoom)
         if (poi !== undefined) {
-            cMapMaker.viewDetail(osmid);
-            mapLibre.flyTo(poi.lnglat, zoomlv);
-            console.log("viewImageList: View OK.");
+            winCont.setSidebar()
+            cMapMaker.viewDetail(osmid).then(() => {
+                if (poi.geojson !== undefined) geoCont.flashPolygon(poi.geojson)
+                mapLibre.flyTo(poi.lnglat, zoomlv);
+                console.log("eventViewThumb: View OK.");
+            })
         }
-    }
-
-    // サイドバーのサイズ設定(mode:空は非表示(0) / view:初期値1 / change:1<->3 )
-    setSidebar(mode) {
-        const topPane = document.getElementById("top-pane");
-        const btmPane = document.getElementById("bottom-pane");
-        const sideCnt = document.getElementById("sidebarCont");
-        const sideChg = document.getElementById("sidebarChange");
-        const minimap = document.getElementById("mini-map");
-        const maxHeight = window.innerHeight;
-        let btmHeight, topHeight
-
-        this.sidebarSize =
-            mode === "view" ? 1 :
-                mode === "change" && this.sidebarSize == 1 ? 2 :
-                    mode === "change" && this.sidebarSize == 2 ? 1 :
-                        mode === "" || mode == undefined ? 0 : this.sidebarSize;
-        const icon = this.sidebarSize == 1 ? "up" : "down"
-        sideChg.innerHTML = `<i class='fa-solid fa-chevron-${icon}'></i>`
-
-        switch (this.sidebarSize) {
-            case 0: btmHeight = 0; break;
-            case 1: btmHeight = maxHeight * 0.4; break;
-            case 2: btmHeight = maxHeight; break;
-        }
-        topHeight = maxHeight - btmHeight;
-        let size = ((maxHeight / 6) * this.sidebarSize)
-        minimap.style.height = `${size}px`
-
-        if (this.sidebarSize == 0) {            // サイドバー操作表示/非表示
-            sideCnt.classList.add("d-none")
-        } else {
-            sideCnt.classList.remove("d-none")
-        }
-
-        cMapMaker.status = "moveing"
-        mapLibre.stop()
-        console.log("top: " + topPane.offsetHeight + "px -> " + topHeight + "px")
-        console.log("btm: " + (maxHeight - topPane.offsetHeight) + "px -> " + btmHeight + "px")
-        btmPane.animate([
-            { height: maxHeight - topPane.offsetHeight + "px" }, { height: btmHeight + "px" }
-        ], {
-            duration: 200, easing: 'ease-out', fill: 'forwards'
-        });
-        topPane.animate([
-            { height: topPane.offsetHeight + "px" }, { height: topHeight + "px" }
-        ], {
-            duration: 200, easing: 'ease-out', fill: 'forwards'
-        }).finished.then(() => {
-            btmPane.style.height = `${btmHeight}px`;  // 念のため明示
-            mapLibre.start()
-            cMapMaker.status = "normal"
-        });
     }
 
     // EVENT: map moveend発生時のイベント
