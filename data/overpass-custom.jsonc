@@ -270,10 +270,12 @@
             "overpass": [
                 "nwr[\"amenity\"=\"exhibition_centre\"]",
                 "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
+                "nwr[\"amenity\"=\"events_venue\"]"
             ],
             "tags": [
                 "amenity=exhibition_centre",
-                "amenity=theatre"
+                "amenity=theatre",
+                "amenity=events_venue"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -294,7 +296,8 @@
                 "nwr[\"amenity\"=\"smoking_area\"]",
                 "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
                 "nwr[\"office\"=\"courier\"]",
-                "nwr[\"office\"=\"government\"]"
+                "nwr[\"office\"=\"government\"]",
+                "nwr[\"leisure\"=\"bandstand\"]"
             ],
             "tags": [
                 "amenity=stage",
@@ -304,7 +307,8 @@
                 "amenity=smoking_area",
                 "amenity=theatre",
                 "office=courier",
-                "office=government"
+                "office=government",
+                "leisure=bandstand"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
