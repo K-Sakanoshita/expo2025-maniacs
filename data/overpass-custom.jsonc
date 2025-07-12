@@ -13,8 +13,8 @@
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "stroke": "#50A050",
-                "stroke-width": 6,
-                "fill-opacity": 0.3
+                "stroke-width": 4,
+                "fill-opacity": 0.25
             },
             "titles": [ // viewDetailのみで利用。listTableの名称を利用するよう改修予定（廃止したい）
                 "name"
