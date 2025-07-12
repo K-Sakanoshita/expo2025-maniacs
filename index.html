@@ -84,12 +84,16 @@
                     </div>
                 </div>
                 <div id="sidebarCont" class="row fixed-bottom m-2">
-                    <div class="col-8 p-0">
+                    <div class="col-7 p-0">
                         <div id="sideBarPanel"></div>
                         <div class="btn-group btn-group-lg pe-auto"></div>
                     </div>
-                    <div class="col-4 p-0">
+                    <div class="col-5 p-0">
                         <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
+                            <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarMinimize"
+                                onclick="javascript: winCont.setSidebar('mini')">
+                                <i class="fa-solid fa-window-minimize"></i>
+                            </button>
                             <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarChange"
                                 onclick="javascript: winCont.setSidebar('change')">
                                 <i class="fa-solid fa-chevron-down"></i>
