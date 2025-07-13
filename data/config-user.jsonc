@@ -130,6 +130,7 @@
         "default": "expo2025_exp",
         "menu": //"",
         {
+            "(表示なし)": "nopoi",
             "パビリオン・展示": "expo2025_exp",
             "施設・建物": "expo2025_service",
             "食事・喫茶・店舗": "expo2025_stores",

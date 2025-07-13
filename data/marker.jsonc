@@ -128,6 +128,7 @@
             "craft": {
                 "brewery": "storage_fermenter.svg",
                 "carpenter": "anvil_and_hammer.svg",
+                "caterer": "catering.svg",
                 "confectionery": "confectionery.svg",
                 "lighting": "bulb-light.svg",
                 "handicraft": "hand.svg",

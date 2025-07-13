@@ -447,6 +447,23 @@
             "titles": [
                 "name"
             ]
+        },
+        "nopoi": {
+            "overpass": [
+                "node[\"amenity\"=\"cafe\"]"    // ダミーでカフェ設定
+            ],
+            "tags": [
+                "dummy"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
         }
     }
 }

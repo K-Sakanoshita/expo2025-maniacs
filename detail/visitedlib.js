@@ -6,7 +6,7 @@ class VisitedCont {
         let lcal = Conf.etc.localSave !== "" ? localStorage.getItem(Conf.etc.localSave + "." + osmid) : "";     // 有効時はtags.idの情報取得、他は""
         let visited = lcal == null ? ["false", ""] : lcal.split(",")
         visited[0] = visited[0].toLowerCase() === "true"        // true時はboolean型のtrueを返し、他はfalse
-        visited[1] = visited[1].replace(/\r/g, "");
+        visited[1] = visited[1] !== undefined ? visited[1].replace(/\r/g, "") : "";
         return visited
     }
 

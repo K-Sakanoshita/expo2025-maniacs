@@ -120,6 +120,7 @@
         "craft": {
             "brewery": "brewery",
             "carpenter": "carpenter",
+            "caterer": "caterer",
             "confectionery": "confectionery",
             "handicraft": "handicraft",
             "lighting": "craft lighting",
