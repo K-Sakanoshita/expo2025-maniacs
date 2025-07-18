@@ -157,7 +157,7 @@ class modal_OSMbasic {
 
         // 既に行ったかチェック
         if (Conf.etc.localSave !== "") {
-            let values = visitedCont.getValueByOSMID(tags.id)
+            let values = poiStatusCont.getValueByOSMID(tags.id)
             html += `<div class="flex-row mt-2 d-flex text-nowrap align-items-center"><i class="fa-solid fa-person-walking me-1"></i>`;
             // 1つ目の要素は訪問済みフラグ
             html += `${glot.get("visited")} <input type="checkbox" id="visited" class="m-2" name="${tags.id}" ${values[0] ? "checked" : ""}/>`;

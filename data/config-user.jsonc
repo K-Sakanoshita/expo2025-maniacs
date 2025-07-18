@@ -201,12 +201,12 @@
             },
             {
                 "glot-model": "export_visited",
-                "linkto": "javascript:visitedCont.export()",
+                "linkto": "javascript:poiStatusCont.export()",
                 "divider": false
             },
             {
                 "glot-model": "import_visited",
-                "linkto": "javascript:visitedCont.import()",
+                "linkto": "javascript:poiStatusCont.import()",
                 "divider": false
             }
         ],
