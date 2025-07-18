@@ -19,7 +19,7 @@ var modalActs = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var modal_osmbasic = new modal_OSMbasic();
 var basic = new Basic();
-var visitedCont = new VisitedCont();
+var poiStatusCont = new PoiStatusCont();
 var overPassCont = new OverPassControl();
 var mapLibre = new Maplibre();
 var geoCont = new GeoCont();
@@ -27,6 +27,21 @@ var listTable = new ListTable();
 var cMapMaker = new CMapMaker();
 var poiCont = new PoiCont();
 var gSheet = new GoogleSpreadSheet();
+
+var PoiStatusIndex = {
+    VISITED: 0,
+    FAVORITE: 1,
+    MEMO: 2,
+};
+
+var PoiStatusCsvIndex = {
+    KEY: 0,
+    CATEGORY: 1,
+    NAME: 2,
+    VISITED: 3,
+    FAVORITE: 4,
+    MEMO: 5,
+};
 
 // initialize
 console.log("Welcome to Community Map Maker.");
