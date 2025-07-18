@@ -28,6 +28,21 @@ var cMapMaker = new CMapMaker();
 var poiCont = new PoiCont();
 var gSheet = new GoogleSpreadSheet();
 
+var PoiStatusIndex = {
+    VISITED: 0,
+    FAVORITE: 1,
+    MEMO: 2,
+};
+
+var PoiStatusCsvIndex = {
+    KEY: 0,
+    CATEGORY: 1,
+    NAME: 2,
+    VISITED: 3,
+    FAVORITE: 4,
+    MEMO: 5,
+};
+
 // initialize
 console.log("Welcome to Community Map Maker.");
 console.log("initialize: Start.");
