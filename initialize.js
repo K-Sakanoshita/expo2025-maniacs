@@ -43,9 +43,18 @@ var PoiStatusCsvIndex = {
     MEMO: 5,
 };
 
+var PoiStatusCsvIndexOld = {
+    KEY: 0,
+    CATEGORY: 1,
+    NAME: 2,
+    VISITED: 3,
+    MEMO: 4,
+}
+
 // initialize
 console.log("Welcome to Community Map Maker.");
 console.log("initialize: Start.");
+poiStatusCont.migrateLocalStorageData();
 window.addEventListener("DOMContentLoaded", function () {
     const fetchUrls = FILES.map((url) => fetch(url).then((res) => res.text()));
     const setUrlParams = function () {  // URLから引数を取得して返す関数
