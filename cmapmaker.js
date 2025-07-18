@@ -77,7 +77,8 @@ class CMapMaker {
     }
 
     toggleFavoriteFilter(checked) {
-        this.FavoriteOnly = checked;
+        console.log(`cMapMaker: toggleFavoriteFilter: ${checked}`);
+        this.favoriteFilter = checked;
         this.updateView();
     }
 
@@ -126,68 +127,6 @@ class CMapMaker {
         targets = [...new Set(targets)];    // 重複削除
 
         let filterList = listTable.getFilterList();
-
-        //// 訪問済み状態に応じたフィルタリング
-        if (this.visitedFilterStatus == "visited") {
-            filterList = filterList.filter(osmid => {
-                // localStorageの全keyを操作し、osmid を含むものを探す
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
-                    if (concatLocalSave_osmid.startsWith(key)) {
-                        const value = localStorage.getItem(key);
-                        if (value) {
-                            const values = value.split(",");
-                            if (values[0].startsWith("true")) {	// 1つ目の要素は訪問済みフラグ
-                                return true;
-                            }
-                        }
-                    }
-                }
-                return false;
-            });
-        }
-        else if (this.visitedFilterStatus == "unvisited") {
-            filterList = filterList.filter(osmid => {
-                // localStorageの全keyを操作し、osmid を含むものを探す
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
-                    if (concatLocalSave_osmid.startsWith(key)) {
-                        const value = localStorage.getItem(key);
-                        if (value) {
-                            const values = value.split(",");
-                            if (values[0].startsWith("true")) {	// 1つ目の要素は訪問済みフラグ
-                                return false;
-                            }
-                        }
-                    }
-                }
-                return true;
-            });
-        }
-
-        //// お気に入りフィルター
-        if (this.FavoriteOnly) {
-            filterList = filterList.filter(osmid => {
-                // localStorageの全keyを操作し、osmid を含むものを探す
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    const concatLocalSave_osmid = Conf.etc.localSave + "." + osmid;
-                    if (concatLocalSave_osmid.startsWith(key)) {
-                        const value = localStorage.getItem(key);
-                        if (value) {
-                            const values = value.split(",");
-                            if (values[1].startsWith("true")) {	// 2つ目の要素はお気に入りフラグ
-                                return true;
-                            }
-                        }
-                    }
-                }
-                return false;
-            });
-        }
-
 
         poiCont.setPoi(filterList, false)
 
@@ -294,6 +233,7 @@ class CMapMaker {
                         listTable.makeSelectList(Conf.listTable.category)
                         listTable.makeList(Conf.view.poiFilter)
                         listTable.selectCategory(targets)
+                        listTable.filterByPoiStatus(this.visitedFilterStatus, this.favoriteFilter);
                         if (window.getSelection) window.getSelection().removeAllRanges()
                         this.viewArea()	        // 入手したgeoJsonを追加
                         this.viewPoi(targets)	// in targets
