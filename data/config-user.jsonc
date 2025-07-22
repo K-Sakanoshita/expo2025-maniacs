@@ -144,7 +144,7 @@
     "listTable": {
         "height": 0.6, // リスト時の高さ(1を最大とした割合)
         "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
-        "target": "targets", // targets: / activity:google sheetsを表示 
+        "target": "targets", // targets: / activity:google sheetsを表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
@@ -197,12 +197,12 @@
         "mainSystem": [
             {
                 "glot-model": "export_visited",
-                "linkto": "javascript:visitedCont.export()",
+                "linkto": "javascript:poiStatusCont.export()",
                 "divider": false
             },
             {
                 "glot-model": "import_visited",
-                "linkto": "javascript:visitedCont.import()",
+                "linkto": "javascript:poiStatusCont.import()",
                 "divider": false
             }
         ],
@@ -226,7 +226,7 @@
                 "divider": false
             }
         ],
-        // 詳細モーダルの追加ボタン 
+        // 詳細モーダルの追加ボタン
         "activities": [
             /*
             {
@@ -254,7 +254,7 @@
         "visited": [
             {
                 "btn_class": "btn btn-light border-secondary pe-auto",
-                "code": "javascript:visitedCont.import_load()",
+                "code": "javascript:poiStatusCont.import_load()",
                 "icon_class": "fa-solid fa-cloud-arrow-up",
                 "btn_glot_name": "act_upload"
             }

@@ -17,6 +17,23 @@
             <span class="subtitle" glot-model="site_subtitle"></span>
         </a>
     </div>
+    <!-- フィルター -->
+    <div class="me-2" style="font-size: 0.95em;">
+        <span glot-model="visited_filter"></span>
+        <input type="radio" name="visited_filter_radio" id="visited_filter_off" value="off" checked="checked"
+           onchange="cMapMaker.setVisitedFilter('off')" />
+        <label for="visited_filter_off"><span glot-model="visited_filter_off"></span></label>
+        <input type="radio" name="visited_filter_radio" id="visited_filter_visited" value="visited"
+           onchange="cMapMaker.setVisitedFilter('visited')" />
+        <label for="visited_filter_visited"><span glot-model="visited_filter_visited"></span></label>
+        <input type="radio" name="visited_filter_radio" id="visited_filter_unvisited" value="unvisited"
+           onchange="cMapMaker.setVisitedFilter('unvisited')" />
+        <label for="visited_filter_unvisited"><span glot-model="visited_filter_unvisited"></span></label>
+        <br />
+        <!-- お気に入りフィルター -->
+        <label for="favorite_filter"><span glot-model="favorite_filter"></span></label>
+        <input type="checkbox" name="favorite_filter" id="favorite_filter" onchange="cMapMaker.toggleFavoriteFilter(this.checked)" />
+    </div>
     <!--セレクト&ボタン-->
     <div class="col-12 p-1 me-2 d-flex align-items-center">
         <div class="h-100 d-flex align-items-center text-nowrap"><span glot-model="cat_select"></span></div>

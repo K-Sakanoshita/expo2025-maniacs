@@ -1,18 +1,19 @@
 
-class VisitedCont {
+class PoiStatusCont {
 
-    // 指定したosmidのvalueを配列で返す [0]:true or false / [1]:memo
+    // 指定したosmidのvalueを配列で返す [0](訪問済みフラグ):true or false / [1](お気に入りフラグ):true or false /  [2]:memo
     getValueByOSMID(osmid) {
         let lcal = Conf.etc.localSave !== "" ? localStorage.getItem(Conf.etc.localSave + "." + osmid) : "";     // 有効時はtags.idの情報取得、他は""
-        let visited = lcal == null ? ["false", ""] : lcal.split(",")
-        visited[0] = visited[0].toLowerCase() === "true"        // true時はboolean型のtrueを返し、他はfalse
-        visited[1] = visited[1] !== undefined ? visited[1].replace(/\r/g, "") : "";
-        return visited
+        let poiStatus = lcal == null ? ["false", ""] : lcal.split(",")
+        poiStatus[PoiStatusIndex.VISITED] = poiStatus[PoiStatusIndex.VISITED].toLowerCase() === "true"        // true時はboolean型のtrueを返し、他はfalse
+        poiStatus[PoiStatusIndex.FAVORITE] = poiStatus[PoiStatusIndex.FAVORITE].toLowerCase() === "true";
+        poiStatus[PoiStatusIndex.MEMO] = poiStatus[PoiStatusIndex.MEMO] !== undefined ? poiStatus[PoiStatusIndex.MEMO].replace(/\r/g, "") : "";
+        return poiStatus
     }
 
-    // 指定したidに訪問済みflagとmemoを保存
-    setValueByOSMID(osmid, visited, memo) {
-        let value = visited.toString() + "," + memo.replaceAll(",", " ")
+    // 指定したidに訪問済みflag、お気に入りflag、memoを保存
+    setValueByOSMID(osmid, visited, favorite, memo) {
+        let value = visited.toString() + "," + favorite.toString() + "," + memo.replaceAll(",", " ")
         localStorage.setItem(Conf.etc.localSave + "." + osmid, value)   // チェック時はtrue
     }
 
@@ -33,8 +34,8 @@ class VisitedCont {
     }
 
     export() {
-        console.log("export visited:")
-        let csvContent = "key,category,name,visited,memo\n";
+        console.log("export POI status:")
+        let csvContent = "key,category,name,visited,favorite,memo\n";
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             const osmid = key.replace(Conf.etc.localSave + ".", "");
@@ -73,7 +74,7 @@ class VisitedCont {
     }
 
     import_load() {
-        console.log("import visited:")
+        console.log("import POI status:")
         if (csvInput.files.length > 0) {    // ファイルが選択された時
             let file = csvInput.files[0];
             const reader = new FileReader();
@@ -82,18 +83,29 @@ class VisitedCont {
                 const text = e.target.result;
                 const lines = text.trim().split("\n");
                 const header = lines.shift(); // ヘッダーを削除
-                if (!header.startsWith("key,category,name,visited,memo")) {
+
+                if (header.startsWith("key,category,name,visited,memo")) {
+                    lines.forEach(line => {
+                        const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s =>
+                            s.replace(/^"|"$/g, "").replace(/""/g, '"').replace(/\r/g, '')  // CSVエスケープ解除
+                        );
+                        const key = values[PoiStatusCsvIndexOld.KEY];
+                        const poiStatusCSV = values[PoiStatusCsvIndexOld.VISITED].toLowerCase() + ",false," + values[PoiStatusCsvIndexOld.MEMO];
+                        if (key && poiStatusCSV !== undefined) localStorage.setItem(key, poiStatusCSV);
+                    })
+                } else if (header.startsWith("key,category,name,visited,favorite,memo")) {
+                    lines.forEach(line => {
+                        const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s =>
+                            s.replace(/^"|"$/g, "").replace(/""/g, '"').replace(/\r/g, '')  // CSVエスケープ解除
+                        );
+                        const key = values[PoiStatusCsvIndex.KEY];
+                        const poiStatusCSV = values[PoiStatusCsvIndex.VISITED].toLowerCase() + "," + values[PoiStatusCsvIndex.FAVORITE].toLowerCase() + "," + values[PoiStatusCsvIndex.MEMO];
+                        if (key && poiStatusCSV !== undefined) localStorage.setItem(key, poiStatusCSV);
+                    })
+                } else {
                     winCont.addDetailMessage(glot.get("file_error"), true)
                     return;
                 }
-                lines.forEach(line => {
-                    const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(s =>
-                        s.replace(/^"|"$/g, "").replace(/""/g, '"').replace(/\r/g, '')  // CSVエスケープ解除
-                    );
-                    const key = values[0];
-                    const visited = values[3].toLowerCase() + "," + values[4]; // visited列の値だけを使う
-                    if (key && visited !== undefined) localStorage.setItem(key, visited);
-                })
                 setTimeout(() => {
                     let msg = { ttl: glot.get("results"), txt: glot.get("file_loaded") };
                     winCont.makeDetail({ "title": msg.ttl, "message": msg.txt, "menu": false, "mode": "close", "callback_close": winCont.closeModal });
@@ -102,6 +114,26 @@ class VisitedCont {
         } else {
             winCont.addDetailMessage(glot.get("file_notfound"), true)
         }
-        console.log("import visited: End")
+        console.log("import  POI status: End")
     }
+
+    migrateLocalStorageData() {
+        console.log("poistatuslib: migrateLocalStorageData Start");
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+
+            const poiStatus = value.split(",");
+            if (poiStatus.length === 2) {
+                // 旧バージョンではpoiStatus[0]が訪問済みフラグ、poiStatus[1]がメモ。新バージョンではその間にお気に入りフラグを追加
+                const newValue = poiStatus[0] + ",false," + poiStatus[1];
+                localStorage.setItem(key, newValue);
+                console.log("Migrated key:", key, "old value:", value, "new value:", newValue);
+            } else {
+                break;  // 既に新しいバージョンの場合は処理を終了
+            }
+        }
+        console.log("poistatuslib: migrateLocalStorageData End");
+    }
+
 }

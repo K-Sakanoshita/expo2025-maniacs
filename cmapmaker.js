@@ -1,7 +1,7 @@
 class CMapMaker {
 
     constructor() {
-        this.status = "initialize";         // 状態フラグ / initialize changeMode normal playback 
+        this.status = "initialize";         // 状態フラグ / initialize changeMode normal playback
         this.open_osmid = "";				// viewDetail表示中はosmid
         this.last_modetime = 0;
         this.mode = "map";
@@ -73,9 +73,21 @@ class CMapMaker {
         }
     }
 
+    setVisitedFilter(visitedFilterStatus) {
+        console.log(`cMapMaker: setVisitedFilter: ${visitedFilterStatus}`);
+        this.visitedFilterStatus = visitedFilterStatus;
+        this.updateView();
+    }
+
+    toggleFavoriteFilter(checked) {
+        console.log(`cMapMaker: toggleFavoriteFilter: ${checked}`);
+        this.favoriteFilter = checked;
+        this.updateView();
+    }
+
     viewArea() {			// Area(敷地など)を表示させる refタグがあれば()表記
         //console.log(`viewArea: Start.`)
-        let targets = poiCont.getTargets()  // 
+        let targets = poiCont.getTargets()  //
         targets.forEach((target) => {
             let osmConf = Conf.osm[target] == undefined ? { expression: { poiView: true } } : Conf.osm[target]
             if (!osmConf.expression.poiView) {   // poiView == falseが対象
@@ -223,6 +235,7 @@ class CMapMaker {
                         listTable.makeSelectList(Conf.listTable.category)
                         listTable.makeList(Conf.view.poiFilter)
                         listTable.selectCategory(targets)
+                        listTable.filterByPoiStatus(this.visitedFilterStatus, this.favoriteFilter);
                         if (window.getSelection) window.getSelection().removeAllRanges()
                         this.viewArea()	        // 入手したgeoJsonを追加
                         this.viewPoi(targets)	// in targets
