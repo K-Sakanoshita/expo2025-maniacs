@@ -119,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
                     mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
+                    winCont.resizeWindow()
                     winCont.viewSplash(false)
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                         let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);

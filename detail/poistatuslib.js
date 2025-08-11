@@ -4,8 +4,12 @@ class PoiStatusCont {
     // 指定したosmidのvalueを配列で返す [0](訪問済みフラグ):true or false / [1](お気に入りフラグ):true or false /  [2]:memo
     getValueByOSMID(osmid) {
         let lcal = Conf.etc.localSave !== "" ? localStorage.getItem(Conf.etc.localSave + "." + osmid) : "";     // 有効時はtags.idの情報取得、他は""
-        let poiStatus = lcal == null ? ["false", ""] : lcal.split(",")
-        poiStatus[PoiStatusIndex.VISITED] = poiStatus[PoiStatusIndex.VISITED].toLowerCase() === "true"        // true時はboolean型のtrueを返し、他はfalse
+        let poiStatus = lcal == null ? ["false", "", ""] : [...lcal.split(","), "", ""].slice(0, 3);
+        try {
+            poiStatus[PoiStatusIndex.VISITED] = poiStatus[PoiStatusIndex.VISITED].toLowerCase() === "true"        // true時はboolean型のtrueを返し、他はfalse
+        }catch{
+            console.log("a")
+        }
         poiStatus[PoiStatusIndex.FAVORITE] = poiStatus[PoiStatusIndex.FAVORITE].toLowerCase() === "true";
         poiStatus[PoiStatusIndex.MEMO] = poiStatus[PoiStatusIndex.MEMO] !== undefined ? poiStatus[PoiStatusIndex.MEMO].replace(/\r/g, "") : "";
         return poiStatus

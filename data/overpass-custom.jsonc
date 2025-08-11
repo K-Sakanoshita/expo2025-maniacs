@@ -400,24 +400,39 @@
                 "name"
             ]
         },
-        "expo2025_stores": {
+        "expo2025_foods": {
             "overpass": [
                 "nwr[\"amenity\"=\"cafe\"]",
                 "nwr[\"amenity\"=\"pub\"]",
-                "nwr[\"amenity\"=\"picnic_site\"]",
                 "nwr[\"amenity\"=\"fast_food\"]",
                 "nwr[\"amenity\"=\"food_court\"]",
                 "nwr[\"amenity\"=\"restaurant\"]",
-                "nwr[\"shop\"]",
-                "nwr[\"craft\"]"
+                "nwr[\"tourism\"=\"picnic_site\"]"
             ],
             "tags": [
                 "amenity=cafe",
                 "amenity=pub",
-                "amenity=picnic_site",
                 "amenity=fast_food",
                 "amenity=food_court",
                 "amenity=restaurant",
+                "tourism=picnic_site"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "stroke": "#606060",
+                "stroke-width": 0,
+                "fill-opacity": 0
+            },
+            "titles": [
+                "name"
+            ]
+        },
+        "expo2025_stores": {
+            "overpass": [
+                "nwr[\"shop\"]",
+                "nwr[\"craft\"]"
+            ],
+            "tags": [
                 "shop",
                 "craft"
             ],

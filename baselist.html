@@ -1,48 +1,53 @@
 <div class="row m-1 p-1 basemenu shadow rounded">
     <div class="col-12 p-1 me-2 d-flex align-items-center">
         <div class="dropdown">
-            <button class="btn btn-light border-secondary float-right menu me-2" data-bs-toggle="dropdown"
-                aria-expanded="true" id="global_menu">
+            <button class="btn btn-light border-secondary float-right menu me-2" data-bs-toggle="dropdown" aria-expanded="true" id="global_menu">
                 <i class="fas fa-bars text-black"></i>
             </button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="global_menu" style="z-index: 1090"
-                id="main_menu">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="global_menu" style="z-index: 1090" id="main_menu">
                 <a class="dropdown-item"><span></span></a>
                 <span class="dropdown-item"></span>
                 <div class="dropdown-divider"></div>
             </div>
         </div>
-        <a href="javascript:cMapMaker.about()">
+        <a href="javascript:cMapMaker.about()" class="col">
             <span class="title" glot-model="site_title"></span><br />
             <span class="subtitle" glot-model="site_subtitle"></span>
         </a>
-    </div>
-    <!-- フィルター -->
-    <div class="me-2" style="font-size: 0.95em;">
-        <span glot-model="visited_filter"></span>
-        <input type="radio" name="visited_filter_radio" id="visited_filter_off" value="off" checked="checked"
-           onchange="cMapMaker.setVisitedFilter('off')" />
-        <label for="visited_filter_off"><span glot-model="visited_filter_off"></span></label>
-        <input type="radio" name="visited_filter_radio" id="visited_filter_visited" value="visited"
-           onchange="cMapMaker.setVisitedFilter('visited')" />
-        <label for="visited_filter_visited"><span glot-model="visited_filter_visited"></span></label>
-        <input type="radio" name="visited_filter_radio" id="visited_filter_unvisited" value="unvisited"
-           onchange="cMapMaker.setVisitedFilter('unvisited')" />
-        <label for="visited_filter_unvisited"><span glot-model="visited_filter_unvisited"></span></label>
-        <br />
-        <!-- お気に入りフィルター -->
-        <label for="favorite_filter"><span glot-model="favorite_filter"></span></label>
-        <input type="checkbox" name="favorite_filter" id="favorite_filter" onchange="cMapMaker.toggleFavoriteFilter(this.checked)" />
+        <div class="dropdown">
+            <button class="btn btn-light border-secondary float-right menu me-2" data-bs-toggle="dropdown" aria-expanded="true" id="filter_menu">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="filter_menu" style="z-index: 1090" id="sub_menu">
+                <!-- フィルター -->
+                <div class="dropdown-item">
+                    <div class="m-2">
+                        <span glot-model="visited_filter"></span>
+                        <input type="radio" name="visited_filter_radio" id="visited_filter_off" value="off" checked="checked" onchange="cMapMaker.setVisitedFilter('off')" />
+                        <label for="visited_filter_off"><span glot-model="visited_filter_off"></span></label>
+                        <input type="radio" name="visited_filter_radio" id="visited_filter_visited" value="visited" onchange="cMapMaker.setVisitedFilter('visited')" />
+                        <label for="visited_filter_visited"><span glot-model="visited_filter_visited"></span></label>
+                        <input type="radio" name="visited_filter_radio" id="visited_filter_unvisited" value="unvisited" onchange="cMapMaker.setVisitedFilter('unvisited')" />
+                        <label for="visited_filter_unvisited"><span glot-model="visited_filter_unvisited"></span></label>
+                    </div>
+                </div>
+                <!-- お気に入りフィルター -->
+                <div class="dropdown-item">
+                    <div class="m-2">
+                        <label class="form-check-label" for="favorite_filter"><span glot-model="favorite_filter"></span></label>
+                        <input class="form-check-input" type="checkbox" name="favorite_filter" id="favorite_filter" onchange="cMapMaker.toggleFavoriteFilter(this.checked)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!--セレクト&ボタン-->
     <div class="col-12 p-1 me-2 d-flex align-items-center">
         <div class="h-100 d-flex align-items-center text-nowrap"><span glot-model="cat_select"></span></div>
         <select class="form-select me-1" id="list_category"></select>
-        <button class="btn btn-light border-secondary float-left" onclick="cMapMaker.changeMode();"><i
-                class="fas fa-list" id="list_collapse_icon"></i></button>
-        <button class="btn btn-light border-secondary float-left ms-2"
-            onclick="cMapMaker.searchKeyword(window.prompt('検索キーワード'));"><i class="fas fa-search"
-                id="list_keyword_search"></i></button>
+        <button class="btn btn-light border-secondary float-left" onclick="cMapMaker.changeMode();"><i class="fas fa-list" id="list_collapse_icon"></i></button>
+        <button class="btn btn-light border-secondary float-left ms-2" onclick="cMapMaker.searchKeyword(window.prompt('検索キーワード'));"><i class="fas fa-search" id="list_keyword_search"></i></button>
     </div>
     <!-- 検索 -->
     <!-- div class="col-12 d-flex align-items-center">
@@ -69,9 +74,7 @@
         <!-- プレイバック操作 -->
         <div class="row" id="list_playback_control">
             <div class="col-12 pe-0">
-                <button class="btn btn-light float-left menu me-2"
-                    onclick="cMapMaker.playback(listTable.getFilterList());"><i id="list_playback"
-                        class="fas fa-play"></i></button>
+                <button class="btn btn-light float-left menu me-2" onclick="cMapMaker.playback(listTable.getFilterList());"><i id="list_playback" class="fas fa-play"></i></button>
                 <input type="range" class="form-select menu" id="list_speed" />
             </div>
         </div>
