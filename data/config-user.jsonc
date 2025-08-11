@@ -83,6 +83,7 @@
             "expo2025_move": 16,
             "expo2025_toilets": 16,
             "expo2025_drinks": 16,
+            "expo2025_foods":16,
             "expo2025_stores": 16,
             "expo2025_vending": 16,
             "expo2025_store": 16,
@@ -112,6 +113,7 @@
             "expo2025_move": 15,
             "expo2025_toilets": 15,
             "expo2025_drinks": 15,
+            "expo2025_foods":15,
             "expo2025_stores": 15,
             "expo2025_vending": 15,
             "expo2025_store": 15,
@@ -130,21 +132,22 @@
         "default": "expo2025_exp",
         "menu": //"",
         {
-            "(表示なし)": "nopoi",
-            "パビリオン・展示": "expo2025_exp",
-            "施設・建物": "expo2025_service",
-            "食事・喫茶・店舗": "expo2025_stores",
-            "アート作品・壁画": "expo2025_art",
-            "トイレ・給水場": "expo2025_toilets",
-            "自販機・ゴミ箱": "expo2025_vending",
-            "案内板・移動支援": "expo2025_move"
+            "🏛️パビリオン・展示": "expo2025_exp",
+            "🏢施設・🎶ステージ": "expo2025_service",
+            "☕カフェ・🍴レストラン": "expo2025_foods",
+            "🎁お土産・🏬コンビニ": "expo2025_stores",
+            "🎨アート作品・🧱壁画": "expo2025_art",
+            "🚻トイレ・🚰給水場": "expo2025_toilets",
+            "🧃自販機・♻️ゴミ箱": "expo2025_vending",
+            "🪧案内所・↕️移動支援": "expo2025_move",
+            "(アイコン非表示)": "nopoi"
         },
         "action": "ChangePOI" // ChangeMap:背景地図切り替え / ChangePOI:メニューに会ったOverpass名のPOIを表示
     },
     "listTable": {
         "height": 0.6, // リスト時の高さ(1を最大とした割合)
         "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
-        "target": "targets", // targets: / activity:google sheetsを表示 
+        "target": "targets", // targets: / activity:google sheetsを表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
@@ -197,12 +200,12 @@
         "mainSystem": [
             {
                 "glot-model": "export_visited",
-                "linkto": "javascript:visitedCont.export()",
+                "linkto": "javascript:poiStatusCont.export()",
                 "divider": false
             },
             {
                 "glot-model": "import_visited",
-                "linkto": "javascript:visitedCont.import()",
+                "linkto": "javascript:poiStatusCont.import()",
                 "divider": false
             }
         ],
@@ -226,7 +229,7 @@
                 "divider": false
             }
         ],
-        // 詳細モーダルの追加ボタン 
+        // 詳細モーダルの追加ボタン
         "activities": [
             /*
             {
@@ -254,7 +257,7 @@
         "visited": [
             {
                 "btn_class": "btn btn-light border-secondary pe-auto",
-                "code": "javascript:visitedCont.import_load()",
+                "code": "javascript:poiStatusCont.import_load()",
                 "icon_class": "fa-solid fa-cloud-arrow-up",
                 "btn_glot_name": "act_upload"
             }

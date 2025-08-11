@@ -19,7 +19,7 @@ var modalActs = new Activities();
 var wikipedia = new Wikipedia();
 var osmBasic = new OSMbasic();
 var basic = new Basic();
-var visitedCont = new VisitedCont();
+var poiStatusCont = new PoiStatusCont();
 var overPassCont = new OverPassControl();
 var mapLibre = new Maplibre();
 var geoCont = new GeoCont();
@@ -28,9 +28,33 @@ var cMapMaker = new CMapMaker();
 var poiCont = new PoiCont();
 var gSheet = new GoogleSpreadSheet();
 
+var PoiStatusIndex = {
+    VISITED: 0,
+    FAVORITE: 1,
+    MEMO: 2,
+};
+
+var PoiStatusCsvIndex = {
+    KEY: 0,
+    CATEGORY: 1,
+    NAME: 2,
+    VISITED: 3,
+    FAVORITE: 4,
+    MEMO: 5,
+};
+
+var PoiStatusCsvIndexOld = {
+    KEY: 0,
+    CATEGORY: 1,
+    NAME: 2,
+    VISITED: 3,
+    MEMO: 4,
+};
+
 // initialize
 console.log("Welcome to Community Map Maker.");
 console.log("initialize: Start.");
+poiStatusCont.migrateLocalStorageData();
 window.addEventListener("DOMContentLoaded", function () {
     const fetchUrls = FILES.map((url) => fetch(url).then((res) => res.text()));
     const setUrlParams = function () {  // URLから引数を取得して返す関数
@@ -95,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
                     mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
+                    winCont.resizeWindow()
                     winCont.viewSplash(false)
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                         let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
