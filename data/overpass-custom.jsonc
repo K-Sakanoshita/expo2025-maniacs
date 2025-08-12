@@ -3,11 +3,12 @@
         "green_area": {
             "overpass": [
                 "node[\"natural\"=\"tree\"]",
-                "nwr[\"natural\"=\"tree_row\"]",
-                "nwr[\"barrier\"=\"hedge\"]"
+                "way[\"natural\"=\"tree_row\"]",
+                "way[\"barrier\"=\"hedge\"]"
             ],
             "tags": [
-                "natural",
+                "natural=tree",
+                "natural=tree_row",
                 "barrier=hedge"
             ],
             "expression": {

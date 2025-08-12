@@ -65,3 +65,4 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
              2F以上の地物には階数も表示するよう変更
 - 2025/07/13 訪問チェックライブラリのバグを修正
 - 2025/08/11 お気に入りと訪問済みの非表示オプションを追加(Thanks! Koji Matsuda)
+             メニュー構成の見直し、OpenStreetMapデータの更新
