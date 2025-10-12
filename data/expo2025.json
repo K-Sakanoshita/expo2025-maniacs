@@ -2,8 +2,8 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.8 e802775f",
     "osm3s": {
-        "timestamp_osm_base": "2025-10-12T15:47:07Z",
-        "timestamp_areas_base": "2025-10-12T06:42:44Z",
+        "timestamp_osm_base": "2025-10-12T16:09:30Z",
+        "timestamp_areas_base": "2025-10-12T08:53:15Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -24735,11 +24735,11 @@
         {
             "type": "node",
             "id": 12813730583,
-            "lat": 34.6510588,
-            "lon": 135.3853239,
-            "timestamp": "2025-06-15T04:22:00Z",
-            "version": 3,
-            "changeset": 167635451,
+            "lat": 34.6510998,
+            "lon": 135.3853327,
+            "timestamp": "2025-10-12T16:08:58Z",
+            "version": 4,
+            "changeset": 173189226,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -24747,7 +24747,8 @@
                 "amenity": "restaurant",
                 "check_date": "2025-06-15",
                 "cuisine": "german",
-                "level": "1"
+                "level": "1",
+                "name": "Oishii Germany"
             }
         },
         {
@@ -31220,11 +31221,11 @@
         {
             "type": "node",
             "id": 12949265091,
-            "lat": 34.6510064,
-            "lon": 135.3852975,
-            "timestamp": "2025-06-24T11:33:27Z",
-            "version": 1,
-            "changeset": 168044631,
+            "lat": 34.6510771,
+            "lon": 135.3853207,
+            "timestamp": "2025-10-12T16:08:58Z",
+            "version": 2,
+            "changeset": 173189226,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -38196,6 +38197,20 @@
             "uid": 389520,
             "tags": {
                 "entrance": "exit"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227043109,
+            "lat": 34.6510494,
+            "lon": 135.3854072,
+            "timestamp": "2025-10-12T16:08:58Z",
+            "version": 2,
+            "changeset": 173189226,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "entrance": "main"
             }
         },
         {
