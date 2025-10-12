@@ -2,7 +2,7 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.8 e802775f",
     "osm3s": {
-        "timestamp_osm_base": "2025-10-12T15:09:17Z",
+        "timestamp_osm_base": "2025-10-12T15:47:07Z",
         "timestamp_areas_base": "2025-10-12T06:42:44Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
@@ -3077,6 +3077,22 @@
                 "amenity": "drinking_water",
                 "bottle": "yes",
                 "fountain": "bottle_refill"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769448862,
+            "lat": 34.6492977,
+            "lon": 135.3882333,
+            "timestamp": "2025-04-20T03:16:52Z",
+            "version": 1,
+            "changeset": 165176351,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-04-20",
+                "craft": "handicraft",
+                "name": "UNKNOWN FOREST SHOP"
             }
         },
         {
@@ -17745,6 +17761,57 @@
         },
         {
             "type": "node",
+            "id": 12803452320,
+            "lat": 34.6500947,
+            "lon": 135.3855497,
+            "timestamp": "2025-05-15T09:00:01Z",
+            "version": 2,
+            "changeset": 166292900,
+            "user": "Zunyu",
+            "uid": 19079224,
+            "tags": {
+                "check_date": "2025-05-02",
+                "craft": "confectionery",
+                "name": "うなぎパイ",
+                "name:en": "Unagi Pie",
+                "name:ja": "うなぎパイ"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12803452321,
+            "lat": 34.6501091,
+            "lon": 135.3854471,
+            "timestamp": "2025-05-15T09:00:01Z",
+            "version": 2,
+            "changeset": 166292900,
+            "user": "Zunyu",
+            "uid": 19079224,
+            "tags": {
+                "check_date": "2025-05-02",
+                "craft": "confectionery",
+                "name": "月化粧",
+                "name:ja": "月化粧",
+                "name:ja-Latn": "Tsukigesho"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12803452322,
+            "lat": 34.6502888,
+            "lon": 135.3855670,
+            "timestamp": "2025-05-02T04:02:40Z",
+            "version": 1,
+            "changeset": 165700632,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-05-02",
+                "craft": "confectionery"
+            }
+        },
+        {
+            "type": "node",
             "id": 12803459685,
             "lat": 34.6487378,
             "lon": 135.3809662,
@@ -29842,6 +29909,22 @@
         },
         {
             "type": "node",
+            "id": 12885800690,
+            "lat": 34.6471970,
+            "lon": 135.3840010,
+            "timestamp": "2025-06-04T05:11:43Z",
+            "version": 1,
+            "changeset": 167160254,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "photographer",
+                "name": "大阪・関西万博記念写真"
+            }
+        },
+        {
+            "type": "node",
             "id": 12885804671,
             "lat": 34.6468627,
             "lon": 135.3860588,
@@ -30107,6 +30190,22 @@
         },
         {
             "type": "node",
+            "id": 12885906755,
+            "lat": 34.6509297,
+            "lon": 135.3871644,
+            "timestamp": "2025-06-04T06:24:29Z",
+            "version": 1,
+            "changeset": 167161996,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "confectionery",
+                "name": "AIR WATER NEO MIX STAND"
+            }
+        },
+        {
+            "type": "node",
             "id": 12885908358,
             "lat": 34.6504721,
             "lon": 135.3837893,
@@ -30188,6 +30287,23 @@
         },
         {
             "type": "node",
+            "id": 12885926465,
+            "lat": 34.6507911,
+            "lon": 135.3869861,
+            "timestamp": "2025-06-04T06:15:46Z",
+            "version": 1,
+            "changeset": 167161741,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "confectionery",
+                "name": "SPYxFAMILY DINING",
+                "takeaway": "yes"
+            }
+        },
+        {
+            "type": "node",
             "id": 12885926466,
             "lat": 34.6507706,
             "lon": 135.3870449,
@@ -30203,6 +30319,38 @@
                 "name": "bibim",
                 "name:ja": "ビビム",
                 "takeaway": "yes"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12885926469,
+            "lat": 34.6508017,
+            "lon": 135.3870644,
+            "timestamp": "2025-06-04T06:20:07Z",
+            "version": 1,
+            "changeset": 167161866,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "caterer",
+                "name": "ほっかほっか亭"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12885926470,
+            "lat": 34.6508421,
+            "lon": 135.3870863,
+            "timestamp": "2025-06-04T06:20:07Z",
+            "version": 1,
+            "changeset": 167161866,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "caterer",
+                "name": "PACKN-TO"
             }
         },
         {
@@ -30238,6 +30386,22 @@
                 "diet:vegan": "only",
                 "name": "OBBこれもいいキッチン",
                 "takeaway": "yes"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12885926473,
+            "lat": 34.6509004,
+            "lon": 135.3871304,
+            "timestamp": "2025-06-04T06:20:07Z",
+            "version": 1,
+            "changeset": 167161866,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-06-04",
+                "craft": "confectionery",
+                "name": "nissei Mouthful Creations"
             }
         },
         {
@@ -33163,6 +33327,22 @@
         },
         {
             "type": "node",
+            "id": 12976889057,
+            "lat": 34.6487863,
+            "lon": 135.3885236,
+            "timestamp": "2025-07-04T09:29:23Z",
+            "version": 1,
+            "changeset": 168477184,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-07-04",
+                "craft": "confectionery",
+                "name": "京丹波"
+            }
+        },
+        {
+            "type": "node",
             "id": 12976899403,
             "lat": 34.6490415,
             "lon": 135.3884533,
@@ -34406,6 +34586,22 @@
         },
         {
             "type": "node",
+            "id": 13008974833,
+            "lat": 34.6495142,
+            "lon": 135.3847478,
+            "timestamp": "2025-07-18T11:13:44Z",
+            "version": 1,
+            "changeset": 169103634,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-07-18",
+                "craft": "sand",
+                "name": "サンドアート"
+            }
+        },
+        {
+            "type": "node",
             "id": 13022688936,
             "lat": 34.6490559,
             "lon": 135.3806424,
@@ -34567,6 +34763,23 @@
         },
         {
             "type": "node",
+            "id": 13038959731,
+            "lat": 34.6505947,
+            "lon": 135.3859061,
+            "timestamp": "2025-07-31T09:32:24Z",
+            "version": 1,
+            "changeset": 169759679,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-07-31",
+                "craft": "caterer",
+                "name": "Namaste Napal",
+                "name:ja": "ナマステネパール"
+            }
+        },
+        {
+            "type": "node",
             "id": 13038959732,
             "lat": 34.6505550,
             "lon": 135.3860015,
@@ -34578,6 +34791,23 @@
             "tags": {
                 "artwork_type": "statue",
                 "tourism": "artwork"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13038959733,
+            "lat": 34.6506272,
+            "lon": 135.3859074,
+            "timestamp": "2025-07-31T09:32:24Z",
+            "version": 1,
+            "changeset": 169759679,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "check_date": "2025-07-31",
+                "craft": "caterer",
+                "name": "BIRYANI & MOMO HOUSE",
+                "name:ja": "ビリヤニ＆モモハウス"
             }
         },
         {

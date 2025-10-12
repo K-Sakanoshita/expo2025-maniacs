@@ -65,3 +65,69 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 - 2025/10/13 ベースシステム更新によるバグ修正（北欧館の訪問済みバグはまだ未対応）
              お気に入りのチェックボックスにアイコン表示、メモ欄を長く見直し
              OpenStreetMapデータの更新（店舗やパビリオン写真の追加・見直し）
+
+## 参考
+### expo2025.json を作るOverpass QL
+
+```overpass ql:expo2025
+[out:json][timeout:120];
+
+area(131094702)->.yume;
+
+(
+  nwr["natural"](area.yume);
+  nwr["barrier"="hedge"](area.yume);
+  way["tourism"="theme_park"](area.yume);
+  way["place"="locality"](area.yume);
+
+  way["area:highway"]["access"="no"](area.yume);
+  way["area:highway"]["access"="private"](area.yume);
+
+  way["barrier"="wall"](area.yume);
+  way["barrier"="fence"](area.yume);
+
+  nwr["amenity"="bar"](area.yume);
+  nwr["amenity"="bench"](area.yume);
+  nwr["amenity"="cafe"](area.yume);
+  nwr["amenity"="pub"](area.yume);
+  nwr["amenity"="luggage_locker"](area.yume);
+  nwr["amenity"="waste_basket"](area.yume);
+  nwr["amenity"="stage"](area.yume);
+  nwr["amenity"="taxi"](area.yume);
+  nwr["amenity"="toilets"](area.yume);
+  nwr["amenity"="bus_station"](area.yume);
+  nwr["amenity"="shelter"](area.yume);
+  nwr["amenity"="picnic_site"](area.yume);
+  nwr["amenity"="fast_food"](area.yume);
+  nwr["amenity"="ferry_terminal"](area.yume);
+  nwr["amenity"="food_court"](area.yume);
+  nwr["amenity"="restaurant"](area.yume);
+  nwr["amenity"="theatre"]["access"!~"^private$"](area.yume);
+  nwr["amenity"="smoking_area"](area.yume);
+  nwr["amenity"="place_of_worship"](area.yume);
+  nwr["amenity"="exhibition_centre"](area.yume);
+  nwr["amenity"="drinking_water"](area.yume);
+  nwr["amenity"="vending_machine"](area.yume);
+  nwr["amenity"="post_office"](area.yume);
+  nwr["amenity"="ferry_terminal"](34.6570488832774, 135.37857824056903, 34.660596217537034, 135.40079835085356);
+  
+  nwr["building"]["name"](area.yume);
+
+  nwr["tourism"="information"](area.yume);
+  nwr["tourism"="artwork"](area.yume);
+  nwr["office"](area.yume);
+  nwr["leisure"](area.yume);
+  nwr["shop"](area.yume);
+  nwr["craft"](area.yume);
+
+  nwr["man_made"="water_tap"](area.yume);
+
+  node["highway"="elevator"](area.yume);
+  node["highway"="bus_stop"](area.yume);
+  node["entrance"](area.yume);
+);
+
+out body meta;
+>;
+out skel;
+```
