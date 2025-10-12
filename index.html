@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/08/11 by OpenStreetMap</title>
+    <title>EXPO2025 万博マニアックマップ ver 2025/10/13 by OpenStreetMap</title>
     <meta charset="utf-8" />
     <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
     <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://k-sakanoshita.github.io/expo2025-maniacs/image/ogimage.png" />
     <meta property="og:image:width" content="940" />
     <meta property="og:image:height" content="788" />
+
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -21,10 +22,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs@6.0.6/dist/theme/mermaid.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.3.0/dist/maplibre-gl.min.css">
+    <link href=" https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.min.css " rel="stylesheet">
     <link rel="stylesheet" href="system.css" />
     <link rel="stylesheet" href="user.css" />
-    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.3.0/dist/maplibre-gl.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.min.js "></script>
     <script defer src="https://cdn.jsdelivr.net/npm/pmtiles@4.3.0/dist/pmtiles.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gridjs@6.0.6/dist/gridjs.production.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/json5@2.2.3/dist/index.min.js"></script>
@@ -83,7 +84,7 @@
                         <div class="footerSpace"></div>
                     </div>
                 </div>
-                <div id="sidebarCont" class="row fixed-bottom m-2">
+                <div id="sidebarCont" class="row fixed-bottom m-2 pe-none d-none">
                     <div class="col-7 p-0">
                         <div id="sideBarPanel"></div>
                         <div class="btn-group btn-group-lg pe-auto"></div>
@@ -100,7 +101,7 @@
                             </button>
                             <button class="btn btn-light border-secondary p-1 btn-max"
                                 onclick="javascript:cMapMaker.viewDetail()">
-                                <i class="fa-solid fa-xmark"></i>
+                                <i class="fa-solid fa-check"></i>
                             </button>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
     "map": {
         "miniMap": true, // miniMap表示時はtrue
         "changeMap": false, // 地図切り替え時はtrue
-        "tileName": "OSMFJ", // タイル一覧は config-system.jsonc へ
+        "tileName": "OSMFJ_nopoi", // タイル一覧は config-system.jsonc へ
         "viewCenter": [
             135.38360336,
             34.64993865
@@ -56,7 +56,7 @@
         "textSize": 10.5,
         "textViewZoom": 16 // アイコンに文字を表示するズームレベル
     },
-    "view": {
+    "poiView": {
         "poiActLoad": false, // 起動時にActivityを読み込むか
         "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
         "poiZoom": {
@@ -83,7 +83,7 @@
             "expo2025_move": 16,
             "expo2025_toilets": 16,
             "expo2025_drinks": 16,
-            "expo2025_foods":16,
+            "expo2025_foods": 16,
             "expo2025_stores": 16,
             "expo2025_vending": 16,
             "expo2025_store": 16,
@@ -113,20 +113,12 @@
             "expo2025_move": 15,
             "expo2025_toilets": 15,
             "expo2025_drinks": 15,
-            "expo2025_foods":15,
+            "expo2025_foods": 15,
             "expo2025_stores": 15,
             "expo2025_vending": 15,
             "expo2025_store": 15,
             "activity": 12
         }
-    },
-    "etc": {
-        "localSave": "expo2025", // 訪問済み機能フラグ(有効時はアプリ名、無効時は"")
-        "editMode": false, // 編集メニューの表示/非表示
-        "slideThumbWidth": "240",
-        "modalThumbWidth": "800",
-        "splashUrl": "./image/ogimage.png",
-        "loadingUrl": "./image/loading.gif"
     },
     "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
         "default": "expo2025_exp",
@@ -156,6 +148,11 @@
         },
         "download": false
     },
+    "thumbnail": {
+        "use": true,
+        "slideThumbWidth": "320",
+        "modalThumbWidth": "800"
+    },
     "google": {
         "Analytics": "",
         "AppScript": "", //"https://script.google.com/macros/s/AKfycbyA1Z5e7xo3Oh39hJTSfaM-Wu_H7_Pz9iZmGDpU4bwZW4KrIKwXHFkVj-g26ZW70g5Tkw/exec",
@@ -163,7 +160,9 @@
     },
     "static": {
         "mode": true,
-        "osmjson": "./data/expo2025.json"
+        "osmjsons": [
+            "./data/expo2025.min.json"
+        ]
     },
     "wikipedia": {
         "marker": "wikipedia.svg",
@@ -172,6 +171,12 @@
         "domain": "wikipedia.org",
         "tag": "wikipedia",
         "image": true
+    },
+    "etc": {
+        "localSave": "expo2025", // 訪問済み機能フラグ(有効時はアプリ名、無効時は"")
+        "editMode": false, // 編集メニューの表示/非表示
+        "splashUrl": "./image/ogimage.png",
+        "loadingUrl": "./image/loading.gif"
     },
     "menu": {
         "main": [

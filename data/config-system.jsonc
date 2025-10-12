@@ -18,6 +18,9 @@
     },
     "tile": {
         "OSMFJ": {
+            "style": "./tiles/osmfj_poi.json"
+        },
+        "OSMFJ_nopoi": {
             "style": "./tiles/osmfj_nopoi.json"
         },
         "OSM_Standard": {
@@ -44,7 +47,31 @@
                 ]
             }
         },
-        "planet": { // for planet globe
+        "GSI_seamlessphoto": {
+            "style": {
+                "version": 8,
+                "sources": {
+                    "rtile": {
+                        "type": "raster",
+                        "tiles": [
+                            "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
+                        ],
+                        "tileSize": 256,
+                        "maxzoom": 18,
+                        "attribution": "<a href='https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html'>全国最新写真（シームレス） | &copy OpenStreetMap contributors</a>"
+                    }
+                },
+                "layers": [
+                    {
+                        "id": "raster-tiles",
+                        "type": "raster",
+                        "source": "rtile"
+                    }
+                ],
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
+            }
+        },
+        "miniMap": { // for planet globe
             "style": "./tiles/osmfj_nopoi.json"
         }
     },

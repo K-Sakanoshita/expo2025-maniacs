@@ -1835,7 +1835,7 @@
             "source-layer": "transportation",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#ffdaa6",
@@ -3266,7 +3266,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": {
@@ -4535,7 +4535,8 @@
             "source": "openmaptiles",
             "source-layer": "transportation",
             "layout": {
-                "line-join": "round"
+                "line-join": "round",
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#fc8",

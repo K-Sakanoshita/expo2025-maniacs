@@ -89,16 +89,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
         winCont.viewSplash(true);
         listTable.init();
-        poiCont.init();
+        poiCont.init(Conf.map.miniMap);
 
         Promise.all([
             gSheet.get(Conf.google.AppScript),
-            cMapMaker.load_static(),
+            loadStatic(),
             mapLibre.init(Conf), // get_zoomなどMapLibreの情報が必要なためMapLibre.init後に実行
         ]).then((results) => {
             // MapLibre add control
             console.log("initialize: gSheet, static, MapLibre OK.");
             mapLibre.addControl("top-left", "baselist", basehtml, "mapLibre-control m-0 p-0"); // Make: base list
+            if (Conf.etc.localSave !== "") filter_menu.classList.remove('d-none')
             mapLibre.addNavigation("bottom-right");
             if (Conf.map.changeMap) mapLibre.addControl("bottom-right", "maplist", "<button onclick='cMapMaker.changeMap()'><i class='fas fa-layer-group fa-lg'></i></button>", "maplibregl-ctrl-group");
             mapLibre.addControl("bottom-right", "global_status", "", "text-information"); // Make: progress
@@ -112,15 +113,16 @@ window.addEventListener("DOMContentLoaded", function () {
             winCont.menu_make(mergedMenu, "main_menu");
             winCont.mouseDragScroll(images, cMapMaker.eventViewThumb); // set Drag Scroll on images
             glot.render()
-            winCont.setSidebar()
+            winCont.setSidebar("")
 
             const init_close = function () {
                 let cat = (UrlParams.category !== "" && UrlParams.category !== undefined) ? UrlParams.category : Conf.selectItem.default;
+                cat = decodeURI(cat);
                 cMapMaker.updateView(cat).then(() => {     // 初期データロード
                     mapLibre.addCountryFlagsImage(poiCont.getAllOSMCountryCode())
                     cMapMaker.addEvents()
-                    winCont.resizeWindow()
                     winCont.viewSplash(false)
+                    setTimeout(() => { cMapMaker.eventMoveMap() }, 300) // 本来なら不要だがfirefoxだとタイミングの関係で必要
                     if (UrlParams.node || UrlParams.way || UrlParams.relation) {
                         let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
                         let param = keyv[0] + "/" + keyv[1]
@@ -134,13 +136,13 @@ window.addEventListener("DOMContentLoaded", function () {
                         })
                     }
                 })
-            };
+            }
 
             poiCont.setActdata(results[0]); // gSheetをPoiContにセット(座標は無いのでOSM読み込み時にマッチング)
-            if (Conf.view.poiActLoad) {
+            if (Conf.poiView.poiActLoad) {
                 let osmids = poiCont.pois().acts.map((act) => { return act.osmid; });
                 osmids = osmids.filter(Boolean);
-                if (osmids.length > 0 && !Conf.static.mode) {
+                if (osmids.length > 0 && !Conf.static.use) {
                     basic.retry(() => overPassCont.getOsmIds(osmids), 5).then((geojson) => {
                         poiCont.addGeojson(geojson)
                         poiCont.setActlnglat()
@@ -156,3 +158,24 @@ window.addEventListener("DOMContentLoaded", function () {
         })
     })
 })
+
+function loadStatic() {
+    return new Promise((resolve, reject) => {
+        if (!Conf.static.mode) {
+            resolve();
+        } else {
+            console.log("cMapMaker: Static mode");
+            const fetchUrls = Conf.static.osmjsons.map((url) => fetch(url).then((res) => res.text()));
+            Promise.all(fetchUrls).then((datas) => {
+                datas.forEach(data => {
+                    let json = JSON5.parse(data)
+                    let ovanswer = overPassCont.setOsmJson(json);
+                    poiCont.addGeojson(ovanswer);
+                })
+                poiCont.setActlnglat();
+                console.log("cMapMaker: Static load done.");
+                resolve();
+            })
+        }
+    })
+}

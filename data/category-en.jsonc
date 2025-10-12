@@ -379,7 +379,8 @@
             "pitch": "pitch",
             "park": "park",
             "playground": "playground",
-            "swimming_pool": "swimming pool"
+            "swimming_pool": "swimming pool",
+            "sauna": "sauna"
         },
         "railway": {
             "station": "station"

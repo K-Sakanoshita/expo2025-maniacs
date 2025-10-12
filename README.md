@@ -4,7 +4,6 @@
 POI（Point of Interest）情報をOverpass APIから取得・表示します。
 
 ## 主な表示対象
-
 - パビリオン、ホール
 - 店舗（飲食店、売店、コンビニ）
 - 各エリアのゾーン（色分け）
@@ -13,22 +12,19 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 - 案内板、パブリックアート、建物の入口
 
 ## 使用技術
-
 - **タイルサーバー**: [OSMFJ提供タイル](https://wiki.openstreetmap.org/wiki/Japan/OSMFJ_Tileserver)
 - **POI取得**: [Overpass API](https://overpass-turbo.eu/)
 - **地図描画**: [コミュニティマップメーカー](https://github.com/gsi-cyberjapan/CommunityMapMaker) をベースにカスタマイズ
+- **写真表示**: [Wikimedia Commons](https://commons.wikimedia.org/)
 
 ## ライセンス
-
 このプロジェクトのソースコードは [MITライセンス](LICENSE) のもとで提供されます。  
 ただし、背景地図および取得するデータ（OSMデータ）はそれぞれのライセンスに従います。
-
 - OpenStreetMapデータ: [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/)
 - OSMFJタイルサーバー利用規約に準拠
 - スプラッシュ画像はいらすとやを利用しているので、MITライセンスには含めません
 
 ## 注意事項
-
 - このサイトは万博公式とは一切関係ありません。
 - 表示するデータはリアルタイムの状況を反映するものではない場合があります。
 
@@ -66,3 +62,6 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 - 2025/07/13 訪問チェックライブラリのバグを修正
 - 2025/08/11 お気に入りと訪問済みの非表示オプションを追加(Thanks! Koji Matsuda)
              メニュー構成の見直し、OpenStreetMapデータの更新
+- 2025/10/13 ベースシステム更新によるバグ修正（北欧館の訪問済みバグはまだ未対応）
+             お気に入りのチェックボックスにアイコン表示、メモ欄を長く見直し
+             OpenStreetMapデータの更新（店舗やパビリオン写真の追加・見直し）

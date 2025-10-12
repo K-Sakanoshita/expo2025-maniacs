@@ -12,7 +12,6 @@ class CMapMaker {
     }
 
     addEvents() {
-        console.log("CMapMaker: init.")
         mapLibre.on('moveend', this.eventMoveMap.bind(cMapMaker))   		// マップ移動時の処理
         mapLibre.on('zoomend', this.eventZoomMap.bind(cMapMaker))			// ズーム終了時に表示更新
         list_category.addEventListener('change', this.eventChangeCategory.bind(cMapMaker))	// category change
@@ -51,28 +50,6 @@ class CMapMaker {
         this.eventMoveMap()
     }
 
-    async load_static() {
-        if (!Conf.static.mode) {
-            console.log("cMapMaker: no static mode");
-            return;
-        }
-
-        try {
-            const response = await fetch(Conf.static.osmjson, { cache: "no-store" });
-            if (!response.ok) throw new Error(`cMapMaker: HTTP error ${response.status}`);
-
-            const data = await response.json();
-            let ovanswer = overPassCont.setOsmJson(data);
-            poiCont.addGeojson(ovanswer);
-            poiCont.setActlnglat();
-            console.log("cMapMaker: static load done.");
-            return ovanswer;
-        } catch (err) {
-            console.error("cMapMaker:", err);
-            throw err;
-        }
-    }
-
     setVisitedFilter(visitedFilterStatus) {
         console.log(`cMapMaker: setVisitedFilter: ${visitedFilterStatus}`);
         this.visitedFilterStatus = visitedFilterStatus;
@@ -88,28 +65,19 @@ class CMapMaker {
     viewArea() {			// Area(敷地など)を表示させる refタグがあれば()表記
         //console.log(`viewArea: Start.`)
         let targets = poiCont.getTargets()  //
+        console.log("viewArea: " + targets.join())
         targets.forEach((target) => {
-            let osmConf = Conf.osm[target] == undefined ? { expression: { poiView: true } } : Conf.osm[target]
-            if (!osmConf.expression.poiView) {   // poiView == falseが対象
-                //console.log("viewArea: " + target)
+            let osmConf = Conf.osm[target] == undefined ? { expression: { viewArea: true } } : Conf.osm[target]
+            if (osmConf.expression.viewArea) {   // viewArea: trueが対象
                 let pois = poiCont.getPois(target)
-                let titleTag = [
-                    "format",
-                    ["case",
-                        ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
-                        ["case",
-                            ["has", "local_ref"],
-                            ["concat",
-                                "(", ["get", "ref"], "/", ["get", "local_ref"], ") ",
-                                ["coalesce", ["get", "name"], ""]
-                            ],
-                            ["concat",
-                                "(", ["get", "ref"], ") ",
-                                ["coalesce", ["get", "name"], ""]
-                            ]
-                        ],
-                        ["coalesce", ["get", "name"], ""]
+                let titleTag = ["format", ["case",
+                    ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
+                    ["case", ["has", "local_ref"],
+                        ["concat", "(", ["get", "ref"], "/", ["get", "local_ref"], ") ", ["coalesce", ["get", "name"], ""]],
+                        ["concat", "(", ["get", "ref"], ") ", ["coalesce", ["get", "name"], ""]]
                     ],
+                    ["coalesce", ["get", "name"], ""]
+                ],
                     {}
                 ];
                 mapLibre.addPolygon({ "type": "FeatureCollection", "features": pois.geojson }, target, titleTag)
@@ -126,46 +94,58 @@ class CMapMaker {
         targets = targets.filter(target => {                                                    // poiView=trueのみ返す
             return Conf.osm[target] !== undefined ? Conf.osm[target].expression.poiView : false;
         })
-        targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.view.editZoom)) : targets	// 編集時はeditZoom追加
+        targets = Conf.etc.editMode ? targets.concat(Object.keys(Conf.poiView.editZoom)) : targets	// 編集時はeditZoom追加
         targets = [...new Set(targets)];    // 重複削除
         poiCont.setPoi(listTable.getFilterList(), false)
 
-        //
         let subcategory = poiCont.getTargets().indexOf(nowselect) > -1 || nowselect == "-" ? false : true;	// サブカテゴリ選択時はtrue
         if (subcategory) {	// targets 内に選択肢が含まれていない場合（サブカテゴリ選択時）
             poiCont.setPoi(listTable.getFilterList(), false)
         } else {			// targets 内に選択肢が含まれている場合
             console.log("viewPoi: " + targets.concat())
             let nowzoom = mapLibre.getZoom(false)
-            targets = targets.filter(target => target !== "activity");  // activiyがあれば削除
+            //targets = targets.filter(target => target !== "activity");  // activiyがあれば削除 // 2025/08/20 一旦false
             targets = targets.filter(s => s !== "");
             if (nowselect = "-") {
-                poiCont.setPoi(listTable.getFilterList(), nowselect == Conf.google.targetName)
+                poiCont.setPoi(listTable.getFilterList(), false) //nowselect == Conf.google.targetName) // 2025/08/20 一旦false
             } else {
                 for (let target of targets) {
                     let poiView = Conf.google.targetName == target ? true : Conf.osm[target].expression.poiView	// activity以外はexp.poiViewを利用
-                    let flag = nowzoom >= Conf.view.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.view.editZoom[target])
+                    let flag = nowzoom >= Conf.poiView.poiZoom[target] || (Conf.etc.editMode && nowzoom >= Conf.poiView.editZoom[target])
                     if ((target == nowselect) && flag && poiView) {	// 選択している種別の場合
-                        poiCont.setPoi(listTable.getFilterList(), target == Conf.google.targetName)
+                        poiCont.setPoi(listTable.getFilterList(), false) // target == Conf.google.targetName) // 2025/08/20 一旦false
                         break
                     }
                 }
             }
         }
-        console.log("viewPoi: End.")
     }
 
     // 画面内のActivity画像を表示させる(view: true=表示)
     makeImages(view) {
-        let LL = mapLibre.get_LL(true);
         if (view) {
-            let acts = poiCont.adata.filter(act => { return geoCont.checkInner(act.lnglat, LL) && act.picture_url1 !== "" });
-            acts = acts.map(act => {
+            let LL = mapLibre.get_LL(true);
+            let nowZoom = mapLibre.getZoom()
+            let selectCategory = listTable.getSelCategory()[0]
+            //let nowViewTargets = Object.entries(Conf.poiView.poiZoom).filter(([key, value]) => value <= nowZoom).map(([key]) => key)
+            /*
+            if (selectCategory !== "") {   // カテゴリ指定時
+                nowViewTargets = nowViewTargets.indexOf(selectCategory) > -1 ? selectCategory : []
+            }
+            */
+            let acts = poiCont.adata.filter(act => geoCont.checkInner(act.lnglat, LL) && act.picture_url1 !== "");
+            acts = acts.filter(act => {
+                return act.category == selectCategory || selectCategory == ""
+                /*
+                let targets = poiCont.get_osmid(act.osmid).targets
+                return targets.some(el => nowViewTargets.includes(el))
+                */
+            }).map(act => {
                 let urls = []
                 let actname = act.id.split("/")[0]
                 let forms = Conf.activities[actname].form
                 for (const key of Object.keys(forms)) { // 複数あっても一つだけとする
-                    if (forms[key].type === "image_url") { urls.push(act[key]); break; }
+                    if (forms[key].type === "image_url") { urls.push(act[key]); break }
                 }
                 return { "src": urls, "osmid": act.osmid, "title": act.title }
             })
@@ -188,11 +168,11 @@ class CMapMaker {
             winCont.spinner(true);
             var keys = (targets !== undefined && targets !== "") ? targets : poiCont.getTargets();
             let PoiLoadZoom = 99;
-            for (let [key, value] of Object.entries(Conf.view.poiZoom)) {
+            for (let [key, value] of Object.entries(Conf.poiView.poiZoom)) {
                 if (key !== Conf.google.targetName) PoiLoadZoom = value < PoiLoadZoom ? value : PoiLoadZoom;
             };
             if (Conf.etc.editMode) {
-                for (let [key, value] of Object.entries(Conf.view.editZoom)) {
+                for (let [key, value] of Object.entries(Conf.poiView.editZoom)) {
                     if (key !== Conf.google.targetName) PoiLoadZoom = value < PoiLoadZoom ? value : PoiLoadZoom;
                 }
             }
@@ -210,12 +190,12 @@ class CMapMaker {
                     console.log("[success]cMapMaker: updateOsmPoi End.");
                     global_status.innerHTML = "";
                     resolve({ "update": true });
-                }) /*.catch(() => {
+                }).catch(() => {
                     winCont.spinner(false);
                     console.log("[error]cMapMaker: updateOsmPoi end.");
                     global_status.innerHTML = "";
                     resolve({ "update": false });
-                });*/
+                });
             }
         })
 
@@ -233,14 +213,13 @@ class CMapMaker {
                         let targets = listTable.getSelCategory();
                         targets = (targets[0] == '' && cat !== undefined) ? [cat] : targets;
                         listTable.makeSelectList(Conf.listTable.category)
-                        listTable.makeList(Conf.view.poiFilter)
+                        listTable.makeList(Conf.poiView.poiFilter)
                         listTable.selectCategory(targets)
                         listTable.filterByPoiStatus(this.visitedFilterStatus, this.favoriteFilter);
                         if (window.getSelection) window.getSelection().removeAllRanges()
+                        this.makeImages(Conf.thumbnail.use)
                         this.viewArea()	        // 入手したgeoJsonを追加
                         this.viewPoi(targets)	// in targets
-                        this.makeImages(true)
-                        console.log("updateView End.")
                         resolve({ "update": true })
                         break
                     default:
@@ -275,9 +254,8 @@ class CMapMaker {
                 return title
             }
 
-            winCont.clearDatail()
             if (osmid == "" || osmid == undefined) {    // OSMIDが空の時はクリアして終了
-                winCont.setSidebar()
+                winCont.clearDatail()
                 geoCont.writePoiCircle()
                 resolve()
                 return
@@ -300,12 +278,8 @@ class CMapMaker {
 
             let title = `<img src="./${Conf.icon.fgPath}/${poiCont.getIcon(tags)}" height="16">`
             let message = "";
-            for (let i = 0; i < Conf.osm[target].titles.length; i++) {
-                if (tags[Conf.osm[target].titles[i]] !== void 0) {
-                    title += `${tags[Conf.osm[target].titles[i]]}`;
-                    break;
-                };
-            };
+            title += poiCont.getOSMname(tags, glot.lang);
+
             if (title == "") title = category[0] + category[1] !== "" ? "(" + category[1] + ")" : "";   // サブカテゴリ時は追加
             if (title == "") title = glot.get("undefined");
             winCont.menu_make(Conf.menu.modal, "btnMenu");
@@ -420,8 +394,8 @@ class CMapMaker {
         cMapMaker.moveMapBusy = true;
 
         const zoom = mapLibre.getZoom(false);
-        const zoomLevels = Object.values(Conf.view.poiZoom);
-        if (Conf.etc.editMode) zoomLevels.push(...Object.values(Conf.view.editZoom))
+        const zoomLevels = Object.values(Conf.poiView.poiZoom);
+        if (Conf.etc.editMode) zoomLevels.push(...Object.values(Conf.poiView.editZoom))
         const poizoom = zoomLevels.some(level => zoom >= level);
 
         if (!poizoom) {
@@ -429,10 +403,7 @@ class CMapMaker {
             this.makeImages(false);                             // イメージリストを非表示
             return;
         }
-        cMapMaker.updateView().then(() => {
-            cMapMaker.moveMapBusy = false
-            console.log("eventMoveMap: End.")
-        })
+        cMapMaker.updateView().then(() => cMapMaker.moveMapBusy = false)
     }
 
     // EVENT: カテゴリ変更時のイベント
@@ -446,17 +417,21 @@ class CMapMaker {
             }
             catname = selcategory !== "-" ? `?category=${selcategory}` : ""
             history.replaceState('', '', location.pathname + catname + location.hash)
+            winCont.clearDatail().then(() => {
+                geoCont.writePoiCircle()
+                mapLibre.map.redraw()
+            })
         })
     }
 
     // EVENT: View Zoom Level & Status Comment
     eventZoomMap() {
         let morezoom = 0;
-        for (let [key, value] of Object.entries(Conf.view.poiZoom)) {
+        for (let [key, value] of Object.entries(Conf.poiView.poiZoom)) {
             morezoom = value > morezoom ? value : morezoom
         }
         if (Conf.etc.editMode) {
-            for (let [key, value] of Object.entries(Conf.view.editZoom)) {
+            for (let [key, value] of Object.entries(Conf.poiView.editZoom)) {
                 morezoom = value > morezoom ? value : morezoom
             }
         }

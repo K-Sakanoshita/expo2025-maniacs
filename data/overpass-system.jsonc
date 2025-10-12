@@ -1,10 +1,7 @@
 {
     "osm": {
         "*": {
-            "tags": [],
-            "titles": [
-                "name"
-            ]
+            "tags": []
         },
         "wikipedia": {
             "marker": "wikipedia.svg",
@@ -24,10 +21,7 @@
                 "poiView": true, // true時はアイコン表示
                 "stroke": "#7070C0",
                 "stroke-width": 1
-            },
-            "titles": [
-                "name"
-            ]
+            }
         }
     }
 }

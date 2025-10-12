@@ -104,7 +104,7 @@ class Activities {
             }
         });
         wikimq.forEach((q) => {
-            basic.getWikiMediaImage(q[0], Conf.etc.modalThumbWidth, q[1]);
+            basic.getWikiMediaImage(q[0], Conf.thumbnail.modalThumbWidth, q[1]);
         }); // WikiMedia Image 遅延読み込み
         tModal.remove();
         template.remove();

@@ -379,7 +379,8 @@
             "pitch": "グラウンド",
             "park": "公園",
             "playground": "児童公園",
-            "swimming_pool": "水泳プール"
+            "swimming_pool": "水泳プール",
+            "sauna": "サウナ"
         },
         "railway": {
             "station": "鉄道駅"
