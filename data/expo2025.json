@@ -2,7 +2,7 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.8 e802775f",
     "osm3s": {
-        "timestamp_osm_base": "2025-10-12T16:09:30Z",
+        "timestamp_osm_base": "2025-10-12T16:29:00Z",
         "timestamp_areas_base": "2025-10-12T08:53:15Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
@@ -15827,11 +15827,11 @@
         {
             "type": "node",
             "id": 12794662465,
-            "lat": 34.6468660,
-            "lon": 135.3858398,
-            "timestamp": "2025-05-17T07:02:12Z",
-            "version": 2,
-            "changeset": 166378763,
+            "lat": 34.6468623,
+            "lon": 135.3858439,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 3,
+            "changeset": 173190080,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -27499,11 +27499,11 @@
         {
             "type": "node",
             "id": 12843511686,
-            "lat": 34.6467948,
-            "lon": 135.3857597,
-            "timestamp": "2025-10-12T08:01:16Z",
-            "version": 3,
-            "changeset": 173167121,
+            "lat": 34.6467957,
+            "lon": 135.3857578,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 4,
+            "changeset": 173190080,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -38326,6 +38326,210 @@
             "uid": 389520,
             "tags": {
                 "entrance": "main"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986084,
+            "lat": 34.6466951,
+            "lon": 135.3857641,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "88",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986085,
+            "lat": 34.6467186,
+            "lon": 135.3857999,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "87",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986086,
+            "lat": 34.6467600,
+            "lon": 135.3857596,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "85",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986087,
+            "lat": 34.6467365,
+            "lon": 135.3857239,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "86",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986088,
+            "lat": 34.6466771,
+            "lon": 135.3858401,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "89",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986089,
+            "lat": 34.6466536,
+            "lon": 135.3858043,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "90",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986090,
+            "lat": 34.6467779,
+            "lon": 135.3856836,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "84",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986091,
+            "lat": 34.6468014,
+            "lon": 135.3857194,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "83",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986092,
+            "lat": 34.6468194,
+            "lon": 135.3856434,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "82",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986093,
+            "lat": 34.6468429,
+            "lon": 135.3856792,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "81",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986094,
+            "lat": 34.6468608,
+            "lon": 135.3856032,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "80",
+                "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13227986095,
+            "lat": 34.6468843,
+            "lon": 135.3856390,
+            "timestamp": "2025-10-12T16:25:37Z",
+            "version": 1,
+            "changeset": 173190080,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "board_type": "traffic",
+                "information": "board",
+                "name": "79",
+                "tourism": "information"
             }
         },
         {
