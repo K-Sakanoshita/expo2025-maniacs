@@ -63,7 +63,7 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 - 2025/08/11 お気に入りと訪問済みの非表示オプションを追加(Thanks! Koji Matsuda)
              メニュー構成の見直し、OpenStreetMapデータの更新
 - 2025/10/13 ベースシステム更新によるバグ修正（北欧館の訪問済みバグはまだ未対応）
-             お気に入りのチェックボックスにアイコン表示、メモ欄を長く見直し
+             お気に入りにアイコン表示、メモ欄を長く見直し、休憩所を表示
              OpenStreetMapデータの更新（店舗やパビリオン写真の追加・見直し）
 
 ## 参考
@@ -103,7 +103,7 @@ area(131094702)->.yume;
   nwr["amenity"="food_court"](area.yume);
   nwr["amenity"="restaurant"](area.yume);
   nwr["amenity"="theatre"]["access"!~"^private$"](area.yume);
-  nwr["amenity"="smoking_area"](area.yume);
+  nwr["amenity"="smoking_area"]["access\"!~"^private$"](area.yume);
   nwr["amenity"="place_of_worship"](area.yume);
   nwr["amenity"="exhibition_centre"](area.yume);
   nwr["amenity"="drinking_water"](area.yume);
@@ -113,8 +113,7 @@ area(131094702)->.yume;
   
   nwr["building"]["name"](area.yume);
 
-  nwr["tourism"="information"](area.yume);
-  nwr["tourism"="artwork"](area.yume);
+  nwr["tourism"](area.yume);
   nwr["office"](area.yume);
   nwr["leisure"](area.yume);
   nwr["shop"](area.yume);

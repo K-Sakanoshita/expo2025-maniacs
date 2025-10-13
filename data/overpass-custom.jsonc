@@ -310,7 +310,6 @@
                 "nwr[\"amenity\"=\"community_centre\"]",
                 "nwr[\"amenity\"=\"luggage_locker\"]",
                 "nwr[\"amenity\"=\"post_office\"]",
-                "nwr[\"amenity\"=\"smoking_area\"]",
                 "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
@@ -321,7 +320,6 @@
                 "amenity=community_centre",
                 "amenity=luggage_locker",
                 "amenity=post_office",
-                "amenity=smoking_area",
                 "amenity=theatre",
                 "office=courier",
                 "office=government",
@@ -382,14 +380,20 @@
                 "name"
             ]
         },
-        "expo2025_toilets": {
+        "expo2025_restarea": {
             "overpass": [
                 "nwr[\"amenity\"=\"toilets\"]",
-                "nwr[\"amenity\"=\"drinking_water\"]"
+                "nwr[\"amenity\"=\"shelter\"]",
+                "nwr[\"amenity\"=\"drinking_water\"]",
+                "nwr[\"amenity\"=\"smoking_area\"][\"access\"!~\"^private$\"]",
+                "nwr[\"tourism\"=\"picnic_site\""
             ],
             "tags": [
                 "amenity=toilets",
-                "amenity=drinking_water"
+                "amenity=shelter",
+                "amenity=drinking_water",
+                "amenity=smoking_area",
+                "tourism=picnic_site"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

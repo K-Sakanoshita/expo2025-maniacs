@@ -2,8 +2,8 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.8 e802775f",
     "osm3s": {
-        "timestamp_osm_base": "2025-10-12T16:29:00Z",
-        "timestamp_areas_base": "2025-10-12T08:53:15Z",
+        "timestamp_osm_base": "2025-10-13T00:51:52Z",
+        "timestamp_areas_base": "2025-10-12T15:57:16Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -305,13 +305,13 @@
         {
             "type": "node",
             "id": 12751856960,
-            "lat": 34.6500611,
-            "lon": 135.3844099,
-            "timestamp": "2025-05-18T08:20:20Z",
-            "version": 4,
-            "changeset": 166419707,
-            "user": "Airfall",
-            "uid": 16755483,
+            "lat": 34.6500586,
+            "lon": 135.3844235,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 5,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "access": "yes",
                 "amenity": "toilets",
@@ -5970,13 +5970,13 @@
         {
             "type": "node",
             "id": 12769743229,
-            "lat": 34.6499778,
-            "lon": 135.3844104,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499795,
+            "lon": 135.3844086,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "access": "yes",
                 "amenity": "drinking_water",
@@ -5987,13 +5987,13 @@
         {
             "type": "node",
             "id": 12769743230,
-            "lat": 34.6499760,
-            "lon": 135.3844576,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499758,
+            "lon": 135.3844618,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "amenity": "vending_machine",
                 "brand": "Asahi SOFT DRINKS",
@@ -6011,13 +6011,13 @@
         {
             "type": "node",
             "id": 12769743231,
-            "lat": 34.6499781,
-            "lon": 135.3844214,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499785,
+            "lon": 135.3844244,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "amenity": "vending_machine",
                 "brand": "Asahi SOFT DRINKS",
@@ -6035,13 +6035,13 @@
         {
             "type": "node",
             "id": 12769743232,
-            "lat": 34.6499770,
-            "lon": 135.3844324,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499776,
+            "lon": 135.3844369,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "amenity": "vending_machine",
                 "brand": "Asahi SOFT DRINKS",
@@ -6059,13 +6059,13 @@
         {
             "type": "node",
             "id": 12769743233,
-            "lat": 34.6499764,
-            "lon": 135.3844438,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499767,
+            "lon": 135.3844494,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "amenity": "vending_machine",
                 "brand": "Asahi SOFT DRINKS",
@@ -6083,13 +6083,13 @@
         {
             "type": "node",
             "id": 12769743234,
-            "lat": 34.6499744,
-            "lon": 135.3844713,
-            "timestamp": "2025-05-04T01:43:03Z",
-            "version": 3,
-            "changeset": 165781698,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "lat": 34.6499749,
+            "lon": 135.3844743,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "amenity": "vending_machine",
                 "brand": "Asahi SOFT DRINKS",
@@ -6107,11 +6107,11 @@
         {
             "type": "node",
             "id": 12769745972,
-            "lat": 34.6500322,
+            "lat": 34.6500323,
             "lon": 135.3844307,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 2,
-            "changeset": 165242488,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -6318,11 +6318,11 @@
         {
             "type": "node",
             "id": 12769783152,
-            "lat": 34.6500631,
-            "lon": 135.3844838,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 2,
-            "changeset": 165242488,
+            "lat": 34.6500630,
+            "lon": 135.3844897,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -6332,11 +6332,11 @@
         {
             "type": "node",
             "id": 12769783153,
-            "lat": 34.6500852,
-            "lon": 135.3844866,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 2,
-            "changeset": 165242488,
+            "lat": 34.6500855,
+            "lon": 135.3844925,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -6346,11 +6346,11 @@
         {
             "type": "node",
             "id": 12769783154,
-            "lat": 34.6501083,
-            "lon": 135.3844896,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 2,
-            "changeset": 165242488,
+            "lat": 34.6501085,
+            "lon": 135.3844953,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -7615,9 +7615,9 @@
             "id": 12770013795,
             "lat": 34.6516577,
             "lon": 135.3809458,
-            "timestamp": "2025-05-03T07:39:25Z",
-            "version": 3,
-            "changeset": 165746742,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -7665,11 +7665,11 @@
         {
             "type": "node",
             "id": 12770040767,
-            "lat": 34.6517971,
-            "lon": 135.3810108,
-            "timestamp": "2025-05-03T07:39:25Z",
-            "version": 3,
-            "changeset": 165746742,
+            "lat": 34.6517978,
+            "lon": 135.3810132,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9142,9 +9142,9 @@
             "id": 12772247721,
             "lat": 34.6501158,
             "lon": 135.3843923,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 1,
-            "changeset": 165242488,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9156,9 +9156,9 @@
             "id": 12772247722,
             "lat": 34.6501018,
             "lon": 135.3844403,
-            "timestamp": "2025-04-29T06:25:18Z",
-            "version": 2,
-            "changeset": 165576079,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9168,11 +9168,11 @@
         {
             "type": "node",
             "id": 12772247733,
-            "lat": 34.6501770,
-            "lon": 135.3844750,
-            "timestamp": "2025-10-08T16:04:32Z",
-            "version": 2,
-            "changeset": 173012771,
+            "lat": 34.6501773,
+            "lon": 135.3844747,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9242,11 +9242,11 @@
         {
             "type": "node",
             "id": 12772247742,
-            "lat": 34.6501384,
-            "lon": 135.3844934,
-            "timestamp": "2025-04-21T14:17:10Z",
-            "version": 1,
-            "changeset": 165242488,
+            "lat": 34.6501387,
+            "lon": 135.3844990,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9256,11 +9256,11 @@
         {
             "type": "node",
             "id": 12772247747,
-            "lat": 34.6502084,
-            "lon": 135.3844868,
-            "timestamp": "2025-10-08T16:04:32Z",
-            "version": 2,
-            "changeset": 173012771,
+            "lat": 34.6502083,
+            "lon": 135.3844887,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9710,11 +9710,11 @@
         {
             "type": "node",
             "id": 12778007889,
-            "lat": 34.6480777,
-            "lon": 135.3864549,
-            "timestamp": "2025-04-23T08:10:57Z",
-            "version": 1,
-            "changeset": 165319302,
+            "lat": 34.6480779,
+            "lon": 135.3864550,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -9724,11 +9724,11 @@
         {
             "type": "node",
             "id": 12778007890,
-            "lat": 34.6479111,
-            "lon": 135.3863549,
-            "timestamp": "2025-10-12T08:01:16Z",
-            "version": 3,
-            "changeset": 173167121,
+            "lat": 34.6479096,
+            "lon": 135.3863541,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 4,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -14724,13 +14724,13 @@
         {
             "type": "node",
             "id": 12787857980,
-            "lat": 34.6493813,
-            "lon": 135.3842099,
-            "timestamp": "2025-05-15T09:00:01Z",
-            "version": 4,
-            "changeset": 166292900,
-            "user": "Zunyu",
-            "uid": 19079224,
+            "lat": 34.6493661,
+            "lon": 135.3841566,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 5,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "tags": {
                 "check_date": "2025-04-26",
                 "government": "public_service",
@@ -18337,15 +18337,16 @@
         {
             "type": "node",
             "id": 12803547528,
-            "lat": 34.6473803,
-            "lon": 135.3868065,
-            "timestamp": "2025-05-02T05:43:20Z",
-            "version": 1,
-            "changeset": 165702302,
+            "lat": 34.6473012,
+            "lon": 135.3868313,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
-                "amenity": "shelter"
+                "amenity": "shelter",
+                "name": "サービス施設南東"
             }
         },
         {
@@ -20645,11 +20646,11 @@
         {
             "type": "node",
             "id": 12809159362,
-            "lat": 34.6489807,
+            "lat": 34.6489809,
             "lon": 135.3799555,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 4,
-            "changeset": 173132163,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 5,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -21993,11 +21994,11 @@
         {
             "type": "node",
             "id": 12811025175,
-            "lat": 34.6494168,
-            "lon": 135.3842189,
-            "timestamp": "2025-09-28T04:20:41Z",
-            "version": 2,
-            "changeset": 172550862,
+            "lat": 34.6494119,
+            "lon": 135.3842251,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -24099,6 +24100,38 @@
         },
         {
             "type": "node",
+            "id": 12813479476,
+            "lat": 34.6486547,
+            "lon": 135.3835048,
+            "timestamp": "2025-05-15T09:00:01Z",
+            "version": 2,
+            "changeset": 166292900,
+            "user": "Zunyu",
+            "uid": 19079224,
+            "tags": {
+                "name": "「いのちの未来」~変化する水~ 体験 AR",
+                "name:ja": "「いのちの未来」~変化する水~ 体験 AR",
+                "tourism": "attraction"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12813479477,
+            "lat": 34.6484081,
+            "lon": 135.3834874,
+            "timestamp": "2025-05-15T09:00:01Z",
+            "version": 2,
+            "changeset": 166292900,
+            "user": "Zunyu",
+            "uid": 19079224,
+            "tags": {
+                "name": "「いのちの未来」~変化する水~ 体験 AR",
+                "name:ja": "「いのちの未来」~変化する水~ 体験 AR",
+                "tourism": "attraction"
+            }
+        },
+        {
+            "type": "node",
             "id": 12813480806,
             "lat": 34.6479993,
             "lon": 135.3849521,
@@ -24737,9 +24770,9 @@
             "id": 12813730583,
             "lat": 34.6510998,
             "lon": 135.3853327,
-            "timestamp": "2025-10-12T16:08:58Z",
-            "version": 4,
-            "changeset": 173189226,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 5,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -24747,7 +24780,6 @@
                 "amenity": "restaurant",
                 "check_date": "2025-06-15",
                 "cuisine": "german",
-                "level": "1",
                 "name": "Oishii Germany"
             }
         },
@@ -28510,6 +28542,21 @@
         },
         {
             "type": "node",
+            "id": 12857401656,
+            "lat": 34.6472365,
+            "lon": 135.3859442,
+            "timestamp": "2025-10-11T11:15:30Z",
+            "version": 3,
+            "changeset": 173132163,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "direction": "NNW",
+                "tourism": "viewpoint"
+            }
+        },
+        {
+            "type": "node",
             "id": 12857408503,
             "lat": 34.6476001,
             "lon": 135.3845765,
@@ -29319,11 +29366,11 @@
         {
             "type": "node",
             "id": 12874786440,
-            "lat": 34.6493663,
-            "lon": 135.3843073,
-            "timestamp": "2025-05-30T07:25:02Z",
-            "version": 1,
-            "changeset": 166956197,
+            "lat": 34.6492546,
+            "lon": 135.3841323,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -35527,14 +35574,16 @@
             "id": 13088189410,
             "lat": 34.6510337,
             "lon": 135.3850573,
-            "timestamp": "2025-08-22T00:54:28Z",
-            "version": 1,
-            "changeset": 170805172,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
                 "amenity": "restaurant",
+                "branch": "大阪・関西万博 夢洲店",
                 "check_date": "2025-08-22",
+                "name": "GAMARO GANGJUNG",
                 "opening_hours": "Mo-Fr 11:00-21:00"
             }
         },
@@ -35662,34 +35711,6 @@
             "tags": {
                 "amenity": "stage",
                 "check_date": "2025-08-28"
-            }
-        },
-        {
-            "type": "node",
-            "id": 13119166411,
-            "lat": 34.6516038,
-            "lon": 135.3809575,
-            "timestamp": "2025-09-04T11:33:35Z",
-            "version": 1,
-            "changeset": 171448175,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "tags": {
-                "amenity": "shelter"
-            }
-        },
-        {
-            "type": "node",
-            "id": 13119185000,
-            "lat": 34.6473012,
-            "lon": 135.3868313,
-            "timestamp": "2025-09-04T11:33:04Z",
-            "version": 1,
-            "changeset": 171448154,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "tags": {
-                "amenity": "shelter"
             }
         },
         {
@@ -36632,11 +36653,11 @@
         {
             "type": "node",
             "id": 13183399516,
-            "lat": 34.6501921,
-            "lon": 135.3844708,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 2,
-            "changeset": 173132163,
+            "lat": 34.6501975,
+            "lon": 135.3844731,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 3,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -36697,17 +36718,16 @@
         {
             "type": "node",
             "id": 13183404105,
-            "lat": 34.6500699,
-            "lon": 135.3843886,
-            "timestamp": "2025-09-30T06:44:56Z",
-            "version": 1,
-            "changeset": 172644905,
+            "lat": 34.6500654,
+            "lon": 135.3843889,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
                 "artist_name": "ミヤマケイ",
                 "artwork_type": "mural",
-                "fixme": "Please merge me into a nearby wall",
                 "name": "水心",
                 "tourism": "artwork"
             }
@@ -36857,22 +36877,6 @@
             "uid": 389520,
             "tags": {
                 "natural": "stone"
-            }
-        },
-        {
-            "type": "node",
-            "id": 13194902070,
-            "lat": 34.6484282,
-            "lon": 135.3849932,
-            "timestamp": "2025-10-05T04:29:46Z",
-            "version": 1,
-            "changeset": 172853053,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "tags": {
-                "access": "private",
-                "amenity": "smoking_area",
-                "check_date": "2025-10-05"
             }
         },
         {
@@ -37133,22 +37137,6 @@
         },
         {
             "type": "node",
-            "id": 13195318192,
-            "lat": 34.6493903,
-            "lon": 135.3820872,
-            "timestamp": "2025-10-05T08:26:21Z",
-            "version": 1,
-            "changeset": 172857776,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "tags": {
-                "access": "private",
-                "amenity": "smoking_area",
-                "check_date": "2025-10-05"
-            }
-        },
-        {
-            "type": "node",
             "id": 13195319301,
             "lat": 34.6490740,
             "lon": 135.3807903,
@@ -37374,11 +37362,11 @@
         {
             "type": "node",
             "id": 13200037518,
-            "lat": 34.6517031,
-            "lon": 135.3811023,
-            "timestamp": "2025-10-07T04:54:15Z",
-            "version": 1,
-            "changeset": 172941032,
+            "lat": 34.6517034,
+            "lon": 135.3811018,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -37389,11 +37377,11 @@
         {
             "type": "node",
             "id": 13200037519,
-            "lat": 34.6516959,
-            "lon": 135.3810951,
-            "timestamp": "2025-10-07T04:54:15Z",
-            "version": 1,
-            "changeset": 172941032,
+            "lat": 34.6516945,
+            "lon": 135.3810939,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -37404,11 +37392,11 @@
         {
             "type": "node",
             "id": 13200037520,
-            "lat": 34.6516858,
-            "lon": 135.3810854,
-            "timestamp": "2025-10-07T04:54:15Z",
-            "version": 1,
-            "changeset": 172941032,
+            "lat": 34.6516855,
+            "lon": 135.3810859,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -38059,9 +38047,9 @@
             "id": 13208469654,
             "lat": 34.6489631,
             "lon": 135.3799189,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 1,
-            "changeset": 173132163,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -38073,9 +38061,9 @@
             "id": 13208469661,
             "lat": 34.6489980,
             "lon": 135.3799183,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 1,
-            "changeset": 173132163,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "tags": {
@@ -38530,6 +38518,49 @@
                 "information": "board",
                 "name": "79",
                 "tourism": "information"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13228747069,
+            "lat": 34.6501957,
+            "lon": 135.3845005,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 1,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "entrance": "yes"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13228747123,
+            "lat": 34.6493620,
+            "lon": 135.3842090,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 1,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "amenity": "shelter",
+                "name": "休憩所3"
+            }
+        },
+        {
+            "type": "node",
+            "id": 13228747134,
+            "lat": 34.6493427,
+            "lon": 135.3842603,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 1,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "tags": {
+                "entrance": "yes"
             }
         },
         {
@@ -40872,9 +40903,9 @@
         {
             "type": "way",
             "id": 1377354639,
-            "timestamp": "2025-04-24T12:08:32Z",
-            "version": 3,
-            "changeset": 165375984,
+            "timestamp": "2025-10-13T00:48:55Z",
+            "version": 4,
+            "changeset": 173203494,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "nodes": [
@@ -40908,6 +40939,7 @@
                 "building": "yes",
                 "female": "yes",
                 "male": "yes",
+                "name": "トイレ7",
                 "unisex": "no",
                 "wheelchair": "yes"
             }
@@ -40915,9 +40947,9 @@
         {
             "type": "way",
             "id": 1377354640,
-            "timestamp": "2025-04-24T12:08:32Z",
-            "version": 2,
-            "changeset": 165375984,
+            "timestamp": "2025-10-13T00:48:55Z",
+            "version": 3,
+            "changeset": 173203494,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "nodes": [
@@ -40947,6 +40979,7 @@
                 "building": "yes",
                 "female": "yes",
                 "male": "yes",
+                "name": "トイレ8",
                 "unisex": "no",
                 "wheelchair": "yes"
             }
@@ -42000,30 +42033,26 @@
         {
             "type": "way",
             "id": 1379324925,
-            "timestamp": "2025-09-30T06:44:56Z",
-            "version": 4,
-            "changeset": 172644905,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 5,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "nodes": [
+                13228747086,
+                12650718949,
+                12772247759,
+                13228747082,
                 12772247760,
                 12805298358,
                 12805298359,
                 12650718953,
                 12805298375,
-                12650718951,
-                12805298376,
-                12805298374,
-                12805298373,
-                12805298363,
-                12805298372,
-                12650718950,
-                12650718949,
-                12650718948,
-                12805298370,
-                12805298369,
-                12772247759,
-                12772247760
+                13228747090,
+                13228747089,
+                13228747088,
+                13228747087,
+                13228747086
             ],
             "tags": {
                 "amenity": "shelter",
@@ -42303,6 +42332,29 @@
             ],
             "tags": {
                 "barrier": "fence"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1381291577,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 4,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12797303403,
+                12787295285,
+                12787295284,
+                12787295283,
+                12787295282,
+                12787295281,
+                12797303402,
+                12797303403
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
             }
         },
         {
@@ -44213,10 +44265,32 @@
         },
         {
             "type": "way",
+            "id": 1382232123,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 3,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12787295280,
+                12787295287,
+                12797303410,
+                12797303409,
+                12797303411,
+                12787295286,
+                12787295280
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
             "id": 1382232133,
-            "timestamp": "2025-04-29T07:51:49Z",
-            "version": 1,
-            "changeset": 165578921,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
             "user": "K_Sakanoshita",
             "uid": 389520,
             "nodes": [
@@ -44230,7 +44304,9 @@
                 12797303462,
                 12797303471,
                 12797303470,
+                13228747097,
                 12797303469,
+                13228747098,
                 12797303468,
                 12797303467,
                 12797303466,
@@ -47383,16 +47459,19 @@
         {
             "type": "way",
             "id": 1383471550,
-            "timestamp": "2025-05-04T03:23:41Z",
-            "version": 1,
-            "changeset": 165782860,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12808866731,
                 12808866732,
+                13228747095,
                 12808866733,
+                13228747094,
                 12808866734,
+                13228747093,
                 12808866735,
                 12808866736,
                 12808866731
@@ -47404,16 +47483,18 @@
         {
             "type": "way",
             "id": 1383471551,
-            "timestamp": "2025-05-04T03:23:41Z",
-            "version": 1,
-            "changeset": 165782860,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12808866737,
                 12808866738,
                 12808866739,
+                13228747091,
                 12808866740,
+                13228747092,
                 12808866737
             ],
             "tags": {
@@ -47423,14 +47504,17 @@
         {
             "type": "way",
             "id": 1383471553,
-            "timestamp": "2025-05-04T03:23:41Z",
-            "version": 1,
-            "changeset": 165782860,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 2,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
             "nodes": [
                 12808866746,
                 12808866747,
+                13228747115,
+                13228747116,
+                13228747114,
                 12808866748,
                 12808866749,
                 12808866746
@@ -47798,6 +47882,25 @@
                 "name": "サステナドーム",
                 "roof:shape": "half-hipped",
                 "wikimedia_commons": "File:Sustainadome 20250830 162141.jpg"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1384371893,
+            "timestamp": "2025-05-07T14:49:45Z",
+            "version": 1,
+            "changeset": 165942830,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12817283244,
+                12817283243,
+                12817283242,
+                12817283241,
+                12817283244
+            ],
+            "tags": {
+                "tourism": "picnic_site"
             }
         },
         {
@@ -49300,6 +49403,186 @@
                 "leisure": "playground",
                 "playground": "slide",
                 "surface": "artificial_turf"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255841,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 2,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995765789,
+                12995765788,
+                12995765787,
+                12995765786,
+                12995765789
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255842,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 2,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995765793,
+                12995765792,
+                12995765791,
+                12995765790,
+                12995765793
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255843,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 2,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995765797,
+                12995765796,
+                12995765795,
+                12995765794,
+                12995765797
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255844,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 2,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995824701,
+                12995765800,
+                12995765799,
+                12995765798,
+                12995824701
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255845,
+            "timestamp": "2025-07-26T00:50:49Z",
+            "version": 2,
+            "changeset": 169481890,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995824705,
+                12995824704,
+                12995824703,
+                12995824702,
+                12995824705
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255846,
+            "timestamp": "2025-10-12T08:01:16Z",
+            "version": 4,
+            "changeset": 173167121,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995824709,
+                12995824708,
+                12995824707,
+                13208469606,
+                13208469607,
+                13208469608,
+                13208469609,
+                12995824706,
+                12995824709
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255847,
+            "timestamp": "2025-10-11T11:15:30Z",
+            "version": 3,
+            "changeset": 173132163,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995824719,
+                12995824718,
+                12995824717,
+                12995824716,
+                12995824715,
+                12995824714,
+                12995824713,
+                12995824712,
+                13208469605,
+                13208469604,
+                12995824719
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
+            }
+        },
+        {
+            "type": "way",
+            "id": 1414255848,
+            "timestamp": "2025-10-11T11:15:30Z",
+            "version": 3,
+            "changeset": 173132163,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                12995824727,
+                12995824726,
+                12995824725,
+                13208469602,
+                13208469603,
+                12995824722,
+                12995824723,
+                13208469600,
+                13208469601,
+                12995824720,
+                13208469598,
+                13208469597,
+                13208469599,
+                12995824724,
+                12995824727
+            ],
+            "tags": {
+                "picnic_table": "yes",
+                "tourism": "picnic_site"
             }
         },
         {
@@ -51138,6 +51421,31 @@
             }
         },
         {
+            "type": "way",
+            "id": 1441738955,
+            "timestamp": "2025-10-13T00:33:05Z",
+            "version": 1,
+            "changeset": 173203328,
+            "user": "K_Sakanoshita",
+            "uid": 389520,
+            "nodes": [
+                13228747113,
+                13228747105,
+                13228747104,
+                13228747106,
+                13228747122,
+                13228747121,
+                13228747120,
+                13228747119,
+                13119166411,
+                13228747113
+            ],
+            "tags": {
+                "amenity": "shelter",
+                "name": "休憩所2"
+            }
+        },
+        {
             "type": "relation",
             "id": 18047883,
             "timestamp": "2025-10-12T03:57:45Z",
@@ -52685,8 +52993,8 @@
         {
             "type": "node",
             "id": 12650310694,
-            "lat": 34.6514414,
-            "lon": 135.3811101
+            "lat": 34.6514397,
+            "lon": 135.3811131
         },
         {
             "type": "node",
@@ -53338,33 +53646,15 @@
         },
         {
             "type": "node",
-            "id": 12650718948,
-            "lat": 34.6503010,
-            "lon": 135.3842795
-        },
-        {
-            "type": "node",
             "id": 12650718949,
-            "lat": 34.6502673,
-            "lon": 135.3841919
-        },
-        {
-            "type": "node",
-            "id": 12650718950,
-            "lat": 34.6502307,
-            "lon": 135.3841477
-        },
-        {
-            "type": "node",
-            "id": 12650718951,
-            "lat": 34.6501149,
-            "lon": 135.3841629
+            "lat": 34.6503401,
+            "lon": 135.3841600
         },
         {
             "type": "node",
             "id": 12650718953,
-            "lat": 34.6500028,
-            "lon": 135.3842913
+            "lat": 34.6499965,
+            "lon": 135.3842420
         },
         {
             "type": "node",
@@ -59675,8 +59965,8 @@
         {
             "type": "node",
             "id": 12767954439,
-            "lat": 34.6493805,
-            "lon": 135.3843552
+            "lat": 34.6493714,
+            "lon": 135.3843669
         },
         {
             "type": "node",
@@ -60545,14 +60835,14 @@
         {
             "type": "node",
             "id": 12772247759,
-            "lat": 34.6502820,
-            "lon": 135.3843904
+            "lat": 34.6503051,
+            "lon": 135.3845326
         },
         {
             "type": "node",
             "id": 12772247760,
-            "lat": 34.6500122,
-            "lon": 135.3843546
+            "lat": 34.6499028,
+            "lon": 135.3844966
         },
         {
             "type": "node",
@@ -61285,6 +61575,54 @@
             "id": 12787295279,
             "lat": 34.6511346,
             "lon": 135.3885220
+        },
+        {
+            "type": "node",
+            "id": 12787295280,
+            "lat": 34.6505643,
+            "lon": 135.3867315
+        },
+        {
+            "type": "node",
+            "id": 12787295281,
+            "lat": 34.6504327,
+            "lon": 135.3868197
+        },
+        {
+            "type": "node",
+            "id": 12787295282,
+            "lat": 34.6503777,
+            "lon": 135.3870203
+        },
+        {
+            "type": "node",
+            "id": 12787295283,
+            "lat": 34.6504969,
+            "lon": 135.3870289
+        },
+        {
+            "type": "node",
+            "id": 12787295284,
+            "lat": 34.6504994,
+            "lon": 135.3869777
+        },
+        {
+            "type": "node",
+            "id": 12787295285,
+            "lat": 34.6505684,
+            "lon": 135.3868701
+        },
+        {
+            "type": "node",
+            "id": 12787295286,
+            "lat": 34.6505943,
+            "lon": 135.3868104
+        },
+        {
+            "type": "node",
+            "id": 12787295287,
+            "lat": 34.6506788,
+            "lon": 135.3866473
         },
         {
             "type": "node",
@@ -64570,9 +64908,39 @@
         },
         {
             "type": "node",
+            "id": 12797303402,
+            "lat": 34.6505601,
+            "lon": 135.3867412
+        },
+        {
+            "type": "node",
+            "id": 12797303403,
+            "lat": 34.6505874,
+            "lon": 135.3868161
+        },
+        {
+            "type": "node",
             "id": 12797303404,
             "lat": 34.6505605,
             "lon": 135.3867343
+        },
+        {
+            "type": "node",
+            "id": 12797303409,
+            "lat": 34.6506946,
+            "lon": 135.3867843
+        },
+        {
+            "type": "node",
+            "id": 12797303410,
+            "lat": 34.6507255,
+            "lon": 135.3867638
+        },
+        {
+            "type": "node",
+            "id": 12797303411,
+            "lat": 34.6507173,
+            "lon": 135.3868530
         },
         {
             "type": "node",
@@ -64619,26 +64987,26 @@
         {
             "type": "node",
             "id": 12797303465,
-            "lat": 34.6515376,
-            "lon": 135.3810326
+            "lat": 34.6515450,
+            "lon": 135.3810296
         },
         {
             "type": "node",
             "id": 12797303466,
-            "lat": 34.6515502,
-            "lon": 135.3810457
+            "lat": 34.6515455,
+            "lon": 135.3810450
         },
         {
             "type": "node",
             "id": 12797303467,
-            "lat": 34.6515356,
-            "lon": 135.3810715
+            "lat": 34.6515339,
+            "lon": 135.3810738
         },
         {
             "type": "node",
             "id": 12797303468,
-            "lat": 34.6515381,
-            "lon": 135.3810903
+            "lat": 34.6515323,
+            "lon": 135.3810970
         },
         {
             "type": "node",
@@ -66269,62 +66637,20 @@
         {
             "type": "node",
             "id": 12805298358,
-            "lat": 34.6500221,
-            "lon": 135.3843304
+            "lat": 34.6499038,
+            "lon": 135.3844226
         },
         {
             "type": "node",
             "id": 12805298359,
-            "lat": 34.6500210,
-            "lon": 135.3843148
-        },
-        {
-            "type": "node",
-            "id": 12805298363,
-            "lat": 34.6501769,
-            "lon": 135.3841720
-        },
-        {
-            "type": "node",
-            "id": 12805298369,
-            "lat": 34.6502853,
-            "lon": 135.3843792
-        },
-        {
-            "type": "node",
-            "id": 12805298370,
-            "lat": 34.6502873,
-            "lon": 135.3843264
-        },
-        {
-            "type": "node",
-            "id": 12805298372,
-            "lat": 34.6501905,
-            "lon": 135.3841670
-        },
-        {
-            "type": "node",
-            "id": 12805298373,
-            "lat": 34.6501553,
-            "lon": 135.3841884
-        },
-        {
-            "type": "node",
-            "id": 12805298374,
-            "lat": 34.6501440,
-            "lon": 135.3841901
+            "lat": 34.6499634,
+            "lon": 135.3842724
         },
         {
             "type": "node",
             "id": 12805298375,
-            "lat": 34.6500707,
-            "lon": 135.3841681
-        },
-        {
-            "type": "node",
-            "id": 12805298376,
-            "lat": 34.6501257,
-            "lon": 135.3841793
+            "lat": 34.6500725,
+            "lon": 135.3841523
         },
         {
             "type": "node",
@@ -71663,20 +71989,20 @@
         {
             "type": "node",
             "id": 12808325173,
-            "lat": 34.6515940,
-            "lon": 135.3812694
+            "lat": 34.6516097,
+            "lon": 135.3812597
         },
         {
             "type": "node",
             "id": 12808325174,
-            "lat": 34.6515226,
-            "lon": 135.3813128
+            "lat": 34.6515298,
+            "lon": 135.3813071
         },
         {
             "type": "node",
             "id": 12808325175,
-            "lat": 34.6515607,
-            "lon": 135.3813793
+            "lat": 34.6515632,
+            "lon": 135.3813682
         },
         {
             "type": "node",
@@ -71717,26 +72043,26 @@
         {
             "type": "node",
             "id": 12808866737,
-            "lat": 34.6518278,
-            "lon": 135.3809333
+            "lat": 34.6518297,
+            "lon": 135.3809281
         },
         {
             "type": "node",
             "id": 12808866738,
-            "lat": 34.6518181,
-            "lon": 135.3809530
+            "lat": 34.6518091,
+            "lon": 135.3809684
         },
         {
             "type": "node",
             "id": 12808866739,
-            "lat": 34.6517976,
-            "lon": 135.3809546
+            "lat": 34.6517893,
+            "lon": 135.3809531
         },
         {
             "type": "node",
             "id": 12808866740,
-            "lat": 34.6518003,
-            "lon": 135.3809280
+            "lat": 34.6517997,
+            "lon": 135.3809300
         },
         {
             "type": "node",
@@ -71747,32 +72073,32 @@
         {
             "type": "node",
             "id": 12808866745,
-            "lat": 34.6514496,
-            "lon": 135.3811384
+            "lat": 34.6514568,
+            "lon": 135.3811310
         },
         {
             "type": "node",
             "id": 12808866746,
-            "lat": 34.6514629,
-            "lon": 135.3812057
+            "lat": 34.6514857,
+            "lon": 135.3812130
         },
         {
             "type": "node",
             "id": 12808866747,
-            "lat": 34.6514894,
-            "lon": 135.3811893
+            "lat": 34.6515022,
+            "lon": 135.3812010
         },
         {
             "type": "node",
             "id": 12808866748,
-            "lat": 34.6515369,
-            "lon": 135.3812723
+            "lat": 34.6515551,
+            "lon": 135.3812728
         },
         {
             "type": "node",
             "id": 12808866749,
-            "lat": 34.6515174,
-            "lon": 135.3812969
+            "lat": 34.6515242,
+            "lon": 135.3812918
         },
         {
             "type": "node",
@@ -72541,6 +72867,30 @@
             "id": 12817283219,
             "lat": 34.6525961,
             "lon": 135.3767320
+        },
+        {
+            "type": "node",
+            "id": 12817283241,
+            "lat": 34.6515446,
+            "lon": 135.3753515
+        },
+        {
+            "type": "node",
+            "id": 12817283242,
+            "lat": 34.6516629,
+            "lon": 135.3754489
+        },
+        {
+            "type": "node",
+            "id": 12817283243,
+            "lat": 34.6516966,
+            "lon": 135.3753884
+        },
+        {
+            "type": "node",
+            "id": 12817283244,
+            "lat": 34.6515783,
+            "lon": 135.3752910
         },
         {
             "type": "node",
@@ -73511,8 +73861,8 @@
         {
             "type": "node",
             "id": 12824939628,
-            "lat": 34.6493826,
-            "lon": 135.3843527
+            "lat": 34.6493735,
+            "lon": 135.3843644
         },
         {
             "type": "node",
@@ -73649,7 +73999,7 @@
         {
             "type": "node",
             "id": 12824939654,
-            "lat": 34.6503038,
+            "lat": 34.6503056,
             "lon": 135.3845334
         },
         {
@@ -77680,6 +78030,240 @@
         },
         {
             "type": "node",
+            "id": 12995765786,
+            "lat": 34.6520946,
+            "lon": 135.3836873
+        },
+        {
+            "type": "node",
+            "id": 12995765787,
+            "lat": 34.6520913,
+            "lon": 135.3837570
+        },
+        {
+            "type": "node",
+            "id": 12995765788,
+            "lat": 34.6521201,
+            "lon": 135.3837591
+        },
+        {
+            "type": "node",
+            "id": 12995765789,
+            "lat": 34.6521234,
+            "lon": 135.3836893
+        },
+        {
+            "type": "node",
+            "id": 12995765790,
+            "lat": 34.6520860,
+            "lon": 135.3838118
+        },
+        {
+            "type": "node",
+            "id": 12995765791,
+            "lat": 34.6520699,
+            "lon": 135.3839689
+        },
+        {
+            "type": "node",
+            "id": 12995765792,
+            "lat": 34.6520990,
+            "lon": 135.3839733
+        },
+        {
+            "type": "node",
+            "id": 12995765793,
+            "lat": 34.6521151,
+            "lon": 135.3838162
+        },
+        {
+            "type": "node",
+            "id": 12995765794,
+            "lat": 34.6520987,
+            "lon": 135.3835327
+        },
+        {
+            "type": "node",
+            "id": 12995765795,
+            "lat": 34.6520959,
+            "lon": 135.3836487
+        },
+        {
+            "type": "node",
+            "id": 12995765796,
+            "lat": 34.6521253,
+            "lon": 135.3836498
+        },
+        {
+            "type": "node",
+            "id": 12995765797,
+            "lat": 34.6521281,
+            "lon": 135.3835338
+        },
+        {
+            "type": "node",
+            "id": 12995765798,
+            "lat": 34.6520843,
+            "lon": 135.3831300
+        },
+        {
+            "type": "node",
+            "id": 12995765799,
+            "lat": 34.6520909,
+            "lon": 135.3832171
+        },
+        {
+            "type": "node",
+            "id": 12995765800,
+            "lat": 34.6521198,
+            "lon": 135.3832139
+        },
+        {
+            "type": "node",
+            "id": 12995824701,
+            "lat": 34.6521132,
+            "lon": 135.3831267
+        },
+        {
+            "type": "node",
+            "id": 12995824702,
+            "lat": 34.6520910,
+            "lon": 135.3832869
+        },
+        {
+            "type": "node",
+            "id": 12995824703,
+            "lat": 34.6520954,
+            "lon": 135.3834626
+        },
+        {
+            "type": "node",
+            "id": 12995824704,
+            "lat": 34.6521286,
+            "lon": 135.3834613
+        },
+        {
+            "type": "node",
+            "id": 12995824705,
+            "lat": 34.6521242,
+            "lon": 135.3832857
+        },
+        {
+            "type": "node",
+            "id": 12995824706,
+            "lat": 34.6518536,
+            "lon": 135.3849587
+        },
+        {
+            "type": "node",
+            "id": 12995824707,
+            "lat": 34.6517474,
+            "lon": 135.3852594
+        },
+        {
+            "type": "node",
+            "id": 12995824708,
+            "lat": 34.6518256,
+            "lon": 135.3852896
+        },
+        {
+            "type": "node",
+            "id": 12995824709,
+            "lat": 34.6519068,
+            "lon": 135.3849794
+        },
+        {
+            "type": "node",
+            "id": 12995824712,
+            "lat": 34.6516667,
+            "lon": 135.3853995
+        },
+        {
+            "type": "node",
+            "id": 12995824713,
+            "lat": 34.6516419,
+            "lon": 135.3854959
+        },
+        {
+            "type": "node",
+            "id": 12995824714,
+            "lat": 34.6516223,
+            "lon": 135.3854884
+        },
+        {
+            "type": "node",
+            "id": 12995824715,
+            "lat": 34.6515974,
+            "lon": 135.3855843
+        },
+        {
+            "type": "node",
+            "id": 12995824716,
+            "lat": 34.6515767,
+            "lon": 135.3855763
+        },
+        {
+            "type": "node",
+            "id": 12995824717,
+            "lat": 34.6515475,
+            "lon": 135.3856891
+        },
+        {
+            "type": "node",
+            "id": 12995824718,
+            "lat": 34.6516308,
+            "lon": 135.3857209
+        },
+        {
+            "type": "node",
+            "id": 12995824719,
+            "lat": 34.6517194,
+            "lon": 135.3853783
+        },
+        {
+            "type": "node",
+            "id": 12995824720,
+            "lat": 34.6514150,
+            "lon": 135.3858604
+        },
+        {
+            "type": "node",
+            "id": 12995824722,
+            "lat": 34.6513531,
+            "lon": 135.3859606
+        },
+        {
+            "type": "node",
+            "id": 12995824723,
+            "lat": 34.6513671,
+            "lon": 135.3859659
+        },
+        {
+            "type": "node",
+            "id": 12995824724,
+            "lat": 34.6514687,
+            "lon": 135.3857778
+        },
+        {
+            "type": "node",
+            "id": 12995824725,
+            "lat": 34.6512873,
+            "lon": 135.3860811
+        },
+        {
+            "type": "node",
+            "id": 12995824726,
+            "lat": 34.6514308,
+            "lon": 135.3861359
+        },
+        {
+            "type": "node",
+            "id": 12995824727,
+            "lat": 34.6515185,
+            "lon": 135.3857969
+        },
+        {
+            "type": "node",
             "id": 12995824730,
             "lat": 34.6519965,
             "lon": 135.3847955
@@ -77977,6 +78561,12 @@
             "id": 13070594881,
             "lat": 34.6509848,
             "lon": 135.3863826
+        },
+        {
+            "type": "node",
+            "id": 13119166411,
+            "lat": 34.6514256,
+            "lon": 135.3811238
         },
         {
             "type": "node",
@@ -80902,6 +81492,84 @@
         },
         {
             "type": "node",
+            "id": 13208469597,
+            "lat": 34.6514398,
+            "lon": 135.3858192
+        },
+        {
+            "type": "node",
+            "id": 13208469598,
+            "lat": 34.6514278,
+            "lon": 135.3858654
+        },
+        {
+            "type": "node",
+            "id": 13208469599,
+            "lat": 34.6514564,
+            "lon": 135.3858255
+        },
+        {
+            "type": "node",
+            "id": 13208469600,
+            "lat": 34.6513827,
+            "lon": 135.3859059
+        },
+        {
+            "type": "node",
+            "id": 13208469601,
+            "lat": 34.6514014,
+            "lon": 135.3859130
+        },
+        {
+            "type": "node",
+            "id": 13208469602,
+            "lat": 34.6513045,
+            "lon": 135.3860143
+        },
+        {
+            "type": "node",
+            "id": 13208469603,
+            "lat": 34.6513362,
+            "lon": 135.3860263
+        },
+        {
+            "type": "node",
+            "id": 13208469604,
+            "lat": 34.6516863,
+            "lon": 135.3853657
+        },
+        {
+            "type": "node",
+            "id": 13208469605,
+            "lat": 34.6516766,
+            "lon": 135.3854032
+        },
+        {
+            "type": "node",
+            "id": 13208469606,
+            "lat": 34.6517754,
+            "lon": 135.3851526
+        },
+        {
+            "type": "node",
+            "id": 13208469607,
+            "lat": 34.6517867,
+            "lon": 135.3851569
+        },
+        {
+            "type": "node",
+            "id": 13208469608,
+            "lat": 34.6518063,
+            "lon": 135.3850821
+        },
+        {
+            "type": "node",
+            "id": 13208469609,
+            "lat": 34.6518200,
+            "lon": 135.3850874
+        },
+        {
+            "type": "node",
             "id": 13208469631,
             "lat": 34.6511411,
             "lon": 135.3844467
@@ -82639,6 +83307,150 @@
             "id": 13227862268,
             "lat": 34.6511547,
             "lon": 135.3870035
+        },
+        {
+            "type": "node",
+            "id": 13228747082,
+            "lat": 34.6499903,
+            "lon": 135.3844995
+        },
+        {
+            "type": "node",
+            "id": 13228747086,
+            "lat": 34.6503167,
+            "lon": 135.3840980
+        },
+        {
+            "type": "node",
+            "id": 13228747087,
+            "lat": 34.6502545,
+            "lon": 135.3840885
+        },
+        {
+            "type": "node",
+            "id": 13228747088,
+            "lat": 34.6501763,
+            "lon": 135.3840989
+        },
+        {
+            "type": "node",
+            "id": 13228747089,
+            "lat": 34.6501384,
+            "lon": 135.3841126
+        },
+        {
+            "type": "node",
+            "id": 13228747090,
+            "lat": 34.6501141,
+            "lon": 135.3841356
+        },
+        {
+            "type": "node",
+            "id": 13228747091,
+            "lat": 34.6517931,
+            "lon": 135.3809401
+        },
+        {
+            "type": "node",
+            "id": 13228747092,
+            "lat": 34.6518205,
+            "lon": 135.3809183
+        },
+        {
+            "type": "node",
+            "id": 13228747093,
+            "lat": 34.6517797,
+            "lon": 135.3808985
+        },
+        {
+            "type": "node",
+            "id": 13228747094,
+            "lat": 34.6518032,
+            "lon": 135.3808683
+        },
+        {
+            "type": "node",
+            "id": 13228747095,
+            "lat": 34.6517957,
+            "lon": 135.3808341
+        },
+        {
+            "type": "node",
+            "id": 13228747097,
+            "lat": 34.6514893,
+            "lon": 135.3811318
+        },
+        {
+            "type": "node",
+            "id": 13228747098,
+            "lat": 34.6515169,
+            "lon": 135.3811194
+        },
+        {
+            "type": "node",
+            "id": 13228747104,
+            "lat": 34.6516545,
+            "lon": 135.3807013
+        },
+        {
+            "type": "node",
+            "id": 13228747105,
+            "lat": 34.6516265,
+            "lon": 135.3807243
+        },
+        {
+            "type": "node",
+            "id": 13228747106,
+            "lat": 34.6516738,
+            "lon": 135.3806940
+        },
+        {
+            "type": "node",
+            "id": 13228747113,
+            "lat": 34.6515450,
+            "lon": 135.3808760
+        },
+        {
+            "type": "node",
+            "id": 13228747114,
+            "lat": 34.6515354,
+            "lon": 135.3812629
+        },
+        {
+            "type": "node",
+            "id": 13228747115,
+            "lat": 34.6515111,
+            "lon": 135.3812257
+        },
+        {
+            "type": "node",
+            "id": 13228747116,
+            "lat": 34.6515216,
+            "lon": 135.3812455
+        },
+        {
+            "type": "node",
+            "id": 13228747119,
+            "lat": 34.6515243,
+            "lon": 135.3813035
+        },
+        {
+            "type": "node",
+            "id": 13228747120,
+            "lat": 34.6517546,
+            "lon": 135.3811748
+        },
+        {
+            "type": "node",
+            "id": 13228747121,
+            "lat": 34.6519182,
+            "lon": 135.3808755
+        },
+        {
+            "type": "node",
+            "id": 13228747122,
+            "lat": 34.6516916,
+            "lon": 135.3806945
         },
         {
             "type": "way",
