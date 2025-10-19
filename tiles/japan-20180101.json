@@ -5,7 +5,7 @@
         "openmaptiles": {
             "url": "pmtiles://https://armd-01.sakura.ne.jp/tiles/japan-20180101.pmtiles",
             "type": "vector",
-            "attribution": "Date 2018/01/01 / <a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
+            "attribution": "Date 2018/01/01 | <a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
         }
     },
     "layers": [

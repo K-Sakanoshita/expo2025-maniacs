@@ -1,10 +1,11 @@
 {
     "version": 8,
-    "name": "community mapmaker",
+    "name": "OpenStreetMap(with out poi)",
     "sources": {
         "openmaptiles": {
             "url": "https://tile.openstreetmap.jp/data/planet.json",
-            "type": "vector"
+            "type": "vector",
+            "attribution": "Hosted by OSMFJ(no Poi) | <a href=\"https://openstreetmap.org\">&copy OpenStreetMap </a>"
         }
     },
     "layers": [

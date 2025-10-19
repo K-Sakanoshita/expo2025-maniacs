@@ -5,7 +5,7 @@
         "openmaptiles": {
             "url": "pmtiles://https://armd-01.sakura.ne.jp/tiles/japan-20230101.pmtiles",
             "type": "vector",
-            "attribution": "Date 2023/01/01 / <a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
+            "attribution": "Date 2023/01/01 | <a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
         }
     },
     "layers": [
@@ -6470,7 +6470,6 @@
             },
             "paint": {
                 "text-color": "rgba(90, 90, 90, 0.8)",
-
                 "text-halo-color": "rgba(255,255,255,0.8)",
                 "text-halo-width": 1.2
             },

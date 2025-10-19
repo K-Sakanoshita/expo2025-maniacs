@@ -1,19 +1,19 @@
 {
     "site_title": {
-        "ja": "EXPO2025マニアックマップ",
+        "ja": "EXPO2025 万博マニアックマップ",
         "en": "EXPO2025 Maniacs Map"
     },
     "site_subtitle": {
-        "ja": "by OpenStreetMap",
-        "en": "by OpenStreetMap"
+        "ja": "オンラインアーカイブモード by OpenStreetMap",
+        "en": "Online Archive Mode by OpenStreetMap"
     },
     "about": {
         "ja": "EXPO2025マニアックマップについて",
         "en": "about EXPO2025 Maniacs Map"
     },
     "about_message": {
-        "ja": "EXPO2025に関する情報を地図に表示するWebアプリです。データはOpenStreetMapを利用しています。",
-        "en": "It is a web application that displays information about EXPO2025 Maniacs Map, utilizing data from OpenStreetMap."
+        "ja": "EXPO2025の会場マップを閲覧できるサイトです。<br>万博終了に伴い、アーカイブサイトとして進化させていきます。<br>会場マップはOpenStreetMapを利用しています。<br>開発サイト: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>",
+        "en": "This is a site where you can view the EXPO 2025 venue map. <br>As the Expo ends, this will evolve as an archive site. <br>The venue map uses OpenStreetMap.<br>Develop Site: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>"
     },
     "owner": {
         "ja": "",

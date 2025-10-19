@@ -313,3 +313,24 @@ tr.selected td {
         transform: translateX(10px);
     }
 }
+
+/* メッセージを画面中央に配置 */
+.fade-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    opacity: 1;
+    transition: opacity 2s ease;
+    z-index: 9999;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.fade-message.hide {
+    opacity: 0;
+}

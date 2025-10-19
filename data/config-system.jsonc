@@ -17,11 +17,15 @@
         ]
     },
     "tile": {
-        "OSMFJ": {
-            "style": "./tiles/osmfj_poi.json"
+        "EXPO2025_LASTDAY": {
+            "style": "./tiles/japan-20251013.json",
+            "name": "大阪・関西万博最終日(2025年10月13日時点)",
+            "skip": false
         },
-        "OSMFJ_nopoi": {
-            "style": "./tiles/osmfj_nopoi.json"
+        "OSMFJ_NOPOI": { // for planet globe
+            "style": "./tiles/osmfj_nopoi.json",
+            "name": "OpenStreetMap(3D/OSMFJ提供)",
+            "skip": false
         },
         "OSM_Standard": {
             "style": {
@@ -45,7 +49,9 @@
                         "source": "rtile"
                     }
                 ]
-            }
+            },
+            "name": "OpenStreetMap標準地図(2D)",
+            "skip": false
         },
         "GSI_seamlessphoto": {
             "style": {
@@ -69,10 +75,14 @@
                     }
                 ],
                 "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf"
-            }
+            },
+            "name": "地理院 全国最新写真（シームレス）",
+            "skip": false
         },
         "miniMap": { // for planet globe
-            "style": "./tiles/osmfj_nopoi.json"
+            "style": "./tiles/osmfj_nopoi.json",
+            "name": "Planet globe",
+            "skip": true
         }
     },
     "menu_list": {

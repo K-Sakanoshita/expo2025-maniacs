@@ -46,8 +46,11 @@ class CMapMaker {
     }
 
     changeMap() {	// Change Map Style(rotation)
-        mapLibre.changeMap()
-        this.eventMoveMap()
+        let styleName = mapLibre.changeMap()
+        winCont.showMessage(Conf.tile[styleName].name);
+        setTimeout(() => {
+            this.eventMoveMap()
+        }, 1000)
     }
 
     setVisitedFilter(visitedFilterStatus) {

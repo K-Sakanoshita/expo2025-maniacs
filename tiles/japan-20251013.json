@@ -1,11 +1,11 @@
 {
     "version": 8,
-    "name": "Japan 2016/01/01",
+    "name": "Japan 2025/10/13(EXPO2025 Last Day)",
     "sources": {
         "openmaptiles": {
-            "url": "pmtiles://https://armd-01.sakura.ne.jp/tiles/japan-20160101.pmtiles",
+            "url": "pmtiles://https://armd-01.sakura.ne.jp/tiles/japan-20251013.pmtiles",
             "type": "vector",
-            "attribution": "Date 2016/01/01 | <a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
+            "attribution": "Japan 2025/10/13(EXPO2025 Last Day) | <a href=\"https://openstreetmap.org\">&copy OpenStreetMap </a>"
         }
     },
     "layers": [
@@ -772,7 +772,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "rgba(229, 228, 224, 1)",
@@ -792,7 +792,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#f0ede9",
@@ -832,7 +832,7 @@
             "source-layer": "aeroway",
             "minzoom": 11,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#f0ede9",
@@ -872,7 +872,7 @@
             "source-layer": "transportation",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "rgba(108, 159, 182, 1)",
@@ -1836,7 +1836,7 @@
             "source-layer": "transportation",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#ffdaa6",
@@ -3267,7 +3267,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": {
@@ -3426,7 +3426,7 @@
             "minzoom": 13,
             "maxzoom": 14,
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "rgba(189, 185, 181, 0.3)",
@@ -3451,7 +3451,7 @@
             "type": "fill-extrusion",
             "source": "openmaptiles",
             "source-layer": "building",
-            "minzoom": 13,
+            "minzoom": 14,
             "layout": {
                 "visibility": "visible"
             },
@@ -4536,7 +4536,8 @@
             "source": "openmaptiles",
             "source-layer": "transportation",
             "layout": {
-                "line-join": "round"
+                "line-join": "round",
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#fc8",
@@ -4751,7 +4752,7 @@
             "source-layer": "boundary",
             "layout": {
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "#9e9cab",
@@ -4798,7 +4799,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4858,7 +4859,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4921,7 +4922,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4976,7 +4977,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -5039,7 +5040,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5,
                 "symbol-placement": "line"
             },
@@ -5112,7 +5113,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5
             },
             "paint": {
@@ -5193,7 +5194,7 @@
                 ],
                 "text-size": 12,
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 5
             },
             "paint": {
@@ -5271,10 +5272,10 @@
                     "Roboto Condensed Italic",
                     "Noto Sans Italic"
                 ],
-                "text-size": 12,
+                "text-size": 14,
                 "icon-image": "{subclass}_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5284,9 +5285,9 @@
                 "text-max-width": 9
             },
             "paint": {
-                "text-color": "hsl(0, 0%, 41%)",
-                "text-halo-blur": 0.5,
-                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-color": "hsl(0, 0%, 0%)",
+                "text-halo-blur": 0,
+                "text-halo-color": "#ffffff",
                 "text-halo-width": 1
             },
             "metadata": {},
@@ -5352,10 +5353,10 @@
                     "Roboto Condensed Italic",
                     "Noto Sans Italic"
                 ],
-                "text-size": 12,
+                "text-size": 14,
                 "icon-image": "{subclass}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5365,9 +5366,9 @@
                 "text-max-width": 9
             },
             "paint": {
-                "text-color": "hsl(0, 0%, 41%)",
-                "text-halo-blur": 0.5,
-                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-color": "hsl(0, 0%, 0%)",
+                "text-halo-blur": 0,
+                "text-halo-color": "#ffffff",
                 "text-halo-width": 1
             },
             "metadata": {},
@@ -5436,7 +5437,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5446,9 +5447,9 @@
                 "text-max-width": 9
             },
             "paint": {
-                "text-color": "hsl(0, 0%, 41%)",
-                "text-halo-blur": 0.5,
-                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-color": "hsl(0, 0%, 0%)",
+                "text-halo-blur": 0,
+                "text-halo-color": "#ffffff",
                 "text-halo-width": 1
             },
             "metadata": {},
@@ -5517,7 +5518,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5527,9 +5528,9 @@
                 "text-max-width": 9
             },
             "paint": {
-                "text-color": "hsl(0, 0%, 41%)",
-                "text-halo-blur": 0.5,
-                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-color": "hsl(0, 0%, 0%)",
+                "text-halo-blur": 0,
+                "text-halo-color": "#ffffff",
                 "text-halo-width": 1
             },
             "metadata": {},
@@ -5598,7 +5599,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5663,7 +5664,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5729,7 +5730,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5793,7 +5794,7 @@
                 "text-size": 12,
                 "icon-image": "{class}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -5856,7 +5857,7 @@
                 "text-size": 16,
                 "icon-image": "railway_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "left",
                 "text-offset": [
                     1,
@@ -5910,7 +5911,7 @@
                 "text-size": 16,
                 "icon-image": "{class}_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "left",
                 "text-offset": [
                     0.9,
@@ -6327,7 +6328,7 @@
                 "text-size": 12,
                 "icon-image": "airport_11",
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -6369,7 +6370,7 @@
                 "text-size": 12,
                 "icon-image": "airport_11",
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-offset": [
                     0,
@@ -6422,7 +6423,7 @@
                     ]
                 },
                 "text-field": "{name}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 9,
                 "text-transform": "uppercase",
                 "text-letter-spacing": 0.1
@@ -6459,11 +6460,11 @@
             "maxzoom": 24,
             "layout": {
                 "text-font": [
-                    "Noto Sans Bold"
+                    "Noto Sans"
                 ],
-                "text-size": 14,
+                "text-size": 12,
                 "text-field": "{name:ja}",
-                "visibility": "visible",
+                "visibility": "none",
                 "text-max-width": 9,
                 "text-transform": "uppercase",
                 "text-letter-spacing": 0.1
@@ -6587,6 +6588,7 @@
             "source": "openmaptiles",
             "source-layer": "place",
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
@@ -6650,6 +6652,7 @@
             "source": "openmaptiles",
             "source-layer": "place",
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
@@ -6714,6 +6717,7 @@
             "source-layer": "place",
             "minzoom": 5,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
@@ -6780,12 +6784,13 @@
             "source-layer": "place",
             "minzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
                 ],
                 "text-size": {
-                    "base": 1.2,
+                    "base": 1.1,
                     "stops": [
                         [
                             7,
@@ -6846,6 +6851,7 @@
             "source-layer": "place",
             "maxzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"
@@ -6893,6 +6899,7 @@
             "source-layer": "place",
             "maxzoom": 6,
             "layout": {
+                "visibility": "none",
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Regular"

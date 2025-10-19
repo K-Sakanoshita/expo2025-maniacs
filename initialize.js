@@ -109,6 +109,7 @@ window.addEventListener("DOMContentLoaded", function () {
             winCont.playback(Conf.listTable.playback.view); // playback control view:true/false
             winCont.download(Conf.listTable.download); // download view:true/false
             cMapMaker.changeMode("map"); // initialize last_modetime
+            winCont.showMessage(Conf.tile[mapLibre.selectStyle].name);
             const mergedMenu = [...Conf.menu.main, ...Conf.menu.mainSystem];
             winCont.menu_make(mergedMenu, "main_menu");
             winCont.mouseDragScroll(images, cMapMaker.eventViewThumb); // set Drag Scroll on images
