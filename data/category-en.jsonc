@@ -349,6 +349,7 @@
         },
         "man_made": {
             "bridge": "bridge",
+            "flagpole": "flagpole",
             "torii": "torii",
             "lamp": "lantern",
             "tower": "tower",

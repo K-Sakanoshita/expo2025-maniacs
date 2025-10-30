@@ -357,6 +357,7 @@
             },
             "man_made": {
                 "bridge": "bridge.png",
+                "flagpole": "flag.png",
                 "torii": "shinto.png",
                 "lamp": "lantern.png",
                 "tower": "Emoji_Black_bell2.png",

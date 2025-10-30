@@ -69,7 +69,7 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
              3Dマップを10月13日時点の状態へ静止（新しくPMTilesを作成して利用）
              マップ表示時にマップの種類や時期を表示する。Favicon更新
 - 2025/10/31 OSMにWikipedia/Wikidataタグが追加されたため最新データを取り込む
-             Wikipedia記事の表示デザインを少し見直し
+             Wikipedia記事の表示デザインを少し見直し、旗竿と国旗を表示させる
 
 ## 参考
 ### expo2025.json を作るOverpass QL

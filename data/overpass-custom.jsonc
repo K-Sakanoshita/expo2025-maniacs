@@ -492,6 +492,24 @@
                 "name"
             ]
         },
+        "expo2025_pole": {
+            "overpass": [
+                "node[\"man_made\"=\"flagpole\"]"
+            ],
+            "tags": [
+                "man_made=flagpole"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "viewArea": false,
+                "stroke": "#c0e0c0",
+                "stroke-width": 3,
+                "fill-opacity": 1
+            },
+            "titles": [
+                "name"
+            ]
+        },
         "nopoi": {
             "overpass": [
                 "node[\"amenity\"=\"cafe\"]" // ダミーでカフェ設定
