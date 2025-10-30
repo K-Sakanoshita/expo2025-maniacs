@@ -143,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function () {
             if (Conf.poiView.poiActLoad) {
                 let osmids = poiCont.pois().acts.map((act) => { return act.osmid; });
                 osmids = osmids.filter(Boolean);
-                if (osmids.length > 0 && !Conf.static.use) {
+                if (osmids.length > 0 && !Conf.static.mode) {
                     basic.retry(() => overPassCont.getOsmIds(osmids), 5).then((geojson) => {
                         poiCont.addGeojson(geojson)
                         poiCont.setActlnglat()

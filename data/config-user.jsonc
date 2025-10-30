@@ -24,7 +24,7 @@
         "maxZoom": 21,
         "detailZoom": 18, // モーダルダイアログ表示時のズームサイズ
         "textFont": [
-            "NNoto Sans Bold"
+            "Noto Sans Bold"
         ], // 使用可能なフォント（spriteに依存）
         "textSize": 12,
         "polygonMarker": { // ポリゴン設定

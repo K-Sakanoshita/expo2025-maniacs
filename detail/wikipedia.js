@@ -3,7 +3,7 @@ class Wikipedia {
 
     // return elements(Before processing)
     element() {
-        return `<div class="mb-3" id="wikipedia"></div>`;
+        return `<div class="bg-light bg-light bg-gradient border rounded p-1" id="wikipedia"></div>`;
     };
 
     // make html(After processing)

@@ -2,8 +2,8 @@
     "version": 0.6,
     "generator": "Overpass API 0.7.62.8 e802775f",
     "osm3s": {
-        "timestamp_osm_base": "2025-10-14T13:22:30Z",
-        "timestamp_areas_base": "2025-10-14T09:39:46Z",
+        "timestamp_osm_base": "2025-10-30T13:32:45Z",
+        "timestamp_areas_base": "2025-10-30T06:41:08Z",
         "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
     },
     "elements": [
@@ -5610,11 +5610,11 @@
             "id": 12769694182,
             "lat": 34.6487124,
             "lon": 135.3864945,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 11,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:18:18Z",
+            "version": 12,
+            "changeset": 173935165,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "ベトナム館",
                 "amenity": "exhibition_centre",
@@ -5627,6 +5627,7 @@
                 "name:zh": "越南馆",
                 "ref": "P15",
                 "reservation": "no",
+                "wikidata": "Q136558144",
                 "wikimedia_commons": "File:ベトナム パビリオン.jpg"
             }
         },
@@ -9347,11 +9348,11 @@
             "id": 12772258415,
             "lat": 34.6498779,
             "lon": 135.3809248,
-            "timestamp": "2025-07-07T11:55:08Z",
-            "version": 7,
-            "changeset": 168601371,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:59:46Z",
+            "version": 8,
+            "changeset": 173934363,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "欧州連合館",
                 "amenity": "exhibition_centre",
@@ -9365,6 +9366,7 @@
                 "reservation": "no",
                 "short_name": "EUパビリオン",
                 "website": "https://www.expo2025.or.jp/official-participant/eu/",
+                "wikidata": "Q136606347",
                 "wikimedia_commons": "File:大阪・関西万博 EU（ヨーロッパ連合）パビリオン.jpg"
             }
         },
@@ -9373,11 +9375,11 @@
             "id": 12772258416,
             "lat": 34.6498469,
             "lon": 135.3810495,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:47:30Z",
+            "version": 8,
+            "changeset": 173933830,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "バルトパビリオン;ラトビアパビリオン;ラトビア館;リトアニアパビリオン;リトアニア館",
                 "amenity": "exhibition_centre",
@@ -9388,6 +9390,7 @@
                 "name:ja": "バルト館（ラトビア＆リトアニア）",
                 "ref": "S06",
                 "reservation": "no",
+                "wikidata": "Q136513311",
                 "wikimedia_commons": "File:大阪・関西万博 バルト館.jpg"
             }
         },
@@ -9396,11 +9399,11 @@
             "id": 12772258417,
             "lat": 34.6498159,
             "lon": 135.3811743,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 8,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-28T16:15:25Z",
+            "version": 9,
+            "changeset": 173891332,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "tags": {
                 "alt_name": "アルジェリア館",
                 "amenity": "exhibition_centre",
@@ -9412,6 +9415,7 @@
                 "name:ja": "アルジェリアパビリオン",
                 "ref": "S05",
                 "reservation": "no",
+                "wikidata": "Q136513200",
                 "wikimedia_commons": "File:大阪・関西万博 アルジェリアパビリオン.jpg"
             }
         },
@@ -9420,11 +9424,11 @@
             "id": 12772258418,
             "lat": 34.6497849,
             "lon": 135.3812990,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:50:43Z",
+            "version": 8,
+            "changeset": 173933962,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "カンボジア館",
                 "amenity": "exhibition_centre",
@@ -9435,6 +9439,7 @@
                 "name:ja": "カンボジアパビリオン",
                 "ref": "S04",
                 "reservation": "no",
+                "wikidata": "Q136513519",
                 "wikimedia_commons": "File:大阪・関西万博 カンボジアパビリオン.jpg"
             }
         },
@@ -9443,11 +9448,11 @@
             "id": 12772258419,
             "lat": 34.6497605,
             "lon": 135.3813923,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 8,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:38:17Z",
+            "version": 9,
+            "changeset": 173971762,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "チュニジア共和国館",
                 "amenity": "exhibition_centre",
@@ -9460,6 +9465,7 @@
                 "ref": "S03",
                 "reservation": "no",
                 "short_name": "チュニジア館",
+                "wikidata": "Q136564417",
                 "wikimedia_commons": "File:大阪・関西万博 チュニジアパビリオン.jpg"
             }
         },
@@ -9468,11 +9474,11 @@
             "id": 12772258420,
             "lat": 34.6497229,
             "lon": 135.3815485,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:53:45Z",
+            "version": 8,
+            "changeset": 173934104,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "チリ館",
                 "amenity": "exhibition_centre",
@@ -9483,6 +9489,7 @@
                 "name:ja": "チリパビリオン",
                 "ref": "S02",
                 "reservation": "no",
+                "wikidata": "Q136541583",
                 "wikimedia_commons": "File:大阪・関西万博 チリパビリオン.jpg"
             }
         },
@@ -9491,11 +9498,11 @@
             "id": 12772258487,
             "lat": 34.6504626,
             "lon": 135.3815869,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:59:10Z",
+            "version": 7,
+            "changeset": 173934335,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "エジプトパビリオン",
                 "amenity": "exhibition_centre",
@@ -9507,6 +9514,7 @@
                 "ref": "C22",
                 "reservation": "no",
                 "short_name": "エジプト館",
+                "wikidata": "Q136541729",
                 "wikimedia_commons": "File:大阪・関西万博 エジプトパビリオン.jpg"
             }
         },
@@ -9515,11 +9523,11 @@
             "id": 12772258488,
             "lat": 34.6504722,
             "lon": 135.3814525,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:31:27Z",
+            "version": 7,
+            "changeset": 173971522,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "セネガル共和国館",
                 "amenity": "exhibition_centre",
@@ -9531,6 +9539,7 @@
                 "ref": "C21",
                 "reservation": "no",
                 "short_name": "セネガルパビリオン",
+                "wikidata": "Q136565192",
                 "wikimedia_commons": "File:大阪・関西万博 セネガルパビリオン.jpg"
             }
         },
@@ -9539,11 +9548,11 @@
             "id": 12772258489,
             "lat": 34.6504816,
             "lon": 135.3813195,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:48:22Z",
+            "version": 8,
+            "changeset": 173933862,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "バングラデシュ館",
                 "amenity": "exhibition_centre",
@@ -9555,6 +9564,7 @@
                 "name:ja": "バングラデシュパビリオン",
                 "ref": "C20",
                 "reservation": "no",
+                "wikidata": "Q136513324",
                 "wikimedia_commons": "File:大阪・関西万博 バングラデシュパビリオン.jpg"
             }
         },
@@ -14675,19 +14685,20 @@
             "id": 12787826669,
             "lat": 34.6495757,
             "lon": 135.3850326,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-28T15:58:37Z",
+            "version": 7,
+            "changeset": 173890580,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "tags": {
                 "amenity": "exhibition_centre",
-                "check_date": "2025-04-26",
+                "check_date": "2025-10-29",
                 "name": "空飛ぶクルマ ステーション",
                 "name:ja": "空飛ぶクルマ ステーション",
                 "ref": "P07",
                 "reservation": "yes",
-                "website": "https://www.expo2025.or.jp/future-index/smart-mobility/advanced-air-mobility/"
+                "website": "https://www.expo2025.or.jp/future-index/smart-mobility/advanced-air-mobility/",
+                "wikidata": "Q136565327"
             }
         },
         {
@@ -14795,11 +14806,11 @@
             "id": 12790712844,
             "lat": 34.6478515,
             "lon": 135.3841625,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 4,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:26:17Z",
+            "version": 5,
+            "changeset": 173932964,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "国際赤十字・赤新月運動",
@@ -14807,7 +14818,8 @@
                 "name:ja": "国際赤十字・赤新月運動",
                 "ref": "P31",
                 "reservation": "recommended",
-                "website": "https://www.expo2025.or.jp/official-participant/ircandrcm/"
+                "website": "https://www.expo2025.or.jp/official-participant/ircandrcm/",
+                "wikidata": "Q136565435"
             }
         },
         {
@@ -14815,11 +14827,11 @@
             "id": 12790712845,
             "lat": 34.6478875,
             "lon": 135.3840181,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 5,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:26:57Z",
+            "version": 6,
+            "changeset": 173932985,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "国際連合パビリオン",
                 "amenity": "exhibition_centre",
@@ -14830,7 +14842,8 @@
                 "ref": "P30",
                 "reservation": "recommended",
                 "short_name": "国連館",
-                "website": "https://www.un.org/expo2025/ja"
+                "website": "https://www.un.org/expo2025/ja",
+                "wikidata": "Q10872756"
             }
         },
         {
@@ -14838,11 +14851,11 @@
             "id": 12790712846,
             "lat": 34.6479236,
             "lon": 135.3838737,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 4,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:25:43Z",
+            "version": 5,
+            "changeset": 173932933,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "国際機関パビリオン",
                 "amenity": "exhibition_centre",
@@ -14850,7 +14863,8 @@
                 "name:en": "International Organizations Pavilion",
                 "name:ja": "国際機関館",
                 "ref": "P29",
-                "reservation": "no"
+                "reservation": "no",
+                "wikidata": "Q136595576"
             }
         },
         {
@@ -14942,11 +14956,11 @@
             "id": 12790713290,
             "lat": 34.6495211,
             "lon": 135.3847130,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:07:30Z",
+            "version": 8,
+            "changeset": 173934700,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "ヨルダン館",
                 "amenity": "exhibition_centre",
@@ -14955,7 +14969,8 @@
                 "name:en": "Jordan Pavilion",
                 "name:ja": "ヨルダンパビリオン",
                 "ref": "P04",
-                "reservation": "no"
+                "reservation": "no",
+                "wikidata": "Q136564649"
             }
         },
         {
@@ -14963,11 +14978,11 @@
             "id": 12790713291,
             "lat": 34.6495484,
             "lon": 135.3848728,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 8,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:14:24Z",
+            "version": 9,
+            "changeset": 173935030,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "ペルー館",
                 "amenity": "exhibition_centre",
@@ -14976,7 +14991,8 @@
                 "name:en": "Peru Pavilion",
                 "name:ja": "ペルーパビリオン",
                 "ref": "P05",
-                "reservation": "no"
+                "reservation": "no",
+                "wikidata": "Q136565058"
             }
         },
         {
@@ -14984,11 +15000,11 @@
             "id": 12790713292,
             "lat": 34.6496033,
             "lon": 135.3851928,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:11:11Z",
+            "version": 8,
+            "changeset": 173934879,
+            "user": "Japanbird",
+            "uid": 23447271,
             "tags": {
                 "alt_name": "モザンビーク館",
                 "amenity": "exhibition_centre",
@@ -14998,7 +15014,8 @@
                 "name:en": "Mozambique Pavilion",
                 "name:ja": "モザンビークパビリオン",
                 "ref": "P08",
-                "reservation": "no"
+                "reservation": "no",
+                "wikidata": "Q136564736"
             }
         },
         {
@@ -39309,11 +39326,11 @@
         {
             "type": "way",
             "id": 1350834624,
-            "timestamp": "2025-10-05T08:29:15Z",
-            "version": 17,
-            "changeset": 172857885,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:39:06Z",
+            "version": 18,
+            "changeset": 173933475,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12497500436,
                 12769799398,
@@ -39338,17 +39355,18 @@
                 "name:zh": "共享空间-C",
                 "ref": "S01",
                 "roof:shape": "flat",
+                "wikidata": "Q136557924",
                 "wikimedia_commons": "File:大阪・関西万博 コモンズ館C.jpg"
             }
         },
         {
             "type": "way",
             "id": 1350834625,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 13,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T02:34:04Z",
+            "version": 14,
+            "changeset": 173908269,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12497500440,
                 12497500439,
@@ -39363,7 +39381,7 @@
                 "alt_name": "コモンズA",
                 "building": "yes",
                 "building:colour": "dimgray",
-                "building:levels": "2",
+                "building:levels": "1",
                 "mapillary": "2531369107237094",
                 "name": "コモンズ-A",
                 "name:en": "Commons-A",
@@ -39372,6 +39390,7 @@
                 "ref": "P03",
                 "roof:colour": "silver",
                 "roof:shape": "flat",
+                "wikidata": "Q136557852",
                 "wikimedia_commons": "File:コモンズA（キルギス・スリランカ・イエメン 他26カ国）パビリオン.jpg"
             }
         },
@@ -39428,11 +39447,11 @@
         {
             "type": "way",
             "id": 1350834630,
-            "timestamp": "2025-10-12T08:01:16Z",
-            "version": 11,
-            "changeset": 173167121,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T02:36:39Z",
+            "version": 12,
+            "changeset": 173908312,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12497500473,
                 12497500470,
@@ -39453,17 +39472,18 @@
                 "name:zh": "共享空间-B",
                 "ref": "C23",
                 "roof:shape": "flat",
+                "wikidata": "Q136557904",
                 "wikimedia_commons": "File:大阪・関西万博 コモンズ館B.jpg"
             }
         },
         {
             "type": "way",
             "id": 1350834632,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 14,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:39:42Z",
+            "version": 15,
+            "changeset": 173933505,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12497500481,
                 12497500478,
@@ -39487,17 +39507,18 @@
                 "ref": "S14",
                 "roof:colour": "silver",
                 "roof:shape": "flat",
+                "wikidata": "Q136558071",
                 "wikimedia_commons": "File:EXPO 2025 Commons-D Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1350834633,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 9,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T23:01:24Z",
+            "version": 10,
+            "changeset": 173951627,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12497500485,
                 12497500484,
@@ -39517,7 +39538,8 @@
                 "name": "EXPOメッセ \"WASSE\"",
                 "name:en": "EXPO Exhibition Center \"WASSE\"",
                 "roof:shape": "flat",
-                "website": "https://www.expo2025.or.jp/expo-map-index/main-facilities/expomesse/"
+                "website": "https://www.expo2025.or.jp/expo-map-index/main-facilities/expomesse/",
+                "wikidata": "Q136600164"
             }
         },
         {
@@ -39956,11 +39978,11 @@
         {
             "type": "way",
             "id": 1365419864,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 8,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T23:08:12Z",
+            "version": 9,
+            "changeset": 173951738,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12644336054,
                 12770592526,
@@ -39977,6 +39999,7 @@
                 "name": "西ゲート",
                 "name:en": "West Gate",
                 "name:ja": "西ゲート",
+                "wikidata": "Q136603474",
                 "wikimedia_commons": "File:大阪・関西万博 西ゲート広場.jpg"
             }
         },
@@ -40143,11 +40166,11 @@
         {
             "type": "way",
             "id": 1366032379,
-            "timestamp": "2025-10-12T15:07:45Z",
-            "version": 15,
-            "changeset": 173186048,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-28T16:01:49Z",
+            "version": 16,
+            "changeset": 173890736,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "nodes": [
                 12650395958,
                 12650395957,
@@ -40168,6 +40191,7 @@
                 "ref": "E01",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/kansai-pv/",
+                "wikidata": "Q136513535",
                 "wikimedia_commons": "File:関西 パビリオン.jpg"
             }
         },
@@ -40216,11 +40240,11 @@
         {
             "type": "way",
             "id": 1366032390,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 19,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:41:08Z",
+            "version": 20,
+            "changeset": 173933574,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12650408218,
                 12794592083,
@@ -40241,31 +40265,8 @@
                 "name:ja": "コモンズ-F館",
                 "ref": "C05",
                 "roof:colour": "lightgray",
+                "wikidata": "Q136558129",
                 "wikimedia_commons": "File:コモンズF（アルメニア・カザフスタン・ブルネイ） パビリオン.jpg"
-            }
-        },
-        {
-            "type": "way",
-            "id": 1366032404,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 13,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
-            "nodes": [
-                12650408314,
-                12650408313,
-                12650408312,
-                13208469491,
-                12813535641,
-                12650408314
-            ],
-            "tags": {
-                "building": "yes",
-                "building:colour": "goldenrod",
-                "building:levels": "2",
-                "roof:colour": "goldenrod",
-                "roof:shape": "flat"
             }
         },
         {
@@ -40314,11 +40315,11 @@
         {
             "type": "way",
             "id": 1366067868,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 14,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:40:22Z",
+            "version": 15,
+            "changeset": 173933544,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12859898545,
                 12768212125,
@@ -40349,6 +40350,7 @@
                 "name:zh": "共享空间-E",
                 "ref": "S17",
                 "roof:shape": "flat",
+                "wikidata": "Q136558119",
                 "wikimedia_commons": "File:EXPO2025 COMMONS-E.jpg"
             }
         },
@@ -40598,11 +40600,11 @@
         {
             "type": "way",
             "id": 1366073334,
-            "timestamp": "2025-05-09T11:27:38Z",
-            "version": 10,
-            "changeset": 166023529,
-            "user": "Daiji Maps",
-            "uid": 10880270,
+            "timestamp": "2025-10-30T12:21:58Z",
+            "version": 11,
+            "changeset": 173973527,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12650732349,
                 12650732347,
@@ -40671,7 +40673,8 @@
                 "name": "静けさの森",
                 "name:en": "Forest of Tranquility",
                 "name:ja": "静けさの森",
-                "website": "https://forest-expo2025.jp/"
+                "website": "https://forest-expo2025.jp/",
+                "wikidata": "Q136674288"
             }
         },
         {
@@ -41000,11 +41003,11 @@
         {
             "type": "way",
             "id": 1366084856,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 11,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T22:59:45Z",
+            "version": 12,
+            "changeset": 173951595,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12650850391,
                 12752397880,
@@ -41021,6 +41024,7 @@
                 "name:en": "East Gate",
                 "name:ja": "東ゲート",
                 "name:zh": "东门",
+                "wikidata": "Q136603672",
                 "wikimedia_commons": "File:Expo 2025 East Gate 01.JPG"
             }
         },
@@ -42536,11 +42540,11 @@
         {
             "type": "way",
             "id": 1380586192,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 8,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:33:33Z",
+            "version": 9,
+            "changeset": 173933215,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12650395955,
                 12650395952,
@@ -42560,6 +42564,7 @@
                 "ref": "E03",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/ntt/",
+                "wikidata": "Q136565277",
                 "wikimedia_commons": "File:Expo 2025 NTT Pavilion 01.JPG"
             }
         },
@@ -42777,11 +42782,11 @@
         {
             "type": "way",
             "id": 1381306369,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:04:35Z",
+            "version": 9,
+            "changeset": 173934593,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787420315,
                 12787420310,
@@ -42802,17 +42807,18 @@
                 "ref": "C16",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/indonesia/",
+                "wikidata": "Q136564581",
                 "wikimedia_commons": "File:Indonesia Pavilion - EXPO 2025.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381306370,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:42:50Z",
+            "version": 9,
+            "changeset": 173933655,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787420319,
                 12787420308,
@@ -42835,17 +42841,18 @@
                 "reservation": "recommended",
                 "short_name": "豪州館",
                 "website": "https://www.expo2025.or.jp/official-participant/australia/",
+                "wikidata": "Q136513248",
                 "wikimedia_commons": "File:大阪・関西万博 オーストラリアパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381306371,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:30:35Z",
+            "version": 8,
+            "changeset": 173971490,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787420322,
                 12787420321,
@@ -42866,17 +42873,18 @@
                 "reservation": "no",
                 "short_name": "サウジアラビア館",
                 "website": "https://www.expo2025.or.jp/official-participant/saudi-arabia__trashed/",
+                "wikidata": "Q136565171",
                 "wikimedia_commons": "File:大阪・関西万博 サウジアラビアパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316108,
-            "timestamp": "2025-10-12T03:24:47Z",
-            "version": 10,
-            "changeset": 173161968,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:08:30Z",
+            "version": 11,
+            "changeset": 173934743,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555034,
                 12787555035,
@@ -42897,17 +42905,18 @@
                 "ref": "C02",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/luxembourg/",
+                "wikidata": "Q136564689",
                 "wikimedia_commons": "File:大阪・関西万博 ルクセンブルクパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316109,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 8,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:10:33Z",
+            "version": 9,
+            "changeset": 173934845,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555038,
                 12787555039,
@@ -42926,17 +42935,18 @@
                 "ref": "C10",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/monaco/",
+                "wikidata": "Q136564720",
                 "wikimedia_commons": "File:EXPO2025 Principality of Monaco Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316110,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:09:16Z",
+            "version": 8,
+            "changeset": 173934780,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555042,
                 12787555043,
@@ -42955,17 +42965,18 @@
                 "ref": "P02",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/malaysia/",
+                "wikidata": "Q136564698",
                 "wikimedia_commons": "File:マレーシア パビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316111,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:09:55Z",
+            "version": 8,
+            "changeset": 173934811,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555046,
                 12787555047,
@@ -42984,17 +42995,18 @@
                 "ref": "P37",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/malta/",
+                "wikidata": "Q136564711",
                 "wikimedia_commons": "File:大阪・関西万博 マルタパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316112,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 8,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:16:12Z",
+            "version": 9,
+            "changeset": 173935092,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555050,
                 12787555051,
@@ -43016,17 +43028,18 @@
                 "ref": "P20",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/portugal/",
+                "wikidata": "Q10872760",
                 "wikimedia_commons": "File:Expo2025-PortugalPavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316113,
-            "timestamp": "2025-10-12T08:01:16Z",
-            "version": 8,
-            "changeset": 173167121,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:48:49Z",
+            "version": 9,
+            "changeset": 173933875,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555055,
                 12787555056,
@@ -43050,17 +43063,18 @@
                 "ref": "S08",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/belgium/",
+                "wikidata": "Q136513385",
                 "wikimedia_commons": "File:大阪・関西万博 ベルギーパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316114,
-            "timestamp": "2025-09-14T08:49:00Z",
-            "version": 8,
-            "changeset": 171905759,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:15:39Z",
+            "version": 9,
+            "changeset": 173935069,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555060,
                 13142233153,
@@ -43084,17 +43098,18 @@
                 "ref": "S20",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/official-participant/poland/",
+                "wikidata": "Q136565094",
                 "wikimedia_commons": "File:Poland Pavilion Expo 2025.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316115,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 8,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:49:56Z",
+            "version": 9,
+            "changeset": 173933923,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555066,
                 12787555067,
@@ -43114,17 +43129,18 @@
                 "reservation": "no",
                 "short_name": "ブルガリア館",
                 "website": "https://www.expo2025.or.jp/official-participant/bulgaria/",
+                "wikidata": "Q136513509",
                 "wikimedia_commons": "File:EXPO2025 Republic of Bulgaria Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316116,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:01:33Z",
+            "version": 8,
+            "changeset": 173934461,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555070,
                 12787555071,
@@ -43143,17 +43159,18 @@
                 "ref": "P12",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/france/",
+                "wikidata": "Q134973564",
                 "wikimedia_commons": "File:大阪・関西万博 フランスパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316117,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 6,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:14:57Z",
+            "version": 7,
+            "changeset": 173935047,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555074,
                 12787555075,
@@ -43171,17 +43188,18 @@
                 "ref": "P09",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/philippines/",
+                "wikidata": "Q10872759",
                 "wikimedia_commons": "File:大阪・関西万博 フィリピンパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316118,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 10,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:13:10Z",
+            "version": 11,
+            "changeset": 173934970,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555078,
                 12787555079,
@@ -43204,17 +43222,18 @@
                 "ref": "P36",
                 "reservation": "no",
                 "website": "https://thenordics-expoosaka.com/",
+                "wikidata": "Q136565040",
                 "wikimedia_commons": "File:EXPO2025 Nordic Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316119,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:03:14Z",
+            "version": 8,
+            "changeset": 173934525,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555082,
                 12787555083,
@@ -43234,17 +43253,18 @@
                 "ref": "S16",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/hungary/",
+                "wikidata": "Q136558197",
                 "wikimedia_commons": "File:Expo2025-HungaryPavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316120,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 9,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:46:50Z",
+            "version": 10,
+            "changeset": 173933803,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555087,
                 12787555088,
@@ -43265,17 +43285,18 @@
                 "ref": "P34",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/bahrain/",
+                "wikidata": "Q136513299",
                 "wikimedia_commons": "File:大阪・関西万博 バーレーンパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316121,
-            "timestamp": "2025-10-12T08:01:16Z",
-            "version": 8,
-            "changeset": 173167121,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-26T16:26:43Z",
+            "version": 9,
+            "changeset": 173802731,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "nodes": [
                 12787555091,
                 12787555092,
@@ -43300,17 +43321,18 @@
                 "reservation": "yes",
                 "short_name": "イタリア館",
                 "website": "https://www.expo2025.or.jp/official-participant/holysee/",
+                "wikidata": "Q136558211",
                 "wikimedia_commons": "File:EXPO 2025 Italy Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316122,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 7,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:39:01Z",
+            "version": 8,
+            "changeset": 173971787,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555096,
                 12787555097,
@@ -43328,17 +43350,18 @@
                 "ref": "C11",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/tur/",
+                "wikidata": "Q136564459",
                 "wikimedia_commons": "File:トルコ パビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316123,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 9,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:41:16Z",
+            "version": 12,
+            "changeset": 173971903,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787555100,
                 12847353149,
@@ -43359,17 +43382,18 @@
                 "ref": "P35",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/turkmenistan/",
+                "wikidata": "Q136564493",
                 "wikimedia_commons": "File:EXPO2025 Turkmenistan Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316124,
-            "timestamp": "2025-10-12T03:24:47Z",
-            "version": 9,
-            "changeset": 173161968,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:02:11Z",
+            "version": 10,
+            "changeset": 173934486,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556504,
                 12787556505,
@@ -43391,17 +43415,18 @@
                 "ref": "C03",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/germany/",
+                "wikidata": "Q136558183",
                 "wikimedia_commons": "File:大阪・関西万博 ドイツパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316125,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 9,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:54:58Z",
+            "version": 10,
+            "changeset": 173934144,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556508,
                 12787556509,
@@ -43423,17 +43448,18 @@
                 "ref": "P28",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/china/",
+                "wikidata": "Q136541645",
                 "wikimedia_commons": "File:Expo 2025 China Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316126,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:57:53Z",
+            "version": 9,
+            "changeset": 173934273,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556513,
                 12787556514,
@@ -43453,17 +43479,19 @@
                 "ref": "P38",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/czechia/",
-                "wikimedia_commons": "File:大阪・関西万博 チェコパビリオン.jpg"
+                "wikidata": "Q135111295",
+                "wikimedia_commons": "File:大阪・関西万博 チェコパビリオン.jpg",
+                "wikipedia": "ja:チェコパビリオン (大阪・関西万博)"
             }
         },
         {
             "type": "way",
             "id": 1381316127,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 10,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:37:26Z",
+            "version": 11,
+            "changeset": 173971740,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556517,
                 12787556518,
@@ -43485,17 +43513,18 @@
                 "ref": "C12",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/official-participant/thailand/",
+                "wikidata": "Q136564397",
                 "wikimedia_commons": "File:EXPO2025 Thailand Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316128,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:35:00Z",
+            "version": 8,
+            "changeset": 173971648,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556521,
                 12787556522,
@@ -43516,17 +43545,18 @@
                 "ref": "C13",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/spain/",
+                "wikidata": "Q136565236",
                 "wikimedia_commons": "File:EXPO 2025 Spain Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316129,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 6,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:35:55Z",
+            "version": 7,
+            "changeset": 173971678,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556525,
                 12787556526,
@@ -43544,17 +43574,18 @@
                 "name:ja": "スイスパビリオン",
                 "name:zh": "瑞士馆",
                 "ref": "P22",
-                "website": "https://www.expo2025.or.jp/official-participant/switzerland/"
+                "website": "https://www.expo2025.or.jp/official-participant/switzerland/",
+                "wikidata": "Q136565243"
             }
         },
         {
             "type": "way",
             "id": 1381316130,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:32:51Z",
+            "version": 8,
+            "changeset": 173971574,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556530,
                 12787556531,
@@ -43574,17 +43605,18 @@
                 "ref": "S11",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/singapore/",
+                "wikidata": "Q136565222",
                 "wikimedia_commons": "File:大阪・関西万博 シンガポールパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316131,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:55:56Z",
+            "version": 8,
+            "changeset": 173934188,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556534,
                 12787556535,
@@ -43603,17 +43635,18 @@
                 "ref": "P21",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/colombia/",
+                "wikidata": "Q136541659",
                 "wikimedia_commons": "File:Expo2025-ColombiaPavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316132,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:08:00Z",
+            "version": 9,
+            "changeset": 173934717,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556538,
                 12787556539,
@@ -43634,17 +43667,18 @@
                 "ref": "P27",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/kuwait/",
+                "wikidata": "Q136564679",
                 "wikimedia_commons": "File:Expo2025-KuwaitPavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316133,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 8,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:52:16Z",
+            "version": 9,
+            "changeset": 173934018,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556544,
                 13208469802,
@@ -43666,17 +43700,18 @@
                 "ref": "P19",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/official-participant/canada__trashed/",
+                "wikidata": "Q136541560",
                 "wikimedia_commons": "File:カナダ パビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316134,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:33:40Z",
+            "version": 9,
+            "changeset": 173971598,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556547,
                 12787556548,
@@ -43696,17 +43731,18 @@
                 "ref": "C04",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/official-participant/korea/",
+                "wikidata": "Q136565230",
                 "wikimedia_commons": "File:韓国 パビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316135,
-            "timestamp": "2025-09-14T08:49:00Z",
-            "version": 10,
-            "changeset": 171905759,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:16:48Z",
+            "version": 11,
+            "changeset": 173935110,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556554,
                 12787556555,
@@ -43729,17 +43765,18 @@
                 "ref": "P17",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/qatar/",
+                "wikidata": "Q136565141",
                 "wikimedia_commons": "File:カタール パビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316136,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:12:30Z",
+            "version": 8,
+            "changeset": 173934928,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556556,
                 12787556557,
@@ -43758,17 +43795,18 @@
                 "ref": "S13",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/official-participant/netherlands/",
+                "wikidata": "Q136564757",
                 "wikimedia_commons": "File:EXPO 2025 Netherlands Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316137,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 9,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:13:44Z",
+            "version": 10,
+            "changeset": 173934991,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12778971023,
                 12787556560,
@@ -43789,17 +43827,18 @@
                 "ref": "S15",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/oman/",
+                "wikidata": "Q136558240",
                 "wikimedia_commons": "File:EXPO2025 Oman Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316138,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:43:36Z",
+            "version": 9,
+            "changeset": 173933685,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556563,
                 12787556564,
@@ -43820,17 +43859,18 @@
                 "ref": "P23",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/austria/",
+                "wikidata": "Q136513266",
                 "wikimedia_commons": "File:Expo2025Austria Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316139,
-            "timestamp": "2025-07-17T12:12:47Z",
-            "version": 7,
-            "changeset": 169058412,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:47:14Z",
+            "version": 8,
+            "changeset": 173972167,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556568,
                 12787556569,
@@ -43854,17 +43894,18 @@
                 "reservation": "yes",
                 "short_name": "英国館",
                 "website": "https://www.expo2025.or.jp/official-participant/united-great-britain-and-norrn-ireland/",
+                "wikidata": "Q136564379",
                 "wikimedia_commons": "File:Expo2025United Kingdom Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316140,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 9,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:49:21Z",
+            "version": 10,
+            "changeset": 173972247,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556577,
                 12797219605,
@@ -43885,17 +43926,18 @@
                 "ref": "C18",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/uzbekistan/",
+                "wikidata": "Q136564392",
                 "wikimedia_commons": "File:大阪・関西万博 ウズベキスタンパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316141,
-            "timestamp": "2025-09-14T08:49:00Z",
-            "version": 9,
-            "changeset": 171905759,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:46:01Z",
+            "version": 10,
+            "changeset": 173972121,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556578,
                 12787556579,
@@ -43920,17 +43962,18 @@
                 "short_name": "アラブパビリオン",
                 "website": "https://www.expo2025.or.jp/official-participant/uae/",
                 "wheelchair": "yes",
+                "wikidata": "Q136564358",
                 "wikimedia_commons": "File:Expo2025-UAEPavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316142,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-30T11:48:28Z",
+            "version": 8,
+            "changeset": 173972206,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556582,
                 12787556583,
@@ -43951,17 +43994,18 @@
                 "reservation": "no",
                 "short_name": "米国館",
                 "website": "https://www.expo2025.or.jp/official-participant/united-states-of-america/",
+                "wikidata": "Q135103339",
                 "wikimedia_commons": "File:大阪・関西万博 アメリカパビリオン.jpg"
             }
         },
         {
             "type": "way",
             "id": 1381316143,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 8,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:44:19Z",
+            "version": 9,
+            "changeset": 173933710,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556586,
                 12787556587,
@@ -43980,17 +44024,18 @@
                 "ref": "C07",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/azerbaijan/",
+                "wikidata": "Q136513284",
                 "wikimedia_commons": "File:Expo 2025 Azerbaijan Pavilion 01.JPG"
             }
         },
         {
             "type": "way",
             "id": 1381316144,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 9,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:05:09Z",
+            "version": 10,
+            "changeset": 173934611,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12787556590,
                 12787556591,
@@ -44019,6 +44064,7 @@
                 "ref": "P01",
                 "reservation": "no",
                 "website": "https://www.expo2025.or.jp/official-participant/ireland/",
+                "wikidata": "Q136564600",
                 "wikimedia_commons": "File:EXPO2025-ireland.jpg"
             }
         },
@@ -44197,11 +44243,11 @@
         {
             "type": "way",
             "id": 1382221587,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 8,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:32:56Z",
+            "version": 9,
+            "changeset": 173933192,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12797219229,
                 12797219228,
@@ -44221,17 +44267,18 @@
                 "ref": "E05",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/mitsubishi/",
+                "wikidata": "Q136597154",
                 "wikimedia_commons": "File:Expo2025 三菱未来館.jpg"
             }
         },
         {
             "type": "way",
             "id": 1382221591,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:35:32Z",
+            "version": 7,
+            "changeset": 173933294,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12797219243,
                 12797219242,
@@ -44250,6 +44297,7 @@
                 "ref": "E06",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/panasonic/",
+                "wikidata": "Q136597978",
                 "wikimedia_commons": "File:Expo2025-Panasonicpavillion.jpg"
             }
         },
@@ -44596,11 +44644,11 @@
         {
             "type": "way",
             "id": 1382232122,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:34:58Z",
+            "version": 8,
+            "changeset": 173933275,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12797303404,
                 12797303401,
@@ -44625,6 +44673,7 @@
                 "ref": "E02",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/osaka-pv/",
+                "wikidata": "Q136597634",
                 "wikimedia_commons": "File:Expo 2025 OSAKA Healthcare Pavillion.jpg"
             }
         },
@@ -44712,11 +44761,11 @@
         {
             "type": "way",
             "id": 1382519032,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 7,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T11:32:18Z",
+            "version": 8,
+            "changeset": 173971554,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12799911555,
                 12799911569,
@@ -44746,6 +44795,7 @@
                 "name:ja": "セルビアパビリオン",
                 "ref": "C19",
                 "reservation": "no",
+                "wikidata": "Q136565206",
                 "wikimedia_commons": "File:大阪・関西万博 セルビアパビリオン.jpg"
             }
         },
@@ -44870,11 +44920,11 @@
         {
             "type": "way",
             "id": 1382805100,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 10,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:17:34Z",
+            "version": 11,
+            "changeset": 173935135,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802562372,
                 12802562371,
@@ -44894,17 +44944,18 @@
                 "name:zh": "罗马尼亚馆",
                 "ref": "S21",
                 "reservation": "no",
+                "wikidata": "Q136565151",
                 "wikimedia_commons": "File:EXPO2025 Romania Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1382805101,
-            "timestamp": "2025-07-17T12:12:47Z",
-            "version": 9,
-            "changeset": 169058412,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:42:06Z",
+            "version": 10,
+            "changeset": 173933626,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802562376,
                 12802562375,
@@ -44916,13 +44967,13 @@
                 "alt_name": "アンゴラ館",
                 "amenity": "exhibition_centre",
                 "country": "AO",
-                "description": "未開館",
                 "mapillary": "23978662748397732",
                 "name": "アンゴラパビリオン",
                 "name:en": "Republic of Angola Pavilion",
                 "name:ja": "アンゴラパビリオン",
                 "name:zh": "安哥拉馆",
                 "ref": "S23",
+                "wikidata": "Q136513222",
                 "wikimedia_commons": "File:大阪・関西万博 アンゴラパビリオン.jpg"
             }
         },
@@ -44963,11 +45014,11 @@
         {
             "type": "way",
             "id": 1382805104,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:17:21Z",
+            "version": 7,
+            "changeset": 173932526,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802562389,
                 12802562388,
@@ -44985,17 +45036,18 @@
                 "ref": "X05",
                 "reservation": "yes",
                 "website": "https://www.expo2025-fukuoka-shin-ichi.jp/",
+                "wikidata": "Q136523338",
                 "wikimedia_commons": "File:Expo2025-DYNAMIC EQUILIBRIUM OF LIFE-pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1382805105,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 6,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:21:22Z",
+            "version": 7,
+            "changeset": 173932691,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802562394,
                 12802562393,
@@ -45013,17 +45065,19 @@
                 "ref": "X04",
                 "reservation": "yes",
                 "website": "https://expo2025.digitalnatureandarts.or.jp/",
-                "wikimedia_commons": "File:EXPO2025 null2 Appearance.jpg"
+                "wikidata": "Q134286794",
+                "wikimedia_commons": "File:EXPO2025 null2 Appearance.jpg",
+                "wikipedia": "ja:Null²"
             }
         },
         {
             "type": "way",
             "id": 1382805106,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 5,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:23:46Z",
+            "version": 6,
+            "changeset": 173932796,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802562399,
                 12802562398,
@@ -45041,17 +45095,18 @@
                 "ref": "X03",
                 "reservation": "yes",
                 "website": "https://expo2025-kuragepj.com/",
+                "wikidata": "Q136523364",
                 "wikimedia_commons": "File:Expo 2025 Future of Life Pavilion 01.JPG"
             }
         },
         {
             "type": "way",
             "id": 1382805107,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 6,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:22:06Z",
+            "version": 7,
+            "changeset": 173932721,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802622004,
                 12802622003,
@@ -45069,6 +45124,7 @@
                 "ref": "X06",
                 "reservation": "yes",
                 "website": "https://shojikawamori.jp/expo2025/",
+                "wikidata": "Q136513584",
                 "wikimedia_commons": "File:EXPO2025 LIVE EARTH JOURNEY.jpg"
             }
         },
@@ -45103,11 +45159,11 @@
         {
             "type": "way",
             "id": 1382805109,
-            "timestamp": "2025-06-23T14:10:32Z",
-            "version": 4,
-            "changeset": 168005877,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:19:08Z",
+            "version": 5,
+            "changeset": 173932583,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802622032,
                 12802622031,
@@ -45126,17 +45182,18 @@
                 "name:ja": "いのちの未来",
                 "ref": "X02",
                 "reservation": "yes",
-                "website": "https://expo2025future-of-life.com/"
+                "website": "https://expo2025future-of-life.com/",
+                "wikidata": "Q136523442"
             }
         },
         {
             "type": "way",
             "id": 1382805113,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 6,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:16:14Z",
+            "version": 7,
+            "changeset": 173932481,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802622088,
                 12802622087,
@@ -45188,17 +45245,18 @@
                 "ref": "X08",
                 "reservation": "recommended",
                 "website": "https://expo2025-inochinoakashi.com/",
+                "wikidata": "Q136565349",
                 "wikimedia_commons": "File:Osaka Expo2025 Dialogue Theater - sign of life -.jpg"
             }
         },
         {
             "type": "way",
             "id": 1382805114,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 5,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:18:22Z",
+            "version": 6,
+            "changeset": 173932560,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802622095,
                 12802622093,
@@ -45217,6 +45275,7 @@
                 "ref": "X07",
                 "reservation": "yes",
                 "website": "https://expo2025earthmart.jp/",
+                "wikidata": "Q136565368",
                 "wikimedia_commons": "File:EXPO2025 Earth Mart.jpg"
             }
         },
@@ -45296,11 +45355,11 @@
         {
             "type": "way",
             "id": 1382815781,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 6,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-28T16:02:59Z",
+            "version": 7,
+            "changeset": 173890773,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "nodes": [
                 12802681164,
                 12802681163,
@@ -45317,17 +45376,18 @@
                 "name:ja": "ウーマンズパビリオン",
                 "ref": "E09",
                 "reservation": "yes",
+                "wikidata": "Q136513554",
                 "wikimedia_commons": "File:Expo 2025 Women's Pavilion 01.JPG"
             }
         },
         {
             "type": "way",
             "id": 1382815782,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 9,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T15:07:03Z",
+            "version": 10,
+            "changeset": 173934684,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802681171,
                 12805782458,
@@ -45355,17 +45415,19 @@
                 "ref": "E10",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/japanese-government/",
-                "wikimedia_commons": "File:Expo2025Japan Pavilion.jpg"
+                "wikidata": "Q134889966",
+                "wikimedia_commons": "File:Expo2025Japan Pavilion.jpg",
+                "wikipedia": "ja:日本館 (大阪・関西万博)"
             }
         },
         {
             "type": "way",
             "id": 1382815785,
-            "timestamp": "2025-10-08T16:04:32Z",
-            "version": 7,
-            "changeset": 173012771,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T23:03:03Z",
+            "version": 8,
+            "changeset": 173951653,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802712113,
                 12802712112,
@@ -45386,17 +45448,18 @@
                 "name:en": "Shining hat",
                 "name:ja": "シャインハット",
                 "ref": "E11",
+                "wikidata": "Q136599629",
                 "wikimedia_commons": "File:Expo 2025 EXPO Hall Shining Hat 01.JPG"
             }
         },
         {
             "type": "way",
             "id": 1382815792,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 5,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T23:03:49Z",
+            "version": 6,
+            "changeset": 173951666,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802712150,
                 12802712146,
@@ -45411,6 +45474,7 @@
                 "name:en": "EXPO National Day Hall Ray Garden",
                 "name:ja": "EXPOナショナルデーホール 「レイガーデン」",
                 "ref": "E12",
+                "wikidata": "Q136600713",
                 "wikimedia_commons": "File:Expo 2025 EXPO National Day Hall Ray Garden 01.JPG"
             }
         },
@@ -45457,11 +45521,11 @@
         {
             "type": "way",
             "id": 1382815794,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 8,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:36:43Z",
+            "version": 9,
+            "changeset": 173933356,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12802712168,
                 12802712167,
@@ -45480,17 +45544,18 @@
                 "ref": "E07",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/sumitomo/",
+                "wikidata": "Q136565304",
                 "wikimedia_commons": "File:EXPO2025 Sumitomo Pavilion.jpg"
             }
         },
         {
             "type": "way",
             "id": 1382865063,
-            "timestamp": "2025-10-11T11:15:30Z",
-            "version": 9,
-            "changeset": 173132163,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:03:58Z",
+            "version": 10,
+            "changeset": 173934558,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12803115038,
                 12805298760,
@@ -45511,6 +45576,7 @@
                 "ref": "C17",
                 "reservation": "no",
                 "website": "https://www.japanexpo-india.com/",
+                "wikidata": "Q136564535",
                 "wikimedia_commons": "File:大阪・関西万博 インドパビリオン.jpg"
             }
         },
@@ -46110,11 +46176,11 @@
         {
             "type": "way",
             "id": 1383214433,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 6,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:49:25Z",
+            "version": 7,
+            "changeset": 173933898,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805761761,
                 12805761760,
@@ -46134,17 +46200,18 @@
                 "name:zh": "巴西馆",
                 "ref": "P26",
                 "reservation": "no",
-                "website": "https://apexbrasil.com.br/content/expoosaka/br/ja/pavilhao-do-brasil.html"
+                "website": "https://apexbrasil.com.br/content/expoosaka/br/ja/pavilhao-do-brasil.html",
+                "wikidata": "Q136513481"
             }
         },
         {
             "type": "way",
             "id": 1383214435,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 4,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:14:55Z",
+            "version": 5,
+            "changeset": 173932372,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782202,
                 12805782201,
@@ -46197,17 +46264,18 @@
                 "ref": "X01",
                 "reservation": "yes",
                 "website": "https://co-being.jp/expo2025/",
+                "wikidata": "Q136565359",
                 "wikimedia_commons": "File:Osaka Expo2025 Better Co-Being.jpg"
             }
         },
         {
             "type": "way",
             "id": 1383214438,
-            "timestamp": "2025-06-13T16:42:58Z",
-            "version": 9,
-            "changeset": 167583533,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T15:11:54Z",
+            "version": 10,
+            "changeset": 173934903,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782227,
                 12805782226,
@@ -46220,12 +46288,12 @@
                 "amenity": "exhibition_centre",
                 "check_date": "2025-05-28",
                 "country": "NP",
-                "description": "未開館",
                 "mapillary": "1240256234111008",
                 "name": "ネパールパビリオン",
                 "name:en": "Nepal Pavilion",
                 "name:ja": "ネパールパビリオン",
                 "ref": "C01",
+                "wikidata": "Q136564742",
                 "wikimedia_commons": "File:大阪・関西万博 ネパールパビリオン.jpg"
             }
         },
@@ -46343,11 +46411,11 @@
         {
             "type": "way",
             "id": 1383214463,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 5,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-28T15:58:37Z",
+            "version": 6,
+            "changeset": 173890580,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "nodes": [
                 12805782315,
                 12805782314,
@@ -46367,7 +46435,8 @@
                 "name:zh": "夜晚的地球",
                 "ref": "C09",
                 "reservation": "no",
-                "website": "https://www.expo2025.or.jp/news/news-20250317-02/"
+                "website": "https://www.expo2025.or.jp/news/news-20250317-02/",
+                "wikidata": "Q136564944"
             }
         },
         {
@@ -46473,11 +46542,11 @@
         {
             "type": "way",
             "id": 1383214508,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 5,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:34:10Z",
+            "version": 6,
+            "changeset": 173933237,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782564,
                 12805782563,
@@ -46494,6 +46563,7 @@
                 "name:ja": "ORA外食パビリオン 宴〜UTAGE〜",
                 "ref": "W05",
                 "website": "https://www.expo2025.or.jp/domestic-pv/ora/",
+                "wikidata": "Q136597389",
                 "wikimedia_commons": "File:Expo 2025 ORA Food Service Pavilion 01.JPG"
             }
         },
@@ -46527,11 +46597,11 @@
         {
             "type": "way",
             "id": 1383214510,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 4,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:29:59Z",
+            "version": 5,
+            "changeset": 173933090,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782608,
                 12805782607,
@@ -46548,17 +46618,18 @@
                 "ref": "W03",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/gas/",
+                "wikidata": "Q136596187",
                 "wikimedia_commons": "File:Expo 2025 Gas Pavilion 01.JPG"
             }
         },
         {
             "type": "way",
             "id": 1383214511,
-            "timestamp": "2025-06-23T15:05:44Z",
-            "version": 4,
-            "changeset": 168008342,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:37:31Z",
+            "version": 5,
+            "changeset": 173933401,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782612,
                 12805782611,
@@ -46576,7 +46647,9 @@
                 "ref": "W02",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/tamayama/",
-                "wikimedia_commons": "File:Expo2025 TechWorld（TAIWAN）.jpg"
+                "wikidata": "Q134739990",
+                "wikimedia_commons": "File:Expo2025 TechWorld（TAIWAN）.jpg",
+                "wikipedia": "ja:TECH WORLD"
             }
         },
         {
@@ -46598,11 +46671,11 @@
         {
             "type": "way",
             "id": 1383214522,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 7,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:24:57Z",
+            "version": 8,
+            "changeset": 173932882,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782718,
                 12805782632,
@@ -46644,17 +46717,18 @@
                 "ref": "W06",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/domestic-pv/zeri/",
+                "wikidata": "Q136565378",
                 "wikimedia_commons": "File:大阪・関西万博 ブルーオーシャンドーム.jpg"
             }
         },
         {
             "type": "way",
             "id": 1383214523,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 6,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-28T16:25:08Z",
+            "version": 7,
+            "changeset": 173891779,
+            "user": "Kenichi Nakagawa",
+            "uid": 3232818,
             "nodes": [
                 12805782724,
                 12805782723,
@@ -46671,17 +46745,19 @@
                 "ref": "W07",
                 "reservation": "yes",
                 "website": "https://www.expo2025.or.jp/domestic-pv/bandai-namco/",
-                "wikimedia_commons": "File:Expo 2025 GUNDAM NEXT FUTURE PAVILION 01.JPG"
+                "wikidata": "Q134570242",
+                "wikimedia_commons": "File:Expo 2025 GUNDAM NEXT FUTURE PAVILION 01.JPG",
+                "wikipedia": "ja:GUNDAM NEXT FUTURE PAVILION"
             }
         },
         {
             "type": "way",
             "id": 1383214546,
-            "timestamp": "2025-07-06T01:22:19Z",
-            "version": 5,
-            "changeset": 168543863,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:36:08Z",
+            "version": 6,
+            "changeset": 173933318,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782842,
                 12805782817,
@@ -46702,6 +46778,7 @@
                 "ref": "W09",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/domestic-pv/pasona/",
+                "wikidata": "Q136598424",
                 "wikimedia_commons": "File:大阪・関西万博 PASONAパビリオン.jpg"
             }
         },
@@ -46747,11 +46824,11 @@
         {
             "type": "way",
             "id": 1383214556,
-            "timestamp": "2025-07-10T15:47:33Z",
-            "version": 5,
-            "changeset": 168750075,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-29T14:38:04Z",
+            "version": 6,
+            "changeset": 173933435,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805782881,
                 12805782880,
@@ -46769,6 +46846,7 @@
                 "ref": "W10",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/domestic-pv/yoshimoto/",
+                "wikidata": "Q136598726",
                 "wikimedia_commons": "File:Expo 2025 Yoshimoto Pavilion 01.JPG"
             }
         },
@@ -46841,11 +46919,11 @@
         {
             "type": "way",
             "id": 1383214584,
-            "timestamp": "2025-07-17T09:54:55Z",
-            "version": 5,
-            "changeset": 169052587,
-            "user": "Phybbyemu",
-            "uid": 18110850,
+            "timestamp": "2025-10-29T14:29:08Z",
+            "version": 6,
+            "changeset": 173933059,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12805783003,
                 12805783002,
@@ -46862,6 +46940,7 @@
                 "ref": "L05",
                 "reservation": "yes",
                 "website": "https://www.expo2025-futurecity.jp/",
+                "wikidata": "Q136595961",
                 "wikimedia_commons": "File:Future City pavilion EXPO2025.jpg"
             }
         },
@@ -48194,11 +48273,11 @@
         {
             "type": "way",
             "id": 1383968426,
-            "timestamp": "2025-10-12T14:25:32Z",
-            "version": 4,
-            "changeset": 173183978,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T12:02:34Z",
+            "version": 5,
+            "changeset": 173972744,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12813789409,
                 12817283473,
@@ -48246,6 +48325,7 @@
                 "building:levels": "1",
                 "name": "サステナドーム",
                 "roof:shape": "half-hipped",
+                "wikidata": "Q136674228",
                 "wikimedia_commons": "File:Sustainadome 20250830 162141.jpg"
             }
         },
@@ -49016,11 +49096,11 @@
         {
             "type": "way",
             "id": 1391817842,
-            "timestamp": "2025-10-12T10:46:27Z",
-            "version": 2,
-            "changeset": 173173741,
-            "user": "K_Sakanoshita",
-            "uid": 389520,
+            "timestamp": "2025-10-30T12:34:48Z",
+            "version": 3,
+            "changeset": 173974113,
+            "user": "Japanbird",
+            "uid": 23447271,
             "nodes": [
                 12883456201,
                 12883456202,
@@ -49042,7 +49122,9 @@
                 "amenity": "exhibition_centre",
                 "name": "森になる建築",
                 "website": "https://foresting-architecture.jp/",
-                "wikimedia_commons": "File:Foresting-architecture,Expo2025.jpg"
+                "wikidata": "Q136263320",
+                "wikimedia_commons": "File:Foresting-architecture,Expo2025.jpg",
+                "wikipedia": "ja:森になる建築"
             }
         },
         {
@@ -54027,24 +54109,6 @@
             "id": 12650408221,
             "lat": 34.6513902,
             "lon": 135.3849396
-        },
-        {
-            "type": "node",
-            "id": 12650408312,
-            "lat": 34.6507880,
-            "lon": 135.3810756
-        },
-        {
-            "type": "node",
-            "id": 12650408313,
-            "lat": 34.6507513,
-            "lon": 135.3815614
-        },
-        {
-            "type": "node",
-            "id": 12650408314,
-            "lat": 34.6510354,
-            "lon": 135.3813741
         },
         {
             "type": "node",
@@ -73272,12 +73336,6 @@
         },
         {
             "type": "node",
-            "id": 12813535641,
-            "lat": 34.6510074,
-            "lon": 135.3813404
-        },
-        {
-            "type": "node",
             "id": 12813690222,
             "lat": 34.6522043,
             "lon": 135.3758080
@@ -81891,12 +81949,6 @@
             "id": 13208469477,
             "lat": 34.6512526,
             "lon": 135.3816720
-        },
-        {
-            "type": "node",
-            "id": 13208469491,
-            "lat": 34.6508765,
-            "lon": 135.3811824
         },
         {
             "type": "node",
