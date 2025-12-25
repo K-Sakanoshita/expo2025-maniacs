@@ -143,6 +143,10 @@
         "ja": "(出典/記事: Wikipedia)",
         "en": "(Source/Article: Wikipedia)"
     },
+    "defaultSelect": {
+        "ja": "🌏おまかせ",
+        "en": "(default)"
+    },
     "undefined": {
         "ja": "(名称不明)",
         "en": "(name unknown)"
@@ -294,5 +298,9 @@
     "changing_table": {
         "ja": "おむつ替え台",
         "en": "Diaper changing station"
+    },
+    "searchKeyword": {
+        "ja": "キーワード検索",
+        "en": "searchKeyword"
     }
 }

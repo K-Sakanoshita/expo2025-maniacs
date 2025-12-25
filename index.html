@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/10/31 by OpenStreetMap</title>
+    <title>EXPO2025 万博マニアックマップ ver 2025/12/25 by OpenStreetMap</title>
+    <meta name="google-site-verification" content="" />
     <meta charset="utf-8" />
     <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
     <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
@@ -13,45 +14,11 @@
     <meta property="og:image:width" content="940" />
     <meta property="og:image:height" content="788" />
 
+    <link rel="icon" href="./favicon.ico" sizes="any">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs@6.0.6/dist/theme/mermaid.min.css" />
-    <link href=" https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.min.css " rel="stylesheet">
     <link rel="stylesheet" href="system.css" />
-    <link rel="stylesheet" href="user.css" />
-    <script src=" https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.2/dist/maplibre-gl.min.js "></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/pmtiles@4.3.0/dist/pmtiles.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gridjs@6.0.6/dist/gridjs.production.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/json5@2.2.3/dist/index.min.js"></script>
-    <script defer src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/glottologist@2.0.3/dist/glottologist.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
-    <script defer src="./lib/osmtogeojson.js"></script>
-    <script defer src="./lib/basiclib.js"></script>
-    <script defer src="./lib/winlib.js"></script>
-    <script defer src="./lib/geolib.js"></script>
-    <script defer src="./lib/gsheetlib.js"></script>
-    <script defer src="./lib/poilib.js"></script>
-    <script defer src="./lib/listtable.js"></script>
-    <script defer src="./lib/overpasslib.js"></script>
-    <script defer src="./detail/poistatuslib.js"></script>
-    <script defer src="./detail/activities.js"></script>
-    <script defer src="./detail/wikipedia.js"></script>
-    <script defer src="./detail/osmbasic.js"></script>
-    <script defer src="./cmapmaker.js"></script>
-    <script defer src="./initialize.js"></script>
+    <script type="module" src="./loader.module.js"></script>
 </head>
 
 <body>
@@ -62,12 +29,9 @@
                 </div>
             </main>
             <aside id="bottom-pane">
-                <div id="btmHeader" class="row p-1 m-0 sticky-top">
-                    <div class="col-12 p-0 m-0 progress" style="height: 3px;">
-                        <div id="btmWindow_progress"
-                            class="progress-bar progress-bar-striped progress-bar-animated mb-2" style="height: 3px"
-                            role="progressbar"></div>
-                    </div>
+                <div id="btmHeader" class="row p-1 m-1 sticky-top">
+                    <div id="panelProgress" class="col-12 p-0 mb-2 progress progress-bar bg-success"></div>
+
                     <div class="col-12 p-0 d-flex">
                         <div class="dropdown-menu" aria-labelledby="btnMenu" id="btnMenu"></div>
                         <button class="btn btn-light border-secondary p-0 me-1 d-none" data-bs-toggle="dropdown"
@@ -91,15 +55,15 @@
                     </div>
                     <div class="col-5 p-0">
                         <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
-                            <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarMinimize"
+                            <button class="btn btn-light border-secondary p-1" id="sidebarMinimize"
                                 onclick="javascript: winCont.setSidebar('mini')">
                                 <i class="fa-solid fa-window-minimize"></i>
                             </button>
-                            <button class="btn btn-light border-secondary p-1 btn-max" id="sidebarChange"
+                            <button class="btn btn-light border-secondary p-1" id="sidebarChange"
                                 onclick="javascript: winCont.setSidebar('change')">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
-                            <button class="btn btn-light border-secondary p-1 btn-max"
+                            <button class="btn btn-light border-secondary p-1"
                                 onclick="javascript:cMapMaker.viewDetail()">
                                 <i class="fa-solid fa-check"></i>
                             </button>

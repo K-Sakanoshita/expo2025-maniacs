@@ -1,6 +1,8 @@
 function doGet(e) {
 
   // シート取得&データ入力
+  // update: 2025/11/01
+
   var ss = SpreadsheetApp.openById(SpreadsheetApp.getActiveSpreadsheet().getId());
   var sheet, idsheet;
   var jsonSt = e.parameter.json || "";
@@ -13,7 +15,7 @@ function doGet(e) {
 
   // \uXXXX形式を通常の文字に戻す関数
   function unescapeUnicode(str) {
-    return str.replace(/\/\/u([\dA-Fa-f]{4})/g, function (match, grp) {
+    return str.replace(/\\u([0-9A-Fa-f]{4})/g, function (match, grp) {
       return String.fromCharCode(parseInt(grp, 16));
     });
   }
@@ -103,7 +105,23 @@ function doGet(e) {
   };
 
   Logger.log(retdata);
-  return ContentService.createTextOutput(retdata).setMimeType(ContentService.MimeType.JSON);
+  //return ContentService.createTextOutput(retdata).setMimeType(ContentService.MimeType.JSON);
+
+  // ここから追記：JSONP対応
+  var callback = (e && e.parameter && e.parameter.callback) ? String(e.parameter.callback) : "";
+  // コールバック名は [a-zA-Z0-9_.$] のみ許可（XSS対策）
+  var isValidCallback = /^[\w.$]+$/.test(callback);
+
+  var output = ContentService.createTextOutput();
+  if (callback && isValidCallback) {
+    output.setMimeType(ContentService.MimeType.JAVASCRIPT);
+    output.setContent(callback + "(" + retdata + ")");
+  } else {
+    output.setMimeType(ContentService.MimeType.JSON);
+    output.setContent(retdata);
+  }
+  return output;
+
 }
 
 function getData(sheet) {

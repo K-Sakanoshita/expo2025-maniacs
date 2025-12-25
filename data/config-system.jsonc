@@ -22,35 +22,19 @@
             "name": "大阪・関西万博最終日(2025年10月13日時点)",
             "skip": false
         },
-        "OSMFJ_NOPOI": { // for planet globe
-            "style": "./tiles/osmfj_nopoi.json",
-            "name": "OpenStreetMap(3D/OSMFJ提供)",
+        "OSMFJ_NOPOI_SNOW": {
+            "style": "./tiles/osmfj_nopoi_snow.json",
+            "name": "雪景色・昼間",
             "skip": false
         },
-        "OSM_Standard": {
-            "style": {
-                "version": 8,
-                "sources": {
-                    "rtile": {
-                        "type": "raster",
-                        "tiles": [
-                            "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        ],
-                        "tileSize": 256,
-                        "maxzoom": 19,
-                        "attribution": "<a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
-                    }
-                },
-                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf",
-                "layers": [
-                    {
-                        "id": "raster-tiles",
-                        "type": "raster",
-                        "source": "rtile"
-                    }
-                ]
-            },
-            "name": "OpenStreetMap標準地図(2D)",
+        "OSMFJ_NOPOI_NIGHT_SNOW": {
+            "style": "./tiles/osmfj_nopoi_night_snow.json",
+            "name": "雪景色・夜",
+            "skip": false
+        },
+        "OSMFJ_NOPOI": {
+            "style": "./tiles/osmfj_nopoi.json",
+            "name": "最新地図(OpenStreetMap)",
             "skip": false
         },
         "GSI_seamlessphoto": {

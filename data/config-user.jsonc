@@ -1,7 +1,6 @@
 // Community Mapmaker User Config
 {
     "map": {
-        "miniMap": true, // miniMap表示時はtrue
         "changeMap": true, // 地図切り替え時はtrue
         "tileName": "EXPO2025_LASTDAY", // タイル一覧は config-system.jsonc へ
         "viewCenter": [
@@ -12,12 +11,12 @@
         "maxPitch": 75,
         "maxBounds": [ // 地図の表示範囲(左下、右上)
             [
-                135.36,
-                34.635
+                135.34,
+                34.62
             ],
             [
-                135.405,
-                34.665
+                135.42,
+                34.67
             ]
         ],
         "initZoom": 15.5,
@@ -33,6 +32,7 @@
         }
     },
     "minimap": { // 地球儀表示時の初期設定
+        "use": true, // 地球儀利用時はtrue
         "height": 200,
         "initZoom": 2,
         "viewCenter": [
@@ -61,7 +61,6 @@
         "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
         "poiZoom": {
             // アイコンの前後位置は後ろの方が手前になる
-            "expo2025_private": 12,
             "traffic_board": 16,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
@@ -83,42 +82,13 @@
             "expo2025_art": 16,
             "expo2025_move": 16,
             "expo2025_restarea": 16,
-            "expo2025_drinks": 16,
             "expo2025_foods": 16,
             "expo2025_stores": 16,
             "expo2025_vending": 16,
-            "expo2025_store": 16,
             "activity": 12
         },
         "editZoom": {
             // 編集時に追加するpoiZoom
-            "expo2025_private": 15,
-            "traffic_board": 16,
-            "expo2025_placeL": 12,
-            "expo2025_placeW": 12,
-            "expo2025_placeC": 12,
-            "expo2025_placeE": 12,
-            "expo2025_placeS": 12,
-            "expo2025_placeX": 12,
-            "expo2025_placeP": 12,
-            "expo2025_placeF": 12,
-            "expo2025_pedestrian": 12,
-            "expo2025_terminal": 12,
-            "expo2025_gatehouse": 12,
-            "expo2025_wall": 15,
-            "expo2025_door": 15,
-            "expo2025_pole": 16,
-            "green_area": 15,
-            "expo2025_exp": 15,
-            "expo2025_service": 15,
-            "expo2025_art": 15,
-            "expo2025_move": 15,
-            "expo2025_restarea": 15,
-            "expo2025_drinks": 15,
-            "expo2025_foods": 15,
-            "expo2025_stores": 15,
-            "expo2025_vending": 15,
-            "expo2025_store": 15,
             "activity": 12
         }
     },
@@ -137,9 +107,10 @@
             "🚩国旗・旗竿": "expo2025_pole",
             "(アイコン非表示)": "nopoi"
         },
-        "action": "ChangePOI" // ChangeMap:背景地図切り替え / ChangePOI:メニューに会ったOverpass名のPOIを表示
+        "action": "ChangePoi" // ChangeMap:背景地図切り替え / ChangePoi:メニューに会ったOverpass名のPOIを表示
     },
     "listTable": {
+        "backgroundImage": "./image/bgimage.png",
         "height": 0.6, // リスト時の高さ(1を最大とした割合)
         "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
         "target": "targets", // targets: / activity:google sheetsを表示
@@ -153,6 +124,7 @@
     },
     "thumbnail": {
         "use": true,
+        "limits": 20, // 画像の制限数
         "slideThumbWidth": "320",
         "modalThumbWidth": "800"
     },
@@ -162,7 +134,7 @@
         "targetName": "activity"
     },
     "static": {
-        "mode": true,
+        "use": true,
         "osmjsons": [
             "./data/expo2025.min.json"
         ]

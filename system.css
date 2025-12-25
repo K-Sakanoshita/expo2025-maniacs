@@ -30,7 +30,8 @@ h4 {
 
 h5 {
     font-size: 1.2em !important;
-    font-weight: bold;
+    font-weight: bold !important;
+    background-color: #FFFFFF;
 }
 
 /* body dom */
@@ -58,30 +59,12 @@ a {
     /* デフォルト = 縦並び */
 }
 
-@media (min-width: 1080px) {
-    .two-pane {
-        flex-direction: row;
-        height: 100vh;
-    }
-
-    .two-pane aside {
-        width: 480px;
-        flex: 0 0 0px;
-        height: 100vh;
-    }
-
-    .two-pane main {
-        flex: 1 1 auto;
-        height: 100vh;
-    }
-}
-
 #top-pane {
-    background: #f0f0f0;
+    background-color: #faf8f8;
 }
 
 #bottom-pane {
-    background: #f0f0f0;
+    background-color: #faf8f8;
     overflow: auto;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -92,11 +75,15 @@ a {
 }
 
 #btmHeader {
-    background-color: #f0f0f0;
+    background-color: #FFFFFF;
 }
 
 #btmWindow {
     overflow-y: auto;
+}
+
+#panelProgress {
+    height: 6px
 }
 
 .minimapDatail {
@@ -104,10 +91,6 @@ a {
     width: 98%;
     margin-right: 4px;
     background: linear-gradient(to right, #4286f4, #373B44);
-}
-
-.basemenu {
-    background-image: linear-gradient(335deg, rgb(235, 235, 240), rgb(255, 255, 255));
 }
 
 /* list */
@@ -219,10 +202,6 @@ span.fs-14 {
     overflow-x: hidden;
 }
 
-.btn-max {
-    width: 40px;
-}
-
 input[type="search"] {
     font-size: 14px;
     display: inline-block;
@@ -272,6 +251,10 @@ tr.selected td {
     cursor: pointer;
 }
 
+#splashImage {
+    display: none;
+}
+
 #PinchImage {
     display: none;
     height: auto;
@@ -300,6 +283,7 @@ tr.selected td {
 
 #tableid {
     font-size: 14px;
+    background-color: #ffffff;
 }
 
 @keyframes swing {
@@ -333,4 +317,130 @@ tr.selected td {
 
 .fade-message.hide {
     opacity: 0;
+}
+
+/* パネル */
+.basemenu {
+    background-image: var(--bg-url, none);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    max-width: unset;
+}
+
+/* タイトル/サブ：読みやすく、派手にしない */
+.basemenu .title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.2;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.basemenu .subtitle {
+    color: #6b7280;
+    font-size: .85rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+/* 1行目の高さを少しだけ確保 */
+.basemenu>.col-12.p-1.me-2.d-flex.align-items-center:first-child {
+    min-height: 54px;
+}
+
+/* 2行目：間隔だけ微調整、装飾は最小限 */
+.basemenu .col-12.p-1.me-2.d-flex.align-items-center:nth-of-type(2) {
+    gap: .5rem;
+}
+
+/* セレクトは標準のまま＋縁だけ薄く */
+.basemenu .form-select {
+    background: #fff;
+}
+
+/* アイコンボタンは小さめ・軽めに（統一サイズ） */
+.basemenu .btn {
+    border-radius: 10px !important;
+}
+
+.basemenu .btn.menu,
+.basemenu .col-12.p-1.me-2.d-flex.align-items-center:nth-of-type(2) .btn {
+    height: 36px;
+    min-width: 36px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+}
+
+.search-area {
+    position: relative;
+    flex-wrap: nowrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding-right: 38px;
+    /* ボタン分の余白 */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: 38px;
+}
+
+.search-box .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #555;
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box .search-btn:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+}
+
+/* モバイル */
+@media (min-width: 1080px) {
+    .two-pane {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .two-pane aside {
+        width: 480px;
+        flex: 0 0 0px;
+        height: 100vh;
+    }
+
+    .two-pane main {
+        flex: 1 1 auto;
+        height: 100vh;
+    }
+
+    .maplibregl-ctrl-bottom-right .maplibregl-ctrl-group {
+        border-radius: 10px;
+    }
+
+    .maplibregl-ctrl-bottom-right .maplibregl-ctrl button {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+    }
 }
