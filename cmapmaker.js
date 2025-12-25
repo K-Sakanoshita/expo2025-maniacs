@@ -218,9 +218,9 @@ class CMapMaker {
     changeMap() {	// Change Map Style(rotation)
         let styleName = mapLibre.changeMap()
         winCont.showMessage(Conf.tile[styleName].name);
-        setTimeout(() => {
-            this.eventMoveMap()
-        }, 1000)
+        let snow = styleName.indexOf("SNOW") > -1;      // SNOWの文字列があれば雪を降らす
+        winCont.fallsSnow(snow)
+        setTimeout(() => { this.eventMoveMap() }, 1000)
     }
 
     setVisitedFilter(visitedFilterStatus) {

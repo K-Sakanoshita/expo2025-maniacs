@@ -416,6 +416,23 @@ tr.selected td {
     border-radius: 6px;
 }
 
+.maplibregl-ctrl-bottom-right .maplibregl-ctrl-group {
+    border-radius: 8px;
+}
+
+.maplibregl-ctrl-bottom-right .maplibregl-ctrl button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+#snow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* 地図操作を妨げない */
+}
+
 /* モバイル */
 @media (min-width: 1080px) {
     .two-pane {
@@ -432,15 +449,5 @@ tr.selected td {
     .two-pane main {
         flex: 1 1 auto;
         height: 100vh;
-    }
-
-    .maplibregl-ctrl-bottom-right .maplibregl-ctrl-group {
-        border-radius: 10px;
-    }
-
-    .maplibregl-ctrl-bottom-right .maplibregl-ctrl button {
-        width: 48px;
-        height: 48px;
-        padding: 0;
     }
 }
