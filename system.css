@@ -746,7 +746,7 @@ tr.selected td {
     z-index: 10;
 }
 
-#listArea .list-group-item { position: relative; padding-right: 5rem; }
+#listArea .list-group-item { position: relative; min-height: 2.75rem; padding-right: 5rem; }
 #listArea .list-group-item.list-area-item { padding-right: .75rem; }
 #listArea .list-area-item .list-area-name { padding-right: 5rem; }
 .poi-status-toggle { color: #6c757d; }
