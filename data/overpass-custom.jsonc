@@ -234,7 +234,18 @@
                 "viewArea": true,
                 "stroke": "#606060",
                 "stroke-width": 2,
-                "fill-opacity": 0.5
+                "fill-opacity": 0.5,
+                "renderer": "linear-extrusion",
+                "extrusion": {
+                    "minzoom": 16, // 遠景は従来の線、近景は立体表示
+                    "height": 1.5, // heightタグ未指定時の高さ（m）
+                    "width": 0.2, // widthタグ未指定時の幅（m）
+                    "typeTag": "barrier",
+                    "styles": {
+                        "wall": { "color": "#606060", "opacity": 1 },
+                        "fence": { "color": "#71808a", "opacity": 0.45 }
+                    }
+                }
             }
         },
         "expo2025_exp": {
