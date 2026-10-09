@@ -217,7 +217,7 @@
                 "stroke": "#F6EADF",
                 "stroke-width": 1,
                 "fill-opacity": 0.8,
-                "belowFeatures": true // エリア名や施設アイコンより下に描画
+                "beforeLayer": "expo2025_placeL-text" // 背景地図より上、エリア名より下に描画
             }
         },
         "expo2025_wall": {
