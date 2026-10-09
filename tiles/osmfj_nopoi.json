@@ -4799,7 +4799,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "none"
+                "visibility": "visible"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4859,7 +4859,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "none"
+                "visibility": "visible"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4922,7 +4922,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "none"
+                "visibility": "visible"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
@@ -4977,7 +4977,7 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "visibility": "none"
+                "visibility": "visible"
             },
             "paint": {
                 "line-color": "hsl(248, 1%, 41%)",
