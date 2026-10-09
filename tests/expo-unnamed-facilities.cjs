@@ -58,11 +58,20 @@ for (const lang of ['ja', 'en']) {
     for (const [index, row] of rendered.entries()) {
         const columns = row.children[0].children;
         assert.equal(columns[0].children[0].classList.contains('list-name-fallback'), false);
-        assert.equal(columns[1].children[0].classList.contains('list-name-fallback'), index !== 1);
-        assert.equal(columns[2].children[0].className, 'list-icon');
-        assert.equal(columns[2].children[0].src, './icon/toilet.png');
-        assert.equal(columns[2].children[1].textContent, rows[index][3]);
+        const categoryColumn = columns.at(-1);
+        assert.equal(categoryColumn.children[0].className, 'list-icon');
+        assert.equal(categoryColumn.children[0].src, './icon/toilet.png');
+        assert.equal(categoryColumn.children[1].classList.contains('list-name-fallback'), index !== 1);
+        assert.equal(categoryColumn.children[1].textContent, index === 3 ? messages.listUnnamed[lang] : rows[index][3]);
+        assert.equal(columns.length, index === 1 ? 3 : 2, 'substituted names must not duplicate the category');
+        if (index === 1) assert.equal(columns[1].children[0].textContent, 'Named toilet');
     }
+    // Layouts without a category destination retain their fallback name column.
+    config.list.columns.style[2].fallbackName = false;
+    context.table.makeListArea(result);
+    assert.equal(listArea.children.at(-1).children[0].children[0].children[1].children[0].textContent,
+        category.amenity.toilets);
+    config.list.columns.style[2].fallbackName = true;
     context.list_keyword.value = category.amenity.drinking_water;
     context.table.makeList(false);
     assert.deepEqual(Array.from(context.table.getFilterList(), row => row[0]), ['node/3']);

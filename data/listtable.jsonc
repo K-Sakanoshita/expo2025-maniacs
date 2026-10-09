@@ -10,7 +10,8 @@
                 },
                 {
                     "className": "col-12 small",
-                    "icon": true
+                    "icon": true,
+                    "fallbackName": true
                 },
                 {
                     "className": "d-none"
