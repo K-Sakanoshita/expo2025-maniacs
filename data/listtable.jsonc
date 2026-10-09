@@ -1,0 +1,29 @@
+{
+    "list": {
+        "columns": {
+            "style": [
+                {
+                    "className": "col-2"
+                },
+                {
+                    "className": "col-10"
+                },
+                {
+                    "className": "d-none"
+                }
+            ],
+            "poiFields": [
+                "id",
+                "ref",
+                "name",
+                "reservation"
+            ],
+            "actFields": [
+                "id",
+                "#ref",
+                "memo",
+                "#reservation"
+            ]
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "osm": {
+        "Playgrounds_Park": {
+            "overpass": [
+                "nwr[\"leisure\"=\"park\"]",
+                "nwr[\"leisure\"=\"playground\"]",
+                "nwr[\"landuse\"=\"recreation_ground\"]"
+            ],
+            "tags": [
+                "leisure=park",
+                "leisure=playground",
+                "landuse=recreation_ground"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "viewArea": false,
+                "belowFeatures": true, // 公園の面と境界線を道路・建物・遊具より奥に表示
+                "stroke": "#60B060",
+                "stroke-width": 4,
+                "fill-opacity": 0
+            }
+        },
+        "Playgrounds_Play": {
+            "overpass": [
+                "nwr[\"playground\"]"
+            ],
+            "tags": [
+                "playground"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "viewArea": false,
+                "stroke": "#c0c0c0",
+                "stroke-width": 1,
+                "fill-opacity": 0.25
+            }
+        },
+        "Playgrounds_Etc": {
+            "overpass": [
+                "nwr[\"amenity\"=\"toilets\"]",
+                "nwr[\"amenity\"=\"bench\"]",
+                "nwr[\"amenity\"=\"drinking_water\"]",
+                "nwr[\"amenity\"=\"vending_machine\"]"
+            ],
+            "tags": [
+                "amenity"
+            ],
+            "expression": {
+                "poiView": true, // true時はアイコン表示
+                "viewArea": false,
+                "stroke": "#c0c0c0",
+                "stroke-width": 1,
+                "fill-opacity": 0.25
+            }
+        },
+        "Green": {
+            "overpass": [
+                "nwr[\"natural\"=\"tree\"]",
+                "nwr[\"natural\"=\"tree_row\"]",
+                "nwr[\"barrier\"=\"hedge\"]"
+            ],
+            "tags": [
+                "natural",
+                "barrier"
+            ],
+            "expression": {
+                "poiView": false, // true時はアイコン表示
+                "viewArea": true,
+                "belowFeatures": true, // 緑地の面・線・点・文字をアイコンより奥に表示
+                "stroke": "#50A050",
+                "stroke-width": 3,
+                "fill-opacity": 0.5
+            },
+            "titles": [
+                "name",
+                "operator"
+            ]
+        }
+    }
+}

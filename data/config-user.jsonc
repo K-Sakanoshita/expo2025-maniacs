@@ -1,15 +1,14 @@
-// Community Mapmaker User Config
 {
     "map": {
-        "changeMap": true, // 地図切り替え時はtrue
-        "tileName": "EXPO2025_LASTDAY", // タイル一覧は config-system.jsonc へ
+        "changeMap": true,
+        "tileName": "EXPO2025_LASTDAY",
         "viewCenter": [
             135.38360336,
             34.64993865
         ],
         "viewPitch": 30,
         "maxPitch": 75,
-        "maxBounds": [ // 地図の表示範囲(左下、右上)
+        "maxBounds": [
             [
                 135.34,
                 34.62
@@ -21,18 +20,19 @@
         ],
         "initZoom": 15.5,
         "maxZoom": 21,
-        "detailZoom": 18, // モーダルダイアログ表示時のズームサイズ
+        "detailZoom": 18,
+        "zoomMessageThreshold": 15.5,
         "textFont": [
             "Noto Sans Bold"
-        ], // 使用可能なフォント（spriteに依存）
+        ],
         "textSize": 12,
-        "polygonMarker": { // ポリゴン設定
+        "polygonMarker": {
             "fill-color": "#CC6666",
             "fill-opacity": 0.3
         }
     },
-    "minimap": { // 地球儀表示時の初期設定
-        "use": true, // 地球儀利用時はtrue
+    "minimap": {
+        "use": true,
         "height": 200,
         "initZoom": 2,
         "viewCenter": [
@@ -52,15 +52,44 @@
         "flag": 0.5,
         "textFont": [
             "Noto Sans Regular"
-        ], // 使用可能なフォント（spriteに依存）
+        ],
         "textSize": 10.5,
-        "textViewZoom": 16 // アイコンに文字を表示するズームレベル
+        "textViewZoom": 16,
+        "markerColors": {
+            "hover": {
+                "stroke": "#e9a05b"
+            },
+            "attention": {
+                "fill": "#ffffff",
+                "stroke": "#ffc786"
+            },
+            "green": {
+                "fill": "#ffffff",
+                "stroke": "#51b3a1"
+            },
+            "middle": {
+                "fill": "#ffffff",
+                "stroke": "#4d77ac"
+            },
+            "normal": {
+                "fill": "#ffffff",
+                "stroke": "#bfbfe1"
+            },
+            "visited": {
+                "fill": "#ffffff",
+                "stroke": "#9c9c9c"
+            }
+        }
     },
     "poiView": {
-        "poiActLoad": false, // 起動時にActivityを読み込むか
-        "poiFilter": "all", // listTable更新時 all:全て / filter:絞り込み / "":非連動
+        "poiActLoad": false,
         "poiZoom": {
-            // アイコンの前後位置は後ろの方が手前になる
+            "historic": 16,
+            "natural": 16,
+            "amenity": 16,
+            "shop": 16,
+            "indoor": 18,
+            "activity": 12,
             "traffic_board": 16,
             "expo2025_placeL": 12,
             "expo2025_placeW": 12,
@@ -84,18 +113,24 @@
             "expo2025_restarea": 16,
             "expo2025_foods": 16,
             "expo2025_stores": 16,
-            "expo2025_vending": 16,
-            "activity": 12
+            "expo2025_vending": 16
+        },
+        "mobilePoiZoom": {
+            "indoor": 17
         },
         "editZoom": {
-            // 編集時に追加するpoiZoom
             "activity": 12
-        }
+        },
+        "poiFilter": "all"
     },
-    "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
+    "poiData": {
+        "maxFeatures": 12000,
+        "pruneThreshold": 15000,
+        "applyToStatic": false
+    },
+    "selectItem": {
         "default": "expo2025_exp",
-        "menu": //"",
-        {
+        "menu": {
             "🏛️パビリオン・展示": "expo2025_exp",
             "🏢施設・🎶ステージ": "expo2025_service",
             "🚻休憩/トイレ・💧給水": "expo2025_restarea",
@@ -107,37 +142,111 @@
             "🚩国旗・旗竿": "expo2025_pole",
             "(アイコン非表示)": "nopoi"
         },
-        "action": "ChangePoi" // ChangeMap:背景地図切り替え / ChangePoi:メニューに会ったOverpass名のPOIを表示
+        "action": "ChangePoi",
+        "showAutoOption": false
+    },
+    "sideBar": {
+        "everyView": true,
+        "initView": "view"
     },
     "listTable": {
         "backgroundImage": "./image/bgimage.png",
-        "height": 0.6, // リスト時の高さ(1を最大とした割合)
-        "category": "menu", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
-        "target": "targets", // targets: / activity:google sheetsを表示
-        "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
+        "category": "menu",
+        "target": "targets",
+        "allActs": true,
         "playback": {
             "view": false,
             "zoomLevel": 15,
             "timer": 4000
         },
-        "download": false
+        "download": false,
+        "csvColumn": [
+            "id",
+            "categoryJa",
+            "name",
+            "parentName",
+            "tag",
+            "categoryData",
+            "iconFile",
+            "lng",
+            "lat"
+        ],
+        "height": 0.6
     },
     "thumbnail": {
         "use": true,
-        "limits": 20, // 画像の制限数
+        "limits": 20,
         "slideThumbWidth": "320",
         "modalThumbWidth": "800"
     },
     "google": {
-        "Analytics": "",
-        "AppScript": "", //"https://script.google.com/macros/s/AKfycbyA1Z5e7xo3Oh39hJTSfaM-Wu_H7_Pz9iZmGDpU4bwZW4KrIKwXHFkVj-g26ZW70g5Tkw/exec",
-        "targetName": "activity"
+        "AppScript": "",
+        "targetName": "activity",
+        "Analytics": ""
     },
     "static": {
         "use": true,
         "osmjsons": [
             "./data/expo2025.min.json"
         ]
+    },
+    "indoor": {
+        "use": false,
+        "defaultLevel": "0",
+        "floorHeightMeters": 3.66,
+        "buildingLevelHeightMeters": 3.66,
+        "floorOffsetMeters": 0.2,
+        "backgroundTransportationOpacity": 0.08,
+        "buildingSource": {
+            "type": "vectorTile",
+            "styleSource": "openmaptiles",
+            "dedicatedSource": "indoor-building-tiles",
+            "sourceUrl": "https://tile.openstreetmap.jp/data/planet.json",
+            "sourceLayer": "building",
+            "heightProperty": "render_height",
+            "minHeightProperty": "render_min_height",
+            "deduplicate": true
+        },
+        "fallbackLevels": {
+            "highway=corridor": "0"
+        },
+        "underground": {
+            "useWithoutBuilding": true,
+            "activationRadiusMeters": 60
+        },
+        "largeBuildingActivation": {
+            "use": true,
+            "minZoom": 15,
+            "referenceZoom": 18,
+            "viewportCoverageRatio": 1,
+            "groupNearbyBuildings": false
+        },
+        "buildingGroup": {
+            "smallBuildingAreaSquareMeters": 1500,
+            "groupRadiusMeters": 50,
+            "activationRadiusMeters": 50,
+            "requireIndoorPoi": true
+        },
+        "levels": {
+            "discoverFromData": true,
+            "order": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+            ]
+        },
+        "control": {
+            "view": true,
+            "urlParameter": "level",
+            "label": "フロア"
+        }
     },
     "wikipedia": {
         "marker": "wikipedia.svg",
@@ -148,15 +257,14 @@
         "image": true
     },
     "etc": {
-        "localSave": "expo2025", // 訪問済み機能フラグ(有効時はアプリ名、無効時は"")
-        "reverseIcon": true, // true:訪問済みを目立たせる / false:訪問済みを目立たせない
-        "editMode": false, // 編集メニューの表示/非表示
+        "localSave": "expo2025",
+        "reverseIcon": true,
+        "editMode": false,
         "splashUrl": "./image/ogimage.png",
         "loadingUrl": "./image/loading.gif"
     },
     "menu": {
         "main": [
-            // トップメニュー一覧
             {
                 "glot-model": "about",
                 "linkto": "javascript:cMapMaker.about()",
@@ -190,15 +298,7 @@
                 "divider": false
             }
         ],
-        // 詳細表示のハンバーガーメニュー
         "modal": [
-            /*
-            {
-                "glot-model": "act_add",
-                "linkto": "javascript:modalActs.edit({form:'expo2025'})",
-                "divider": false
-            },
-            */
             {
                 "glot-model": "copyShareLink",
                 "linkto": "javascript:cMapMaker.shareURL()",
@@ -206,27 +306,11 @@
             },
             {
                 "glot-model": "osm_open",
-                "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",
+                "linkto": "javascript:winCont.osm_open(cMapMaker.openOSMid)",
                 "divider": false
             }
         ],
-        // 詳細モーダルの追加ボタン
-        "activities": [
-            /*
-            {
-                "btn_class": "btn btn-light border-secondary",
-                "code": "javascript:modalActs.edit({form:'expo2025'})",
-                "icon_class": "fas fa-clone",
-                "btn_glot_name": "act_add"
-            }
-            {
-                "btn_class": "btn btn-light border-secondary",
-                "code": "javascript:cMapMaker.shareURL()",
-                "icon_class": "fas fa-clone",
-                "btn_glot_name": "share_link"
-            }
-            */
-        ],
+        "activities": [],
         "editActivity": [
             {
                 "btn_class": "btn btn-light border-secondary p-1 btn-max pe-auto",

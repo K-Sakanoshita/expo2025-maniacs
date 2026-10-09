@@ -1,5 +1,81 @@
 {
     "activities": {
+        "sample": {
+            "header": "",
+            "footer": "",
+            "form": {
+                "actdate": {
+                    "glot": "act_date",
+                    "type": "date",
+                    "gsheet": "actdate"
+                },
+                "title": {
+                    "glot": "title",
+                    "type": "text",
+                    "gsheet": "title"
+                },
+                "category": {
+                    "glot": "category",
+                    "type": "text",
+                    "gsheet": "category"
+                },
+                "memo": {
+                    "glot": "act_memo",
+                    "type": "textarea",
+                    "gsheet": "body"
+                },
+                "detail_url": {
+                    "glot": "act_detail_url",
+                    "type": "url",
+                    "gsheet": "detail_url"
+                },
+                "picture_url1": {
+                    "glot": "act_picture_url1",
+                    "type": "image_url",
+                    "gsheet": "picture_url1"
+                },
+                "picture_url2": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
+                },
+                "picture_url3": {
+                    "glot": "act_picture_url3",
+                    "type": "image_url",
+                    "gsheet": "picture_url3"
+                },
+                "picture_url4": {
+                    "glot": "act_picture_url4",
+                    "type": "image_url",
+                    "gsheet": "picture_url4"
+                },
+                "picture_url5": {
+                    "glot": "act_picture_url5",
+                    "type": "image_url",
+                    "gsheet": "picture_url5"
+                },
+                "picture_url6": {
+                    "glot": "act_picture_url6",
+                    "type": "image_url",
+                    "gsheet": "picture_url6"
+                },
+                "picture_url7": {
+                    "glot": "act_picture_url7",
+                    "type": "image_url",
+                    "gsheet": "picture_url7"
+                },
+                "picture_url8": {
+                    "glot": "act_picture_url8",
+                    "type": "image_url",
+                    "gsheet": "picture_url8"
+                },
+                "video_url1": {
+                    "glot": "act_video_url1",
+                    "type": "video_url",
+                    "gsheet": "video_url1"
+                }
+            }
+        },
         "expo2025": {
             "header": "",
             "footer": "",

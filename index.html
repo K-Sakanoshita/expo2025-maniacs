@@ -2,99 +2,292 @@
 <html>
 
 <head>
-    <title>EXPO2025 万博マニアックマップ ver 2025/12/25 by OpenStreetMap</title>
-    <meta name="google-site-verification" content="" />
+    <title>EXPO2025 万博マニアックマップ</title>
     <meta charset="utf-8" />
-    <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap">
+    <script src="./lib/startuplocalization.js?ver=20261008-01"></script>
+    <meta name="description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
     <meta property="og:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
-    <meta property="og:url" content="https://k-sakanoshita.github.io/expo2025-maniacs" />
+    <meta property="og:url" content="https://k-sakanoshita.github.io/expo2025-maniacs/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
+    <meta property="og:title" content="EXPO2025 万博マニアックマップ" />
     <meta property="og:image" content="https://k-sakanoshita.github.io/expo2025-maniacs/image/ogimage.png" />
-    <meta property="og:image:width" content="940" />
-    <meta property="og:image:height" content="788" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EXPO2025 万博マニアックマップ" />
+    <meta name="twitter:description" content="EXPO2025 万博マニアックマップ by OpenStreetMap" />
+    <meta name="twitter:image" content="https://k-sakanoshita.github.io/expo2025-maniacs/image/ogimage.png" />
 
     <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="preload" as="image" href="./image/ogimage.png?ver=20260823-54" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-    <link rel="stylesheet" href="system.css" />
-    <script type="module" src="./loader.module.js"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://tile.openstreetmap.jp" crossorigin />
+    <link rel="stylesheet" href="system.css?ver=20261008-01" />
+<script type="module" src="./loader.module.js?ver=20261008-01"></script>
 </head>
 
 <body>
+    <div id="startupStatus" role="status" aria-live="polite">
+        <div class="startup-status-card">
+            <img class="startup-splash-image" src="./image/ogimage.png?ver=20260823-54"
+                alt="EXPO2025 万博マニアックマップ" />
+            <div class="startup-status-spinner" aria-hidden="true"></div>
+            <strong id="startupStatusMessage">アプリを読み込んでいます…</strong>
+            <button id="startupRetry" type="button" onclick="location.reload()">再読み込み</button>
+        </div>
+    </div>
+    <script>window.initStartupLocalization();</script>
     <div class="container-fluid m-0 p-0">
-        <article id="article" class="two-pane">
+        <article id="article" class="two-pane d-none" style="display: none">
             <main id="top-pane">
-                <div id="mapid"></div>
-                <canvas id="snow"></canvas>
-            </main>
-            <aside id="bottom-pane">
-                <div id="btmHeader" class="row p-1 m-1 sticky-top">
-                    <div id="panelProgress" class="col-12 p-0 mb-2 progress progress-bar bg-success"></div>
-
-                    <div class="col-12 p-0 d-flex">
-                        <div class="dropdown-menu" aria-labelledby="btnMenu" id="btnMenu"></div>
-                        <button class="btn btn-light border-secondary p-0 me-1 d-none" data-bs-toggle="dropdown"
-                            aria-expanded="true" style="width: 30px; height: 30px">
-                            <i class="fas fa-bars text-black"></i>
-                        </button>
-                        <span class="detailTitle" id="btmWindow_title"></span>
-                    </div>
-                </div>
-                <div id="btmWindow" class="" tabindex="-1">
-                    <div class="m-1">
-                        <div id="mini-map" class="d-none mx-auto"></div>
-                        <div id="btmWindow_message"></div>
-                        <div class="footerSpace"></div>
-                    </div>
-                </div>
-                <div id="sidebarCont" class="row fixed-bottom m-2 pe-none d-none">
-                    <div class="col-7 p-0">
-                        <div id="sideBarPanel"></div>
-                        <div class="btn-group btn-group-lg pe-auto"></div>
-                    </div>
-                    <div class="col-5 p-0">
-                        <div class="ms-auto btn-group btn-group-lg d-flex pe-auto">
-                            <button class="btn btn-light border-secondary p-1" id="sidebarMinimize"
-                                onclick="javascript: winCont.setSidebar('mini')">
-                                <i class="fa-solid fa-window-minimize"></i>
-                            </button>
-                            <button class="btn btn-light border-secondary p-1" id="sidebarChange"
-                                onclick="javascript: winCont.setSidebar('change')">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </button>
-                            <button class="btn btn-light border-secondary p-1"
-                                onclick="javascript:cMapMaker.viewDetail()">
-                                <i class="fa-solid fa-check"></i>
-                            </button>
+                <div id="mapid">
+                    <canvas id="snow"></canvas>
+                    <section id="cMapIntro" class="cMap-intro" aria-labelledby="cMapIntroTitle" hidden>
+                        <div class="cMap-intro__body">
+                            <h2 id="cMapIntroTitle" glot-model="intro_title">地図から地域の情報を探してみましょう</h2>
+                            <p glot-model="intro_body">地図や一覧から、地域の施設や情報を見つけられます。</p>
                         </div>
-                    </div>
+                        <button id="cMapIntroClose" class="cMap-intro__close" type="button"
+                            aria-label="案内を閉じる" data-glot-aria-label="intro_close">&times;</button>
+                    </section>
                 </div>
+            </main>
+            <aside id="bottom-pane" class="row m-0">
+                <div id="sidebarResizeHandle" title="ドラッグしてサイズ変更" data-glot-title="sidebar_resize" aria-label="ドラッグしてリストのサイズを変更" data-glot-aria-label="sidebar_resizeList"></div>
+                <div id="btmHeader" class="accordion p-2 h-100">
+
+                    <!-- Detail -->
+                    <div id="detailMenu" class="accordion-item mb-2">
+
+                        <h2 id="detailHeader" class="d-flex align-items-center m-0 p-2">
+                            <div class="dropdown me-2">
+                                <button class="btn btn-light border-secondary p-0" type="button" id="btnMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="width: 30px; height: 30px">
+                                    <i class="fas fa-bars text-black"></i>
+                                </button>
+
+                                <div class="dropdown-menu" aria-labelledby="btnMenuButton" id="btnMenu"></div>
+                            </div>
+
+                            <span class="detailTitle d-flex align-items-center" id="btmWindow_title"></span>
+                            <span id="detailWindowControls"
+                                class="sidebar-window-controls btn-group ms-auto" role="group"
+                                aria-label="詳細表示サイズ" data-glot-aria-label="sidebar_detailSize"></span>
+                            <button id="detailHeaderClose" type="button"
+                                class="btn btn-light border-secondary p-0 ms-1 flex-shrink-0"
+                                onclick="cMapMaker.changeMode('list')" aria-label="詳細を閉じる" data-glot-aria-label="sidebar_closeDetail" title="詳細を閉じる" data-glot-title="sidebar_closeDetail">
+                                <span aria-hidden="true" class="fs-1">&times;</span>
+                            </button>
+                        </h2>
+
+                        <div id="detailArea">
+                            <div class="accordion-body p-0">
+                                <div id="mini-map" class="d-none mx-auto"></div>
+                                <div id="btmWindow_message" class="p-1"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- list -->
+                    <div class="accordion-item">
+                        <h2 class="d-flex align-items-center m-0 p-2" id="listHeader">
+                            <span class="detailTitle ms-1" id="listTitle"></span>
+                            <span id="changesButtonDesktop" class="ms-2 flex-shrink-0"></span>
+                            <span id="listWindowControls" class="sidebar-window-controls btn-group ms-auto"
+                                role="group" aria-label="リスト表示サイズ" data-glot-aria-label="sidebar_listSize">
+                                <button id="sidebarMinimize" class="btn btn-light border-secondary p-0"
+                                    type="button" onclick="winCont.setSidebar('mini')"
+                                    aria-label="リストを最小化" data-glot-aria-label="sidebar_minimizeList" title="最小化" data-glot-title="sidebar_minimize">
+                                    <i class="fa-solid fa-window-minimize" aria-hidden="true"></i>
+                                </button>
+                                <button id="sidebarChange" class="btn btn-light border-secondary p-0"
+                                    type="button" onclick="winCont.setSidebar('change')"
+                                    aria-label="リストを最大化" data-glot-aria-label="sidebar_maximizeList" title="最大化" data-glot-title="sidebar_maximize">
+                                    <i class="fa-regular fa-window-maximize" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </h2>
+
+                        <div id="listAccordion" class="accordion-collapse collapse show" aria-labelledby="listHeader">
+                            <div class="accordion-body p-0">
+                                <div class="place-list-toolbar">
+                                    <section id="placeDiscovery" class="place-discovery" hidden></section>
+                                    <div class="place-list-mode">
+                                        <label for="listDisplayMode" data-area-label="placeListView"></label>
+                                        <select id="listDisplayMode" class="form-select form-select-sm"
+                                            onchange="listTable.setDisplayMode(this.value)">
+                                            <option value="nearby" data-area-label="placeListNearby"></option>
+                                            <option value="favorite" data-area-label="placeListFavorites"></option>
+                                            <option value="recent" data-area-label="placeListRecent"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="listDistanceOrigin" class="small text-muted px-2 py-1"></div>
+                                <!-- リスト -->
+                                <div class="col-12 p-0" id="listArea"></div>
+
+                                <!-- プレイバック操作 -->
+                                <div class="col-12 d-flex align-items-center" id="list_playback_control">
+                                    <button class="btn btn-light float-left border-secondary ms-2 me-2"
+                                        onclick="cMapMaker.playback(listTable.getFilterList());"><i id="list_playback"
+                                            class="fas fa-play"></i></button>
+                                    <input type="range" class="form-range me-2" id="list_speed" />
+                                </div>
+
+                                <!-- ダウンロード -->
+                                <div class="col-12 text-center" id="list_download">
+                                    <button class="btn btn-light btn-lg border-secondary w-50 m-2 p-1"
+                                        onclick="cMapMaker.download()">
+                                        <i class="fas fa-download"></i>
+                                        <span glot-model="download"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="panelProgress" class="col-12 p-0 mb-2 progress progress-bar bg-success" style="width: 0%;">
+                    </div>
+                    <div class="footerSpace"></div>
+                </div>
+
             </aside>
         </article>
     </div>
 
     <div id="splashImage" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document" data-keyboard="false">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="" style="width: 100%;float: none !important" id="splashSrc"><br>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="spinner-border text-primary mx-auto" role="status"> <span
-                                class="sr-only">Loading...</span>
-                        </div>
-                    </div>
+        <div class="modal-dialog modal-lg" role="document" data-keyboard="false">
+            <div class="modal-body">
+                <img src="" style="width: 100%;float: none !important" id="splashSrc"><br>
+                <div class="d-flex justify-content-center mt-2">
+                    <div class="spinner-border text-primary mx-auto" role="status"> </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="PinchImageBK" onclick="modalActs.pinchImage(false)">
+    <div id="poiFilterModal" class="modal" tabindex="-1"
+        aria-labelledby="poiFilterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content poi-filter-panel">
+            <div class="modal-header app-modal-header">
+                <div>
+                    <strong id="poiFilterTitle"></strong>
+                </div>
+                <button class="btn btn-light border-secondary app-modal-close" type="button" data-bs-dismiss="modal" aria-label="" data-area-aria="areaSearchUi_close"><i class="fas fa-xmark"></i></button>
+            </div>
+
+            <div class="modal-body">
+            <fieldset id="poiFilterPersonal" class="poi-filter-personal">
+                <legend glot-model="poiFilter_personal">自分の記録で絞り込む</legend>
+                <div class="poi-filter-options">
+                    <label><input type="radio" name="poiFilterVisitState" id="poiFilterVisitAny" value="off" checked><span glot-model="poiFilter_visitAny">すべて</span></label>
+                    <label><input type="radio" name="poiFilterVisitState" id="poiFilterVisited" value="visited"><span glot-model="visited_filter_visited">訪問済み</span></label>
+                    <label><input type="radio" name="poiFilterVisitState" id="poiFilterUnvisited" value="unvisited"><span glot-model="visited_filter_unvisited">未訪問</span></label>
+                </div>
+            </fieldset>
+            <section id="poiFilterSearchContent">
+                <div id="poiFilterZoomNotice" class="alert alert-info" hidden>
+                    <span data-area-label="areaSearchUi_zoomNotice"></span>
+                    <button class="btn btn-sm btn-primary ms-1" type="button" onclick="poiFilterController.zoomForSearch()" data-area-label="areaSearchUi_zoom"></button>
+                </div>
+                <p id="placeCriteriaContext" class="small text-muted"></p>
+                <form id="poiFilterForm">
+                    <div class="area-feature-field">
+                        <label for="poiFilterScore" data-area-label="areaSearchUi_rating"></label>
+                        <select id="poiFilterScore" name="scoreMin" class="form-select">
+                            <option value="0" data-area-label="areaSearchUi_any"></option>
+                            <option value="3" data-area-label="areaSearchUi_star3"></option>
+                            <option value="4" data-area-label="areaSearchUi_star4"></option>
+                            <option value="5" data-area-label="areaSearchUi_star5"></option>
+                        </select>
+                    </div>
+                    <fieldset class="area-feature-field">
+                        <legend data-area-label="areaSearchUi_goodPoints"></legend>
+                        <div id="poiFilterAttributes" class="area-feature-check-grid"></div>
+                        <div class="area-match-mode">
+                            <label><input type="radio" name="matchMode" value="and" checked><span data-area-label="areaSearchUi_matchAll"></span></label>
+                            <label><input type="radio" name="matchMode" value="or"><span data-area-label="areaSearchUi_matchAny"></span></label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="area-feature-field">
+                        <legend data-area-label="areaSearchUi_infoState"></legend>
+                        <div class="area-feature-check-grid">
+                            <label class="area-feature-check"><input type="checkbox" name="recentOnly"><span data-area-label="areaSearchUi_recent"></span></label>
+                            <label class="area-feature-check"><input type="checkbox" name="photoOnly"><span data-area-label="areaSearchUi_photo"></span></label>
+                            <label class="area-feature-check"><input type="checkbox" name="detailOnly"><span data-area-label="areaSearchUi_detail"></span></label>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section id="poiFilterRatingContent" hidden>
+                <h2 data-area-label="areaSearchUi_ratingHeading"></h2>
+                <p data-area-label="areaSearchUi_ratingHelp"></p>
+                <div class="area-rating-grid">
+                    <button type="button" onclick="poiFilterController.applyRating(3)"><strong data-area-label="areaSearchUi_star3"></strong><small data-area-label="areaSearchUi_average3"></small></button>
+                    <button type="button" onclick="poiFilterController.applyRating(4)"><strong data-area-label="areaSearchUi_star4"></strong><small data-area-label="areaSearchUi_average4"></small></button>
+                    <button type="button" onclick="poiFilterController.applyRating(5)"><strong data-area-label="areaSearchUi_star5"></strong><small data-area-label="areaSearchUi_average5"></small></button>
+                    <button type="button" onclick="poiFilterController.applyRating(0)"><strong data-area-label="areaSearchUi_any"></strong><small data-area-label="areaSearchUi_ratingClear"></small></button>
+                </div>
+            </section>
+
+            <section id="poiFilterResearchContent" hidden>
+                <p data-area-label="contribute_intro"></p>
+                <section class="mb-4" aria-labelledby="contributeReviewHeading">
+                    <h2 id="contributeReviewHeading" data-area-label="contribute_reviewHeading"></h2>
+                    <p data-area-label="contribute_reviewHelp"></p>
+                    <ol>
+                        <li data-area-label="contribute_registerStep"></li>
+                        <li data-area-label="contribute_verifyStep"></li>
+                        <li data-area-label="contribute_postStep"></li>
+                    </ol>
+                    <a class="btn btn-outline-primary" href="https://armd-01.sakura.ne.jp/community-mapmaker-backend/register.html" target="_blank" rel="noopener noreferrer" data-area-label="contribute_registerLink"></a>
+                    <p class="small text-muted mt-2" data-area-label="contribute_existingAccount"></p>
+                </section>
+                <section class="mb-4" aria-labelledby="contributeOsmHeading">
+                    <h2 id="contributeOsmHeading" data-area-label="contribute_osmHeading"></h2>
+                    <p data-area-label="contribute_osmHelp"></p>
+                    <a class="btn btn-outline-primary" href="https://www.openstreetmap.org/user/new" target="_blank" rel="noopener noreferrer" data-area-label="contribute_osmLink"></a>
+                    <p class="small text-muted mt-2" data-area-label="contribute_osmExisting"></p>
+                </section>
+                <details>
+                <summary class="mb-2" data-area-label="contribute_findPlaces"></summary>
+                <p data-area-label="areaSearchUi_researchDescription"></p>
+                <div class="area-research-grid">
+                    <button type="button" onclick="poiFilterController.applyResearch('missing')"><i class="far fa-file-lines"></i><strong data-area-label="areaSearchUi_missing"></strong><small data-area-label="areaSearchUi_missingHelp"></small></button>
+                    <button type="button" onclick="poiFilterController.applyResearch('stale')"><i class="far fa-clock"></i><strong data-area-label="areaSearchUi_stale"></strong><small data-area-label="areaSearchUi_staleHelp"></small></button>
+                    <button type="button" onclick="poiFilterController.applyResearch('photo')"><i class="far fa-image"></i><strong data-area-label="areaSearchUi_noPhoto"></strong><small data-area-label="areaSearchUi_noPhotoHelp"></small></button>
+                    <button type="button" onclick="poiFilterController.applyResearch('sparse')"><i class="fas fa-list-check"></i><strong data-area-label="areaSearchUi_sparse"></strong><small data-area-label="areaSearchUi_sparseHelp"></small></button>
+                </div>
+                </details>
+            </section>
+            </div>
+            <footer id="poiFilterActions" class="modal-footer">
+                <span id="poiFilterPreviewCount" class="poi-filter-preview small text-muted" role="status"></span>
+                <button class="btn btn-light border-secondary" type="reset" form="poiFilterForm" onclick="poiFilterController.resetDraft()" data-area-label="areaSearchUi_reset"></button>
+                <button class="btn btn-success" type="button" onclick="poiFilterController.applyFromForm()"><span data-area-label="placeFilter_apply">適用</span></button>
+                <button id="placeCriteriaSearch" class="btn btn-outline-primary" type="button" onclick="poiFilterController.searchFromForm()" data-area-label="placeFilter_search"></button>
+            </footer>
+        </div>
+        </div>
+    </div>
+
+    <div id="PinchImageBK" onclick="modalActs.closeMedia()">
         <div class="d-flex align-items-center justify-content-center h-100">
             <div class="spinner-border text-primary" id="image_spinner"></div>
         </div>
     </div>
-    <img id="PinchImage" onclick="modalActs.pinchImage(false)"></img>
+    <img id="PinchImage" draggable="false" onclick="modalActs.toggleImageSize(this, event)"></img>
+    <button type="button" id="PinchImageClose" aria-label="画像を閉じる" data-glot-aria-label="image_close" title="閉じる" data-glot-title="ui_close"
+        onclick="event.stopPropagation(); modalActs.closeMedia()">✕</button>
+    <video id="FullScreenVideo" playsinline onclick="modalActs.toggleVideo(this)"></video>
+    <button type="button" id="FullScreenVideoClose" aria-label="動画を閉じる" data-glot-aria-label="video_close" title="閉じる" data-glot-title="ui_close"
+        onclick="event.stopPropagation(); modalActs.closeMedia()">✕</button>
 
     <div id="scrollHand" class="d-flex justify-content-center d-none">
         <img src="./image/hand-pointer-solid.svg" width="42px">

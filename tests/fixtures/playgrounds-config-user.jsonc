@@ -1,0 +1,119 @@
+{
+  "changes": {
+    "use": true,
+    "apiUrl": "https://example.test/changes",
+    "storageKeyPrefix": "playgrounds-changes",
+    "reviews": {
+      "use": true
+    },
+    "minLookbackMonths": 1,
+    "maxLookbackMonths": 6,
+    "ticker": {
+      "use": true,
+      "autoOpen": true,
+      "displayDuration": 10000,
+      "maxItems": 30,
+      "mobileLabelKey": "changeFeed_reviewsTitle",
+      "mobileLabel": "公園／遊具の口コミや情報更新",
+      "sourceLabel": "OpenStreetMap"
+    },
+    "labelKeys": {
+      "regionalCreated": "changeFeed_regionalCreatedLabel",
+      "regionalUpdated": "changeFeed_regionalUpdatedLabel",
+      "favoriteUpdated": "changeFeed_favoriteUpdatedLabel"
+    },
+    "labels": {
+      "regionalCreated": "地図への新規登録",
+      "regionalUpdated": "更新",
+      "favoriteUpdated": "お気に入りの更新"
+    },
+    "region": {
+      "scope": "prefecture",
+      "source": "mapCenter",
+      "prefectureFile": "https://armd-01.sakura.ne.jp/osm-japan-changes/data/prefectures.min.geojson"
+    },
+    "targets": [
+      {
+        "id": "park",
+        "glotLabel": "changeFeed_park",
+        "label": "公園",
+        "use": true,
+        "notify": {
+          "regionalCreated": true,
+          "regionalUpdated": true,
+          "favoriteUpdated": true
+        },
+        "queries": [
+          {
+            "tag_key": "leisure",
+            "tag_value": "park"
+          },
+          {
+            "tag_key": "leisure",
+            "tag_value": "playground"
+          },
+          {
+            "tag_key": "landuse",
+            "tag_value": "recreation_ground"
+          }
+        ]
+      },
+      {
+        "id": "playground",
+        "glotLabel": "changeFeed_playground",
+        "label": "遊具",
+        "use": true,
+        "notify": {
+          "regionalCreated": true,
+          "regionalUpdated": false,
+          "favoriteUpdated": true
+        },
+        "queries": [
+          {
+            "tag_key": "playground"
+          }
+        ]
+      },
+      {
+        "id": "temple_shrine",
+        "glotLabel": "changeFeed_temple_shrine",
+        "label": "寺社仏閣",
+        "use": false,
+        "notify": {
+          "regionalCreated": true,
+          "regionalUpdated": false,
+          "favoriteUpdated": true
+        },
+        "queries": [
+          {
+            "tag_key": "amenity",
+            "tag_value": "place_of_worship"
+          }
+        ],
+        "matchTags": {
+          "religion": [
+            "buddhist",
+            "shinto"
+          ]
+        }
+      },
+      {
+        "id": "cinema",
+        "glotLabel": "changeFeed_cinema",
+        "label": "映画館",
+        "use": false,
+        "notify": {
+          "regionalCreated": true,
+          "regionalUpdated": false,
+          "favoriteUpdated": true
+        },
+        "queries": [
+          {
+            "tag_key": "amenity",
+            "tag_value": "cinema"
+          }
+        ]
+      }
+    ]
+  }
+}

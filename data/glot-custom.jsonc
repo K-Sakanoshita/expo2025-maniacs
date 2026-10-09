@@ -25,25 +25,41 @@
     },
     "licence_message": {
         "ja": "このサイトで使われているデータは、OpenStreetMapとプロジェクトのデータを組み合わせています。</a>",
-        "en": "We are all collecting information about parks with playground equipment and making maps.<br>The data used is a combination of OpenStreetMap and playground equipment for everyone project.</a>"
+        "en": "The data used on this site is a combination of OpenStreetMap and project data."
     },
     "develop_site": {
         "ja": "EXPO2025マニアックマップの開発サイトへ",
         "en": "EXPO2025 Maniacs Map development site"
     },
+    "official_site": {
+        "ja": "公式サイト",
+        "en": "Official site"
+    },
     "more_message": {
         "ja": "",
         "en": ""
+    },
+    "listCategory": {
+        "ja": "種類",
+        "en": "Category"
+    },
+    "listName": {
+        "ja": "施設名",
+        "en": "Name"
+    },
+    "listComment": {
+        "ja": "💬 ",
+        "en": "💬 "
+    },
+    "listTitle": {
+        "ja": "万博施設一覧",
+        "en": "Expo facilities"
     },
     "activities": {
         "ja": "活動履歴",
         "en": "Activities"
     },
-    "libc": {
-        "ja": "年表",
-        "en": "chronology"
-    },
-    "act_date": {
+    "actdate": {
         "ja": "確認日",
         "en": "Disaster Date"
     },
@@ -54,6 +70,22 @@
     "act_attention": {
         "ja": "写真URLにWikimedia Commonsを指定する時は、タイトルを入力してください(例 File:遊具名.jpg)",
         "en": "When specifying Wikimedia Commons for the photo URL, enter the title (e.g. File: Play equipment name.jpg)"
+    },
+    "act_date": {
+        "ja": "確認日",
+        "en": "Disaster Date"
+    },
+    "act_address": {
+        "ja": "住所",
+        "en": "Address"
+    },
+    "act_genre": {
+        "ja": "ジャンル",
+        "en": "Genre"
+    },
+    "act_keyword": {
+        "ja": "キーワード",
+        "en": "keyword"
     },
     "act_memo": {
         "ja": "説明",
@@ -85,10 +117,70 @@
     },
     "act_picture_url4": {
         "ja": "写真URL4",
-        "en": "Picture URL3"
+        "en": "Picture URL4"
     },
     "act_picture_url5": {
         "ja": "写真URL5",
-        "en": "Picture URL3"
+        "en": "Picture URL5"
+    },
+    "act_picture_url6": {
+        "ja": "写真URL6",
+        "en": "Picture URL6"
+    },
+    "act_picture_url7": {
+        "ja": "写真URL7",
+        "en": "Picture URL7"
+    },
+    "act_picture_url8": {
+        "ja": "写真URL8",
+        "en": "Picture URL8"
+    },
+    "act_video_url1": {
+        "ja": "動画URL1",
+        "en": "Video URL1"
+    },
+    "act_license_attention": {
+        "ja": "投稿された情報はオープンデータ(CC0)として公開されます。内緒の情報などは書かないでください。",
+        "en": "The posted information will be published as open data (CC0), so please do not include any confidential information."
+    },
+    "libc": {
+        "ja": "年表",
+        "en": "chronology"
+    },
+    "mapDisplay_target_expo2025_exp": {
+        "ja": "パビリオン・展示",
+        "en": "Pavilions and exhibitions"
+    },
+    "mapDisplay_target_expo2025_service": {
+        "ja": "施設・ステージ",
+        "en": "Facilities and stages"
+    },
+    "mapDisplay_target_expo2025_restarea": {
+        "ja": "休憩・トイレ・給水",
+        "en": "Rest areas, toilets and drinking water"
+    },
+    "mapDisplay_target_expo2025_move": {
+        "ja": "案内・移動支援",
+        "en": "Information and accessibility"
+    },
+    "mapDisplay_target_expo2025_foods": {
+        "ja": "カフェ・レストラン",
+        "en": "Cafes and restaurants"
+    },
+    "mapDisplay_target_expo2025_vending": {
+        "ja": "自販機・ゴミ箱",
+        "en": "Vending machines and waste bins"
+    },
+    "mapDisplay_target_expo2025_art": {
+        "ja": "アート作品・壁画",
+        "en": "Art and murals"
+    },
+    "mapDisplay_target_expo2025_stores": {
+        "ja": "お土産・コンビニ",
+        "en": "Souvenirs and convenience stores"
+    },
+    "mapDisplay_target_expo2025_pole": {
+        "ja": "国旗・旗竿",
+        "en": "Flags and flagpoles"
     }
 }

@@ -1,0 +1,125 @@
+{
+    "listTable": {
+        "backgroundImage": "./image/bgimage.png",
+        "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ / menu: タグベースの手動カテゴリ
+        "target": "", // targets:指定したtargetだけ表示 / activity:Activityのみ表示 / 空:両方表示
+        "allActs": false, // true: 全てのActivityを常に表示 / false: 画面内のActivityのみ表示
+        "groupActivitiesByOsmid": true,
+        "activityCountLabel": "情報{count}件",
+        "defaultView": "area",
+        "viewBindings": {
+            "default": "area",
+            "areaSearch": "area"
+        },
+        "playback": {
+            "view": false,
+            "zoomLevel": 15,
+            "timer": 4000
+        },
+        "download": true,
+        "exportSource": "poi", // 画面は敷地単位でもCSVは従来のPOI単位で出力する
+        "csvColumn": [
+            "id",
+            "categoryJa",
+            "name",
+            "parentName",
+            "tag",
+            "categoryData",
+            "iconFile",
+            "lng",
+            "lat"
+        ]
+    },
+    "list": {
+        "schemaVersion": 2,
+        "columns": {
+            "style": [ // id列は書かない
+                {
+                    "className": "col-6",
+                    "icon": true
+                },
+                {
+                    "className": "col-6"
+                },
+                {
+                    "glotName": "listComment",
+                    "className": "col-12"
+                }
+            ],
+            "poiFields": [
+                "id",
+                "#category",
+                "#parent.name,name",
+                "#title"
+            ],
+            "actFields": [ //#付きはOSMタグ、ただし#categoryのみタグからのカテゴリ名判定結果
+                "id", // 最初の列はid固定(#idにするとOSMのPoiでユニークになりActが欠落する)
+                "#category",
+                "#name",
+                "title"
+            ]
+        },
+        "views": {
+            "area": {
+                "source": "areaFeatureLinker",
+                "rowId": "areaId",
+                "columns": [
+                    {
+                        "id": "name",
+                        "value": "name",
+                        "className": "col-12 list-area-name",
+                        "icon": true
+                    },
+                    {
+                        "id": "features",
+                        "value": "linkedFeatures",
+                        "formatter": "featureList",
+                        "className": "col list-area-features",
+                        "preserveSpace": true,
+                        "options": {
+                            "targets": ["Playgrounds_Play", "Playgrounds_Etc"],
+                            "excludeAmenities": ["toilets"],
+                            "label": "category",
+                            "separator": "・",
+                            "unique": true,
+                            "maxItems": 4,
+                            "moreLabelKey": "facility_moreCount",
+                            "moreLabel": "ほか{count}件"
+                        }
+                    },
+                    {
+                        "id": "distance",
+                        "value": "distance",
+                        "formatter": "distance",
+                        "className": "col-auto text-end list-area-distance",
+                        "options": {
+                            "origin": "userLocation",
+                            "unavailable": "mapCenter",
+                            "prefixGlotKey": "placeListDistancePrefix",
+                            "units": "auto",
+                            "roundMeters": 50,
+                            "kilometerDecimals": 1
+                        }
+                    }
+                ],
+                "searchFields": ["name", "linkedFeatures"],
+                "sort": [
+                    {
+                        "value": "distance",
+                        "order": "asc",
+                        "missing": "last"
+                    }
+                ],
+                "export": {
+                    "columns": [
+                        { "label": "areaId", "value": "areaId" },
+                        { "label": "name", "value": "name" },
+                        { "label": "features", "value": "linkedFeatures", "formatter": "featureList" },
+                        { "label": "lng", "value": "lng" },
+                        { "label": "lat", "value": "lat" }
+                    ]
+                }
+            }
+        }
+    }
+}

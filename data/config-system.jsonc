@@ -1,4 +1,3 @@
-// Community Mapmaker System Config
 {
     "wikipedia": {
         "marker": "wikipedia.svg",
@@ -10,31 +9,42 @@
     },
     "system": {
         "OverPassServer": [
+            "https://armd-01.sakura.ne.jp/api/interpreter",
             "https://overpass-api.de/api/interpreter",
-            "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
-            "https://overpass.kumi.systems/api/interpreter",
-            "https://overpass.openstreetmap.jp/api/interpreter"
-        ]
+            "https://overpass.private.coffee/api/interpreter"
+        ],
+        "NoChacheServer": "https://overpass-api.de/api/interpreter"
     },
     "tile": {
-        "EXPO2025_LASTDAY": {
-            "style": "./tiles/japan-20251013.json",
-            "name": "大阪・関西万博最終日(2025年10月13日時点)",
-            "skip": false
-        },
-        "OSMFJ_NOPOI_SNOW": {
-            "style": "./tiles/osmfj_nopoi_snow.json",
-            "name": "雪景色・昼間",
-            "skip": false
-        },
-        "OSMFJ_NOPOI_NIGHT_SNOW": {
-            "style": "./tiles/osmfj_nopoi_night_snow.json",
-            "name": "雪景色・夜",
-            "skip": false
-        },
         "OSMFJ_NOPOI": {
             "style": "./tiles/osmfj_nopoi.json",
             "name": "最新地図(OpenStreetMap)",
+            "skip": false
+        },
+        "OSM_Standard": {
+            "style": {
+                "version": 8,
+                "sources": {
+                    "rtile": {
+                        "type": "raster",
+                        "tiles": [
+                            "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        ],
+                        "tileSize": 256,
+                        "maxzoom": 19,
+                        "attribution": "<a href=\"https://openstreetmap.org\">&copy OpenStreetMap contributors</a>"
+                    }
+                },
+                "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf",
+                "layers": [
+                    {
+                        "id": "raster-tiles",
+                        "type": "raster",
+                        "source": "rtile"
+                    }
+                ]
+            },
+            "name": "OpenStreetMap標準地図(2D)",
             "skip": false
         },
         "GSI_seamlessphoto": {
@@ -63,10 +73,25 @@
             "name": "地理院 全国最新写真（シームレス）",
             "skip": false
         },
-        "miniMap": { // for planet globe
+        "miniMap": {
             "style": "./tiles/osmfj_nopoi.json",
             "name": "Planet globe",
             "skip": true
+        },
+        "EXPO2025_LASTDAY": {
+            "style": "./tiles/japan-20251013.json",
+            "name": "大阪・関西万博最終日(2025年10月13日時点)",
+            "skip": false
+        },
+        "OSMFJ_NOPOI_SNOW": {
+            "style": "./tiles/osmfj_nopoi_snow.json",
+            "name": "雪景色・昼間",
+            "skip": false
+        },
+        "OSMFJ_NOPOI_NIGHT_SNOW": {
+            "style": "./tiles/osmfj_nopoi_night_snow.json",
+            "name": "雪景色・夜",
+            "skip": false
         }
     },
     "menu_list": {

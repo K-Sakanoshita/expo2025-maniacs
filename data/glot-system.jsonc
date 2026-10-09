@@ -1,11 +1,11 @@
 {
     "act_add": {
-        "ja": "追加",
-        "en": "Add"
+        "ja": "情報追加",
+        "en": "Add Information"
     },
     "act_edit": {
-        "ja": "編集",
-        "en": "Edit"
+        "ja": "情報編集",
+        "en": "Edit Information"
     },
     "act_save": {
         "ja": "保存",
@@ -76,7 +76,7 @@
         "en": "add Activity"
     },
     "morezoom": {
-        "ja": "ズームしてください",
+        "ja": "もっとズームしてください",
         "en": "Please zoom more."
     },
     "button_ok": {
@@ -244,12 +244,12 @@
         "en": "The file was loaded"
     },
     "Mo": {
-        "ja": "Mo",
-        "en": "月"
+        "ja": "月",
+        "en": "Mo"
     },
     "Tu": {
-        "ja": "Tu",
-        "en": "火"
+        "ja": "火",
+        "en": "Tu"
     },
     "We": {
         "ja": "水",
@@ -273,7 +273,8 @@
     },
     "PH": {
         "ja": "祝日",
-        "PH": "PH"
+        "PH": "PH",
+        "en": "PH"
     },
     "off": {
         "ja": "休業",
@@ -285,7 +286,7 @@
     },
     "closed": {
         "ja": "休み",
-        "en": "Holyday"
+        "en": "Closed"
     },
     "parse_error": {
         "ja": "解析に失敗",
@@ -302,5 +303,1012 @@
     "searchKeyword": {
         "ja": "キーワード検索",
         "en": "searchKeyword"
+    },
+    "poiFilter_visitAny": {
+        "ja": "すべて",
+        "en": "All"
+    },
+    "poiFilter_apply": {
+        "ja": "条件で絞り込む",
+        "en": "Apply filters"
+    },
+    "poiFilter_scope": {
+        "ja": "表示中の地図の範囲から探します",
+        "en": "Search within the current map view"
+    },
+    "poiFilter_title": {
+        "ja": "絞り込み",
+        "en": "Filters"
+    },
+    "poiFilter_personal": {
+        "ja": "自分の記録で絞り込む",
+        "en": "Filter by my records"
+    },
+    "act_saved": {
+        "ja": "保存しました",
+        "en": "Saved"
+    },
+    "act_delete": {
+        "ja": "削除",
+        "en": "Delete"
+    },
+    "act_delete_confirm_title": {
+        "ja": "投稿削除の確認",
+        "en": "Confirm deletion"
+    },
+    "act_delete_confirm_message": {
+        "ja": "この投稿を削除します。元に戻すことはできません。よろしいですか？",
+        "en": "Delete this post? This action cannot be undone."
+    },
+    "act_delete_error": {
+        "ja": "削除に失敗しました。ユーザー名、パスワード、権限を確認してください",
+        "en": "Deletion failed. Check your user ID, password, and permissions."
+    },
+    "act_delete_auth_required": {
+        "ja": "削除するにはユーザー名とパスワードを入力してください",
+        "en": "Enter your user ID and password to delete this post."
+    },
+    "confirmCloseTitle": {
+        "ja": "データ破棄の確認",
+        "en": "Confirm Data Discard"
+    },
+    "confirmCloseDetail": {
+        "ja": "編集中のデータがあります。編集内容を破棄して画面を切り替えますか？",
+        "en": "There is data being edited. Do you want to discard the edited content and switch the screen?"
+    },
+    "noDataDownload": {
+        "ja": "ダウンロードするデータがありません",
+        "en": "No data to download"
+    },
+    "memo": {
+        "ja": "メモ",
+        "en": "Memo"
+    },
+    "UseOVCacheYes": {
+        "ja": "キャッシュオン(キャッシュを利用します)",
+        "en": "Cache on (use cached information)"
+    },
+    "UseOVCacheNo": {
+        "ja": "キャッシュオフ(最新情報を取得します)",
+        "en": "Cache off (get the latest information)"
+    },
+    "facility_section_title": {
+        "ja": "設備",
+        "en": "Facilities"
+    },
+    "facility_play_equipment": {
+        "ja": "遊具",
+        "en": "Play equipment"
+    },
+    "facility_toilet": {
+        "ja": "トイレ",
+        "en": "Toilet"
+    },
+    "facility_toilet_count": {
+        "ja": "トイレ ×{count}",
+        "en": "Toilets ×{count}"
+    },
+    "facility_toilet_with_details": {
+        "ja": "{name}（{details}）",
+        "en": "{name} ({details})"
+    },
+    "facility_wheelchair_yes": {
+        "ja": "車いす対応",
+        "en": "Wheelchair accessible"
+    },
+    "facility_wheelchair_limited": {
+        "ja": "車いす一部対応",
+        "en": "Limited wheelchair access"
+    },
+    "facility_changing_table": {
+        "ja": "おむつ交換台あり",
+        "en": "Changing table available"
+    },
+    "facility_separator": {
+        "ja": "・",
+        "en": ", "
+    },
+    "rooftop": {
+        "ja": "屋上",
+        "en": "Rooftop"
+    },
+    "areaSearchUi_reapply": {
+        "ja": "この範囲で再検索",
+        "en": "Search this area again"
+    },
+    "areaSearchUi_clearAria": {
+        "ja": "検索条件を解除",
+        "en": "Clear search filters"
+    },
+    "areaSearchUi_clear": {
+        "ja": "解除",
+        "en": "Clear"
+    },
+    "areaSearchUi_close": {
+        "ja": "閉じる",
+        "en": "Close"
+    },
+    "areaSearchUi_zoomNotice": {
+        "ja": "この縮尺では対象データをまだ読み込んでいません。",
+        "en": "No matching features are loaded at this zoom level."
+    },
+    "areaSearchUi_zoom": {
+        "ja": "拡大して読み込む",
+        "en": "Zoom in to load"
+    },
+    "areaSearchUi_purpose": {
+        "ja": "目的から探す",
+        "en": "Search by purpose"
+    },
+    "areaSearchUi_rating": {
+        "ja": "評価",
+        "en": "Rating"
+    },
+    "areaSearchUi_any": {
+        "ja": "指定なし",
+        "en": "Any"
+    },
+    "areaSearchUi_goodPoints": {
+        "ja": "よかった点",
+        "en": "Highlights"
+    },
+    "areaSearchUi_matchAll": {
+        "ja": "すべて満たす",
+        "en": "Match all"
+    },
+    "areaSearchUi_matchAny": {
+        "ja": "いずれかを満たす",
+        "en": "Match any"
+    },
+    "areaSearchUi_infoState": {
+        "ja": "情報の状態",
+        "en": "Information status"
+    },
+    "areaSearchUi_recent": {
+        "ja": "1年以内に確認",
+        "en": "Checked within 1 year"
+    },
+    "areaSearchUi_photo": {
+        "ja": "写真あり",
+        "en": "Has photos"
+    },
+    "areaSearchUi_detail": {
+        "ja": "詳細情報あり",
+        "en": "Has detailed information"
+    },
+    "areaSearchUi_reset": {
+        "ja": "条件をリセット",
+        "en": "Reset filters"
+    },
+    "areaSearchUi_show": {
+        "ja": "を表示",
+        "en": " results"
+    },
+    "areaSearchUi_ratingHeading": {
+        "ja": "星の数で表示を絞り込む",
+        "en": "Filter by star rating"
+    },
+    "areaSearchUi_ratingHelp": {
+        "ja": "同じ対象に複数の評価がある場合は、その平均値を使います。",
+        "en": "When a place has multiple ratings, their average is used."
+    },
+    "areaSearchUi_average3": {
+        "ja": "平均3.0以上",
+        "en": "Average 3.0 or higher"
+    },
+    "areaSearchUi_average4": {
+        "ja": "平均4.0以上",
+        "en": "Average 4.0 or higher"
+    },
+    "areaSearchUi_average5": {
+        "ja": "平均5.0以上",
+        "en": "Average 5.0 or higher"
+    },
+    "areaSearchUi_ratingClear": {
+        "ja": "評価の絞り込みを解除",
+        "en": "Clear rating filter"
+    },
+    "areaSearchUi_researchHeading": {
+        "ja": "口コミ・情報を募集中の場所を探す",
+        "en": "Find places needing reviews or information"
+    },
+    "areaSearchUi_researchDescription": {
+        "ja": "感想や評価、写真などを追加できそうな場所を地図と一覧に表示します。",
+        "en": "Show places where reviews, ratings or photos would help."
+    },
+    "areaSearchUi_missing": {
+        "ja": "詳細情報がない",
+        "en": "No detailed information"
+    },
+    "areaSearchUi_missingHelp": {
+        "ja": "評価・特徴・メモなどが未登録",
+        "en": "No rating, highlights or notes"
+    },
+    "areaSearchUi_stale": {
+        "ja": "1年以上未確認",
+        "en": "Not checked for over a year"
+    },
+    "areaSearchUi_staleHelp": {
+        "ja": "現地の変化を確認したい場所",
+        "en": "Needs an on-site update"
+    },
+    "areaSearchUi_noPhoto": {
+        "ja": "写真がない",
+        "en": "No photos"
+    },
+    "areaSearchUi_noPhotoHelp": {
+        "ja": "現在の様子が分かる写真を募集",
+        "en": "Photos of the current condition welcome"
+    },
+    "areaSearchUi_sparse": {
+        "ja": "情報が少ない",
+        "en": "Limited information"
+    },
+    "areaSearchUi_sparseHelp": {
+        "ja": "登録項目が2つ未満",
+        "en": "Fewer than two information fields"
+    },
+    "areaSearchUi_star3": {
+        "ja": "★3以上",
+        "en": "★3 or higher"
+    },
+    "areaSearchUi_star4": {
+        "ja": "★4以上",
+        "en": "★4 or higher"
+    },
+    "areaSearchUi_star5": {
+        "ja": "★5",
+        "en": "★5"
+    },
+    "placeListModes": {
+        "ja": "リストの表示モード",
+        "en": "List display mode"
+    },
+    "placeListNearby": {
+        "ja": "周辺",
+        "en": "Nearby"
+    },
+    "placeListFavorites": {
+        "ja": "♥ お気に入り",
+        "en": "♥ Favorites"
+    },
+    "placeListRecent": {
+        "ja": "最近見た",
+        "en": "Recently viewed"
+    },
+    "placeListFromLocation": {
+        "ja": "📍 現在地から近い順",
+        "en": "📍 Nearest to your location"
+    },
+    "placeListFromCenter": {
+        "ja": "＋ 地図中心から近い順",
+        "en": "＋ Nearest to map center"
+    },
+    "placeListNoFavorites": {
+        "ja": "お気に入りはまだありません。♥ を押すとここに保存できます。",
+        "en": "No favorites yet. Select a heart to save a place here."
+    },
+    "placeListNoRecent": {
+        "ja": "最近見た場所はありません。詳細を開くとここに表示されます。",
+        "en": "No recently viewed places. Open a place to see it here."
+    },
+    "placeListToggleFavorite": {
+        "ja": "お気に入りを切り替える",
+        "en": "Toggle favorite"
+    },
+    "placeListToday": {
+        "ja": "今日",
+        "en": "Today"
+    },
+    "placeListYesterday": {
+        "ja": "昨日",
+        "en": "Yesterday"
+    },
+    "placeListDaysAgo": {
+        "ja": "{days}日前",
+        "en": "{days} days ago"
+    },
+    "placeListDistancePrefix": {
+        "ja": "約",
+        "en": "approx. "
+    },
+    "facility_moreCount": {
+        "ja": "ほか{count}件",
+        "en": "{count} more"
+    },
+    "intro_title": {
+        "ja": "地図から地域の情報を探してみましょう",
+        "en": "Explore local information on the map"
+    },
+    "intro_body": {
+        "ja": "地図や一覧から、地域の施設や情報を見つけられます。",
+        "en": "Find local places and information using the map and list."
+    },
+    "intro_changes": {
+        "ja": "前回からの変化",
+        "en": "Changes since your last visit"
+    },
+    "intro_viewList": {
+        "ja": "一覧を見る",
+        "en": "View list"
+    },
+    "intro_groupCount": {
+        "ja": "{label} {count}件",
+        "en": "{label}: {count}"
+    },
+    "intro_close": {
+        "ja": "案内を閉じる",
+        "en": "Close introduction"
+    },
+    "sidebar_resize": {
+        "ja": "ドラッグしてサイズ変更",
+        "en": "Drag to resize"
+    },
+    "sidebar_resizeList": {
+        "ja": "ドラッグしてリストのサイズを変更",
+        "en": "Drag to resize the list"
+    },
+    "sidebar_detailSize": {
+        "ja": "詳細表示サイズ",
+        "en": "Detail panel size"
+    },
+    "sidebar_closeDetail": {
+        "ja": "詳細を閉じる",
+        "en": "Close details"
+    },
+    "sidebar_listSize": {
+        "ja": "リスト表示サイズ",
+        "en": "List panel size"
+    },
+    "sidebar_minimizeList": {
+        "ja": "リストを最小化",
+        "en": "Minimize list"
+    },
+    "sidebar_minimize": {
+        "ja": "最小化",
+        "en": "Minimize"
+    },
+    "sidebar_maximizeList": {
+        "ja": "リストを最大化",
+        "en": "Maximize list"
+    },
+    "sidebar_maximize": {
+        "ja": "最大化",
+        "en": "Maximize"
+    },
+    "sidebar_restore": {
+        "ja": "元に戻す",
+        "en": "Restore"
+    },
+    "sidebar_restoreList": {
+        "ja": "リストを元のサイズに戻す",
+        "en": "Restore list size"
+    },
+    "image_close": {
+        "ja": "画像を閉じる",
+        "en": "Close image"
+    },
+    "video_close": {
+        "ja": "動画を閉じる",
+        "en": "Close video"
+    },
+    "ui_close": {
+        "ja": "閉じる",
+        "en": "Close"
+    },
+    "toilet_changing_yes": {
+        "ja": "おむつ交換台あり",
+        "en": "Baby changing table available"
+    },
+    "toilet_changing_no": {
+        "ja": "おむつ交換台なし",
+        "en": "No baby changing table"
+    },
+    "toilet_wheelchair_no": {
+        "ja": "車いす非対応",
+        "en": "No wheelchair access"
+    },
+    "toilet_female": {
+        "ja": "女性用",
+        "en": "Women"
+    },
+    "toilet_male": {
+        "ja": "男性用",
+        "en": "Men"
+    },
+    "toilet_unisex": {
+        "ja": "共用",
+        "en": "Unisex"
+    },
+    "toilet_unknown": {
+        "ja": "男女別・共用の詳細情報は未登録",
+        "en": "Gender and unisex facility details are not recorded"
+    },
+    "toilet_none": {
+        "ja": "なし",
+        "en": "None"
+    },
+    "toilet_available": {
+        "ja": "利用可",
+        "en": "Available"
+    },
+    "changeFeed_news": {
+        "ja": "ニュース",
+        "en": "News"
+    },
+    "changeFeed_close": {
+        "ja": "閉じる",
+        "en": "Close"
+    },
+    "changeFeed_previous": {
+        "ja": "前のニュースを表示",
+        "en": "Show previous news"
+    },
+    "changeFeed_next": {
+        "ja": "次のニュースを表示",
+        "en": "Show next news"
+    },
+    "changeFeed_updatesTitle": {
+        "ja": "新着情報",
+        "en": "Updates"
+    },
+    "changeFeed_guide": {
+        "ja": "項目を押すと地図と詳細を表示します",
+        "en": "Select an item to view its location and details"
+    },
+    "changeFeed_unseenNotice": {
+        "ja": "未確認の更新があります",
+        "en": "There are unseen updates"
+    },
+    "changeFeed_reviewsTitle": {
+        "ja": "施設の口コミや情報更新",
+        "en": "Feature reviews and updates"
+    },
+    "changeFeed_emptyRegion": {
+        "ja": "この地域の新着はありません",
+        "en": "No updates for this area"
+    },
+    "changeFeed_emptySection": {
+        "ja": "新着はありません",
+        "en": "No updates"
+    },
+    "changeFeed_newPrefix": {
+        "ja": "新着 ",
+        "en": "New "
+    },
+    "changeFeed_reviewPhoto": {
+        "ja": "口コミの写真",
+        "en": "Review photo"
+    },
+    "changeFeed_newCount": {
+        "ja": "新着 {count}件",
+        "en": "{count} new updates"
+    },
+    "changeFeed_sectionCount": {
+        "ja": "{label}（{count}件）",
+        "en": "{label} ({count})"
+    },
+    "changeFeed_year": {
+        "ja": "{year}年",
+        "en": "{year}"
+    },
+    "changeFeed_editor": {
+        "ja": "編集：{name}",
+        "en": "Edited by: {name}"
+    },
+    "changeFeed_rating": {
+        "ja": "評価 {stars}",
+        "en": "Rating: {stars}"
+    },
+    "changeFeed_hasPhoto": {
+        "ja": "写真あり",
+        "en": "Photo available"
+    },
+    "changeFeed_loading": {
+        "ja": "読み込み中…",
+        "en": "Loading…"
+    },
+    "changeFeed_cannotShow": {
+        "ja": "この地物を表示できませんでした",
+        "en": "This feature could not be displayed"
+    },
+    "changeFeed_loadFailed": {
+        "ja": "読み込めませんでした。もう一度お試しください",
+        "en": "Could not load. Please try again"
+    },
+    "changeFeed_feature": {
+        "ja": "地物",
+        "en": "Map feature"
+    },
+    "changeFeed_placeFeature": {
+        "ja": "{park}の{name}",
+        "en": "{name} in {park}"
+    },
+    "changeFeed_mapCreated": {
+        "ja": "{place}が地図に追加されました",
+        "en": "{place} was added to the map"
+    },
+    "changeFeed_mapUpdated": {
+        "ja": "{place}の地図情報が更新されました",
+        "en": "Map information for {place} was updated"
+    },
+    "changeFeed_reviewCreated": {
+        "ja": "{place}に新しい口コミが投稿されました",
+        "en": "A new review was posted for {place}"
+    },
+    "changeFeed_reviewUpdated": {
+        "ja": "{place}の口コミが更新されました",
+        "en": "A review for {place} was updated"
+    },
+    "changeFeed_parkEquipment": {
+        "ja": "施設",
+        "en": "Map features"
+    },
+    "changeFeed_reviewPlace": {
+        "ja": "施設の口コミ",
+        "en": "Feature reviews"
+    },
+    "changeFeed_reviewLabel": {
+        "ja": "口コミ",
+        "en": "Reviews"
+    },
+    "changeFeed_reviewCreatedLabel": {
+        "ja": "新しい口コミ",
+        "en": "New review"
+    },
+    "changeFeed_reviewUpdatedLabel": {
+        "ja": "口コミ更新",
+        "en": "Review updated"
+    },
+    "changeFeed_unknownName": {
+        "ja": "名称不明",
+        "en": "Unnamed place"
+    },
+    "changeFeed_facility": {
+        "ja": "施設",
+        "en": "Facility"
+    },
+    "changeFeed_regionalCreatedLabel": {
+        "ja": "地図への新規登録",
+        "en": "Added to the map"
+    },
+    "changeFeed_regionalUpdatedLabel": {
+        "ja": "更新",
+        "en": "Updated"
+    },
+    "changeFeed_favoriteUpdatedLabel": {
+        "ja": "お気に入りの更新",
+        "en": "Favorite updated"
+    },
+    "changeFeed_park": {
+        "ja": "公園",
+        "en": "Park"
+    },
+    "changeFeed_playground": {
+        "ja": "遊具",
+        "en": "Playground equipment"
+    },
+    "changeFeed_temple_shrine": {
+        "ja": "寺社仏閣",
+        "en": "Temples and shrines"
+    },
+    "changeFeed_cinema": {
+        "ja": "映画館",
+        "en": "Cinema"
+    },
+    "placeFilter_title": {
+        "ja": "詳しい条件",
+        "en": "Detailed filters"
+    },
+    "placeFilter_apply": {
+        "ja": "適用",
+        "en": "Apply"
+    },
+    "placeFilter_search": {
+        "ja": "この地図範囲を検索",
+        "en": "Search this map area"
+    },
+    "placeFilter_loadedCount": {
+        "ja": "読み込み済み：{count}件",
+        "en": "Loaded matches: {count}"
+    },
+    "placeFilter_custom": {
+        "ja": "カスタム条件",
+        "en": "Custom filters"
+    },
+    "discovery_custom": {
+        "ja": "カスタム条件",
+        "en": "Custom filters"
+    },
+    "discovery_loadedScope": {
+        "ja": "読み込み済みの範囲",
+        "en": "Loaded places only"
+    },
+    "discovery_noMatches": {
+        "ja": "読み込み済みの場所に該当するものがありません。目的を変えるか、地図を移動・拡大して探せます。",
+        "en": "No matching loaded places. Change the purpose, move or zoom the map."
+    },
+    "placeListView": {
+        "ja": "表示",
+        "en": "View"
+    },
+    "discovery_purpose": {
+        "ja": "目的",
+        "en": "Purpose"
+    },
+    "discovery_fact_restrooms": {
+        "ja": "トイレあり",
+        "en": "Restrooms"
+    },
+    "discovery_fact_seating": {
+        "ja": "ベンチあり",
+        "en": "Seating"
+    },
+    "discovery_fact_water": {
+        "ja": "給水設備あり",
+        "en": "Drinking water"
+    },
+    "discovery_any": {
+        "ja": "目的を指定しない",
+        "en": "Any purpose"
+    },
+    "discovery_reviews": {
+        "ja": "口コミ評価",
+        "en": "Review rating"
+    },
+    "areaSearch_api_countAfterSearch": {
+        "ja": "検索後に件数を表示します",
+        "en": "Count shown after searching"
+    },
+    "changeFeed_button": {
+        "ja": "更新",
+        "en": "Updates"
+    },
+    "changeFeed_unreadCount": {
+        "ja": "未確認の更新 {count}件",
+        "en": "{count} unseen updates"
+    },
+    "changeFeed_scope": {
+        "ja": "取得済みの更新情報を表示しています。近所の更新をすべて含むとは限りません。",
+        "en": "Showing fetched updates; nearby updates may be incomplete."
+    },
+    "changeFeed_favorite": {
+        "ja": "お気に入り",
+        "en": "Favorites"
+    },
+    "changeFeed_visited": {
+        "ja": "訪問済み",
+        "en": "Visited"
+    },
+    "changeFeed_other": {
+        "ja": "その他（未確認・近い順）",
+        "en": "Other places, unseen then nearest"
+    },
+    "changeFeed_reviewCount": {
+        "ja": "口コミ {count}件",
+        "en": "{count} review updates"
+    },
+    "changeFeed_mapCount": {
+        "ja": "地図情報 {count}件",
+        "en": "{count} map updates"
+    },
+    "changeFeed_details": {
+        "ja": "更新の内訳",
+        "en": "Individual updates"
+    },
+    "changeFeed_empty": {
+        "ja": "取得済みの更新情報はありません",
+        "en": "No updates in the fetched data"
+    },
+    "changeFeed_unread": {
+        "ja": "今回初めて表示",
+        "en": "First shown this time"
+    },
+    "mapFeatureSelect": {
+        "ja": "開く地物を選択",
+        "en": "Choose a map feature"
+    },
+    "listActionSearch": {
+        "en": ""
+    },
+    "listActionSearchAria": {
+        "ja": "施設を探す",
+        "en": "Find places"
+    },
+    "listActionRating": {
+        "ja": "評価で絞る",
+        "en": "Filter by rating"
+    },
+    "listActionRatingAria": {
+        "ja": "評価で施設を探す",
+        "en": "Filter places by rating"
+    },
+    "reviewContribute": {
+        "ja": "口コミ・情報提供に参加",
+        "en": "Contribute reviews and information"
+    },
+    "reviewAdd": {
+        "ja": "口コミ・情報を追加（公開）",
+        "en": "Add a review or information (public)"
+    },
+    "areaSearch_count": {
+        "ja": "{count}件",
+        "en": "{count}"
+    },
+    "areaSearch_status_missing": {
+        "ja": "未調査",
+        "en": "Not researched"
+    },
+    "areaSearch_status_stale": {
+        "ja": "情報が古い",
+        "en": "Outdated information"
+    },
+    "areaSearch_status_recent": {
+        "ja": "最近確認済み",
+        "en": "Recently checked"
+    },
+    "areaSearch_research_missing": {
+        "ja": "詳細情報なし",
+        "en": "No detailed information"
+    },
+    "areaSearch_research_stale": {
+        "ja": "1年以上未確認",
+        "en": "Not checked for over a year"
+    },
+    "areaSearch_research_photo": {
+        "ja": "写真なし",
+        "en": "No photos"
+    },
+    "areaSearch_research_sparse": {
+        "ja": "情報が少ない",
+        "en": "Limited information"
+    },
+    "areaSearch_criteria_researchMode": {
+        "ja": "調査モード",
+        "en": "Research mode"
+    },
+    "areaSearch_criteria_scoreMinimum": {
+        "ja": "平均評価 ★{score}以上",
+        "en": "Average rating ★{score} or higher"
+    },
+    "areaSearch_criteria_matchAny": {
+        "ja": "いずれか",
+        "en": "Any"
+    },
+    "areaSearch_criteria_matchAll": {
+        "ja": "すべて",
+        "en": "All"
+    },
+    "areaSearch_criteria_recent": {
+        "ja": "1年以内に確認",
+        "en": "Checked within 1 year"
+    },
+    "areaSearch_criteria_photo": {
+        "ja": "写真あり",
+        "en": "Has photos"
+    },
+    "areaSearch_criteria_detail": {
+        "ja": "詳細情報あり",
+        "en": "Has detailed information"
+    },
+    "mapDisplay_conditions": {
+        "ja": "条件",
+        "en": "Filters"
+    },
+    "mapDisplay_areaSearch": {
+        "ja": "施設検索",
+        "en": "place search"
+    },
+    "mapDisplay_keyword": {
+        "ja": "キーワード",
+        "en": "Keyword"
+    },
+    "mapDisplay_label": {
+        "ja": "地図",
+        "en": "Map"
+    },
+    "mapDisplay_disabled": {
+        "ja": "設定で非表示です",
+        "en": "Hidden by configuration"
+    },
+    "mapDisplay_category": {
+        "ja": "選択中のカテゴリでは非表示です",
+        "en": "Hidden by the selected category"
+    },
+    "mapDisplay_zoom": {
+        "ja": "ズーム {zoom} 以上で表示します",
+        "en": "Shown at zoom {zoom} or higher"
+    },
+    "mapDisplay_visible": {
+        "ja": "この縮尺で表示対象です",
+        "en": "Available at this zoom level"
+    },
+    "mapDisplay_close": {
+        "ja": "説明を閉じる",
+        "en": "Close explanation"
+    },
+    "areaSearch_criteria_allAreas": {
+        "ja": "すべての施設",
+        "en": "All places"
+    },
+    "areaSearch_listTitles_missing": {
+        "ja": "詳細情報無しリスト",
+        "en": "Places without details"
+    },
+    "areaSearch_listTitles_stale": {
+        "ja": "1年以上未確認リスト",
+        "en": "Places not checked for over a year"
+    },
+    "areaSearch_listTitles_photo": {
+        "ja": "写真無しリスト",
+        "en": "Places without photos"
+    },
+    "areaSearch_listTitles_sparse": {
+        "ja": "情報が少ない施設リスト",
+        "en": "places with limited information"
+    },
+    "areaSearch_listTitles_research": {
+        "ja": "調査対象リスト",
+        "en": "Places to research"
+    },
+    "areaSearch_listTitles_search": {
+        "ja": "施設検索結果リスト",
+        "en": "place search results"
+    },
+    "areaSearch_heading_search": {
+        "ja": "施設を探す",
+        "en": "Find places"
+    },
+    "areaSearch_heading_rating": {
+        "ja": "評価で施設を探す",
+        "en": "Find places by rating"
+    },
+    "areaSearch_heading_research": {
+        "ja": "口コミ・情報提供に参加",
+        "en": "Contribute reviews and information"
+    },
+    "areaSearch_description_search": {
+        "ja": "いま地図に表示している範囲が対象です",
+        "en": "Search the current map area"
+    },
+    "areaSearch_description_rating": {
+        "ja": "投稿された星の平均評価で、いま表示している範囲を絞り込みます",
+        "en": "Filter the current map area by average star rating"
+    },
+    "areaSearch_description_research": {
+        "ja": "口コミや写真を追加できそうな施設を探します",
+        "en": "Find places that need reviews or photos"
+    },
+    "areaSearch_rating_default": {
+        "ja": "評価で探す",
+        "en": "Find by rating"
+    },
+    "areaSearch_rating_minimum": {
+        "ja": "★{score}以上",
+        "en": "★{score} or higher"
+    },
+    "areaSearch_rating_activeTitle": {
+        "ja": "平均評価 {label}で絞り込み中",
+        "en": "Filtered by average rating {label}"
+    },
+    "areaSearch_facts_score": {
+        "ja": "平均評価 ★{score}",
+        "en": "Average rating ★{score}"
+    },
+    "areaSearch_facts_recent": {
+        "ja": "1年以内に確認",
+        "en": "Checked within 1 year"
+    },
+    "areaSearch_facts_photo": {
+        "ja": "写真あり",
+        "en": "Has photos"
+    },
+    "areaSearch_matchReason_title": {
+        "ja": "この施設が該当した理由",
+        "en": "Why this place matched"
+    },
+    "areaSearch_matchReason_registered": {
+        "ja": "登録情報:",
+        "en": "Recorded information:"
+    },
+    "areaSearch_matchReason_empty": {
+        "ja": "まだ詳しい登録情報がありません。",
+        "en": "No detailed information has been recorded yet."
+    },
+    "areaSearch_api_loading": {
+        "ja": "検索中…",
+        "en": "Searching…"
+    },
+    "areaSearch_api_error": {
+        "ja": "検索に失敗しました。もう一度お試しください。",
+        "en": "Search failed. Please try again."
+    },
+    "areaSearch_api_noBbox": {
+        "ja": "登録情報のある対象を全地域から検索しています",
+        "en": "Searching recorded places across all areas"
+    },
+    "areaSearch_api_bbox": {
+        "ja": "表示範囲内の座標が登録されたActivityを検索しています",
+        "en": "Searching activities with coordinates in the visible area"
+    },
+    "share_url_copied": {
+        "ja": "共有URLをコピーしました",
+        "en": "Link copied"
+    },
+    "share_url_copy_failed": {
+        "ja": "URLを自動でコピーできませんでした。下のURLを選択してコピーしてください。",
+        "en": "Could not copy the link automatically. Select and copy the URL below."
+    },
+    "directions_open": {
+        "ja": "経路を検索",
+        "en": "Get directions"
+    },
+    "directions_google_maps": {
+        "ja": "Googleマップで経路を開く（外部サイト）",
+        "en": "Get directions in Google Maps (external site)"
+    },
+    "personal_memo_label": {
+        "ja": "自分用メモ（非公開）",
+        "en": "Personal note (private)"
+    },
+    "personal_memo_help": {
+        "ja": "このブラウザに保存され、口コミとしては公開されません。",
+        "en": "Saved in this browser. Not published as a review."
+    },
+    "contribute_intro": {
+        "ja": "参加したい内容に合わせてアカウントを登録してください。地図を見るだけなら登録は不要です。",
+        "en": "Choose an account for the kind of contribution you want to make. No account is needed to browse the map."
+    },
+    "contribute_reviewHeading": {
+        "ja": "口コミ・写真を投稿する",
+        "en": "Post reviews and photos"
+    },
+    "contribute_reviewHelp": {
+        "ja": "コミュニティマップメーカーのユーザー登録が必要です。",
+        "en": "You need a Community Map Maker account."
+    },
+    "contribute_registerStep": {
+        "ja": "登録画面で参加プロジェクトを選び、ユーザーID・メールアドレス・パスワードを登録します。参加先はこの地図の管理者に確認してください。",
+        "en": "Select the project and register a user ID, email address and password. Ask this map’s administrator which project to join."
+    },
+    "contribute_verifyStep": {
+        "ja": "届いた確認メールのリンクを開き、メールアドレスの確認を完了します。",
+        "en": "Open the link in the verification email and complete email verification."
+    },
+    "contribute_postStep": {
+        "ja": "この地図に戻り、施設の詳細から投稿画面を開いて、登録したユーザーIDとパスワードで投稿します。",
+        "en": "Return to this map, open the submission form from a place or playground's details, and post using your registered user ID and password."
+    },
+    "contribute_registerLink": {
+        "ja": "ユーザー登録 ↗",
+        "en": "Register (Japanese form) ↗"
+    },
+    "contribute_existingAccount": {
+        "ja": "このプロジェクトに参加済みの方は、登録済みのユーザーIDを使えます。別のプロジェクトだけに参加している方は、管理者にこのプロジェクトへの追加を依頼してください。",
+        "en": "If you already belong to this project, use your existing user ID. If you only belong to another project, ask the administrator to add you to this one."
+    },
+    "contribute_osmHeading": {
+        "ja": "施設の地図情報を編集する",
+        "en": "Edit map information for places and playgrounds"
+    },
+    "contribute_osmHelp": {
+        "ja": "場所・名前・設備などの地図情報を追加・修正するには、OpenStreetMap（OSM）アカウントが必要です。コミュニティマップメーカーとは別の登録です。口コミ・写真だけの投稿にはOSMアカウントは不要です。登録後は、詳細画面のメニューからOSMのページを開き、ログインして編集できます。",
+        "en": "To add or correct locations, names or facilities on the map, you need an OpenStreetMap (OSM) account. This is a separate registration from Community Map Maker. An OSM account is not required if you only want to post reviews or photos. After registering, open the OSM page from a place's details menu, then log in and edit."
+    },
+    "contribute_osmLink": {
+        "ja": "OSMアカウントを登録 ↗",
+        "en": "Create an OSM account ↗"
+    },
+    "contribute_osmExisting": {
+        "ja": "OSMアカウントをお持ちの方は、そのアカウントを使えます。",
+        "en": "If you already have an OSM account, you can use it."
+    },
+    "contribute_findPlaces": {
+        "ja": "投稿する施設を探す",
+        "en": "Find places to contribute to"
+    },
+    "contribute_firstTime": {
+        "ja": "初めての方へ：登録・参加方法",
+        "en": "New here? How to register and contribute"
     }
 }
