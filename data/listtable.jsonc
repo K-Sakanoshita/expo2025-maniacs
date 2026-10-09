@@ -1,4 +1,7 @@
 {
+    "listTable": {
+        "nameFallback": "category"
+    },
     "list": {
         "columns": {
             "style": [

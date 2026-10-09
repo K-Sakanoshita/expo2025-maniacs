@@ -749,6 +749,7 @@ tr.selected td {
 #listArea .list-group-item { position: relative; min-height: 2.75rem; padding-right: 5rem; }
 #listArea .list-group-item.list-area-item { padding-right: .75rem; }
 #listArea .list-area-item .list-area-name { padding-right: 5rem; }
+#listArea .list-name-fallback { color: #6c757d; }
 .poi-status-toggle { color: #6c757d; }
 .poi-status-toggle i { font-size: 1.3rem; }
 .poi-status-toggle[aria-pressed="true"] { color: #0d6efd; }
