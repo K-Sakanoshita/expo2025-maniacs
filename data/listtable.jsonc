@@ -12,6 +12,10 @@
                     "className": "col-10"
                 },
                 {
+                    "className": "col-12 small",
+                    "icon": true
+                },
+                {
                     "className": "d-none"
                 }
             ],
@@ -19,12 +23,14 @@
                 "id",
                 "ref",
                 "name",
+                "#category",
                 "reservation"
             ],
             "actFields": [
                 "id",
                 "#ref",
                 "memo",
+                "#category",
                 "#reservation"
             ]
         }

@@ -42,7 +42,7 @@ assert.equal(prepared.etc.reverseIcon, true);
 assert.equal(prepared.selectItem.default, 'expo2025_exp');
 assert.equal(prepared.icon.markerColors.attention.stroke, '#ffc786');
 assert.equal(JSON.stringify(parse('data/listtable.jsonc').list.columns.poiFields),
-    '["id","ref","name","reservation"]');
+    '["id","ref","name","#category","reservation"]');
 assert.equal(prepared.menu.modal.find(item => item['glot-model'] === 'osm_open').linkto,
     'javascript:winCont.osm_open(cMapMaker.openOSMid)');
 

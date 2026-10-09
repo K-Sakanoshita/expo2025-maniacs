@@ -38,7 +38,7 @@ POIの表示ズームは従来設定を維持しているため、初期位置�
 旗画像は `flags/w40` からローカル配信し、地図と詳細画面の取得先を `icon.flagPath` で指定しています。
 EU・ASEANの既存画像を保持し、万博データで使用する全164種類を同梱しています。取得元は [旗画像の説明](flags/README.md) を参照してください。
 
-一覧はGrid.jsの表から共通システムのカード表示へ更新し、新しい `data/listtable.jsonc` に位置・名前・予約情報の列を定義しています。
+一覧はGrid.jsの表から共通システムのカード表示へ更新し、新しい `data/listtable.jsonc` に管理番号・名前・アイコン付き種別・予約情報の列を定義しています。
 同ファイルの `listTable.nameFallback` を `category` に設定すると、名前のない施設は種別名、種別も不明なら「名称不明」を薄いグレーで表示します。検索にもこの表示名を使い、元の施設データは変更しません。
 旧 `data/listtable-ja.jsonc` / `data/listtable-en.jsonc` は新しい起動処理では読み込みません。
 `data/config-user.jsonc` にサイドバー・マーカー色などを設定し、サイト固有の文言は `data/glot-custom.jsonc` で共通文言を上書きします。

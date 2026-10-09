@@ -24,7 +24,8 @@ for (const lang of ['ja', 'en']) {
         'node/4': { id: 'node/4' }
     };
     const rows = Object.entries(tags).map(([id, tags]) =>
-        [id, 'A01', tags.name ?? '', '', tags.amenity ? `amenity=${tags.amenity}` : '*=*', ['facilities'], 'toilet.png']);
+        [id, 'A01', tags.name ?? '', tags.amenity ? category.amenity[tags.amenity] : '-', '',
+            tags.amenity ? `amenity=${tags.amenity}` : '*=*', ['facilities'], 'toilet.png']);
     rows[2][2] = '  ';
     const context = vm.createContext({ console,
         Conf: { ...config, listTable: { ...config.listTable, category: 'menu', target: 'targets' },
@@ -57,6 +58,9 @@ for (const lang of ['ja', 'en']) {
         const columns = row.children[0].children;
         assert.equal(columns[0].children[0].classList.contains('list-name-fallback'), false);
         assert.equal(columns[1].children[0].classList.contains('list-name-fallback'), index !== 1);
+        assert.equal(columns[2].children[0].className, 'list-icon');
+        assert.equal(columns[2].children[0].src, './icon/toilet.png');
+        assert.equal(columns[2].children[1].textContent, rows[index][3]);
     }
     context.list_keyword.value = category.amenity.drinking_water;
     context.table.makeList(false);
