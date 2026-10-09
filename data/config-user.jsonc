@@ -106,6 +106,7 @@
             "expo2025_pedestrian": 12,
             "expo2025_terminal": 12,
             "expo2025_gatehouse": 12,
+            "expo2025_private": 12,
             "expo2025_wall": 13,
             "expo2025_door": 16,
             "expo2025_pole": 16,

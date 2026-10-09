@@ -1,3 +1,14 @@
+#mini-map {
+    background-color: #050b18;
+    background-image:
+        radial-gradient(circle at 18px 24px, #ffffffd9 0 0.8px, transparent 1.5px),
+        radial-gradient(circle at 79px 63px, #c9ddffa6 0 0.6px, transparent 1.3px),
+        radial-gradient(circle at 45px 107px, #ffffff80 0 0.7px, transparent 1.4px),
+        radial-gradient(circle at 132px 38px, #ffffffb3 0 0.9px, transparent 1.6px),
+        radial-gradient(ellipse at 75% 20%, #152446 0%, transparent 65%);
+    background-size: 151px 137px, 193px 173px, 227px 191px, 283px 229px, 100% 100%;
+}
+
 span.title {
     display: inline-block;
     font-size: 16px !important;

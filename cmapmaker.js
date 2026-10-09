@@ -824,7 +824,7 @@ class CMapMaker extends IndoorControl {
         }
     }
 
-    // 画面内のActivity画像を表示させる(view: true=表示)
+    // 画面内のActivity画像・OSMのCommons画像を表示させる(view: true=表示)
     makeImages(view) {
         if (view) {
             let acts = []
@@ -853,6 +853,14 @@ class CMapMaker extends IndoorControl {
                     if (urls.length) acts.push({ "src": urls, "osmid": act.osmid, "title": act.title })
                 }
             })
+            const imageKeys = new Set(acts.flatMap(act =>
+                act.src.map(src => JSON.stringify([act.osmid, String(src).trim()]))));
+            for (const osmImage of listTable.getThumbnailOsmImages()) {
+                const key = JSON.stringify([osmImage.osmid, osmImage.src[0]]);
+                if (imageKeys.has(key)) continue;
+                imageKeys.add(key);
+                acts.push(osmImage);
+            }
             if (acts.length > 0) {
                 images.classList.remove("d-none");
                 winCont.setImages(images, acts, Conf.etc.loadingUrl, Conf.thumbnail.limits)

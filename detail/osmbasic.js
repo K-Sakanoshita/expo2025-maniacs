@@ -190,9 +190,9 @@ class OSMbasic {
                 html += `<div class="col-12 mt-3 mb-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
                 // make() runs before winCont.makeDetail() inserts the returned HTML.
                 // Resolve the image element after the detail panel is in the DOM.
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                     wikimq.forEach((q) => wikimedia.queueGetWikiMediaImage(q[0], Conf.thumbnail.modalThumbWidth, q[1]));
-                }, 500);
+                });
                 elements++;
             }
         }
