@@ -216,7 +216,8 @@
                 "viewArea": true,
                 "stroke": "#F6EADF",
                 "stroke-width": 1,
-                "fill-opacity": 0.8
+                "fill-opacity": 0.8,
+                "belowFeatures": true // エリア名や施設アイコンより下に描画
             }
         },
         "expo2025_wall": {
