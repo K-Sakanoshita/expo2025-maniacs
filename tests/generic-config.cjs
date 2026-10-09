@@ -55,6 +55,7 @@ assert.equal(loaded.listTable.playback.view, false);
 assert.equal(loaded.listTable.backgroundImage, './image/bgimage.png');
 assert.equal(loaded.listTable.category, 'menu');
 assert.equal(loaded.listTable.target, 'targets');
+assert.equal(loaded.mapDisplayStatus.use, false);
 assert.equal(prepared.menu.modal.find(item => item['glot-model'] === 'osm_open').linkto,
     'javascript:winCont.osm_open(cMapMaker.openOSMid)');
 

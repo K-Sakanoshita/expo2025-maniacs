@@ -1,4 +1,7 @@
 {
+    "mapDisplayStatus": {
+        "use": false
+    },
     "map": {
         "changeMap": true,
         "tileName": "EXPO2025_LASTDAY",

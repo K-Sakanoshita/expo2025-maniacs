@@ -44,6 +44,7 @@ EU・ASEANの既存画像を保持し、万博データで使用する全164種�
 旧 `data/listtable-ja.jsonc` / `data/listtable-en.jsonc` は新しい起動処理では読み込みません。
 `data/config-user.jsonc` にサイドバー・マーカー色などを設定し、サイト固有の文言は `data/glot-custom.jsonc` で共通文言を上書きします。
 OSM詳細リンクは新しい `cMapMaker.openOSMid` を参照します。
+地図の表示対象・条件を示すインジケーターは、`data/config-user.jsonc` の `mapDisplayStatus.use` で切り替えます。万博では `false`（Off）に設定しています。`true` にすると表示します。読み込み中のメッセージとスピナーはこの設定に関係なく表示します。
 
 カテゴリ辞書（`category-ja.jsonc` / `category-en.jsonc`）、マーカー対応（`marker.jsonc`）、共通文言（`glot-system.jsonc`）も更新元の最新版を反映しています。
 共通項目は更新元を優先し、万博向けの `information` カテゴリ・マーカーなど更新元にない項目を追加しています。
