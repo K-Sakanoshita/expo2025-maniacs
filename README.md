@@ -41,7 +41,6 @@ EU・ASEANの既存画像を保持し、万博データで使用する全164種�
 一覧はGrid.jsの表から共通システムのカード表示へ更新し、新しい `data/listtable.jsonc` に管理番号・名前・アイコン付き種別・予約情報の列を定義しています。
 `data/config-user.jsonc` の `listTable.nameFallback` を `category` に設定すると、名前のない施設は種別名、種別も不明なら「名称不明」を薄いグレーで表示します。検索にもこの表示名を使い、元の施設データは変更しません。
 種別列に `fallbackName: true` を設定し、名前のない施設はアイコン付き種別欄に一本化して表示します。
-旧 `data/listtable-ja.jsonc` / `data/listtable-en.jsonc` は新しい起動処理では読み込みません。
 `data/config-user.jsonc` にサイドバー・マーカー色などを設定し、サイト固有の文言は `data/glot-custom.jsonc` で共通文言を上書きします。
 OSM詳細リンクは新しい `cMapMaker.openOSMid` を参照します。
 地図の表示対象・条件を示すインジケーターは、`data/config-user.jsonc` の `mapDisplayStatus.use` で切り替えます。万博では `false`（Off）に設定しています。`true` にすると表示します。読み込み中のメッセージとスピナーはこの設定に関係なく表示します。
