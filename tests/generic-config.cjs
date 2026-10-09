@@ -43,6 +43,18 @@ assert.equal(prepared.selectItem.default, 'expo2025_exp');
 assert.equal(prepared.icon.markerColors.attention.stroke, '#ffc786');
 assert.equal(JSON.stringify(parse('data/listtable.jsonc').list.columns.poiFields),
     '["id","ref","name","#category","reservation"]');
+// The application merges these files shallowly, in this order.
+const loaded = Object.assign({}, ...[
+    'data/config-user.jsonc', 'data/config-system.jsonc', 'data/config-activities.jsonc',
+    'data/marker.jsonc', 'data/category-ja.jsonc', 'data/listtable.jsonc', 'data/overpass-system.jsonc'
+].map(parse));
+assert.equal(JSON.stringify(loaded.listTable), JSON.stringify(config.listTable),
+    'loading list columns must preserve the complete user list settings');
+assert.equal(loaded.listTable.nameFallback, 'category');
+assert.equal(loaded.listTable.playback.view, false);
+assert.equal(loaded.listTable.backgroundImage, './image/bgimage.png');
+assert.equal(loaded.listTable.category, 'menu');
+assert.equal(loaded.listTable.target, 'targets');
 assert.equal(prepared.menu.modal.find(item => item['glot-model'] === 'osm_open').linkto,
     'javascript:winCont.osm_open(cMapMaker.openOSMid)');
 

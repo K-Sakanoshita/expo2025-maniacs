@@ -2048,7 +2048,6 @@
             },
             "paint": {
                 "fill-color": "rgb(206,218,232)",
-                "fill-pattern": "pedestrian_polygon",
                 "fill-antialias": false,
                 "fill-outline-color": "rgb(95,109,126)",
                 "fill-translate-anchor": "viewport"

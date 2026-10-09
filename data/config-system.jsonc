@@ -74,7 +74,7 @@
             "skip": false
         },
         "miniMap": {
-            "style": "./tiles/osmfj_nopoi.json?ver=20261009-02",
+            "style": "./tiles/osmfj_nopoi.json?ver=20261009-06",
             "name": "Planet globe",
             "skip": true
         },

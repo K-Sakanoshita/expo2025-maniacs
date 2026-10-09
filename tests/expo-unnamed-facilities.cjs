@@ -2,7 +2,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const parse = file => vm.runInNewContext('(' + fs.readFileSync(file, 'utf8') + ')');
-const config = parse('data/listtable.jsonc');
+const config = Object.assign({}, parse('data/config-user.jsonc'), parse('data/config-system.jsonc'),
+    parse('data/config-activities.jsonc'), parse('data/listtable.jsonc'));
 const messages = { ...parse('data/glot-system.jsonc'), ...parse('data/glot-custom.jsonc') };
 
 function element() {

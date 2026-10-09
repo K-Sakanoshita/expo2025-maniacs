@@ -151,6 +151,7 @@
         "initView": "view"
     },
     "listTable": {
+        "nameFallback": "category",
         "backgroundImage": "./image/bgimage.png",
         "category": "menu",
         "target": "targets",
