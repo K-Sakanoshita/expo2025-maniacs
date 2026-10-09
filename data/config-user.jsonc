@@ -43,6 +43,7 @@
     "icon": {
         "fgPath": "icon",
         "bgPath": "image",
+        "flagPath": "./flags/w40",
         "shadow": 0.65,
         "attention": 0.65,
         "green": 0.65,

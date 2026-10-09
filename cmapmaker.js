@@ -1071,7 +1071,12 @@ class CMapMaker extends IndoorControl {
             const makeFlag = (country) => {     // 旗アイコンを追加
                 if (country == undefined) return ""
                 let title = "", countries = country.split(";")
-                countries.forEach(CCode => { title += `<img src="https://flagcdn.com/h20/${CCode.toLowerCase()}.png" class="ms-1 me-1" height="16" alt="${CCode} Flag">` })
+                const flagPath = (Conf.icon?.flagPath ?? "https://flagcdn.com/h20").replace(/\/$/, "");
+                countries.forEach(CCode => {
+                    const code = CCode.trim().toLowerCase();
+                    if (!/^[a-z0-9_-]+$/.test(code)) return;
+                    title += `<img src="${flagPath}/${code}.png" class="ms-1 me-1" height="16" alt="${code} Flag">`;
+                })
                 return title
             }
 
