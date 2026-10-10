@@ -19,7 +19,7 @@ const context={Date,console,document:{createElement:tag=>new Element(tag),body:n
  IntersectionObserver:class{constructor(callback,options){this.callback=callback;this.options=options;observer=this;}observe(){}disconnect(){}},
  fetch:()=>{requests++;throw new Error('Unexpected request');},
  getWikimedia:()=>{requests++;throw new Error('Unexpected image metadata request');}};
-vm.createContext(context);vm.runInContext(fs.readFileSync('lib/newstickerview.js','utf8')+'\nthis.Ticker=NewsTicker',context);
+vm.createContext(context);vm.runInContext(fs.readFileSync('lib/appmodal.js','utf8'),context);vm.runInContext(fs.readFileSync('lib/newstickerview.js','utf8')+'\nthis.Ticker=NewsTicker',context);
 const ticker=new context.Ticker();
 const events=[
  {name:'A',osmId:'node/1',placeId:'way/10',activityId:'review/1',timestamp:100,kind:'reviewCreated',coordinates:[135,34],section:'other'},

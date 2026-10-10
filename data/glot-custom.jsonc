@@ -20,8 +20,8 @@
         "en": "about EXPO2025 Maniacs Map"
     },
     "about_message": {
-        "ja": "EXPO2025の会場マップを閲覧できるサイトです。<br>万博終了に伴い、アーカイブサイトとして進化させていきます。<br>会場マップはOpenStreetMapを利用しています。<br>開発サイト: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>",
-        "en": "This is a site where you can view the EXPO 2025 venue map. <br>As the Expo ends, this will evolve as an archive site. <br>The venue map uses OpenStreetMap.<br>Develop Site: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>"
+        "ja": "EXPO2025の会場マップを閲覧できるサイトです。<br>万博終了に伴い、アーカイブサイトとして進化させていきます。<br><br>会場や施設のデータをオープンデータとして公開しています。<br>これから生まれるサービスや研究の基礎データとしてご活用ください。<br><a href='./data.html'>会場・施設オープンデータ</a><br><br>会場マップはOpenStreetMapを利用しています。<br>開発サイト: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>",
+        "en": "This is a site where you can view the EXPO 2025 venue map.<br>As the Expo ends, this will evolve as an archive site.<br><br>Venue and facility data is available as open data.<br>Use it as a foundation for new services and research.<br><a href='./data.html'>Venue and facility open data</a><br><br>The venue map uses OpenStreetMap.<br>Develop Site: <a href='https://github.com/K-Sakanoshita/expo2025-maniacs'>https://github.com/K-Sakanoshita/expo2025-maniacs</a>"
     },
     "owner": {
         "ja": "",

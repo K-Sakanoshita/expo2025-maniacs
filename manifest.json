@@ -39,6 +39,8 @@
             "name": "app-local-ordered",
             "parallel": false,
             "scripts": [
+                "./lib/appmodal.js",
+                "./lib/siteupdates.js",
                 "./lib/changecontroller.js",
                 "./lib/newstickerview.js",
                 "./lib/newslib.js",

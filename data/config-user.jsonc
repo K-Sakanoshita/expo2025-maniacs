@@ -1,4 +1,14 @@
 {
+    // 更新履歴の自動表示: daily=1日1回、version=版ごと、always=毎回、never=自動表示なし
+    "siteUpdates": {
+        "use": true,
+        "autoOpen": "daily",
+        "delayMs": 0,
+        "version": "20261011-01",
+        "storageKey": "expo2025.site-updates",
+        "title": { "ja": "マップの更新履歴", "en": "Map updates" },
+        "contentUrl": { "ja": "./data/updates-ja.html", "en": "./data/updates-en.html" }
+    },
     "mapDisplayStatus": {
         "use": false
     },

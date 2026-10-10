@@ -73,5 +73,25 @@ context.Conf = { changes: { ticker: { use: true, maxItems: 30, mobileLabel: '公
     assert.equal(refreshes,1);
     assert.equal(maker.displayedChangeRegion,'28');
     assert.equal(calls.at(-1)[1][0].headline,'兵庫県の公園');
-    console.log('PASS: startup changes and console preview reach the news ticker');
+    // Site notices defer the existing intro/change feed until the notice closes.
+    let closed, introCalls = 0;
+    maker.initDailyIntro = async () => { introCalls++; };
+    maker.siteUpdates = { autoShow: async () => true,
+        modal: { element: { addEventListener(event, callback, options) {
+            assert.equal(event, 'hidden.bs.modal');
+            assert.equal(options.once, true);
+            closed = callback;
+        } } } };
+    context.Conf.siteUpdates = { use: true };
+    await maker.initStartupNotices();
+    assert.equal(introCalls, 0);
+    closed();
+    assert.equal(introCalls, 1);
+    maker.siteUpdates.autoShow = async () => false;
+    await maker.initStartupNotices();
+    assert.equal(introCalls, 2);
+    context.Conf.siteUpdates.use = false;
+    await maker.initStartupNotices();
+    assert.equal(introCalls, 3);
+    console.log('PASS: startup changes, console preview and site notice sequencing');
 })().catch(error => { console.error(error); process.exitCode = 1; });

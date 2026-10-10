@@ -199,6 +199,19 @@ class CMapMaker extends IndoorControl {
         return this.changeRegionRefresh;
     }
 
+    async initStartupNotices() {
+        if (Conf.siteUpdates?.use === true) {
+            this.siteUpdates ??= new SiteUpdatesController(Conf.siteUpdates, LANG);
+            if (await this.siteUpdates.autoShow()) {
+                this.siteUpdates.modal.element.addEventListener("hidden.bs.modal", () => {
+                    this.initDailyIntro();
+                }, { once: true });
+                return;
+            }
+        }
+        await this.initDailyIntro();
+    }
+
     async initDailyIntro() {
         const intro = document.getElementById("cMapIntro");
         const closeButton = document.getElementById("cMapIntroClose");
@@ -303,7 +316,7 @@ class CMapMaker extends IndoorControl {
             ...Conf.activity
         };
         // Dedicated applications opt in to new services and area/model definitions.
-        for (const name of ["news", "changes", "intro", "areaFeatureLinker", "areaSearch",
+        for (const name of ["news", "changes", "intro", "siteUpdates", "areaFeatureLinker", "areaSearch",
             "discovery", "listActions", "feature3d", "directions"]) {
             Conf[name] = { use: false, ...Conf[name] };
         }
@@ -515,7 +528,7 @@ class CMapMaker extends IndoorControl {
                         cMapMaker.status = "initialize";
                         cMapMaker.addEvents();
                         window.hideStartupStatus?.();
-                        cMapMaker.initDailyIntro();
+                        cMapMaker.initStartupNotices().catch(error => console.warn("Startup notices failed", error));
                     });
                     // 外部のActivityデータも地図が操作可能になってから取得する。
                     const activityDataPromise = cMapMaker.usesActivityBbox()

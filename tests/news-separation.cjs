@@ -32,6 +32,7 @@ const viewContext = {
         clearInterval() {}, setTimeout() {} }, Date, console
 };
 vm.createContext(viewContext);
+vm.runInContext(fs.readFileSync('lib/appmodal.js', 'utf8'), viewContext);
 vm.runInContext(fs.readFileSync('lib/newstickerview.js', 'utf8') + '\nthis.NewsTicker = NewsTicker', viewContext);
 const ticker = new viewContext.NewsTicker();
 ticker.init(container, { displayDuration: 3000 });
@@ -100,7 +101,7 @@ const modal = new viewContext.NewsTicker();
 modal.init(container, { id: 'changesModal', modal: true, collapsible: true });
 modal.setItems([{ headline: '新しい公園' }, { headline: '更新された遊具' }]);
 assert.equal(modal.element.tagName, 'div');
-assert.equal(modal.element.className, 'modal changes-modal');
+assert.equal(modal.element.className, 'modal app-modal changes-modal');
 assert.equal(modal.content.children.length, 2);
 assert.equal(modal.toggleButton.textContent, '新着 2件');
 assert.equal(modal.timer, null);
