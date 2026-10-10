@@ -40,13 +40,15 @@
         <section id="downloads" aria-labelledby="downloads-title">
             <h2 id="downloads-title">データを使う</h2>
             <p>施設検索や一覧アプリは、約1.1 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
+            <p><strong>収録内容：</strong>全3,241件（名前あり1,113件・名前なし2,128件）。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなどを含みます。</p>
+            <p><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。</p>
             <div class="download-list">
                 <a href="./data/releases/2026-10-10/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.1 MB</span></a>
                 <a href="./data/releases/2026-10-10/expo2025.csv" download><strong>CSV</strong><span>表計算・集計向け · 約0.6 MB</span></a>
                 <a href="./data/releases/2026-10-10/expo2025.osm.json" download><strong>元データ</strong><span>OSMの構造を保持 · 約1.3 MB</span></a>
             </div>
             <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
-            <p class="small">公開版 2026-10-10。取得後の写真・公式サイト情報や遊具などの補足を含みます。建物・通路なども収録しています。</p>
+            <p class="small">公開版 2026-10-10。</p>
             <details id="start"><summary>AIへの依頼文を見る</summary>
                 <pre id="ai-prompt">https://k-sakanoshita.github.io/expo2025-maniacs/data.html
 このページのデータと開発ガイドを使い、パビリオンを国名で検索できるアプリを作ってください。
@@ -58,7 +60,7 @@
         </section>
         <section id="basemap" aria-labelledby="basemap-title">
             <h2 id="basemap-title">当時の背景地図も使いたいとき</h2>
-            <p>2025年10月13日版の背景地図を重ねると、当時の道路や建物と一緒に施設を表示できます。<a href="https://armd-01.sakura.ne.jp/tiles/" target="_blank" rel="noopener noreferrer">Japan PMTiles配布サイト</a>で公開されています。</p>
+            <p><strong>背景地図：</strong>2025年10月13日版です。当時の道路や建物と一緒に施設を表示できます。<a href="https://armd-01.sakura.ne.jp/tiles/" target="_blank" rel="noopener noreferrer">Japan PMTiles配布サイト</a>で公開されています。</p>
             <p class="small">背景地図は任意です。施設検索や集計だけなら、上の施設データで始められます。</p>
             <details><summary>背景地図を取得して使う手順</summary>
                 <ol>
@@ -110,7 +112,7 @@ const water = data.features.filter(f =&gt;
         </section>
             <section id="provenance" aria-labelledby="provenance-title">
                 <h2 id="provenance-title">取得履歴・公開版の詳細</h2>
-                <p>対象は大阪・関西万博の会場（夢洲）と周辺。対象時点は2025年10月13日の閉幕時点です。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、施設の対象時点ではありません。</p>
+                <p>対象は大阪・関西万博の会場（夢洲）と周辺。2025年10月13日の閉幕時点の記録を目的としていますが、厳密な閉幕日のスナップショットではありません。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、施設の対象時点ではありません。</p>
                 <p>GeoJSON・CSVはタグを持つ3,241件（点2,770件・線171件・面300件）。形状構築用のタグなしノードは元データに残しています。</p>
                 <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-10/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
             </section>
