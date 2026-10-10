@@ -34,9 +34,9 @@
             </figure>
             <details><summary>抽出条件と作成コードを見る</summary>
                 <p><code>amenity=toilets</code>（64件）、<code>amenity=drinking_water</code>（50件）、<code>amenity=vending_machine</code>（248件）で抽出しています。件数は地物の数で、便器や設備の台数ではありません。</p>
-                <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と建物（<code>building</code>タグのある面）も同じGeoJSONから描画しています。</p>
+                <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と大屋根リング（<code>relation/18047883</code>）も同じGeoJSONから描画しています。</p>
                 <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./examples/expo-facilities.html">サンプルHTML</a> · <a href="./data/releases/2026-10-10-2/expo2025.geojson" download>使用したGeoJSON</a></p>
-                <p class="small">MapLibre GL JSで表示しています。背景タイルは使わず、会場輪郭・建物・施設を公開GeoJSONだけで描画します。静止図の生成コードは<a href="./scripts/render-facility-example.cjs">こちら</a>。</p>
+                <p class="small">MapLibre GL JSで表示しています。背景タイルは使わず、会場輪郭・大屋根リング・施設を公開GeoJSONだけで描画します。静止図の生成コードは<a href="./scripts/render-facility-example.cjs">こちら</a>。</p>
             </details>
         </section>
         <section id="demo" class="demo" aria-labelledby="demo-title">

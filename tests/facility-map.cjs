@@ -7,7 +7,8 @@ const fixture = { features: [
     { properties: { osm_id: 'way/2', name: '', tags: { amenity: 'drinking_water' } }, geometry: { type: 'Polygon', coordinates: [[[135, 34], [135.02, 34], [135.02, 34.02], [135, 34]]] } },
     { properties: { osm_id: 'node/3', name: '', tags: { amenity: 'vending_machine' } }, geometry: { type: 'Point', coordinates: [135.01, 34.01] } },
     { properties: { tags: { 'historic:amenity': 'toilets' } }, geometry: { type: 'Point', coordinates: [136, 35] } },
-    { properties: { tags: { tourism: 'theme_park', building: 'yes' } }, geometry: { type: 'Polygon', coordinates: [[[134.99, 33.99], [135.03, 33.99], [135.03, 34.03], [134.99, 33.99]]] } }
+    { properties: { tags: { tourism: 'theme_park', building: 'yes' } }, geometry: { type: 'Polygon', coordinates: [[[134.99, 33.99], [135.03, 33.99], [135.03, 34.03], [134.99, 33.99]]] } },
+    { properties: { osm_id: 'relation/18047883', name: '大屋根リング', tags: { building: 'roof' } }, geometry: { type: 'Polygon', coordinates: [[[135, 34], [135.01, 34], [135.01, 34.01], [135, 34]]] } }
 ] };
 const result = prepareData(fixture);
 assert.deepEqual(result.counts, { toilets: 1, drinking_water: 1, vending_machine: 1 });
@@ -16,9 +17,11 @@ assert.equal(result.markers.features[1].properties.original_geometry, 'Polygon')
 assert.deepEqual(result.bounds, [[134.99, 33.99], [135.03, 34.03]]);
 assert.equal(result.venues.features.length, 1);
 assert.equal(result.buildings.features.length, 1);
+assert.equal(result.buildings.features[0].properties.osm_id, 'relation/18047883');
 const real = prepareData(JSON.parse(fs.readFileSync('data/releases/2026-10-10-2/expo2025.geojson')));
 assert.deepEqual(real.counts, { toilets: 64, drinking_water: 50, vending_machine: 248 });
 assert.equal(real.markers.features.length, 362);
+assert.deepEqual(real.buildings.features.map(f => f.properties.osm_id), ['relation/18047883']);
 assert.throws(() => prepareData({ features: [] }), /対象/);
 
 async function check(fail) {

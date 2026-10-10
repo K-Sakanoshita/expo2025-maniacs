@@ -34,7 +34,7 @@
             }
             if (['Polygon', 'MultiPolygon'].includes(feature.geometry.type)) {
                 if (tags.tourism === 'theme_park') venues.push(feature);
-                if (tags.building) buildings.push(feature);
+                if (feature.properties.osm_id === 'relation/18047883') buildings.push(feature);
             }
         }
         if (!markers.length) throw new Error('対象の施設がありません');
