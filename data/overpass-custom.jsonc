@@ -242,7 +242,7 @@
                     "width": 0.2, // widthタグ未指定時の幅（m）
                     "typeTag": "barrier",
                     "styles": {
-                        "wall": { "color": "#606060", "opacity": 1 },
+                        "wall": { "color": "#bdbdbd", "opacity": 0.3 },
                         "fence": { "color": "#71808a", "opacity": 0.45 }
                     }
                 }

@@ -58,7 +58,7 @@ Google Apps Scriptとの連携は従来の `google.AppScript` / `google.targetNa
 
 壁・フェンスは `overpass-custom.jsonc` の対象レイヤーで `expression.renderer: "linear-extrusion"` を指定すると立体表示できます。万博以外の取得対象にも同じ設定を使えます。
 `expression.extrusion` の `height` / `width` は既定の高さ・厚み（メートル）、`minzoom` は立体表示を始めるズームです。OSMの `height` / `width` を優先し、`min_height` があれば底面を持ち上げます。単位はメートル、cm、ftに対応します。
-`typeTag`（既定は `barrier`）と `styles` で種別ごとの `color` / `opacity` / `height` / `width` を設定できます。現在は高さ1.5m・厚み0.2m、壁は不透明、フェンスは半透明で、ズーム16未満は線表示です。線と閉じた輪郭を細い面に変換し、フェンスの網目は描きません。変換形状は再利用し、元のOSMデータは変更しません。
+`typeTag`（既定は `barrier`）と `styles` で種別ごとの `color` / `opacity` / `height` / `width` を設定できます。現在は高さ1.5m・厚み0.2m、壁は灰色で建物と同じ不透明度0.3、フェンスは不透明度0.45で、ズーム16未満は線表示です。線と閉じた輪郭を細い面に変換し、フェンスの網目は描きません。変換形状は再利用し、元のOSMデータは変更しません。
 
 回帰テストはNode.jsの標準ライブラリだけで実行できます。
 
