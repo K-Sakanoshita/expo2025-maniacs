@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const context = { Intl };
 vm.runInNewContext(fs.readFileSync('lib/publicdatasearch.js', 'utf8') + '\nthis.Search = PublicDataSearch;', context);
-const data = JSON.parse(fs.readFileSync('data/releases/2026-10-10/expo2025.geojson', 'utf8'));
+const data = JSON.parse(fs.readFileSync('data/releases/2026-10-10-2/expo2025.geojson', 'utf8'));
 const categories = JSON.parse(fs.readFileSync('data/category-ja.jsonc', 'utf8')).category;
 const search = new context.Search(data.features, 'ja', categories);
 for (const [key, value, label] of [['entrance', 'yes', '出入口'], ['natural', 'tree', '樹木'], ['amenity', 'bench', 'ベンチ'], ['man_made', 'flagpole', '旗竿']]) {

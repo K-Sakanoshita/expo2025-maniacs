@@ -42,7 +42,7 @@ openLinkedDetails();
     const query = document.getElementById('demo-query');
     try {
         const [data, dictionary] = await Promise.all([
-            './data/releases/2026-10-10/expo2025.geojson', './data/category-ja.jsonc'
+            './data/releases/2026-10-10-2/expo2025.geojson', './data/category-ja.jsonc'
         ].map(async url => {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);

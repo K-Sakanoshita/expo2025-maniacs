@@ -60,7 +60,13 @@ async function checkSample(fail) {
 (async () => {
     await checkSample(false);
     await checkSample(true);
-    const release = 'data/releases/2026-10-10';
+    const release = 'data/releases/2026-10-10-2';
+    const previous = 'data/releases/2026-10-10';
+    for (const name of ['expo2025.geojson', 'expo2025.osm.json']) {
+        assert.deepEqual(fs.readFileSync(path.join(release, name)), fs.readFileSync(path.join(previous, name)), `CSV-only release must preserve ${name}`);
+    }
+    assert.notDeepEqual(fs.readFileSync(path.join(release, 'expo2025.csv')), fs.readFileSync(path.join(previous, 'expo2025.csv')));
+    assert.match(fs.readFileSync('data-page.js', 'utf8'), /data\/releases\/2026-10-10-2\/expo2025\.geojson/);
     const geojson = JSON.parse(fs.readFileSync(path.join(release, 'expo2025.geojson'), 'utf8'));
     const example = JSON.parse(fs.readFileSync('data-example.json', 'utf8'));
     assert.deepEqual(example, geojson.features.find(feature => feature.id === example.id));

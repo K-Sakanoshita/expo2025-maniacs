@@ -1,0 +1,77 @@
+{
+  "version": "2026-10-10-2",
+  "target_date": "2025-10-13",
+  "description": "大阪・関西万博の閉幕時点を対象とした会場・施設の記録。取得後の写真・公式サイト情報や遊具などの補足を含む。",
+  "source": "data/expo2025.min.json",
+  "source_osm_base_timestamp": "2025-10-30T16:07:40Z",
+  "source_timestamp_note": "元データの取得時に記録されたOSM基準日時。施設の対象時点ではない。",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "publisher": "EXPO2025 万博マニアックマップ",
+  "documentation_url": "https://k-sakanoshita.github.io/expo2025-maniacs/data.html",
+  "coordinate_reference_system": "WGS 84",
+  "coordinate_order": [
+    "longitude",
+    "latitude"
+  ],
+  "feature_count": 3241,
+  "geometry_counts": {
+    "Point": 2770,
+    "Polygon": 299,
+    "MultiPolygon": 1,
+    "LineString": 171
+  },
+  "selection": "タグを持つ地物。リレーションの構成要素は変換時に統合される場合がある。タグなし形状ノードは元データのみ収録。",
+  "csv": {
+    "encoding": "UTF-8",
+    "columns": [
+      "osm_id",
+      "name",
+      "kind",
+      "longitude",
+      "latitude",
+      "geometry_type",
+      "tags_json",
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata"
+    ],
+    "expanded_tag_columns": [
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata"
+    ],
+    "missing_tag_note": "タグの空欄は未記録（タグなし）。施設や設備が存在しないことを意味しない。",
+    "historical_tag_note": "営業時間などは収録時点の情報であり、現在の営業状況を示すものではない。",
+    "representative_position": "Pointは元座標。それ以外は境界ボックスの中心。敷地内や入口の位置を保証しない。"
+  },
+  "files": {
+    "expo2025.geojson": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.geojson",
+      "bytes": 1092765,
+      "sha256": "3544862d85ec703054562b5cc8fa5b4eda67427e4d2800a5b5d2c188bab0294d"
+    },
+    "expo2025.csv": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.csv",
+      "bytes": 650668,
+      "sha256": "e379cb12961e1d704d7c09937544a45f11f2821c02f10a59fc11b60a60bd7a45"
+    },
+    "expo2025.osm.json": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.osm.json",
+      "bytes": 1338926,
+      "sha256": "32a20a3209ff71e9fb70c6610d4d4fe4b322215efc09ea4734eb2d9f500c80fb"
+    }
+  }
+}

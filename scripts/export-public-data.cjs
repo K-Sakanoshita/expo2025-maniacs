@@ -4,6 +4,7 @@ const crypto = require('node:crypto');
 const osmtogeojson = require('../lib/osmtogeojson.js');
 
 const KIND_KEYS = ['amenity', 'tourism', 'leisure', 'shop', 'barrier', 'highway', 'building', 'natural', 'playground'];
+const CSV_TAG_KEYS = ['amenity', 'tourism', 'shop', 'country', 'wheelchair', 'opening_hours', 'website', 'wikidata'];
 const BASE_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/';
 const csvCell = value => /[",\r\n]/.test(String(value)) ? `"${String(value).replaceAll('"', '""')}"` : String(value);
 function position(geometry) {
@@ -19,7 +20,7 @@ function position(geometry) {
     const xs = points.map(point => point[0]), ys = points.map(point => point[1]);
     return [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
 }
-function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-10', version = '2026-10-10' } = {}) {
+function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-10-2', version = '2026-10-10-2' } = {}) {
     if (fs.existsSync(output)) throw new Error(`Published directory already exists; use a new version: ${output}`);
     if (!/^\d{4}-\d{2}-\d{2}(?:-\d+)?$/.test(version)) throw new Error('Invalid release version');
     const raw = fs.readFileSync(source);
@@ -38,12 +39,13 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
     const ids = new Set(features.map(feature => feature.id));
     if (ids.size !== features.length) throw new Error('Duplicate feature IDs');
     const geojson = { type: 'FeatureCollection', features };
-    const rows = [['osm_id', 'name', 'kind', 'longitude', 'latitude', 'geometry_type', 'tags_json']];
+    const rows = [['osm_id', 'name', 'kind', 'longitude', 'latitude', 'geometry_type', 'tags_json', ...CSV_TAG_KEYS]];
     const counts = {};
     for (const feature of features) {
         const props = feature.properties;
         counts[feature.geometry.type] = (counts[feature.geometry.type] || 0) + 1;
-        rows.push([props.osm_id, props.name, props.kind, ...position(feature.geometry), feature.geometry.type, JSON.stringify(props.tags)]);
+        rows.push([props.osm_id, props.name, props.kind, ...position(feature.geometry), feature.geometry.type, JSON.stringify(props.tags),
+            ...CSV_TAG_KEYS.map(key => props.tags[key] ?? '')]);
     }
     const files = {
         'expo2025.geojson': Buffer.from(JSON.stringify(geojson) + '\n'),
@@ -62,7 +64,10 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
         coordinate_reference_system: 'WGS 84', coordinate_order: ['longitude', 'latitude'],
         feature_count: features.length, geometry_counts: counts,
         selection: 'タグを持つ地物。リレーションの構成要素は変換時に統合される場合がある。タグなし形状ノードは元データのみ収録。',
-        csv: { encoding: 'UTF-8', representative_position: 'Pointは元座標。それ以外は境界ボックスの中心。敷地内や入口の位置を保証しない。' },
+        csv: { encoding: 'UTF-8', columns: rows[0], expanded_tag_columns: CSV_TAG_KEYS,
+            missing_tag_note: 'タグの空欄は未記録（タグなし）。施設や設備が存在しないことを意味しない。',
+            historical_tag_note: '営業時間などは収録時点の情報であり、現在の営業状況を示すものではない。',
+            representative_position: 'Pointは元座標。それ以外は境界ボックスの中心。敷地内や入口の位置を保証しない。' },
         files: Object.fromEntries(Object.entries(files).map(([name, content]) => [name, {
             url: `${BASE_URL}data/releases/${version}/${name}`,
             bytes: content.length, sha256: crypto.createHash('sha256').update(content).digest('hex')
