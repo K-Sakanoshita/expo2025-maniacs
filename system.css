@@ -262,6 +262,37 @@ body.is-resizing-sidebar * {
     margin-bottom: 0 !important;
 }
 
+/* Let the globe fill the remaining mobile detail space after resizing. */
+@media (max-width: 1079.98px) {
+    #btmHeader:has(#detailMenu:not(.d-none) #mini-map:not(.d-none)) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #detailMenu:not(.d-none):has(#mini-map:not(.d-none)) {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
+
+    #detailMenu:has(#mini-map:not(.d-none)) #detailHeader,
+    #detailMenu:has(#mini-map:not(.d-none)) #btmWindow_message {
+        flex-shrink: 0;
+    }
+
+    #detailMenu:has(#mini-map:not(.d-none)) #detailArea,
+    #detailMenu:has(#mini-map:not(.d-none)) #detailArea > .accordion-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
+
+    #detailMenu #mini-map:not(.d-none) {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+}
+
 #detailArea {
     overflow-y: auto;
 }
