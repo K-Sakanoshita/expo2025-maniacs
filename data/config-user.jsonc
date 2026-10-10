@@ -179,6 +179,30 @@
         ],
         "height": 0.6
     },
+    "feature3d": {
+        "use": true,
+        "visualScale": 1.0,
+        "hitArea": { "use": true, "padding": 0.35, "minSize": 2.0 },
+        "models": {
+            "bench": {
+                "url": "./assets/models/poi/bench/scene.gltf",
+                "size": 2
+            },
+            "drinking_water": {
+                "url": "./assets/models/poi/drinking-water/scene.gltf",
+                "size": 1.2, "scaleBelowZoom": 19, "maxZoomScale": 4
+            },
+            "vending_machine": {
+                "url": "./assets/models/poi/vending-machine/scene.gltf",
+                "size": 1.9, "scaleBelowZoom": 19, "maxZoomScale": 4
+            }
+        },
+        "rules": [
+            { "tags": { "amenity": "bench" }, "model": "bench" },
+            { "tags": { "amenity": "drinking_water" }, "model": "drinking_water" },
+            { "tags": { "amenity": "vending_machine" }, "model": "vending_machine" }
+        ]
+    },
     "thumbnail": {
         "use": true,
         "limits": 20,

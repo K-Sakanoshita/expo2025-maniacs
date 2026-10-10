@@ -26,9 +26,12 @@ assert.equal(prepared.activity.url, config.google.AppScript);
 assert.equal(prepared.activity.targetName, config.google.targetName);
 assert.equal(prepared.activity.authMode, 'legacy');
 for (const name of ['news', 'changes', 'intro', 'areaFeatureLinker', 'areaSearch',
-    'discovery', 'listActions', 'feature3d', 'directions']) {
+    'discovery', 'listActions', 'directions']) {
     assert.equal(prepared[name].use, false, `${name} requires opt-in`);
 }
+assert.equal(prepared.feature3d.use, true);
+assert.equal(prepared.feature3d.rules.find(rule => rule.tags.amenity === 'vending_machine').model, 'vending_machine');
+for (const model of Object.values(prepared.feature3d.models)) assert(fs.existsSync(model.url));
 assert.equal(prepared.indoor.use, false);
 assert.equal(parse('data/glot-custom.jsonc').site_title.ja, 'EXPO2025 万博マニアックマップ');
 assert.equal(parse('manifest.json').gId, 'G-T912TLST3W');

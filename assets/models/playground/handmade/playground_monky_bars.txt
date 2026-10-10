@@ -1,0 +1,1097 @@
+import bpy
+import math
+import os
+from mathutils import Vector
+
+
+# ============================================================
+# playground=monkey_bars
+# 4方向へ脚が広がる雲梯
+# Blender 5.x
+# ============================================================
+
+
+# ============================================================
+# 基本サイズ
+# ============================================================
+
+# 雲梯の長さ（Y方向）
+LENGTH = 2.80
+
+# 雲梯の幅（X方向）
+WIDTH = 0.82
+
+# 高さ
+HEIGHT = 1.95
+
+
+# ============================================================
+# 支柱
+# ============================================================
+
+POST_RADIUS = 0.045
+
+# 地面へ少し埋める
+POST_EMBED = 0.05
+
+# 左右方向への広がり
+LEG_SPREAD_SIDE = 0.16
+
+# 前後方向への広がり
+LEG_SPREAD_END = 0.15
+
+
+# ============================================================
+# 上部フレーム
+# ============================================================
+
+TOP_RAIL_RADIUS = 0.040
+
+
+# ============================================================
+# 雲梯横棒
+# ============================================================
+
+RUNG_RADIUS = 0.028
+
+RUNG_COUNT = 8
+
+
+# ============================================================
+# 昇降用梯子
+# ============================================================
+
+LADDER_RUNG_RADIUS = 0.026
+
+LADDER_HEIGHTS = [
+    0.42,
+    0.82,
+    1.22,
+]
+
+
+# ============================================================
+# 色
+# ============================================================
+
+# 支柱
+COLOR_POST = (
+    0.20,
+    0.52,
+    0.82
+)
+
+# 上部フレーム
+COLOR_TOP = (
+    0.92,
+    0.72,
+    0.15
+)
+
+# 横棒
+COLOR_RUNG = (
+    0.88,
+    0.28,
+    0.20
+)
+
+
+# ============================================================
+# GLB Export
+# ============================================================
+
+EXPORT_GLB = True
+
+EXPORT_PATH = (
+    "C:/Users/saka/Documents/playground_monkey_bars.glb"
+)
+
+# Blenderファイルと同じ場所なら
+# EXPORT_PATH = "//playground_monkey_bars.glb"
+
+
+# ============================================================
+# Utility
+# ============================================================
+
+def delete_all():
+
+    bpy.ops.object.select_all(
+        action='SELECT'
+    )
+
+    bpy.ops.object.delete(
+        use_global=False
+    )
+
+
+def apply_transform(obj):
+
+    bpy.context.view_layer.objects.active = obj
+
+    obj.select_set(True)
+
+    bpy.ops.object.transform_apply(
+        location=True,
+        rotation=True,
+        scale=True
+    )
+
+
+def apply_modifier(
+    obj,
+    modifier_name
+):
+
+    bpy.context.view_layer.objects.active = obj
+
+    obj.select_set(True)
+
+    bpy.ops.object.modifier_apply(
+        modifier=modifier_name
+    )
+
+
+# ============================================================
+# Material
+#
+# GLBで色が消えにくいよう
+# 単色テクスチャも埋め込む
+# ============================================================
+
+def make_material(
+    name,
+    color,
+    roughness=0.45
+):
+
+    mat = bpy.data.materials.new(
+        name=name
+    )
+
+    mat.use_nodes = True
+
+    mat.diffuse_color = (
+        color[0],
+        color[1],
+        color[2],
+        1.0
+    )
+
+
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+
+
+    bsdf = nodes.get(
+        "Principled BSDF"
+    )
+
+    if bsdf is None:
+
+        bsdf = nodes.new(
+            "ShaderNodeBsdfPrincipled"
+        )
+
+
+    bsdf.inputs[
+        "Roughness"
+    ].default_value = roughness
+
+
+    bsdf.inputs[
+        "Metallic"
+    ].default_value = 0.0
+
+
+    bsdf.inputs[
+        "Alpha"
+    ].default_value = 1.0
+
+
+    # --------------------------------------------------------
+    # 4x4単色テクスチャ
+    # --------------------------------------------------------
+
+    image_name = (
+        name + "_texture"
+    )
+
+
+    image = bpy.data.images.get(
+        image_name
+    )
+
+
+    if image is None:
+
+        image = bpy.data.images.new(
+            name=image_name,
+            width=4,
+            height=4,
+            alpha=True
+        )
+
+
+        pixels = []
+
+        for _ in range(16):
+
+            pixels.extend([
+                color[0],
+                color[1],
+                color[2],
+                1.0
+            ])
+
+
+        image.pixels = pixels
+
+        image.file_format = 'PNG'
+
+        image.pack()
+
+
+    tex = nodes.new(
+        "ShaderNodeTexImage"
+    )
+
+    tex.name = (
+        name + "_image"
+    )
+
+    tex.image = image
+
+    tex.interpolation = 'Closest'
+
+
+    links.new(
+        tex.outputs["Color"],
+        bsdf.inputs["Base Color"]
+    )
+
+
+    return mat
+
+
+# ============================================================
+# 2点間をパイプで結ぶ
+# ============================================================
+
+def add_pipe_between(
+    name,
+    p1,
+    p2,
+    radius,
+    material,
+    vertices=16,
+    bevel_width=0.0025
+):
+
+    p1 = Vector(p1)
+    p2 = Vector(p2)
+
+
+    direction = (
+        p2 - p1
+    )
+
+
+    length = (
+        direction.length
+    )
+
+
+    center = (
+        p1 + p2
+    ) / 2
+
+
+    bpy.ops.mesh.primitive_cylinder_add(
+
+        vertices=vertices,
+
+        radius=radius,
+
+        depth=length,
+
+        location=center
+    )
+
+
+    obj = bpy.context.active_object
+
+    obj.name = name
+
+
+    # Cylinderは初期状態ではZ方向なので
+    # p1→p2方向へ向ける
+    obj.rotation_mode = (
+        'QUATERNION'
+    )
+
+
+    obj.rotation_quaternion = (
+
+        Vector((0, 0, 1))
+        .rotation_difference(
+            direction.normalized()
+        )
+    )
+
+
+    apply_transform(
+        obj
+    )
+
+
+    obj.data.materials.append(
+        material
+    )
+
+
+    # 角を少し丸める
+    if bevel_width > 0:
+
+        bevel = obj.modifiers.new(
+            name="Bevel",
+            type='BEVEL'
+        )
+
+        bevel.width = (
+            bevel_width
+        )
+
+        bevel.segments = 2
+
+        bevel.limit_method = (
+            'ANGLE'
+        )
+
+
+        apply_modifier(
+            obj,
+            "Bevel"
+        )
+
+
+    bpy.context.view_layer.objects.active = obj
+
+    bpy.ops.object.shade_smooth()
+
+
+    return obj
+
+
+# ============================================================
+# 斜め支柱上の指定高さの座標を求める
+# ============================================================
+
+def point_on_leg_at_z(
+    bottom,
+    top,
+    z
+):
+
+    bottom = Vector(bottom)
+    top = Vector(top)
+
+
+    delta_z = (
+        top.z - bottom.z
+    )
+
+
+    if abs(delta_z) < 0.000001:
+
+        return Vector((
+            bottom.x,
+            bottom.y,
+            z
+        ))
+
+
+    ratio = (
+
+        (z - bottom.z)
+
+        / delta_z
+    )
+
+
+    return bottom.lerp(
+        top,
+        ratio
+    )
+
+
+# ============================================================
+# オブジェクト結合
+# ============================================================
+
+def join_objects(
+    objects,
+    name
+):
+
+    bpy.ops.object.select_all(
+        action='DESELECT'
+    )
+
+
+    for obj in objects:
+
+        obj.select_set(True)
+
+
+    bpy.context.view_layer.objects.active = (
+        objects[0]
+    )
+
+
+    bpy.ops.object.join()
+
+
+    result = bpy.context.active_object
+
+    result.name = name
+
+
+    return result
+
+
+# ============================================================
+# 原点をモデル最下部中央へ
+# ============================================================
+
+def set_origin_to_bottom_center(
+    obj
+):
+
+    bpy.context.view_layer.update()
+
+
+    corners = [
+
+        obj.matrix_world
+        @ Vector(corner)
+
+        for corner
+        in obj.bound_box
+    ]
+
+
+    min_x = min(
+        p.x for p in corners
+    )
+
+    max_x = max(
+        p.x for p in corners
+    )
+
+
+    min_y = min(
+        p.y for p in corners
+    )
+
+    max_y = max(
+        p.y for p in corners
+    )
+
+
+    min_z = min(
+        p.z for p in corners
+    )
+
+
+    bpy.context.scene.cursor.location = (
+
+        (min_x + max_x) / 2,
+
+        (min_y + max_y) / 2,
+
+        min_z
+    )
+
+
+    bpy.context.view_layer.objects.active = obj
+
+    obj.select_set(True)
+
+
+    bpy.ops.object.origin_set(
+        type='ORIGIN_CURSOR',
+        center='MEDIAN'
+    )
+
+
+# ============================================================
+# 雲梯生成
+# ============================================================
+
+def create_monkey_bars():
+
+    # --------------------------------------------------------
+    # Materials
+    # --------------------------------------------------------
+
+    mat_post = make_material(
+        "MonkeyBars_Blue",
+        COLOR_POST,
+        0.48
+    )
+
+
+    mat_top = make_material(
+        "MonkeyBars_Yellow",
+        COLOR_TOP,
+        0.42
+    )
+
+
+    mat_rung = make_material(
+        "MonkeyBars_Red",
+        COLOR_RUNG,
+        0.42
+    )
+
+
+    parts = []
+
+
+    half_width = (
+        WIDTH / 2
+    )
+
+
+    half_length = (
+        LENGTH / 2
+    )
+
+
+    bottom_z = (
+        -POST_EMBED
+    )
+
+
+    # ========================================================
+    # 上端
+    #
+    # 上側は通常の長方形
+    # ========================================================
+
+    front_left_top = (
+
+        -half_width,
+        -half_length,
+        HEIGHT
+    )
+
+
+    front_right_top = (
+
+        half_width,
+        -half_length,
+        HEIGHT
+    )
+
+
+    back_left_top = (
+
+        -half_width,
+        half_length,
+        HEIGHT
+    )
+
+
+    back_right_top = (
+
+        half_width,
+        half_length,
+        HEIGHT
+    )
+
+
+    # ========================================================
+    # 下端
+    #
+    # X方向にも
+    # Y方向にも広げる
+    #
+    # 上から見ると
+    #
+    #       TOP
+    #     ┌────┐
+    #     │    │
+    #     └────┘
+    #
+    #    BOTTOM
+    #   ┌────────┐
+    #   │        │
+    #   └────────┘
+    #
+    # ========================================================
+
+    front_left_bottom = (
+
+        -half_width
+        - LEG_SPREAD_SIDE,
+
+        -half_length
+        - LEG_SPREAD_END,
+
+        bottom_z
+    )
+
+
+    front_right_bottom = (
+
+        half_width
+        + LEG_SPREAD_SIDE,
+
+        -half_length
+        - LEG_SPREAD_END,
+
+        bottom_z
+    )
+
+
+    back_left_bottom = (
+
+        -half_width
+        - LEG_SPREAD_SIDE,
+
+        half_length
+        + LEG_SPREAD_END,
+
+        bottom_z
+    )
+
+
+    back_right_bottom = (
+
+        half_width
+        + LEG_SPREAD_SIDE,
+
+        half_length
+        + LEG_SPREAD_END,
+
+        bottom_z
+    )
+
+
+    # ========================================================
+    # 4本の斜め支柱
+    # ========================================================
+
+    parts.append(
+
+        add_pipe_between(
+            "front_left_leg",
+            front_left_bottom,
+            front_left_top,
+            POST_RADIUS,
+            mat_post
+        )
+    )
+
+
+    parts.append(
+
+        add_pipe_between(
+            "front_right_leg",
+            front_right_bottom,
+            front_right_top,
+            POST_RADIUS,
+            mat_post
+        )
+    )
+
+
+    parts.append(
+
+        add_pipe_between(
+            "back_left_leg",
+            back_left_bottom,
+            back_left_top,
+            POST_RADIUS,
+            mat_post
+        )
+    )
+
+
+    parts.append(
+
+        add_pipe_between(
+            "back_right_leg",
+            back_right_bottom,
+            back_right_top,
+            POST_RADIUS,
+            mat_post
+        )
+    )
+
+
+    # ========================================================
+    # 上部の左右レール
+    # ========================================================
+
+    parts.append(
+
+        add_pipe_between(
+            "top_left_rail",
+            front_left_top,
+            back_left_top,
+            TOP_RAIL_RADIUS,
+            mat_top
+        )
+    )
+
+
+    parts.append(
+
+        add_pipe_between(
+            "top_right_rail",
+            front_right_top,
+            back_right_top,
+            TOP_RAIL_RADIUS,
+            mat_top
+        )
+    )
+
+
+    # ========================================================
+    # 前後上端
+    # ========================================================
+
+    parts.append(
+
+        add_pipe_between(
+            "top_front_end",
+            front_left_top,
+            front_right_top,
+            TOP_RAIL_RADIUS,
+            mat_top
+        )
+    )
+
+
+    parts.append(
+
+        add_pipe_between(
+            "top_back_end",
+            back_left_top,
+            back_right_top,
+            TOP_RAIL_RADIUS,
+            mat_top
+        )
+    )
+
+
+    # ========================================================
+    # 上部の雲梯棒
+    # ========================================================
+
+    usable_length = (
+        LENGTH - 0.20
+    )
+
+
+    if RUNG_COUNT <= 1:
+
+        rung_y_list = [
+            0
+        ]
+
+    else:
+
+        rung_step = (
+
+            usable_length
+
+            / (
+                RUNG_COUNT - 1
+            )
+        )
+
+
+        rung_start = (
+            -usable_length / 2
+        )
+
+
+        rung_y_list = [
+
+            rung_start
+            + rung_step * i
+
+            for i
+            in range(RUNG_COUNT)
+        ]
+
+
+    for i, y in enumerate(
+        rung_y_list,
+        start=1
+    ):
+
+        left = (
+
+            -half_width,
+            y,
+            HEIGHT
+        )
+
+
+        right = (
+
+            half_width,
+            y,
+            HEIGHT
+        )
+
+
+        parts.append(
+
+            add_pipe_between(
+
+                f"top_rung_{i}",
+
+                left,
+
+                right,
+
+                RUNG_RADIUS,
+
+                mat_rung
+            )
+        )
+
+
+    # ========================================================
+    # 前面の梯子
+    #
+    # 支柱が斜めなので、
+    # 横棒端も支柱位置に自動追従
+    # ========================================================
+
+    for i, z in enumerate(
+        LADDER_HEIGHTS,
+        start=1
+    ):
+
+        left = point_on_leg_at_z(
+
+            front_left_bottom,
+
+            front_left_top,
+
+            z
+        )
+
+
+        right = point_on_leg_at_z(
+
+            front_right_bottom,
+
+            front_right_top,
+
+            z
+        )
+
+
+        parts.append(
+
+            add_pipe_between(
+
+                f"front_ladder_rung_{i}",
+
+                left,
+
+                right,
+
+                LADDER_RUNG_RADIUS,
+
+                mat_rung
+            )
+        )
+
+
+    # ========================================================
+    # 背面の梯子
+    # ========================================================
+
+    for i, z in enumerate(
+        LADDER_HEIGHTS,
+        start=1
+    ):
+
+        left = point_on_leg_at_z(
+
+            back_left_bottom,
+
+            back_left_top,
+
+            z
+        )
+
+
+        right = point_on_leg_at_z(
+
+            back_right_bottom,
+
+            back_right_top,
+
+            z
+        )
+
+
+        parts.append(
+
+            add_pipe_between(
+
+                f"back_ladder_rung_{i}",
+
+                left,
+
+                right,
+
+                LADDER_RUNG_RADIUS,
+
+                mat_rung
+            )
+        )
+
+
+    # ========================================================
+    # 一体化
+    # ========================================================
+
+    model = join_objects(
+
+        parts,
+
+        "playground_monkey_bars"
+    )
+
+
+    set_origin_to_bottom_center(
+        model
+    )
+
+
+    return model
+
+
+# ============================================================
+# Preview light
+# ============================================================
+
+def add_light():
+
+    bpy.ops.object.light_add(
+
+        type='SUN',
+
+        location=(
+            4,
+            -4,
+            6
+        )
+    )
+
+
+    sun = bpy.context.active_object
+
+    sun.name = "Preview_Sun"
+
+    sun.data.energy = 2.5
+
+
+# ============================================================
+# GLB Export
+# ============================================================
+
+def export_glb(
+    model,
+    path
+):
+
+    filepath = bpy.path.abspath(
+        path
+    )
+
+
+    directory = os.path.dirname(
+        filepath
+    )
+
+
+    if directory:
+
+        os.makedirs(
+            directory,
+            exist_ok=True
+        )
+
+
+    bpy.ops.object.select_all(
+        action='DESELECT'
+    )
+
+
+    model.select_set(
+        True
+    )
+
+
+    bpy.context.view_layer.objects.active = (
+        model
+    )
+
+
+    bpy.ops.export_scene.gltf(
+
+        filepath=filepath,
+
+        export_format='GLB',
+
+        use_selection=True,
+
+        export_materials='EXPORT',
+
+        export_normals=True,
+
+        export_yup=True,
+
+        export_animations=False
+    )
+
+
+    print(
+        "Exported:",
+        filepath
+    )
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+delete_all()
+
+
+monkey_bars = (
+    create_monkey_bars()
+)
+
+
+add_light()
+
+
+if EXPORT_GLB:
+
+    export_glb(
+        monkey_bars,
+        EXPORT_PATH
+    )
