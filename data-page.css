@@ -54,6 +54,14 @@ footer { padding: 16px 0 40px; font-size: .88rem; }
 .download-list a:hover { background: #edf5fd; }
 .download-list strong, .download-list span { display: block; }
 .download-list span { font-size: .85rem; color: #4d6375; }
+.facility-image { display: block; }
+.facility-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.facility-legend { display: none; list-style: none; padding: 0; margin: 12px 0; font-size: .9rem; }
+.facility-legend .toilets { color: #254da3; }
+.facility-legend .water { color: #007c83; }
+.facility-legend .vending { color: #b96516; }
+#facility-example figure { margin: 0; }
+#facility-example figcaption { margin-top: 12px; }
 details { margin-top: 16px; }
 summary { cursor: pointer; font-weight: 600; color: var(--blue); }
 summary:focus-visible { outline: 3px solid #e49a23; outline-offset: 3px; }
@@ -64,6 +72,7 @@ details[open] > summary { margin-bottom: 20px; }
 #license, #history { background: transparent; border: 0; padding: 16px 0; margin-bottom: 8px; }
 #license h2, #history h2 { font-size: 1.15rem; }
 @media (max-width: 650px) {
+    .facility-legend { display: block; }
     .wrap { padding: 0 16px; }
     header.hero { padding: 32px 16px 24px; }
     .topbar .wrap { align-items: flex-start; font-size: .88rem; }
