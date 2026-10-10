@@ -276,7 +276,8 @@
                 "nwr[\"amenity\"=\"theatre\"][\"access\"!~\"^private$\"]",
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
-                "nwr[\"leisure\"=\"bandstand\"]"
+                "nwr[\"leisure\"=\"bandstand\"]",
+                "node(id:12769696408,12769696409,12769696411,12769696412,12769696413,12769696414,12778226733,12809077368,12827740365)"
             ],
             "tags": [
                 "amenity=stage",
@@ -286,7 +287,16 @@
                 "amenity=theatre",
                 "office=courier",
                 "office=government",
-                "leisure=bandstand"
+                "leisure=bandstand",
+                "id=node/12769696408",
+                "id=node/12769696409",
+                "id=node/12769696411",
+                "id=node/12769696412",
+                "id=node/12769696413",
+                "id=node/12769696414",
+                "id=node/12778226733",
+                "id=node/12809077368",
+                "id=node/12827740365"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -298,10 +308,20 @@
         },
         "expo2025_art": {
             "overpass": [
-                "nwr[\"tourism\"=\"artwork\"]"
+                "nwr[\"tourism\"=\"artwork\"]",
+                "node(id:12769696408,12769696409,12769696411,12769696412,12769696413,12769696414,12778226733,12809077368,12827740365)"
             ],
             "tags": [
-                "tourism=artwork"
+                "tourism=artwork",
+                "id=node/12769696408",
+                "id=node/12769696409",
+                "id=node/12769696411",
+                "id=node/12769696412",
+                "id=node/12769696413",
+                "id=node/12769696414",
+                "id=node/12778226733",
+                "id=node/12809077368",
+                "id=node/12827740365"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

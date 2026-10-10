@@ -93127,6 +93127,89 @@
                 12859898431,
                 12859898430
             ]
+        },
+        {
+            "type": "node",
+            "id": 12769696408,
+            "lat": 34.6492318,
+            "lon": 135.3865209,
+            "tags": {
+                "playground": "structure"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769696409,
+            "lat": 34.6491919,
+            "lon": 135.3867209,
+            "tags": {
+                "playground": "structure"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769696411,
+            "lat": 34.649238,
+            "lon": 135.3865909,
+            "tags": {
+                "playground": "aerialrotator"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769696412,
+            "lat": 34.6492038,
+            "lon": 135.3866588,
+            "tags": {
+                "playground": "activitypanel"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769696413,
+            "lat": 34.6491773,
+            "lon": 135.3866838,
+            "tags": {
+                "playground": "seesaw"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12769696414,
+            "lat": 34.649187,
+            "lon": 135.3866049,
+            "tags": {
+                "playground": "basketrotator"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12778226733,
+            "lat": 34.6485826,
+            "lon": 135.381325,
+            "tags": {
+                "playground": "cushion",
+                "playground:theme": "komyaku"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12809077368,
+            "lat": 34.6509733,
+            "lon": 135.3793294,
+            "tags": {
+                "playground": "structure"
+            }
+        },
+        {
+            "type": "node",
+            "id": 12827740365,
+            "lat": 34.6486892,
+            "lon": 135.3823798,
+            "tags": {
+                "playground": "cushion",
+                "playground:theme": "komyaku"
+            }
         }
     ]
 }

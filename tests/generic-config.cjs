@@ -30,12 +30,13 @@ for (const name of ['news', 'changes', 'intro', 'areaFeatureLinker', 'areaSearch
     assert.equal(prepared[name].use, false, `${name} requires opt-in`);
 }
 assert.equal(prepared.feature3d.use, true);
-vm.runInContext(fs.readFileSync('lib/mapfeature3d.js', 'utf8') + '\nthis.modelLayer = new MapFeature3D();', context);
+vm.runInContext(fs.readFileSync('lib/playgroundmodels3d.js', 'utf8') + '\nthis.factories = PlaygroundModelFactories;', context);
+vm.runInContext(fs.readFileSync('lib/mapfeature3d.js', 'utf8') + '\nthis.modelLayer = new MapFeature3D({ modelFactories: this.factories });', context);
 context.modelLayer.configure(prepared.feature3d);
 assert.equal(context.modelLayer.getModelKey({ amenity: 'vending_machine', brand: 'コカ・コーラ' }), 'vending_machine_red');
 assert.equal(context.modelLayer.getModelKey({ amenity: 'vending_machine', brand: '別ブランド' }), 'vending_machine');
 assert.equal(context.modelLayer.getModelKey({ amenity: 'vending_machine' }), 'vending_machine');
-for (const model of Object.values(prepared.feature3d.models)) assert(fs.existsSync(model.url));
+for (const model of Object.values(prepared.feature3d.models)) if (model.url) assert(fs.existsSync(model.url));
 assert.equal(prepared.indoor.use, false);
 assert.equal(parse('data/glot-custom.jsonc').site_title.ja, 'EXPO2025 万博マニアックマップ');
 assert.equal(parse('manifest.json').gId, 'G-T912TLST3W');
