@@ -16,8 +16,9 @@ assert.deepEqual(JSON.parse(fs.readFileSync('data/expo2025.min.json')), raw);
 const features = osm(raw, { flatProperties: true });
 ctx.cache.setCache(features);
 const ids = ['12769696408', '12769696409', '12769696411', '12769696412', '12769696413', '12769696414', '12778226733', '12809077368', '12827740365'];
-for (const id of ids) {
-    const i = ctx.cache.Cache.geojson.findIndex(f => f.id === 'node/' + id);
+const featureIds = ids.map(id => 'node/' + id).concat(['1379324925', '1413050362', '1413050367', '1429684266', '1437098095'].map(id => 'way/' + id));
+for (const id of featureIds) {
+    const i = ctx.cache.Cache.geojson.findIndex(f => f.id === id);
     assert(i >= 0);
     const feature = ctx.cache.Cache.geojson[i];
     for (const target of ['expo2025_service', 'expo2025_art']) {
@@ -30,11 +31,14 @@ for (const id of ids) {
     }
 }
 assert.equal(ctx.models.getModelKey({ playground: 'cushion' }), 'play_cushion');
-assert.equal(ctx.models.getModelKey({ id: 'way/1379324925', amenity: 'shelter', playground: 'structure' }), undefined);
-const known = new Set(ids.map(id => 'node/' + id));
-for (const feature of features.features.filter(f => f.properties.playground && !known.has(f.id))) {
-    for (const target of ['expo2025_service', 'expo2025_art']) {
-        assert.equal(ctx.cache.isTagsInclude(feature.properties, targets.osm[target].tags), false);
-    }
+for (const target of ['expo2025_service', 'expo2025_art']) {
+    assert(targets.osm[target].overpass.includes('nwr["playground"]'));
+    assert(ctx.cache.isTagsInclude({ id: 'relation/999999', playground: 'slide' }, targets.osm[target].tags));
+    assert(ctx.cache.isTagsInclude({ playground: 'unknown_equipment' }, targets.osm[target].tags));
+    assert.equal(ctx.cache.isTagsInclude({ leisure: 'park' }, targets.osm[target].tags), false);
 }
-console.log('PASS: nine playgrounds have 3D models and both target categories; existing shelter and slide areas are unaffected');
+assert.equal(ctx.models.getModelKey({ playground: 'structure' }), 'play_structure');
+assert.equal(ctx.models.getModelKey({ playground: 'slide' }), 'play_slide');
+assert.equal(ctx.models.getModelKey({ playground: 'unknown_equipment' }), undefined);
+assert(config.feature3d.rules.every(rule => !Object.hasOwn(rule.tags, 'id')));
+console.log('PASS: fourteen playgrounds, including polygon ways, have models and both target categories');

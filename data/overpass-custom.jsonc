@@ -277,7 +277,7 @@
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
                 "nwr[\"leisure\"=\"bandstand\"]",
-                "node(id:12769696408,12769696409,12769696411,12769696412,12769696413,12769696414,12778226733,12809077368,12827740365)"
+                "nwr[\"playground\"]"
             ],
             "tags": [
                 "amenity=stage",
@@ -288,15 +288,7 @@
                 "office=courier",
                 "office=government",
                 "leisure=bandstand",
-                "id=node/12769696408",
-                "id=node/12769696409",
-                "id=node/12769696411",
-                "id=node/12769696412",
-                "id=node/12769696413",
-                "id=node/12769696414",
-                "id=node/12778226733",
-                "id=node/12809077368",
-                "id=node/12827740365"
+                "playground"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -309,19 +301,11 @@
         "expo2025_art": {
             "overpass": [
                 "nwr[\"tourism\"=\"artwork\"]",
-                "node(id:12769696408,12769696409,12769696411,12769696412,12769696413,12769696414,12778226733,12809077368,12827740365)"
+                "nwr[\"playground\"]"
             ],
             "tags": [
                 "tourism=artwork",
-                "id=node/12769696408",
-                "id=node/12769696409",
-                "id=node/12769696411",
-                "id=node/12769696412",
-                "id=node/12769696413",
-                "id=node/12769696414",
-                "id=node/12778226733",
-                "id=node/12809077368",
-                "id=node/12827740365"
+                "playground"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

@@ -188,13 +188,17 @@
             "play_basketrotator": { "type": "basketrotator", "size": 1.8 },
             "play_activitypanel": { "type": "activitypanel", "size": 1.6 },
             "play_cushion": { "type": "cushion", "size": 3 },
-            "play_komyaku_eye": { "type": "komyaku_eye", "size": 3 },
+            "play_komyaku_eye": { "type": "komyaku_eye", "size": 2.7 },
             "play_structure": {
                 "url": "./assets/models/playground/poly-pizza/composite-play-structure/composite-play-structure.glb",
                 "size": 8
             },
             "play_seesaw": {
                 "url": "./assets/models/playground/poly-pizza/seesaw/seesaw.glb",
+                "size": 4
+            },
+            "play_slide": {
+                "url": "./assets/models/playground/leonkin-playground/GLTF/slide.glb",
                 "size": 4
             },
             "bench": {
@@ -220,7 +224,8 @@
             { "tags": { "playground": "activitypanel" }, "model": "play_activitypanel" },
             { "tags": { "playground": "cushion", "playground:theme": "komyaku" }, "model": "play_komyaku_eye" },
             { "tags": { "playground": "cushion" }, "model": "play_cushion" },
-            { "tags": { "playground": "structure", "id": ["node/12769696408", "node/12769696409", "node/12809077368"] }, "model": "play_structure" },
+            { "tags": { "playground": "structure" }, "model": "play_structure" },
+            { "tags": { "playground": "slide" }, "model": "play_slide" },
             { "tags": { "playground": "seesaw" }, "model": "play_seesaw" },
             { "tags": { "amenity": "bench" }, "model": "bench" },
             { "tags": { "amenity": "drinking_water" }, "model": "drinking_water" },
