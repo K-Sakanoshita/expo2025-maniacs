@@ -195,11 +195,16 @@
             "vending_machine": {
                 "url": "./assets/models/poi/vending-machine/scene.gltf",
                 "size": 1.9, "scaleBelowZoom": 19, "maxZoomScale": 4
+            },
+            "vending_machine_red": {
+                "url": "./assets/models/poi/vending-machine-red/scene.gltf",
+                "size": 1.9, "scaleBelowZoom": 19, "maxZoomScale": 4
             }
         },
         "rules": [
             { "tags": { "amenity": "bench" }, "model": "bench" },
             { "tags": { "amenity": "drinking_water" }, "model": "drinking_water" },
+            { "tags": { "amenity": "vending_machine", "brand": "コカ・コーラ" }, "model": "vending_machine_red" },
             { "tags": { "amenity": "vending_machine" }, "model": "vending_machine" }
         ]
     },
