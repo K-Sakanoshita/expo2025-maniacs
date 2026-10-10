@@ -54,7 +54,7 @@ function renderExample(data) {
     const counts = Object.fromEntries(groups.map(group => [group.tag, group.features.length]));
     const svg = [
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title description">',
-        '<title id="title">公開データで見る、当時のトイレ・給水所・自動販売機</title>',
+        '<title id="title">オープンデータで見る、当時のトイレ・給水所・自動販売機</title>',
         `<desc id="description">公開GeoJSONから生成した配置図。${groups.map(g => `${g.label}${g.features.length}件`).join('、')}。会場輪郭と建物を背景に、色と記号で区別。現在の営業・利用状況は示しません。</desc>`,
         '<style>text{font-family:system-ui,sans-serif;fill:#17334b} .small{font-size:15px;fill:#4d6375}</style>',
         '<rect width="1000" height="760" rx="12" fill="#f6f8fa"/>',
