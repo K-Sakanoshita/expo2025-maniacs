@@ -1,0 +1,25 @@
+{
+  "type": "Feature",
+  "id": "node/12769834288",
+  "properties": {
+    "osm_id": "node/12769834288",
+    "name": "モンテネグロ",
+    "kind": "exhibition_centre",
+    "tags": {
+      "wikimedia_commons": "File:Expo 2025 Montenegro Pavilion Booth (Commons C Pavilion) 01.JPG",
+      "amenity": "exhibition_centre",
+      "check_date": "2025-04-20",
+      "country": "ME",
+      "name": "モンテネグロ",
+      "website": "https://www.expo2025.or.jp/official-participant/montenegro/",
+      "reservation": "no"
+    }
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      135.3822727,
+      34.6498912
+    ]
+  }
+}

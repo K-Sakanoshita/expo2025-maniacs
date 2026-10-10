@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- MIT License. Download the GeoJSON, PMTiles and style JSON described in data.html into this folder. -->
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>万博2025 データ活用サンプル</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.css">
+    <style>
+        html, body, #map { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+        #status { position: absolute; top: 12px; left: 12px; right: 60px; z-index: 2; max-width: 480px; padding: 12px; background: white; border-radius: 6px; line-height: 1.7; }
+        #status p { margin: 0; } #status a { color: #075cab; } #status[data-error] { border: 2px solid #b43b29; }
+    </style>
+</head>
+<body>
+    <div id="map" aria-label="万博の会場と施設の地図"></div>
+    <div id="status" role="status" aria-live="polite"><p id="message">データを読み込んでいます…</p><a href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html">データ公開・配置手順</a></div>
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pmtiles@4.3.1/dist/pmtiles.min.js"></script>
+    <script>
+        // Keep these three files next to this HTML on your own web server.
+        const GEOJSON_URL = './expo2025.geojson';
+        const STYLE_URL = './japan-20251013.json';
+        const PMTILES_URL = './japan-20251013.pmtiles';
+        const message = document.getElementById('message');
+        const statusBox = document.getElementById('status');
+        function showError(error) {
+            statusBox.dataset.error = 'true';
+            message.textContent = `読み込めませんでした。3つのデータファイルの配置、通信、サーバーのRange対応を確認してください。${error.message}`;
+        }
+        async function fetchJson(url) {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+            return response.json();
+        }
+        (async () => {
+            try {
+                const [style, data] = await Promise.all([fetchJson(STYLE_URL), fetchJson(GEOJSON_URL)]);
+                // Resolve to our server, even if the downloaded style uses another URL.
+                style.sources.openmaptiles.url = `pmtiles://${new URL(PMTILES_URL, location.href).href}`;
+                const protocol = new pmtiles.Protocol();
+                maplibregl.addProtocol('pmtiles', protocol.tile);
+                const map = new maplibregl.Map({
+                    container: 'map', style, center: [135.3836, 34.6499], zoom: 15,
+                    localIdeographFontFamily: 'sans-serif', attributionControl: true
+                });
+                map.addControl(new maplibregl.NavigationControl());
+                map.on('error', event => showError(event.error));
+                map.on('load', () => {
+                    map.addSource('expo', { type: 'geojson', data,
+                        attribution: '施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL) · <a href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html">EXPO2025 万博マニアックマップ</a>' });
+                    map.addLayer({ id: 'expo-areas', type: 'fill', source: 'expo', filter: ['==', '$type', 'Polygon'], paint: { 'fill-color': '#398ac3', 'fill-opacity': 0.2 } });
+                    map.addLayer({ id: 'expo-lines', type: 'line', source: 'expo', filter: ['==', '$type', 'LineString'], paint: { 'line-color': '#075cab', 'line-width': 2 } });
+                    map.addLayer({ id: 'expo-points', type: 'circle', source: 'expo', filter: ['==', '$type', 'Point'], paint: { 'circle-color': '#d35038', 'circle-radius': 4, 'circle-stroke-color': '#fff', 'circle-stroke-width': 1 } });
+                    for (const layer of ['expo-areas', 'expo-lines', 'expo-points']) {
+                        map.on('click', layer, event => {
+                            const feature = event.features?.[0];
+                            if (!feature) return;
+                            const content = document.createElement('div');
+                            const title = document.createElement('strong');
+                            title.textContent = feature.properties.name || feature.properties.kind || '名称不明';
+                            const id = document.createElement('p');
+                            id.textContent = feature.properties.osm_id;
+                            content.append(title, id);
+                            new maplibregl.Popup().setLngLat(event.lngLat).setDOMContent(content).addTo(map);
+                        });
+                    }
+                    if (!statusBox.dataset.error) message.textContent = `万博2025の会場データ ${data.features.length.toLocaleString()}件。地物をクリックすると名称を表示します。`;
+                });
+            } catch (error) { showError(error); }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>大阪・関西万博2025 会場・施設データ | 万博マニアックマップ</title>
+    <meta name="description" content="大阪・関西万博の会場・施設データをGeoJSON・CSVで公開。閉幕日の背景地図と組み合わせて、別のアプリやサービスに活用できます。">
+    <link rel="canonical" href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./data-page.css?ver=20261010-03">
+</head>
+<body>
+    <div class="topbar"><div class="wrap">
+        <a class="brand" href="./">万博マニアックマップ</a>
+        <a href="./">万博マップを開く →</a>
+    </div></div>
+    <header class="hero wrap">
+        <p class="eyebrow">EXPO 2025 · OPEN DATA</p>
+        <h1>大阪・関西万博2025<br>会場・施設データ</h1>
+        <p class="lead">万博当時から使われてきたマップを、これからも使い続けられるように。会場・施設のデータを公開し、これから生まれる様々なサービスや研究の基礎データとして活用できるようにします。</p>
+        <p class="facts">閉幕時点（2025年10月13日）を対象 · 3,241件 · GeoJSON / CSV</p>
+        <div class="actions quick-actions">
+            <a class="button" href="./data/releases/2026-10-10/expo2025.geojson" download="expo2025.geojson">GeoJSONをダウンロード</a>
+            <a class="button secondary" href="#demo">施設検索を試す</a>
+        </div>
+        <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a href="./data/releases/2026-10-10/expo2025.geojson" target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
+    </header>
+    <main class="wrap">
+        <section id="demo" class="demo" aria-labelledby="demo-title">
+            <h2 id="demo-title">公開データで、施設を探してみる</h2>
+            <p>施設データだけで動く検索例です。名前・種別・国名で絞り込み、万博マップで場所を確認できます。</p>
+            <div class="search-controls">
+                <div><label for="demo-query">名前・種別・国名</label><input id="demo-query" type="search" placeholder="例：モンテネグロ、ベンチ、日本" autocomplete="off"></div>
+            </div>
+            <p id="demo-status" class="small" role="status" aria-live="polite">公開データを読み込んでいます…</p>
+            <ul id="demo-results" class="search-results" aria-label="施設検索結果"></ul>
+            <p class="small">施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。<a href="#guide">この検索の作り方を見る</a></p>
+            <noscript><p>検索例にはJavaScriptが必要です。データは下のリンクから取得できます。</p></noscript>
+        </section>
+        <section id="downloads" aria-labelledby="downloads-title">
+            <h2 id="downloads-title">データを使う</h2>
+            <p>施設検索や一覧アプリは、約1.1 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
+            <div class="download-list">
+                <a href="./data/releases/2026-10-10/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.1 MB</span></a>
+                <a href="./data/releases/2026-10-10/expo2025.csv" download><strong>CSV</strong><span>表計算・集計向け · 約0.6 MB</span></a>
+                <a href="./data/releases/2026-10-10/expo2025.osm.json" download><strong>元データ</strong><span>OSMの構造を保持 · 約1.3 MB</span></a>
+            </div>
+            <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
+            <p class="small">公開版 2026-10-10。取得後の写真・公式サイト情報や遊具などの補足を含みます。建物・通路なども収録しています。</p>
+            <details id="start"><summary>AIへの依頼文を見る</summary>
+                <pre id="ai-prompt">https://k-sakanoshita.github.io/expo2025-maniacs/data.html
+このページのデータと開発ガイドを使い、パビリオンを国名で検索できるアプリを作ってください。
+まずGeoJSONだけで動く施設検索を作り、OSMのクレジットを表示してください。
+閉幕日の背景地図も必要な場合は、配布元の案内に従ってPMTilesを取得し、自分のサーバーから配信してください。</pre>
+                <button type="button" class="button secondary" id="copy-prompt">AIへの依頼文をコピー</button>
+                <p id="copy-status" class="small" role="status" aria-live="polite">このページのURLと、作りたいものをAIに伝えてください。</p>
+            </details>
+        </section>
+        <section id="basemap" aria-labelledby="basemap-title">
+            <h2 id="basemap-title">当時の背景地図も使いたいとき</h2>
+            <p>2025年10月13日版の背景地図を重ねると、当時の道路や建物と一緒に施設を表示できます。<a href="https://armd-01.sakura.ne.jp/tiles/" target="_blank" rel="noopener noreferrer">Japan PMTiles配布サイト</a>で公開されています。</p>
+            <p class="small">背景地図は任意です。施設検索や集計だけなら、上の施設データで始められます。</p>
+            <details><summary>背景地図を取得して使う手順</summary>
+                <ol>
+                    <li><a href="https://armd-01.sakura.ne.jp/tiles/japan-20251013.pmtiles">閉幕日版PMTiles（約1.5 GB）</a>と<a href="https://armd-01.sakura.ne.jp/tiles/japan-20251013.json">対応スタイルJSON</a>を取得します。</li>
+                    <li><a href="./examples/expo-map.html" download>背景地図付きサンプルHTML</a>と同じフォルダーに、<code>expo2025.geojson</code>、<code>japan-20251013.pmtiles</code>、<code>japan-20251013.json</code>を置きます。</li>
+                    <li>Rangeリクエストに対応するWebサーバーで公開します。別ドメインから配信する場合はCORSも設定してください。</li>
+                </ol>
+                <p><strong>配布元のPMTiles URLをアプリから直接参照せず、自分のサーバーに配置してください。</strong>サンプルは同じフォルダーのPMTilesを読み込みます。</p>
+                <p class="small">フォント・アイコン画像・JavaScriptは外部サービスを参照します。サンプルの描画処理はテスト済みですが、PMTiles実ファイルを配置した地図表示は未確認です。</p>
+                <p><a href="https://docs.protomaps.com/pmtiles/maplibre">PMTiles公式ガイド</a> · <a href="https://maplibre.org/maplibre-gl-js/docs/">MapLibre GL JS</a></p>
+            </details>
+        </section>
+        <details class="technical" id="technical">
+            <summary>開発ガイド・データ仕様</summary>
+            <section id="guide" aria-labelledby="guide-title">
+                <h2 id="guide-title">施設データだけで始める</h2>
+                <p>GeoJSONの取得URLは公開版ごとに固定します。現在のOverpass APIで再取得すると内容が変わるため、以下のURLを使用してください。</p>
+                <pre><code>const url = "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10/expo2025.geojson";
+const response = await fetch(url);
+if (!response.ok) throw new Error(`データ取得失敗: ${response.status}`);
+const data = await response.json();
+
+const pavilions = data.features.filter(f =&gt;
+    f.properties.tags.amenity === "exhibition_centre");
+const toilets = data.features.filter(f =&gt;
+    f.properties.tags.amenity === "toilets");
+const water = data.features.filter(f =&gt;
+    f.properties.tags.amenity === "drinking_water");</code></pre>
+                <p>このページの検索例は公開データの全件を対象に、名称・別名・国名・国コードで検索します。上の抽出例は、用途に応じて対象を絞り込む場合に使えます。</p>
+                <p>国コードは <code>tags.country</code> に入り、複数国はセミコロン区切りです。国名は <code>new Intl.DisplayNames(["ja"], { type: "region" })</code> で変換できます。<code>EU</code> は「欧州連合」、<code>ASEAN</code> は「東南アジア諸国連合」として扱います。</p>
+                <p><a href="./lib/publicdatasearch.js">検索・国名変換の実装</a> · <a href="./data-page.js">検索例の画面実装</a></p>
+            </section>
+        <section id="schema" aria-labelledby="schema-title">
+            <h2 id="schema-title">データ仕様</h2>
+            <p>GeoJSONは <code>FeatureCollection</code>、座標系はWGS 84、座標の順序は<strong>経度・緯度</strong>です。点・線・面と複数の形状を含みます。すべてをマーカーに変換せず、形状に応じて表示してください。</p>
+            <div class="table-scroll"><table>
+                <thead><tr><th>項目</th><th>型</th><th>内容</th></tr></thead>
+                <tbody>
+                    <tr><td><code>feature.id</code> / <code>properties.osm_id</code></td><td>文字列</td><td><code>node/123</code>、<code>way/123</code>、<code>relation/123</code>。種別を含めて識別します。</td></tr>
+                    <tr><td><code>properties.name</code></td><td>文字列</td><td>OSMの <code>name</code>。名称がない場合は空文字。</td></tr>
+                    <tr><td><code>properties.kind</code></td><td>文字列</td><td><code>amenity → tourism → leisure → shop → barrier → highway → building → natural → playground</code> の順で最初に存在する値。該当なしは空文字。マップの表示カテゴリとは異なります。</td></tr>
+                    <tr><td><code>properties.tags</code></td><td>オブジェクト</td><td>元のOSMタグを保持。国コードは <code>country</code>、写真は <code>image</code> や <code>wikimedia_commons</code>、公式サイトは <code>website</code> など。各項目は存在する場合のみ利用します。</td></tr>
+                    <tr><td><code>geometry</code></td><td>オブジェクト</td><td>地物の位置・形状。線や面の輪郭を保持しています。</td></tr>
+                </tbody>
+            </table></div>
+            <p class="small" style="margin-top:16px">複数の国コードはセミコロン区切りです。写真タグには画像URL以外に <code>File:</code> や <code>Category:</code> が入る場合があります。OSMタグには欠損や表記揺れがあります。</p>
+            <p><a href="./data-example.json">実データ1件の例（JSON）</a></p>
+            <p>CSVはUTF-8、列は <code>osm_id,name,kind,longitude,latitude,geometry_type,tags_json</code>。点以外の代表位置は境界ボックスの中心です。敷地内や入口の位置を保証しないため、輪郭が必要な用途にはGeoJSONを使ってください。</p>
+        </section>
+            <section id="provenance" aria-labelledby="provenance-title">
+                <h2 id="provenance-title">取得履歴・公開版の詳細</h2>
+                <p>対象は大阪・関西万博の会場（夢洲）と周辺。対象時点は2025年10月13日の閉幕時点です。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、施設の対象時点ではありません。</p>
+                <p>GeoJSON・CSVはタグを持つ3,241件（点2,770件・線171件・面300件）。形状構築用のタグなしノードは元データに残しています。</p>
+                <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-10/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
+            </section>
+        </details>
+        <section id="license" aria-labelledby="license-title">
+            <h2 id="license-title">利用条件とクレジット</h2>
+            <p>公開データの正確性・完全性や、特定の用途への適合性は保証しません。誤りや欠落が含まれる場合があるため、利用目的に応じて内容をご確認ください。</p>
+            <p>会場・施設データはOpenStreetMap由来のデータで、<a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License（ODbL）</a>で提供します。利用時は出典を表示し、改変したデータベースを公開する際はODbLの条件に従ってください。詳しくは <a href="https://www.openstreetmap.org/copyright">OpenStreetMapの著作権・ライセンス</a>をご確認ください。</p>
+            <p>表示例（OSM表記には上記の著作権ページへのリンクを付けてください）：</p>
+            <pre>地図・施設データ © OpenStreetMap contributors（ODbL）
+施設データ提供：EXPO2025 万博マニアックマップ（公開版 2026-10-10）</pre>
+            <p>背景地図の帰属表示は削除しないでください。写真は画像ごとの出典・ライセンスが適用されます。この配布には写真の実ファイルや3Dモデルを含めていません。サンプルHTMLとサイトのソースコードは <a href="./LICENSE">MITライセンス</a>です。</p>
+        </section>        <section id="history" aria-labelledby="history-title">
+            <h2 id="history-title">公開履歴・連絡先</h2>
+            <p><strong>2026-10-10：</strong>初回公開版。地図アプリで使用しているデータからGeoJSON・CSVを生成しました。今後の修正は新しい公開版として追加し、この版のファイルは維持します。</p>
+            <p>不足情報や誤りの報告、活用事例は <a href="https://github.com/K-Sakanoshita/expo2025-maniacs/issues">GitHub Issues</a>へお寄せください。</p>
+        </section>    </main>
+    <footer class="wrap"><a href="./">万博マップを開く</a> · <a href="https://armd-01.sakura.ne.jp/tiles/">Japan PMTiles</a> · <a href="https://github.com/K-Sakanoshita/expo2025-maniacs">GitHub</a><p>このサイトは万博公式サイトではありません。</p></footer>
+    <script src="./lib/publicdatasearch.js?ver=20261010-03" defer></script>
+    <script src="./data-page.js?ver=20261010-06" defer></script>
+</body>
+</html>

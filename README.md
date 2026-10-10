@@ -1,7 +1,11 @@
 # 大阪・関西万博2025マニアックマップ
 
-このプロジェクトでは、OSMFJ（OpenStreetMap Foundation Japan）提供のタイルサーバーを背景地図に使用し、  
-POI（Point of Interest）情報をOverpass APIから取得・表示します。
+万博開催時から使われてきたマップを継続して提供するとともに、当時の会場・施設の地理空間データを公開しています。
+当時の資料として、別のアプリやサービスにも活用してください。
+
+- [万博マップを開く](https://k-sakanoshita.github.io/expo2025-maniacs/)
+- [データ公開・AI向け開発ガイド](https://k-sakanoshita.github.io/expo2025-maniacs/data.html)
+- [閉幕日の背景地図（Japan PMTiles）](https://armd-01.sakura.ne.jp/tiles/)
 
 ## 主な表示対象
 - パビリオン、ホール
@@ -12,64 +16,10 @@ POI（Point of Interest）情報をOverpass APIから取得・表示します。
 - 案内板、パブリックアート、建物の入口
 
 ## 使用技術
-- **タイルサーバー**: [OSMFJ提供タイル](https://wiki.openstreetmap.org/wiki/Japan/OSMFJ_Tileserver)
-- **POI取得**: [Overpass API](https://overpass-turbo.eu/)
+- **背景地図**: [Japan PMTiles](https://armd-01.sakura.ne.jp/tiles/) の2025年10月13日版
+- **施設データ**: [Overpass API](https://overpass-turbo.eu/)で取得したOpenStreetMapデータを静的ファイルとして使用
 - **地図描画**: [コミュニティマップメーカー](https://github.com/K-Sakanoshita/community_mapmaker) をベースにカスタマイズ
 - **写真表示**: [Wikimedia Commons](https://commons.wikimedia.org/)
-
-## 開発と共通システムの更新
-
-静的Webサイトなので、リポジトリのルートで次のコマンドを実行して確認できます。
-
-```bash
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-共通システムは `K-Sakanoshita/community_mapmaker` の
-`aa671638c0d2c5da1d0965ca3efdd1421abbd1eb`（2026年10月8日取り込み）です。
-未使用機能を含め、JavaScript、Google Apps Script、共通HTML・CSS、テストと不足していた画像を取り込んでいます。
-共通のJavaScript・Apps Scriptは更新元をベースに使い、万博向けの差分は主に設定ファイルとHTMLのサイト情報に置いています。
-`lib/areasearchcontroller.js` と `lib/listtable.js` には、敷地検索を無効にした場合の共通UI・訪問フィルターと、手動カテゴリ一覧の互換性修正を加えています。
-訪問フィルター適用時も選択カテゴリと検索キーワードを維持し、一覧を再描画します。
-
-初期位置、2025年10月13日の背景地図、静的OSMデータ、万博カテゴリ、国旗・地球儀、雪景色、Analytics IDを維持しています。
-訪問履歴の保存キーは従来の `expo2025.*` を使い、以前のCSV形式の履歴も読み込みます。
-POIの表示ズームは従来設定を維持しているため、初期位置から拡大するとパビリオンのアイコンと一覧が表示されます。
-旗画像は `flags/w40` からローカル配信し、地図と詳細画面の取得先を `icon.flagPath` で指定しています。
-EU・ASEANの既存画像を保持し、万博データで使用する全164種類を同梱しています。取得元は [旗画像の説明](flags/README.md) を参照してください。
-
-一覧はGrid.jsの表から共通システムのカード表示へ更新し、新しい `data/listtable.jsonc` に管理番号・名前・アイコン付き種別・予約情報の列を定義しています。
-`data/config-user.jsonc` の `listTable.nameFallback` を `category` に設定すると、名前のない施設は種別名、種別も不明なら「名称不明」を薄いグレーで表示します。検索にもこの表示名を使い、元の施設データは変更しません。
-種別列に `fallbackName: true` を設定し、名前のない施設はアイコン付き種別欄に一本化して表示します。
-`data/config-user.jsonc` にサイドバー・マーカー色などを設定し、サイト固有の文言は `data/glot-custom.jsonc` で共通文言を上書きします。
-OSM詳細リンクは新しい `cMapMaker.openOSMid` を参照します。
-地図の表示対象・条件を示すインジケーターは、`data/config-user.jsonc` の `mapDisplayStatus.use` で切り替えます。万博では `false`（Off）に設定しています。`true` にすると表示します。読み込み中のメッセージとスピナーはこの設定に関係なく表示します。
-
-カテゴリ辞書（`category-ja.jsonc` / `category-en.jsonc`）、マーカー対応（`marker.jsonc`）、共通文言（`glot-system.jsonc`）も更新元の最新版を反映しています。
-共通項目は更新元を優先し、万博向けの `information` カテゴリ・マーカーなど更新元にない項目を追加しています。
-Overpassの接続先は最新の共通設定を使い、万博固有の背景地図・表示設定は保持しています。
-国境データ（`countries.json` / `countries.min.json`）と `overpass-system.jsonc` は更新元と同じ内容です。
-万博の取得対象は `data/overpass-custom.jsonc` を維持し、更新元の汎用取得定義は `data/overpass-generic.jsonc` にそのまま保存しています。
-このテンプレートは自動では読み込みません。汎用の施設・インドアなどの取得を有効化する際に必要な定義を `overpass-custom.jsonc` へ追加し、表示ズームなどを設定してください。
-
-経路検索、インドア、3Dモデル、ニュース、更新情報、敷地関連付け、敷地検索、発見機能、一覧アクションのコードも含みます。
-3Dモデル表示は `config-user.jsonc` の `feature3d` で有効化し、自動販売機・水飲み場・ベンチのモデルを登録しています。表示対象のカテゴリと表示ズームは従来の施設設定に従い、モデルが読み込めない場合はアイコンで表示します。ベンチを独立した表示対象として追加する設定はしていません。モデルは `armd-02/Playgrounds` のコミット `547829faac9e0c38a79ae1853992bd2b4d34650e` の `assets` 全体から取得し、各 `SOURCE.md` に出典・ライセンスを保持しています。添付 `yumeshima_playgrounds_all.geojson`（抽出元 `japan-260101.osm.pbf`）から遊具14件（ノード9件・ウェイ5件）を `expo2025.json` / min版へ統合しています。ウェイは輪郭の座標を保持し、面として読み込めるよう `area=yes` を設定しています。`playground` タグのある地物は `expo2025_service` と `expo2025_art` 選択時にズーム16から表示します。複合遊具・シーソー・滑り台は同梱モデル、回転遊具・遊びパネル・クッション遊具は簡略な手続き型モデルを使います。`playground=cushion` と `playground:theme=komyaku` が一致する3件は、青い土台と赤・白・青の目玉型ドームで表示します。取得対象は `nwr["playground"]`、分類は `playground` キー、3Dモデルの選択は種別タグを使い、OSM IDの追加設定は不要です。モデルのない種別はアイコン表示します。ウェイ・リレーションは代表位置に遊具モデルを1個表示します。ウェイの輪郭全体を立体化する設定ではありません。休憩所4も添付データの `playground=structure` に従って複合遊具モデルを表示します。モデルの寸法・形状は地図記号としての表現で、現地の実物を再現するものではありません。
-その他の上記機能は初期状態では無効です。各機能の有効化と必要な設定は、[更新元の説明](docs/community-mapmaker.md)を参照してください。
-Google Apps Scriptとの連携は従来の `google.AppScript` / `google.targetName` を利用できます。
-
-壁・フェンスは `overpass-custom.jsonc` の対象レイヤーで `expression.renderer: "linear-extrusion"` を指定すると立体表示できます。万博以外の取得対象にも同じ設定を使えます。
-`expression.extrusion` の `height` / `width` は既定の高さ・厚み（メートル）、`minzoom` は立体表示を始めるズームです。OSMの `height` / `width` を優先し、`min_height` があれば底面を持ち上げます。単位はメートル、cm、ftに対応します。
-`typeTag`（既定は `barrier`）と `styles` で種別ごとの `color` / `opacity` / `height` / `width` を設定できます。現在は高さ1.5m・厚み0.2m、壁は灰色で建物と同じ不透明度0.3、フェンスは不透明度0.45で、ズーム16未満は線表示です。線と閉じた輪郭を細い面に変換し、フェンスの網目は描きません。変換形状は再利用し、元のOSMデータは変更しません。
-
-回帰テストはNode.jsの標準ライブラリだけで実行できます。
-
-```bash
-node tests/run.cjs
-```
-
-更新元のテスト一式を含み、`tests/generic-config.cjs` は万博の設定と静的データ・訪問履歴の保存先が維持されることを確認します。
-`tests/expo-disabled-search-ui.cjs` と `tests/expo-menu-list.cjs` は、敷地検索を使わない場合の個人フィルターと、カテゴリ・キーワード・訪問状態の絞り込みを確認します。
-公園向けのテスト設定は `tests/fixtures/` に置き、万博の実設定と分離しています。
 
 ## ライセンス
 このプロジェクトのソースコードは [MITライセンス](LICENSE) のもとで提供されます。  
@@ -126,6 +76,10 @@ node tests/run.cjs
              Wikipedia記事の表示デザインを少し見直し、旗竿と国旗を表示させる
 - 2025/12/25 ベースシステムを更新とバグ取り。メニューの背景画像を作成
              背景地図の切り替えで、雪景色（昼間と夜）を追加。雪も降らしてみる
+- 2026/10/09 ベースシステムを更新し、施設一覧・検索・詳細画面の操作性を改善
+             パビリオンの写真・公式サイト情報を充実させ、世界地図や国旗の表示を改善
+- 2026/10/10 自動販売機・水飲み場・ベンチ・遊具などの3D表示と遊具データを追加
+             地図の色合いと写真の読み込み表示を調整し、スマホで詳細画面を広げた際の世界地図の余白を修正
 
 ## 参考
 ### expo2025.json を作るOverpass QL

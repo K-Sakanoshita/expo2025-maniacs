@@ -326,6 +326,11 @@
     "menu": {
         "main": [
             {
+                "glot-model": "data_publication",
+                "linkto": "./data.html",
+                "divider": false
+            },
+            {
                 "glot-model": "about",
                 "linkto": "javascript:cMapMaker.about()",
                 "divider": false

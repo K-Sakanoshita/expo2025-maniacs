@@ -1,4 +1,8 @@
 {
+    "data_publication": {
+        "ja": "データ公開",
+        "en": "Open data"
+    },
     "listUnnamed": {
         "ja": "名称不明",
         "en": "Unnamed place"
