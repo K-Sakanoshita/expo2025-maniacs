@@ -19,6 +19,6 @@ assert.deepEqual(generated.counts, { toilets: 64, drinking_water: 50, vending_ma
 assert.equal((generated.svg.match(/data-osm-id=/g) || []).length, 362);
 assert.equal(generated.svg, fs.readFileSync('examples/expo-facilities.svg', 'utf8'), 'committed image must reproduce exactly');
 const page = fs.readFileSync('data.html', 'utf8');
-assert.match(page, /src="\.\/examples\/expo-facilities\.svg"/);
+assert.match(page, /src="\.\/examples\/expo-facilities\.html"/);
 assert.match(page, /施設データ ©/);
 console.log('PASS: tag selection, polygon placement, escaped labels, exact counts and reproducible SVG');

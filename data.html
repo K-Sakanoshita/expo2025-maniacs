@@ -7,7 +7,7 @@
     <meta name="description" content="大阪・関西万博の会場・施設データをGeoJSON・CSVで公開。閉幕日の背景地図と組み合わせて、別のアプリやサービスに活用できます。">
     <link rel="canonical" href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html">
     <link rel="icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./data-page.css?ver=20261011-01">
+    <link rel="stylesheet" href="./data-page.css?ver=20261011-02">
 </head>
 <body>
     <div class="topbar"><div class="wrap">
@@ -29,21 +29,14 @@
         <section id="facility-example" aria-labelledby="facility-example-title">
             <h2 id="facility-example-title">公開データで見る、当時のトイレ・給水所・自動販売機</h2>
             <figure>
-                <a class="facility-image" href="./examples/expo-facilities.svg" target="_blank" rel="noopener noreferrer" aria-label="配置図を大きく見る">
-                    <img src="./examples/expo-facilities.svg" width="1000" height="760" loading="lazy" alt="会場輪郭と建物を背景に、トイレ64件を青い丸、給水所50件を緑のひし形、自動販売機248件を橙色の四角で示した配置図">
-                </a>
-                <ul class="facility-legend" aria-label="配置図の凡例">
-                    <li><span class="toilets" aria-hidden="true">●</span> トイレ 64件</li>
-                    <li><span class="water" aria-hidden="true">◆</span> 給水所 50件</li>
-                    <li><span class="vending" aria-hidden="true">■</span> 自動販売機 248件</li>
-                </ul>
-                <figcaption class="small">公開GeoJSONから作成した配置例です。現在の営業・利用状況を示すものではありません。図を押すと大きく表示できます。<br>施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
+                <iframe class="facility-map" src="./examples/expo-facilities.html" title="当時のトイレ・給水所・自動販売機のインタラクティブ地図" loading="lazy"></iframe>
+                <figcaption class="small">公開GeoJSONから作成した配置例です。移動・拡大縮小でき、施設を押すと詳細を確認できます。現在の営業・利用状況を示すものではありません。<br><a href="./examples/expo-facilities.html" target="_blank" rel="noopener noreferrer">地図を大きく開く</a> · <a href="./examples/expo-facilities.svg" target="_blank" rel="noopener noreferrer">静止図を見る</a><br>施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
             </figure>
             <details><summary>抽出条件と作成コードを見る</summary>
                 <p><code>amenity=toilets</code>（64件）、<code>amenity=drinking_water</code>（50件）、<code>amenity=vending_machine</code>（248件）で抽出しています。件数は地物の数で、便器や設備の台数ではありません。</p>
                 <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と建物（<code>building</code>タグのある面）も同じGeoJSONから描画しています。</p>
-                <p><a href="./scripts/render-facility-example.cjs">作成コード（Node.js）</a> · <a href="./data/releases/2026-10-10-2/expo2025.geojson" download>使用したGeoJSON</a></p>
-                <pre><code>node scripts/render-facility-example.cjs</code></pre>
+                <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./examples/expo-facilities.html">サンプルHTML</a> · <a href="./data/releases/2026-10-10-2/expo2025.geojson" download>使用したGeoJSON</a></p>
+                <p class="small">MapLibre GL JSで表示しています。背景タイルは使わず、会場輪郭・建物・施設を公開GeoJSONだけで描画します。静止図の生成コードは<a href="./scripts/render-facility-example.cjs">こちら</a>。</p>
             </details>
         </section>
         <section id="demo" class="demo" aria-labelledby="demo-title">
