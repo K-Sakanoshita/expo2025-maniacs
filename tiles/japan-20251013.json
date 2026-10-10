@@ -2071,9 +2071,9 @@
                 "visibility": "visible"
             },
             "paint": {
-                "fill-color": "rgba(255, 255, 255, 1)",
+                "fill-color": "rgba(245, 241, 233, 0.85)",
                 "fill-antialias": false,
-                "fill-outline-color": "rgba(255, 255, 255, 1)",
+                "fill-outline-color": "rgba(245, 241, 233, 0.85)",
                 "fill-translate-anchor": "viewport"
             },
             "metadata": {},

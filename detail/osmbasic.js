@@ -187,7 +187,8 @@ class OSMbasic {
             if (wikim.slice(0, 5) == "File:") {     // File:のみ対応
                 let id = tags.id;
                 wikimq.push([wikim, id]);
-                html += `<div class="col-12 mt-3 mb-3 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
+                const loadingUrl = window.withAppAssetVersion(Conf.etc.loadingUrl);
+                html += `<div class="col-12 mt-3 mb-3 text-center"><img class="thumbnail" src="${loadingUrl}" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
                 // make() runs before winCont.makeDetail() inserts the returned HTML.
                 // Resolve the image element after the detail panel is in the DOM.
                 requestAnimationFrame(() => {
