@@ -30,8 +30,9 @@
             <h2 id="demo-title">公開データで、施設を探してみる</h2>
             <p>施設データだけで動く検索例です。名前・種別・国名で絞り込み、万博マップで場所を確認できます。</p>
             <div class="search-controls">
-                <div><label for="demo-query">名前・種別・国名</label><input id="demo-query" type="search" placeholder="例：モンテネグロ、ベンチ、日本" autocomplete="off"></div>
+                <div><label for="demo-query">名前・種別・国名</label><input id="demo-query" type="search" placeholder="例：モンテネグロ、ベンチ、日本" autocomplete="off" aria-describedby="demo-name-note"></div>
             </div>
+            <p id="demo-name-note" class="small">名称が未記録の場合は種別を表示します。</p>
             <p id="demo-status" class="small" role="status" aria-live="polite">公開データを読み込んでいます…</p>
             <ul id="demo-results" class="search-results" aria-label="施設検索結果"></ul>
             <p class="small">施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。<a href="#guide">この検索の作り方を見る</a></p>
@@ -41,6 +42,7 @@
             <h2 id="downloads-title">データを使う</h2>
             <p>施設検索や一覧アプリは、約1.1 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
             <p><strong>収録内容：</strong>全3,241件（名前あり1,113件・名前なし2,128件）。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなどを含みます。</p>
+            <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
             <p><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。</p>
             <div class="download-list">
                 <a href="./data/releases/2026-10-10-2/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.1 MB</span></a>
@@ -92,6 +94,7 @@ const water = data.features.filter(f =&gt;
     f.properties.tags.amenity === "drinking_water");</code></pre>
                 <p>このページの検索例は公開データの全件を対象に、名称・別名・国名・国コードで検索します。上の抽出例は、用途に応じて対象を絞り込む場合に使えます。</p>
                 <p>国コードは <code>tags.country</code> に入り、複数国はセミコロン区切りです。国名は <code>new Intl.DisplayNames(["ja"], { type: "region" })</code> で変換できます。<code>EU</code> は「欧州連合」、<code>ASEAN</code> は「東南アジア諸国連合」として扱います。</p>
+                <p><code>country</code> はパビリオンのほか旗竿にも付いています。パビリオンを抽出する場合は施設タグも併用してください。</p>
                 <p><a href="./lib/publicdatasearch.js">検索・国名変換の実装</a> · <a href="./data-page.js">検索例の画面実装</a></p>
             </section>
         <section id="schema" aria-labelledby="schema-title">
