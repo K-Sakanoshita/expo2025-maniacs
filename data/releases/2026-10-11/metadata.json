@@ -1,0 +1,85 @@
+{
+  "version": "2026-10-11",
+  "description": "2025年10月末時点の大阪・関西万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加し、2026年1月1日版PBF由来の水域・森林データを統合したデータセット。",
+  "source": "data/expo2025.min.json",
+  "source_osm_base_timestamp": "2025-10-30T16:07:40Z",
+  "source_timestamp_note": "基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "publisher": "EXPO2025 万博マニアックマップ",
+  "documentation_url": "https://k-sakanoshita.github.io/expo2025-maniacs/data.html",
+  "coordinate_reference_system": "WGS 84",
+  "coordinate_order": [
+    "longitude",
+    "latitude"
+  ],
+  "feature_count": 3449,
+  "geometry_counts": {
+    "Point": 2770,
+    "Polygon": 507,
+    "MultiPolygon": 1,
+    "LineString": 171
+  },
+  "selection": "タグを持つ地物。リレーションの構成要素は変換時に統合される場合がある。タグなし形状ノードは元データのみ収録。",
+  "csv": {
+    "encoding": "UTF-8",
+    "columns": [
+      "osm_id",
+      "name",
+      "kind",
+      "longitude",
+      "latitude",
+      "geometry_type",
+      "tags_json",
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata"
+    ],
+    "expanded_tag_columns": [
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata"
+    ],
+    "missing_tag_note": "タグの空欄は未記録（タグなし）。施設や設備が存在しないことを意味しない。",
+    "historical_tag_note": "営業時間などは収録時点の情報であり、現在の営業状況を示すものではない。",
+    "representative_position": "Pointは元座標。それ以外は境界ボックスの中心。敷地内や入口の位置を保証しない。"
+  },
+  "files": {
+    "expo2025.geojson": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-11/expo2025.geojson",
+      "bytes": 1211881,
+      "sha256": "3934c300dd350bf42f418bc27bc814223969b4a036c231401ec75c59d03df896"
+    },
+    "expo2025.csv": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-11/expo2025.csv",
+      "bytes": 673029,
+      "sha256": "5ac4b401b9a5b58e3976d055bac1c1fe4c3da339c4a2a6c09cd1228a5718f36b"
+    },
+    "expo2025.osm.json": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-11/expo2025.osm.json",
+      "bytes": 1474508,
+      "sha256": "355621de83471f62bbe01a7568cc865807572a7e26ac2c3b9a5eb537565fff26"
+    }
+  },
+  "supplemental_sources": [
+    {
+      "source_pbf": "outputs/japan-260101.osm.pbf",
+      "selection": "夢洲内の natural=water または landuse=forest",
+      "added_elements": 208,
+      "existing_elements": 35,
+      "note": "GeoJSONから統合。relationの構成wayのOSM IDは元GeoJSONに含まれないため、ローカル参照を使用。"
+    }
+  ]
+}

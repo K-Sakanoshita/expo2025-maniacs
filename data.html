@@ -18,12 +18,12 @@
         <p class="eyebrow">EXPO 2025 · OPEN DATA</p>
         <h1>大阪・関西万博2025<br>会場・施設オープンデータ</h1>
         <p class="lead">万博当時から使われてきたマップを、これからも使い続けられるように。会場・施設のデータを公開し、これから生まれる様々なサービスや研究の基礎データとして活用できるようにします。</p>
-        <p class="facts">閉幕時点（2025年10月13日）を対象 · 3,241件 · GeoJSON / CSV</p>
+        <p class="facts">OSMデータに関連情報を追加 · 3,449件 · GeoJSON / CSV / JSON</p>
         <div class="actions quick-actions">
-            <a class="button" href="./data/releases/2026-10-10-2/expo2025.geojson" download="expo2025.geojson">GeoJSONをダウンロード</a>
+            <a class="button" href="./data/releases/2026-10-11/expo2025.geojson" download="expo2025.geojson">GeoJSONをダウンロード</a>
             <a class="button secondary" href="#demo">施設検索を試す</a>
         </div>
-        <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a href="./data/releases/2026-10-10-2/expo2025.geojson" target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
+        <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a href="./data/releases/2026-10-11/expo2025.geojson" target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
     </header>
     <main class="wrap">
         <section id="facility-example" aria-labelledby="facility-example-title">
@@ -38,10 +38,10 @@
                     <li>そのフォルダーでWebサーバーを起動します。Pythonがある場合は <code>python3 -m http.server 8000</code> を実行し、<code>http://localhost:8000/expo-facilities.html</code> を開きます。</li>
                     <li>JavaScript冒頭の <code>TYPES</code> の <code>tag</code>・名称・色を変更すると、別の <code>amenity</code> の配置図にできます。例えば <code>toilets</code> を <code>bench</code>、名称を「ベンチ」に変更します。</li>
                 </ol>
-                <p class="small">サンプルは公開GeoJSONを直接読み込みます。手元のデータを使う場合は、<a href="./data/releases/2026-10-10-2/expo2025.geojson" download="expo2025.geojson">GeoJSONを同じフォルダーに保存</a>し、JavaScriptの <code>DATA_URL</code> を <code>'./expo2025.geojson'</code> に変更してください。MapLibreの読み込みにはインターネット接続が必要です。</p>
+                <p class="small">サンプルは公開GeoJSONを直接読み込みます。手元のデータを使う場合は、<a href="./data/releases/2026-10-11/expo2025.geojson" download="expo2025.geojson">GeoJSONを同じフォルダーに保存</a>し、JavaScriptの <code>DATA_URL</code> を <code>'./expo2025.geojson'</code> に変更してください。MapLibreの読み込みにはインターネット接続が必要です。</p>
                 <p><code>amenity=toilets</code>（64件）、<code>amenity=drinking_water</code>（50件）、<code>amenity=vending_machine</code>（248件）で抽出しています。件数は地物の数で、便器や設備の台数ではありません。</p>
                 <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と大屋根リング（<code>relation/18047883</code>）も同じGeoJSONから描画しています。</p>
-                <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./examples/expo-facilities.html">サンプルHTML</a> · <a href="./data/releases/2026-10-10-2/expo2025.geojson" download>使用したGeoJSON</a></p>
+                <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./examples/expo-facilities.html">サンプルHTML</a> · <a href="./data/releases/2026-10-11/expo2025.geojson" download>使用したGeoJSON</a></p>
                 <p class="small">MapLibre GL JSで表示しています。背景タイルは使わず、会場輪郭・大屋根リング・施設を公開GeoJSONだけで描画します。静止図の生成コードは<a href="./scripts/render-facility-example.cjs">こちら</a>。</p>
             </details>
         </section>
@@ -59,17 +59,17 @@
         </section>
         <section id="downloads" aria-labelledby="downloads-title">
             <h2 id="downloads-title">データを使う</h2>
-            <p>施設検索や一覧アプリは、約1.1 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
-            <p><strong>収録内容：</strong>マップで使用しているOSM由来の地物データ3,241件を収録しています。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small">（名前あり1,113件・名前なし2,128件）</span></p>
+            <p>施設検索や一覧アプリは、約1.2 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
+            <p><strong>収録内容：</strong>マップで使用しているOSM由来の地物データ3,449件を収録しています。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small">（名前あり1,113件・名前なし2,336件）</span></p>
             <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
-            <p id="data-timing"><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。</p>
+            <p id="data-timing"><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。 2026年1月1日版PBF由来の夢洲の水域・森林データも統合しています。</p>
             <div class="download-list">
-                <a href="./data/releases/2026-10-10-2/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.1 MB</span></a>
-                <a href="./data/releases/2026-10-10-2/expo2025.csv" download><strong>CSV</strong><span>表計算・集計向け · 約0.6 MB</span></a>
-                <a href="./data/releases/2026-10-10-2/expo2025.osm.json" download><strong>元データ</strong><span>OSMの構造を保持 · 約1.3 MB</span></a>
+                <a href="./data/releases/2026-10-11/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.2 MB</span></a>
+                <a href="./data/releases/2026-10-11/expo2025.csv" download><strong>CSV</strong><span>表計算・集計向け · 約0.7 MB</span></a>
+                <a href="./data/releases/2026-10-11/expo2025.osm.json" download><strong>元データ</strong><span>OSMの構造を保持 · 約1.5 MB</span></a>
             </div>
             <p class="download-status small" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
-            <p class="small">公開版 2026-10-10-2。</p>
+            <p class="small">公開版 2026-10-11。</p>
             <p class="small">CSVには主要なタグを列として収録しています。タグの空欄は未記録（タグなし）を表し、「なし」を意味しません。営業時間などは収録時点の情報です。</p>
             <details id="start"><summary>AIへの依頼文を見る</summary>
                 <pre id="ai-prompt">https://k-sakanoshita.github.io/expo2025-maniacs/data.html
@@ -100,7 +100,7 @@
             <section id="guide" aria-labelledby="guide-title">
                 <h2 id="guide-title">施設データだけで始める</h2>
                 <p>GeoJSONの取得URLは公開版ごとに固定します。現在のOverpass APIで再取得すると内容が変わるため、以下のURLを使用してください。</p>
-                <pre><code>const url = "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.geojson";
+                <pre><code>const url = "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-11/expo2025.geojson";
 const response = await fetch(url);
 if (!response.ok) throw new Error(`データ取得失敗: ${response.status}`);
 const data = await response.json();
@@ -137,8 +137,8 @@ const water = data.features.filter(f =&gt;
             <section id="provenance" aria-labelledby="provenance-title">
                 <h2 id="provenance-title">取得履歴・公開版の詳細</h2>
                 <p>対象は大阪・関西万博の会場（夢洲）と周辺。2025年10月13日の閉幕時点の記録を目的としていますが、厳密な閉幕日のスナップショットではありません。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、施設の対象時点ではありません。</p>
-                <p>GeoJSON・CSVはタグを持つ3,241件（点2,770件・線171件・面300件）。形状構築用のタグなしノードは元データに残しています。</p>
-                <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-10-2/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
+                <p>GeoJSON・CSVはタグを持つ3,449件（点2,770件・線171件・面508件）。形状構築用のタグなしノードは元データに残しています。</p>
+                <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-11/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
             </section>
         </details>
         <section id="license" aria-labelledby="license-title">
@@ -147,15 +147,16 @@ const water = data.features.filter(f =&gt;
             <p>会場・施設データはOpenStreetMap由来のデータで、<a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License（ODbL）</a>で提供します。利用時は出典を表示し、改変したデータベースを公開する際はODbLの条件に従ってください。詳しくは <a href="https://www.openstreetmap.org/copyright">OpenStreetMapの著作権・ライセンス</a>をご確認ください。</p>
             <p>表示例（OSM表記には上記の著作権ページへのリンクを付けてください）：</p>
             <pre>地図・施設データ © OpenStreetMap contributors（ODbL）
-施設データ提供：EXPO2025 万博マニアックマップ（公開版 2026-10-10-2）</pre>
+施設データ提供：EXPO2025 万博マニアックマップ（公開版 2026-10-11）</pre>
             <p>背景地図の帰属表示は削除しないでください。写真は画像ごとの出典・ライセンスが適用されます。この配布には写真の実ファイルや3Dモデルを含めていません。サンプルHTMLとサイトのソースコードは <a href="./LICENSE">MITライセンス</a>です。</p>
         </section>        <section id="history" aria-labelledby="history-title">
             <h2 id="history-title">公開履歴・連絡先</h2>
+            <p><strong>2026-10-11：</strong>水域・森林208件を追加。既存35件は重複追加せず保持しました。</p>
             <p><strong>2026-10-10-2：</strong>CSVに主要タグ8列を追加。地物の追加・削除・属性変更はありません。</p>
             <p>不足情報や誤りの報告、活用事例は <a href="https://github.com/K-Sakanoshita/expo2025-maniacs/issues">GitHub Issues</a>へお寄せください。</p>
         </section>    </main>
     <footer class="wrap"><a href="./">万博マップを開く</a> · <a href="https://armd-01.sakura.ne.jp/tiles/">Japan PMTiles</a> · <a href="https://github.com/K-Sakanoshita/expo2025-maniacs">GitHub</a><p>このサイトは万博公式サイトではありません。</p></footer>
     <script src="./lib/publicdatasearch.js?ver=20261010-03" defer></script>
-    <script src="./data-page.js?ver=20261010-07" defer></script>
+    <script src="./data-page.js?ver=20261011-03" defer></script>
 </body>
 </html>

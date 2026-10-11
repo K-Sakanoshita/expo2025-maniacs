@@ -7,11 +7,11 @@ const page = fs.readFileSync('data.html', 'utf8');
 for (const match of page.matchAll(/href="\.\/([^"#]+)"/g)) {
     assert.ok(fs.existsSync(match[1].split('?')[0]), `missing local link: ${match[1]}`);
 }
-const config = JSON.parse(fs.readFileSync('data/config-user.jsonc', 'utf8'));
+const config = vm.runInNewContext('(' + fs.readFileSync('data/config-user.jsonc', 'utf8') + ')');
 const labels = JSON.parse(fs.readFileSync('data/glot-custom.jsonc', 'utf8'));
 assert.equal(config.menu.main.find(item => item['glot-model'] === 'data_publication').linkto, './data.html');
-assert.equal(labels.data_publication.ja, 'データ公開');
-assert.equal(labels.data_publication.en, 'Open data');
+assert.equal(labels.data_publication.ja, '会場・施設オープンデータ');
+assert.equal(labels.data_publication.en, 'Venue and facility open data');
 
 const sample = fs.readFileSync('examples/expo-map.html', 'utf8');
 const script = [...sample.matchAll(/<script>([\s\S]*?)<\/script>/g)][0][1];
@@ -66,8 +66,8 @@ async function checkSample(fail) {
         assert.deepEqual(fs.readFileSync(path.join(release, name)), fs.readFileSync(path.join(previous, name)), `CSV-only release must preserve ${name}`);
     }
     assert.notDeepEqual(fs.readFileSync(path.join(release, 'expo2025.csv')), fs.readFileSync(path.join(previous, 'expo2025.csv')));
-    assert.match(fs.readFileSync('data-page.js', 'utf8'), /data\/releases\/2026-10-10-2\/expo2025\.geojson/);
-    const geojson = JSON.parse(fs.readFileSync(path.join(release, 'expo2025.geojson'), 'utf8'));
+    assert.match(fs.readFileSync('data-page.js', 'utf8'), /data\/releases\/2026-10-11\/expo2025\.geojson/);
+    const geojson = JSON.parse(fs.readFileSync('data/releases/2026-10-11/expo2025.geojson', 'utf8'));
     const example = JSON.parse(fs.readFileSync('data-example.json', 'utf8'));
     assert.deepEqual(example, geojson.features.find(feature => feature.id === example.id));
     assert.ok(geojson.features.some(feature => feature.geometry.type === 'Point'));
