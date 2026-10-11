@@ -70,7 +70,7 @@ details[open] > summary { margin-bottom: 20px; }
     .facility-map { height: 480px; }
     .wrap { padding: 0 16px; }
     header.hero { padding: 32px 16px 24px; }
-    .topbar .wrap { align-items: flex-start; font-size: .88rem; }
+    .topbar .wrap { flex-direction: column; align-items: flex-start; gap: 8px; font-size: .88rem; }
     section { padding: 20px 16px; }
     .cards { grid-template-columns: 1fr; }
     dl { grid-template-columns: 1fr; gap: 2px; }
