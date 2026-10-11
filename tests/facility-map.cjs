@@ -28,10 +28,13 @@ async function check(fail) {
     const element = () => ({ children: [], dataset: {}, handlers: {}, style: {}, append(...nodes) { this.children.push(...nodes); }, replaceChildren(...nodes) { this.children = nodes; }, setAttribute() {}, addEventListener(name, handler) { this.handlers[name] = handler; } });
     const elements = Object.fromEntries(['status', 'legend', 'reset-view'].map(id => [id, element()]));
     const handlers = {}, sources = {}, layers = [], images = [];
-    let popup, mapOptions, fitCount = 0;
+    let popup, mapOptions, fitCount = 0, popupRemovals = 0;
+    const visibility = {}, canvas = { style: {} };
     class Map {
         constructor(options) { mapOptions = options; }
         addControl() {}
+        getCanvas() { return canvas; }
+        setLayoutProperty(id, key, value) { assert.equal(key, 'visibility'); visibility[id] = value; }
         on(event, layer, callback) { handlers[`${event}:${typeof layer === 'string' ? layer : ''}`] = callback || layer; }
         addSource(id, source) { sources[id] = source; }
         addLayer(layer) { layers.push(layer); }
@@ -40,6 +43,7 @@ async function check(fail) {
         queryRenderedFeatures() { return [sources.facilities.data.features[0]]; }
     }
     class Popup {
+        remove() { popupRemovals++; }
         setLngLat() { return this; }
         setDOMContent(content) { popup = content; return this; }
         addTo() { return this; }
@@ -50,14 +54,17 @@ async function check(fail) {
             if (tag === 'canvas') node.getContext = () => ({ beginPath() {}, arc() {}, moveTo() {}, lineTo() {}, closePath() {}, rect() {}, fill() {}, stroke() {}, getImageData() { return {}; } });
             return node;
         } },
-        fetch: async () => ({ ok: !fail, status: 404, json: async () => fixture }),
+        fetch: async url => {
+            assert.equal(url, 'https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.geojson');
+            return { ok: !fail, status: 404, json: async () => fixture };
+        },
         maplibregl: { Map, Popup, NavigationControl: class {}, ScaleControl: class {} }
     };
     vm.runInNewContext(fs.readFileSync('examples/expo-facilities.js', 'utf8'), context);
     await context.module.exports.initialize();
     if (fail) {
         assert.equal(elements.status.dataset.error, 'true');
-        assert.equal(elements.status.children[1].href, './expo-facilities.svg');
+        assert.equal(elements.status.children[1].href, 'https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.svg');
         assert.equal(mapOptions, undefined);
         return;
     }
@@ -73,7 +80,26 @@ async function check(fail) {
     assert.equal(fitCount, 2);
     handlers['click:']({ point: {} });
     assert.equal(popup.children[0].textContent, '<img onerror="bad">', 'names are plain text');
-    assert.equal(popup.children[3].href, '../?node/1');
+    assert.equal(popup.children[3].href, 'https://k-sakanoshita.github.io/expo2025-maniacs/?node/1');
+    const checkboxes = elements.legend.children.map(item => item.children[0].children[0]);
+    assert.equal(checkboxes.length, 3);
+    assert.ok(checkboxes.every(box => box.checked && !box.disabled));
+    assert.match(elements.status.textContent, /3件を表示/);
+    const toggle = (index, checked) => {
+        checkboxes[index].checked = checked;
+        checkboxes[index].handlers.change();
+    };
+    toggle(2, false);
+    assert.equal(visibility.vending_machine, 'none');
+    assert.equal(visibility.toilets, undefined); // Other categories are untouched.
+    assert.match(elements.status.textContent, /2件を表示/);
+    assert.equal(popupRemovals, 1); // A hidden category must not leave its popup open.
+    toggle(0, false); toggle(1, false);
+    assert.match(elements.status.textContent, /表示中の設備はありません/);
+    toggle(1, true);
+    assert.equal(visibility.drinking_water, 'visible');
+    assert.match(elements.status.textContent, /1件を表示/);
+    assert.equal(sources.facilities.data.features.length, 3); // Toggling never removes the source data.
     handlers['error:']();
     assert.equal(elements.status.dataset.error, 'true');
 }

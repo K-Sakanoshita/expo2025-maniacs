@@ -10,24 +10,28 @@
         body { display: flex; flex-direction: column; background: #f6f8fa; }
         header { padding: 10px 12px; display: flex; gap: 8px 20px; flex-wrap: wrap; align-items: center; }
         #legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; list-style: none; font-size: 14px; }
-        #legend span { margin-right: 4px; } .toilets { color: #254da3; } .water { color: #007c83; } .vending { color: #b96516; }
+        #legend label { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; cursor: pointer; }
+        #legend input { width: 16px; height: 16px; margin: 0; accent-color: #075cab; }
+        .toilets { color: #254da3; } .water { color: #007c83; } .vending { color: #b96516; }
         button { font: inherit; cursor: pointer; background: white; border: 1px solid #bbc5cf; border-radius: 4px; padding: 5px 9px; }
         #map { flex: 1; min-height: 220px; position: relative; }
         #status { font-size: 13px; line-height: 1.6; margin: 0; padding: 5px 12px; background: white; }
         #status[data-error] { color: #a43123; } a { color: #075cab; }
+        #data-note { font-size: 12px; line-height: 1.6; margin: 0; padding: 5px 12px 8px; background: white; }
         .maplibregl-popup-content { font-size: 14px; line-height: 1.6; max-width: 230px; }
         .maplibregl-popup-content p { margin: 4px 0; }
     </style>
 </head>
 <body>
     <header>
-        <ul id="legend" aria-label="地図の凡例"></ul>
+        <ul id="legend" aria-label="表示する設備"></ul>
         <button id="reset-view" type="button" disabled>全体を表示</button>
     </header>
     <div id="map" aria-label="当時のトイレ・給水所・自動販売機の配置図"></div>
     <p id="status" role="status" aria-live="polite">公開データを読み込んでいます…</p>
-    <noscript><p>地図の操作にはJavaScriptが必要です。<a href="./expo-facilities.svg">静止図を見る</a></p></noscript>
+    <p id="data-note">2025年10月30日取得のOSMデータと取得後の補足による配置例です。現在の営業・利用状況を示すものではありません。<a href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html#data-timing" target="_blank" rel="noopener noreferrer">データの日時について</a></p>
+    <noscript><p>地図の操作にはJavaScriptが必要です。<a href="https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.svg">静止図を見る</a></p></noscript>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.js"></script>
-    <script src="./expo-facilities.js?ver=20261011-02"></script>
+    <script src="./expo-facilities.js?ver=20261011-03"></script>
 </body>
 </html>

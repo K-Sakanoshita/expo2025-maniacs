@@ -29,10 +29,16 @@
         <section id="facility-example" aria-labelledby="facility-example-title">
             <h2 id="facility-example-title">オープンデータで見る、当時のトイレ・給水所・自動販売機</h2>
             <figure>
-                <iframe class="facility-map" src="./examples/expo-facilities.html" title="当時のトイレ・給水所・自動販売機のインタラクティブ地図" loading="lazy"></iframe>
-                <figcaption class="small">公開GeoJSONから作成した配置例です。移動・拡大縮小でき、施設を押すと詳細を確認できます。現在の営業・利用状況を示すものではありません。<br><a href="./examples/expo-facilities.html" target="_blank" rel="noopener noreferrer">地図を大きく開く</a> · <a href="./examples/expo-facilities.svg" target="_blank" rel="noopener noreferrer">静止図を見る</a><br>施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
+                <iframe class="facility-map" src="./examples/expo-facilities.html?ver=20261011-03" title="当時のトイレ・給水所・自動販売機のインタラクティブ地図" loading="lazy"></iframe>
+                <figcaption class="small">チェックを切り替えると、設備ごとの配置を見比べられます。移動・拡大縮小でき、施設を押すと詳細を確認できます。<br>2025年10月30日取得のOSMデータと取得後の補足による配置例です。現在の営業・利用状況を示すものではありません。<a href="#data-timing">データの日時について</a><br><a href="./examples/expo-facilities.html" target="_blank" rel="noopener noreferrer">地図を大きく開く</a> · <a href="./examples/expo-facilities.svg" target="_blank" rel="noopener noreferrer">静止図を見る</a><br>施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</figcaption>
             </figure>
-            <details><summary>抽出条件と作成コードを見る</summary>
+            <details><summary>この地図を作る・抽出条件を見る</summary>
+                <ol>
+                    <li><a href="./examples/expo-facilities.html" download="expo-facilities.html">サンプルHTML</a>と<a href="./examples/expo-facilities.js" download="expo-facilities.js">JavaScript</a>を、同じフォルダーに保存します。</li>
+                    <li>そのフォルダーでWebサーバーを起動します。Pythonがある場合は <code>python3 -m http.server 8000</code> を実行し、<code>http://localhost:8000/expo-facilities.html</code> を開きます。</li>
+                    <li>JavaScript冒頭の <code>TYPES</code> の <code>tag</code>・名称・色を変更すると、別の <code>amenity</code> の配置図にできます。例えば <code>toilets</code> を <code>bench</code>、名称を「ベンチ」に変更します。</li>
+                </ol>
+                <p class="small">サンプルは公開GeoJSONを直接読み込みます。手元のデータを使う場合は、<a href="./data/releases/2026-10-10-2/expo2025.geojson" download="expo2025.geojson">GeoJSONを同じフォルダーに保存</a>し、JavaScriptの <code>DATA_URL</code> を <code>'./expo2025.geojson'</code> に変更してください。MapLibreの読み込みにはインターネット接続が必要です。</p>
                 <p><code>amenity=toilets</code>（64件）、<code>amenity=drinking_water</code>（50件）、<code>amenity=vending_machine</code>（248件）で抽出しています。件数は地物の数で、便器や設備の台数ではありません。</p>
                 <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と大屋根リング（<code>relation/18047883</code>）も同じGeoJSONから描画しています。</p>
                 <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./examples/expo-facilities.html">サンプルHTML</a> · <a href="./data/releases/2026-10-10-2/expo2025.geojson" download>使用したGeoJSON</a></p>
@@ -56,7 +62,7 @@
             <p>施設検索や一覧アプリは、約1.1 MBのGeoJSONから始められます。点・線・面の形状と、名称・種別などのOSMタグを収録しています。</p>
             <p><strong>収録内容：</strong>マップで使用しているOSM由来の地物データ3,241件を収録しています。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small">（名前あり1,113件・名前なし2,128件）</span></p>
             <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
-            <p><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。</p>
+            <p id="data-timing"><strong>施設データ：</strong>閉幕時点（2025年10月13日）の記録を目的に、2025年10月30日に取得したOSMデータと、取得後の写真・公式サイト情報や遊具などの補足を収録しています。厳密な閉幕日のスナップショットではありません。</p>
             <div class="download-list">
                 <a href="./data/releases/2026-10-10-2/expo2025.geojson" download><strong>GeoJSON</strong><span>地図・アプリ開発向け · 約1.1 MB</span></a>
                 <a href="./data/releases/2026-10-10-2/expo2025.csv" download><strong>CSV</strong><span>表計算・集計向け · 約0.6 MB</span></a>

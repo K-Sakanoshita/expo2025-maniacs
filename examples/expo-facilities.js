@@ -1,5 +1,11 @@
 /* MIT License. Uses the published GeoJSON only; no background tile service is required. */
 (function () {
+    // Save this script beside expo-facilities.html to reproduce the map.
+    // To use your own data, replace DATA_URL with e.g. './expo2025.geojson'.
+    const DATA_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-10-2/expo2025.geojson';
+    const MAP_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/';
+    const STATIC_MAP_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.svg';
+    // Change the amenity values, labels and colors here to adapt the example.
     const TYPES = [
         { tag: 'toilets', label: 'トイレ', color: '#254da3', shape: '●', className: 'toilets' },
         { tag: 'drinking_water', label: '給水所', color: '#007c83', shape: '◆', className: 'water' },
@@ -48,8 +54,8 @@
         const ctx = canvas.getContext('2d');
         ctx.fillStyle = type.color; ctx.strokeStyle = 'white'; ctx.lineWidth = 2;
         ctx.beginPath();
-        if (type.tag === 'toilets') ctx.arc(16, 16, 11, 0, Math.PI * 2);
-        else if (type.tag === 'drinking_water') {
+        if (type.shape === '●') ctx.arc(16, 16, 11, 0, Math.PI * 2);
+        else if (type.shape === '◆') {
             ctx.moveTo(16, 3); ctx.lineTo(29, 16); ctx.lineTo(16, 29); ctx.lineTo(3, 16); ctx.closePath();
         } else ctx.rect(7, 7, 18, 18);
         ctx.fill(); ctx.stroke();
@@ -68,7 +74,7 @@
         content.append(note);
         if (/^(node|way|relation)\/\d+$/.test(properties.osm_id)) {
             const link = document.createElement('a');
-            link.href = `../?${properties.osm_id}`;
+            link.href = `${MAP_URL}?${properties.osm_id}`;
             link.target = '_blank'; link.rel = 'noopener noreferrer';
             link.textContent = '万博マニアックマップで見る';
             content.append(link);
@@ -77,23 +83,32 @@
     }
     async function initialize() {
         const status = document.getElementById('status');
+        // Our data page supplies the same date note in its caption.
+        const dateNote = document.getElementById('data-note');
+        if (dateNote && typeof window !== 'undefined' && window.frameElement?.classList.contains('facility-map')) dateNote.hidden = true;
         const showError = () => {
             status.dataset.error = 'true';
             status.replaceChildren(document.createTextNode('地図を表示できませんでした。通信やWebGLの対応をご確認ください。 '));
             const link = document.createElement('a');
-            link.href = './expo-facilities.svg'; link.textContent = '静止図を見る'; link.target = '_blank';
+            link.href = STATIC_MAP_URL; link.textContent = '静止図を見る'; link.target = '_blank';
             link.rel = 'noopener noreferrer'; status.append(link);
         };
         try {
             if (typeof maplibregl === 'undefined') throw new Error('MapLibre not loaded');
-            const response = await fetch('../data/releases/2026-10-10-2/expo2025.geojson');
+            const response = await fetch(DATA_URL);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = prepareData(await response.json());
             const legend = document.getElementById('legend');
+            const filters = new Map();
             for (const type of TYPES) {
-                const item = document.createElement('li'), symbol = document.createElement('span');
+                const item = document.createElement('li'), label = document.createElement('label');
+                const checkbox = document.createElement('input'), symbol = document.createElement('span');
+                checkbox.type = 'checkbox'; checkbox.checked = true; checkbox.disabled = true;
+                checkbox.value = type.tag;
                 symbol.className = type.className; symbol.textContent = type.shape; symbol.setAttribute('aria-hidden', 'true');
-                item.append(symbol, document.createTextNode(`${type.label} ${data.counts[type.tag]}件`)); legend.append(item);
+                label.append(checkbox, symbol, document.createTextNode(`${type.label} ${data.counts[type.tag]}件`));
+                item.append(label); legend.append(item);
+                filters.set(type.tag, checkbox);
             }
             const map = new maplibregl.Map({ container: 'map', center: [135.3836, 34.6499], zoom: 14,
                 cooperativeGestures: true, locale: { 'NavigationControl.ZoomIn': '拡大', 'NavigationControl.ZoomOut': '縮小',
@@ -119,10 +134,28 @@
                         map.addLayer({ id: type.tag, type: 'symbol', source: 'facilities', filter: ['==', ['get', 'category'], type.tag],
                             layout: { 'icon-image': type.tag, 'icon-size': 0.65, 'icon-allow-overlap': true, 'icon-ignore-placement': true } });
                     }
+                    let activePopup = null;
+                    const updateStatus = () => {
+                        if (status.dataset.error) return;
+                        const count = TYPES.reduce((total, type) => total + (filters.get(type.tag).checked ? data.counts[type.tag] : 0), 0);
+                        status.textContent = count ? `${count}件を表示。施設を押すと詳細を確認できます。`
+                            : '表示中の設備はありません。チェックを入れると表示できます。';
+                    };
+                    for (const type of TYPES) {
+                        const checkbox = filters.get(type.tag);
+                        checkbox.disabled = false;
+                        checkbox.addEventListener('change', () => {
+                            map.setLayoutProperty(type.tag, 'visibility', checkbox.checked ? 'visible' : 'none');
+                            activePopup?.remove();
+                            map.getCanvas().style.cursor = '';
+                            updateStatus();
+                        });
+                    }
                     map.on('click', event => {
                         const feature = map.queryRenderedFeatures(event.point, { layers: TYPES.map(type => type.tag) })[0];
                         if (!feature) return;
-                        new maplibregl.Popup().setLngLat(feature.geometry.coordinates).setDOMContent(popupContent(feature.properties)).addTo(map);
+                        activePopup?.remove();
+                        activePopup = new maplibregl.Popup().setLngLat(feature.geometry.coordinates).setDOMContent(popupContent(feature.properties)).addTo(map);
                     });
                     for (const type of TYPES) {
                         map.on('mouseenter', type.tag, () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -132,7 +165,7 @@
                     document.getElementById('reset-view').disabled = false;
                     document.getElementById('reset-view').addEventListener('click', reset);
                     reset();
-                    if (!status.dataset.error) status.textContent = '施設を押すと詳細を表示します。現在の営業・利用状況ではありません。';
+                    updateStatus();
                 } catch { showError(); }
             });
             return map;
