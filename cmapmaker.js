@@ -476,7 +476,7 @@ class CMapMaker extends IndoorControl {
                     mapLibre.addControl("bottom-left", "images", "", "showcase"); // add images
                     mapLibre.addNavigation("bottom-right");
                     mapLibre.addControl("bottom-left", "globalStatus", "", "m-0");
-                    globalStatus.innerHTML = '<div class="global-status-message" role="status" aria-live="polite"><div id="globalSpinner" class="spinner-border text-primary d-none" aria-hidden="true"></div><span id="globalMessage" class="globalMessage"></span></div>';
+                    globalStatus.innerHTML = '<div class="global-status-message" role="status" aria-live="polite"><div id="globalSpinner" class="spinner-border spinner-border-sm text-primary flex-shrink-0 m-0 d-none" aria-hidden="true"></div><span id="globalMessage" class="globalMessage"></span></div>';
                     globalStatus.appendChild(document.getElementById("mapDisplayStatus"));
                     mapLibre.setGlobalStatusControlPosition(globalStatus);
                     newsTicker.init(Conf.news, mapLibre, Conf.tile);
@@ -876,12 +876,13 @@ class CMapMaker extends IndoorControl {
             }
             if (acts.length > 0) {
                 images.classList.remove("d-none");
-                winCont.setImages(images, acts, Conf.etc.loadingUrl, Conf.thumbnail.limits)
+                winCont.setImages(images, acts, Conf.etc.loadingUrl, Conf.thumbnail.limits, () => {
+                    if (this.scrollHints === 0 && winCont.scrollHint()) this.scrollHints++;
+                })
                 requestAnimationFrame(() => {
                     const imageHeight = images.classList.contains("d-none") ? 0 : images.offsetHeight;
                     dummy.style.height = imageHeight + "px";	// 画像表示領域の高さをダミーに設定
                 });
-                if (this.scrollHints == 0) winCont.scrollHint(); this.scrollHints++;
             } else {
                 winCont.disconnectImageObserver();
                 images.classList.add("d-none");

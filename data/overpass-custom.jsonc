@@ -277,7 +277,8 @@
                 "nwr[\"office\"=\"courier\"]",
                 "nwr[\"office\"=\"government\"]",
                 "nwr[\"leisure\"=\"bandstand\"]",
-                "nwr[\"playground\"]"
+                "nwr[\"playground\"]",
+                "nwr[\"building\"]"
             ],
             "tags": [
                 "amenity=stage",
@@ -288,7 +289,8 @@
                 "office=courier",
                 "office=government",
                 "leisure=bandstand",
-                "playground"
+                "playground",
+                "building"
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示
@@ -432,9 +434,11 @@
             "expression": {
                 "poiView": false, // true時はアイコン表示
                 "viewArea": true,
-                "stroke": "#c0a0a0",
+                "stroke": "#65a8b2",
                 "stroke-width": 3,
-                "fill-opacity": 1
+                "circle-stroke-color": "#ffffff",
+                "circle-stroke-width": 0.75,
+                "fill-opacity": 0.7
             }
         },
         "expo2025_pole": {

@@ -22,7 +22,7 @@ python3 -m http.server 8000
 MapLibre GL JSは5.24.0を使用します。公園専用の公開URL・Analytics・投稿先・遊具モデル素材は引き継いでいません。
 
 デモの初期位置・ズーム・カテゴリ・Overpass取得対象・投稿フォーム・背景地図・インドア表示と、サイト名・画像・独自CSSは従来の設定を維持しています。
-追加の共通UIスタイルは `common-ui.css` に分離し、既存の `user.css` を後から読み込んで上書きします。
+共通UIと屋内の階数選択UIのスタイルは `system.css` にまとめています。Bootstrapなどの外部CSS、`system.css`、サイト側の調整用 `user.css` の順に読み込みます。
 新しい共通文言は `data/glot-system.jsonc` に追加し、`data/glot-custom.jsonc` を優先します。
 
 従来の `google.AppScript` / `google.targetName` は起動時に `activity` 設定へ対応付けるため、設定ファイルの移行は不要です。

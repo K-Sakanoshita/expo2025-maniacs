@@ -68,7 +68,7 @@ async function checkSample(fail) {
     assert.notDeepEqual(fs.readFileSync(path.join(release, 'expo2025.csv')), fs.readFileSync(path.join(previous, 'expo2025.csv')));
     assert.match(fs.readFileSync('data-page.js', 'utf8'), /data\/releases\/2026-10-12\/expo2025\.geojson/);
     const geojson = JSON.parse(fs.readFileSync('data/releases/2026-10-12/expo2025.geojson', 'utf8'));
-    const example = JSON.parse(fs.readFileSync('data-example.json', 'utf8'));
+    const example = JSON.parse(fs.readFileSync('examples/data-example.json', 'utf8'));
     assert.deepEqual(example, geojson.features.find(feature => feature.id === example.id));
     assert.ok(geojson.features.some(feature => feature.geometry.type === 'Point'));
     assert.ok(geojson.features.some(feature => feature.geometry.type === 'LineString'));

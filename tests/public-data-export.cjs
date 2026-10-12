@@ -22,7 +22,7 @@ try {
     exportData({ source, output: two });
     for (const name of fs.readdirSync(one)) assert.deepEqual(fs.readFileSync(path.join(one, name)), fs.readFileSync(path.join(two, name)), `deterministic ${name}`);
     assert.equal(metadata.feature_count, 3);
-    assert.equal(metadata.target_date, '2025-10-13');
+    assert.equal('target_date' in metadata, false, 'enriched dataset must not claim a single target date');
     assert.equal(metadata.source_osm_base_timestamp, fixture.osm3s.timestamp_osm_base);
     assert.deepEqual(metadata.geometry_counts, { Point: 1, LineString: 1, Polygon: 1 });
     const features = JSON.parse(fs.readFileSync(path.join(one, 'expo2025.geojson'))).features;

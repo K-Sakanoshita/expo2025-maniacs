@@ -1,9 +1,5 @@
 {
     "styles": [
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css",
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css",
-        "https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.css",
-        "common-ui.css",
         "user.css"
     ],
     "scriptGroups": [

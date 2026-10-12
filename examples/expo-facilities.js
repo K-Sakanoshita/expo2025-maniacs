@@ -1,12 +1,11 @@
 /* MIT License. Uses the published GeoJSON only; no background tile service is required. */
 (function () {
-    // Save this script beside expo-facilities.html to reproduce the map.
+    // Used by the facility example embedded directly in data.html.
     // To use your own data, replace DATA_URL with e.g. './expo2025.geojson'.
     const DATA_URL = typeof document !== 'undefined' && document.currentScript?.src
         ? new URL('../data/releases/2026-10-12/expo2025.geojson', document.currentScript.src).href
         : './data/releases/2026-10-12/expo2025.geojson';
     const MAP_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/';
-    const STATIC_MAP_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.svg';
     // Change the amenity values, labels and colors here to adapt the example.
     const TYPES = [
         { tag: 'toilets', label: 'トイレ', color: '#254da3', shape: '●', className: 'toilets' },
@@ -85,15 +84,9 @@
     }
     async function initialize() {
         const status = document.getElementById('status');
-        // Our data page supplies the same date note in its caption.
-        const dateNote = document.getElementById('data-note');
-        if (dateNote && typeof window !== 'undefined' && window.frameElement?.classList.contains('facility-map')) dateNote.hidden = true;
         const showError = () => {
             status.dataset.error = 'true';
             status.replaceChildren(document.createTextNode('地図を表示できませんでした。通信やWebGLの対応をご確認ください。 '));
-            const link = document.createElement('a');
-            link.href = STATIC_MAP_URL; link.textContent = '静止図を見る'; link.target = '_blank';
-            link.rel = 'noopener noreferrer'; status.append(link);
         };
         try {
             if (typeof maplibregl === 'undefined') throw new Error('MapLibre not loaded');
@@ -104,10 +97,11 @@
             const filters = new Map();
             for (const type of TYPES) {
                 const item = document.createElement('li'), label = document.createElement('label');
+                item.className = 'm-0'; label.className = 'd-inline-flex align-items-center gap-1';
                 const checkbox = document.createElement('input'), symbol = document.createElement('span');
-                checkbox.type = 'checkbox'; checkbox.checked = true; checkbox.disabled = true;
+                checkbox.type = 'checkbox'; checkbox.className = 'form-check-input m-0'; checkbox.checked = true; checkbox.disabled = true;
                 checkbox.value = type.tag;
-                symbol.className = type.className; symbol.textContent = type.shape; symbol.setAttribute('aria-hidden', 'true');
+                symbol.style.color = type.color; symbol.textContent = type.shape; symbol.setAttribute('aria-hidden', 'true');
                 label.append(checkbox, symbol, document.createTextNode(`${type.label} ${data.counts[type.tag]}件`));
                 item.append(label); legend.append(item);
                 filters.set(type.tag, checkbox);

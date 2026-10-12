@@ -9,22 +9,6 @@ document.querySelectorAll('a[download]').forEach(link => {
     });
 });
 
-document.getElementById('copy-prompt').addEventListener('click', async () => {
-    const prompt = document.getElementById('ai-prompt');
-    const status = document.getElementById('copy-status');
-    try {
-        await navigator.clipboard.writeText(prompt.textContent.trim());
-        status.textContent = 'コピーしました。AIに貼り付けて、作りたい内容を書き換えてください。';
-    } catch {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(prompt);
-        selection.removeAllRanges();
-        selection.addRange(range);
-        status.textContent = '依頼文を選択しました。手動でコピーしてください。';
-    }
-});
-
 function openLinkedDetails() {
     const id = location.hash.slice(1);
     const target = document.getElementById(id);
@@ -55,6 +39,7 @@ openLinkedDetails();
             results.replaceChildren();
             for (const feature of matches) {
                 const item = document.createElement('li');
+                item.className = 'd-flex align-items-center justify-content-between gap-3 py-3 border-bottom';
                 const description = document.createElement('div');
                 const name = document.createElement('strong');
                 name.textContent = search.displayName(feature);
@@ -63,15 +48,16 @@ openLinkedDetails();
                     .filter(country => country !== feature.properties.name);
                 if (countries.length) {
                     const country = document.createElement('span');
-                    country.className = 'small';
+                    country.className = 'd-block small text-body-secondary';
                     country.textContent = countries.join('・');
                     description.append(country);
                 }
                 const link = document.createElement('a');
-                link.href = `./?${feature.properties.osm_id}`;
+                link.href = `./?${feature.properties.osm_id}&category=-`;
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
                 link.textContent = '地図で見る';
+                link.className = 'flex-shrink-0 small';
                 link.setAttribute('aria-label', `${name.textContent}を地図で見る`);
                 item.append(description, link);
                 results.append(item);

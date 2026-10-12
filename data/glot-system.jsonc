@@ -1,4 +1,8 @@
 {
+    "thumbnail_scroll_hint": {
+        "ja": "横にスクロール",
+        "en": "Scroll sideways"
+    },
     "act_add": {
         "ja": "情報追加",
         "en": "Add Information"
@@ -1250,10 +1254,6 @@
     "personal_memo_label": {
         "ja": "自分用メモ（非公開）",
         "en": "Personal note (private)"
-    },
-    "personal_memo_help": {
-        "ja": "このブラウザに保存され、口コミとしては公開されません。",
-        "en": "Saved in this browser. Not published as a review."
     },
     "contribute_intro": {
         "ja": "参加したい内容に合わせてアカウントを登録してください。地図を見るだけなら登録は不要です。",

@@ -10,7 +10,7 @@ assert.match(html, /id="poiFilterVisited"/);
 assert.doesNotMatch(html, /id="poiFilterFavoriteOnly"|id="poiFilterPresets"|onchange="cMapMaker.setVisitedFilter/);
 assert.match(html, /id="placeCriteriaSearch"/);
 assert.doesNotMatch(html, /id="poiFilterDescription"/);
-const css = fs.readFileSync("common-ui.css", "utf8");
+const css = fs.readFileSync("system.css", "utf8");
 assert.match(html, /id="poiFilterModal" class="modal"/);
 assert.doesNotMatch(html, /id="poiFilterModal" class="[^"]*\bfade\b/);
 assert.match(html, /class="modal-dialog modal-dialog-scrollable modal-lg"/);

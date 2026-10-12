@@ -146,6 +146,7 @@
     "selectItem": {
         "default": "expo2025_exp",
         "menu": {
+            "🗺️すべて表示": "-",
             "🏛️パビリオン・展示": "expo2025_exp",
             "🏢施設・🎶ステージ": "expo2025_service",
             "🚻休憩/トイレ・💧給水": "expo2025_restarea",
@@ -245,7 +246,7 @@
     },
     "thumbnail": {
         "use": true,
-        "limits": 20,
+        "limits": 40,
         "slideThumbWidth": "320",
         "modalThumbWidth": "800"
     },

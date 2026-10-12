@@ -38,7 +38,8 @@ zoom = 14;
 assert.equal(context.table.getThumbnailOsmImages().length, 0);
 console.log('PASS: OSM Commons thumbnails respect File tags, bounds, zoom and POI visibility; repeated facilities are deduplicated');
 
-let displayed;
+let displayed, photoReady;
+let hintsShown = 0;
 const makerSource = fs.readFileSync('cmapmaker.js', 'utf8');
 const method = makerSource.slice(makerSource.indexOf('    makeImages(view) {'),
     makerSource.indexOf('    usesActivityBbox() {'));
@@ -52,11 +53,18 @@ const ui = {
         getThumbnailOsmImages: () => result },
     images: { classList: { remove() {}, contains: () => false }, offsetHeight: 80 },
     dummy: { style: {} }, requestAnimationFrame: cb => cb(),
-    winCont: { setImages: (dom, acts) => { displayed = acts; } }, console
+    winCont: { setImages: (dom, acts, loadingUrl, limits, ready) => { displayed = acts; photoReady = ready; },
+        scrollHint: () => { hintsShown++; return true; } }, console
 };
 vm.createContext(ui);
 vm.runInContext('this.maker = new (class {' + method + '})();', ui);
+ui.maker.scrollHints = 0;
 ui.maker.makeImages(true);
+assert.equal(hintsShown, 0, "building thumbnails does not show the hint");
+photoReady();
+assert.equal(hintsShown, 1, "the photo-ready callback shows the hint");
+photoReady();
+assert.equal(hintsShown, 1, "the hint appears only once");
 assert.equal(displayed.length, 2);
 assert.equal(displayed[0].title, '投稿');
 assert.equal(displayed[1].osmid, 'way/7');

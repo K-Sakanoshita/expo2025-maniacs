@@ -9,7 +9,7 @@ class Element {
  setAttribute(key,value){this[key]=value;}
  addEventListener(type,handler){(this.listeners??={})[type]=handler;}
  focus(){}
- querySelectorAll(selector){const found=[];const walk=node=>{if(node.className==='changes-modal__item')found.push(node);node.children?.forEach(walk);};walk(this);return found;}
+ querySelectorAll(selector){const found=[];const walk=node=>{if(node.className?.split(/\s+/).includes('changes-modal__item'))found.push(node);node.children?.forEach(walk);};walk(this);return found;}
 }
 const values=new Map();let requests=0,observer;
 const context={Date,console,document:{createElement:tag=>new Element(tag),body:new Element('body')},
@@ -37,7 +37,7 @@ const groups=ticker.eventGroups();assert.equal(groups.length,2);assert.equal(gro
  assert.equal(requests,0); // Feed display must not resolve extra Wikimedia metadata.
  const displayed=ticker.content.querySelectorAll('.changes-modal__item');
  assert.equal(displayed.length,2); // Hidden group members are not instantiated yet.
- assert.ok(displayed[0].children[0].children.some(node=>node.className==='change-feed-unread'));
+ assert.ok(displayed[0].children[0].children.some(node=>node.className?.split(/\s+/).includes('change-feed-unread')));
  observer.callback([{target:displayed[0],isIntersecting:true,intersectionRatio:1},{target:displayed[1],isIntersecting:false,intersectionRatio:0}]);
  assert.equal(ticker.unreadEvents().length,1);
  assert.equal(ticker.unreadEvents([events[0]]).length,0); // Viewing a summary reads the updates it represents.

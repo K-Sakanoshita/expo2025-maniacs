@@ -171,8 +171,7 @@ class OSMbasic {
             html += `</div>${directionsHtml}<div class="flex-row mt-1 me-3 d-flex text-nowrap align-items-center w-100">`;
             let memo = poiStatus[PoiStatusIndex.MEMO] !== undefined ? poiStatus[PoiStatusIndex.MEMO] : "";
             html += `<label for="visited-memo" class="ms-2 me-2">${glot.get("personal_memo_label")}</label>`;
-            html += `<input type="text" id="visited-memo" aria-describedby="personal-memo-help" maxlength="140" size="20" class="form-control" oninput="cMapMaker.savePoiStatus()" value="${escapeAttr(memo)}" /></div>`
-            html += `<div id="personal-memo-help" class="form-text w-100 mt-1 mb-2">${glot.get("personal_memo_help")}</div>`;
+            html += `<input type="text" id="visited-memo" maxlength="140" size="20" class="form-control" oninput="cMapMaker.savePoiStatus()" value="${escapeAttr(memo)}" /></div>`
             elements++;
         }
 

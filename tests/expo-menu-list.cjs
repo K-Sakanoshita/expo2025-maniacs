@@ -37,3 +37,24 @@ assert.equal(context.table.getFilterList()[0][0],'node/2');
 context.table.filterByPoiStatus('visited',false,false);
 assert.equal(context.table.getFilterList().length,0);
 console.log('PASS: manual Expo categories use target membership and preserve visit filtering');
+
+// The explicit all option must survive rebuilding and include every category.
+const userConfig = vm.runInNewContext('(' + fs.readFileSync('data/config-user.jsonc', 'utf8') + ')');
+context.Conf.selectItem = userConfig.selectItem;
+context.basic = { uniq: values => [...new Map(values.map(v => [JSON.stringify(v), v])).values()] };
+context.list_category.options = [];
+context.winCont = {
+    clearSelect: () => { context.list_category.options = []; context.list_category.value = ''; },
+    addSelect: (_id, text, value) => context.list_category.options.push({ text, value })
+};
+context.table.makeSelectList('menu');
+assert(context.list_category.options.some(option => option.text === '🗺️すべて表示' && option.value === '-'));
+context.table.selectCategory('-', false);
+assert.equal(context.list_category.value, '-');
+assert.equal(context.table.getFilterList().length, 3);
+context.table.makeSelectList('menu');
+assert.equal(context.list_category.value, '-');
+context.table.makeList(false);
+assert.equal(context.table.getFilterList().length, 3);
+assert.equal(userConfig.selectItem.default, 'expo2025_exp');
+console.log('PASS: all category option displays every target and persists across rebuilds');

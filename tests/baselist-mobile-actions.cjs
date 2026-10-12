@@ -2,7 +2,7 @@ const assert = require("assert");
 const fs = require("fs");
 
 const html = fs.readFileSync("baselist.html", "utf8");
-const css = fs.readFileSync("common-ui.css", "utf8");
+const css = fs.readFileSync("system.css", "utf8");
 const actionContainer = html.match(/<div id="listActionButtons"[^>]*>/)?.[0] ?? "";
 const searchContainer = html.match(/<!-- 検索 -->\s*<div[^>]*>/)?.[0] ?? "";
 

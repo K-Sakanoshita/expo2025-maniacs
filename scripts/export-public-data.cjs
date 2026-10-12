@@ -53,11 +53,11 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
         'expo2025.osm.json': raw
     };
     const metadata = {
-        version, target_date: '2025-10-13',
-        description: '大阪・関西万博の閉幕時点を対象とした会場・施設の記録。取得後の写真・公式サイト情報や遊具などの補足を含む。',
+        version,
+        description: '2025年10月末時点の大阪・関西万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセット。',
         source: source.replaceAll('\\', '/'),
         source_osm_base_timestamp: input.osm3s?.timestamp_osm_base || null,
-        source_timestamp_note: '元データの取得時に記録されたOSM基準日時。施設の対象時点ではない。',
+        source_timestamp_note: '基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。',
         license: 'ODbL-1.0', license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         attribution: '© OpenStreetMap contributors', attribution_url: 'https://www.openstreetmap.org/copyright',
         publisher: 'EXPO2025 万博マニアックマップ', documentation_url: `${BASE_URL}data.html`,

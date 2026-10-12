@@ -64,7 +64,8 @@ async function check(fail, scriptUrl) {
     await context.module.exports.initialize();
     if (fail) {
         assert.equal(elements.status.dataset.error, 'true');
-        assert.equal(elements.status.children[1].href, 'https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.svg');
+        assert.equal(elements.status.children.length, 1, 'error only shows a message');
+        assert.match(elements.status.children[0].textContent, /地図を表示できませんでした/);
         assert.equal(mapOptions, undefined);
         return;
     }
@@ -107,5 +108,5 @@ async function check(fail, scriptUrl) {
     await check(false); await check(true);
     await check(false, 'http://localhost:8000/examples/expo-facilities.js?ver=20261011-09');
     await check(false, 'https://k-sakanoshita.github.io/expo2025-maniacs/examples/expo-facilities.js?ver=20261011-09');
-    console.log('PASS: exact filters/counts, bbox placement, map layers, reset, safe popup and failure fallback');
+    console.log('PASS: exact filters/counts, bbox placement, map layers, reset, safe popup and failure message');
 })().catch(error => { console.error(error); process.exitCode = 1; });

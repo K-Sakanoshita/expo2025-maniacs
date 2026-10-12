@@ -1,0 +1,68 @@
+バグ調査報告: expo2025-maniacs
+調査日: 2026-10-11
+調査方法: テストスイート(tests/run.cjs, 53本)の実行と、データファイル・設定・公開データの照合
+
+■ 発見したバグ（修正済み）
+
+タイトル: data/expo2025.json と data/expo2025.min.json のデータ不整合
+
+症状:
+  tests/expo-playgrounds.cjs が失敗していた（52/53 通過）。
+  失敗箇所は「min.json と raw(expo2025.json) が deepEqual である」ことの確認。
+
+原因:
+  作業ツリー内で data/expo2025.json（未コミットの変更）から、
+  way 1379324925（休憩所4）の "playground": "structure" タグだけが
+  削除されていた。
+
+  - アプリ（data/config-user.jsonc の static.osmjsons）が実際に読むのは
+    data/expo2025.min.json の方で、こちらにはタグが残っていた。
+  - 公開データ data/releases/2026-10-10/ も min.json 由来でタグを含んでいた。
+  - 両ファイルの差分はこの1行のみ（差分25文字 = タグの長さ）で、
+    その他のデータは完全に一致していた。
+
+影響:
+  - テストスイートが失敗する。
+  - raw と min の二重管理ゆえに、raw 側の編集が min へ反映されないと、
+    アプリ・公開データ・テストの三者が不整合になる構造上の弱点。
+
+修正内容:
+  data/expo2025.json の way 1379324925 の tags に、元の位置
+  （name の直後）へ "playground": "structure" を復元した。
+
+  修正前:
+    "name": "休憩所4",
+    "shelter_type": "picnic_shelter",
+    "historic:amenity": "shelter",
+    "area": "yes"
+
+  修正後:
+    "name": "休憩所4",
+    "playground": "structure",
+    "shelter_type": "picnic_shelter",
+    "historic:amenity": "shelter",
+    "area": "yes"
+
+  復元後、作業ツリーが HEAD と一致し、tests/run.cjs で 53/53 全テスト合格。
+
+備考:
+  タグ削除が意図的な編集であった場合は修正方向が逆になる
+  （min.json 側からタグを削除し、release を再生成する）ため、
+  編集者の意図を確認のうえ適用すること。
+
+■ その他の確認結果
+
+  - 3Dモデルファイル等のアセット参照（config-user.jsonc の url）は
+    すべて存在することを確認した（欠落なし）。
+  - 更新履歴に記載の「北欧館の訪問済みバグ（2025/10/13時点で未対応）」は、
+    その後のベースシステム更新・世界地図改善で解消されている可能性がある。
+    アプリ起動での目視確認は未実施。
+
+■ 今後の再発防止の推奨
+
+  1. min.json は expo2025.json から JSON.parse → JSON.stringify で生成される
+     ようなので、生成用スクリプトを scripts/ に追加し、raw 側の編集後に
+     min.json を自動同期できるようにする。
+  2. 「どちらのファイルを正（source of truth）とするか」の規約を
+     docs に明記する。現状、テストは min == raw を要求するが、
+     再生成手順がドキュメント化されていない。

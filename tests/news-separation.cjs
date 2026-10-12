@@ -151,17 +151,17 @@ assert.equal(modal.changeHeadline({kind:'reviewCreated',name:'ブランコ',park
 assert.equal(modal.changeHeadline({kind:'reviewUpdated',name:'馬の乗物',review:{title:'馬の乗物'}}), '公園・遊具の口コミが更新されました');
 assert.equal(changeButton.children[0].children[0].textContent, '新着');
 assert.equal(changeButton.children[0].children[2].textContent, '編集：osm_mapper');
-assert.equal(changeButton.children[0].children[2].className, 'changes-modal__editor');
+assert.ok(changeButton.children[0].children[2].className.split(/\s+/).includes('changes-modal__editor'));
 assert.equal(changeButton.href, undefined);
 const duplicateReview = modal.createChangeItem({kind:'reviewUpdated',name:'十三東公園',parkName:'十三東公園',
     review:{title:'十三東公園',excerpt:'口コミ本文'}});
-assert(!duplicateReview.children.some(child=>child.className==='changes-modal__review-title'));
+assert(!duplicateReview.children.some(child=>child.className?.split(/\s+/).includes('changes-modal__review-title')));
 assert(duplicateReview.children.some(child=>child.textContent==='口コミ本文'));
 const distinctReview = modal.createChangeItem({kind:'reviewUpdated',name:'十三東公園',
     review:{title:'遊具が充実しています'}});
 assert(distinctReview.children.some(child=>child.textContent==='遊具が充実しています'));
 const fallbackReview = modal.createChangeItem({kind:'reviewUpdated',name:'馬の乗物',review:{title:'馬の乗物'}});
-assert(fallbackReview.children.some(child=>child.className==='changes-modal__review-title' && child.textContent==='馬の乗物'));
+assert(fallbackReview.children.some(child=>child.className?.split(/\s+/).includes('changes-modal__review-title') && child.textContent==='馬の乗物'));
 const grouped = new viewContext.NewsTicker();
 grouped.init(container,{modal:true});
 grouped.setItems([
