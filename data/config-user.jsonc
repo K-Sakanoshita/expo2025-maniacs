@@ -1,6 +1,7 @@
 {
     // 更新履歴の自動表示: daily=1日1回、version=版ごと、always=毎回、never=自動表示なし
     "siteUpdates": {
+        "size": "lg",
         "use": true,
         "autoOpen": "daily",
         "delayMs": 0,
