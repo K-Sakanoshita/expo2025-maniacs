@@ -59,18 +59,18 @@
   "files": {
     "expo2025.geojson": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.geojson",
-      "bytes": 1218320,
-      "sha256": "f6d60979622c4556af14172fd4e78274d96fd15087d57d8e47d8392ea985c941"
+      "bytes": 1218301,
+      "sha256": "5ae0a87ce434d6837d8eaf3e6bc7c01db8644596572b4644ee5cef2ac9fb2801"
     },
     "expo2025.csv": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.csv",
-      "bytes": 678956,
-      "sha256": "48b75808dcb9ac44050c4cee4ab27ac5bc3b01ecab9816a96963bcef6d0605bb"
+      "bytes": 678937,
+      "sha256": "c51ffd823f46c35fcc373d0ccbe7a3e0ddf6b9e2bb769e161c8f8a0a0469cbb2"
     },
     "expo2025.osm.json": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.osm.json",
-      "bytes": 1481316,
-      "sha256": "5a02625db86bdab15ac8dfa3c4d63f1930e08db30aedf220f438dec92cc28b66"
+      "bytes": 1481297,
+      "sha256": "cb26adeb5cf29a8c4aeec8774cfc5872cafcaf73bff732eeebc41039414a6dbe"
     }
   }
 }
