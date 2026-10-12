@@ -5790,7 +5790,8 @@
                 "artist_name": "アントニオ・カノーヴァ",
                 "artwork_type": "statue",
                 "name": "エロスの接吻で目覚めるプシュケ",
-                "tourism": "artwork"
+                "tourism": "artwork",
+                "wikipedia": "en:Psyche Revived by Cupid's Kiss"
             }
         },
         {
@@ -5824,7 +5825,8 @@
                 "artist_name": "レオチャレスの模写",
                 "artwork_type": "statue",
                 "name": "ベルヴェデーレのアポロン",
-                "tourism": "artwork"
+                "tourism": "artwork",
+                "wikipedia": "ja:ベルヴェデーレのアポロン"
             }
         },
         {
