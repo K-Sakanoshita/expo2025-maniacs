@@ -341,6 +341,7 @@
         "expo2025_restarea": {
             "overpass": [
                 "nwr[\"amenity\"=\"toilets\"]",
+                "nwr[\"leisure\"=\"park\"]",
                 "nwr[\"amenity\"=\"shelter\"]",
                 "nwr[\"amenity\"=\"drinking_water\"]",
                 "nwr[\"amenity\"=\"smoking_area\"][\"access\"!~\"^private$\"]",
@@ -348,6 +349,7 @@
             ],
             "tags": [
                 "amenity=toilets",
+                "leisure=park",
                 "amenity=shelter",
                 "amenity=drinking_water",
                 "amenity=smoking_area",

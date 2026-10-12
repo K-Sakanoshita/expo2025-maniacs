@@ -5602,7 +5602,8 @@
                 "name:ja": "ロボット＆モビリティステーション",
                 "ref": "P14",
                 "reservation": "no",
-                "website": "https://www.expo2025.or.jp/future-index/smart-mobility/robot/"
+                "website": "https://www.expo2025.or.jp/future-index/smart-mobility/robot/",
+                "wikimedia_commons": "File:ロボット＆モビリティーステーションexpo2025.jpg"
             }
         },
         {
@@ -13901,7 +13902,8 @@
             "tags": {
                 "check_date": "2025-04-26",
                 "name": "OFFICIAL STORE 西ゲート店 JR西日本グループ",
-                "shop": "gift"
+                "shop": "gift",
+                "wikimedia_commons": "File:大阪・関西万博 EXPO 2025 (54848537525).jpg"
             }
         },
         {
@@ -15000,7 +15002,8 @@
                 "name:ja": "国際機関館",
                 "ref": "P29",
                 "reservation": "no",
-                "wikidata": "Q136595576"
+                "wikidata": "Q136595576",
+                "wikimedia_commons": "File:Expo 2025 International Organization Pavilion 01.JPG"
             }
         },
         {
@@ -30151,7 +30154,8 @@
                 "amenity": "exhibition_centre",
                 "check_date": "2025-05-30",
                 "name": "Green Park Bus",
-                "operator": "HYUNDAI"
+                "operator": "HYUNDAI",
+                "wikimedia_commons": "File:Hyundai ELEC CITY TOWN Osaka 1.jpg"
             }
         },
         {
@@ -48175,7 +48179,8 @@
                 "mapillary": "589673420229365",
                 "name": "XD HALL",
                 "name:en": "XD HALL",
-                "roof:shape": "flat"
+                "roof:shape": "flat",
+                "wikimedia_commons": "File:Osaka Expo2025 Osaka Healthcare Pavilion XD HALL.jpg"
             }
         },
         {
@@ -48689,7 +48694,8 @@
                 "name:en": "Forest of Tranquility",
                 "name:ja": "静けさの森",
                 "website": "https://forest-expo2025.jp/",
-                "wikidata": "Q136674288"
+                "wikidata": "Q136674288",
+                "wikimedia_commons": "File:Expo2025静けさの森、中心部の池.jpg"
             }
         },
         {
@@ -56501,7 +56507,8 @@
                 "name:ja": "ジュニアSDGsキャンプ",
                 "ref": "L07",
                 "reservation": "no",
-                "website": "https://web.archive.org/web/20251001/https://j-lppf3.jp/expojuniorsdgs/"
+                "website": "https://web.archive.org/web/20251001/https://j-lppf3.jp/expojuniorsdgs/",
+                "wikimedia_commons": "File:Sustainadome 20250830 162141.jpg"
             }
         },
         {
@@ -56580,7 +56587,8 @@
                 "name:en": "Forest of Civilizations",
                 "name:ja": "文明の森",
                 "tourism": "artwork",
-                "website": "https://expo2025forest.com/"
+                "website": "https://expo2025forest.com/",
+                "wikimedia_commons": "File:Les civilizaci Expo 2025.jpg"
             }
         },
         {
@@ -60295,7 +60303,8 @@
             ],
             "tags": {
                 "amenity": "shelter",
-                "name": "休憩所2"
+                "name": "休憩所2",
+                "wikimedia_commons": "File:Expo 2025 Rest Area-2 01.JPG"
             }
         },
         {
@@ -60335,7 +60344,8 @@
                 "roof:colour": "wheat",
                 "type": "multipolygon",
                 "wikidata": "Q133959805",
-                "wikipedia": "ja:大屋根リング"
+                "wikipedia": "ja:大屋根リング",
+                "wikimedia_commons": "File:Expo 2025 Grand Ring20250716b.jpg"
             }
         },
         {

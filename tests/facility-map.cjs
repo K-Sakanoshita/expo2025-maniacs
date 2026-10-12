@@ -18,7 +18,7 @@ assert.deepEqual(result.bounds, [[134.99, 33.99], [135.03, 34.03]]);
 assert.equal(result.venues.features.length, 1);
 assert.equal(result.buildings.features.length, 1);
 assert.equal(result.buildings.features[0].properties.osm_id, 'relation/18047883');
-const real = prepareData(JSON.parse(fs.readFileSync('data/releases/2026-10-11/expo2025.geojson')));
+const real = prepareData(JSON.parse(fs.readFileSync('data/releases/2026-10-12/expo2025.geojson')));
 assert.deepEqual(real.counts, { toilets: 64, drinking_water: 50, vending_machine: 248 });
 assert.equal(real.markers.features.length, 362);
 assert.deepEqual(real.buildings.features.map(f => f.properties.osm_id), ['relation/18047883']);
@@ -55,7 +55,7 @@ async function check(fail, scriptUrl) {
             return node;
         } },
         fetch: async url => {
-            assert.equal(url, scriptUrl ? new URL('../data/releases/2026-10-11/expo2025.geojson', scriptUrl).href : './data/releases/2026-10-11/expo2025.geojson');
+            assert.equal(url, scriptUrl ? new URL('../data/releases/2026-10-12/expo2025.geojson', scriptUrl).href : './data/releases/2026-10-12/expo2025.geojson');
             return { ok: !fail, status: 404, json: async () => fixture };
         },
         maplibregl: { Map, Popup, NavigationControl: class {}, ScaleControl: class {} }
