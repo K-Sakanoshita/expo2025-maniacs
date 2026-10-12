@@ -202,6 +202,7 @@ class CMapMaker extends IndoorControl {
     async initStartupNotices() {
         if (Conf.siteUpdates?.use === true) {
             this.siteUpdates ??= new SiteUpdatesController(Conf.siteUpdates, LANG);
+            this.siteUpdates.initButton();
             if (await this.siteUpdates.autoShow()) {
                 this.siteUpdates.modal.element.addEventListener("hidden.bs.modal", () => {
                     this.initDailyIntro();

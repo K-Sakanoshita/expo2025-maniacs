@@ -76,7 +76,7 @@ context.Conf = { changes: { ticker: { use: true, maxItems: 30, mobileLabel: '公
     // Site notices defer the existing intro/change feed until the notice closes.
     let closed, introCalls = 0;
     maker.initDailyIntro = async () => { introCalls++; };
-    maker.siteUpdates = { autoShow: async () => true,
+    maker.siteUpdates = { initButton() {}, autoShow: async () => true,
         modal: { element: { addEventListener(event, callback, options) {
             assert.equal(event, 'hidden.bs.modal');
             assert.equal(options.once, true);

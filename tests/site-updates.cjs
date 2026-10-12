@@ -23,8 +23,8 @@ const context = {
     },
     AppModal: class {
         constructor(options) { this.options = options; this.element = { addEventListener() {} }; }
-        show() { this.isOpen = true; this.options.onShown(); }
-        hide() { this.isOpen = false; }
+        show() { this.isOpen = true; this.options.onShow?.(); this.options.onShown(); }
+        hide() { this.isOpen = false; this.options.onHidden?.(); }
     }
 };
 vm.createContext(context);
@@ -79,5 +79,51 @@ const config = { use: true, autoOpen: 'daily', delayMs: 120, version: 'v1', stor
     assert.equal(await blocked.autoShow(), true);
     blocked.modal.hide();
     assert.equal(await blocked.autoShow(), false); // In-memory fallback in this page.
+    // Manual reopening uses the reserved responsive hosts, even after being read.
+    const media = { matches: true, addEventListener(event, callback) {
+        assert.equal(event, 'change'); this.changed = callback;
+    } };
+    context.window.matchMedia = query => { assert.equal(query, '(min-width: 1080px)'); return media; };
+    const hosts = { desktop: { appendChild(button) { this.button = button; } }, mobile: { appendChild(button) { this.button = button; } } };
+    context.document.getElementById = id => hosts[id];
+    context.document.createElement = tag => {
+        assert.equal(tag, 'button');
+        return { attributes: {}, events: {}, setAttribute(key, value) { this.attributes[key] = value; },
+            addEventListener(event, callback) { this.events[event] = callback; } };
+    };
+    const manualConfig = { ...config, autoOpen: 'never', buttonHosts: { desktop: 'desktop', mobile: 'mobile' },
+        buttonLabel: { ja: '新着', en: 'What’s new' } };
+    const manual = new context.Controller(manualConfig);
+    manual.initButton();
+    assert.equal(hosts.desktop.button, manual.button);
+    assert.equal(manual.button.textContent, '新着');
+    assert.match(manual.button.className, /btn-light border-secondary/);
+    const button = manual.button;
+    manual.initButton();
+    assert.equal(manual.button, button, 'do not duplicate buttons');
+    media.matches = false; media.changed();
+    assert.equal(hosts.mobile.button, button);
+    assert.equal(manual.shouldShow(), false);
+    const beforeRequests = requests;
+    assert.equal(await button.events.click(), true);
+    assert.equal(manual.modal.isOpen, true);
+    assert.equal(button.attributes['aria-expanded'], 'true');
+    assert.equal(manual.modal.options.returnFocus(), button);
+    assert.equal(await manual.show(), false, 'already open');
+    manual.modal.hide();
+    assert.equal(button.attributes['aria-expanded'], 'false');
+    assert.equal(await manual.show(), true, 'read notices can reopen');
+    assert.equal(requests, beforeRequests + 1, 'reuse loaded content');
+    manual.modal.hide();
+    const english = new context.Controller(manualConfig, 'en');
+    english.initButton();
+    assert.equal(english.button.textContent, 'What’s new');
+    assert.equal(await english.show(), true);
+    assert.equal(english.modal.options.title, 'Updates');
+    const disabled = new context.Controller({ ...manualConfig, use: false });
+    disabled.initButton();
+    assert.equal(disabled.button, undefined);
+    assert.equal(await disabled.show(), false);
+    console.log('PASS: responsive button, manual reopening, English labels, modal state and disabled configuration');
     console.log('PASS: first visit per local day, reload, next day, policies, splash, delay, concurrency and failures');
 })().catch(error => { console.error(error); process.exitCode = 1; });

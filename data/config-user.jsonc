@@ -6,6 +6,8 @@
         "delayMs": 0,
         "version": "20261012-02",
         "storageKey": "expo2025.site-updates",
+        "buttonHosts": { "desktop": "changesButtonDesktop", "mobile": "changesButtonMobile" },
+        "buttonLabel": { "ja": "新着", "en": "What’s new" },
         "title": { "ja": "マップの更新履歴", "en": "Map updates" },
         "contentUrl": { "ja": "./data/updates-ja.html", "en": "./data/updates-en.html" }
     },
