@@ -103,13 +103,25 @@ const water = data.features.filter(f =&gt;
             <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
             <p id="data-timing"><strong>施設データ：</strong>2025年10月末時点の万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセットです。2026年1月1日版PBF由来の夢洲の水域・森林データも統合しています。</p>
             <div class="download-list row row-cols-1 row-cols-md-3 g-3 my-3">
-                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-12/expo2025.geojson" download><strong class="d-block">GeoJSON</strong><span class="d-block small text-body-secondary">地図表示・空間分析向け · 約1.2 MB</span></a></div>
+                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-12/expo2025.geojson" download><strong class="d-block">GeoJSON</strong><span class="d-block small text-body-secondary">QGISで利用可能 · 地図表示・空間分析向け · 約1.2 MB</span></a></div>
                 <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-12/expo2025.csv" download><strong class="d-block">CSV</strong><span class="d-block small text-body-secondary">表計算・集計向け · 約0.7 MB</span></a></div>
                 <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-12/expo2025.osm.json" download><strong class="d-block">JSON（元データ）</strong><span class="d-block small text-body-secondary">OSMの構造を保持（Overpass JSON形式） · 約1.5 MB</span></a></div>
             </div>
             <p class="download-status small text-body-secondary" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
             <p class="small text-body-secondary">公開版 2026-10-12。</p>
             <p class="small text-body-secondary">CSVには主要なタグを列として収録しています。タグの空欄は未記録（タグなし）を表し、「なし」を意味しません。営業時間などは収録時点の情報です。</p>
+            <div class="mt-4" id="qgis" aria-labelledby="qgis-title">
+                <h3 class="h5" id="qgis-title">QGISでも利用できます</h3>
+                <p>GeoJSONはQGISが標準で対応している形式です。配布ファイルをそのまま読み込めるので、形式の変換は不要です。</p>
+                <ol>
+                    <li>上のリンクから <code>expo2025.geojson</code> をダウンロードします。</li>
+                    <li>ファイルをQGISの地図画面にドラッグ＆ドロップします。</li>
+                    <li>読み込む地物の種類を選ぶ画面が表示された場合は、必要な点・線・面のレイヤを選択して追加します。</li>
+                </ol>
+                <p>地点や図形が地図レイヤとして表示され、名称・種別などの属性も読み込めます。このデータは点・線・面が混在しているため、種類ごとにレイヤが分かれる場合があります。</p>
+                <p class="small text-body-secondary">元のOSMタグは <code>properties.tags</code> に入れ子で保存しています。タグを使った絞り込みには、QGISの式やJSON属性の扱いが必要になる場合があります。</p>
+                <p class="small"><a href="https://docs.qgis.org/3.40/ja/docs/user_manual/managing_data_source/opening_data.html">QGIS公式マニュアル：データを開く</a></p>
+            </div>
             <details id="schema" class="mt-3"><summary class="text-primary fw-semibold mb-3">GeoJSONの項目</summary>
             <div class="table-responsive"><table class="table table-striped">
                 <thead><tr><th>項目</th><th>型</th><th>内容</th></tr></thead>
