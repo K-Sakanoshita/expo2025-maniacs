@@ -24,7 +24,10 @@ vm.runInContext(fs.readFileSync('lib/wikimedialib.js', 'utf8') + '\nthis.wikimed
     }
     const geo = JSON.parse(fs.readFileSync('data/releases/2026-10-12/expo2025.geojson'));
     assert.equal(geo.features.find(item => item.id === 'way/1382815794').properties.tags.wikipedia, tag);
-    for (const [value, title, section] of [[tag, '住友館', '大阪・関西万博（2025年）'], ['en:Example: Title', 'Example: Title', '']]) {
+    const mitsubishi = raw.elements.find(item => item.tags?.name === '三菱未来館');
+    assert.equal(mitsubishi.tags.wikipedia, 'ja:三菱未来館#大阪・関西万博_(2025年)');
+    assert.equal(geo.features.find(item => item.id === mitsubishi.type + '/' + mitsubishi.id).properties.tags.wikipedia, mitsubishi.tags.wikipedia);
+    for (const [value, title, section] of [[tag, '住友館', '大阪・関西万博（2025年）'], [mitsubishi.tags.wikipedia, '三菱未来館', '大阪・関西万博_(2025年)'], ['en:Example: Title', 'Example: Title', '']]) {
         context.wikimedia.makeWikipediaOverView(value);
         await new Promise(resolve => setImmediate(resolve));
         assert.equal(requests.at(-1), title, 'API receives an article title without its section');
