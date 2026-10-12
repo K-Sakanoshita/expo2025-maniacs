@@ -15,10 +15,10 @@
     "longitude",
     "latitude"
   ],
-  "feature_count": 3449,
+  "feature_count": 3450,
   "geometry_counts": {
     "Point": 2770,
-    "Polygon": 507,
+    "Polygon": 508,
     "MultiPolygon": 1,
     "LineString": 171
   },
@@ -59,18 +59,18 @@
   "files": {
     "expo2025.geojson": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.geojson",
-      "bytes": 1212577,
-      "sha256": "a9afd7372531f337cdee64b71566e0bbdebb088047c3510862be2038cc852db1"
+      "bytes": 1218193,
+      "sha256": "37037f6d7bfab2d2c2feab3330b782466f201388fb7f601a011dbf8f1b2399b6"
     },
     "expo2025.csv": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.csv",
-      "bytes": 673765,
-      "sha256": "63a14e76a4c958d36fe57f73b128edecce59c87f4564dd2145fa6544a4f164b2"
+      "bytes": 678821,
+      "sha256": "10ca64f74d587067f78c1424686351981dacd96a08c27486fd98e7d4e4f7cdb4"
     },
     "expo2025.osm.json": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.osm.json",
-      "bytes": 1475204,
-      "sha256": "97458ddab4677877129517773dc41f6ae46287338715f402fbe09643035c44fe"
+      "bytes": 1481188,
+      "sha256": "702419678a2fda48d38064e8371ae930bb9617797a92a7b7a9e249775af6f5f9"
     }
   }
 }

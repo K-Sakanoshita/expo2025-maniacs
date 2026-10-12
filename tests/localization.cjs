@@ -5,10 +5,15 @@ const read = path => fs.readFileSync(path, 'utf8');
 const dictionaries = Object.assign({},
     vm.runInNewContext('(' + read('data/glot-system.jsonc') + ')'),
     vm.runInNewContext('(' + read('data/glot-custom.jsonc') + ')'));
-for (const lang of ['en-US', 'ja-JP', 'fr-FR']) {
-    const expected = lang.startsWith('ja') ? 'ja' : 'en';
+for (const navigator of [
+    { language: 'en-US' }, { language: 'ja-JP' }, { language: 'fr-FR' },
+    { language: 'ja-JP', languages: ['en-US', 'ja-JP'] },
+    { language: 'en-US', languages: ['ja-JP', 'en-US'] },
+    { language: 'en-US', languages: [] }
+]) {
+    const expected = (navigator.languages?.[0] || navigator.language).startsWith('ja') ? 'ja' : 'en';
     const message = {}, retry = {}, image = { src: "./image/cMapmaker.png?ver=20260823-54" };
-    const context = { window: { navigator: { language: lang } }, document: {
+    const context = { window: { navigator }, document: {
         documentElement: {}, getElementById: id => id === 'startupRetry' ? retry : message,
         querySelector: () => image
     } };

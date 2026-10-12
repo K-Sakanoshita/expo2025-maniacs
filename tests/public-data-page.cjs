@@ -10,7 +10,7 @@ for (const match of page.matchAll(/href="\.\/([^"#]+)"/g)) {
 const config = vm.runInNewContext('(' + fs.readFileSync('data/config-user.jsonc', 'utf8') + ')');
 const labels = JSON.parse(fs.readFileSync('data/glot-custom.jsonc', 'utf8'));
 assert.equal(config.menu.main.find(item => item['glot-model'] === 'data_publication').linkto, './data.html');
-assert.equal(labels.data_publication.ja, '会場・施設オープンデータ');
+assert.equal(labels.data_publication.ja, '会場・施設オープンデータの提供');
 assert.equal(labels.data_publication.en, 'Venue and facility open data');
 
 const sample = fs.readFileSync('examples/expo-map.html', 'utf8');
@@ -60,13 +60,8 @@ async function checkSample(fail) {
 (async () => {
     await checkSample(false);
     await checkSample(true);
-    const release = 'data/releases/2026-10-10-2';
-    const previous = 'data/releases/2026-10-10';
-    for (const name of ['expo2025.geojson', 'expo2025.osm.json']) {
-        assert.deepEqual(fs.readFileSync(path.join(release, name)), fs.readFileSync(path.join(previous, name)), `CSV-only release must preserve ${name}`);
-    }
-    assert.notDeepEqual(fs.readFileSync(path.join(release, 'expo2025.csv')), fs.readFileSync(path.join(previous, 'expo2025.csv')));
-    assert.match(fs.readFileSync('data-page.js', 'utf8'), /data\/releases\/2026-10-12\/expo2025\.geojson/);
+    assert.deepEqual(fs.readdirSync("data/releases").filter(name => fs.statSync(path.join("data/releases", name)).isDirectory()), ["2026-10-12"]);
+    assert.match(fs.readFileSync("data-page.js", "utf8"), /data\/releases\/2026-10-12\/expo2025\.geojson/);
     const geojson = JSON.parse(fs.readFileSync('data/releases/2026-10-12/expo2025.geojson', 'utf8'));
     const example = JSON.parse(fs.readFileSync('examples/data-example.json', 'utf8'));
     assert.deepEqual(example, geojson.features.find(feature => feature.id === example.id));

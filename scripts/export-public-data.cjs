@@ -20,7 +20,7 @@ function position(geometry) {
     const xs = points.map(point => point[0]), ys = points.map(point => point[1]);
     return [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
 }
-function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-10-2', version = '2026-10-10-2' } = {}) {
+function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-12', version = '2026-10-12' } = {}) {
     if (fs.existsSync(output)) throw new Error(`Published directory already exists; use a new version: ${output}`);
     if (!/^\d{4}-\d{2}-\d{2}(?:-\d+)?$/.test(version)) throw new Error('Invalid release version');
     const raw = fs.readFileSync(source);

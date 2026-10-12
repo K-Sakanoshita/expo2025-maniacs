@@ -58,3 +58,17 @@ context.table.makeList(false);
 assert.equal(context.table.getFilterList().length, 3);
 assert.equal(userConfig.selectItem.default, 'expo2025_exp');
 console.log('PASS: all category option displays every target and persists across rebuilds');
+
+const labels = JSON.parse(fs.readFileSync('data/glot-custom.jsonc', 'utf8'));
+context.glot = { lang: 'en', get(key) { return labels[key]?.[this.lang]; } };
+context.table.makeSelectList('menu');
+assert.equal(context.list_category.value, '-', 'translation must preserve the selection');
+assert.equal(context.list_category.options.length, Object.keys(userConfig.selectItem.menu).length);
+assert(context.list_category.options.some(option => option.text === '🗺️Show all' && option.value === '-'));
+assert(context.list_category.options.some(option => option.text === '🏛️Pavilions & exhibitions' && option.value === 'expo2025_exp'));
+for (const option of context.list_category.options) assert.doesNotMatch(option.text, /[ぁ-んァ-ヶ一-龯]/);
+context.glot.lang = 'ja';
+context.table.makeSelectList('menu');
+assert.deepEqual(context.list_category.options.map(option => option.text), Object.keys(userConfig.selectItem.menu));
+assert.equal(context.list_category.value, '-');
+console.log('PASS: English and Japanese category menus preserve selection and category values');

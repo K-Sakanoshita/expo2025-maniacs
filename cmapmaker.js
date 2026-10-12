@@ -3,7 +3,7 @@
 
 // Global Variable
 var Conf = {}; // Config Praams
-const LANG = window.APP_LANGUAGE || ((window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || "en").toLowerCase().startsWith("ja") ? "ja" : "en");
+const LANG = window.APP_LANGUAGE || ((window.navigator.languages?.[0] || window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage || "en").toLowerCase().startsWith("ja") ? "ja" : "en");
 const MAP_TITLE_DISPLAY_DELAY_MS = 500;
 const glot = new Glottologist();
 glot.lang = LANG;
@@ -783,11 +783,12 @@ class CMapMaker extends IndoorControl {
                 }
                 let titleTag = "";
                 if (!osmConf.expression.poiView) {  // poiViewがfalseの時(true時はpoiView側で表示するため)
+                    const localizedName = mapLibre.nameExpression(glot.lang, [""]);
                     titleTag = ["format", ["case", ["all", ["has", "ref"], ["!=", ["get", "ref"], ""]],
                         ["case", ["has", "local_ref"],
-                            ["concat", "(", ["get", "ref"], "/", ["get", "local_ref"], ") ", ["coalesce", ["get", "name"], ""]],
-                            ["concat", "(", ["get", "ref"], ") ", ["coalesce", ["get", "name"], ""]]
-                        ], ["coalesce", ["get", "name"], ""]
+                            ["concat", "(", ["get", "ref"], "/", ["get", "local_ref"], ") ", localizedName],
+                            ["concat", "(", ["get", "ref"], ") ", localizedName]
+                        ], localizedName
                     ], {}];
                 }
                 mapLibre.addPolygon(

@@ -1054,6 +1054,7 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ1",
+                "name:en": "Toilet 1",
                 "unisex": "yes",
                 "wheelchair": "yes"
             }
@@ -1300,6 +1301,7 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ4",
+                "name:en": "Toilet 4",
                 "unisex": "yes",
                 "wheelchair": "yes"
             }
@@ -3969,7 +3971,9 @@
                 "amenity": "stage",
                 "check_date": "2025-05-28",
                 "name": "ポップアップステージ東外",
-                "ref": "E04"
+                "name:en": "Pop-Up Stage Outer East",
+                "ref": "E04",
+                "wikimedia_commons": "File:大阪万博2025年7月29日ポップアップステージでのコヤブボードと野田サオリの演奏.jpg"
             }
         },
         {
@@ -6682,6 +6686,7 @@
                 "check_date": "2025-04-20",
                 "country": "BJ",
                 "name": "ベナン",
+                "name:en": "Benin Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/benin/",
                 "reservation": "no"
             }
@@ -6702,6 +6707,7 @@
                 "check_date": "2025-04-20",
                 "country": "JM",
                 "name": "ジャマイカ",
+                "name:en": "Jamaica Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/jamaica/",
                 "reservation": "no"
             }
@@ -6722,6 +6728,7 @@
                 "check_date": "2025-04-20",
                 "country": "ZM",
                 "name": "ザンビア",
+                "name:en": "Zambia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/zambia/",
                 "reservation": "no"
             }
@@ -6742,6 +6749,7 @@
                 "check_date": "2025-04-20",
                 "country": "ZW",
                 "name": "ジンバブエ",
+                "name:en": "Zimbabwe Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/zimbabwe/",
                 "reservation": "no"
             }
@@ -6762,6 +6770,7 @@
                 "check_date": "2025-04-20",
                 "country": "GY",
                 "name": "ガイアナ",
+                "name:en": "Guyana Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/guyana/",
                 "reservation": "no"
             }
@@ -6782,6 +6791,7 @@
                 "check_date": "2025-04-20",
                 "country": "GM",
                 "name": "ガンビア",
+                "name:en": "Gambia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/gambia/",
                 "reservation": "no"
             }
@@ -6804,6 +6814,7 @@
                 "country": "NR",
                 "loc_name": "ナウル館",
                 "name": "ナウル",
+                "name:en": "Nauru Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/nauru/",
                 "reservation": "no"
             }
@@ -6824,6 +6835,7 @@
                 "check_date": "2025-04-20",
                 "country": "LS",
                 "name": "レソト",
+                "name:en": "Lesotho Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/lesotho/",
                 "reservation": "no"
             }
@@ -6844,6 +6856,7 @@
                 "check_date": "2025-04-20",
                 "country": "HT",
                 "name": "ハイチ",
+                "name:en": "Haiti Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/haiti/",
                 "reservation": "no"
             }
@@ -6864,6 +6877,7 @@
                 "check_date": "2025-04-20",
                 "country": "MR",
                 "name": "モーリタニア",
+                "name:en": "Mauritania Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/mauritania/",
                 "reservation": "no"
             }
@@ -6884,6 +6898,7 @@
                 "check_date": "2025-04-20",
                 "country": "SK",
                 "name": "スロバキア",
+                "name:en": "Slovakia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/slovakia/",
                 "reservation": "no"
             }
@@ -6904,6 +6919,7 @@
                 "check_date": "2025-04-20",
                 "country": "IL",
                 "name": "イスラエル",
+                "name:en": "Israel Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/israel/",
                 "reservation": "no"
             }
@@ -6924,6 +6940,7 @@
                 "check_date": "2025-04-20",
                 "country": "PA",
                 "name": "パナマ",
+                "name:en": "Panama Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/panama/",
                 "reservation": "no"
             }
@@ -6944,6 +6961,7 @@
                 "check_date": "2025-04-20",
                 "country": "SI",
                 "name": "スロベニア",
+                "name:en": "Slovenia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/slovenia/",
                 "reservation": "no"
             }
@@ -6964,6 +6982,7 @@
                 "check_date": "2025-04-20",
                 "country": "ME",
                 "name": "モンテネグロ",
+                "name:en": "Montenegro Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/montenegro/",
                 "reservation": "no"
             }
@@ -6983,6 +7002,7 @@
                 "check_date": "2025-04-20",
                 "country": "UY",
                 "name": "ウルグアイ",
+                "name:en": "Uruguay Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/uruguay/",
                 "reservation": "no"
             }
@@ -7005,6 +7025,7 @@
                 "country": "UA",
                 "loc_name": "ウクライナ館",
                 "name": "ウクライナ",
+                "name:en": "Ukraine Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/ukraine/",
                 "reservation": "no"
             }
@@ -7025,6 +7046,7 @@
                 "check_date": "2025-04-20",
                 "country": "GT",
                 "name": "グアテマラ",
+                "name:en": "Guatemala Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/guatemala/",
                 "reservation": "no"
             }
@@ -7045,6 +7067,7 @@
                 "check_date": "2025-04-20",
                 "country": "SM",
                 "name": "サンマリノ",
+                "name:en": "San Marino Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/sanmarino/",
                 "reservation": "no"
             }
@@ -7065,6 +7088,7 @@
                 "check_date": "2025-04-20",
                 "country": "GA",
                 "name": "ガボン",
+                "name:en": "Gabon Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/gabon/",
                 "reservation": "no"
             }
@@ -7085,6 +7109,7 @@
                 "check_date": "2025-04-20",
                 "country": "HR",
                 "name": "クロアチア",
+                "name:en": "Croatia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/croatia/",
                 "reservation": "no"
             }
@@ -7161,6 +7186,7 @@
                 "check_date": "2025-05-11",
                 "country": "FJ",
                 "name": "フィジー",
+                "name:en": "Fiji Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/fiji/",
                 "reservation": "no"
             }
@@ -7181,6 +7207,7 @@
                 "check_date": "2025-04-20",
                 "country": "SL",
                 "name": "シエラレオネ",
+                "name:en": "Sierra Leone Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/sierra-leone/",
                 "reservation": "no"
             }
@@ -7201,6 +7228,7 @@
                 "check_date": "2025-04-20",
                 "country": "TD",
                 "name": "チャド",
+                "name:en": "Chad Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/chad/",
                 "reservation": "no"
             }
@@ -7221,6 +7249,7 @@
                 "check_date": "2025-04-20",
                 "country": "CV",
                 "name": "カーボベルデ",
+                "name:en": "Cabo Verde Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/cabo_verde/",
                 "reservation": "no"
             }
@@ -7241,6 +7270,7 @@
                 "check_date": "2025-04-20",
                 "country": "FM",
                 "name": "ミクロネシア",
+                "name:en": "Micronesia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/micronesia/",
                 "reservation": "no"
             }
@@ -7261,6 +7291,7 @@
                 "check_date": "2025-05-11",
                 "country": "DJ",
                 "name": "ジブチ",
+                "name:en": "Djibouti Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/djibouti/",
                 "reservation": "no"
             }
@@ -7281,6 +7312,7 @@
                 "check_date": "2025-05-11",
                 "country": "CF",
                 "name": "中央アフリカ",
+                "name:en": "Central African Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/central-african/",
                 "reservation": "no"
             }
@@ -7301,6 +7333,7 @@
                 "check_date": "2025-04-20",
                 "country": "VC",
                 "name": "セントビンセント",
+                "name:en": "Saint Vincent and the Grenadines Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/saint-vincent-and-the-grenadines/",
                 "reservation": "no"
             }
@@ -7321,6 +7354,7 @@
                 "check_date": "2025-05-11",
                 "country": "TL",
                 "name": "東ティモール",
+                "name:en": "Timor-Leste Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/timor-leste/",
                 "reservation": "no"
             }
@@ -7341,6 +7375,7 @@
                 "check_date": "2025-04-20",
                 "country": "CI",
                 "name": "コートジボワール",
+                "name:en": "Cote d’Ivoire Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/cote-divoire/",
                 "reservation": "no"
             }
@@ -7361,6 +7396,7 @@
                 "check_date": "2025-04-20",
                 "country": "TV",
                 "name": "ツバル",
+                "name:en": "Tuvalu Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/tuvalu/",
                 "reservation": "no"
             }
@@ -7402,6 +7438,7 @@
                 "check_date": "2025-04-20",
                 "country": "DO",
                 "name": "ドミニカ共和国",
+                "name:en": "Dominican Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/dominican/",
                 "reservation": "no"
             }
@@ -7422,6 +7459,7 @@
                 "check_date": "2025-04-20",
                 "country": "TZ",
                 "name": "タンザニア",
+                "name:en": "Tanzania Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/tanzania/",
                 "reservation": "no"
             }
@@ -7442,6 +7480,7 @@
                 "check_date": "2025-04-20",
                 "country": "PY",
                 "name": "パラグアイ",
+                "name:en": "Paraguay Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/paraguay/",
                 "reservation": "no"
             }
@@ -7462,6 +7501,7 @@
                 "check_date": "2025-04-20",
                 "country": "SO",
                 "name": "ソマリア",
+                "name:en": "Somalia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/somalia/",
                 "reservation": "no"
             }
@@ -8404,7 +8444,8 @@
             "tags": {
                 "amenity": "food_court",
                 "check_date": "2025-06-16",
-                "name": "リングサイドマーケットプレイス西"
+                "name": "リングサイドマーケットプレイス西",
+                "name:en": "West Ringside Marketplace"
             }
         },
         {
@@ -10816,6 +10857,7 @@
                 "check_date": "2025-04-23",
                 "country": "BZ",
                 "name": "ベリーズ",
+                "name:en": "Belize Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/belize/",
                 "reservation": "no"
             }
@@ -10836,6 +10878,7 @@
                 "check_date": "2025-04-23",
                 "country": "LA",
                 "name": "ラオス",
+                "name:en": "Lao Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/lao/",
                 "reservation": "no"
             }
@@ -10856,6 +10899,7 @@
                 "check_date": "2025-04-23",
                 "country": "CU",
                 "name": "キューバ",
+                "name:en": "Cuba Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/cuba/",
                 "reservation": "no"
             }
@@ -10876,6 +10920,7 @@
                 "check_date": "2025-04-23",
                 "country": "ML",
                 "name": "マリ",
+                "name:en": "Mali Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/mali/",
                 "reservation": "no"
             }
@@ -10896,6 +10941,7 @@
                 "check_date": "2025-04-23",
                 "country": "GN",
                 "name": "ギニア",
+                "name:en": "Guinea Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/guinea/",
                 "reservation": "no"
             }
@@ -10916,6 +10962,7 @@
                 "check_date": "2025-04-23",
                 "country": "BT",
                 "name": "ブータン",
+                "name:en": "Bhutan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/bhutan/",
                 "reservation": "no"
             }
@@ -10936,6 +10983,7 @@
                 "check_date": "2025-04-23",
                 "country": "GQ",
                 "name": "赤道ギニア",
+                "name:en": "Equatorial Guinea Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/equatorial-guinea/",
                 "reservation": "no"
             }
@@ -10956,6 +11004,7 @@
                 "check_date": "2025-04-23",
                 "country": "MH",
                 "name": "マーシャル",
+                "name:en": "Marshall Islands Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/marshall-islands/",
                 "reservation": "no"
             }
@@ -10976,6 +11025,7 @@
                 "check_date": "2025-04-23",
                 "country": "PS",
                 "name": "パレスチナ",
+                "name:en": "Palestine Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/palestine/",
                 "reservation": "no"
             }
@@ -10996,6 +11046,7 @@
                 "check_date": "2025-04-23",
                 "country": "MN",
                 "name": "モンゴル",
+                "name:en": "Mongolia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/mongolia/",
                 "reservation": "no"
             }
@@ -11016,6 +11067,7 @@
                 "check_date": "2025-04-23",
                 "country": "BF",
                 "name": "ブルキナファソ",
+                "name:en": "Burkina Faso Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/burkina-faso/",
                 "reservation": "no"
             }
@@ -11036,6 +11088,7 @@
                 "check_date": "2025-04-23",
                 "country": "CD",
                 "name": "コンゴ民主共和国",
+                "name:en": "Congo Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/congo/",
                 "reservation": "no"
             }
@@ -11056,6 +11109,7 @@
                 "check_date": "2025-04-23",
                 "country": "ST",
                 "name": "サントメ・プリンシペ",
+                "name:en": "Sao Tome and Principe Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/sao-tome-and-principe/",
                 "reservation": "no"
             }
@@ -11076,6 +11130,7 @@
                 "check_date": "2025-04-23",
                 "country": "TJ",
                 "name": "タジキスタン",
+                "name:en": "Tajikistan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/tajikistan/",
                 "reservation": "no"
             }
@@ -11096,6 +11151,7 @@
                 "check_date": "2025-04-23",
                 "country": "AG",
                 "name": "アンティグア・バーブーダ",
+                "name:en": "Antigua and Barbuda Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/antigua-and-barbuda/",
                 "reservation": "no"
             }
@@ -11116,6 +11172,7 @@
                 "check_date": "2025-04-23",
                 "country": "LR",
                 "name": "リベリア",
+                "name:en": "Liberia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/liberia/",
                 "reservation": "no"
             }
@@ -11136,6 +11193,7 @@
                 "check_date": "2025-04-23",
                 "country": "NG",
                 "name": "ナイジェリア",
+                "name:en": "Nigeria Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/nigeria/",
                 "reservation": "no"
             }
@@ -11156,6 +11214,7 @@
                 "check_date": "2025-04-23",
                 "country": "PK",
                 "name": "パキスタン",
+                "name:en": "Pakistan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/pakistan/",
                 "reservation": "no"
             }
@@ -11176,6 +11235,7 @@
                 "check_date": "2025-04-23",
                 "country": "TG",
                 "name": "トーゴ",
+                "name:en": "Togo Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/togo/",
                 "reservation": "no"
             }
@@ -11196,6 +11256,7 @@
                 "check_date": "2025-04-23",
                 "country": "HN",
                 "name": "ホンジュラス",
+                "name:en": "Honduras Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/honduras/",
                 "reservation": "no"
             }
@@ -11216,6 +11277,7 @@
                 "check_date": "2025-04-23",
                 "country": "CM",
                 "name": "カメルーン",
+                "name:en": "Cameroon Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/cameroon/",
                 "reservation": "no"
             }
@@ -11253,6 +11315,7 @@
                 "check_date": "2025-04-23",
                 "country": "SS",
                 "name": "南スーダン",
+                "name:en": "South Sudan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/south-sudan/",
                 "reservation": "no"
             }
@@ -11273,6 +11336,7 @@
                 "check_date": "2025-04-23",
                 "country": "MD",
                 "name": "モルドバ",
+                "name:en": "Moldova Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/moldova/",
                 "reservation": "no"
             }
@@ -11293,6 +11357,7 @@
                 "check_date": "2025-08-20",
                 "country": "MG",
                 "name": "マダガスカル",
+                "name:en": "Madagascar Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/madagascar/",
                 "reservation": "no"
             }
@@ -12528,7 +12593,8 @@
             "tags": {
                 "information": "board",
                 "name": "リングサイド マーケットプレイス東",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "East Ringside Marketplace"
             }
         },
         {
@@ -13420,6 +13486,7 @@
             "tags": {
                 "information": "board",
                 "name": "L01 ギャラリーWEST",
+                "name:en": "Gallery WEST",
                 "tourism": "information"
             }
         },
@@ -13689,7 +13756,8 @@
                 "information": "board",
                 "name": "風の広場 マーケットプレイスA",
                 "name:ja": "風の広場 マーケットプレイスA",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "Wind Plaza Marketplace A"
             }
         },
         {
@@ -13979,7 +14047,8 @@
             "tags": {
                 "information": "board",
                 "name": "風の広場 マーケットプレイスB",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "Wind Plaza Marketplace B"
             }
         },
         {
@@ -14012,7 +14081,8 @@
             "tags": {
                 "information": "board",
                 "name": "風の広場 マーケットプレイスC",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "Wind Plaza Marketplace C"
             }
         },
         {
@@ -14710,6 +14780,7 @@
                 "check_date": "2025-08-20",
                 "country": "SD",
                 "name": "スーダン",
+                "name:en": "Sudan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/sudan/",
                 "reservation": "no"
             }
@@ -14830,6 +14901,7 @@
                 "amenity": "exhibition_centre",
                 "check_date": "2025-10-29",
                 "name": "空飛ぶクルマ ステーション",
+                "name:en": "Advanced Air Mobility Station",
                 "name:ja": "空飛ぶクルマ ステーション",
                 "ref": "P07",
                 "reservation": "yes",
@@ -14883,6 +14955,7 @@
                 "government": "public_service",
                 "name": "カームダウン・クールダウンルーム",
                 "name:ja": "カームダウン・クールダウンルーム",
+                "name:en": "Calm-down/Cool-down Room",
                 "office": "government"
             }
         },
@@ -15298,7 +15371,8 @@
             "tags": {
                 "information": "board",
                 "name": "東ゲート マーケットプレイス",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "East Gate Marketplace"
             }
         },
         {
@@ -15795,6 +15869,7 @@
                 "amenity": "toilets",
                 "check_date": "2025-06-21",
                 "name": "トイレ6",
+                "name:en": "Toilet 6",
                 "toilets:disposal": "flush"
             }
         },
@@ -16977,6 +17052,7 @@
                 "amenity": "theatre",
                 "check_date": "2025-06-27",
                 "name": "ギャラリー EAST",
+                "name:en": "Gallery EAST",
                 "ref": "E13"
             }
         },
@@ -16994,6 +17070,7 @@
                 "amenity": "stage",
                 "check_date": "2025-05-28",
                 "name": "ポップアップステージ 南",
+                "name:en": "Pop-Up Stage South",
                 "ref": "E15"
             }
         },
@@ -18638,6 +18715,7 @@
             "tags": {
                 "information": "board",
                 "name": "EXPOナショナルデーホール「レイガーデン」",
+                "name:en": "EXPO National Day Hall Ray Garden",
                 "ref": "E12",
                 "tourism": "information"
             }
@@ -21272,6 +21350,7 @@
                 "check_date": "2025-05-04",
                 "country": "KZ",
                 "name": "カザフスタン",
+                "name:en": "Kazakhstan Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/kazakhstan/",
                 "ref": "C05"
             }
@@ -21292,6 +21371,7 @@
                 "check_date": "2025-05-04",
                 "country": "AM",
                 "name": "アルメニア",
+                "name:en": "Armenia Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/armenia/",
                 "ref": "C05"
             }
@@ -21312,6 +21392,7 @@
                 "check_date": "2025-05-04",
                 "country": "BN",
                 "name": "ブルネイ",
+                "name:en": "Brunei Pavilion",
                 "website": "https://www.expo2025.or.jp/official-participant/brunei/",
                 "ref": "C05"
             }
@@ -26636,6 +26717,7 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "万博漫画展",
+                "name:en": "World Expo Manga Exhibition",
                 "website": "https://manga-japan-official.com/",
                 "wikimedia_commons": "File:EXPO2025 COMMONS-E.jpg"
             }
@@ -31981,7 +32063,8 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "RITE未来の森",
-                "website": "https://rite.or.jp/expo2025/"
+                "website": "https://rite.or.jp/expo2025/",
+                "name:en": "RITE Future Forest"
             }
         },
         {
@@ -31997,7 +32080,8 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "化けるLABO",
-                "website": "https://www.daigasgroup.com/expo2025/methanation/"
+                "website": "https://www.daigasgroup.com/expo2025/methanation/",
+                "name:en": "Bakeru LABO"
             }
         },
         {
@@ -32853,6 +32937,7 @@
                 "check_date": "2025-06-27",
                 "government": "service",
                 "name": "カームダウン クールダウンルーム",
+                "name:en": "Calm-down/Cool-down Room",
                 "office": "government"
             }
         },
@@ -35331,7 +35416,8 @@
             "tags": {
                 "information": "board",
                 "name": "リングサイドマーケットプレイス西",
-                "tourism": "information"
+                "tourism": "information",
+                "name:en": "West Ringside Marketplace"
             }
         },
         {
@@ -44630,7 +44716,8 @@
             "uid": 389520,
             "tags": {
                 "amenity": "shelter",
-                "name": "休憩所3"
+                "name": "休憩所3",
+                "name:en": "Rest Area 3"
             }
         },
         {
@@ -47558,7 +47645,8 @@
                 "name:en": "EXPO Exhibition Center \"WASSE\"",
                 "roof:shape": "flat",
                 "website": "https://www.expo2025.or.jp/expo-map-index/main-facilities/expomesse/",
-                "wikidata": "Q136600164"
+                "wikidata": "Q136600164",
+                "wikimedia_commons": "File:Expo 2025 EXPO Exhibition Center WASSE 01.JPG"
             }
         },
         {
@@ -47826,7 +47914,8 @@
             ],
             "tags": {
                 "building": "yes",
-                "name": "風の広場 マーケットプレイスA"
+                "name": "風の広場 マーケットプレイスA",
+                "name:en": "Wind Plaza Marketplace A"
             }
         },
         {
@@ -47851,7 +47940,8 @@
             "tags": {
                 "building": "yes",
                 "name": "風の広場 マーケットプレイスB",
-                "name:ja": "風の広場 マーケットプレイスB"
+                "name:ja": "風の広場 マーケットプレイスB",
+                "name:en": "Wind Plaza Marketplace B"
             }
         },
         {
@@ -47876,7 +47966,8 @@
             "tags": {
                 "building": "yes",
                 "name": "風の広場 マーケットプレイスC",
-                "name:ja": "風の広場 マーケットプレイスC"
+                "name:ja": "風の広場 マーケットプレイスC",
+                "name:en": "Wind Plaza Marketplace C"
             }
         },
         {
@@ -47902,7 +47993,8 @@
                 "building": "yes",
                 "name": "風の広場 マーケットプレイスD",
                 "name:ja": "風の広場 マーケットプレイスD",
-                "was:amenity": "toilets"
+                "was:amenity": "toilets",
+                "name:en": "Wind Plaza Marketplace D"
             }
         },
         {
@@ -48102,8 +48194,10 @@
                 "building": "yes",
                 "building:levels": "3",
                 "name": "タマー",
+                "name:en": "Tamar",
                 "roof:colour": "darkorange",
-                "roof:shape": "dome"
+                "roof:shape": "dome",
+                "wikimedia_commons": "File:Expo 2025 Yoshimoto Pavilion 01.JPG"
             }
         },
         {
@@ -48152,6 +48246,7 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ3",
+                "name:en": "Toilet 3",
                 "roof:shape": "gabled",
                 "unisex": "yes",
                 "wheelchair": "yes"
@@ -48404,7 +48499,7 @@
                 "building:colour": "dimgray",
                 "building:levels": "2",
                 "name": "ウォータープラザマーケットプレイス西",
-                "name:en": "Water Plaza Marketplace West",
+                "name:en": "Water Plaza West Marketplace",
                 "name:ja": "ウォータープラザマーケットプレイス西",
                 "roof:colour": "dimgray"
             }
@@ -48473,7 +48568,8 @@
             "tags": {
                 "building": "yes",
                 "building:levels": "2",
-                "name": "エンブリオ"
+                "name": "エンブリオ",
+                "name:en": "Embryo"
             }
         },
         {
@@ -48819,7 +48915,7 @@
                 "building:colour": "dimgray",
                 "building:levels": "2",
                 "name": "ウォータープラザマーケットプレイス東",
-                "name:en": "Water Plaza Marketplace East",
+                "name:en": "Water Plaza East Marketplace",
                 "roof:colour": "silver",
                 "roof:shape": "flat"
             }
@@ -48966,7 +49062,8 @@
                 "building": "roof",
                 "check_date": "2025-04-20",
                 "layer": "1",
-                "name": "ポップアップステージ東内"
+                "name": "ポップアップステージ東内",
+                "name:en": "Pop-Up Stage Inner East"
             }
         },
         {
@@ -49081,7 +49178,7 @@
             "tags": {
                 "building": "yes",
                 "name": "東ゲートマーケットプレイス",
-                "name:en": "east gate marketplace"
+                "name:en": "East Gate Marketplace"
             }
         },
         {
@@ -49131,7 +49228,8 @@
                 "bus": "yes",
                 "name": "夢洲第1交通ターミナル",
                 "name:zh": "梦岛第1交通枢纽",
-                "public_transport": "station"
+                "public_transport": "station",
+                "name:en": "Yumeshima Transportation Terminal 1"
             }
         },
         {
@@ -49153,7 +49251,8 @@
                 "amenity": "bus_station",
                 "bus": "yes",
                 "name": "夢洲第2交通ターミナル",
-                "public_transport": "station"
+                "public_transport": "station",
+                "name:en": "Yumeshima Transportation Terminal 2"
             }
         },
         {
@@ -49330,6 +49429,7 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ7",
+                "name:en": "Toilet 7",
                 "unisex": "no",
                 "wheelchair": "yes"
             }
@@ -49370,6 +49470,7 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ8",
+                "name:en": "Toilet 8",
                 "unisex": "no",
                 "wheelchair": "yes"
             }
@@ -49557,7 +49658,8 @@
                 "name": "つながりの海",
                 "name:ja": "つながりの海",
                 "natural": "water",
-                "water": "basin"
+                "water": "basin",
+                "name:en": "Sea of Connections"
             }
         },
         {
@@ -49613,7 +49715,10 @@
             ],
             "tags": {
                 "natural": "water",
-                "water": "basin"
+                "water": "basin",
+                "name": "ウォータープラザ",
+                "name:en": "Water Plaza",
+                "wikimedia_commons": "File:Expo 2025 Water Plaza 01.JPG"
             }
         },
         {
@@ -50430,6 +50535,7 @@
             "uid": 389520,
             "tags": {
                 "name": "休憩所4",
+                "name:en": "Rest Area 4",
                 "playground": "structure",
                 "shelter_type": "picnic_shelter",
                 "historic:amenity": "shelter",
@@ -50722,6 +50828,7 @@
             "tags": {
                 "amenity": "shelter",
                 "name": "団体休憩所",
+                "name:en": "Group rest area",
                 "name:ja": "団体休憩所",
                 "name:zh": "团队休息所",
                 "ref": "S18",
@@ -52394,6 +52501,7 @@
                 "amenity": "exhibition_centre",
                 "website": "https://www.expo2025.or.jp/team-expo/",
                 "name": "TEAM EXPO パビリオン",
+                "name:en": "TEAM EXPO Pavilion",
                 "ref": "L03"
             }
         },
@@ -52560,7 +52668,8 @@
             ],
             "tags": {
                 "amenity": "stage",
-                "name": "ポップアップステージ 西"
+                "name": "ポップアップステージ 西",
+                "name:en": "Pop-Up Stage West"
             }
         },
         {
@@ -52664,7 +52773,8 @@
             ],
             "tags": {
                 "amenity": "stage",
-                "name": "ポップアップステージ 北"
+                "name": "ポップアップステージ 北",
+                "name:en": "Pop-Up Stage North"
             }
         },
         {
@@ -52982,6 +53092,7 @@
             "tags": {
                 "building": "farm_auxiliary",
                 "name": "アクアポニックス",
+                "name:en": "Aquaponics",
                 "roof:shape": "dome"
             }
         },
@@ -53342,6 +53453,7 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "Earth Mart",
+                "name:en": "Earth Mart",
                 "name:ja-Hira": "あーすまーと",
                 "ref": "X07",
                 "reservation": "yes",
@@ -54099,7 +54211,8 @@
                 "female": "yes",
                 "level": "0",
                 "male": "yes",
-                "name": "トイレ2"
+                "name": "トイレ2",
+                "name:en": "Toilet 2"
             }
         },
         {
@@ -54334,6 +54447,7 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "Better Co-Being",
+                "name:en": "Better Co-Being",
                 "name:ja": "Better Co-Being",
                 "ref": "X01",
                 "reservation": "yes",
@@ -54851,6 +54965,7 @@
                 "check_date": "2025-07-06",
                 "mapillary": "3134127646741333",
                 "name": "PASONA NATUREVERSE",
+                "name:en": "PASONA NATUREVERSE",
                 "ref": "W09",
                 "reservation": "recommended",
                 "website": "https://www.expo2025.or.jp/domestic-pv/pasona/",
@@ -54966,6 +55081,7 @@
                 "amenity": "exhibition_centre",
                 "check_date": "2025-06-14",
                 "name": "ギャラリーWEST",
+                "name:en": "Gallery WEST",
                 "ref": "L01",
                 "website": "https://www.expo2025.or.jp/expo-map-index/main-facilities/gallery_w/"
             }
@@ -55311,6 +55427,7 @@
             ],
             "tags": {
                 "name": "セービングゾーン",
+                "name:en": "Saving Lives Zone",
                 "place": "locality",
                 "ref": "S"
             }
@@ -55367,6 +55484,7 @@
             ],
             "tags": {
                 "name": "シグネチャーゾーン",
+                "name:en": "Signature Zone",
                 "place": "locality",
                 "ref": "X"
             }
@@ -55459,6 +55577,7 @@
             ],
             "tags": {
                 "name": "エンパワーリングゾーン",
+                "name:en": "Empowering Lives Zone",
                 "name:ja": "エンパワーリングゾーン",
                 "place": "locality",
                 "ref": "P"
@@ -55568,6 +55687,7 @@
             ],
             "tags": {
                 "name": "コネクティングゾーン",
+                "name:en": "Connecting Lives Zone",
                 "place": "locality",
                 "ref": "C"
             }
@@ -55858,6 +55978,7 @@
             ],
             "tags": {
                 "name": "フューチャーライフゾーン",
+                "name:en": "Future Life Zone",
                 "place": "locality",
                 "ref": "L"
             }
@@ -56223,9 +56344,7 @@
                 12811025163
             ],
             "tags": {
-                "building": "yes",
-                "name": "未来への文化共創",
-                "name:ja": "未来への文化共創"
+                "building": "yes"
             }
         },
         {
@@ -56504,11 +56623,11 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "ジュニアSDGsキャンプ",
+                "name:en": "Junior SDGs Camp",
                 "name:ja": "ジュニアSDGsキャンプ",
                 "ref": "L07",
                 "reservation": "no",
-                "website": "https://web.archive.org/web/20251001/https://j-lppf3.jp/expojuniorsdgs/",
-                "wikimedia_commons": "File:Sustainadome 20250830 162141.jpg"
+                "website": "https://web.archive.org/web/20251001/https://j-lppf3.jp/expojuniorsdgs/"
             }
         },
         {
@@ -56560,6 +56679,7 @@
             ],
             "tags": {
                 "name": "静けさの森ゾーン",
+                "name:en": "Forest of Tranquility Zone",
                 "name:ja": "静けさの森ゾーン",
                 "place": "locality",
                 "ref": "F"
@@ -56615,6 +56735,8 @@
                 "female": "yes",
                 "male": "yes",
                 "name": "トイレ5",
+                "name:en": "Toilet 5",
+                "wikimedia_commons": "File:Expo 2025 Toilet-5 01.JPG",
                 "toilets:disposal": "flush",
                 "unisex": "yes",
                 "wheelchair": "yes"
@@ -57323,6 +57445,7 @@
             "tags": {
                 "amenity": "exhibition_centre",
                 "name": "万博サウナ 「太陽のつぼみ」",
+                "name:en": "EXPO SAUNA “TAIYOʼs TSUBOMI”",
                 "website": "https://www.taiyo-tsubomi.jp/",
                 "wikimedia_commons": "File:EXPO2025 TAIYO TSUBOMI.jpg"
             }
@@ -59814,7 +59937,9 @@
             "tags": {
                 "amenity": "shelter",
                 "name": "休憩所1",
-                "shelter_type": "picnic_shelter"
+                "name:en": "Rest Area 1",
+                "shelter_type": "picnic_shelter",
+                "wikimedia_commons": "File:EXPO2025 Reat Area 1.jpg"
             }
         },
         {
@@ -60278,7 +60403,8 @@
             "tags": {
                 "amenity": "shelter",
                 "building": "yes",
-                "name": "関西プチ"
+                "name": "関西プチ",
+                "name:en": "Kansai Petit Pavilion"
             }
         },
         {
@@ -60304,6 +60430,7 @@
             "tags": {
                 "amenity": "shelter",
                 "name": "休憩所2",
+                "name:en": "Rest Area 2",
                 "wikimedia_commons": "File:Expo 2025 Rest Area-2 01.JPG"
             }
         },
@@ -108551,6 +108678,192 @@
                 "landuse": "forest",
                 "area": "yes"
             }
+        },
+        {
+            "type": "way",
+            "id": 1381565064,
+            "tags": {
+                "amenity": "events_venue",
+                "name": "EXPOアリーナ 「Matsuri」",
+                "reservation": "yes",
+                "website": "https://www.expo2025.or.jp/future-index/digital/vision/",
+                "area": "yes",
+                "wikimedia_commons": "File:EXPOアリーナ「Matsuri」.jpg"
+            },
+            "geometry": [
+                {
+                    "lat": 34.6522593,
+                    "lon": 135.3740823
+                },
+                {
+                    "lat": 34.6522262,
+                    "lon": 135.3741065
+                },
+                {
+                    "lat": 34.6521987,
+                    "lon": 135.374144
+                },
+                {
+                    "lat": 34.6517547,
+                    "lon": 135.3749519
+                },
+                {
+                    "lat": 34.6520946,
+                    "lon": 135.3752281
+                },
+                {
+                    "lat": 34.6519744,
+                    "lon": 135.3754447
+                },
+                {
+                    "lat": 34.6523391,
+                    "lon": 135.3757381
+                },
+                {
+                    "lat": 34.6522761,
+                    "lon": 135.3758537
+                },
+                {
+                    "lat": 34.6524913,
+                    "lon": 135.3760251
+                },
+                {
+                    "lat": 34.6525358,
+                    "lon": 135.3760485
+                },
+                {
+                    "lat": 34.6525821,
+                    "lon": 135.3760682
+                },
+                {
+                    "lat": 34.6526294,
+                    "lon": 135.3760822
+                },
+                {
+                    "lat": 34.6526778,
+                    "lon": 135.376093
+                },
+                {
+                    "lat": 34.6527262,
+                    "lon": 135.3760977
+                },
+                {
+                    "lat": 34.6527752,
+                    "lon": 135.3760977
+                },
+                {
+                    "lat": 34.6528258,
+                    "lon": 135.3760917
+                },
+                {
+                    "lat": 34.652815,
+                    "lon": 135.3760545
+                },
+                {
+                    "lat": 34.6529328,
+                    "lon": 135.376001
+                },
+                {
+                    "lat": 34.652954,
+                    "lon": 135.3760683
+                },
+                {
+                    "lat": 34.6530131,
+                    "lon": 135.3760294
+                },
+                {
+                    "lat": 34.6531478,
+                    "lon": 135.3759216
+                },
+                {
+                    "lat": 34.6531865,
+                    "lon": 135.3758731
+                },
+                {
+                    "lat": 34.6532213,
+                    "lon": 135.3758182
+                },
+                {
+                    "lat": 34.6532572,
+                    "lon": 135.3757575
+                },
+                {
+                    "lat": 34.6532917,
+                    "lon": 135.3756817
+                },
+                {
+                    "lat": 34.6533088,
+                    "lon": 135.3756309
+                },
+                {
+                    "lat": 34.6533215,
+                    "lon": 135.3755885
+                },
+                {
+                    "lat": 34.6533341,
+                    "lon": 135.3755416
+                },
+                {
+                    "lat": 34.653344,
+                    "lon": 135.3754954
+                },
+                {
+                    "lat": 34.6533521,
+                    "lon": 135.3754439
+                },
+                {
+                    "lat": 34.6533563,
+                    "lon": 135.3753912
+                },
+                {
+                    "lat": 34.6533573,
+                    "lon": 135.3753386
+                },
+                {
+                    "lat": 34.6533017,
+                    "lon": 135.3753381
+                },
+                {
+                    "lat": 34.6533035,
+                    "lon": 135.3751854
+                },
+                {
+                    "lat": 34.6533431,
+                    "lon": 135.3751847
+                },
+                {
+                    "lat": 34.6533181,
+                    "lon": 135.3750906
+                },
+                {
+                    "lat": 34.6532831,
+                    "lon": 135.3750103
+                },
+                {
+                    "lat": 34.6532434,
+                    "lon": 135.374935
+                },
+                {
+                    "lat": 34.6532048,
+                    "lon": 135.3748739
+                },
+                {
+                    "lat": 34.6531566,
+                    "lon": 135.3748176
+                },
+                {
+                    "lat": 34.6530947,
+                    "lon": 135.3747629
+                },
+                {
+                    "lat": 34.6530655,
+                    "lon": 135.374739
+                },
+                {
+                    "lat": 34.6522593,
+                    "lon": 135.3740823
+                }
+            ]
         }
     ]
 }

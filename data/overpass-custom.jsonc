@@ -278,7 +278,10 @@
                 "nwr[\"office\"=\"government\"]",
                 "nwr[\"leisure\"=\"bandstand\"]",
                 "nwr[\"playground\"]",
-                "nwr[\"building\"]"
+                "nwr[\"building\"]",
+                "nwr[\"natural\"=\"water\"][\"name\"]",
+                "nwr[\"natural\"=\"water\"][\"name:en\"]",
+                "nwr[\"natural\"=\"water\"][\"name:ja\"]"
             ],
             "tags": [
                 "amenity=stage",
@@ -290,7 +293,8 @@
                 "office=government",
                 "leisure=bandstand",
                 "playground",
-                "building"
+                "building",
+                { "all": ["natural=water"], "anyNonEmpty": ["name", "name:en", "name:ja"] }
             ],
             "expression": {
                 "poiView": true, // true時はアイコン表示

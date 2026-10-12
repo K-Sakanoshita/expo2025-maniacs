@@ -25,14 +25,14 @@
 </head>
 <body>
     <div class="border-bottom"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 py-3">
-        <a class="brand fw-bold text-decoration-none" href="./data.html"><span class="small fw-normal text-body-secondary me-1">【非公式】</span>大阪・関西万博2025 会場・施設オープンデータ</a>
+        <a class="brand fw-bold text-decoration-none" href="./data.html"><span class="small fw-normal text-body-secondary me-1">【非公式】</span>EXPO2025 OpenData</a>
         <a href="./">万博マニアックマップ →</a>
     </div></div>
     <header class="container py-4">
         <p class="text-primary fw-bold small">EXPO 2025 · OPEN DATA</p>
         <h1 class="fw-bold"><span class="d-block fs-6 fw-normal text-body-secondary mb-2">【非公式】</span>大阪・関西万博2025<br>会場・施設オープンデータ</h1>
-        <p class="lead">万博当時から使われてきたマップを、これからも使い続けられるように。会場・施設のデータを公開し、これから生まれる様々なサービスや研究の基礎データとして活用できるようにします。</p>
-        <p class="facts small text-body-secondary">OSMデータに関連情報を追加 · 3,449件 · GeoJSON / CSV / JSON</p>
+        <p class="lead">当時から使われてきた万博マニアックマップを、これからも使い続けられるように。会場・施設のデータを公開し、これから生まれる様々なサービスや研究の基礎データとして活用できるようにします。</p>
+        <p class="facts small text-body-secondary">OSMデータに関連情報を追加 · 3,450件 · GeoJSON / CSV / JSON</p>
         <div class="d-flex flex-wrap gap-2 my-3">
             <a class="btn btn-primary" href="#downloads">データを取得する</a>
             <a class="btn btn-outline-primary" href="#demo">施設検索を試す</a>
@@ -40,7 +40,7 @@
     </header>
     <main class="container">
         <section class="mb-4 p-3 p-md-4 border rounded" id="facility-example" aria-labelledby="facility-example-title">
-            <h2 class="h4" id="facility-example-title">オープンデータで見る、万博会場のトイレ・給水所・自動販売機</h2>
+            <h2 class="h4" id="facility-example-title">万博会場の設備マップ</h2>
             <figure class="m-0">
                 <div class="facility-map d-flex flex-column w-100 border rounded overflow-hidden bg-body-tertiary">
                     <div class="d-flex flex-wrap align-items-center gap-3 p-2">
@@ -98,7 +98,7 @@ const water = data.features.filter(f =&gt;
         <section class="mb-4 p-3 p-md-4 border rounded" id="downloads" aria-labelledby="downloads-title">
             <h2 class="h4" id="downloads-title">データを取得する</h2>
             <p>用途に合わせて、GeoJSON・CSV・JSON（元データ）の3形式から選べます。</p>
-            <p><strong>収録内容：</strong>マップで使用しているOSM由来の地物データ3,449件を収録しています。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small text-body-secondary">（名前あり1,113件・名前なし2,336件）</span></p>
+            <p><strong>収録内容：</strong>マップで使用しているOSM由来の地物データ3,450件を収録しています。施設・建物・通路に加え、入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small text-body-secondary">（名前あり1,114件・名前なし2,336件）</span></p>
             <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
             <p id="data-timing"><strong>施設データ：</strong>2025年10月末時点の万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセットです。2026年1月1日版PBF由来の夢洲の水域・森林データも統合しています。</p>
             <div class="download-list row row-cols-1 row-cols-md-3 g-3 my-3">
@@ -174,12 +174,10 @@ const water = data.features.filter(f =&gt;
             <h2 class="h4" id="history-title">データの成り立ち・公開履歴・連絡先</h2>
             <div id="provenance">
                 <p>対象は大阪・関西万博の会場（夢洲）と周辺。2025年10月30日に取得したOSMデータを基に、Wikipedia・Wikimedia CommonsのURLなどの関連情報を追加しています。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、その後の補足を含むデータ全体の基準日時ではありません。</p>
-                <p>GeoJSON・CSVはタグを持つ3,449件（点2,770件・線171件・面508件）。形状構築用のタグなしノードは元データに残しています。</p>
+                <p>GeoJSON・CSVはタグを持つ3,450件（点2,770件・線171件・面509件）。形状構築用のタグなしノードは元データに残しています。</p>
                 <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-12/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
             </div>
-            <p><strong>2026-10-12：</strong>Wikimedia Commonsの写真タグを10地物に追加しました。</p>
-            <p><strong>2026-10-11：</strong>水域・森林208件を追加。既存35件は重複追加せず保持しました。</p>
-            <p><strong>2026-10-10-2：</strong>CSVに主要タグ8列を追加。地物の追加・削除・属性変更はありません。</p>
+            <p><strong>2026-10-12：</strong>会場・施設データをGeoJSON・CSV・JSONで公開。水域・森林208件を統合し、Wikimedia Commonsの写真タグを10地物に追加しました。施設の英語名・写真情報とEXPOアリーナ「Matsuri」も追加しました。CSVには主要タグ8列を収録しています。</p>
             <p>データの不備や誤りの報告、情報の追加・修正依頼を積極的に受け付けています。活用事例も含め、<a href="https://github.com/K-Sakanoshita/expo2025-maniacs/issues">GitHub Issues</a>へお寄せください。</p>
         </section>    </main>
     <footer class="container py-4 small"><a href="./">万博マップを開く</a> · <a href="https://armd-01.sakura.ne.jp/tiles/">Japan PMTiles</a> · <a href="https://github.com/K-Sakanoshita/expo2025-maniacs">GitHub</a><p>このサイトは万博公式サイトではありません。</p></footer>

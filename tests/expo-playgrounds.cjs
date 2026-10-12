@@ -23,7 +23,7 @@ for (const id of featureIds) {
     const feature = ctx.cache.Cache.geojson[i];
     for (const target of ['expo2025_service', 'expo2025_art']) {
         assert(ctx.cache.Cache.targets[i].includes(target));
-        assert.equal(config.poiView.poiZoom[target], 16);
+        assert.equal(config.poiView.poiZoom[target], target === 'expo2025_service' ? 15 : 16);
     }
     assert(ctx.models.getModelKey(feature.properties), 'model for ' + id);
     if (feature.properties['playground:theme'] === 'komyaku') {

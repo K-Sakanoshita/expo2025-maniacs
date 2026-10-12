@@ -1,6 +1,17 @@
 {
+    "expo_category_all": { "ja": "🗺️すべて表示", "en": "🗺️Show all" },
+    "expo_category_pavilions": { "ja": "🏛️パビリオン・展示", "en": "🏛️Pavilions & exhibitions" },
+    "expo_category_facilities": { "ja": "🏢施設・🎶ステージ", "en": "🏢Facilities & 🎶stages" },
+    "expo_category_rest": { "ja": "🚻休憩/トイレ・💧給水", "en": "🚻Rest areas / toilets & 💧drinking water" },
+    "expo_category_access": { "ja": "🪧案内所・↕️移動支援", "en": "🪧Information & ↕️accessibility" },
+    "expo_category_food": { "ja": "☕カフェ・🍴レストラン", "en": "☕Cafes & 🍴restaurants" },
+    "expo_category_vending": { "ja": "🧃自販機・♻️ゴミ箱", "en": "🧃Vending machines & ♻️bins" },
+    "expo_category_art": { "ja": "🎨アート作品・🧱壁画", "en": "🎨Artworks & 🧱murals" },
+    "expo_category_shops": { "ja": "🎁お土産・🏬コンビニ", "en": "🎁Souvenirs & 🏬convenience stores" },
+    "expo_category_flags": { "ja": "🚩国旗・旗竿", "en": "🚩Flags & flagpoles" },
+    "expo_category_hidden": { "ja": "(アイコン非表示)", "en": "(Hide icons)" },
     "data_publication": {
-        "ja": "会場・施設オープンデータ",
+        "ja": "会場・施設オープンデータの提供",
         "en": "Venue and facility open data"
     },
     "listUnnamed": {
@@ -12,8 +23,8 @@
         "en": "EXPO2025 Maniacs Map"
     },
     "site_subtitle": {
-        "ja": "オンラインアーカイブモード by OpenStreetMap",
-        "en": "Online Archive Mode by OpenStreetMap"
+        "ja": "アーカイブモード by OpenStreetMap",
+        "en": "Archive Mode by OpenStreetMap"
     },
     "about": {
         "ja": "EXPO2025マニアックマップについて",
