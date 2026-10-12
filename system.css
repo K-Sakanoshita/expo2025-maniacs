@@ -1316,6 +1316,9 @@ img.slide { flex: 0 0 auto; }
     border-radius: 10px !important;
     background: #fff;
 }
+.changes-button {
+    font-size: 1rem;
+}
 .changes-button__count {
     display: inline-block;
     min-width: 1.5em;
