@@ -10,7 +10,8 @@ try {
     const fixture = { osm3s: { timestamp_osm_base: '2025-10-30T16:07:40Z' }, elements: [
         { type: 'node', id: 1, lon: 135, lat: 34, tags: { name: '名前,"引用"\n改行', amenity: 'toilets', 'custom:test': 'keep',
             tourism: 'information', shop: 'gift', country: 'SE;FI', wheelchair: 'yes', opening_hours: 'Mo-Fr 09:00-17:00',
-            website: 'https://example.org/?q="a,b"\nline', wikidata: 'Q123' } },
+            website: 'https://example.org/?q="a,b"\nline', wikidata: 'Q123',
+            wikipedia: 'ja:大阪・関西万博', wikimedia_commons: 'File:写真,"引用".jpg' } },
         { type: 'node', id: 2, lon: 135.01, lat: 34 },
         { type: 'node', id: 3, lon: 135.01, lat: 34.01 },
         { type: 'way', id: 1, nodes: [1, 2], tags: { highway: 'footway' } },
@@ -43,11 +44,11 @@ try {
             row.push(cell); parsed.push(row); row = []; cell = ''; i++;
         } else cell += char;
     }
-    const tags = ['amenity', 'tourism', 'shop', 'country', 'wheelchair', 'opening_hours', 'website', 'wikidata'];
+    const tags = ['amenity', 'tourism', 'shop', 'country', 'wheelchair', 'opening_hours', 'website', 'wikidata', 'wikipedia', 'wikimedia_commons'];
     assert.deepEqual(parsed[0], ['osm_id', 'name', 'kind', 'longitude', 'latitude', 'geometry_type', 'tags_json', ...tags]);
     assert.equal(parsed.length, 4);
     for (const record of parsed.slice(1)) {
-        assert.equal(record.length, 15);
+        assert.equal(record.length, 17);
         const original = JSON.parse(record[6]);
         tags.forEach((key, i) => assert.equal(record[7 + i], original[key] ?? ''));
     }

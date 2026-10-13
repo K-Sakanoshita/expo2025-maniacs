@@ -4,7 +4,7 @@ const crypto = require('node:crypto');
 const osmtogeojson = require('../lib/osmtogeojson.js');
 
 const KIND_KEYS = ['amenity', 'tourism', 'leisure', 'shop', 'barrier', 'highway', 'building', 'natural', 'playground'];
-const CSV_TAG_KEYS = ['amenity', 'tourism', 'shop', 'country', 'wheelchair', 'opening_hours', 'website', 'wikidata'];
+const CSV_TAG_KEYS = ['amenity', 'tourism', 'shop', 'country', 'wheelchair', 'opening_hours', 'website', 'wikidata', 'wikipedia', 'wikimedia_commons'];
 const BASE_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/';
 const csvCell = value => /[",\r\n]/.test(String(value)) ? `"${String(value).replaceAll('"', '""')}"` : String(value);
 function position(geometry) {

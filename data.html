@@ -12,8 +12,12 @@
     <style>
         /* Layout constraints that Bootstrap utilities do not provide. */
         pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-        .search-results { max-height: 390px; overflow-y: auto; }
-        .search-results li > div { min-width: 0; overflow-wrap: anywhere; }
+        .search-results { max-height: 390px; overflow: auto; }
+        .search-results table { min-width: 600px; font-size: .875rem; }
+        .search-results th, .search-results td { padding: .35rem .5rem; }
+        .search-results th:first-child, .search-results td:first-child { width: 120px; min-width: 120px; max-width: 120px; white-space: normal; overflow-wrap: anywhere; }
+        .search-results td:last-child { overflow-wrap: anywhere; }
+        .search-results thead { position: sticky; top: 0; z-index: 1; }
         .facility-map { height: 560px; }
         #legend label { min-height: 32px; cursor: pointer; }
         #map { min-height: 220px; }
@@ -68,13 +72,26 @@
         </section>
         <section id="demo" class="mb-4 p-3 p-md-4 border rounded" aria-labelledby="demo-title">
             <h2 class="h4" id="demo-title">公開データで、施設を探してみる</h2>
-            <p>施設データだけで動く検索例です。名前・種別・国名で絞り込み、万博マップで場所を確認できます。</p>
+            <p>施設データだけで動く検索例です。名前・種別・国名で絞り込み、関連情報を確認できます。</p>
             <div class="mb-3">
                 <div><label class="form-label" for="demo-query">名前・種別・国名</label><input id="demo-query" class="form-control" type="search" placeholder="例：モンテネグロ、ベンチ、日本" autocomplete="off" aria-describedby="demo-name-note"></div>
+                <fieldset class="mt-2">
+                    <legend class="small mb-2">関連情報がある施設に絞り込む</legend>
+                    <div class="d-flex flex-wrap gap-3 small">
+                        <label class="form-check mb-0"><input class="form-check-input" type="checkbox" id="demo-wikipedia"> <span class="form-check-label">Wikipedia</span></label>
+                        <label class="form-check mb-0"><input class="form-check-input" type="checkbox" id="demo-wikidata"> <span class="form-check-label">Wikidata</span></label>
+                        <label class="form-check mb-0"><input class="form-check-input" type="checkbox" id="demo-wikimedia_commons"> <span class="form-check-label">Wikimedia Commons</span></label>
+                    </div>
+                </fieldset>
             </div>
             <p id="demo-name-note" class="small text-body-secondary">名称が未記録の場合は種別を表示します。</p>
             <p id="demo-status" class="small text-body-secondary" role="status" aria-live="polite">公開データを読み込んでいます…</p>
-            <ul id="demo-results" class="search-results list-unstyled mb-3" aria-label="施設検索結果"></ul>
+            <div class="search-results table-responsive mb-3" role="region" aria-label="施設検索結果" tabindex="0">
+                <table class="table table-striped align-middle mb-0">
+                    <thead><tr><th scope="col">施設・種別</th><th scope="col">Wikipedia</th><th scope="col">Wikidata</th><th scope="col">Wikimedia Commons</th></tr></thead>
+                    <tbody id="demo-results"></tbody>
+                </table>
+            </div>
             <p class="small text-body-secondary">施設データ © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）。</p>
             <noscript><p>検索例にはJavaScriptが必要です。データは下のリンクから取得できます。</p></noscript>
             <details id="guide" class="mt-3"><summary class="text-primary fw-semibold mb-3">この検索の作り方</summary>
@@ -156,6 +173,8 @@ const water = data.features.filter(f =&gt;
                         <tr><th scope="row"><code>opening_hours</code></th><td>文字列</td><td>収録された営業時間。現在の営業状況を示すものではありません。</td></tr>
                         <tr><th scope="row"><code>website</code></th><td>文字列</td><td>websiteタグに収録されたWebサイトのURL。</td></tr>
                         <tr><th scope="row"><code>wikidata</code></th><td>文字列</td><td>Wikidataの項目ID。例：Q123。</td></tr>
+                        <tr><th scope="row"><code>wikipedia</code></th><td>文字列</td><td>Wikipediaの記事。元タグの言語コードと記事名を保持します。例：ja:大阪・関西万博。</td></tr>
+                        <tr><th scope="row"><code>wikimedia_commons</code></th><td>文字列</td><td>Wikimedia Commonsのファイル名・カテゴリ名。元タグのFile:やCategory:を保持します。</td></tr>
                     </tbody>
                 </table></div>
                 <p>点の代表位置は元座標、点以外は境界ボックスの中心です。敷地内や入口の位置を保証しないため、輪郭が必要な用途にはGeoJSONを使ってください。</p>
@@ -190,13 +209,13 @@ const water = data.features.filter(f =&gt;
                 <p>GeoJSON・CSVはタグを持つ3,450件（点2,770件・線171件・面509件）。形状構築用のタグなしノードは元データに残しています。</p>
                 <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-12/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
             </div>
-            <p><strong>2026-10-12：</strong>会場・施設データをGeoJSON・CSV・JSONで公開。水域・森林208件を統合し、Wikimedia Commonsの写真タグを10地物に追加しました。施設の英語名・写真情報とEXPOアリーナ「Matsuri」も追加しました。CSVには主要タグ8列を収録しています。</p>
+            <p><strong>2026-10-12：</strong>会場・施設データをGeoJSON・CSV・JSONで公開。水域・森林208件を統合し、Wikimedia Commonsの写真タグを10地物に追加しました。施設の英語名・写真情報とEXPOアリーナ「Matsuri」も追加しました。CSVには主要タグ10列を収録しています。</p>
             <p>データの不備や誤りの報告、情報の追加・修正依頼を積極的に受け付けています。活用事例も含め、<a href="https://github.com/K-Sakanoshita/expo2025-maniacs/issues">GitHub Issues</a>へお寄せください。</p>
         </section>    </main>
     <footer class="container py-4 small"><a href="./">万博マップを開く</a> · <a href="https://armd-01.sakura.ne.jp/tiles/">Japan PMTiles</a> · <a href="https://github.com/K-Sakanoshita/expo2025-maniacs">GitHub</a><p>このサイトは万博公式サイトではありません。</p></footer>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.js" defer></script>
     <script src="./examples/expo-facilities.js?ver=20261012-03" defer></script>
     <script src="./lib/publicdatasearch.js?ver=20261010-03" defer></script>
-    <script src="./data-page.js?ver=20261012-03" defer></script>
+    <script src="./data-page.js?ver=20261013-04" defer></script>
 </body>
 </html>

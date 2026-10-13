@@ -40,7 +40,9 @@
       "wheelchair",
       "opening_hours",
       "website",
-      "wikidata"
+      "wikidata",
+      "wikipedia",
+      "wikimedia_commons"
     ],
     "expanded_tag_columns": [
       "amenity",
@@ -50,7 +52,9 @@
       "wheelchair",
       "opening_hours",
       "website",
-      "wikidata"
+      "wikidata",
+      "wikipedia",
+      "wikimedia_commons"
     ],
     "missing_tag_note": "タグの空欄は未記録（タグなし）。施設や設備が存在しないことを意味しない。",
     "historical_tag_note": "営業時間などは収録時点の情報であり、現在の営業状況を示すものではない。",
@@ -64,8 +68,8 @@
     },
     "expo2025.csv": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.csv",
-      "bytes": 679085,
-      "sha256": "646f6f9ccac19c5f1e8af78e2600b0b012c807b88ca31b70b25b9fa1303c2f98"
+      "bytes": 698384,
+      "sha256": "14709f5babcece23bdac0a9dd81f00e88f711d09c7a23452109029363c5489a4"
     },
     "expo2025.osm.json": {
       "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-12/expo2025.osm.json",
