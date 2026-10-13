@@ -1,4 +1,4 @@
-/* MIT License. Uses the published GeoJSON only; no background tile service is required. */
+/* Sample code: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Data and external libraries retain their respective licenses. Uses the published GeoJSON only; no background tile service is required. */
 (function () {
     // Used by the facility example embedded directly in data.html.
     // To use your own data, replace DATA_URL with e.g. './expo2025.geojson'.
