@@ -3,7 +3,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
 const crypto = require('node:crypto');
-const { exportData, position } = require('../scripts/export-public-data.cjs');
+const { exportData: exportWithRoads, position } = require('../scripts/export-public-data.cjs');
+const exportData = options => exportWithRoads({ supplemental: null, ...options });
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'expo-public-data-'));
 try {
     const source = path.join(temp, 'source.json');
@@ -63,6 +64,40 @@ try {
     }
     assert.deepEqual(fs.readFileSync(source), fs.readFileSync(path.join(one, 'expo2025.osm.json')));
     assert.throws(() => exportData({ source, output: one }), /already exists/);
+    const roads = path.join(temp, 'roads.geojson');
+    const roadFixture = { type: 'FeatureCollection', source_osm_base_timestamp: '2026-01-01T21:21:30Z', features: [
+        { type: 'Feature', osm_type: 'way', osm_id: 1, properties: { highway: 'path', surface: 'paved' }, geometry: { type: 'LineString', coordinates: [[0, 0], [1, 1]] } },
+        { type: 'Feature', osm_type: 'relation', osm_id: 9, properties: { highway: 'pedestrian', name: '広場' }, geometry: { type: 'MultiPolygon', coordinates: [[[[135, 34], [136, 34], [136, 35], [135, 34]]]] } }
+    ] };
+    fs.writeFileSync(roads, JSON.stringify(roadFixture));
+    const mergedOutput = path.join(temp, 'merged');
+    const mergedMeta = exportData({ source, supplemental: roads, output: mergedOutput });
+    const merged = JSON.parse(fs.readFileSync(path.join(mergedOutput, 'expo2025.geojson'))).features;
+    assert.equal(merged.length, 4);
+    const originalWay = features.find(f => f.id === 'way/1');
+    const mergedWay = merged.find(f => f.id === 'way/1');
+    assert.deepEqual(mergedWay.geometry, originalWay.geometry, 'duplicate keeps existing geometry');
+    assert.equal(mergedWay.properties.tags.highway, 'footway', 'existing tag wins');
+    assert.equal(mergedWay.properties.tags.surface, 'paved', 'missing tag is added');
+    assert.deepEqual(merged.find(f => f.id === 'relation/9').geometry, roadFixture.features[1].geometry);
+    assert.deepEqual(merged.find(f => f.id === 'relation/9').properties.tags, roadFixture.features[1].properties);
+    assert.equal(mergedMeta.supplemental_sources[0].added_feature_count, 1);
+    assert.equal(mergedMeta.supplemental_sources[0].duplicate_feature_count, 1);
+    assert.equal(mergedMeta.supplemental_sources[0].source_osm_base_timestamp, roadFixture.source_osm_base_timestamp);
+    assert.deepEqual(fs.readFileSync(path.join(mergedOutput, 'yumeshima_highways_all.geojson')), fs.readFileSync(roads));
+    assert.match(fs.readFileSync(path.join(mergedOutput, 'expo2025.csv'), 'utf8'), /relation\/9,広場,pedestrian/);
+    for (const [name, record] of Object.entries(mergedMeta.files)) {
+        const content = fs.readFileSync(path.join(mergedOutput, name));
+        assert.equal(content.length, record.bytes);
+        assert.equal(crypto.createHash('sha256').update(content).digest('hex'), record.sha256);
+    }
+    roadFixture.features.push(roadFixture.features[1]);
+    fs.writeFileSync(roads, JSON.stringify(roadFixture));
+    assert.throws(() => exportData({ source, supplemental: roads, output: path.join(temp, 'duplicate') }), /Duplicate supplemental ID/);
+    roadFixture.features.pop();
+    roadFixture.features[1].geometry.coordinates[0][0][0] = [999, 34];
+    fs.writeFileSync(roads, JSON.stringify(roadFixture));
+    assert.throws(() => exportData({ source, supplemental: roads, output: path.join(temp, 'invalid') }), /Invalid longitude/);
     const brokenSource = path.join(temp, 'broken.json');
     fs.writeFileSync(brokenSource, JSON.stringify({ elements: [{ type: 'node', id: 1, lat: 34, lon: 135 }, { type: 'way', id: 1, nodes: [1, 999, 1], tags: { building: 'yes' } }] }));
     assert.throws(() => exportData({ source: brokenSource, output: path.join(temp, 'broken') }), /Incomplete geometry|No tagged/);

@@ -43,7 +43,7 @@ function referenceUrl(key, value) {
         .map(key => ({ key, input: document.getElementById(`demo-${key}`) }));
     try {
         const [data, dictionary] = await Promise.all([
-            './data/releases/2026-10-12/expo2025.geojson', './data/category-ja.jsonc'
+            './data/releases/2026-10-19/expo2025.geojson', './data/category-ja.jsonc'
         ].map(async url => {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);

@@ -1,0 +1,100 @@
+{
+  "version": "2026-10-19",
+  "description": "2025年10月末時点の大阪・関西万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセット。2026年1月1日版PBF由来の夢洲の道路・歩道・階段・信号なども統合。各出典の基準日時は個別に記録。",
+  "source": "data/expo2025.min.json",
+  "source_osm_base_timestamp": "2025-10-30T16:07:40Z",
+  "source_timestamp_note": "基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。",
+  "supplemental_sources": [
+    {
+      "source": "data/yumeshima_highways_all.geojson",
+      "source_pbf": "outputs/japan-260101.osm.pbf",
+      "source_osm_base_timestamp": "2026-01-01T21:21:30Z",
+      "tag_filter": "highway=* (all values; node, way, relation)",
+      "spatial_rule": "Geometry intersects the Yumeshima island polygon; full source geometry is preserved, including parts outside the island for crossing objects.",
+      "feature_count": 1399,
+      "added_feature_count": 1382,
+      "duplicate_feature_count": 17,
+      "merge_rule": "OSM IDで重複排除。既存の形状・タグ値を優先し、未記録タグのみ補完。",
+      "source_file": "yumeshima_highways_all.geojson"
+    }
+  ],
+  "osm_json_note": "expo2025.osm.jsonは施設データの元のOverpass JSON。追加道路は別添のyumeshima_highways_all.geojsonに収録し、統合済みの全件はexpo2025.geojson・expo2025.csvに収録。",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "publisher": "EXPO2025 万博マニアックマップ",
+  "documentation_url": "https://k-sakanoshita.github.io/expo2025-maniacs/data.html",
+  "coordinate_reference_system": "WGS 84",
+  "coordinate_order": [
+    "longitude",
+    "latitude"
+  ],
+  "feature_count": 4832,
+  "geometry_counts": {
+    "Point": 2807,
+    "Polygon": 508,
+    "MultiPolygon": 22,
+    "LineString": 1495
+  },
+  "selection": "タグを持つ地物。リレーションの構成要素は変換時に統合される場合がある。タグなし形状ノードは元データのみ収録。",
+  "csv": {
+    "encoding": "UTF-8",
+    "columns": [
+      "osm_id",
+      "name",
+      "kind",
+      "longitude",
+      "latitude",
+      "geometry_type",
+      "tags_json",
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata",
+      "wikipedia",
+      "wikimedia_commons"
+    ],
+    "expanded_tag_columns": [
+      "amenity",
+      "tourism",
+      "shop",
+      "country",
+      "wheelchair",
+      "opening_hours",
+      "website",
+      "wikidata",
+      "wikipedia",
+      "wikimedia_commons"
+    ],
+    "missing_tag_note": "タグの空欄は未記録（タグなし）。施設や設備が存在しないことを意味しない。",
+    "historical_tag_note": "営業時間などは収録時点の情報であり、現在の営業状況を示すものではない。",
+    "representative_position": "Pointは元座標。それ以外は境界ボックスの中心。敷地内や入口の位置を保証しない。"
+  },
+  "files": {
+    "expo2025.geojson": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-19/expo2025.geojson",
+      "bytes": 1770659,
+      "sha256": "6c1049288a2cad51aa1a0a880d3a00c96b1edbddc186f6df469a3fd224d91d21"
+    },
+    "expo2025.csv": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-19/expo2025.csv",
+      "bytes": 872609,
+      "sha256": "da10f0d2dc417402664aefd451394cbc43ebc89193f8660a93fb27f8dce9e41b"
+    },
+    "expo2025.osm.json": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-19/expo2025.osm.json",
+      "bytes": 1481433,
+      "sha256": "26ad33966bd5085bc1c7b51b3943b44b3d76ef0d095d8cc298d8174d3d2ce80f"
+    },
+    "yumeshima_highways_all.geojson": {
+      "url": "https://k-sakanoshita.github.io/expo2025-maniacs/data/releases/2026-10-19/yumeshima_highways_all.geojson",
+      "bytes": 1260123,
+      "sha256": "21de7c6c209bc27baa8602573f7e1100b43b6237a72d0af26a9283255f52e844"
+    }
+  }
+}

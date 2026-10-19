@@ -3,8 +3,8 @@
     // Used by the facility example embedded directly in data.html.
     // To use your own data, replace DATA_URL with e.g. './expo2025.geojson'.
     const DATA_URL = typeof document !== 'undefined' && document.currentScript?.src
-        ? new URL('../data/releases/2026-10-12/expo2025.geojson', document.currentScript.src).href
-        : './data/releases/2026-10-12/expo2025.geojson';
+        ? new URL('../data/releases/2026-10-19/expo2025.geojson', document.currentScript.src).href
+        : './data/releases/2026-10-19/expo2025.geojson';
     const MAP_URL = 'https://k-sakanoshita.github.io/expo2025-maniacs/';
     // Change the amenity values, labels and colors here to adapt the example.
     const TYPES = [
