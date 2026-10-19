@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>大阪・関西万博2025 会場・施設オープンデータ | 万博マニアックマップ</title>
-    <meta name="description" content="大阪・関西万博の会場・施設に、夢洲の道路・歩道・階段・信号や水域・森林を統合した4,832件のオープンデータ。GeoJSON・CSVで提供し、Wikipedia・Wikimedia Commonsなどの関連情報も収録。">
+    <meta name="description" content="大阪・関西万博の会場・施設に、夢洲の建物・道路・歩道・階段・信号や水域・森林を統合した5,469件のオープンデータ。GeoJSON・CSVで提供し、Wikipedia・Wikimedia Commonsなどの関連情報も収録。">
     <link rel="canonical" href="https://k-sakanoshita.github.io/expo2025-maniacs/data.html">
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
@@ -36,7 +36,7 @@
         <p class="text-primary fw-bold small">EXPO 2025 · OPEN DATA</p>
         <h1 class="fw-bold">大阪・関西万博2025<br>会場・施設オープンデータ</h1>
         <p class="lead">当時から使われてきた万博マニアックマップを、これからも使い続けられるように。会場・施設に加え、夢洲の道路・歩道・水域・森林のデータを公開し、地図づくりや施設配置の分析、当時の記録の活用を支えます。</p>
-        <p class="facts small text-body-secondary">OSMデータに関連情報を追加 · 4,832件 · GeoJSON / CSV / JSON</p>
+        <p class="facts small text-body-secondary">OSMデータに関連情報を追加 · 5,469件 · GeoJSON / CSV / JSON</p>
         <div class="d-flex flex-wrap gap-2 my-3">
             <a class="btn btn-primary" href="#downloads">データを取得する</a>
             <a class="btn btn-outline-primary" href="#demo">施設検索を試す</a>
@@ -66,7 +66,7 @@
                 <p>このページの地図は、<a href="./examples/expo-facilities.js">JavaScriptの作成コード</a>とMapLibre GL JSで表示しています。JavaScript冒頭の <code>TYPES</code> の <code>tag</code>・名称・色を変更すると、別の <code>amenity</code> の配置図にできます。例えば <code>toilets</code> を <code>bench</code>、名称を「ベンチ」に変更します。</p>
                 <p><code>amenity=toilets</code>（64件）、<code>amenity=drinking_water</code>（50件）、<code>amenity=vending_machine</code>（248件）で抽出しています。件数は地物の数で、便器や設備の台数ではありません。</p>
                 <p>点は元座標、点以外は境界ボックスの中心に記号を置いています。入口の位置を示すものではありません。会場輪郭（<code>tourism=theme_park</code>）と大屋根リング（<code>relation/18047883</code>）も同じGeoJSONから描画しています。</p>
-                <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./data/releases/2026-10-19-2/expo2025.geojson" download>使用したGeoJSON</a></p>
+                <p><a href="./examples/expo-facilities.js">作成コード（JavaScript）</a> · <a href="./data/releases/2026-10-19-3/expo2025.geojson" download>使用したGeoJSON</a></p>
                 <p class="small text-body-secondary">MapLibre GL JSで表示しています。背景タイルは使わず、会場輪郭・大屋根リング・施設を公開GeoJSONだけで描画します。</p>
             </details>
         </section>
@@ -115,18 +115,18 @@ const water = data.features.filter(f =&gt;
         </section>
         <section class="mb-4 p-3 p-md-4 border rounded" id="downloads" aria-labelledby="downloads-title">
             <h2 class="h4" id="downloads-title">データを取得する</h2>
-            <p>GeoJSON・CSV・OSM JSONの全形式に、施設と道路をまとめて収録しています。</p>
-            <p><strong>収録内容：</strong>OSM由来の会場・施設と夢洲の道路など4,832件を収録しています。施設・建物・道路・歩道・階段・信号・横断歩道に加え、水域・森林・入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small text-body-secondary">（名前あり1,147件・名前なし3,685件）</span></p>
+            <p>GeoJSON・CSV・OSM JSONの全形式に、施設・道路・建物をまとめて収録しています。</p>
+            <p><strong>収録内容：</strong>OSM由来の会場・施設と夢洲の道路など5,469件を収録しています。施設・建物・道路・歩道・階段・信号・横断歩道に加え、水域・森林・入口・樹木・ベンチ・フェンスなども含み、名称が未記録の地物もあります。用途に応じてタグで抽出して利用できます。<span class="small text-body-secondary">（名前あり1,148件・名前なし4,321件）</span></p>
             <p>施設検索、地図アプリの開発、施設配置の分析、当時の記録の活用などに利用できます。</p>
-            <p id="data-timing"><strong>データの時点：</strong>2025年10月末時点の万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセットです。2026年1月1日版PBF由来の夢洲の水域・森林・道路データも統合しています。</p>
+            <p id="data-timing"><strong>データの時点：</strong>2025年10月末時点の万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセットです。2026年1月1日版PBF由来の夢洲の水域・森林・道路・建物データも統合しています。</p>
             <div class="download-list row row-cols-1 row-cols-md-3 g-3 my-3">
-                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-2/expo2025.geojson" download><strong class="d-block">GeoJSON</strong><span class="d-block small text-body-secondary">QGISで利用可能 · 地図表示・空間分析向け · 約1.8 MB</span></a></div>
-                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-2/expo2025.csv" download><strong class="d-block">CSV</strong><span class="d-block small text-body-secondary">表計算・集計向け · 約0.9 MB</span></a></div>
-                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-2/expo2025.osm.json" download><strong class="d-block">OSM JSON</strong><span class="d-block small text-body-secondary">OSM ID・参照関係を保持 · 約2.6 MB</span></a></div>
+                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-3/expo2025.geojson" download><strong class="d-block">GeoJSON</strong><span class="d-block small text-body-secondary">QGISで利用可能 · 地図表示・空間分析向け · 約2.1 MB</span></a></div>
+                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-3/expo2025.csv" download><strong class="d-block">CSV</strong><span class="d-block small text-body-secondary">表計算・集計向け · 約1.0 MB</span></a></div>
+                <div class="col"><a class="d-block h-100 p-3 border rounded text-decoration-none" href="./data/releases/2026-10-19-3/expo2025.osm.json" download><strong class="d-block">OSM JSON</strong><span class="d-block small text-body-secondary">OSM ID・参照関係を保持 · 約3.5 MB</span></a></div>
             </div>
-            <p class="small text-body-secondary">追加道路の元ファイルは <a href="./data/releases/2026-10-19-2/yumeshima_highways_all.geojson" download>道路GeoJSON</a>から取得できます。</p>
+            <p class="small text-body-secondary">追加データの元ファイル：<a href="./data/releases/2026-10-19-3/yumeshima_highways_all.geojson" download>道路GeoJSON</a> · <a href="./data/releases/2026-10-19-3/yumeshima_buildings_all.geojson" download>建物GeoJSON</a>。</p>
             <p class="download-status small text-body-secondary" role="status" aria-live="polite" hidden><span></span> 保存できない場合は、<a target="_blank" rel="noopener noreferrer">ファイルを開いて保存</a>してください。</p>
-            <p class="small text-body-secondary">公開版 2026-10-19-2。</p>
+            <p class="small text-body-secondary">公開版 2026-10-19-3。</p>
             <p class="small text-body-secondary">CSVには主要なタグを列として収録しています。タグの空欄は未記録（タグなし）を表し、「なし」を意味しません。営業時間などは収録時点の情報です。</p>
             <div class="mt-4" id="qgis" aria-labelledby="qgis-title">
                 <h3 class="h5" id="qgis-title">QGISでも利用できます</h3>
@@ -208,9 +208,10 @@ const water = data.features.filter(f =&gt;
             <h2 class="h4" id="history-title">データの成り立ち・公開履歴・連絡先</h2>
             <div id="provenance">
                 <p>対象は大阪・関西万博の会場（夢洲）と周辺。2025年10月30日に取得したOSMデータを基に、Wikipedia・Wikimedia CommonsのURLなどの関連情報を追加しています。元のOverpass JSONに記録された <code>2025-10-30T16:07:40Z</code> は取得時のOSM基準日時であり、その後の補足を含むデータ全体の基準日時ではありません。</p>
-                <p>GeoJSON・CSVはタグを持つ4,832件（点2,807件・線1,495件・面530件）。形状構築用のタグなしノードは元データに残しています。</p>
-                <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-19-2/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
+                <p>GeoJSON・CSVはタグを持つ5,469件（点2,811件・線1,495件・面1,163件）。形状構築用のタグなしノードは元データに残しています。</p>
+                <p>ファイルサイズ・SHA-256・公開版の取得URLは <a href="./data/releases/2026-10-19-3/metadata.json">公開版メタデータ（JSON）</a>を参照してください。</p>
             </div>
+            <p><strong>2026-10-19（第3版）：</strong>建物・建物の部分データ691件を統合し、既存54件との重複を除いて637件を追加しました。GeoJSON・CSV・OSM JSONの全形式に収録しています。</p>
             <p><strong>2026-10-19（第2版）：</strong>OSM JSONにも道路を統合し、元PBFの実際のノードID・way・リレーションと参照先を収録しました。CSVには道路を引き続き収録しています。</p>
             <p><strong>2026-10-19：</strong>2026年1月1日版PBF由来の夢洲の道路・歩道・階段・信号など1,399件を統合しました。既存17件との重複を除き1,382件を追加し、元の形状・タグを保持しています。</p>
             <p><strong>2026-10-12：</strong>会場・施設データをGeoJSON・CSV・JSONで公開。水域・森林208件を統合し、Wikimedia Commonsの写真タグを10地物に追加しました。施設の英語名・写真情報とEXPOアリーナ「Matsuri」も追加しました。CSVには主要タグ10列を収録しています。</p>
@@ -218,8 +219,8 @@ const water = data.features.filter(f =&gt;
         </section>    </main>
     <footer class="container py-4 small"><a href="./">万博マニアックマップを開く</a> · <a href="https://armd-01.sakura.ne.jp/tiles/">Japan PMTiles</a> · <a href="https://github.com/K-Sakanoshita/expo2025-maniacs">GitHub</a><p>このサイトは万博公式サイトではありません。</p></footer>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.min.js" defer></script>
-    <script src="./examples/expo-facilities.js?ver=20261019-02" defer></script>
+    <script src="./examples/expo-facilities.js?ver=20261019-03" defer></script>
     <script src="./lib/publicdatasearch.js?ver=20261010-03" defer></script>
-    <script src="./data-page.js?ver=20261019-02" defer></script>
+    <script src="./data-page.js?ver=20261019-03" defer></script>
 </body>
 </html>

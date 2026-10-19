@@ -44,7 +44,7 @@ function mergeOsm(input, supplement, selectedIds) {
         } else elements.set(id, structuredClone(element));
     }
     for (const id of selectedIds) {
-        if (!sourceIds.has(id) || !elements.get(id)?.tags?.highway) throw new Error(`Missing supplemental OSM highway: ${id}`);
+        if (!sourceIds.has(id) || !Object.keys(elements.get(id)?.tags || {}).length) throw new Error(`Missing supplemental OSM feature: ${id}`);
     }
     for (const element of elements.values()) {
         for (const ref of element.nodes || []) {
@@ -54,10 +54,10 @@ function mergeOsm(input, supplement, selectedIds) {
             if (!elements.has(`${member.type}/${member.ref}`) && !member.geometry) throw new Error(`Missing OSM member reference: ${member.type}/${member.ref}`);
         }
     }
-    return { ...input, supplemental_sources: [{ source_pbf: supplement.source_pbf,
+    return { ...input, supplemental_sources: [...(input.supplemental_sources || []), { source_pbf: supplement.source_pbf,
         timestamp_osm_base: supplement.osm3s?.timestamp_osm_base, selection_note: supplement.selection_note }], elements: [...elements.values()] };
 }
-function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19-2', version = '2026-10-19-2', supplemental = 'data/yumeshima_highways_all.geojson', supplementalOsm } = {}) {
+function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19-3', version = '2026-10-19-3', supplemental = ['data/yumeshima_highways_all.geojson', 'data/yumeshima_buildings_all.geojson'], supplementalOsm } = {}) {
     if (fs.existsSync(output)) throw new Error(`Published directory already exists; use a new version: ${output}`);
     if (!/^\d{4}-\d{2}-\d{2}(?:-\d+)?$/.test(version)) throw new Error('Invalid release version');
     const raw = fs.readFileSync(source);
@@ -76,8 +76,9 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
     const supplementaryFiles = {};
     const supplementalSources = [];
     let osmContent = raw;
-    if (supplemental) {
-        const content = fs.readFileSync(supplemental);
+    let mergedInput = input;
+    for (const supplementalPath of !supplemental ? [] : Array.isArray(supplemental) ? supplemental : [supplemental]) {
+        const content = fs.readFileSync(supplementalPath);
         const collection = JSON.parse(content);
         if (collection.type !== 'FeatureCollection' || !Array.isArray(collection.features)) throw new Error('Invalid supplemental FeatureCollection');
         const byId = new Map(features.map(feature => [feature.id, feature]));
@@ -89,7 +90,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
             if (supplementalIds.has(id)) throw new Error(`Duplicate supplemental ID: ${id}`);
             supplementalIds.add(id);
             const tags = feature.properties;
-            if (feature.type !== 'Feature' || !tags || typeof tags !== 'object' || Array.isArray(tags) || !tags.highway || !feature.geometry || !['Point', 'LineString', 'MultiPolygon', 'Polygon', 'MultiLineString'].includes(feature.geometry.type)) throw new Error(`Invalid supplemental highway feature: ${id}`);
+            if (feature.type !== 'Feature' || !tags || typeof tags !== 'object' || Array.isArray(tags) || !(tags.highway || (tags.building && tags.building !== 'no') || (tags['building:part'] && tags['building:part'] !== 'no')) || !feature.geometry || !['Point', 'LineString', 'MultiPolygon', 'Polygon', 'MultiLineString'].includes(feature.geometry.type)) throw new Error(`Invalid supplemental feature: ${id}`);
             position(feature.geometry);
             const existing = byId.get(id);
             if (existing) {
@@ -105,18 +106,19 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
                 added++;
             }
         }
-        supplementaryFiles['yumeshima_highways_all.geojson'] = content;
-        const osmSource = supplementalOsm || supplemental.replace(/\.geojson$/, '.osm.json');
+        const sourceFile = path.basename(supplementalPath);
+        supplementaryFiles[sourceFile] = content;
+        const osmSource = supplementalOsm || supplementalPath.replace(/\.geojson$/, '.osm.json');
         const osmSupplement = JSON.parse(fs.readFileSync(osmSource));
-        const mergedOsm = mergeOsm(input, osmSupplement, supplementalIds);
-        osmContent = Buffer.from(JSON.stringify(mergedOsm) + '\n');
-        supplementalSources.push({ source: supplemental.replaceAll('\\', '/'), source_pbf: collection.source_pbf || null,
+        mergedInput = mergeOsm(mergedInput, osmSupplement, supplementalIds);
+        osmContent = Buffer.from(JSON.stringify(mergedInput) + '\n');
+        supplementalSources.push({ source: supplementalPath.replaceAll('\\', '/'), source_pbf: collection.source_pbf || null,
             osm_source: osmSource.replaceAll('\\', '/'),
             source_osm_base_timestamp: collection.source_osm_base_timestamp || null,
             tag_filter: collection.tag_filter || null, spatial_rule: collection.spatial_rule || null,
             feature_count: collection.features.length, added_feature_count: added, duplicate_feature_count: duplicates,
             merge_rule: 'OSM IDで重複排除。既存の形状・タグ値を優先し、未記録タグのみ補完。',
-            source_file: 'yumeshima_highways_all.geojson' });
+            source_file: sourceFile });
     }
     features.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     if (!features.length) throw new Error('No tagged features found');
@@ -139,12 +141,12 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
     };
     const metadata = {
         version,
-        description: '2025年10月末時点の大阪・関西万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセット。' + (supplementalSources.length ? '2026年1月1日版PBF由来の夢洲の道路・歩道・階段・信号なども統合。各出典の基準日時は個別に記録。' : ''),
+        description: '2025年10月末時点の大阪・関西万博会場・施設のOSMデータを基に、Wikipedia・Wikimedia CommonsのURL、写真・公式サイト情報などを追加したデータセット。' + (supplementalSources.length ? '2026年1月1日版PBF由来の夢洲の道路・歩道・階段・信号・建物なども統合。各出典の基準日時は個別に記録。' : ''),
         source: source.replaceAll('\\', '/'),
         source_osm_base_timestamp: input.osm3s?.timestamp_osm_base || null,
         source_timestamp_note: '基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。',
         supplemental_sources: supplementalSources,
-        osm_json_note: supplementalSources.length ? 'GeoJSON・CSV・OSM JSONの全形式に道路を統合。OSM JSONの追加道路・参照ノード・リレーションは元PBFから実IDで取得。選択外の参照要素は形状構築専用としてタグを省略。既存要素の形状・タグを優先。' : 'expo2025.osm.jsonは元のOverpass JSON。',
+        osm_json_note: supplementalSources.length ? 'GeoJSON・CSV・OSM JSONの全形式に道路・建物を統合。OSM JSONの追加地物・参照ノード・リレーションは元PBFから実IDで取得。選択外の参照要素は形状構築専用としてタグを省略。既存要素の形状・タグを優先。' : 'expo2025.osm.jsonは元のOverpass JSON。',
         license: 'ODbL-1.0', license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         attribution: '© OpenStreetMap contributors', attribution_url: 'https://www.openstreetmap.org/copyright',
         publisher: 'EXPO2025 万博マニアックマップ', documentation_url: `${BASE_URL}data.html`,
@@ -169,7 +171,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
 }
 if (require.main === module) {
     try {
-        const metadata = exportData({ source: process.argv[2] || undefined, output: process.argv[3] || undefined, version: process.argv[4] || undefined, supplemental: process.argv[5] || undefined });
+        const metadata = exportData({ source: process.argv[2] || undefined, output: process.argv[3] || undefined, version: process.argv[4] || undefined, supplemental: process.argv.length > 5 ? process.argv.slice(5) : undefined });
         console.log(`Exported ${metadata.feature_count} features (${metadata.version})`);
     } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

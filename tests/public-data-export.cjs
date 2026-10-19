@@ -101,7 +101,7 @@ try {
     assert.equal(mergedMeta.supplemental_sources[0].added_feature_count, 1);
     assert.equal(mergedMeta.supplemental_sources[0].duplicate_feature_count, 1);
     assert.equal(mergedMeta.supplemental_sources[0].source_osm_base_timestamp, roadFixture.source_osm_base_timestamp);
-    assert.deepEqual(fs.readFileSync(path.join(mergedOutput, 'yumeshima_highways_all.geojson')), fs.readFileSync(roads));
+    assert.deepEqual(fs.readFileSync(path.join(mergedOutput, 'roads.geojson')), fs.readFileSync(roads));
     assert.match(fs.readFileSync(path.join(mergedOutput, 'expo2025.csv'), 'utf8'), /relation\/9,広場,pedestrian/);
     for (const [name, record] of Object.entries(mergedMeta.files)) {
         const content = fs.readFileSync(path.join(mergedOutput, name));

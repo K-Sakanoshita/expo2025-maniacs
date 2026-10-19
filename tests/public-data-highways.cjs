@@ -2,7 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const crypto = require('node:crypto');
 const path = require('node:path');
-const release = process.argv[2] || 'data/releases/2026-10-19-2';
+const release = process.argv[2] || 'data/releases/2026-10-19-3';
 const read = name => JSON.parse(fs.readFileSync(path.join(release, name)));
 const roads = read('yumeshima_highways_all.geojson');
 const merged = read('expo2025.geojson').features;
@@ -10,7 +10,12 @@ const metadata = read('metadata.json');
 const previous = JSON.parse(fs.readFileSync('data/releases/2026-10-12/expo2025.geojson')).features;
 const byId = new Map(merged.map(feature => [feature.id, feature]));
 assert.equal(byId.size, merged.length, 'no duplicate OSM IDs');
-for (const original of previous) assert.deepEqual(byId.get(original.id), original, `retain existing ${original.id}`);
+for (const original of previous) {
+    const retained = byId.get(original.id);
+    assert.deepEqual(retained.geometry, original.geometry, `retain existing shape ${original.id}`);
+    if (original.properties.name) assert.equal(retained.properties.name, original.properties.name);
+    for (const [key, value] of Object.entries(original.properties.tags)) assert.equal(retained.properties.tags[key], value, `retain existing tag ${original.id} ${key}`);
+}
 for (const road of roads.features) {
     const id = `${road.osm_type}/${road.osm_id}`;
     const feature = byId.get(id);
@@ -20,7 +25,7 @@ for (const road of roads.features) {
     assert.equal(feature.properties.osm_id, id);
 }
 assert.equal(roads.features.length, 1399);
-assert.equal(merged.length, previous.length + 1382);
+assert.equal(merged.length, previous.length + 1382 + 637);
 assert.equal(metadata.feature_count, merged.length);
 assert.equal(metadata.supplemental_sources[0].duplicate_feature_count, 17);
 const counts = {};
@@ -38,7 +43,11 @@ assert.equal(osmById.size, osm.elements.length);
 const baseOsm = JSON.parse(fs.readFileSync('data/expo2025.min.json'));
 for (const original of baseOsm.elements) {
     const retained = osmById.get(`${original.type}/${original.id}`);
-    for (const [key, value] of Object.entries(original)) assert.deepEqual(retained[key], value, `retain ${original.type}/${original.id} ${key}`);
+    for (const [key, value] of Object.entries(original)) {
+        if (key === 'tags') {
+            for (const [tag, tagValue] of Object.entries(value)) assert.equal(retained.tags[tag], tagValue);
+        } else assert.deepEqual(retained[key], value, `retain ${original.type}/${original.id} ${key}`);
+    }
 }
 assert.equal(osm.elements.filter(e => Object.keys(e.tags || {}).length).length, merged.length);
 const sourceOsm = JSON.parse(fs.readFileSync('data/yumeshima_highways_all.osm.json'));
@@ -72,6 +81,26 @@ for (const feature of merged) {
     assert.ok(converted && !converted.properties.tainted, `complete OSM geometry ${feature.id}`);
     assert.deepEqual(normalizedGeometry(converted.geometry), normalizedGeometry(feature.geometry), `OSM/GeoJSON geometry ${feature.id}`);
 }
+const existingById = new Map(previous.map(f => [f.id, f]));
+const buildings = read('yumeshima_buildings_all.geojson');
+assert.equal(buildings.features.length, 691);
+assert.equal(metadata.supplemental_sources[1].added_feature_count, 637);
+assert.equal(metadata.supplemental_sources[1].duplicate_feature_count, 54);
+assert.equal(osm.supplemental_sources.length, 2, 'retain both road and building provenance');
+assert.deepEqual(fs.readFileSync(path.join(release, 'yumeshima_buildings_all.geojson')), fs.readFileSync('data/yumeshima_buildings_all.geojson'));
+const buildingSource = JSON.parse(fs.readFileSync('data/yumeshima_buildings_all.osm.json'));
+const buildingIds = new Set(buildingSource.elements.map(e => `${e.type}/${e.id}`));
+for (const building of buildings.features) {
+    const id = `${building.osm_type}/${building.osm_id}`;
+    const feature = byId.get(id);
+    assert.ok(feature && buildingIds.has(id), id);
+    assert.deepEqual(normalizedGeometry(feature.geometry), normalizedGeometry(building.geometry), `building shape ${id}`);
+    for (const [key, value] of Object.entries(building.properties)) {
+        const expected = existingById.get(id)?.properties.tags[key] ?? value;
+        assert.equal(feature.properties.tags[key], expected, `building GeoJSON tag ${id} ${key}`);
+        assert.equal(osmById.get(id).tags[key], expected, `building OSM tag ${id} ${key}`);
+    }
+}
 const html = fs.readFileSync('data.html', 'utf8');
 for (const name of [...Object.keys(metadata.files), 'metadata.json']) assert.ok(html.includes(`./${release}/${name}`), `download link ${name}`);
-console.log('PASS: all 1,399 highway geometries/tags, 17 duplicates, existing features, release hashes and links');
+console.log('PASS: all 1,399 roads and 691 buildings, OSM geometry parity, existing features, release hashes and links');
