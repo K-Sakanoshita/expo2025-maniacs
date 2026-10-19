@@ -5,7 +5,7 @@
         "use": true,
         "autoOpen": "daily",
         "delayMs": 0,
-        "version": "20261012-05",
+        "version": "20261019-01",
         "storageKey": "expo2025.site-updates",
         "buttonHosts": { "desktop": "changesButtonDesktop", "mobile": "changesButtonMobile" },
         "buttonLabel": { "ja": "📣 新着", "en": "📣 What’s new" },
