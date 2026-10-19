@@ -27,16 +27,16 @@
 
 ## 公開データ
 
-最新の公開版は **2026-10-19**、タグを持つ地物は **4,832件**です。会場・施設に夢洲の道路・歩道・階段・信号・水域・森林を統合したGeoJSON・CSVと、統合前の元データ、ファイルサイズ・SHA-256を記録したメタデータを提供しています。
+最新の公開版は **2026-10-19-2**、タグを持つ地物は **4,832件**です。会場・施設に夢洲の道路・歩道・階段・信号・水域・森林を統合したGeoJSON・CSV・OSM JSONと、ファイルサイズ・SHA-256を記録したメタデータを提供しています。
 
 - [データの説明・検索・設備の地図例](https://k-sakanoshita.github.io/expo2025-maniacs/data.html)
-- [公開版ファイル](data/releases/2026-10-19/)
-- [公開版メタデータ](data/releases/2026-10-19/metadata.json)
+- [公開版ファイル](data/releases/2026-10-19-2/)
+- [公開版メタデータ](data/releases/2026-10-19-2/metadata.json)
 - [Wikipedia掲載写真から補完したCommonsタグ10件](docs/wikimedia-commons-wikipedia-2026-10-12.md)
 
 基となるOSMデータは2025年10月末時点のものです。その後、Wikipedia・Wikimedia Commonsの写真タグなどを補完しています。2026年1月1日版PBF由来の夢洲の道路データ1,399件も統合し、既存17件との重複を除いて1,382件を追加しました。写真の実ファイルは配布に含みません。
 
-元データは `data/expo2025.json`、地図が読み込む軽量版は `data/expo2025.min.json` です。道路の追加元は `data/yumeshima_highways_all.geojson` です。GeoJSON・CSVには道路を統合し、Overpass JSONには施設データのみを収録します。道路の元GeoJSONも公開版に同梱します。公開版を作成するときは両者の内容を揃え、既存の公開版を上書きせず、新しい版名を指定します。
+元データは `data/expo2025.json`、地図が読み込む軽量版は `data/expo2025.min.json` です。道路の追加元は `data/yumeshima_highways_all.geojson` と、元PBFから実IDと参照先を抽出した `data/yumeshima_highways_all.osm.json` です。GeoJSON・CSV・OSM JSONの全形式に道路を統合します。CSVの座標は代表点のため、道路形状を扱う場合はGeoJSON・OSM JSONを使用してください。道路の元GeoJSONも公開版に同梱します。公開版を作成するときは両者の内容を揃え、既存の公開版を上書きせず、新しい版名を指定します。
 
 ```bash
 node scripts/export-public-data.cjs data/expo2025.min.json data/releases/YYYY-MM-DD YYYY-MM-DD data/yumeshima_highways_all.geojson
@@ -119,7 +119,7 @@ node scripts/export-public-data.cjs data/expo2025.min.json data/releases/YYYY-MM
              ころころひろばを茶色の網目のトランポリンへ変更。メニューボタンのCSSを共通化し、スマホのドラッグハンドルもこみゃく柄に統一
              地図切り替えの案内を一行表示に調整。公開データを最新の追加情報で再生成
 
-- 2026/10/19 夢洲の道路・歩道・階段・信号など1,382件を追加し、公開データを4,832件に更新。説明文・検索・ダウンロード先も更新
+- 2026/10/19 夢洲の道路・歩道・階段・信号など1,382件を追加し、公開データを4,832件に更新。説明文・検索・ダウンロード先も更新。第2版ではOSM JSONにも元PBFの道路と参照先を統合
 
 ## 参考
 ### expo2025.json を作るOverpass QL

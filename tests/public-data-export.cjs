@@ -16,7 +16,8 @@ try {
         { type: 'node', id: 2, lon: 135.01, lat: 34 },
         { type: 'node', id: 3, lon: 135.01, lat: 34.01 },
         { type: 'way', id: 1, nodes: [1, 2], tags: { highway: 'footway' } },
-        { type: 'way', id: 2, nodes: [1, 2, 3, 1], tags: { building: 'yes', name: '建物' } }
+        { type: 'way', id: 2, nodes: [1, 2, 3, 1], tags: { building: 'yes', name: '建物' } },
+        { type: 'node', id: 1, lon: 135, lat: 34 }
     ] };
     fs.writeFileSync(source, JSON.stringify(fixture));
     const one = path.join(temp, 'one'), two = path.join(temp, 'two');
@@ -70,10 +71,26 @@ try {
         { type: 'Feature', osm_type: 'relation', osm_id: 9, properties: { highway: 'pedestrian', name: '広場' }, geometry: { type: 'MultiPolygon', coordinates: [[[[135, 34], [136, 34], [136, 35], [135, 34]]]] } }
     ] };
     fs.writeFileSync(roads, JSON.stringify(roadFixture));
+    fs.writeFileSync(path.join(temp, 'roads.osm.json'), JSON.stringify({ elements: [
+        { type: 'way', id: 1, nodes: [1, 2], tags: roadFixture.features[0].properties },
+        { type: 'node', id: 91, lon: 135, lat: 34 },
+        { type: 'node', id: 92, lon: 136, lat: 34 },
+        { type: 'node', id: 93, lon: 136, lat: 35 },
+        { type: 'way', id: 9, nodes: [91, 92, 93, 91] },
+        { type: 'relation', id: 9, members: [{ type: 'way', ref: 9, role: 'outer' }], tags: roadFixture.features[1].properties }
+    ] }));
     const mergedOutput = path.join(temp, 'merged');
     const mergedMeta = exportData({ source, supplemental: roads, output: mergedOutput });
     const merged = JSON.parse(fs.readFileSync(path.join(mergedOutput, 'expo2025.geojson'))).features;
     assert.equal(merged.length, 4);
+    const mergedOsm = JSON.parse(fs.readFileSync(path.join(mergedOutput, 'expo2025.osm.json')));
+    const osmById = new Map(mergedOsm.elements.map(e => [`${e.type}/${e.id}`, e]));
+    assert.equal(osmById.size, mergedOsm.elements.length);
+    assert.equal(osmById.get('relation/9').members[0].ref, 9);
+    assert.deepEqual(osmById.get('way/9').nodes, [91, 92, 93, 91]);
+    assert.equal(osmById.get('way/1').tags.highway, 'footway');
+    assert.equal(osmById.get('way/1').tags.surface, 'paved');
+    assert.equal(osmById.get('node/1').tags.name, fixture.elements[0].tags.name, 'repeated untagged reference must retain original node tags');
     const originalWay = features.find(f => f.id === 'way/1');
     const mergedWay = merged.find(f => f.id === 'way/1');
     assert.deepEqual(mergedWay.geometry, originalWay.geometry, 'duplicate keeps existing geometry');

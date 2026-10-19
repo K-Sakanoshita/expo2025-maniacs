@@ -20,12 +20,50 @@ function position(geometry) {
     const xs = points.map(point => point[0]), ys = points.map(point => point[1]);
     return [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
 }
-function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19', version = '2026-10-19', supplemental = 'data/yumeshima_highways_all.geojson' } = {}) {
+function mergeOsm(input, supplement, selectedIds) {
+    const elements = new Map();
+    // Original Overpass data can repeat a tagged node as an untagged reference.
+    for (const original of input.elements) {
+        const element = structuredClone(original);
+        const id = `${element.type}/${element.id}`;
+        const existing = elements.get(id);
+        if (existing) {
+            const tags = { ...element.tags, ...existing.tags };
+            Object.assign(existing, element);
+            if (Object.keys(tags).length) existing.tags = tags;
+        } else elements.set(id, element);
+    }
+    const sourceIds = new Set();
+    for (const element of supplement.elements) {
+        const id = `${element.type}/${element.id}`;
+        if (sourceIds.has(id)) throw new Error(`Duplicate supplemental OSM element: ${id}`);
+        sourceIds.add(id);
+        const existing = elements.get(id);
+        if (existing) {
+            if (element.tags) existing.tags = { ...element.tags, ...existing.tags };
+        } else elements.set(id, structuredClone(element));
+    }
+    for (const id of selectedIds) {
+        if (!sourceIds.has(id) || !elements.get(id)?.tags?.highway) throw new Error(`Missing supplemental OSM highway: ${id}`);
+    }
+    for (const element of elements.values()) {
+        for (const ref of element.nodes || []) {
+            if (!elements.has(`node/${ref}`)) throw new Error(`Missing OSM node reference: ${ref}`);
+        }
+        for (const member of element.members || []) {
+            if (!elements.has(`${member.type}/${member.ref}`) && !member.geometry) throw new Error(`Missing OSM member reference: ${member.type}/${member.ref}`);
+        }
+    }
+    return { ...input, supplemental_sources: [{ source_pbf: supplement.source_pbf,
+        timestamp_osm_base: supplement.osm3s?.timestamp_osm_base, selection_note: supplement.selection_note }], elements: [...elements.values()] };
+}
+function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19-2', version = '2026-10-19-2', supplemental = 'data/yumeshima_highways_all.geojson', supplementalOsm } = {}) {
     if (fs.existsSync(output)) throw new Error(`Published directory already exists; use a new version: ${output}`);
     if (!/^\d{4}-\d{2}-\d{2}(?:-\d+)?$/.test(version)) throw new Error('Invalid release version');
     const raw = fs.readFileSync(source);
     const input = JSON.parse(raw);
-    const converted = osmtogeojson(input, { flatProperties: false });
+    // The converter mutates input elements; keep the source graph intact for OSM JSON.
+    const converted = osmtogeojson(structuredClone(input), { flatProperties: false });
     const features = converted.features.filter(feature => Object.keys(feature.properties.tags || {}).length).map(feature => {
         if (feature.properties.tainted || !feature.geometry) throw new Error(`Incomplete geometry: ${feature.id}`);
         position(feature.geometry);
@@ -37,6 +75,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
     });
     const supplementaryFiles = {};
     const supplementalSources = [];
+    let osmContent = raw;
     if (supplemental) {
         const content = fs.readFileSync(supplemental);
         const collection = JSON.parse(content);
@@ -67,7 +106,12 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
             }
         }
         supplementaryFiles['yumeshima_highways_all.geojson'] = content;
+        const osmSource = supplementalOsm || supplemental.replace(/\.geojson$/, '.osm.json');
+        const osmSupplement = JSON.parse(fs.readFileSync(osmSource));
+        const mergedOsm = mergeOsm(input, osmSupplement, supplementalIds);
+        osmContent = Buffer.from(JSON.stringify(mergedOsm) + '\n');
         supplementalSources.push({ source: supplemental.replaceAll('\\', '/'), source_pbf: collection.source_pbf || null,
+            osm_source: osmSource.replaceAll('\\', '/'),
             source_osm_base_timestamp: collection.source_osm_base_timestamp || null,
             tag_filter: collection.tag_filter || null, spatial_rule: collection.spatial_rule || null,
             feature_count: collection.features.length, added_feature_count: added, duplicate_feature_count: duplicates,
@@ -90,7 +134,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
     const files = {
         'expo2025.geojson': Buffer.from(JSON.stringify(geojson) + '\n'),
         'expo2025.csv': Buffer.from(rows.map(row => row.map(csvCell).join(',')).join('\r\n') + '\r\n'),
-        'expo2025.osm.json': raw,
+        'expo2025.osm.json': osmContent,
         ...supplementaryFiles
     };
     const metadata = {
@@ -100,7 +144,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
         source_osm_base_timestamp: input.osm3s?.timestamp_osm_base || null,
         source_timestamp_note: '基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。',
         supplemental_sources: supplementalSources,
-        osm_json_note: supplementalSources.length ? 'expo2025.osm.jsonは施設データの元のOverpass JSON。追加道路は別添のyumeshima_highways_all.geojsonに収録し、統合済みの全件はexpo2025.geojson・expo2025.csvに収録。' : 'expo2025.osm.jsonは元のOverpass JSON。',
+        osm_json_note: supplementalSources.length ? 'GeoJSON・CSV・OSM JSONの全形式に道路を統合。OSM JSONの追加道路・参照ノード・リレーションは元PBFから実IDで取得。選択外の参照要素は形状構築専用としてタグを省略。既存要素の形状・タグを優先。' : 'expo2025.osm.jsonは元のOverpass JSON。',
         license: 'ODbL-1.0', license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         attribution: '© OpenStreetMap contributors', attribution_url: 'https://www.openstreetmap.org/copyright',
         publisher: 'EXPO2025 万博マニアックマップ', documentation_url: `${BASE_URL}data.html`,
@@ -129,4 +173,4 @@ if (require.main === module) {
         console.log(`Exported ${metadata.feature_count} features (${metadata.version})`);
     } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
-module.exports = { exportData, position };
+module.exports = { exportData, position, mergeOsm };
