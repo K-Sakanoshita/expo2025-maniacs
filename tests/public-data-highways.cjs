@@ -2,7 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const crypto = require('node:crypto');
 const path = require('node:path');
-const release = process.argv[2] || 'data/releases/2026-10-19-3';
+const release = process.argv[2] || 'data/releases/2026-10-19-4';
 const read = name => JSON.parse(fs.readFileSync(path.join(release, name)));
 const roads = read('yumeshima_highways_all.geojson');
 const merged = read('expo2025.geojson').features;
@@ -102,5 +102,22 @@ for (const building of buildings.features) {
     }
 }
 const html = fs.readFileSync('data.html', 'utf8');
+const preceding = JSON.parse(fs.readFileSync('data/releases/2026-10-19-3/expo2025.geojson')).features;
+for (const original of preceding) {
+    const expected = structuredClone(original);
+    if (expected.id === 'way/1433690580') {
+        expected.properties.tags.building = 'yes';
+        expected.properties.kind = 'yes';
+    }
+    assert.deepEqual(byId.get(expected.id), expected, `only China building correction: ${expected.id}`);
+}
+const precedingOsm = JSON.parse(fs.readFileSync('data/releases/2026-10-19-3/expo2025.osm.json'));
+for (const original of precedingOsm.elements) {
+    const expected = structuredClone(original);
+    if (expected.type === 'way' && expected.id === 1433690580) expected.tags.building = 'yes';
+    assert.deepEqual(osmById.get(`${expected.type}/${expected.id}`), expected);
+}
+assert.equal(metadata.data_corrections.length, 1);
+assert.deepEqual(osm.data_corrections, metadata.data_corrections);
 for (const name of [...Object.keys(metadata.files), 'metadata.json']) assert.ok(html.includes(`./${release}/${name}`), `download link ${name}`);
 console.log('PASS: all 1,399 roads and 691 buildings, OSM geometry parity, existing features, release hashes and links');

@@ -1,0 +1,9 @@
+[
+  {
+    "osm_id": "way/1433690580",
+    "date": "2026-10-19",
+    "expected_tags": { "building": null, "building:part": "yes", "height": "12" },
+    "set_tags": { "building": "yes" },
+    "reason": "中国館の建物本体をbuildingタグのみで抽出する利用者にも収録するための配布データ上の互換補正。元のbuilding:partタグ・高さ・形状は保持。OSM本体や取り込み元の抽出ファイルは変更しない。"
+  }
+]

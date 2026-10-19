@@ -27,14 +27,14 @@
 
 ## 公開データ
 
-最新の公開版は **2026-10-19-3**、タグを持つ地物は **5,469件**です。会場・施設に夢洲の建物・道路・歩道・階段・信号・水域・森林を統合したGeoJSON・CSV・OSM JSONと、ファイルサイズ・SHA-256を記録したメタデータを提供しています。
+最新の公開版は **2026-10-19-4**、タグを持つ地物は **5,469件**です。会場・施設に夢洲の建物・道路・歩道・階段・信号・水域・森林を統合したGeoJSON・CSV・OSM JSONと、ファイルサイズ・SHA-256を記録したメタデータを提供しています。
 
 - [データの説明・検索・設備の地図例](https://k-sakanoshita.github.io/expo2025-maniacs/data.html)
-- [公開版ファイル](data/releases/2026-10-19-3/)
-- [公開版メタデータ](data/releases/2026-10-19-3/metadata.json)
+- [公開版ファイル](data/releases/2026-10-19-4/)
+- [公開版メタデータ](data/releases/2026-10-19-4/metadata.json)
 - [Wikipedia掲載写真から補完したCommonsタグ10件](docs/wikimedia-commons-wikipedia-2026-10-12.md)
 
-基となるOSMデータは2025年10月末時点のものです。その後、Wikipedia・Wikimedia Commonsの写真タグなどを補完しています。2026年1月1日版PBF由来の夢洲の道路データ1,399件と建物・建物部分データ691件も統合しました。重複を除いた追加数は道路1,382件・建物637件です。写真の実ファイルは配布に含みません。
+基となるOSMデータは2025年10月末時点のものです。その後、Wikipedia・Wikimedia Commonsの写真タグなどを補完しています。2026年1月1日版PBF由来の夢洲の道路データ1,399件と建物・建物部分データ691件も統合しました。重複を除いた追加数は道路1,382件・建物637件です。中国館の建物本体には、建物タグによる抽出との互換性のため `building=yes` を補完しています。元の形状・`building:part` タグは保持し、補正は [public-data-corrections.json](data/public-data-corrections.json) に記録しています。写真の実ファイルは配布に含みません。
 
 元データは `data/expo2025.json`、地図が読み込む軽量版は `data/expo2025.min.json` です。道路・建物の追加元は `data/yumeshima_highways_all.geojson` と、元PBFから実IDと参照先を抽出した `data/yumeshima_highways_all.osm.json`、および同形式の `data/yumeshima_buildings_all.geojson`・`data/yumeshima_buildings_all.osm.json` です。GeoJSON・CSV・OSM JSONの全形式に道路・建物を統合します。CSVの座標は代表点のため、道路形状を扱う場合はGeoJSON・OSM JSONを使用してください。道路・建物の元GeoJSONも公開版に同梱します。公開版を作成するときは両者の内容を揃え、既存の公開版を上書きせず、新しい版名を指定します。
 
@@ -119,7 +119,7 @@ node scripts/export-public-data.cjs data/expo2025.min.json data/releases/YYYY-MM
              ころころひろばを茶色の網目のトランポリンへ変更。メニューボタンのCSSを共通化し、スマホのドラッグハンドルもこみゃく柄に統一
              地図切り替えの案内を一行表示に調整。公開データを最新の追加情報で再生成
 
-- 2026/10/19 夢洲の道路・歩道・階段・信号など1,382件を追加し、公開データを4,832件に更新。説明文・検索・ダウンロード先も更新。第2版ではOSM JSONにも元PBFの道路と参照先を統合。第3版では建物637件を追加し、全形式で5,469件に更新
+- 2026/10/19 夢洲の道路・歩道・階段・信号など1,382件を追加し、公開データを4,832件に更新。説明文・検索・ダウンロード先も更新。第2版ではOSM JSONにも元PBFの道路と参照先を統合。第3版では建物637件を追加し、全形式で5,469件に更新。第4版では中国館の本体に建物抽出用タグを補完
 
 ## 参考
 ### expo2025.json を作るOverpass QL

@@ -4,7 +4,7 @@ const path = require('node:path');
 const os = require('node:os');
 const crypto = require('node:crypto');
 const { exportData: exportWithRoads, position } = require('../scripts/export-public-data.cjs');
-const exportData = options => exportWithRoads({ supplemental: null, ...options });
+const exportData = options => exportWithRoads({ supplemental: null, corrections: null, ...options });
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'expo-public-data-'));
 try {
     const source = path.join(temp, 'source.json');
@@ -108,6 +108,23 @@ try {
         assert.equal(content.length, record.bytes);
         assert.equal(crypto.createHash('sha256').update(content).digest('hex'), record.sha256);
     }
+    const correctionPath = path.join(temp, 'corrections.json');
+    const correction = { osm_id: 'relation/9', expected_tags: { building: null, highway: 'pedestrian' }, set_tags: { building: 'yes' }, reason: 'fixture' };
+    fs.writeFileSync(correctionPath, JSON.stringify([correction]));
+    const correctedOutput = path.join(temp, 'corrected');
+    const correctedMeta = exportData({ source, supplemental: roads, corrections: correctionPath, output: correctedOutput });
+    const corrected = JSON.parse(fs.readFileSync(path.join(correctedOutput, 'expo2025.geojson'))).features.find(f => f.id === 'relation/9');
+    assert.equal(corrected.properties.tags.building, 'yes');
+    assert.deepEqual(corrected.geometry, roadFixture.features[1].geometry);
+    const correctedOsm = JSON.parse(fs.readFileSync(path.join(correctedOutput, 'expo2025.osm.json')));
+    assert.equal(correctedOsm.elements.find(e => e.type === 'relation' && e.id === 9).tags.building, 'yes');
+    assert.deepEqual(correctedMeta.data_corrections, [correction]);
+    assert.deepEqual(correctedOsm.data_corrections, [correction]);
+    assert.deepEqual(fs.readFileSync(path.join(correctedOutput, 'public-data-corrections.json')), fs.readFileSync(correctionPath));
+    correction.expected_tags.highway = 'wrong';
+    fs.writeFileSync(correctionPath, JSON.stringify([correction]));
+    assert.throws(() => exportData({ source, supplemental: roads, corrections: correctionPath, output: path.join(temp, 'rejected-correction') }), /Correction precondition failed/);
+    assert.equal(fs.existsSync(path.join(temp, 'rejected-correction')), false);
     roadFixture.features.push(roadFixture.features[1]);
     fs.writeFileSync(roads, JSON.stringify(roadFixture));
     assert.throws(() => exportData({ source, supplemental: roads, output: path.join(temp, 'duplicate') }), /Duplicate supplemental ID/);

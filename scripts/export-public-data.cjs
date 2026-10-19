@@ -57,7 +57,7 @@ function mergeOsm(input, supplement, selectedIds) {
     return { ...input, supplemental_sources: [...(input.supplemental_sources || []), { source_pbf: supplement.source_pbf,
         timestamp_osm_base: supplement.osm3s?.timestamp_osm_base, selection_note: supplement.selection_note }], elements: [...elements.values()] };
 }
-function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19-3', version = '2026-10-19-3', supplemental = ['data/yumeshima_highways_all.geojson', 'data/yumeshima_buildings_all.geojson'], supplementalOsm } = {}) {
+function exportData({ source = 'data/expo2025.min.json', output = 'data/releases/2026-10-19-4', version = '2026-10-19-4', supplemental = ['data/yumeshima_highways_all.geojson', 'data/yumeshima_buildings_all.geojson'], supplementalOsm, corrections = 'data/public-data-corrections.json' } = {}) {
     if (fs.existsSync(output)) throw new Error(`Published directory already exists; use a new version: ${output}`);
     if (!/^\d{4}-\d{2}-\d{2}(?:-\d+)?$/.test(version)) throw new Error('Invalid release version');
     const raw = fs.readFileSync(source);
@@ -120,6 +120,28 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
             merge_rule: 'OSM IDで重複排除。既存の形状・タグ値を優先し、未記録タグのみ補完。',
             source_file: sourceFile });
     }
+    const appliedCorrections = [];
+    if (corrections) {
+        const correctionContent = fs.readFileSync(corrections);
+        const records = JSON.parse(correctionContent);
+        const featureById = new Map(features.map(feature => [feature.id, feature]));
+        const elementById = new Map(mergedInput.elements.map(element => [`${element.type}/${element.id}`, element]));
+        for (const record of records) {
+            const feature = featureById.get(record.osm_id), element = elementById.get(record.osm_id);
+            if (!feature || !element) throw new Error(`Correction target missing: ${record.osm_id}`);
+            for (const [key, expected] of Object.entries(record.expected_tags)) {
+                if ((feature.properties.tags[key] ?? null) !== expected || (element.tags?.[key] ?? null) !== expected) throw new Error(`Correction precondition failed: ${record.osm_id} ${key}`);
+            }
+            Object.assign(feature.properties.tags, record.set_tags);
+            element.tags = { ...element.tags, ...record.set_tags };
+            feature.properties.name = feature.properties.tags.name || '';
+            feature.properties.kind = KIND_KEYS.map(key => feature.properties.tags[key]).find(Boolean) || '';
+            appliedCorrections.push(record);
+        }
+        mergedInput.data_corrections = appliedCorrections;
+        osmContent = Buffer.from(JSON.stringify(mergedInput) + '\n');
+        supplementaryFiles['public-data-corrections.json'] = correctionContent;
+    }
     features.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     if (!features.length) throw new Error('No tagged features found');
     const ids = new Set(features.map(feature => feature.id));
@@ -146,6 +168,7 @@ function exportData({ source = 'data/expo2025.min.json', output = 'data/releases
         source_osm_base_timestamp: input.osm3s?.timestamp_osm_base || null,
         source_timestamp_note: '基となるOSMデータの取得時に記録された日時。取得後に追加した情報の日時を示すものではない。',
         supplemental_sources: supplementalSources,
+        data_corrections: appliedCorrections,
         osm_json_note: supplementalSources.length ? 'GeoJSON・CSV・OSM JSONの全形式に道路・建物を統合。OSM JSONの追加地物・参照ノード・リレーションは元PBFから実IDで取得。選択外の参照要素は形状構築専用としてタグを省略。既存要素の形状・タグを優先。' : 'expo2025.osm.jsonは元のOverpass JSON。',
         license: 'ODbL-1.0', license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         attribution: '© OpenStreetMap contributors', attribution_url: 'https://www.openstreetmap.org/copyright',
